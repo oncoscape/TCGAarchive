@@ -5,7 +5,7 @@
 		"type": "mut",		
 		"process": "mutSig2",
 		"date": "2016-01-28",
-		"directory": "../archive/firehose/ESCA/20160128/gdac.broadinstitute.org_ESCA-TP.MutSigNozzleReport2.0.Level_4.2016012800.0.0",
+		"directory": "../data/firehose/ESCA/20160128/gdac.broadinstitute.org_ESCA-TP.MutSigNozzleReport2.0.Level_4.2016012800.0.0",
 		"file": "ESCA-TP.final_analysis_set.maf"
 	},
 	{
@@ -14,7 +14,7 @@
 		"type": "mut",		
 		"process": "mutSig2",
 		"date": "2016-01-28",
-		"directory": "../archive/firehose/GBM/20160128/gdac.broadinstitute.org_GBM-TP.MutSigNozzleReport2.0.Level_4.2016012800.0.0",
+		"directory": "../data/firehose/GBM/20160128/gdac.broadinstitute.org_GBM-TP.MutSigNozzleReport2.0.Level_4.2016012800.0.0",
 		"file": "GBM-TP.final_analysis_set.maf"
 	},
 	{
@@ -23,7 +23,7 @@
 		"type": "mut",		
 		"process": "mutSig2",
 		"date": "2016-01-28",
-		"directory": "../archive/firehose/GBMLGG/20160128/gdac.broadinstitute.org_GBMLGG-TP.MutSigNozzleReport2.0.Level_4.2016012800.0.0",
+		"directory": "../data/firehose/GBMLGG/20160128/gdac.broadinstitute.org_GBMLGG-TP.MutSigNozzleReport2.0.Level_4.2016012800.0.0",
 		"file": "GBMLGG-TP.final_analysis_set.maf"
 	},
 	{
@@ -32,7 +32,7 @@
 		"type": "mut",		
 		"process": "mutSig2",
 		"date": "2016-01-28",
-		"directory": "../archive/firehose/HNSC/20160128/gdac.broadinstitute.org_HNSC-TP.MutSigNozzleReport2.0.Level_4.2016012800.0.0",
+		"directory": "../data/firehose/HNSC/20160128/gdac.broadinstitute.org_HNSC-TP.MutSigNozzleReport2.0.Level_4.2016012800.0.0",
 		"file": "HNSC-TP.final_analysis_set.maf"
 	},
 	{
@@ -41,7 +41,7 @@
 		"type": "mut",		
 		"process": "mutSig2",
 		"date": "2016-01-28",
-		"directory": "../archive/firehose/KICH/20160128/gdac.broadinstitute.org_KICH-TP.MutSigNozzleReport2.0.Level_4.2016012800.0.0",
+		"directory": "../data/firehose/KICH/20160128/gdac.broadinstitute.org_KICH-TP.MutSigNozzleReport2.0.Level_4.2016012800.0.0",
 		"file": "KICH-TP.final_analysis_set.maf"
 	},
 	{
@@ -50,7 +50,7 @@
 		"type": "mut",		
 		"process": "mutSig2",
 		"date": "2016-01-28",
-		"directory": "../archive/firehose/KIRC/20160128/gdac.broadinstitute.org_KIRC-TP.MutSigNozzleReport2.0.Level_4.2016012800.0.0",
+		"directory": "../data/firehose/KIRC/20160128/gdac.broadinstitute.org_KIRC-TP.MutSigNozzleReport2.0.Level_4.2016012800.0.0",
 		"file": "KIRC-TP.final_analysis_set.maf"
 	},
 	{
@@ -59,7 +59,7 @@
 		"type": "mut",		
 		"process": "mutSig2",
 		"date": "2016-01-28",
-		"directory": "../archive/firehose/KIRP/20160128/gdac.broadinstitute.org_KIRP-TP.MutSigNozzleReport2.0.Level_4.2016012800.0.0",
+		"directory": "../data/firehose/KIRP/20160128/gdac.broadinstitute.org_KIRP-TP.MutSigNozzleReport2.0.Level_4.2016012800.0.0",
 		"file": "KIRP-TP.final_analysis_set.maf"
 	},
 	{
@@ -68,7 +68,7 @@
 		"type": "mut",		
 		"process": "mutSig2",
 		"date": "2016-01-28",
-		"directory": "../archive/firehose/LGG/20160128/gdac.broadinstitute.org_LGG-TP.MutSigNozzleReport2.0.Level_4.2016012800.0.0",
+		"directory": "../data/firehose/LGG/20160128/gdac.broadinstitute.org_LGG-TP.MutSigNozzleReport2.0.Level_4.2016012800.0.0",
 		"file": "LGG-TP.final_analysis_set.maf"
 	},
 	{
@@ -77,7 +77,7 @@
 		"type": "mut",		
 		"process": "mutSig2",
 		"date": "2016-01-28",
-		"directory": "../archive/firehose/LIHC/20160128/gdac.broadinstitute.org_LIHC-TP.MutSigNozzleReport2.0.Level_4.2016012800.0.0",
+		"directory": "../data/firehose/LIHC/20160128/gdac.broadinstitute.org_LIHC-TP.MutSigNozzleReport2.0.Level_4.2016012800.0.0",
 		"file": "LIHC-TP.final_analysis_set.maf"
 	},
 	{
@@ -86,7 +86,7 @@
 		"type": "mut",		
 		"process": "mutSig2",
 		"date": "2016-01-28",
-		"directory": "../archive/firehose/LUAD/20160128/gdac.broadinstitute.org_LUAD-TP.MutSigNozzleReport2.0.Level_4.2016012800.0.0",
+		"directory": "../data/firehose/LUAD/20160128/gdac.broadinstitute.org_LUAD-TP.MutSigNozzleReport2.0.Level_4.2016012800.0.0",
 		"file": "LUAD-TP.final_analysis_set.maf"
 	},
 	{
@@ -95,7 +95,7 @@
 		"type": "mut",		
 		"process": "mutSig2",
 		"date": "2016-01-28",
-		"directory": "../archive/firehose/LUSC/20160128/gdac.broadinstitute.org_LUSC-TP.MutSigNozzleReport2.0.Level_4.2016012800.0.0",
+		"directory": "../data/firehose/LUSC/20160128/gdac.broadinstitute.org_LUSC-TP.MutSigNozzleReport2.0.Level_4.2016012800.0.0",
 		"file": "LUSC-TP.final_analysis_set.maf"
 	},
 	{
@@ -104,7 +104,7 @@
 		"type": "mut",		
 		"process": "mutSig2",
 		"date": "2016-01-28",
-		"directory": "../archive/firehose/SARC/20160128/gdac.broadinstitute.org_SARC-TP.MutSigNozzleReport2.0.Level_4.2016012800.0.0",
+		"directory": "../data/firehose/SARC/20160128/gdac.broadinstitute.org_SARC-TP.MutSigNozzleReport2.0.Level_4.2016012800.0.0",
 		"file": "SARC-TP.final_analysis_set.maf"
 	},
 	{
@@ -113,7 +113,7 @@
 		"type": "mut",		
 		"process": "mutSig2",
 		"date": "2016-01-28",
-		"directory": "../archive/firehose/PAAD/20160128/gdac.broadinstitute.org_PAAD-TP.MutSigNozzleReport2.0.Level_4.2016012800.0.0",
+		"directory": "../data/firehose/PAAD/20160128/gdac.broadinstitute.org_PAAD-TP.MutSigNozzleReport2.0.Level_4.2016012800.0.0",
 		"file": "PAAD-TP.final_analysis_set.maf"
 	},
 	{
@@ -122,7 +122,7 @@
 		"type": "mut",		
 		"process": "mutSig2",
 		"date": "2016-01-28",
-		"directory": "../archive/firehose/PRAD/20160128/gdac.broadinstitute.org_PRAD-TP.MutSigNozzleReport2.0.Level_4.2016012800.0.0",
+		"directory": "../data/firehose/PRAD/20160128/gdac.broadinstitute.org_PRAD-TP.MutSigNozzleReport2.0.Level_4.2016012800.0.0",
 		"file": "PRAD-TP.final_analysis_set.maf"
 	},
 	{
@@ -131,7 +131,7 @@
 		"type": "mut",		
 		"process": "mutSig2",
 		"date": "2016-01-28",
-		"directory": "../archive/firehose/SARC/20160128/gdac.broadinstitute.org_SARC-TP.MutSigNozzleReport2.0.Level_4.2016012800.0.0",
+		"directory": "../data/firehose/SARC/20160128/gdac.broadinstitute.org_SARC-TP.MutSigNozzleReport2.0.Level_4.2016012800.0.0",
 		"file": "SARC-TP.final_analysis_set.maf"
 	},
 	{
@@ -140,7 +140,7 @@
 		"type": "mut",		
 		"process": "mutSig2",
 		"date": "2016-01-28",
-		"directory": "../archive/firehose/SKCM/20160128/gdac.broadinstitute.org_SKCM-TM.MutSigNozzleReport2.0.Level_4.2016012800.0.0",
+		"directory": "../data/firehose/SKCM/20160128/gdac.broadinstitute.org_SKCM-TM.MutSigNozzleReport2.0.Level_4.2016012800.0.0",
 		"file": "SKCM-TM.final_analysis_set.maf"
 	},
 	{
@@ -149,7 +149,7 @@
 		"type": "mut",		
 		"process": "mutSig2",
 		"date": "2016-01-28",
-		"directory": "../archive/firehose/STAD/20160128/gdac.broadinstitute.org_STAD-TP.MutSigNozzleReport2.0.Level_4.2016012800.0.0",
+		"directory": "../data/firehose/STAD/20160128/gdac.broadinstitute.org_STAD-TP.MutSigNozzleReport2.0.Level_4.2016012800.0.0",
 		"file": "STAD-TP.final_analysis_set.maf"
 	},
 	{
@@ -158,7 +158,7 @@
 		"type": "mut",		
 		"process": "mutSig2",
 		"date": "2016-01-28",
-		"directory": "../archive/firehose/THCA/20160128/gdac.broadinstitute.org_THCA-TP.MutSigNozzleReport2.0.Level_4.2016012800.0.0",
+		"directory": "../data/firehose/THCA/20160128/gdac.broadinstitute.org_THCA-TP.MutSigNozzleReport2.0.Level_4.2016012800.0.0",
 		"file": "THCA-TP.final_analysis_set.maf"
 	},
 	{
@@ -167,7 +167,7 @@
 		"type": "mut",		
 		"process": "mutSig2",
 		"date": "2016-01-28",
-		"directory": "../archive/firehose/UCEC/20160128/gdac.broadinstitute.org_UCEC-TP.MutSigNozzleReport2.0.Level_4.2016012800.0.0",
+		"directory": "../data/firehose/UCEC/20160128/gdac.broadinstitute.org_UCEC-TP.MutSigNozzleReport2.0.Level_4.2016012800.0.0",
 		"file": "UCEC-TP.final_analysis_set.maf"
 	},
 	{
@@ -176,7 +176,7 @@
 		"type": "mut",		
 		"process": "mutSig2",
 		"date": "2016-01-28",
-		"directory": "../archive/firehose/ACC/20160128/gdac.broadinstitute.org_ACC-TP.MutSigNozzleReport2.0.Level_4.2016012800.0.0",
+		"directory": "../data/firehose/ACC/20160128/gdac.broadinstitute.org_ACC-TP.MutSigNozzleReport2.0.Level_4.2016012800.0.0",
 		"file": "ACC-TP.final_analysis_set.maf"
 	},
 	{
@@ -185,7 +185,7 @@
 		"type": "mut",		
 		"process": "mutSig2",
 		"date": "2016-01-28",
-		"directory": "../archive/firehose/BLCA/20160128/gdac.broadinstitute.org_BLCA-TP.MutSigNozzleReport2.0.Level_4.2016012800.0.0",
+		"directory": "../data/firehose/BLCA/20160128/gdac.broadinstitute.org_BLCA-TP.MutSigNozzleReport2.0.Level_4.2016012800.0.0",
 		"file": "BLCA-TP.final_analysis_set.maf"
 	},
 	{
@@ -194,7 +194,7 @@
 		"type": "mut",		
 		"process": "mutSig2",
 		"date": "2016-01-28",
-		"directory": "../archive/firehose/BRCA/20160128/gdac.broadinstitute.org_BRCA-TP.MutSigNozzleReport2.0.Level_4.2016012800.0.0",
+		"directory": "../data/firehose/BRCA/20160128/gdac.broadinstitute.org_BRCA-TP.MutSigNozzleReport2.0.Level_4.2016012800.0.0",
 		"file": "BRCA-TP.final_analysis_set.maf"
 	},
 	{
@@ -203,7 +203,7 @@
 		"type": "mut",		
 		"process": "mutSig2",
 		"date": "2016-01-28",
-		"directory": "../archive/firehose/CESC/20160128/gdac.broadinstitute.org_CESC-TP.MutSigNozzleReport2.0.Level_4.2016012800.0.0",
+		"directory": "../data/firehose/CESC/20160128/gdac.broadinstitute.org_CESC-TP.MutSigNozzleReport2.0.Level_4.2016012800.0.0",
 		"file": "CESC-TP.final_analysis_set.maf"
 	},
 	{
@@ -212,7 +212,7 @@
 		"type": "mut",		
 		"process": "mutSig2",
 		"date": "2016-01-28",
-		"directory": "../archive/firehose/CHOL/20160128/gdac.broadinstitute.org_CHOL-TP.MutSigNozzleReport2.0.Level_4.2016012800.0.0",
+		"directory": "../data/firehose/CHOL/20160128/gdac.broadinstitute.org_CHOL-TP.MutSigNozzleReport2.0.Level_4.2016012800.0.0",
 		"file": "CHOL-TP.final_analysis_set.maf"
 	},
 	{
@@ -221,7 +221,7 @@
 		"type": "mut",		
 		"process": "mutSig2",
 		"date": "2016-01-28",
-		"directory": "../archive/firehose/DLBC/20160128/gdac.broadinstitute.org_DLBC-TP.MutSigNozzleReport2.0.Level_4.2016012800.0.0",
+		"directory": "../data/firehose/DLBC/20160128/gdac.broadinstitute.org_DLBC-TP.MutSigNozzleReport2.0.Level_4.2016012800.0.0",
 		"file": "DLBC-TP.final_analysis_set.maf"
 	}
 

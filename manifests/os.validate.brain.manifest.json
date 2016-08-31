@@ -4,14 +4,14 @@
 		"source": "ucsc-HoBo",
 		"type": "cnv",		
 		"process": "gistic",
-		"directory": "../archive/UCSC/TCGA_BRAIN/validation",
+		"directory": "../data/UCSC/TCGA_BRAIN/validation",
 		"file": "HoBo.LGG.GBM.cnv.RData"
 	},
 	{	"dataset": "brain",
 		"source": "ucsc-HoBo",
 		"type": "mut01",		
 		"process": "import",
-		"directory": "../archive/UCSC/TCGA_BRAIN/validation",
+		"directory": "../data/UCSC/TCGA_BRAIN/validation",
 		"file": "HoBo.LGG.GBM.mut.RData"
 	}
 ]
