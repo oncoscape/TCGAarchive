@@ -1,0 +1,17 @@
+{
+	"dataset": ["brca", "coadread", "hnsc", "lgg", "gbm", "luad", "lusc", "prad", "acc", "blca", "cesc", "chol", "dlbc", "esca", "laml","lung", "sarc", "stad"],
+	"dataType": [
+		{"cnv": ["gistic2thd", "gistic"]},
+		{"mut01": ["mutation", "mutationBroadGene", "mutationCuratedWustlGene", "mutationBcmGene"]},
+		{"mut": ["mut"]},
+		{"methyl": ["methylationHM450", "methylationHM27"]},
+		{"rna": ["RNAseq", "microarray-Agilent"]},
+		{"protein": ["protein", "RPPA"]},
+		{"patient": ["patient"]},
+		{"drug": ["drug"]},
+		{"radiation": [ "radiation"]},
+		{"otherMalignancy": ["otherMalignancy-v4.0"]},
+		{"followUp": ["followUp-v2.1","followUp-v1.5","followUp-v4.0"]},
+		{"newTumor": [ "newTumor", "newTumor-followUp-v4.0"]}
+	]
+}
