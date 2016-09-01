@@ -377,11 +377,11 @@ os.save.categories <- function(datasets = c("brain")){
     
     ## Patient Colors by Diagnosis, glioma8, tumorGrade, verhaak
     color.categories <- list(
-      add.category.fromFile(file='../archive/categories/brain/tumorDiagnosis.RData', name="diagnosis", col.name="diagnosis", dataset="brain", type=type) ,
-      add.category.fromFile(file='../archive/categories/brain/ericsEightGliomaClusters.RData', name="glioma8", col.name="cluster", dataset="brain", type=type) ,
-      add.category.fromFile(file='../archive/categories/brain/metabolicExpressionStemness.RData', name="metabolicExpressionStemness", col.name="cluster", dataset="brain", type=type) ,
-      add.category.fromFile(file='../archive/categories/brain/tumorGrade.RData', name="tumorGrade", col.name="cluster", dataset="brain", type=type) ,
-      add.category.fromFile(file='../archive/categories/brain/verhaakGbmClustersAugmented.RData', name="verhaakPlus1", col.name="cluster", dataset="brain", type=type) 
+      add.category.fromFile(file='../data/categories/brain/tumorDiagnosis.RData', name="diagnosis", col.name="diagnosis", dataset="brain", type=type) ,
+      add.category.fromFile(file='../data/categories/brain/ericsEightGliomaClusters.RData', name="glioma8", col.name="cluster", dataset="brain", type=type) ,
+      add.category.fromFile(file='../data/categories/brain/metabolicExpressionStemness.RData', name="metabolicExpressionStemness", col.name="cluster", dataset="brain", type=type) ,
+      add.category.fromFile(file='../data/categories/brain/tumorGrade.RData', name="tumorGrade", col.name="cluster", dataset="brain", type=type) ,
+      add.category.fromFile(file='../data/categories/brain/verhaakGbmClustersAugmented.RData', name="verhaakPlus1", col.name="cluster", dataset="brain", type=type) 
     )
     
     save.collection(mongo,db, dataset="brain", dataType=type, source="tcga",
@@ -389,7 +389,7 @@ os.save.categories <- function(datasets = c("brain")){
     
   }
   if("brca" %in% datasets){
-    categories.list <- fromJSON("../archive/categories/brca/colorCategories.json", simplifyVector = FALSE)
+    categories.list <- fromJSON("../data/categories/brca/colorCategories.json", simplifyVector = FALSE)
 #    color.categories <- apply(categories.list, 1, function(colorcat){list(dataset=colorcat$dataset, type=colorcat$type, name=colorcat$name, data=colorcat$data)})
      save.collection(mongo,db, dataset="brca", dataType=type, source="tcga",
                     result=categories.list,parent=NA, process=list(type="import"),processName="import")
@@ -441,7 +441,7 @@ commands <- c("categories", "clinical", "molecular", "scale", "lookup", "sample"
 #commands <- c("categories")
 #commands <- c("molecular")
 #commands <- c("scale")
-commands <- "clinical"
+#commands <- "clinical"
 #commands <- "lookup"
 #commands <- "sample"
 
