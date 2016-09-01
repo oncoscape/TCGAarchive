@@ -9,8 +9,7 @@ library(rmongodb)
 date <- as.character(Sys.Date())
 chromosomes <- c(seq(1:22), "X", "Y")
 
-db <- "pancan12"
-#db <- "ClinicalEvent"
+db <- "tcga"
 
 dataset_map <- list(
   brca=list(name="Breast", img= "DSbreast.png", beta=FALSE, source="TCGA"),
