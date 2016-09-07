@@ -1,0 +1,463 @@
+[
+        {
+            "source" : "ucsc",
+            "type" : "cnv",
+            "collection" : "brca_cnv_ucsc_gistic2thd",
+            "RawDataUrl":"http://gdac.broadinstitute.org/runs/analyses__2014_10_17/data/BRCA/20141017/",
+            "sampleSize": 1079,
+            "wrangler": "cgData TCGAscript CopyNumber_Gistic2 processed on 2015-01-27", 
+            "wranglingProcedure": "FIREHOSE data download from TCGA DCC, processed at UCSC into cgData repository",
+            "description": "TCGA breast invasive carcinoma (BRCA) thresholded gene-level copy number variation (CNV) estimated using the GISTIC2 method."
+        }, 
+        {
+            "source" : "ucsc",
+            "type" : "mut",
+            "collection" : "brca_mut_ucsc_mutationcuratedwustlgene",
+            "RawDataUrl": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/brca/gsc/genome.wustl.edu/illuminaga_dnaseq_curated/mutations/",
+            "sampleSize": 982,
+            "wrangler": "cgData TCGAscript maf processed on 2015-01-27", 
+            "wranglingProcedure": "Download .maf file from TCGA DCC, processed into gene by sample matrix at UCSC, stored in the UCSC Xena repository",
+            "description": "TCGA breast invasive carcinoma (BRCA) somatic mutation data. Sequencing data are generated on a IlluminaGA system. The calls are generated at Genome Institute at Washington University Sequencing Center using the WashU pipeline method. "
+        }, 
+        {
+            "source" : "ucsc",
+            "type" : "mut01",
+            "collection" : "brca_mut01_ucsc_import",
+            "RawDataUrl": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/brca/gsc/genome.wustl.edu/illuminaga_dnaseq_curated/mutations/",
+            "sampleSize": 982,
+            "wrangler": "cgData TCGAscript maf processed on 2015-01-27", 
+            "wranglingProcedure": "Download .maf file from TCGA DCC, processed into gene by sample matrix at UCSC, stored in the UCSC Xena repository",
+            "description": "TCGA breast invasive carcinoma (BRCA) somatic mutation data. Sequencing data are generated on a IlluminaGA system. The calls are generated at Genome Institute at Washington University Sequencing Center using the WashU pipeline method. "
+        }, 
+        {
+            "source" : "ucsc",
+            "type" : "cnv",
+            "collection" : "esca_cnv_ucsc_gistic2thd",
+            "RawDataUrl": " http://gdac.broadinstitute.org/runs/analyses__2014_10_17/data/ESCA/20141017/",
+            "sampleSize": 184,
+            "wrangler": "cgData TCGAscript CopyNumber_Gistic2 processed on 2015-01-27", 
+            "wranglingProcedure": "FIREHOSE data download from TCGA DCC, processed at UCSC into cgData repository",
+            "description": "TCGA esophageal carcinoma (ESCA) thresholded gene-level copy number variation (CNV) estimated using the GISTIC2 method."
+        }, 
+        {
+            "source" : "ucsc",
+            "type" : "cnv",
+            "collection" : "lung_cnv_ucsc_gistic2thd",
+            "RawDataUrl": "",
+            "sampleSize": 1016,
+            "wrangler": "", 
+            "wranglingProcedure": "",
+            "description": "The dataset is combined from TCGA lung squamous cell carcinoma and lung adenocarcinoma datasets. TCGA lung cancer (LUNG) thresholded gene-level copy number variation (CNV) estimated using the GISTIC2 method."
+        }, 
+        {
+            "source" : "ucsc",
+            "type" : "mut",
+            "collection" : "lung_mut_ucsc_mutation",
+            "RawDataUrl": "",
+            "sampleSize": 408,
+            "wrangler": "", 
+            "wranglingProcedure": "",
+            "description": "The dataset is combined from TCGA lung squamous cell carcinoma and lung adenocarcinoma datasets. TCGA lung cancer (LUNG) somatic mutation data. Red (=1) indicates that a non-silent somatic mutation (nonsense, missense, frame-shif indels, splice site mutations, stop codon readthroughs) was identified in the protein coding region of a gene, or any mutation identified in a non-coding gene. White (=0) indicates that none of the above mutation calls were made in this gene for the specific sample."
+        }, 
+        {
+            "source" : "ucsc",
+            "type" : "mut01",
+            "collection" : "lung_mut01_ucsc_mutation",
+            "RawDataUrl": "",
+            "sampleSize": 408,
+            "wrangler": "", 
+            "wranglingProcedure": "",
+            "description": "The dataset is combined from TCGA lung squamous cell carcinoma and lung adenocarcinoma datasets. TCGA lung cancer (LUNG) somatic mutation data. Red (=1) indicates that a non-silent somatic mutation (nonsense, missense, frame-shif indels, splice site mutations, stop codon readthroughs) was identified in the protein coding region of a gene, or any mutation identified in a non-coding gene. White (=0) indicates that none of the above mutation calls were made in this gene for the specific sample."
+        },
+        {
+            "source" : "ucsc",
+            "type" : "cnv",
+            "collection" : "gbm_cnv_ucsc_gistic2thd",
+            "RawDataUrl": "http://gdac.broadinstitute.org/runs/analyses__2014_10_17/data/GBM/20141017/",
+            "sampleSize": 577,
+            "wrangler": "cgData TCGAscript CopyNumber_Gistic2 processed on 2015-01-27", 
+            "wranglingProcedure": "FIREHOSE data download from TCGA DCC, processed at UCSC into cgData repository",
+            "description": "TCGA glioblastoma multiforme (GBM) thresholded gene-level copy number variation (CNV) estimated using the GISTIC2 method."
+        }, 
+        {
+            "source" : "ucsc",
+            "type" : "mut",
+            "collection" : "gbm_mut_ucsc_mutationbroadgene",
+            "RawDataUrl": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/gbm/gsc/broad.mit.edu/illuminaga_dnaseq/mutations/",
+            "sampleSize": 291,
+            "wrangler": "cgData TCGAscript maf processed on 2015-01-27", 
+            "wranglingProcedure": "Download .maf file from TCGA DCC, processed into gene by sample matrix at UCSC, stored in the UCSC Xena repository",
+            "description": "TCGA glioblastoma multiforme (GBM) somatic mutation data. Sequencing data are generated on a IlluminaGA system. The calls are generated at Broad Institute Genome Sequencing Center using the MutDect method. "
+        }, 
+        {
+            "source" : "ucsc",
+            "type" : "mut01",
+            "collection" : "gbm_mut01_ucsc_import",
+            "RawDataUrl": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/gbm/gsc/broad.mit.edu/illuminaga_dnaseq/mutations/",
+            "sampleSize": 291,
+            "wrangler": "cgData TCGAscript maf processed on 2015-01-27", 
+            "wranglingProcedure": "Download .maf file from TCGA DCC, processed into gene by sample matrix at UCSC, stored in the UCSC Xena repository",
+            "description": "TCGA glioblastoma multiforme (GBM) somatic mutation data. Sequencing data are generated on a IlluminaGA system. The calls are generated at Broad Institute Genome Sequencing Center using the MutDect method. "
+        },
+        {
+            "source" : "ucsc",
+            "type" : "cnv",
+            "collection" : "coadread_cnv_ucsc_gistic2thd",
+            "RawDataUrl": "",
+            "sampleSize": 408,
+            "wrangler": "", 
+            "wranglingProcedure": "",
+            "description": "The dataset is combined from TCGA lung squamous cell carcinoma and lung adenocarcinoma datasets. TCGA lung cancer (LUNG) somatic mutation data. Red (=1) indicates that a non-silent somatic mutation (nonsense, missense, frame-shif indels, splice site mutations, stop codon readthroughs) was identified in the protein coding region of a gene, or any mutation identified in a non-coding gene. White (=0) indicates that none of the above mutation calls were made in this gene for the specific sample."
+        }, 
+        {
+            "source" : "ucsc",
+            "type" : "mut",
+            "collection" : "coadread_mut_ucsc_mutation",
+            "RawDataUrl": "https://www.synapse.org/#!Synapse:syn1729383",
+            "sampleSize": 224,
+            "wrangler": "", 
+            "wranglingProcedure": "",
+            "description": "TCGA colon & rectum adenocarcinoma (COADREAD) somatic mutation data. Red (=1) indicates that a non-silent somatic mutation (nonsense, missense, frame-shif indels, splice site mutations, stop codon readthroughs) was identified in the protein coding region of a gene, or any mutation identified in a non-coding gene. White (=0) indicates that none of the above mutation calls were made in this gene for the specific sample."
+        }, 
+        {
+            "source" : "ucsc",
+            "type" : "mut01",
+            "collection" : "coadread_mut01_ucsc_mutation",
+            "RawDataUrl": "https://www.synapse.org/#!Synapse:syn1729383",
+            "sampleSize": 224,
+            "wrangler": "", 
+            "wranglingProcedure": "",
+            "description": "TCGA colon & rectum adenocarcinoma (COADREAD) somatic mutation data. Red (=1) indicates that a non-silent somatic mutation (nonsense, missense, frame-shif indels, splice site mutations, stop codon readthroughs) was identified in the protein coding region of a gene, or any mutation identified in a non-coding gene. White (=0) indicates that none of the above mutation calls were made in this gene for the specific sample."
+        },
+        {
+
+            "source" : "ucsc",
+            "type" : "cnv",
+            "collection" : "hnsc_cnv_ucsc_gistic2thd",
+            "RawDataUrl": " http://gdac.broadinstitute.org/runs/analyses__2014_10_17/data/HNSC/20141017/",
+            "sampleSize": 522,
+            "wrangler": "cgData TCGAscript CopyNumber_Gistic2 processed on 2015-01-27", 
+            "wranglingProcedure": "FIREHOSE data download from TCGA DCC, processed at UCSC into cgData repository",
+            "description": "TCGA head & neck squamous cell carcinoma (HNSC) thresholded gene-level copy number variation (CNV) estimated using the GISTIC2 method."
+        }, 
+        {
+            "source" : "ucsc",
+            "type" : "mut",
+            "collection" : "hnsc_mut_ucsc_mutationbroadgene",
+            "RawDataUrl": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/hnsc/gsc/broad.mit.edu/illuminaga_dnaseq_automated/mutations/",
+            "sampleSize": 509,
+            "wrangler": "cgData TCGAscript maf processed on 2015-01-27", 
+            "wranglingProcedure": "Download .maf file from TCGA DCC, processed into gene by sample matrix at UCSC, stored in the UCSC Xena repository",
+            "description": "TCGA head & neck squamous cell carcinoma (HNSC) somatic mutation data. Sequencing data are generated on a IlluminaGA system. The calls are generated at Broad Institute Genome Sequencing Center using the MutDect method. "
+        }, 
+        {
+            "source" : "ucsc",
+            "type" : "mut01",
+            "collection" : "hnsc_mut01_ucsc_mutationbroadgene",
+            "RawDataUrl": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/hnsc/gsc/broad.mit.edu/illuminaga_dnaseq_automated/mutations/",
+            "sampleSize": 509,
+            "wrangler": "cgData TCGAscript maf processed on 2015-01-27", 
+            "wranglingProcedure": "Download .maf file from TCGA DCC, processed into gene by sample matrix at UCSC, stored in the UCSC Xena repository",
+            "description": "TCGA head & neck squamous cell carcinoma (HNSC) somatic mutation data. Sequencing data are generated on a IlluminaGA system. The calls are generated at Broad Institute Genome Sequencing Center using the MutDect method. "
+        },
+        {
+            "source" : "ucsc",
+            "type" : "cnv",
+            "collection" : "lgg_cnv_ucsc_gistic2thd",
+            "RawDataUrl": "http://gdac.broadinstitute.org/runs/analyses__2014_10_17/data/LGG/20141017/",
+            "sampleSize": 513,
+            "wrangler": "cgData TCGAscript CopyNumber_Gistic2 processed on 2015-01-27", 
+            "wranglingProcedure": "FIREHOSE data download from TCGA DCC, processed at UCSC into cgData repository",
+            "description": "TCGA brain lower grade glioma (LGG) thresholded gene-level copy number variation (CNV) estimated using the GISTIC2 method."
+        }, 
+        {
+            "source" : "ucsc",
+            "type" : "mut",
+            "collection" : "lgg_mut_ucsc_mutationbroadgene",
+            "RawDataUrl": "",
+            "sampleSize": 408,
+            "wrangler": "", 
+            "wranglingProcedure": "",
+            "description": "The dataset is combined from TCGA lung squamous cell carcinoma and lung adenocarcinoma datasets. TCGA lung cancer (LUNG) somatic mutation data. Red (=1) indicates that a non-silent somatic mutation (nonsense, missense, frame-shif indels, splice site mutations, stop codon readthroughs) was identified in the protein coding region of a gene, or any mutation identified in a non-coding gene. White (=0) indicates that none of the above mutation calls were made in this gene for the specific sample."
+        }, 
+        {
+            "source" : "ucsc",
+            "type" : "mut01",
+            "collection" : "lgg_mut01_ucsc_mutationbroadgene",
+            "RawDataUrl": "",
+            "sampleSize": 408,
+            "wrangler": "", 
+            "wranglingProcedure": "",
+            "description": "The dataset is combined from TCGA lung squamous cell carcinoma and lung adenocarcinoma datasets. TCGA lung cancer (LUNG) somatic mutation data. Red (=1) indicates that a non-silent somatic mutation (nonsense, missense, frame-shif indels, splice site mutations, stop codon readthroughs) was identified in the protein coding region of a gene, or any mutation identified in a non-coding gene. White (=0) indicates that none of the above mutation calls were made in this gene for the specific sample."
+        },
+        {
+            "source" : "ucsc",
+            "type" : "cnv",
+            "collection" : "luad_cnv_ucsc_gistic2thd",
+            "RawDataUrl": "http://gdac.broadinstitute.org/runs/analyses__2014_10_17/data/LUAD/20141017/",
+            "sampleSize": 515,
+            "wrangler": "cgData TCGAscript CopyNumber_Gistic2 processed on 2015-01-27", 
+            "wranglingProcedure": "FIREHOSE data download from TCGA DCC, processed at UCSC into cgData repository",
+            "description": "TCGA lung adenocarcinoma (LUAD) thresholded gene-level copy number variation (CNV) estimated using the GISTIC2 method."
+        }, 
+        {
+            "source" : "ucsc",
+            "type" : "mut",
+            "collection" : "luad_mut_ucsc_mutationbroadgene",
+            "RawDataUrl": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/luad/gsc/broad.mit.edu/illuminaga_dnaseq_automated/mutations/",
+            "sampleSize": 543,
+            "wrangler": "cgData TCGAscript maf processed on 2015-01-27", 
+            "wranglingProcedure": "Download .maf file from TCGA DCC, processed into gene by sample matrix at UCSC, stored in the UCSC Xena repository",
+            "description": "TCGA lung adenocarcinoma (LUAD) somatic mutation data. Sequencing data are generated on a IlluminaGA system. The calls are generated at Broad Institute Genome Sequencing Center using the MutDect method. "
+        }, 
+        {
+            "source" : "ucsc",
+            "type" : "mut01",
+            "collection" : "luad_mut01_ucsc_mutationbroadgene",
+            "RawDataUrl": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/luad/gsc/broad.mit.edu/illuminaga_dnaseq_automated/mutations/",
+            "sampleSize": 543,
+            "wrangler": "cgData TCGAscript maf processed on 2015-01-27", 
+            "wranglingProcedure": "Download .maf file from TCGA DCC, processed into gene by sample matrix at UCSC, stored in the UCSC Xena repository",
+            "description": "TCGA lung adenocarcinoma (LUAD) somatic mutation data. Sequencing data are generated on a IlluminaGA system. The calls are generated at Broad Institute Genome Sequencing Center using the MutDect method. "
+        },
+        {
+            "source" : "ucsc",
+            "type" : "cnv",
+            "collection" : "lusc_cnv_ucsc_gistic2thd",
+            "RawDataUrl": "http://gdac.broadinstitute.org/runs/analyses__2014_10_17/data/LUSC/20141017/",
+            "sampleSize": 501,
+            "wrangler": "cgData TCGAscript CopyNumber_Gistic2 processed on 2015-01-27", 
+            "wranglingProcedure": "FIREHOSE data download from TCGA DCC, processed at UCSC into cgData repository",
+            "description": "TCGA lung squamous cell carcinoma (LUSC) thresholded gene-level copy number variation (CNV) estimated using the GISTIC2 method."
+        }, 
+        {
+            "source" : "ucsc",
+            "type" : "mut",
+            "collection" : "lusc_mut_ucsc_mutationbroadgene",
+            "RawDataUrl": "",
+            "sampleSize": 408,
+            "wrangler": "", 
+            "wranglingProcedure": "",
+            "description": "The dataset is combined from TCGA lung squamous cell carcinoma and lung adenocarcinoma datasets. TCGA lung cancer (LUNG) somatic mutation data. Red (=1) indicates that a non-silent somatic mutation (nonsense, missense, frame-shif indels, splice site mutations, stop codon readthroughs) was identified in the protein coding region of a gene, or any mutation identified in a non-coding gene. White (=0) indicates that none of the above mutation calls were made in this gene for the specific sample."
+        }, 
+        {
+            "source" : "ucsc",
+            "type" : "mut01",
+            "collection" : "lusc_mut01_ucsc_mutationbroadgene",
+            "RawDataUrl": "",
+            "sampleSize": 408,
+            "wrangler": "", 
+            "wranglingProcedure": "",
+            "description": "The dataset is combined from TCGA lung squamous cell carcinoma and lung adenocarcinoma datasets. TCGA lung cancer (LUNG) somatic mutation data. Red (=1) indicates that a non-silent somatic mutation (nonsense, missense, frame-shif indels, splice site mutations, stop codon readthroughs) was identified in the protein coding region of a gene, or any mutation identified in a non-coding gene. White (=0) indicates that none of the above mutation calls were made in this gene for the specific sample."
+        },
+        {
+            "source" : "ucsc",
+            "type" : "cnv",
+            "collection" : "prad_cnv_ucsc_gistic2thd",
+            "RawDataUrl": "http://gdac.broadinstitute.org/runs/analyses__2014_10_17/data/PRAD/20141017/",
+            "sampleSize": 492,
+            "wrangler": "   cgData TCGAscript CopyNumber_Gistic2 processed on 2015-01-27", 
+            "wranglingProcedure": "FIREHOSE data download from TCGA DCC, processed at UCSC into cgData repository",
+            "description": "TCGA prostate adenocarcinoma (PRAD) thresholded gene-level copy number variation (CNV) estimated using the GISTIC2 method."
+        }, 
+        {
+            "source" : "ucsc",
+            "type" : "mut",
+            "collection" : "prad_mut_ucsc_mutationbroadgene",
+            "RawDataUrl": " https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/prad/gsc/broad.mit.edu/illuminaga_dnaseq_automated/mutations/",
+            "sampleSize": 425,
+            "wrangler": "cgData TCGAscript maf processed on 2015-01-27", 
+            "wranglingProcedure": "Download .maf file from TCGA DCC, processed into gene by sample matrix at UCSC, stored in the UCSC Xena repository",
+            "description": "TCGA prostate adenocarcinoma (PRAD) somatic mutation data. Sequencing data are generated on a IlluminaGA system. The calls are generated at Broad Institute Genome Sequencing Center using the MutDect method."
+        }, 
+        {
+            "source" : "ucsc",
+            "type" : "mut01",
+            "collection" : "prad_mut01_ucsc_mutationbroadgene",
+            "RawDataUrl": " https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/prad/gsc/broad.mit.edu/illuminaga_dnaseq_automated/mutations/",
+            "sampleSize": 425,
+            "wrangler": "cgData TCGAscript maf processed on 2015-01-27", 
+            "wranglingProcedure": "Download .maf file from TCGA DCC, processed into gene by sample matrix at UCSC, stored in the UCSC Xena repository",
+            "description": "TCGA prostate adenocarcinoma (PRAD) somatic mutation data. Sequencing data are generated on a IlluminaGA system. The calls are generated at Broad Institute Genome Sequencing Center using the MutDect method."
+        },
+        {
+            "source" : "ucsc",
+            "type" : "cnv",
+            "collection" : "paad_cnv_ucsc_gistic2thd",
+            "RawDataUrl": "http://gdac.broadinstitute.org/runs/analyses__2014_10_17/data/PAAD/20141017/",
+            "sampleSize": 184,
+            "wrangler": "cgData TCGAscript CopyNumber_Gistic2 processed on 2015-01-27", 
+            "wranglingProcedure": "FIREHOSE data download from TCGA DCC, processed at UCSC into cgData repository",
+            "description": "TCGA pancreatic adenocarcinoma (PAAD) thresholded gene-level copy number variation (CNV) estimated using the GISTIC2 method."
+        }, 
+        {
+            "source" : "ucsc",
+            "type" : "mut",
+            "collection" : "paad_mut_ucsc_mutationbroadgene",
+            "RawDataUrl": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/paad/gsc/hgsc.bcm.edu/illuminaga_dnaseq_automated/mutations/",
+            "sampleSize": 131,
+            "wrangler": "cgData TCGAscript maf processed on 2015-01-27", 
+            "wranglingProcedure": "Download .maf file from TCGA DCC, processed into gene by sample matrix at UCSC, stored in the UCSC Xena repository",
+            "description": "TCGA pancreatic adenocarcinoma (PAAD) somatic mutation data. Sequencing data are generated on a IlluminaGA system. The calls are generated at Baylor College of Medicine Human Genome Sequencing Center using the Baylor pipeline method. "
+        }, 
+        {
+            "source" : "ucsc",
+            "type" : "mut01",
+            "collection" : "paad_mut01_ucsc_mutationbroadgene",
+            "RawDataUrl": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/paad/gsc/hgsc.bcm.edu/illuminaga_dnaseq_automated/mutations/",
+            "sampleSize": 131,
+            "wrangler": "cgData TCGAscript maf processed on 2015-01-27", 
+            "wranglingProcedure": "Download .maf file from TCGA DCC, processed into gene by sample matrix at UCSC, stored in the UCSC Xena repository",
+            "description": "TCGA pancreatic adenocarcinoma (PAAD) somatic mutation data. Sequencing data are generated on a IlluminaGA system. The calls are generated at Baylor College of Medicine Human Genome Sequencing Center using the Baylor pipeline method. "
+        },
+        {
+            "source" : "ucsc",
+            "type" : "cnv",
+            "collection" : "acc_cnv_ucsc_gistic2thd",
+            "RawDataUrl": "http://gdac.broadinstitute.org/runs/analyses__2014_10_17/data/ACC/20141017/",
+            "sampleSize": 90,
+            "wrangler": "cgData TCGAscript CopyNumber_Gistic2 processed on 2015-01-27", 
+            "wranglingProcedure": "FIREHOSE data download from TCGA DCC, processed at UCSC into cgData repository",
+            "description": "TCGA adrenocortical carcinoma (ACC) thresholded gene-level copy number variation (CNV) estimated using the GISTIC2 method."
+        },
+        {
+            "source" : "ucsc",
+            "type" : "cnv",
+            "collection" : "blca_cnv_ucsc_gistic2thd",
+            "RawDataUrl": "http://gdac.broadinstitute.org/runs/analyses__2014_10_17/data/BLCA/20141017/",
+            "sampleSize": 408,
+            "wrangler": "cgData TCGAscript CopyNumber_Gistic2 processed on 2015-01-27", 
+            "wranglingProcedure": "FIREHOSE data download from TCGA DCC, processed at UCSC into cgData repository",
+            "description": "TCGA bladder urothelial carcinoma (BLCA) thresholded gene-level copy number variation (CNV) estimated using the GISTIC2 method."
+        }, 
+        {
+            "source" : "ucsc",
+            "type" : "mut",
+            "collection" : "blca_mut_ucsc_mutationbroadgene",
+            "RawDataUrl": " https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/blca/gsc/broad.mit.edu/illuminaga_dnaseq_automated/mutations/",
+            "sampleSize": 238,
+            "wrangler": "cgData TCGAscript maf processed on 2015-01-27", 
+            "wranglingProcedure": "Download .maf file from TCGA DCC, processed into gene by sample matrix at UCSC, stored in the UCSC Xena repository",
+            "description": "TCGA bladder urothelial carcinoma (BLCA) somatic mutation data. Sequencing data are generated on a IlluminaGA system. The calls are generated at Broad Institute Genome Sequencing Center using the MutDect method. "
+        }, 
+        {
+            "source" : "ucsc",
+            "type" : "mut01",
+            "collection" : "blca_mut01_ucsc_mutationbroadgene",
+            "RawDataUrl": " https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/blca/gsc/broad.mit.edu/illuminaga_dnaseq_automated/mutations/",
+            "sampleSize": 238,
+            "wrangler": "cgData TCGAscript maf processed on 2015-01-27", 
+            "wranglingProcedure": "Download .maf file from TCGA DCC, processed into gene by sample matrix at UCSC, stored in the UCSC Xena repository",
+            "description": "TCGA bladder urothelial carcinoma (BLCA) somatic mutation data. Sequencing data are generated on a IlluminaGA system. The calls are generated at Broad Institute Genome Sequencing Center using the MutDect method. "
+        },
+        {
+            "source" : "ucsc",
+            "type" : "cnv",
+            "collection" : "cesc_cnv_ucsc_gistic2thd",
+            "RawDataUrl": "http://gdac.broadinstitute.org/runs/analyses__2014_10_17/data/CESC/20141017/",
+            "sampleSize": 295,
+            "wrangler": "cgData TCGAscript CopyNumber_Gistic2 processed on 2015-01-27", 
+            "wranglingProcedure": "FIREHOSE data download from TCGA DCC, processed at UCSC into cgData repository",
+            "description": "TCGA cervical squamous cell carcinoma and endocervical adenocarcinoma (CESC) thresholded gene-level copy number variation (CNV) estimated using the GISTIC2 method."
+        },
+        {
+            "source" : "ucsc",
+            "type" : "cnv",
+            "collection" : "chol_cnv_ucsc_gistic2thd",
+            "RawDataUrl": " http://gdac.broadinstitute.org/runs/analyses__2014_10_17/data/CHOL/20141017/",
+            "sampleSize": 36,
+            "wrangler": "cgData TCGAscript CopyNumber_Gistic2 processed on 2015-01-27", 
+            "wranglingProcedure": "FIREHOSE data download from TCGA DCC, processed at UCSC into cgData repository",
+            "description": "TCGA cholangiocarcinoma (CHOL) thresholded gene-level copy number variation (CNV) estimated using the GISTIC2 method."
+        },
+        {
+            "source" : "ucsc",
+            "type" : "cnv",
+            "collection" : "dlbc_cnv_ucsc_gistic2thd",
+            "RawDataUrl": "http://gdac.broadinstitute.org/runs/analyses__2014_10_17/data/DLBC/20141017/",
+            "sampleSize": 48,
+            "wrangler": "cgData TCGAscript CopyNumber_Gistic2 processed on 2015-01-27", 
+            "wranglingProcedure": "FIREHOSE data download from TCGA DCC, processed at UCSC into cgData repository",
+            "description": "TCGA lymphoid neoplasm diffuse large B-cell lymphoma (DLBC) thresholded gene-level copy number variation (CNV) estimated using the GISTIC2 method."
+        },
+        {
+            "source" : "ucsc",
+            "type" : "cnv",
+            "collection" : "laml_cnv_ucsc_gistic2thd",
+            "RawDataUrl": "http://gdac.broadinstitute.org/runs/analyses__2014_10_17/data/LAML/20141017/",
+            "sampleSize": 191,
+            "wrangler": "cgData TCGAscript CopyNumber_Gistic2 processed on 2015-01-27", 
+            "wranglingProcedure": "FIREHOSE data download from TCGA DCC, processed at UCSC into cgData repository",
+            "description": "TCGA acute myeloid leukemia (LAML) thresholded gene-level copy number variation (CNV) estimated using the GISTIC2 method."
+        }, 
+        {
+            "source" : "ucsc",
+            "type" : "mut",
+            "collection" : "laml_mut_ucsc_mutation",
+            "RawDataUrl": "https://www.synapse.org/#!Synapse:syn1729383",
+            "sampleSize": 196,
+            "wrangler": "cgData TCGAscript mutationMatrix processed on 2015-01-28", 
+            "wranglingProcedure": "TCGA PANCAN strictly filtered maf files (file names: *_cleaned_filtered.maf) download from Synapse, processed into gene by sample matrix at UCSC into cgData repository",
+            "description": "TCGA acute myeloid leukemia (LAML) somatic mutation data. Red (=1) indicates that a non-silent somatic mutation (nonsense, missense, frame-shif indels, splice site mutations, stop codon readthroughs) was identified in the protein coding region of a gene, or any mutation identified in a non-coding gene. White (=0) indicates that none of the above mutation calls were made in this gene for the specific sample."
+        }, 
+        {
+            "source" : "ucsc",
+            "type" : "mut01",
+            "collection" : "laml_mut01_ucsc_mutation",
+            "RawDataUrl": "https://www.synapse.org/#!Synapse:syn1729383",
+            "sampleSize": 196,
+            "wrangler": "cgData TCGAscript mutationMatrix processed on 2015-01-28", 
+            "wranglingProcedure": "TCGA PANCAN strictly filtered maf files (file names: *_cleaned_filtered.maf) download from Synapse, processed into gene by sample matrix at UCSC into cgData repository",
+            "description": "TCGA acute myeloid leukemia (LAML) somatic mutation data. Red (=1) indicates that a non-silent somatic mutation (nonsense, missense, frame-shif indels, splice site mutations, stop codon readthroughs) was identified in the protein coding region of a gene, or any mutation identified in a non-coding gene. White (=0) indicates that none of the above mutation calls were made in this gene for the specific sample."
+        },
+        {
+            "source" : "ucsc",
+            "type" : "cnv",
+            "collection" : "sarc_cnv_ucsc_gistic2thd",
+            "RawDataUrl": " http://gdac.broadinstitute.org/runs/analyses__2014_10_17/data/SARC/20141017/",
+            "sampleSize": 257,
+            "wrangler": "   cgData TCGAscript CopyNumber_Gistic2 processed on 2015-01-27", 
+            "wranglingProcedure": "FIREHOSE data download from TCGA DCC, processed at UCSC into cgData repository",
+            "description": "TCGA sarcoma (SARC) thresholded gene-level copy number variation (CNV) estimated using the GISTIC2 method."
+        },
+        {
+            "source" : "ucsc",
+            "type" : "mut",
+            "collection" : "stad_mut_ucsc_mutationbcmgene",
+            "RawDataUrl": " https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/stad/gsc/hgsc.bcm.edu/illuminaga_dnaseq_automated/mutations/",
+            "sampleSize": 379,
+            "wrangler": "cgData TCGAscript maf processed on 2015-01-27", 
+            "wranglingProcedure": "Download .maf file from TCGA DCC, processed into gene by sample matrix at UCSC, stored in the UCSC Xena repository",
+            "description": "TCGA stomach adenocarcinoma (STAD) somatic mutation data. Sequencing data are generated on a IlluminaGA system. The calls are generated at Baylor College of Medicine Human Genome Sequencing Center using the Baylor pipeline method. "
+        }, 
+        {
+            "source" : "ucsc",
+            "type" : "mut01",
+            "collection" : "stad_mut01_ucsc_mutationbcmgene",
+            "RawDataUrl": " https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/stad/gsc/hgsc.bcm.edu/illuminaga_dnaseq_automated/mutations/",
+            "sampleSize": 379,
+            "wrangler": "cgData TCGAscript maf processed on 2015-01-27", 
+            "wranglingProcedure": "Download .maf file from TCGA DCC, processed into gene by sample matrix at UCSC, stored in the UCSC Xena repository",
+            "description": "TCGA stomach adenocarcinoma (STAD) somatic mutation data. Sequencing data are generated on a IlluminaGA system. The calls are generated at Baylor College of Medicine Human Genome Sequencing Center using the Baylor pipeline method. "
+        },
+        {
+            "source" : "ucsc",
+            "type" : "cnv",
+            "collection" : "brain_cnv_ucsc_gistic",
+            "RawDataUrl": "",
+            "sampleSize": 1090,
+            "wrangler": "", 
+            "wranglingProcedure": "",
+            "description": ""
+        }, 
+        {
+            "source" : "ucsc",
+            "type" : "mut01",
+            "collection" : "brain_mut01_ucsc_import",
+            "RawDataUrl": "",
+            "sampleSize": 818,
+            "wrangler": "", 
+            "wranglingProcedure": "",
+            "description": ""
+        }
+]
