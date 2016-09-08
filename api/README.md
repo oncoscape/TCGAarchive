@@ -16,7 +16,7 @@
 	var availableCollectionTags = [];
 	
 	co(function *() {
-	  db = yield comongo.client.connect('mongodb://oncoscapeRead:i1f4d9botHD4xnZ@oncoscape-dev-db1.sttrcancer.io:27017,oncoscape-dev-db2.sttrcancer.io:27017,oncoscape-dev-db3.sttrcancer.io:27017/pancan12?authSource=admin&replicaSet=rs0');
+	  db = yield comongo.client.connect('mongodb://username:password@oncoscape-dev-db1.sttrcancer.io:27017,oncoscape-dev-db2.sttrcancer.io:27017,oncoscape-dev-db3.sttrcancer.io:27017/pancan12?authSource=admin&replicaSet=rs0');
 	  collections = yield comongo.db.collections(db);
 	  disease_tables = yield collection.find({},{"disease":true,"clinical":true}).toArray();
 	  disease_tables.forEach(function(c){
