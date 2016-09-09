@@ -3,6 +3,11 @@
 
 ### HTTP Request
 
+Collections are accessable at the host: http://dev.oncoscape.sttrcancer.io/api/
+
+The endpoint of oncoscape API is a unique URL. Every endpoint points to a unique collection.
+Below lists more details of the organization of the Oncoscape Mongo Database and the collections organized by disease type.
+
 `GET http://dev.oncoscape.sttrcancer.io/api/gbm_patient_tcga_clinical/`
 
 

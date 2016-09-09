@@ -33,6 +33,52 @@ jsonfile.readFile("ucsc_mol_annotation.json", function(err, obj) {
   ucsc_annotation = obj;
 });
 
+
+var cbio_o = [];
+jsonfile.readFile("cbio_mol_annotation.json", function(err, obj){ cbio_o = obj;});
+var mol_annot = [];
+var mol_annotation = ucsc_annotation.concat(cbio_o);
+mol_annot = mol_annotation.map(function(m){
+  var e = {};
+  if('source' in m){
+    e.source = m.source;
+    e.type = m.type;
+    e.collection = m.collection;
+    e.sampleSize = m.sampleSize;
+    if('wrangler' in m){
+      e.wrangler = m.wrangler;
+    }else{
+      e.wrangler = "";
+    }
+    if('wranglingProcedure' in m){
+      e.wranglingProcedure = m.wranglingProcedure;
+    }else{
+      e.wranglingProcedure = "";
+    }
+    if('description' in m){
+      e.description = m.description;
+    }else{
+      e.description = m.DESCRIPTION;
+    }
+    if('GENETIC_ALTERATION_TYPE' in m){
+      e.geneticAlterationType = m.GENETIC_ALTERATION_TYPE;
+    }else{
+      e.geneticAlterationType = "";
+    }
+    if('DATATYPE' in m){
+      e.datatype = m.DATATYPE;
+    }else{
+      e.datatype = "";
+    }
+    return e;
+  }
+});
+var mol_annot_fn = [];
+mol_annot.forEach(function(m){
+  if(typeof(m) !== undefined){
+    mol_annot_fn.push(m);
+  }
+});
 var comongo = require('co-mongodb');
 var co = require('co');
 var disease_tables = [];
@@ -220,6 +266,9 @@ co(function *() {
   // var ind = 0;
   format.h2("Example to access one collection from browser");
   format.h3("HTTP Request");
+  format.text("Collections are accessable at the host: http://dev.oncoscape.sttrcancer.io/api/");
+  format.text("The endpoint of oncoscape API is a unique URL. Every endpoint points to a unique collection.");
+  format.table("Below lists more details of the organization of the Oncoscape Mongo Database and the collections organized by disease type.");
   format.url("GET http://dev.oncoscape.sttrcancer.io/api/gbm_patient_tcga_clinical/");
   format.codeComment("Here we only show the first record in gbm_patient_tcga_clinical");
   format.codeStart();
