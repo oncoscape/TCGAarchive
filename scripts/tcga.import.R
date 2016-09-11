@@ -46,16 +46,15 @@ get.processed.mtx <- function(mtx, dimension){
 ### Load Annotation
 os.data.load.annotation <- function(oCollection, inputFile){
   
-    mtx<- read.delim(inputFile, header=F) 
+    mtx<- read.delim(inputFile, header=T) 
 
-    mtx.Data<- get.processed.mtx(mtx, dimension= c("row", "col"))
-    mtx <- mtx.Data$data; 
-    dimnames(mtx) <- list(mtx.Data$rownames, mtx.Data$colnames)
+#    mtx.Data<- get.processed.mtx(mtx, dimension= c( "col"))
+#    mtx <- mtx.Data$data; 
+#    dimnames(mtx) <- list(mtx.Data$rownames, mtx.Data$colnames)
 
     insert.collection(oCollection, mtx)
     
 }
-
 
 # -------------------------------------------------------
 ### Load Function Takes An Import File + Column List & Returns A DataFrame
@@ -68,6 +67,26 @@ os.data.load.molecular <- function(oCollection, inputFile){
     if(all(grepl("^TCGA", rownames(mtx)))) { mtx <- t(mtx)}
     #colType <- "patient"; rowType <- "gene"
 
+  } else if(grepl("\\.maf$",inputFile)){
+    maf<- read.delim(inputFile, header=T)
+    nonsyn.mtx <- subset(maf, Variant_Classification != "Silent")
+    nonsyn.mtx[,"Tumor_Sample_Barcode"] <- gsub("\\w-\\w{3}-\\w{4}-\\w{2}$","",nonsyn.mtx[,"Tumor_Sample_Barcode"])
+    
+    genes.unique <- unique(nonsyn.mtx[,"Hugo_Symbol"])
+    pts.unique <- unique(nonsyn.mtx[,"Tumor_Sample_Barcode"])
+    
+    mtx <- matrix("", nrow=length(genes.unique), ncol=length(pts.unique),
+                  dimnames=list(genes.unique, pts.unique))
+    for(i in 1:nrow(nonsyn.mtx)){
+      gene = nonsyn.mtx[i,"Hugo_Symbol"];
+      pt <- nonsyn.mtx[i,"Tumor_Sample_Barcode"]
+      p.Change = nonsyn.mtx[i,"Protein_Change"]
+      if(mtx[gene,pt] == "") mtx[gene,pt] = p.Change
+      else mtx[gene,pt] = paste(mtx[gene,pt], p.Change, sep=";")
+    }
+    
+    
+    
   } else{ 
     mtx<- read.delim(inputFile, header=F) 
     #orient mtx so row: gene, col: patient/sample
@@ -108,7 +127,7 @@ os.data.load.clinical.events <- function(oCollection, inputFile){
     
     event.list <- lapply(origList, function(event){
       patientID <- gsub("\\.", "-", event$PatientID);  
-      if(!grepl("\\-\\d\\d$",patientID)){
+      if(!any(grepl("\\-\\d\\d$",patientID))){
         patientID <- paste(patientID, "01", sep="-")
       } 
       name <- event$Name
@@ -138,7 +157,8 @@ os.data.load.clinical.events <- function(oCollection, inputFile){
         eventList[[id]] <- list(event)
       }
     }
-      return(list(eventList))
+    insert.collection(oCollection, list(eventList))
+    #  return(list(eventList))
   }
   else{ print("WARNING: do not know how to translate event list yet")}
   
@@ -228,10 +248,10 @@ os.data.load.clinical <- function(oCollection, inputFile, checkEnumerations=FALS
 #  return(list("mapped"=mappedTable, "unmapped" = unMappedData, "cde"=cbind(tcga_columns,columns,cde_ids, column_type)))
 }
 #---------------------------------------------------------
-os.data.load.genome <- function(oCollection, inputFile = inputFile){
+os.data.load.json <- function(oCollection, inputFile = inputFile){
   
-  genesets<- fromJSON(inputFile) 
-  insert.collection(oCollection, genesets)
+  oJson<- fromJSON(inputFile, simplifyVector = F) 
+  insert.collection(oCollection, oJson)
   
 }
 #---------------------------------------------------------
@@ -262,8 +282,11 @@ os.data.batch <- function(manifest, ...){
                                       source=sourceObj$source,processName=sourceObj$process,
                                       parent = sourceObj$parent, process = process)
     
+    prev.run <- collection.exists(oCollection$collection)
+    if(prev.run) next;
+    
     if(dataType %in% names(lookupList))
-      lookupList[[dataType]][["data.load"]](oCollection, inputFile)
+      do.call(lookupList[[dataType]][["data.load"]], list(oCollection, inputFile))
     else
          print(paste("WARNING: data type not recognized for loading:", dataType))
 
@@ -286,7 +309,7 @@ get.category.data<- function(name, table, cat.col.name, color.col.name= "color")
     data <- list(	name=cat.name, color=color)
     data$values = gsub("\\.", "\\-", rownames(table)[matches])
 
-    if(!grepl("\\-\\d\\d$",data$values)){
+    if(!any(grepl("\\-\\d\\d$",data$values))){
       data$values <- paste(data$values, "01", sep="-")
     }
     
@@ -406,8 +429,8 @@ if("lookup" %in% commands){
 	lookup_tools <- fromJSON("../manifests/os.lookup_tools.json", simplifyVector = F)
 	insert.collection.separate("lookup_oncoscape_tools", lookup_tools)
 
-	ImmuneTree <- fromJSON("../data/categories/biomarkerTree.json", simplifyVector = F)
-	insert.collection.separate("biomarker_immune_tree", list(ImmuneTree))
+#	ImmuneTree <- fromJSON("../data/categories/biomarkerTree.json", simplifyVector = F)
+#	insert.collection.separate("biomarker_immune_tree", list(ImmuneTree))
 }
 
 if("sample" %in% commands){
@@ -415,4 +438,4 @@ if("sample" %in% commands){
   os.batch.map.samples()
 }
 
-close.mongo(mongo)
+close.mongo()
