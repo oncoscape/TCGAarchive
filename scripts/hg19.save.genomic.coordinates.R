@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 
 # Configuration -----------------------------------------------------------
 rm(list = ls(all = TRUE))
@@ -11,33 +10,7 @@ cytoband_url <- "http://hgdownload.cse.ucsc.edu/goldenPath/hg38/database/cytoBan
 chromosomes <- c(seq(1:22), "X", "Y")
 date <- as.character(Sys.Date())
 scaleFactor <- 100000
-=======
-library(org.Hs.eg.db)
-library(jsonlite)
 
-#--------------------------------- make plot data -----------------------------#
-directory <- "../molecular_data/hg19"
-chr_file <- "chromosome_lengths_hg19"
-gene_file <- "gene_symbol_min_abs_start_hg19"
-cent_file <- "centromere_position_hg19"
-cytoband_url <- "http://hgdownload.cse.ucsc.edu/goldenPath/hg38/database/cytoBand.txt.gz"
-
-chromosomes <- c(seq(1:22), "X", "Y")
-
-#----------------------------------------------------------------------------------------------------
-save.json <- function(dataObj, directory, file)
-{
-  if(!dir.exists(directory))
-    dir.create(file.path(directory), recursive=TRUE)
-  
-  if(!grepl("/$", directory)) directory <- paste(directory, "/", sep="")
- 
-  outFile = paste(directory, file, sep="")
-  write(toJSON(dataObj, pretty=TRUE, digits=I(8)), file=paste(outFile,".json", sep = "") )
-  
-} # saveGraph
-
->>>>>>> develop
 
 #----------------------------------------------------------------------------------------------------
 getChromosomeLengths <- function(){
@@ -81,31 +54,22 @@ getGenePositions_Symbol <- function(){
 }
 
 #----------------------------------------------------------------------------------------------------
-<<<<<<< HEAD
+
 saveChromosome_Coordinates <- function(){
 
 	chrLengths <- getChromosomeLengths()
-	df<-data.frame(t(chrLengths))
-	names(df) <- names(chrLengths)
 
-	result = list(dataset="hg19", type="chromosome", process="length", data=df)
+	chrLength.list<-as.list(chrLengths)
+	names(chrLength.list) <- names(chrLengths)
 	
-	save.collection(mongo,db, dataset="hg19", dataType="chromosome", source="orgHs",
-	                result=list(result),parent=NA, process=list(type="length", scale=NA),processName="length")
+		result = list(dataset="hg19", type="chromosome", process="length", data=chrLength.list)
+
+	oCollection <- create.oCollection(dataset="hg19", dataType="chromosome", source="orgHs", processName="length",parent=NA, process=list(type="length", scale=NA))
+	insert.collection(oCollection, list(result) )
+	
 }	
 #----------------------------------------------------------------------------------------------------
 saveGene_Coordinates <- function(){
-=======
-saveChromosome_Coordinates <- function(out_file){
-	
-	chrLengths <- getChromosomeLengths()
-	df<-data.frame(t(chrLengths))
-	names(df) <- names(chrLengths)
-	save.json(df, directory, file=out_file)
-}	
-#----------------------------------------------------------------------------------------------------
-saveGene_Coordinates <- function(out_file){
->>>>>>> develop
 
 	genePos <- getGenePositions_Symbol()
 		# list of all start locations for each gene symbol
@@ -124,25 +88,17 @@ saveGene_Coordinates <- function(out_file){
 	genePos_min[notMapped] <- NULL
 		# removes gene positions that map to chromosomes outside our list (ie 1-22, X, Y)
 
-<<<<<<< HEAD
 	process = list(type=c("position", "min", "abs", "start"))
 	processName = paste(unlist(process), collapse="-")
 	process$scale = NA
 	result = list(dataset="hg19", type="genes", process=process, data=genePos_min)
-	
-	save.collection(mongo,db, dataset="hg19", dataType="genes", source="orgHs",
-	                result=list(result),parent=NA, process=process,processName=processName)
+
+	oCollection <- create.oCollection(dataset="hg19", dataType="genes", source="orgHs", processName=processName,parent=NA, process=process)
+	insert.collection(oCollection, list(result) )
 	
 }
 #----------------------------------------------------------------------------------------------------
 saveCentromere_Coordinates <- function(cytoband_url){
-=======
-	save.json(genePos_min, directory, out_file)
-
-}
-#----------------------------------------------------------------------------------------------------
-saveCentromere_Coordinates <- function(cytoband_url, out_file){
->>>>>>> develop
 	
 	temp <- tempfile()
 	download.file(cytoband_url,temp)
@@ -161,14 +117,12 @@ saveCentromere_Coordinates <- function(cytoband_url, out_file){
 		chr_p_end
 	})
 	
-	df<-data.frame(t(centromere))
+	df<-as.list(centromere)
 	names(df) <- names(centromere)
 	
-<<<<<<< HEAD
 	result = list(dataset="hg19", type="centromere", process="position", data=df)
-	
-	save.collection(mongo,db, dataset="hg19", dataType="centromere", source="orgHs",
-	                result=list(result),parent=NA, process=list(type="position", scale=NA),processName="position")
+	oCollection <- create.oCollection(dataset="hg19", dataType="centromere", source="orgHs", processName="position",parent=NA, process=list(type="position", scale=NA))
+	insert.collection(oCollection, list(result) )
 	
 }
 
@@ -200,7 +154,7 @@ getChromosomePositions <- function(chromosomes, chrCoordinates){
   
   chrPos <- lapply(chromosomes, function(chr){
     offset = chrCoordinates[chr,"yOffset"]
-    data.frame(x=chrCoordinates[chr, "xOffset"], p=offset, c=offset+chrCoordinates[chr,"centromere"], q=offset+chrCoordinates[chr,"length"])
+    list(x=chrCoordinates[chr, "xOffset"], p=offset, c=offset+chrCoordinates[chr,"centromere"], q=offset+chrCoordinates[chr,"length"])
   })
   names(chrPos) <- chromosomes
   return(chrPos)
@@ -213,13 +167,14 @@ getChromosomePositions <- function(chromosomes, chrCoordinates){
 run.scale.chr.genes <- function(scaleFactor=10000){
   
   # define data objects
-  chrLenObj <- mongo.find.all(mongo, paste(db, "manifest",sep="."), list(dataset="hg19", dataType="chromosome", process=list(type="length", scale=NA)))[[1]]
-  genePosObj  <- mongo.find.all(mongo, paste(db, "manifest",sep="."), list(dataset="hg19", dataType="genes", process=list(type=c("position", "min", "abs", "start"), scale=NA)))[[1]]
-  centPosObj  <- mongo.find.all(mongo, paste(db, "manifest",sep="."), list(dataset="hg19", dataType="centromere",process=list(type="position", scale=NA)))[[1]]
   
-  chrLengths <- mongo.find.all(mongo, paste(db,chrLenObj$collection, sep="."), list())[[1]]
-  pLength    <- mongo.find.all(mongo, paste(db,centPosObj$collection, sep="."), list())[[1]]
-  genePos    <- mongo.find.all(mongo, paste(db,genePosObj$collection, sep="."), list())[[1]]
+  chrLenObj  <- mongo.manifest$find(toJSON(list(dataset="hg19", dataType="chromosome", process=list(type="length", scale=NA)),auto_unbox=T), '{}')
+  genePosObj <- mongo.manifest$find(toJSON(list(dataset="hg19", dataType="genes", process=list(type=c("position", "min", "abs", "start"), scale=NA)),auto_unbox=T), '{}')
+  centPosObj <- mongo.manifest$find(toJSON(list(dataset="hg19", dataType="centromere",process=list(type="position", scale=NA)),auto_unbox=T), '{}')
+  
+  chrLengths <- mongo(chrLenObj$collection, db=db, url=host)$find()
+  pLength    <- mongo(centPosObj$collection, db=db, url=host)$find()
+  genePos    <- mongo(genePosObj$collection, db=db, url=host)$find()
   
   chromosomes <- c(seq(1:22), "X", "Y")
   
@@ -233,18 +188,18 @@ run.scale.chr.genes <- function(scaleFactor=10000){
   ## Chr Positions
   parent <- list(chrLenObj$`_id`, centPosObj$`_id`)
   result <- list(type="chromosome", scale=scaleFactor, data=chrPos)
-  save.collection(mongo,db, dataset=chrLenObj$dataset, dataType=chrLenObj$dataType,source=chrLenObj$source, result=list(result),
-                              parent=parent, process=process,processName=processName)
+
+  oCollection <- create.oCollection(chrLenObj$dataset, dataType=chrLenObj$dataType, source=chrLenObj$source, processName=processName,parent=parent, process=process)
+  insert.collection(oCollection, list(result) )
+  
   ## Gene Positions
   parent <- list(genePosObj$`_id`, chrLenObj$`_id`)
-  result <- list(type="geneset", scale=scaleFactor, data=genePos_scaled)
-  save.collection(mongo,db, dataset=genePosObj$dataset, dataType=genePosObj$dataType,source=genePosObj$source, result=list(result),
-                              parent=parent, process=process,processName=processName)
+  result <- list(type="genes", scale=scaleFactor, data=genePos_scaled)
+
+  oCollection <- create.oCollection(genePosObj$dataset, dataType=genePosObj$dataType, source=genePosObj$source, processName=processName,parent=parent, process=process)
+  insert.collection(oCollection, list(result) )
   
 }	
-
-
-
 
 
 #----------------------------------------------------------------------------------------------------
@@ -259,16 +214,4 @@ saveCentromere_Coordinates(cytoband_url)
 	
 run.scale.chr.genes(scaleFactor)
 	
-close.mongo(mongo)
-
-=======
-	save.json(df, directory, out_file)
-}
-#----------------------------------------------------------------------------------------------------
-
-	saveChromosome_Coordinates(chr_file)
-	saveGene_Coordinates(gene_file)
-	saveCentromere_Coordinates(cytoband_url, cent_file)	
-	
->>>>>>> develop
-	
+close.mongo()
