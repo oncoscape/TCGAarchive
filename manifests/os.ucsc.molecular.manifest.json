@@ -29,7 +29,91 @@
 	"process": "flow",
 	"directory": "../data/demo/",
 	"file": "mtx.flow.demo.tsv"
+	},
+	{
+	"dataset": "acc",
+	"source": "ucsc",
+	"type": "rna",		
+	"process": "HiSeq",
+	"directory": "../data/UCSC/ACC/",
+	"file": "HiSeqV2"
 	},{
+	"dataset": "acc",
+	"source": "ucsc",
+	"type": "protein",		
+	"process": "RPPA",
+	"directory": "../data/UCSC/ACC/",
+	"file": "RPPA"
+	},
+	{
+	"dataset": "brca",
+	"source": "ucsc",
+	"type": "rna",		
+	"process": "HiSeq",
+	"directory": "../data/UCSC/BRCA/",
+	"file": "HiSeqV2"
+	},{
+	"dataset": "brca",
+	"source": "ucsc",
+	"type": "protein",		
+	"process": "RPPA",
+	"directory": "../data/UCSC/BRCA/",
+	"file": "RPPA"
+	},
+	{
+	"dataset": "coad",
+	"source": "ucsc",
+	"type": "rna",		
+	"process": "HiSeq",
+	"directory": "../data/UCSC/COAD/",
+	"file": "HiSeqV2"
+	},{
+	"dataset": "coad",
+	"source": "ucsc",
+	"type": "protein",		
+	"process": "RPPA",
+	"directory": "../data/UCSC/COAD/",
+	"file": "RPPA"
+	},
+	{
+	"dataset": "coadread",
+	"source": "ucsc",
+	"type": "rna",		
+	"process": "HiSeq",
+	"directory": "../data/UCSC/COADREAD/",
+	"file": "HiSeqV2"
+	},
+	{
+	"dataset": "gbm",
+	"source": "ucsc",
+	"type": "rna",		
+	"process": "HiSeq",
+	"directory": "../data/UCSC/GBM/",
+	"file": "HiSeqV2"
+	},{
+	"dataset": "gbm",
+	"source": "ucsc",
+	"type": "protein",		
+	"process": "RPPA",
+	"directory": "../data/UCSC/GBM/",
+	"file": "RPPA"
+	},
+	{
+	"dataset": "read",
+	"source": "ucsc",
+	"type": "rna",		
+	"process": "HiSeq",
+	"directory": "../data/UCSC/READ/",
+	"file": "HiSeqV2"
+	},{
+	"dataset": "read",
+	"source": "ucsc",
+	"type": "protein",		
+	"process": "RPPA",
+	"directory": "../data/UCSC/READ/",
+	"file": "RPPA"
+	},
+{
 	"dataset": "brain",
 	"source": "ucsc-PNAS",
 	"type": "cnv",		
@@ -346,149 +430,5 @@
 	"process": "RPPA",
 	"directory": "../data/UCSC/TCGA_SARC_RPPA-2015-02-24/",
 	"file": "genomicMatrix"
-	},
-	
-	{
-	"dataset": "acc",
-	"source": "ucsc",
-	"type": "cnv",		
-	"process": "gistic2thd",
-	"directory": "../data/UCSC/ACC/",
-	"file": "Gistic2_CopyNumber_Gistic2_all_thresholded.by_genes"
-	},
-	{
-	"dataset": "acc",
-	"source": "ucsc",
-	"type": "methylation",		
-	"process": "HM450",
-	"directory": "../data/UCSC/ACC/",
-	"file": "HumanMethylation450"
-	},
-	{
-	"dataset": "acc",
-	"source": "ucsc",
-	"type": "rna",		
-	"process": "HiSeq",
-	"directory": "../data/UCSC/ACC/",
-	"file": "HiSeqV2"
-	},{
-	"dataset": "acc",
-	"source": "ucsc",
-	"type": "protein",		
-	"process": "RPPA",
-	"directory": "../data/UCSC/ACC/",
-	"file": "RPPA"
-	},
-	{
-	"dataset": "brca",
-	"source": "ucsc",
-	"type": "methylation",		
-	"process": "HM450",
-	"directory": "../data/UCSC/BRCA/",
-	"file": "HumanMethylation450"
-	},
-	{
-	"dataset": "brca",
-	"source": "ucsc",
-	"type": "rna",		
-	"process": "HiSeq",
-	"directory": "../data/UCSC/BRCA/",
-	"file": "HiSeqV2"
-	},{
-	"dataset": "brca",
-	"source": "ucsc",
-	"type": "protein",		
-	"process": "RPPA",
-	"directory": "../data/UCSC/BRCA/",
-	"file": "RPPA"
-	},
-	{
-	"dataset": "coad",
-	"source": "ucsc",
-	"type": "methylation",		
-	"process": "HM450",
-	"directory": "../data/UCSC/COAD/",
-	"file": "HumanMethylation450"
-	},
-	{
-	"dataset": "coad",
-	"source": "ucsc",
-	"type": "rna",		
-	"process": "HiSeq",
-	"directory": "../data/UCSC/COAD/",
-	"file": "HiSeqV2"
-	},{
-	"dataset": "coad",
-	"source": "ucsc",
-	"type": "protein",		
-	"process": "RPPA",
-	"directory": "../data/UCSC/COAD/",
-	"file": "RPPA"
-	},
-	{
-	"dataset": "coadread",
-	"source": "ucsc",
-	"type": "methylation",		
-	"process": "HM450",
-	"directory": "../data/UCSC/COADREAD/",
-	"file": "HumanMethylation450"
-	},
-	{
-	"dataset": "coadread",
-	"source": "ucsc",
-	"type": "rna",		
-	"process": "HiSeq",
-	"directory": "../data/UCSC/COADREAD/",
-	"file": "HiSeqV2"
-	},
-	{
-	"dataset": "gbm",
-	"source": "ucsc",
-	"type": "methylation",		
-	"process": "HM450",
-	"directory": "../data/UCSC/GBM/",
-	"file": "HumanMethylation450"
-	},
-	{
-	"dataset": "gbm",
-	"source": "ucsc",
-	"type": "rna",		
-	"process": "HiSeq",
-	"directory": "../data/UCSC/GBM/",
-	"file": "HiSeqV2"
-	},{
-	"dataset": "gbm",
-	"source": "ucsc",
-	"type": "protein",		
-	"process": "RPPA",
-	"directory": "../data/UCSC/GBM/",
-	"file": "RPPA"
-	},
-	{
-	"dataset": "read",
-	"source": "ucsc",
-	"type": "methylation",		
-	"process": "HM450",
-	"directory": "../data/UCSC/READ/",
-	"file": "HumanMethylation450"
-	},
-	{
-	"dataset": "read",
-	"source": "ucsc",
-	"type": "rna",		
-	"process": "HiSeq",
-	"directory": "../data/UCSC/READ/",
-	"file": "HiSeqV2"
-	},{
-	"dataset": "read",
-	"source": "ucsc",
-	"type": "protein",		
-	"process": "RPPA",
-	"directory": "../data/UCSC/READ/",
-	"file": "RPPA"
 	}
-
-
-
-
 ]
