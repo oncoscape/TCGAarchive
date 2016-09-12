@@ -329,6 +329,17 @@ insert.lookup <- function(oCollection){
   }
 }
 #---------------------------------------------------------
+insert.document.geneset = function(con, result){
+  insert.pass <- sapply(rownames(result), function(genesetName){
+    status = con$insert(
+      toJSON( list( name=genesetName, genes=result[genesetName,])
+              , auto_unbox=T, na="null")); 
+    status$nInserted;
+  })
+  return (c(n.pass= sum(unlist(insert.pass)), n.records = nrow(result) ) )
+}
+
+#---------------------------------------------------------
 insert.document.molecular = function(con, result){
   insert.pass <- sapply(rownames(result), function(geneName){
     status = con$insert(
