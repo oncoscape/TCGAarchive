@@ -11,6 +11,13 @@ chromosomes <- c(seq(1:22), "X", "Y")
 
 db <- "tcga"
 host="mongodb://localhost"
+location = "dev"
+
+if(location == "dev"){
+	user="oncoscape"
+	password = Sys.getenv("dev_oncoscape_pw")
+	host<- paste("mongodb://",user,":",password,"@oncoscape-dev-db1.sttrcancer.io:27017,oncoscape-dev-db2.sttrcancer.io:27017,oncoscape-dev-db3.sttrcancer.io:27017", sep="")
+}
 
 dataset_map <- list(
   hg19=list(name="hg19", img= "", beta="", source=""),
@@ -255,7 +262,6 @@ insert.prep <- function(oCollection){
   
   return(TRUE)
 }
-
 #---------------------------------------------------------
 insert.lookup.sourceTypeCollection <- function(oCollection){
     lookupType = lookupList[[oCollection$dataType]]$type
@@ -311,8 +317,6 @@ insert.lookup <- function(oCollection){
   dataType = oCollection$dataType
   if(dataType %in% names(lookupList)){
     oLookup = do.call(lookupList[[dataType]][["insert.lookup"]],list(oCollection))
-    #oLookup = lapply(oLookup, )
-  
     ## insert lookup into mongo collection
     mongo.lookup$update(query, toJSON(oLookup, auto_unbox = T), upsert=T)
   
@@ -325,10 +329,21 @@ insert.lookup <- function(oCollection){
   }
 }
 #---------------------------------------------------------
-insert.document.molecular = function(con, result){
-  insert.pass <- sapply(rownames(result), function(geneName){
+insert.document.geneset = function(con, result){
+  insert.pass <- sapply(rownames(result), function(genesetName){
     status = con$insert(
-      toJSON( c(list(result$ids[geneName]), list( min=min(result$data[geneName,]), max=max(result$data[geneName,]), patients = as.list(result$data[geneName,])) )
+      toJSON( list( name=genesetName, genes=result[genesetName,])
+              , auto_unbox=T, na="null")); 
+    status$nInserted;
+  })
+  return (c(n.pass= sum(unlist(insert.pass)), n.records = nrow(result) ) )
+}
+
+#---------------------------------------------------------
+insert.document.molecular = function(con, result){
+  insert.pass <- sapply(rownames(result$data), function(geneName){
+    status = con$insert(
+      toJSON( c(result$ids[[geneName]], list( min=min(result$data[geneName,]), max=max(result$data[geneName,]), patients = as.list(result$data[geneName,])) )
               , auto_unbox=T, na="null")); 
     status$nInserted;
   })
@@ -405,9 +420,8 @@ insert.collection <- function(oCollection, result, insert.function, ...){
         ## insert each document into collection 
           insert.status = do.call(lookupList[[oCollection$dataType]][["insert.document"]], list(con,result))
         ## add document to manifest collection
-#          mongo.manifest$insert( toJSON(oCollection, auto_unbox = T))
           mongo.manifest$insert( oCollection)
-          #add record to lookup
+        #add record to lookup
           insert.lookup(oCollection)
           
       } else{
@@ -450,7 +464,7 @@ remove.lookup <- function(oCollection){
   query <- toJSON(list("disease"=oCollection$dataset), auto_unbox = T)
   lookup.doc = mongo.lookup$find(query)
   
-  lookupType = lookupList[[oCollection$dataType]]
+  lookupType = lookupList[[oCollection$dataType]][["type"]]
   
   collections <- lookup.doc[[lookupType]]
   

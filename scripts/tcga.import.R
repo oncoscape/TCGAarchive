@@ -104,8 +104,6 @@ os.data.load.molecular <- function(oCollection, inputFile){
       else mtx[gene,pt] = paste(mtx[gene,pt], p.Change, sep=";")
     }
     
-    
-    
   } else if(grepl("^GSE",inputFile)){
     #readLines: grep(^!, line); save metadata, tab separated key values
     #!Series_platform_id	"GPL570"
@@ -468,8 +466,9 @@ if("categories" %in% commands)
   os.data.load.categories( datasets=c( "brain", "brca"))
 
 if("molecular" %in% commands){
-  os.data.batch("../manifests/os.full.molecular.manifest.json")
-  os.data.batch("../manifests/os.firehose.molecular.manifest.json")
+  os.data.batch("../manifests/os.ucsc.molecular.manifest.json")
+#  os.data.batch("../manifests/os.full.molecular.manifest.json")
+#  os.data.batch("../manifests/os.firehose.molecular.manifest.json")
 }
 if("clinical" %in% commands) 
   os.data.batch("../manifests/os.tcga.full.clinical.manifest.json",

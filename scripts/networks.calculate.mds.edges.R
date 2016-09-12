@@ -181,7 +181,6 @@ save.pca<- function(oCollection, geneset=NA, scaleFactor=NA){
 	   oCollection.loadings = update.oCollection(oCollection.pca, dataType ="pcaLoadings")
 	   insert.collection(oCollection.loadings, list(result) )
 
-
      ## ----- Save Scaled Scores ------
      if(!is.na(scaleFactor)){
 	     chrDim <- get.chromosome.dimensions(scaleFactor) 
