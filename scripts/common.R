@@ -341,9 +341,9 @@ insert.document.geneset = function(con, result){
 
 #---------------------------------------------------------
 insert.document.molecular = function(con, result){
-  insert.pass <- sapply(rownames(result), function(geneName){
+  insert.pass <- sapply(rownames(result$data), function(geneName){
     status = con$insert(
-      toJSON( c(list(result$ids[geneName]), list( min=min(result$data[geneName,]), max=max(result$data[geneName,]), patients = as.list(result$data[geneName,])) )
+      toJSON( c(result$ids[[geneName]], list( min=min(result$data[geneName,]), max=max(result$data[geneName,]), patients = as.list(result$data[geneName,])) )
               , auto_unbox=T, na="null")); 
     status$nInserted;
   })

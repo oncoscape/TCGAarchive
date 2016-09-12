@@ -466,8 +466,9 @@ if("categories" %in% commands)
   os.data.load.categories( datasets=c( "brain", "brca"))
 
 if("molecular" %in% commands){
-  os.data.batch("../manifests/os.full.molecular.manifest.json")
-  os.data.batch("../manifests/os.firehose.molecular.manifest.json")
+  os.data.batch("../manifests/os.ucsc.molecular.manifest.json")
+#  os.data.batch("../manifests/os.full.molecular.manifest.json")
+#  os.data.batch("../manifests/os.firehose.molecular.manifest.json")
 }
 if("clinical" %in% commands) 
   os.data.batch("../manifests/os.tcga.full.clinical.manifest.json",
