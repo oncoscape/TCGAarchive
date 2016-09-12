@@ -274,7 +274,7 @@ save.mds.innerProduct <- function(oCollection.1, oCollection.2, geneset=NA, scal
 				sample_similarity <- sample_similarity[setdiff(rownames(sample_similarity), outliers), ]
 			}
 
-		  mds.list<- lapply(rownames(sample_similarity), function(name) data.frame(x=sample_similarity[name,"x"], y=sample_similarity[name, "y"]))
+		  mds.list<- lapply(rownames(sample_similarity), function(name) list(x=sample_similarity[name,"x"], y=sample_similarity[name, "y"]))
 		  names(mds.list) <- rownames(sample_similarity)
 
 		  result <- list(type="cluster", dataset=oCollection.1$dataset, name=outputName, scale=NA, data=mds.list)
