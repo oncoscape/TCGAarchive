@@ -1,0 +1,494 @@
+[
+	{
+		"dataset": "hg19",
+		"type": "genesets",
+		"process": "import",
+		"date": "2016-06-24",
+		"source": "hgnc",
+		"directory": "../data/hg19/",
+		"file": "hg19_genesets_hgnc.json"
+	},
+	{
+	"dataset": "hg19",
+	"source": "bradleyLab",
+	"type": "annotation",		
+	"process": "ExonJunctions",
+	"directory": "../data/Bradley/",
+	"file": "brca_annotation_table.txt"
+	},{
+	"dataset": "brca",
+	"source": "bradleyLab",
+	"type": "psi",		
+	"process": "miso",
+	"directory": "../data/Bradley/",
+	"file": "brca_psi_value_table.txt"
+	},{
+	"dataset": "lung",
+	"source": "demo",
+	"type": "facs",		
+	"process": "flow",
+	"directory": "../data/demo/",
+	"file": "mtx.flow.demo.tsv"
+	},{
+	"dataset": "brain",
+	"source": "ucsc-PNAS",
+	"type": "cnv",		
+	"process": "gistic",
+	"directory": "../data/UCSC/TCGA_BRAIN/validation",
+	"file": "HoBo.LGG.GBM.cnv.RData"
+	},{
+	"dataset": "brain",
+	"source": "ucsc-PNAS",
+	"type": "mut01",		
+	"process": "import",
+	"directory": "../data/UCSC/TCGA_BRAIN/validation",
+	"file": "HoBo.LGG.GBM.mut.RData"
+	},{
+	"dataset": "coadread",
+	"source": "ucsc",
+	"type": "cnv",
+	"process": "gistic2thd",
+	"date": "2015-02-24",
+	"directory": "../data/UCSC/",
+	"file": "TCGA_COADREAD_gistic2thd-2015-02-24/genomicMatrix"
+	},{
+	"dataset": "coadread",
+	"source": "ucsc",
+	"type": "mut01",
+	"process": "mutation",
+	"date": "2015-02-24",
+	"directory": "../data/UCSC/",
+	"file": "TCGA_COADREAD_mutation-2015-02-24/genomicMatrix"
+	},{
+	"dataset": "gbm",
+	"source": "ucsc",
+	"type": "cnv",
+	"process": "gistic2thd",
+	"date": "2015-02-24",
+	"directory": "../data/UCSC/",
+	"file": "TCGA_GBM_gistic2thd-2015-02-24/genomicMatrix"
+	},{
+	"dataset": "gbm",
+	"source": "ucsc",
+	"type": "mut01",
+	"process": "mutationBroadGene",
+	"date": "2015-02-24",
+	"directory": "../data/UCSC/",
+	"file": "TCGA_GBM_mutation_broad_gene-2015-02-24/genomicMatrix"
+	},{
+	"dataset": "hnsc",
+	"source": "ucsc",
+	"type": "cnv",
+	"process": "gistic2thd",
+	"date": "2015-02-24",
+	"directory": "../data/UCSC/",
+	"file": "TCGA_HNSC_gistic2thd-2015-02-24/genomicMatrix"
+	},{	
+	"dataset": "hnsc",
+	"source": "ucsc",
+	"type": "mut01",
+	"process": "mutationBroadGene",
+	"date": "2015-02-24",
+	"directory": "../data/UCSC/",
+	"file": "TCGA_HNSC_mutation_broad_gene-2015-02-24/genomicMatrix"
+	},{
+	"dataset": "lgg",
+	"source": "ucsc",
+	"type": "cnv",
+	"process": "gistic2thd",
+	"date": "2015-02-24",
+	"directory": "../data/UCSC/",
+	"file": "TCGA_LGG_gistic2thd-2015-02-24/genomicMatrix"
+	},{	
+	"dataset": "lgg",
+	"source": "ucsc",
+	"type": "mut01",
+	"process": "mutationBroadGene",
+	"date": "2015-02-24",
+	"directory": "../data/UCSC/",
+	"file": "TCGA_LGG_mutation_broad_gene-2015-02-24/genomicMatrix"
+	}, {
+	"dataset": "luad",
+	"source": "ucsc",
+	"type": "cnv",
+	"process": "gistic2thd",
+	"date": "2015-02-24",
+	"directory": "../data/UCSC/",
+	"file": "TCGA_LUAD_gistic2thd-2015-02-24/genomicMatrix"
+	},{
+	"dataset": "luad",
+	"source": "ucsc",
+	"type": "mut01",
+	"process": "mutationBroadGene",
+	"date": "2015-02-24",
+	"directory": "../data/UCSC/",
+	"file": "TCGA_LUAD_mutation_broad_gene-2015-02-24/genomicMatrix"
+	},{
+	"dataset": "lusc",
+	"source": "ucsc",
+	"type": "cnv",
+	"process": "gistic2thd",
+	"date": "2015-02-24",
+	"directory": "../data/UCSC/",
+	"file": "TCGA_LUSC_gistic2thd-2015-02-24/genomicMatrix"
+	},{
+	"dataset": "lusc",
+	"source": "ucsc",
+	"type": "mut01",
+	"process": "mutationBroadGene",
+	"date": "2015-02-24",
+	"directory": "../data/UCSC/",
+	"file": "TCGA_LUSC_mutation_broad_gene-2015-02-24/genomicMatrix"
+	},{
+	"dataset": "prad",
+	"source": "ucsc",
+	"type": "cnv",
+	"process": "gistic2thd",
+	"date": "2015-02-24",
+	"directory": "../data/UCSC/",
+	"file": "TCGA_PRAD_gistic2thd-2015-02-24/genomicMatrix"
+	},{	
+	"dataset": "prad",
+	"source": "ucsc",
+	"type": "mut01",
+	"process": "mutationBroadGene",
+	"date": "2015-02-24",
+	"directory": "../data/UCSC/",
+	"file": "TCGA_PRAD_mutation_broad_gene-2015-02-24/genomicMatrix"
+	}, {
+	"dataset": "paad",
+	"source": "ucsc",
+	"type": "cnv",
+	"process": "gistic2thd",
+	"date": "2015-02-24",
+	"directory": "../data/UCSC/",
+	"file": "TCGA_PAAD_gistic2thd-2015-02-24/genomicMatrix"
+	},{	
+	"dataset": "paad",
+	"source": "ucsc",
+	"type": "mut01",
+	"process": "mutationBroadGene",
+	"date": "2015-02-24",
+	"directory": "../data/UCSC/",
+	"file": "TCGA_PAAD_mutation_broad_gene-2015-02-24/genomicMatrix"
+	}, {
+	"dataset": "acc",
+	"source": "ucsc",
+	"type": "cnv",
+	"process": "gistic2thd",
+	"date": "2015-02-24",
+	"directory": "../data/UCSC/",
+	"file": "TCGA_ACC_gistic2thd-2015-02-24/genomicMatrix"
+	},{
+	"dataset": "blca",
+	"source": "ucsc",
+	"type": "cnv",
+	"process": "gistic2thd",
+	"date": "2015-02-24",
+	"directory": "../data/UCSC/",
+	"file": "TCGA_BLCA_gistic2thd-2015-02-24/genomicMatrix"
+	},{	
+	"dataset": "blca",
+	"source": "ucsc",
+	"type": "mut01",
+	"process": "mutationBroadGene",
+	"date": "2015-02-24",
+	"directory": "../data/UCSC/",
+	"file": "TCGA_BLCA_mutation_broad_gene-2015-02-24/genomicMatrix"
+	}, {
+	"dataset": "cesc",
+	"source": "ucsc",
+	"type": "cnv",
+	"process": "gistic2thd",
+	"date": "2015-02-24",
+	"directory": "../data/UCSC/",
+	"file": "TCGA_CESC_gistic2thd-2015-02-24/genomicMatrix"
+	},{
+	"dataset": "chol",
+	"source": "ucsc",
+	"type": "cnv",
+	"process": "gistic2thd",
+	"date": "2015-02-24",
+	"directory": "../data/UCSC/",
+	"file": "TCGA_CHOL_gistic2thd-2015-02-24/genomicMatrix"
+	},{
+	"dataset": "dlbc",
+	"source": "ucsc",
+	"type": "cnv",
+	"process": "gistic2thd",
+	"date": "2015-02-24",
+	"directory": "../data/UCSC/",
+	"file": "TCGA_DLBC_gistic2thd-2015-02-24/genomicMatrix"
+	},{
+	"dataset": "esca",
+	"source": "ucsc",
+	"type": "cnv",
+	"process": "gistic2thd",
+	"date": "2015-02-24",
+	"directory": "../data/UCSC/",
+	"file": "TCGA_ESCA_gistic2thd-2015-02-24/genomicMatrix"
+	},{
+	"dataset": "laml",
+	"source": "ucsc",
+	"type": "cnv",
+	"process": "gistic2thd",
+	"date": "2015-02-24",
+	"directory": "../data/UCSC/",
+	"file": "TCGA_LAML_gistic2thd-2015-02-24/genomicMatrix"
+	},{		
+	"dataset": "laml",
+	"source": "ucsc",
+	"type": "mut01",
+	"process": "mutation",
+	"date": "2015-02-24",
+	"directory": "../data/UCSC/",
+	"file": "TCGA_LAML_mutation-2015-02-24/genomicMatrix"
+	},{
+	"dataset": "lung",
+	"source": "ucsc",
+	"type": "cnv",
+	"process": "gistic2thd",
+	"date": "2015-02-24",
+	"directory": "../data/UCSC/",
+	"file": "TCGA_LUNG_gistic2thd-2015-02-24/genomicMatrix"
+	},{
+	"dataset": "lung",
+	"source": "ucsc",
+	"type": "mut01",
+	"process": "mutation",
+	"date": "2015-02-24",
+	"directory": "../data/UCSC/",
+	"file": "TCGA_LUNG_mutation-2015-02-24/genomicMatrix"
+	}, {
+	"dataset": "sarc",
+	"source": "ucsc",
+	"type": "cnv",
+	"process": "gistic2thd",
+	"date": "2015-02-24",
+	"directory": "../data/UCSC/",
+	"file": "TCGA_SARC_gistic2thd-2015-02-24/genomicMatrix"
+	},{
+	"dataset": "stad",
+	"source": "ucsc",
+	"type": "mut01",
+	"process": "mutationBcmGene",
+	"date": "2015-02-24",
+	"directory": "../data/UCSC/",
+	"file": "TCGA_STAD_mutation_bcm_gene-2015-02-24/genomicMatrix"
+	},
+	{
+	"dataset": "brain",
+	"source": "ucsc",
+	"type": "cnv",		
+	"process": "gistic",
+	"date": "2015-02-24",
+	"directory": "../data/UCSC/TCGA_BRAIN/",
+	"file": "mtx.ucsc.cnv.RData"
+	},{
+	"dataset": "brain",
+	"source": "ucsc",
+	"type": "mut01",		
+	"process": "import",
+	"date": "2015-02-24",
+	"directory": "../data/UCSC/TCGA_BRAIN/",
+	"file": "mtx.ucsc.mut01.RData"
+	},{	
+	"dataset": "gbm",
+	"type": "cnv",
+	"source": "ucsc",
+	"process": "gistic2thd",
+	"date": "2015-02-24",
+	"directory": "../data/UCSC/",
+	"file": "TCGA_GBM_gistic2thd-2015-02-24/genomicMatrix"
+ 	},{
+ 	"dataset": "gbm",
+	"source": "ucsc",
+	"type": "mut01",
+	"process": "mutationBroadGene",
+	"date": "2015-02-24",
+	"directory": "../data/UCSC/",
+	"file": "TCGA_GBM_mutation_broad_gene-2015-02-24/genomicMatrix"
+	},
+		{	"dataset": "brca",
+		"source": "ucsc",
+		"type": "cnv",		
+		"process": "gistic2thd",
+		"date": "2015-02-24",
+		"directory": "../data/UCSC/",
+		"file": "TCGA_BRCA_gistic2thd-2015-02-24/genomicMatrix"
+	},
+	{	"dataset": "brca",
+		"source": "ucsc",
+		"type": "mut01",		
+		"process": "mutationCuratedWustlGene",
+		"date": "2015-02-24",
+		"directory": "../data/UCSC/",
+		"file": "TCGA_BRCA_mutation_curated_wustl_gene-2015-02-24/genomicMatrix"
+	},
+{
+	"dataset": "sarc",
+	"source": "ucsc",
+	"type": "methylation",		
+	"process": "HM450",
+	"directory": "../data/UCSC/TCGA_SARC_hMethyl450-2015-02-24/",
+	"file": "genomicMatrix"
+	},{
+	"dataset": "sarc",
+	"source": "ucsc",
+	"type": "rna",		
+	"process": "HiSeq",
+	"directory": "../data/UCSC/TCGA_SARC_exp_HiSeqV2-2015-02-24/",
+	"file": "genomicMatrix"
+	},{
+	"dataset": "sarc",
+	"source": "ucsc",
+	"type": "protein",		
+	"process": "RPPA",
+	"directory": "../data/UCSC/TCGA_SARC_RPPA-2015-02-24/",
+	"file": "genomicMatrix"
+	},
+	
+	{
+	"dataset": "acc",
+	"source": "ucsc",
+	"type": "cnv",		
+	"process": "gistic2thd",
+	"directory": "../data/UCSC/ACC/",
+	"file": "Gistic2_CopyNumber_Gistic2_all_thresholded.by_genes"
+	},
+	{
+	"dataset": "acc",
+	"source": "ucsc",
+	"type": "methylation",		
+	"process": "HM450",
+	"directory": "../data/UCSC/ACC/",
+	"file": "HumanMethylation450"
+	},
+	{
+	"dataset": "acc",
+	"source": "ucsc",
+	"type": "rna",		
+	"process": "HiSeq",
+	"directory": "../data/UCSC/ACC/",
+	"file": "HiSeqV2"
+	},{
+	"dataset": "acc",
+	"source": "ucsc",
+	"type": "protein",		
+	"process": "RPPA",
+	"directory": "../data/UCSC/ACC/",
+	"file": "RPPA"
+	},
+	{
+	"dataset": "brca",
+	"source": "ucsc",
+	"type": "methylation",		
+	"process": "HM450",
+	"directory": "../data/UCSC/BRCA/",
+	"file": "HumanMethylation450"
+	},
+	{
+	"dataset": "brca",
+	"source": "ucsc",
+	"type": "rna",		
+	"process": "HiSeq",
+	"directory": "../data/UCSC/BRCA/",
+	"file": "HiSeqV2"
+	},{
+	"dataset": "brca",
+	"source": "ucsc",
+	"type": "protein",		
+	"process": "RPPA",
+	"directory": "../data/UCSC/BRCA/",
+	"file": "RPPA"
+	},
+	{
+	"dataset": "coad",
+	"source": "ucsc",
+	"type": "methylation",		
+	"process": "HM450",
+	"directory": "../data/UCSC/COAD/",
+	"file": "HumanMethylation450"
+	},
+	{
+	"dataset": "coad",
+	"source": "ucsc",
+	"type": "rna",		
+	"process": "HiSeq",
+	"directory": "../data/UCSC/COAD/",
+	"file": "HiSeqV2"
+	},{
+	"dataset": "coad",
+	"source": "ucsc",
+	"type": "protein",		
+	"process": "RPPA",
+	"directory": "../data/UCSC/COAD/",
+	"file": "RPPA"
+	},
+	{
+	"dataset": "coadread",
+	"source": "ucsc",
+	"type": "methylation",		
+	"process": "HM450",
+	"directory": "../data/UCSC/COADREAD/",
+	"file": "HumanMethylation450"
+	},
+	{
+	"dataset": "coadread",
+	"source": "ucsc",
+	"type": "rna",		
+	"process": "HiSeq",
+	"directory": "../data/UCSC/COADREAD/",
+	"file": "HiSeqV2"
+	},
+	{
+	"dataset": "gbm",
+	"source": "ucsc",
+	"type": "methylation",		
+	"process": "HM450",
+	"directory": "../data/UCSC/GBM/",
+	"file": "HumanMethylation450"
+	},
+	{
+	"dataset": "gbm",
+	"source": "ucsc",
+	"type": "rna",		
+	"process": "HiSeq",
+	"directory": "../data/UCSC/GBM/",
+	"file": "HiSeqV2"
+	},{
+	"dataset": "gbm",
+	"source": "ucsc",
+	"type": "protein",		
+	"process": "RPPA",
+	"directory": "../data/UCSC/GBM/",
+	"file": "RPPA"
+	},
+	{
+	"dataset": "read",
+	"source": "ucsc",
+	"type": "methylation",		
+	"process": "HM450",
+	"directory": "../data/UCSC/READ/",
+	"file": "HumanMethylation450"
+	},
+	{
+	"dataset": "read",
+	"source": "ucsc",
+	"type": "rna",		
+	"process": "HiSeq",
+	"directory": "../data/UCSC/READ/",
+	"file": "HiSeqV2"
+	},{
+	"dataset": "read",
+	"source": "ucsc",
+	"type": "protein",		
+	"process": "RPPA",
+	"directory": "../data/UCSC/READ/",
+	"file": "RPPA"
+	}
+
+
+
+
+]
