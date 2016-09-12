@@ -4,12 +4,13 @@ library(R.utils)
 library(stringr)
 library(plyr)
 library(jsonlite)
-library(rmongodb)
+library(mongolite)
 
 date <- as.character(Sys.Date())
 chromosomes <- c(seq(1:22), "X", "Y")
 
-db <- "tcga"
+db <- "test"
+host="mongodb://localhost"
 
 dataset_map <- list(
   brca=list(name="Breast", img= "DSbreast.png", beta=FALSE, source="TCGA"),
@@ -32,24 +33,13 @@ dataset_map <- list(
   laml=list(name="Acute Myeloid Leukemia", img= "DSdemo.png", beta=TRUE, source="TCGA"),
   sarc=list(name="Sarcoma", img= "DSsarcoma.png", beta=TRUE, source="TCGA"),
   stad=list(name="Stomach", img= "DSdemo.png", beta=TRUE, source="TCGA")
-
-
 )
 
-#---------------------------------------------------------
-connect.to.rmongodb <- function(host= "127.0.0.1", name = "", username = "", password = "", db = "admin"){
-	mongo <- mongo.create(host = host, name = name, username = username,
-  							password = password, db = db, timeout = 0L)
-	
-	stopifnot(mongo.is.connected(mongo))
-	return(mongo)
-}
-#---------------------------------------------------------
-connect.to.mongo <- connect.to.rmongodb
+
 
 #---------------------------------------------------------
 ## mongolite requires all insertions to be of type data.frame
-connect.to.mongolite <- function(){
+connect.to.mongo <- function(){
 #  mongo <- mongo(collection=collection, db=db, url=host)
   
   mongo.manifest <<- mongo(collection="manifest",db=db, url=host)
@@ -57,84 +47,15 @@ connect.to.mongolite <- function(){
   
 }
 #---------------------------------------------------------
-## RMongo v0.1.0 from github (only 0.0.25 deposited in CRAN) 
-## Minimal updates to code: not actively supported??
-## Has javascript versioning dependencies (mine:java version "1.6.0_65", and updated to "1.8.0_101-b13")
-## Error in .jnew("rmongo/RMongo", dbName, hosts, TRUE, username, pwd) : 
-##    java.lang.UnsupportedClassVersionError: rmongo/RMongo : Unsupported major.minor version 51.0
-## http://stackoverflow.com/questions/10382929/how-to-fix-java-lang-unsupportedclassversionerror-unsupported-major-minor-versi
-connect.to.rmongo <- function(db, host="127.0.0.1:27107"){
-  host="oncoscape-dev-db1.sttrcancer.io:27017"
-  mongo <- mongoDbReplicaSetConnectWithCredentials(db, hosts=host, username, pw)
-  
-  dbDisconnect(mongo)
-  
-}
-  
-#---------------------------------------------------------
-close.mongo <- function(mongo){
+## mongolite requires all insertions to be of type data.frame
+close.mongo <- function(){
 
-	if(mongo.is.connected(mongo) == TRUE) {
-	  # close connection
-	  mongo.destroy(mongo)
-	}
-}
-
-#---------------------------------------------------------
-mongo.collection.as.matrix <- function(collection, format=""){
-### NOT ACTUALLY IMPLEMENTED.  Would converting the list object from a cursor and adding it 
-### to a predefined object (with known size) reduce compute time and storage needs?
-  
-  cursor <- mongo.find(mongo, paste("oncoscape",collection, sep="."), query=list(), fields=list())
-  count <- mong.count(mongo, paste("oncoscape",collection, sep="."))
-  result_lst <- vector('list', count)
-  i <- 1
-  while (mongo.cursor.next(cursor)) {
-    result_lst[[i]] <- mongo.bson.to.list(mongo.cursor.value(cursor))
-    val <-geneRow$patients; 
-    null.val <- which(unlist(lapply(val, is.null)))
-    if(length(null.val)>0) val[null.val] <- NA
-    val <- unlist(val);
-    if(format == "as.numeric") val <- as.numeric(val)
-    
-    i <- i + 1
-  }
-  result_dt <- data.table::rbindlist(result_lst)
-
-  colnames(mtx) <- sapply(data.list, function(geneRow){ geneRow$gene})
-  rownames(mtx) <- names(data.list[[1]]$patients)
-  return(mtx)  
-}
-
-#---------------------------------------------------------
-convert.to.mtx <- function(data.list, format=""){
-  mtx <- sapply(data.list, function(geneRow){ 
-    val <-geneRow$patients; 
-    null.val <- which(unlist(lapply(val, is.null)))
-    if(length(null.val)>0) val[null.val] <- NA
-    val <- unlist(val);
-    if(format == "as.numeric") val <- as.numeric(val)
-    val})
-  colnames(mtx) <- sapply(data.list, function(geneRow){ geneRow$gene})
-  rownames(mtx) <- names(data.list[[1]]$patients)
-  return(mtx)  
-}
-
-#---------------------------------------------------------
-mapProcess <- function(process){
-  os.dataset.enumerations     <- fromJSON("../manifests/os.dataset.enumerations.json" )
-	processFound <-	sapply(os.dataset.enumerations$dataType, function(typeMap){ process %in% unlist(typeMap) })
-	numMatches <- length(which(processFound))
-	if(numMatches==1)
-		return (names(os.dataset.enumerations$dataType)[which(processFound)])
-
-	stop(printf("mapProcess found %d matches for process %s", numMatches, process))
-	return(NA)
+	rm(mongo.manifest)
+	rm(mongo.lookup)
 }
 #---------------------------------------------------------
 ### For any mutation file, create and save an indicator mut01 file
-save.mut01.from.mut <- function(mongo,db, dataset, dataType="mut01",source, result,
-                                parent, process,processName){
+save.mut01.from.mut <- function(oCollection, result){
   mut.list <- result
   
   data.list <- lapply(result, function(geneSet){
@@ -142,113 +63,273 @@ save.mut01.from.mut <- function(mongo,db, dataset, dataType="mut01",source, resu
     list(gene=geneSet$gene,min=min(unlist(patients)), max=max(unlist(patients)), patients = patients)
   })    
   
-  #parent <- parentID
-  
-  save.collection(mongo,db, dataset, dataType="mut01",source, result=data.list,
-                  parent, process,processName)
+  insert.document(oCollection, result = data.list)
 }
-
 #---------------------------------------------------------
-collection.exists <- function(mongo,db, dataset, dataType,source,processName){
+collection.exists <- function( collection.name){
 
-  source <- unique(source)
-  if(length(source)>1) source <- list(source)
-  sourceName <- paste(unlist(source), collapse="-")
-
-  collection.uniqueName <- paste(dataset, dataType, sourceName, processName, sep="_")
-  collection.uniqueName <- gsub("\\s+", "", tolower(collection.uniqueName))
-  collection.ns <- paste(db, collection.uniqueName, sep=".")
-  if(mongo.count(mongo, collection.ns) != 0){
-    print(paste(collection.uniqueName, " already exists.", sep=""))
+  con <- mongo(collection.name, db=db, url=host)
+  count <- con$count()
+  rm(con)
+  
+  if(count != 0){
+    print(paste(collection.name, " already exists.", sep=""))
     return(TRUE)
   }  
   return(FALSE)
 
 }
 #---------------------------------------------------------
-remove.collection.byName <- function(mongo,db, collection){
-
-  ##TO DO: rerun render_XXX collections?  eg drop an mds collection triggers rewrite of render_patient?
+create.oCollection <- function(dataset, dataType,source, processName, parent, process){
   
-  #remove collection data
-		mongo.drop(mongo,db, collection)
-  #remove manifest entry
-  		mongo.remove(mongo, paste(db, "manifest", sep="."), criteria=list(collection=collection))
+  newCollection <- list(dataset=dataset, dataType=dataType, date=date) 
+  newCollection$source <- source
+  newCollection$process <- process
+  newCollection$processName <- processName
+  newCollection$parent <- parent
 
-  # remove lookup_oncoscape_datasource entry
-		parseVals <- unlist(strsplit(collection,"_"))
-		dataset <- parseVals[1]
-		dataType = parseVals[2]
-		
-		if(dataType %in% c("patient", "drug", "radiation", "followUp-v1p0","followUp-v1p5", "followUp-v2p1", "followUp-v4p0", "newTumor", "newTumor-followUp-v4p0", "otherMalignancy-v4p0")){
-		  query <- list(disease=dataset,dataType=dataType)
-		  query[[dataType]] <- collection
-		  mongo.remove(mongo, paste(db, "lookup_oncoscape_datasources", sep="."), 
-		               query=query)
-		               
-		} else if(dataType %in% c("edges","ptDegree","geneDegree")){
-		  query <- list(disease=dataset,dataType=dataType)
-		  colType <- ifelse(dataType=="edges", "edges", ifelse(dataType=="ptDegree","patientWeights", "genesWeights"))
-		  query[[colType]] <- collection
-		  mongo.remove(mongo, paste(db, "lookup_oncoscape_datasources", sep="."), 
-		               query=query)
-		  
-		}
-		else{
-		  query=list(disease=dataset,dataType=dataType)
+  newCollection$collection <- collection.create.name(newCollection)
+  
+  return(newCollection)
+}
+#---------------------------------------------------------
+collection.create.name <- function( oCollection){
+  
+  source <- unique(oCollection$source)
+  if(length(source)>1) source <- list(source)
+  sourceName <- paste(unlist(source), collapse="-")
+  
+  collection.uniqueName <- paste(oCollection$dataset, oCollection$dataType, sourceName, oCollection$processName, sep="_")
+  collection.uniqueName <- gsub("\\s+", "", tolower(collection.uniqueName))
+  
+  return(collection.uniqueName)
+}
+#---------------------------------------------------------
+insert.prep <- function(oCollection){
+  #dataset, dataType,source, processName, parent, process
+  
+  prev.run <- collection.exists(oCollection$collection)
+  if(prev.run){ return(FALSE) }
+  
+   ## add document to manifest collection
+    mongo.manifest$insert( toJSON(oCollection, auto_unbox = T))
 
-      if(dataType %in% c("cnv","mut01", "mut", "rna", "protein", "methylation")){
-        query[["molecular"]] <- list(collection=collection) 
-		  }else if(dataType %in% c("mds", "pcaScores")){
-		    query[["calculated"]] <- list(collection=collection) 		               
-		  }else if(dataType %in% c("chromosome", "centromere", "genes")){
-		    query[["location"]] <- list(collection=collection) 		               
-	  	}else if(dataType %in% c("genesets", "color")){
-	  	  query[["category"]] <- list(collection=collection) 		}
-		  else{ print(paste("ERROR: datatype not recognized in lookup table- ", dataType, sep=""));
-		        return()
-		  }
-		  mongo.remove(mongo, paste(db, "lookup_oncoscape_datasources", sep="."), 
-		               query=query)
-		  
-		}
-
+   #add record to lookup
+    insert.lookup(oCollection)
+    
+  return(TRUE)
 }
 
 #---------------------------------------------------------
-save.indiv.collection<- function(mongo,db,name, indiv.collection){
+insert.lookup.sourceTypeCollection <- function(oCollection, data.list){
+  add.collection <- list(data.frame(source=oCollection$source, type=oCollection$dataType, collection=oCollection$collection))
+  if(lookupType %in% names(data.list)){
+    data.list$molecular <- c(data.list[[lookupType]], add.collection)
+  }else{data.list[[lookupType]] <- add.collection}
+  
+  return(data.list)
+} 
+#---------------------------------------------------------
+insert.lookup.clinical <- function(oCollection, data.list){
+  add.collection <- list()
+  add.collection[dataType] <- oCollection$collection
+  if("clinical" %in% names(data.list)){
+    data.list$clinical	<- c(data.list$clinical, add.collection)
+  } else {data.list$clinical <- add.collection }
+
+  return(data.list)
+}
+#---------------------------------------------------------
+insert.lookup.network <- function(oCollection, data.list){
+  ptweights   <- gsub("\\s+", "", tolower(paste(oCollection$dataset, "ptDegree", oCollection$source, oCollection$processName, sep="_")))
+  geneweights <- gsub("\\s+", "", tolower(paste(oCollection$dataset, "geneDegree", oCollection$source, oCollection$processName, sep="_")))
+  add.collection <- list(data.frame(name=oCollection$process$geneset,source=oCollection$source, edges=oCollection$collection, 
+                                    patientWeights=ptweights, 
+                                    genesWeights=geneweights))
+  if("edges" %in% names(data.list)){
+    data.list$edges	<- c(data.list$edges, add.collection)
+  } else {data.list$edges <- add.collection }
+  
+  return(data.list)
+}
+#---------------------------------------------------------
+insert.lookup <- function(oCollection){
+  
+  ## add record to lookup collection
+  query <- toJSON(list("disease"=oCollection$dataset), auto_unbox = T)
+  oLookup <- mongo.lookup$find(query)
+  
+  if(length(oLookup)==0){
+    oLookup <- list(disease = dataset, source = dataset_map[[dataset]]$source,beta = dataset_map[[dataset]]$beta)
+    oLookup$name = dataset_map[[dataset]]$name
+    oLookup$img = dataset_map[[dataset]]$img
+  }
+  
+  dataType = oCollection$dataType
+  if(dataType %in% names(lookupList)){
+    oLookup = do.call(lookupList[[dataType]][["insert.lookup"]],list(oCollection, oLookup))
+  
+    ## insert lookup into mongo collection
+    mongo.lookup$update(query, toJSON(oLookup, auto_unbox = T), upsert=T)
+  
+  }else{
+    if(dataType %in% c("ptDegree", "geneDegree")){
+      print(paste(dataType, "lookup info processed with edge creation", sep=" "))
+    }else{
+      print(paste("WARNING: data type not recognized:", dataType, sep=" "))
+    }
+  }
+}
+#---------------------------------------------------------
+insert.document.molecular = function(result){
+  insert.pass <- sapply(rownames(result), function(geneName){
+    status = con$insert(
+      toJSON( list(gene=geneName, min=min(result[geneName,]), max=max(result[geneName,]), patients = as.list(result[geneName,])) 
+              , auto_unbox=T)); 
+    status$nInserted;
+  })
+  return (c(n.pass= sum(unlist(insert.pass)), n.records = nrow(result) ) )
+}
+#---------------------------------------------------------
+insert.document.facs = function(result){
+  insert.pass <- sapply(colnames(result), function(ptName){
+    status = con$insert(
+      toJSON( list(patient=ptName, markers = result[,ptName])
+              , auto_unbox=T)); 
+    status$nInserted;
+  })
+  
+  return (c(n.pass= sum(unlist(insert.pass)), n.records = ncol(result) ) )
+}
+#---------------------------------------------------------
+insert.document.annotation = function(result){
+  insert.pass <- sapply(rownames(result), function(idName){
+    status = con$insert(
+      toJSON( list(id=idName, data = as.list(result[idName,]))
+              , auto_unbox=T)); 
+    status$nInserted;
+  })
+
+  return (c(n.pass= sum(unlist(insert.pass)), n.records = nrow(result) ) )
+}
+#---------------------------------------------------------
+insert.document.row = function(result){
+  insert.pass <- sapply(rownames(result), function(idName){
+    status = con$insert(
+      toJSON( result[idName,]
+              , auto_unbox=T)); 
+    status$nInserted;
+  })
+
+  return (c(n.pass= sum(unlist(insert.pass)), n.records = nrow(result) ) )
+}
+#---------------------------------------------------------
+insert.document.geneset = function(result){
+  insert.pass <- apply(result,1, function(row){
+    status = con$insert(
+      toJSON( list(name=row[["name"]],genes=row[["genes"]])
+              , auto_unbox=T)); 
+    status$nInserted;
+  })
+
+  return (c(n.pass= sum(unlist(insert.pass)), n.records = nrow(result) ) )
+}
+
+#---------------------------------------------------------
+insert.collection <- function(oCollection, result, insert.function, ...){
+  
+  ## insert new collection data
+      con <- mongo(oCollection$collection, db=db, url=host)
+
+      doc.pass <- insert.prep(oCollection)
+      if(!doc.pass){print("Skipping."); return()}
+      
+      if(oCollection$dataType %in% names(lookupList))
+        insert.status = do.call(lookupList[[oCollection$dataType]][["insert.document"]], list(result))
+      else{
+        print(paste("WARNING: data type not recognized for insert.collection:", dataType))
+        insert.pass =0; 
+        if(is.list(result)) numRecords=length(result)
+        else numRecords = nrow(result)
+      }
+      
+      rm(con)
+      if(insert.status$n.pass != insert.status$n.records){  
+        print(paste("ERROR: not all documents properly inserted in ", oCollection$collection, insert.status$n.pass, "of",insert.status$n.records))
+        remove.collection(oCollection);
+      }
+      ### --- FINISH insert into Mongo    
+      
+  if(oCollection$dataType == "mut"){
+    newID <-  mongo.manifest$find(query=toJSON(oCollection, auto_unbox = T), fields='{"_id":1}')
+    new.oCollection <- oCollection
+    new.oCollection$dataType = "mut01"
+    new.oCollection$parent = newID
+    save.mut01.from.mut(new.oCollection, result)
+  }
+  
+}
+#---------------------------------------------------------
+remove.collection <- function(oCollection){
+  
+  con <- mongo(oCollection$collection, db=db, url=host)
+  con$drop()
+  
+  mongo.manifest$remove(paste("{'collection':",oCollection$collection, "}"))
+  remove.lookup(oCollection)
+  
+  print(paste(oCollection$collection, "removed."))
+}
+#---------------------------------------------------------
+remove.lookup <- function(oCollection){
+  query <- toJSON(list("disease"=oCollection$dataset), auto_unbox = T)
+  lookup.doc = mongo.lookup$find(query)
+  
+  lookupType = lookupList[[oCollection$dataType]][["type"]]
+  
+  collections <- lookup.doc[[lookupType]]
+  
+  if(lookupType %in% c("molecular", "calculated", "location", "annotation", "category")){
+    matched.record = which(sapply(collections, function(el){el$collection == oCollection$collection}))
+    collections[[matched.record]]$collection = NULL 
+    lookup.doc[[lookupType]] = collections
+  }
+  ### TO DO:
+  # else if(dataType %in% c("edges")){
+  #}else if(dataType %in% c("patient", "drug", "radiation", "followUp-v1p0","followUp-v1p5","followUp-v2p0", "followUp-v2p1", "followUp-v4p0","followUp-v4p4","followUp-v4p8", "newTumor", "newTumor-followUp-v1p0", "newTumor-followUp-v4p0","newTumor-followUp-v4p4","newTumor-followUp-v4p8", "otherMalignancy-v4p0", "events")){
+  #}else if{}
+  
+  mongo.lookup$update(query, update=lookup.doc)
+}
+
+#---------------------------------------------------------
+insert.collection.separate<- function(name, indiv.collection){
 
   name <- tolower(name)
+  con <- mongo(name, db=db, url=host)
   
-  if(mongo.count(mongo, paste(db, name, sep=".")) != 0){
+  if(con$count() != 0){
     print(paste(name, " already exists. Skipping.", sep=""))
+	rm(con)
     return()
   }  
   
-  
   ## add collection to database
   lapply(indiv.collection, function(item){
-    mongo.insert(mongo, paste(db, name, sep="."), item)
+    con$insert(item)
   })
+  rm(con)
  
 }
 
 #---------------------------------------------------------
-save.collection<- function(mongo,db, dataset, dataType,source,result, parent, process,processName){
+save.collection<- function(dataset, dataType,source,result, parent, process,processName){
   
   cat("-save collection\n")
   
-  source <- unique(source)
-  if(length(source)>1) source <- list(source)
-  sourceName <- paste(unlist(source), collapse="-")
-  
-  collection.uniqueName <- paste(dataset, dataType, sourceName, processName, sep="_")
-  collection.uniqueName <- gsub("\\s+", "", tolower(collection.uniqueName))
-  collection.ns <- paste(db, collection.uniqueName, sep=".")
-  if(mongo.count(mongo, collection.ns) != 0){
-    print(paste(collection.uniqueName, " already exists. Skipping.", sep=""))
-    return()
-  }  
+  collection.uniqueName <-  collection.create.name(dataset, dataType,source, processName)
+  prev.run <- collection.exists(collection.uniqueName)
+  if(prev.run){ print("Skipping."); return(NA) }
   
   newCollection <- list(dataset=dataset, dataType=dataType, date=date) 
   newCollection$collection <- collection.uniqueName
@@ -257,29 +338,28 @@ save.collection<- function(mongo,db, dataset, dataType,source,result, parent, pr
   newCollection$parent <- parent
   
   ## add record to manifest collection
-  mongo.insert(mongo, paste(db, "manifest", sep="."), newCollection)
+  mongo.manifest$insert( toJSON(newCollection, auto_unbox = T))
   
   ## insert new collection data
-  pass <- lapply(result, function(el){mongo.insert(mongo, collection.ns, as.list(el))})
-  if(!all(unlist(pass))){
+  con <- mongo(collection.uniqueName, db=db, url=host)
+  pass <- lapply(result, function(el){ status = con$insert(toJSON(el, auto_unbox=T)); status$nInserted;})
+  if(sum(unlist(pass)) != length(result)){
     print(paste("ERROR: result not inserted into mongodb: ", collection.uniqueName, sep=""))
+	rm(con)
     return()
   }
   
-  newID <-  mongo.find.one(mongo, paste(db, "manifest", sep="."), 
-                           query=newCollection, fields=list("_id"))
   
   ## add record to lookup collection
-  lookup.ns <-  paste(db, "lookup_oncoscape_datasources", sep=".")
-  query <- list("disease"=dataset)
-  datasource <- mongo.find.one(mongo, lookup.ns, query)
+  query <- toJSON(list("disease"=dataset), auto_unbox = T)
+  datasource <- mongo.lookup$find(query)
   
   if(length(datasource)==0){
     data.list <- list(disease = dataset, source = dataset_map[[dataset]]$source,beta = dataset_map[[dataset]]$beta)
     data.list$name = dataset_map[[dataset]]$name
     data.list$img = dataset_map[[dataset]]$img
   }else{
-    data.list <- mongo.bson.to.list(datasource)
+    data.list <- datasource
   }
   
   if(dataType %in% c("cnv","mut01", "mut", "rna", "protein", "methylation", "facs", "psi")){
@@ -345,12 +425,39 @@ save.collection<- function(mongo,db, dataset, dataType,source,result, parent, pr
   }
   
   ## insert lookup into mongo collection
-  mongo.update(mongo, lookup.ns, query, data.list, mongo.update.upsert)
+  mongo.lookup$update(query, toJSON(data.list, auto_unbox = T), upsert=T)
   
-  if(dataType == "mut")
-    save.mut01.from.mut(mongo,db, dataset, dataType="mut01",source,result=result, parent=newID, process, processName)
+  if(dataType == "mut"){
+    newID <-  mongo.manifest$find(query=toJSON(newCollection, auto_unbox = T), fields='{"_id":1}')
+    save.mut01.from.mut(dataset, dataType="mut01",source,result=result, parent=newID, process, processName)
+  }
 }
 
+#---------------------------------------------------------
+convert.to.mtx <- function(data.list, format=""){
+  mtx <- sapply(data.list, function(geneRow){ 
+    val <-geneRow$patients; 
+    null.val <- which(unlist(lapply(val, is.null)))
+    if(length(null.val)>0) val[null.val] <- NA
+    val <- unlist(val);
+    if(format == "as.numeric") val <- as.numeric(val)
+    val})
+  colnames(mtx) <- sapply(data.list, function(geneRow){ geneRow$gene})
+  rownames(mtx) <- names(data.list[[1]]$patients)
+  return(mtx)  
+}
+
+#---------------------------------------------------------
+mapProcess <- function(process){
+  os.dataset.enumerations     <- fromJSON("../manifests/os.dataset.enumerations.json" )
+	processFound <-	sapply(os.dataset.enumerations$dataType, function(typeMap){ process %in% unlist(typeMap) })
+	numMatches <- length(which(processFound))
+	if(numMatches==1)
+		return (names(os.dataset.enumerations$dataType)[which(processFound)])
+
+	stop(printf("mapProcess found %d matches for process %s", numMatches, process))
+	return(NA)
+}
 #---------------------------------------------------------
 # Aggregate unmapped column names and classes into a single list  
 appendList <- function (x, val) 
@@ -449,3 +556,108 @@ save.batch.cluster.scaled.pos <- function(scaleFactor=100000){
     save.collection(mongo,db, dataset=collection$dataset, dataType=collection$dataType,source=collection$source, result=list(result),
                   parent=collection$parent, process=list(scale=scaleFactor),processName=collection$processName)
 }
+
+
+lookupList = list(
+  cnv=list(type="molecular",
+           data.load = "os.data.load.molecular",
+           insert.lookup = "insert.lookup.sourceTypeCollection",
+           insert.document = "insert.document.molecular" ),
+  mut=list(type="molecular",
+           data.load = "os.data.load.molecular",
+           insert.lookup = "insert.lookup.sourceTypeCollection",
+           insert.document = "insert.document.molecular" ),
+  mut01=list(type="molecular",
+             data.load = "os.data.load.molecular",
+             insert.lookup = "insert.lookup.sourceTypeCollection",
+             insert.document = "insert.document.molecular" ),
+  rna=list(type="molecular",
+           data.load = "os.data.load.molecular",
+           insert.lookup = "insert.lookup.sourceTypeCollection",
+           insert.document = "insert.document.molecular" ),
+  protein=list(type="molecular",
+               data.load = "os.data.load.molecular",
+               insert.lookup = "insert.lookup.sourceTypeCollection",
+               insert.document = "insert.document.molecular" ),
+  methylation=list(type="molecular",
+                   data.load = "os.data.load.molecular",
+                   insert.lookup = "insert.lookup.sourceTypeCollection",
+                   insert.document = "insert.document.molecular" ),
+  psi=list(type="molecular",
+           data.load = "os.data.load.molecular",
+           insert.lookup = "insert.lookup.sourceTypeCollection",
+           insert.document = "insert.document.molecular" ),
+  fac=list(type="molecular",
+           data.load = "os.data.load.molecular",
+           insert.lookup = "insert.lookup.sourceTypeCollection",
+           insert.document = "insert.document.facs" ),
+  mds=list(type="calculated",
+           data.load = "os.data.load.XXX",
+           insert.lookup = "insert.lookup.sourceTypeCollection",
+           insert.document = "insert.document.ptSimilarity" ),
+  pcaScores=list(type="calculated",
+                 data.load = "os.data.load.XXX",
+                 insert.lookup = "insert.lookup.sourceTypeCollection",
+                 insert.document = "insert.document.ptSimilarity" ),
+  chromosome=list(type="location",
+                  data.load = "os.data.load.XXX",
+                  insert.lookup = "insert.lookup.sourceTypeCollection",
+                  insert.document = "insert.document.location" ),
+  centromere=list(type="location",
+                  data.load = "os.data.load.XXX",
+                  insert.lookup = "insert.lookup.sourceTypeCollection",
+                  insert.document = "insert.document.location" ),
+  genes=list(type="location",
+             data.load = "os.data.load.XXX",
+             insert.lookup = "insert.lookup.sourceTypeCollection",
+             insert.document = "insert.document.location" ),
+  annotation=list(type="annotation",
+                  data.load = "os.data.load.annotation",
+                  insert.lookup = "insert.lookup.sourceTypeCollection",
+                  insert.document = "insert.document.row" ),
+  genesets=list(type="category",
+                data.load = "os.data.load.genome",
+                insert.lookup = "insert.lookup.sourceTypeCollection",
+                insert.document = "insert.document.genesets" ),
+  color=list(type="category",
+             data.load = "os.data.load.categories",
+             insert.lookup = "insert.lookup.sourceTypeCollection",
+             insert.document = "insert.document.category" ),
+  edges=list(type="edges",
+             data.load = "os.data.load.XXX",
+             insert.lookup = "insert.lookup.network",
+             insert.document = "insert.document.category" ),
+  events=list(type="clinical",
+              data.load = "os.data.load.clinical.events",
+              insert.lookup = "insert.lookup.clinical",
+              insert.document = "insert.document.row" ),
+  
+  patient=list(type="clinical",
+               data.load = "os.data.load.clinical",
+               insert.lookup = "insert.lookup.clinical",
+               insert.document = "insert.document.row" ),
+  drug=list(type="clinical",
+            data.load = "os.data.load.clinical",
+            insert.lookup = "insert.lookup.clinical",
+            insert.document = "insert.document.row" ),
+  radiation=list(type="clinical",
+                 data.load = "os.data.load.clinical",
+                 insert.lookup = "insert.lookup.clinical",
+                 insert.document = "insert.document.row" ),
+  followUp=list(type="clinical",
+                data.load = "os.data.load.clinical",
+                insert.lookup = "insert.lookup.clinical",
+                insert.document = "insert.document.row" ),
+  newTumor=list(type="clinical",
+                data.load = "os.data.load.clinical",
+                insert.lookup = "insert.lookup.clinical",
+                insert.document = "insert.document.row" ),
+  `newTumor-followUp`=list(type="clinical",
+                           data.load = "os.data.load.clinical",
+                           insert.lookup = "insert.lookup.clinical",
+                           insert.document = "insert.document.row" ),
+  otherMalignancy=list(type="clinical",
+                       data.load = "os.data.load.clinical",
+                       insert.lookup = "insert.lookup.clinical",
+                       insert.document = "insert.document.row" )
+)
