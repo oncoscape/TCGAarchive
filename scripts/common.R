@@ -408,7 +408,7 @@ insert.document.geneset = function(con, result){
 }
 
 #---------------------------------------------------------
-insert.collection <- function(oCollection, result, insert.function, ...){
+insert.collection <- function(oCollection, result){
   
   ## insert new collection data
       con <- mongo(oCollection$collection, db=db, url=host)
@@ -420,7 +420,7 @@ insert.collection <- function(oCollection, result, insert.function, ...){
         ## insert each document into collection 
           insert.status = do.call(lookupList[[oCollection$dataType]][["insert.document"]], list(con,result))
         ## add document to manifest collection
-          mongo.manifest$insert( oCollection)
+          mongo.manifest$insert( toJSON(oCollection, auto_unbox=T))
         #add record to lookup
           insert.lookup(oCollection)
           
