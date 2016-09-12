@@ -17,11 +17,17 @@ date <- as.character(Sys.Date())
 
 #----------------------------------------------------------------------------------------------------
 getGeneSet <- function(geneset_name){
-  match_name <- which(sapply(genesets, function(set){set$name ==geneset_name}))
-  if(length(match_name) == 0)
-    return(NA)
+
+  genes = genesets[genesets$name == geneset_name,"genes"]
   
-	return(genesets[[match_name]]$genes)
+  return(unlist(genes))
+  # returns NULL if geneset_name not found
+  
+  #  match_name <- which(sapply(genesets, function(set){set$name ==geneset_name}))
+#  if(length(match_name) == 0)
+#    return(NA)
+  
+#	return(genesets[[match_name]]$genes)
 }
 
 #----------------------------------------------------------------------------------------------------
@@ -94,7 +100,7 @@ save.pca<- function(oCollection, geneset=NA, scaleFactor=NA){
   parent <- mongo.manifest$find(query=toJSON(oCollection, auto_unbox = T), fields='{"_id":1}')
   genesetName <- geneset
   if(is.na(genesetName)) genesetName = "All Genes"
-	process <- data.frame(calculation="prcomp", geneset= genesetName)
+	process <- list(calculation="prcomp", geneset= genesetName)
 	process$input=oCollection$dataType
 	if(oCollection$dataType %in% c("rna", "methylation"))
 	  process$input=paste(oCollection$dataType, oCollection$process$type, sep="-")
@@ -103,22 +109,24 @@ save.pca<- function(oCollection, geneset=NA, scaleFactor=NA){
 	process$scale=scaleFactor
 	processName <- paste(unlist(process), collapse="-")
 	process$center="TRUE"; process$scaled="TRUE"
-	process <- list(process)
+	#process <- list(process)
 
-	oCollection.raw = oCollection
-	oCollection.raw$dataType = "pcaScores"
-	oCollection.raw$processName = outputName
-	oCollection.raw$collection = collection.create.name(oCollection.raw)
+	oCollection.pca = oCollection
+	oCollection.pca$dataType = "pcaScores"
+	oCollection.pca$processName = outputName
+	oCollection.pca$collection = collection.create.name(oCollection.pca)
 	
-	prev.run <- collection.exists(oCollection.raw$collection)
-	if(prev.run){  print("Skipping.") return(); }
+	prev.run <- collection.exists(oCollection.pca$collection)
+	if(prev.run){  print("Skipping."); return(); }
 	
 	coll <- mongo(oCollection$collection, db=db, url=host)$find()
 	mtx <- convert.to.mtx(coll, format="as.numeric");
+	mtx <- t(mtx); #pca uses pts as rows, genes as cols
 	rm(coll);
 
-	if(!is.na(geneset)){
+	if(!is.na(geneset) & genesetName != "All Genes"){
 	  genes <- getGeneSet(geneset)
+	  if(!is.null(genes))
 	  mtx <- mtx[, intersect(colnames(mtx), genes), drop=F]
 	}
 
@@ -160,30 +168,29 @@ save.pca<- function(oCollection, geneset=NA, scaleFactor=NA){
 	   scores.list <- lapply(rownames(scores), function(name){ scores[name,1:3]})
 	   names(scores.list) <- rownames(scores)
 	   process$scale = NA
-	   result <- list(disease=collection$dataset,source = collection$source, type=process$input, geneset=genesetName,scale=NA, pc1=propVar[1], pc2=propVar[2] ,pc3=propVar[3],data=scores.list)
-	   oCollection <- create.oCollection(dataset=collection$dataset, dataType="pcaScores", source=collection$source, processName=outputName,parent=parent, process=process)
-	   insert.collection(oCollection, list(result) )
+	   result <- list(disease=oCollection$dataset,source = oCollection$source, type=oCollection$process$type, geneset=genesetName,scale=NA, pc1=propVar[1], pc2=propVar[2] ,pc3=propVar[3],data=scores.list)
+
+	   insert.collection(oCollection.pca, list(result) )
 	   
 	   ## ----- Save Loadings ------
 	   loadings <- PCs$rotation
 	   loading.list <- lapply(rownames(loadings), function(name){ loadings[name,1:3]})
 	   names(loading.list) <- rownames(loadings)
 	   process$scale = NA
-	   result <- list(disease=collection$dataset,source = collection$source, type=process$input, geneset=genesetName,scale=NA, data=loading.list)
-	   oCollection <- create.oCollection(dataset=collection$dataset, dataType="pcaLoadings", source=collection$source, processName=outputName,parent=parent, process=process)
-	   insert.collection(oCollection, list(result) )
-
+	   result <- list(disease=oCollection$dataset,source = oCollection$source, type=oCollection$process$type, geneset=genesetName,scale=NA, data=loading.list)
+	   oCollection.loadings = update.oCollection(oCollection.pca, dataType ="pcaLoadings")
+	   insert.collection(oCollection.loadings, list(result) )
 
      ## ----- Save Scaled Scores ------
      if(!is.na(scaleFactor)){
 	     chrDim <- get.chromosome.dimensions(scaleFactor) 
 	     pc3 <- scores[,1:3]; colnames(pc3) <- c("x", "y", "z")
 	     scores.list <- scaleSamplesToChromosomes(pc3, chrDim)
-	     names(scores.list) <- rownames(scores)
+	     #names(scores.list) <- rownames(scores)
 	     process$scale = scaleFactor
-	     result <- list(disease=collection$dataset,source=collection$source, type=process$input, geneset=genesetName,scale=scaleFactor, pc1=propVar[1], pc2=propVar[2] ,pc3=propVar[3],data=scores.list)
-	     oCollection <- create.oCollection(dataset=collection$dataset, dataType="pcaScores", source=collection$source, processName=processName,parent=parent, process=process)
-	     insert.collection(oCollection, list(result) )
+	     result <- list(disease=oCollection$dataset,source=oCollection$source, type=process$input, geneset=genesetName,scale=scaleFactor, pc1=propVar[1], pc2=propVar[2] ,pc3=propVar[3],data=scores.list)
+	     oCollection.pca.scaled <- update.oCollection(oCollection.pca, processName=processName, process=list(process))
+	     insert.collection(oCollection.pca.scaled, list(result) )
 	     
      }
 
@@ -191,10 +198,10 @@ save.pca<- function(oCollection, geneset=NA, scaleFactor=NA){
 
 
 #----------------------------------------------------------------------------------------------------
-save.mds.innerProduct <- function(tbl1, tbl2, geneset=NA, scaleFactor=NA, ...){
+save.mds.innerProduct <- function(oCollection.1, oCollection.2, geneset=NA, scaleFactor=NA, ...){
     ## ----- MDS on All Combinations of CNV and MUT Tables ------
 
-  if(tbl1$source != tbl2$source){
+  if(oCollection.1$source != oCollection.2$source){
     print("currently not computing mds based on different sources")
     return()
   }
@@ -205,46 +212,52 @@ save.mds.innerProduct <- function(tbl1, tbl2, geneset=NA, scaleFactor=NA, ...){
   dataType <- "mds"
   genesetName <- geneset
   if(is.na(genesetName)) genesetName = "All Genes"
-  datasetName <- tbl1$dataset
+  datasetName <- oCollection.1$dataset
   process <- list(calculation="mds", geneset= genesetName)
-  process$input=list( tbl1$dataType, tbl2$dataType)
-  outputName <- paste(c(unlist(process),tbl1$source), collapse="-")
-
-  process$scale=scaleFactor
-  processName <- paste(c(unlist(process),tbl1$source), collapse="-")
+  process$input=list( oCollection.1$dataType, oCollection.2$dataType)
+  outputName <- paste(c(unlist(process),oCollection.1$source), collapse="-")
+  parent.1 <- mongo.manifest$find(toJSON(list(collection=oCollection.1$collection), auto_unbox=T), fields=toJSON(list('_id'=1), auto_unbox = T))
+  parent.2 <- mongo.manifest$find(toJSON(list(collection=oCollection.2$collection), auto_unbox=T), fields=toJSON(list('_id'=1), auto_unbox = T))
   
-  prev.run <- collection.exists(mongo,db, dataset=datasetName, dataType=dataType,source=c(tbl1$source, tbl2$source),processName=processName)
-  if(prev.run){
-    print("Skipping.")
-    return()
-  }
+   oCollection.mds = create.oCollection(dataset=datasetName, dataType=dataType,
+                                       source=c(oCollection.1$source, oCollection.2$source),
+                                       processName=outputName, 
+                                       parent= c(parent.1, parent.2), 
+                                       process=process)
+  
+  process$scale=scaleFactor
+  processName <- paste(c(unlist(process),oCollection.1$source), collapse="-")
+  oCollection.mds.scaled <- update.oCollection(oCollection.mds, processName=processName,process=list(process))
+  
+  prev.run <- collection.exists(oCollection.mds$collection)
+  if(prev.run){    print("Skipping."); return() }
   
 	regex = "-01$"; threshold = NA;
 	if(datasetName == "laml"){        regex = "-03$|-09$";
 	} else if(datasetName == "luad"){ regex = "TCGA-(17)^-\\d{4}-01$" }
-	process$regex=regex; process$threshold=threshold
 
-		if(datasetName == "brca" | datasetName == "brain")  threshold = -1e-04
-  
- 
-  	coll1 <- mongo.find.all(mongo, paste("oncoscape",tbl1$collection, sep="."))
-  	coll2 <- mongo.find.all(mongo, paste("oncoscape",tbl2$collection, sep="."))
+	if(datasetName == "brca" | datasetName == "brain")  threshold = -1e-04
+	process$regex=regex; process$threshold=threshold
+	oCollection.mds.scaled = update.oCollection(oCollection.mds.scaled, process=process)
+	process$scale=NA
+	oCollection.mds        = update.oCollection(oCollection.mds,        process=process)
+	
+  	coll1 <- mongo(oCollection.1$collection, db=db, url=host)$find()
+  	coll2 <- mongo(oCollection.2$collection, db=db, url=host)$find()
   	
 		mtx.tbl1 <- convert.to.mtx(coll1, format="as.numeric");
 		mtx.tbl2 <- convert.to.mtx(coll2, format="as.numeric");
-
 		rm(coll1); rm(coll2);
 		
-		tbl1.samples <- grep(regex, rownames(mtx.tbl1),  value=TRUE)
-		tbl2.samples <- grep(regex, rownames(mtx.tbl2),  value=TRUE)
+		tbl1.samples <- grep(regex, colnames(mtx.tbl1),  value=TRUE)
+		tbl2.samples <- grep(regex, colnames(mtx.tbl2),  value=TRUE)
 	
 		if(is.na(geneset)){
-		       genes <- intersect(colnames(mtx.tbl1), colnames(mtx.tbl2))
+		       genes <- intersect(rownames(mtx.tbl1), rownames(mtx.tbl2))
 		}else{ genes = getGeneSet(geneset) }
 		
-			
 			samples <- unique(tbl1.samples, tbl2.samples)
-			sample_similarity <- calculateSampleSimilarityMatrix(t(mtx.tbl1), t(mtx.tbl2),samples=samples, genes=genes)
+			sample_similarity <- calculateSampleSimilarityMatrix(mtx.tbl1, mtx.tbl2,samples=samples, genes=genes)
 											 #expects rows as genes and cols as samples
 			
 			if(any(dim(sample_similarity)==0)){
@@ -260,66 +273,71 @@ save.mds.innerProduct <- function(tbl1, tbl2, geneset=NA, scaleFactor=NA, ...){
 				sample_similarity <- sample_similarity[setdiff(rownames(sample_similarity), outliers), ]
 			}
 
-			parent <- list(tbl1$`_id`, tbl2$`_id`)
-			
 		  mds.list<- lapply(rownames(sample_similarity), function(name) data.frame(x=sample_similarity[name,"x"], y=sample_similarity[name, "y"]))
 		  names(mds.list) <- rownames(sample_similarity)
 
-		  process$scale = NA
-		  process <- list(process)
-			result <- list(type="cluster", dataset=tbl1$dataset, name=outputName, scale=NA, data=mds.list)
-			oCollection <- create.oCollection(dataset=datasetName, dataType=dataType, source=c(tbl1$source, tbl2$source), processName=outputName,parent=parent, process=process)
-			insert.collection(oCollection, list(result) )
+		  result <- list(type="cluster", dataset=oCollection.1$dataset, name=outputName, scale=NA, data=mds.list)
+			insert.collection(oCollection.mds, list(result) )
 
 			if(!is.na(scaleFactor)){
-			    process[[1]]$scale = scaleFactor
-			    chrDim <- get.chromosome.dimensions(scaleFactor) 
+			  chrDim <- get.chromosome.dimensions(scaleFactor) 
 			  mds.list <- scaleSamplesToChromosomes(sample_similarity, chrDim, dim.names=c("x", "y"))
-			  result <- list(type="cluster", dataset=tbl1$dataset, name=outputName, scale=scaleFactor, data=mds.list)
-			  oCollection <- create.oCollection(dataset=datasetName, dataType=dataType, source=c(tbl1$source, tbl2$source), processName=processName,parent=parent, process=process)
-			  insert.collection(oCollection, list(result) )
+			  result <- list(type="cluster", dataset=oCollection.1$dataset, name=outputName, scale=scaleFactor, data=mds.list)
+			  insert.collection(oCollection.mds.scaled, list(result) )
 			}			
 }
 
 
 #----------------------------------------------------------------------------------------------------
-run.batch.patient_similarity <- function(datasets, scaleFactor=NA){
+run.batch.patient_similarity <- function(lCollection, scaleFactor=NA){
 
   gistic.scores <-c(-2,-1,1, 2)
   
   # Loop for each dataset
-  for (collection in datasets){
-    
-    oCollection = create.oCollection(dataset=collection$dataset, dataType, source, processName, parent, process)
+  for (i in 1:nrow(lCollection)){
+    oCollection <- lCollection[i,]
+    #oCollection = create.oCollection(dataset=collection$dataset, dataType, source, processName, parent, process)
     ## MDS
-    if(collection$dataType =="cnv"){
-      mut01_colls <- mongo.manifest$find( 
-                     query=list(dataset=collection$dataset, dataType="mut01"))
-      for(mut01_coll in mut01_colls){
-        save.mds.innerProduct(collection, mut01_coll, copyNumberValues=gistic.scores, geneset = NA, scaleFactor=scaleFactor)
-        for(geneset in genesets){
-          save.mds.innerProduct(collection, mut01_coll, copyNumberValues=gistic.scores, geneset = geneset$name, scaleFactor=scaleFactor)
+    if(oCollection$dataType =="cnv"){
+      lCollection.mut01 <- mongo.manifest$find( 
+                     query=toJSON(list(dataset=oCollection$dataset, dataType="mut01"), auto_unbox=T))
+      if(nrow(lCollection.mut01)!=0){
+      for(j in 1:nrow(lCollection.mut01)){
+        oCollection.mut01 = lCollection.mut01[j,]
+        if(oCollection$source != oCollection.mut01$source){
+          print("currently not computing mds based on different sources")
+          next;
         }
         
-      }
+        save.mds.innerProduct(oCollection, oCollection.mut01, copyNumberValues=gistic.scores, geneset = NA, scaleFactor=scaleFactor)
+        for(geneset in genesets$name){
+          save.mds.innerProduct(oCollection, oCollection.mut01, copyNumberValues=gistic.scores, geneset = geneset, scaleFactor=scaleFactor)
+        }
+        
+      }}
     }
-    else if(collection$dataType =="mut01"){
-      cnv_colls <- mongo.find.all(mongo, paste(db, "manifest", sep="."), 
-                                    query=list(dataset=collection$dataset, dataType="cnv"))
-      for(cnv_coll in cnv_colls){
-        save.mds.innerProduct(cnv_coll, collection, copyNumberValues=gistic.scores, geneset = NA, scaleFactor=scaleFactor)
-        for(geneset in genesets){
-          save.mds.innerProduct(cnv_coll, collection, copyNumberValues=gistic.scores, geneset = geneset$name, scaleFactor=scaleFactor)
+    else if(oCollection$dataType =="mut01"){
+      lCollection.cnv <- mongo.manifest$find( 
+                                    query=toJSON(list(dataset=oCollection$dataset, dataType="cnv"), auto_unbox=T))
+      if(nrow(lCollection.cnv)!=0){
+      for(j in 1:nrow(lCollection.cnv)){
+        oCollection.cnv = lCollection.cnv[j,]
+        if(oCollection$source != oCollection.cnv$source){
+          print("currently not computing mds based on different sources")
+          next;
         }
         
-      }
-      
+        save.mds.innerProduct(oCollection.cnv, oCollection, copyNumberValues=gistic.scores, geneset = NA, scaleFactor=scaleFactor)
+        for(geneset in genesets$name){
+          save.mds.innerProduct(oCollection.cnv,oCollection,  copyNumberValues=gistic.scores, geneset = geneset, scaleFactor=scaleFactor)
+        }
+      }}
     }
     
     ## PCA
-      save.pca(collection, geneset = NA, scaleFactor=scaleFactor)
-      for(geneset in genesets){
-        save.pca(collection, geneset = geneset$name, scaleFactor=scaleFactor)
+      save.pca(oCollection, geneset = NA, scaleFactor=scaleFactor)
+      for(geneset in genesets$name){
+        save.pca(oCollection, geneset = geneset, scaleFactor=scaleFactor)
       }
 	      
 

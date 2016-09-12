@@ -62,7 +62,26 @@ os.data.load.molecular <- function(oCollection, inputFile){
   
   mtx <- matrix();
   
-  if(grepl("\\.RData$",inputFile)){
+  if(oCollection$dataType == "psi"){
+    mtx<- read.delim(inputFile, header=F) 
+    #orient mtx so row: gene, col: patient/sample
+    if(all(grepl("^TCGA", mtx[-1,1]))) { mtx <- t(mtx)}
+    
+    mtx.Data<- get.processed.mtx(mtx, dimension= c("row", "col"))
+    mtx <- mtx.Data$data; 
+    dimnames(mtx) <- list(mtx.Data$rownames, mtx.Data$colnames)
+    
+    fields = toJSON(list(event=1,HGNC_symbol=1), auto_unbox = T)
+    psi.annotation = mongo("hg19_annotation_bradleylab_exonjunctions", db=db, url=host)$find(fields=fields)
+    
+    ids = lapply(rownames(mtx), function(id) c(event=id, gene=psi.annotation[psi.annotation$event==id,"HGNC_symbol"]))
+    names(ids)=rownames(mtx)
+    result = list(ids=ids,data=mtx)
+    insert.collection(oCollection, result)
+    return();
+    
+  }
+  else if(grepl("\\.RData$",inputFile)){
     mtx <- get(load(inputFile))
     if(all(grepl("^TCGA", rownames(mtx)))) { mtx <- t(mtx)}
     #colType <- "patient"; rowType <- "gene"
@@ -85,9 +104,41 @@ os.data.load.molecular <- function(oCollection, inputFile){
       else mtx[gene,pt] = paste(mtx[gene,pt], p.Change, sep=";")
     }
     
+  } else if(grepl("^GSE",inputFile)){
+    #readLines: grep(^!, line); save metadata, tab separated key values
+    #!Series_platform_id	"GPL570"
+    #blank line
+    #!Sample_
+    #!Sample_characteristics_ch1 <sample specific descriptors> - may have multiple lines based on characteristic - "Gender:female", "Histology:Synovial sarcoma"
+    #!Sample_title <sample specific descriptors>
+    #!series_matrix_table_begin
+    # rows: probes, cols: GSM samples
     
+    #skipLines = 0
+    #while(grepl("^!", line = readLines(inputFile))){
+      #skipLines = skipLines +1
+    #}
+    #mtx = read.delim(inputFile, skip=skipLines, header=T, sep="\t")
     
-  } else{ 
+    ## Read GPL file
+    #read lines: grep(^#, line); column decriptors, key = value
+    #Gene Symbol = description
+
+        #skipLines = 0
+    #while(grepl("^!", line = readLines(GPLFile))){
+    #skipLines = skipLines +1
+    #}
+    #gpl = read.delim(GPLFile, skip=skipLines, header=T, sep="\t")
+    
+        
+    #ids = lapply(rownames(mtx), function(id) c(probe=id, gene=gpl[id,"Gene.Symbol"]))
+    #names(ids)=rownames(mtx)
+    #result = list(ids=ids,data=mtx)
+    #insert.collection(oCollection, result)
+    
+    #return();
+    
+  }else{ 
     mtx<- read.delim(inputFile, header=F) 
     #orient mtx so row: gene, col: patient/sample
     if(all(grepl("^TCGA", mtx[-1,1]))) { mtx <- t(mtx)}
@@ -113,8 +164,10 @@ os.data.load.molecular <- function(oCollection, inputFile){
     mtx <- apply(mtx, 2, as.numeric)
     rownames(mtx) <- rowname
   }
-  
-  insert.collection(oCollection, mtx)
+  ids = lapply(rownames(mtx), function(id) c(gene=id))
+  names(ids)=rownames(mtx)
+  result = list(ids=ids,data=mtx)
+  insert.collection(oCollection, result)
   
 }
 
