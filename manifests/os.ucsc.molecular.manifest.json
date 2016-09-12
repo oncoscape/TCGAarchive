@@ -30,14 +30,6 @@
 	"directory": "../data/demo/",
 	"file": "mtx.flow.demo.tsv"
 	},
-		{
-	"dataset": "acc",
-	"source": "ucsc",
-	"type": "methylation",		
-	"process": "HM450",
-	"directory": "../data/UCSC/ACC/",
-	"file": "HumanMethylation450"
-	},
 	{
 	"dataset": "acc",
 	"source": "ucsc",
@@ -56,14 +48,6 @@
 	{
 	"dataset": "brca",
 	"source": "ucsc",
-	"type": "methylation",		
-	"process": "HM450",
-	"directory": "../data/UCSC/BRCA/",
-	"file": "HumanMethylation450"
-	},
-	{
-	"dataset": "brca",
-	"source": "ucsc",
 	"type": "rna",		
 	"process": "HiSeq",
 	"directory": "../data/UCSC/BRCA/",
@@ -75,14 +59,6 @@
 	"process": "RPPA",
 	"directory": "../data/UCSC/BRCA/",
 	"file": "RPPA"
-	},
-	{
-	"dataset": "coad",
-	"source": "ucsc",
-	"type": "methylation",		
-	"process": "HM450",
-	"directory": "../data/UCSC/COAD/",
-	"file": "HumanMethylation450"
 	},
 	{
 	"dataset": "coad",
@@ -102,26 +78,10 @@
 	{
 	"dataset": "coadread",
 	"source": "ucsc",
-	"type": "methylation",		
-	"process": "HM450",
-	"directory": "../data/UCSC/COADREAD/",
-	"file": "HumanMethylation450"
-	},
-	{
-	"dataset": "coadread",
-	"source": "ucsc",
 	"type": "rna",		
 	"process": "HiSeq",
 	"directory": "../data/UCSC/COADREAD/",
 	"file": "HiSeqV2"
-	},
-	{
-	"dataset": "gbm",
-	"source": "ucsc",
-	"type": "methylation",		
-	"process": "HM450",
-	"directory": "../data/UCSC/GBM/",
-	"file": "HumanMethylation450"
 	},
 	{
 	"dataset": "gbm",
@@ -137,14 +97,6 @@
 	"process": "RPPA",
 	"directory": "../data/UCSC/GBM/",
 	"file": "RPPA"
-	},
-	{
-	"dataset": "read",
-	"source": "ucsc",
-	"type": "methylation",		
-	"process": "HM450",
-	"directory": "../data/UCSC/READ/",
-	"file": "HumanMethylation450"
 	},
 	{
 	"dataset": "read",
@@ -478,7 +430,7 @@
 	"process": "RPPA",
 	"directory": "../data/UCSC/TCGA_SARC_RPPA-2015-02-24/",
 	"file": "genomicMatrix"
-	},
+	}
 	
 
 
