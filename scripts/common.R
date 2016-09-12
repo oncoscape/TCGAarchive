@@ -10,7 +10,6 @@ date <- as.character(Sys.Date())
 chromosomes <- c(seq(1:22), "X", "Y")
 
 db <- "tcga"
-
 host="mongodb://localhost"
 location = "dev"
 
@@ -96,11 +95,15 @@ lookupList = list(
   mds=list(type="calculated",
            data.load = "os.data.load.XXX",
            insert.lookup = "insert.lookup.sourceTypeCollection",
-           insert.document = "insert.document.ptSimilarity" ),
+           insert.document = "insert.document.list" ),
   pcaScores=list(type="calculated",
            data.load = "os.data.load.XXX",
            insert.lookup = "insert.lookup.sourceTypeCollection",
-           insert.document = "insert.document.ptSimilarity" ),
+           insert.document = "insert.document.list" ),
+  pcaLoadings=list(type="calculated",
+                 data.load = "os.data.load.XXX",
+                 insert.lookup = "insert.lookup.sourceTypeCollection",
+                 insert.document = "insert.document.list" ),
   chromosome=list(type="location",
            data.load = "run.scale.chr.genes;saveChromosome_Coordinates",
            insert.lookup = "insert.lookup.sourceTypeCollection",
@@ -224,7 +227,10 @@ update.oCollection <- function(oCollection, dataset=NA, dataType=NA,source=NA, p
 }
 #---------------------------------------------------------
 create.oCollection <- function(dataset, dataType,source, processName, parent, process){
-  
+ 
+  source <- unique(source)
+  if(length(source)>1) source <- list(source)
+
   newCollection <- list(dataset=dataset, dataType=dataType, date=date) 
   newCollection$source <- source
   newCollection$process <- process
@@ -256,41 +262,39 @@ insert.prep <- function(oCollection){
   
   return(TRUE)
 }
-
 #---------------------------------------------------------
-insert.lookup.sourceTypeCollection <- function(oCollection, data.list){
-  lookupType = lookupList[[oCollection$dataType]]$type
-  add.collection <- data.frame(source=oCollection$source, type=oCollection$dataType, collection=oCollection$collection)
-  if(lookupType %in% names(data.list)){
-    if(class(data.list[[lookupType]])=="list")
-      data.list[[lookupType]] <- data.list[[lookupType]][[1]]
-    data.list[[lookupType]]<- rbind(data.list[[lookupType]], add.collection)
-  }else{data.list[lookupType]<- list(add.collection)}
-  
-  return(data.list)
+insert.lookup.sourceTypeCollection <- function(oCollection){
+    lookupType = lookupList[[oCollection$dataType]]$type
+    add.collection <- list(source=oCollection$source, type=oCollection$dataType, collection=oCollection$collection)
+    new.collection = list(); 
+    new.collection[[lookupType]] = add.collection
+    push.collection = list("$push"=new.collection)
+
+  return(push.collection)
 } 
 #---------------------------------------------------------
-insert.lookup.clinical <- function(oCollection, data.list){
+insert.lookup.clinical <- function(oCollection){
   add.collection <- list()
   add.collection[oCollection$dataType] <- oCollection$collection
-  if("clinical" %in% names(data.list)){
-    data.list$clinical	<- c(data.list$clinical, add.collection)
-  } else {data.list$clinical <- add.collection }
+  new.collection = list(); 
+  new.collection[["clinical"]] = add.collection
+  push.collection = list("$push"=new.collection)
 
-  return(data.list)
+  return(push.collection)
 }
 #---------------------------------------------------------
-insert.lookup.network <- function(oCollection, data.list){
+insert.lookup.network <- function(oCollection){
   ptweights   <- gsub("\\s+", "", tolower(paste(oCollection$dataset, "ptDegree", oCollection$source, oCollection$processName, sep="_")))
   geneweights <- gsub("\\s+", "", tolower(paste(oCollection$dataset, "geneDegree", oCollection$source, oCollection$processName, sep="_")))
   add.collection <- list(data.frame(name=oCollection$process$geneset,source=oCollection$source, edges=oCollection$collection, 
                                     patientWeights=ptweights, 
                                     genesWeights=geneweights))
-  if("edges" %in% names(data.list)){
-    data.list$edges	<- c(data.list$edges, add.collection)
-  } else {data.list$edges <- add.collection }
+ 
+  new.collection = list(); 
+  new.collection[["edges"]] = add.collection
+  push.collection = list("$push"=new.collection)
   
-  return(data.list)
+  return(push.collection)
 }
 #---------------------------------------------------------
 insert.lookup <- function(oCollection){
@@ -299,16 +303,20 @@ insert.lookup <- function(oCollection){
   dataset = oCollection$dataset
   query <- toJSON(list("disease"=dataset), auto_unbox = T)
   oLookup <- mongo.lookup$find(query)
+  #fields = list(); fields[[lookupList[[oCollection$dataType]]$type]] = 1;
+  #oLookup <- mongo.lookup$find(query, fields = toJSON(fields, auto_unbox = T))
   
   if(length(oLookup)==0){
-    oLookup <- list(disease = dataset, source = dataset_map[[dataset]]$source,beta = dataset_map[[dataset]]$beta)
-    oLookup$name = dataset_map[[dataset]]$name
-    oLookup$img = dataset_map[[dataset]]$img
+      #query found nothing - dataset not stored yet
+      oLookupDoc <- list(disease = dataset, source = dataset_map[[dataset]]$source,beta = dataset_map[[dataset]]$beta)
+      oLookupDoc$name = dataset_map[[dataset]]$name
+      oLookupDoc$img = dataset_map[[dataset]]$img
+      mongo.lookup$insert(oLookupDoc, db=db, url=host)
   }
   
   dataType = oCollection$dataType
   if(dataType %in% names(lookupList)){
-    oLookup = do.call(lookupList[[dataType]][["insert.lookup"]],list(oCollection, as.list(oLookup)))
+    oLookup = do.call(lookupList[[dataType]][["insert.lookup"]],list(oCollection))
   
     ## insert lookup into mongo collection
     mongo.lookup$update(query, toJSON(oLookup, auto_unbox = T), upsert=T)
@@ -325,7 +333,7 @@ insert.lookup <- function(oCollection){
 insert.document.molecular = function(con, result){
   insert.pass <- sapply(rownames(result), function(geneName){
     status = con$insert(
-      toJSON( list(gene=geneName, min=min(result[geneName,]), max=max(result[geneName,]), patients = as.list(result[geneName,])) 
+      toJSON( c(list(result$ids[geneName]), list( min=min(result$data[geneName,]), max=max(result$data[geneName,]), patients = as.list(result$data[geneName,])) )
               , auto_unbox=T, na="null")); 
     status$nInserted;
   })
@@ -402,7 +410,7 @@ insert.collection <- function(oCollection, result, insert.function, ...){
         ## insert each document into collection 
           insert.status = do.call(lookupList[[oCollection$dataType]][["insert.document"]], list(con,result))
         ## add document to manifest collection
-          mongo.manifest$insert( toJSON(oCollection, auto_unbox = T))
+          mongo.manifest$insert( oCollection)
         #add record to lookup
           insert.lookup(oCollection)
           
@@ -484,16 +492,18 @@ insert.collection.separate<- function(name, indiv.collection){
 }
 
 #---------------------------------------------------------
-convert.to.mtx <- function(data.list, format=""){
-  mtx <- sapply(data.list, function(geneRow){ 
-    val <-geneRow$patients; 
-    null.val <- which(unlist(lapply(val, is.null)))
-    if(length(null.val)>0) val[null.val] <- NA
-    val <- unlist(val);
-    if(format == "as.numeric") val <- as.numeric(val)
-    val})
-  colnames(mtx) <- sapply(data.list, function(geneRow){ geneRow$gene})
-  rownames(mtx) <- names(data.list[[1]]$patients)
+convert.to.mtx <- function(molecular.df, format=""){
+#  mtx <- apply(molecular.df,1, function(geneRow){ 
+#    val <-geneRow$patients; 
+#    null.val <- which(unlist(lapply(val, is.null)))
+#    if(length(null.val)>0) val[null.val] <- NA
+#    val <- unlist(val);
+#    if(format == "as.numeric") val <- as.numeric(val)
+#    val})
+  mtx <- molecular.df$patients
+  rownames(mtx) <- molecular.df$gene
+#  colnames(mtx) <- molecular.df$gene
+#  rownames(mtx) <- names(molecular.df[1, "patients"])
   return(mtx)  
 }
 
@@ -526,9 +536,9 @@ appendList <- function (x, val)
 #--------------------------------------------------------------#
 get.chromosome.dimensions <- function(scaleFactor=100000){
   
-  chrPosScaledObj <- mongo.find.all(mongo, paste(db, "manifest", sep="."), list(dataset="hg19",dataType="chromosome", process=list(scale=scaleFactor)))[[1]]
+  chrPosScaledObj <- mongo.manifest$find(toJSON(list(dataset="hg19",dataType="chromosome", process=list(scale=scaleFactor)), auto_unbox = T))
   
-  chrCoord <- mongo.find.all(mongo, paste(db,chrPosScaledObj$collection, sep="."))[[1]][["data"]]
+  chrCoord <- mongo(chrPosScaledObj$collection, db=db, url=host)$find()$data
   chrPos_xy <-t(sapply(chromosomes, function(chr){ return(c(chrCoord[[chr]]$x, chrCoord[[chr]]$q))}))
   chrDim <- c(max(chrPos_xy[,1]), max(chrPos_xy[,2]))
   
@@ -550,7 +560,9 @@ scaleSamplesToChromosomes <- function(mtx, chrDim, dim.names=c("x", "y", "z")){
   mtx <- round(mtx)
   
   list.coord <- lapply(rownames(mtx), function(name){
-    vals <- data.frame(t(mtx[name,dim.names]))
+    vals <- as.list(t(mtx[name,dim.names]));
+    names(vals) = dim.names
+    vals
   })
   names(list.coord) <- rownames(mtx)
   return(list.coord)
