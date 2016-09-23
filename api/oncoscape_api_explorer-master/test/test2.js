@@ -19,7 +19,8 @@
   var assert = require('assert');
   var Ajv = require('ajv');
   var ajv = new Ajv();
-
+  var obj_arr = [];
+  
   var molecular_schemas = {
       "cnv":{
              "cnv":{
@@ -120,65 +121,59 @@
     /*** Test Item 2: one-to-one mapping between all the collections in the database and 
          lookup_oncoscape_datasources collection
      ***/
-    collection = yield comongo.db.collection(db, 'lookup_oncoscape_datasources');
-    // collection = yield comongo.db.collection(db, 'blca_edges_ucsc_markergenes545-mut01-cnv');
-    // collection_arr = yield collection.find({}).toArray();
-  //   yield comongo.db.close(db);
-  // }).catch(onerror);
+    // collection = yield comongo.db.collection(db, 'lookup_oncoscape_datasources');
 
-    disease_tables = yield collection.find({}).toArray();
-    var count = yield collection.count();
-    console.log("*****", count);
-    disease_tables.forEach(function(d){
-      keyFields.push(Object.keys(d));
-    });
-    keyFields = [].concat.apply([], keyFields);
-    keyFields = keyFields.unique();
-    // keyFields = [ '_id','disease','source','beta','annotation','location','category','name','img','rna','molecular','clinical','calculated','edges' ]
-    // only iterate 'annotation','location','category','molecular','clinical','calculated','edges'
-
-    disease_tables.forEach(function(d){
-      for(var u=0; u<usedFields.length; u++){
-        if(usedFields[u] in d){
-          if('collection' in d[usedFields[u]]){
-            listed_collections.push(d[usedFields[u]['collection']]);
-          }else if(Array.isArray(d[usedFields[u]])){
-            var arr = d[usedFields[u]];
-            arr.forEach(function(a){
-              if('collection' in a){
-                listed_collections.push(a['collection']);
-              }else if('edges' in a){
-                listed_collections.push(a['edges']);
-              }else if('patientWeights' in a){
-                listed_collections.push(a['patientWeights']);
-              }else if('genesWeights' in a){
-                listed_collections.push(a['genesWeights']);
-              }else {
-                listed_collections.push(a);
-              }
-            })
-          }
-        }
-      }
-    });//flatten all the collections from lookup_oncoscape_datasources 
+    // disease_tables = yield collection.find({}).toArray();
+    // var count = yield collection.count();
+    // console.log("*****", count);
+    // disease_tables.forEach(function(d){
+    //   keyFields.push(Object.keys(d));
+    // });
+    // keyFields = [].concat.apply([], keyFields);
+    // keyFields = keyFields.unique();
+    
+    // disease_tables.forEach(function(d){
+    //   for(var u=0; u<usedFields.length; u++){
+    //     if(usedFields[u] in d){
+    //       if('collection' in d[usedFields[u]]){
+    //         listed_collections.push(d[usedFields[u]['collection']]);
+    //       }else if(Array.isArray(d[usedFields[u]])){
+    //         var arr = d[usedFields[u]];
+    //         arr.forEach(function(a){
+    //           if('collection' in a){
+    //             listed_collections.push(a['collection']);
+    //           }else if('edges' in a){
+    //             listed_collections.push(a['edges']);
+    //           }else if('patientWeights' in a){
+    //             listed_collections.push(a['patientWeights']);
+    //           }else if('genesWeights' in a){
+    //             listed_collections.push(a['genesWeights']);
+    //           }else {
+    //             listed_collections.push(a);
+    //           }
+    //         })
+    //       }
+    //     }
+    //   }
+    // });//flatten all the collections from lookup_oncoscape_datasources 
 
 
     collections = yield comongo.db.collections(db);
-    collection_names = collections.map(function(c){
-      return c['s']['name'];
-    }); //getting the names of all collections
+    // collection_names = collections.map(function(c){
+    //   return c['s']['name'];
+    // }); //getting the names of all collections
 
     
-    collection_names.forEach(function(c){
-      if(listed_collections.indexOf(c) == -1){
-        inDBNotInListed.push(c);
-      }
-    });
-    listed_collections.forEach(function(l){
-      if(collection_names.indexOf(l) == -1){
-        inListedNotInDB.push(l);
-      }
-    });
+    // collection_names.forEach(function(c){
+    //   if(listed_collections.indexOf(c) == -1){
+    //     inDBNotInListed.push(c);
+    //   }
+    // });
+    // listed_collections.forEach(function(l){
+    //   if(collection_names.indexOf(l) == -1){
+    //     inListedNotInDB.push(l);
+    //   }
+    // });
 
     /* Test time: Mon Sep  5 17:27:23 PDT 2016
      * inDBNotInListed.length = 491;  inListedNotInDB: [ 'undefined_color_tcga_import' ]
@@ -189,10 +184,9 @@
     var elem = {};
     var fields = [];
     //for(var i=0;i<collections.length;i++){
-    for(var i=100;i<101;i++){  
+    for(var i=76;i<77;i++){  
       elem = {};
       fields = [];
-      console.log(collections[i]['s']['name']);
       if(collections[i]['s']['name'] != 'system.users'){
         collection = yield comongo.db.collection(db, collections[i]['s']['name']);
         count = yield collection.count();
@@ -202,54 +196,35 @@
         // elem['count'] = count;
         // elem['fields'] = fields;
         // collection_counts.push(elem);
-      
-        var cursor = yield collection.find().limit(1).toArray();
-        collection.find().batchSize(100).nextObject(function(err, item) {
-          console.dir(item);
+        var j = 0;      
+        var cursor = collection.find();
+        cursor.each(function(err, item){
+          obj_arr.push(item);
+          console.log(j);
+          j++;
         });
+        // cursor.each(function(err, item){
+        //   console.log(collections[i]['s']['name']);
+        //   if(item != null) {
+        //     // Show that the cursor is closed
+        //     cursor.toArray(function(err, items) {
+        //        console.dir(item);
+        //     });
+        //   };
+        // });
+        // collection.find().batchSize(100).nextObject(function(err, item) {
+        //   console.dir(item);
+          // cursor.close(function(err, result) {
+          //   assert.equal(null, err);
+          //   assert.equal(true, cursor.isClosed());
+          // });
+        //});
       }
       console.log(i);
       
     }
-    jsonfile.writeFile("collection_counts.json", collection_counts, {spaces: 2}, function(err){ console.error(err);});  
-    // collections.forEach(function(col){
-    //   console.log(col['s']['name']);
-    //   collection = yield comongo.db.collection(db, col['s']['name']);
-    //   count = yield collection.count();
-    //   console.log(count);
-    // })
-    /*** Test Item 3: Molecular data follows JSON schema
-     ***/
-    // collection = yield comongo.db.collection(db, 'brca_cnv_cbio_gistic');
-    // sample = yield collection.find({}).toArray();
-    // console.log(sample.length);
-    // var v = ajv.validate(molecular_schemas['cnv'],sample[0]);
-    // if(!v){
-    //   console.log(ajv.errors[0]);
-    // }else{
-    //   console.log(v);
-    // };          
-    /* <--- Last few GCs --->
-
-      491592 ms: Scavenge 1335.0 (1457.9) -> 1334.9 (1457.9) MB, 0.4 / 0 ms [allocation failure].
-      491594 ms: Scavenge 1334.9 (1457.9) -> 1334.9 (1457.9) MB, 0.4 / 0 ms [allocation failure].
-      491594 ms: Scavenge 1334.9 (1457.9) -> 1334.9 (1457.9) MB, 0.3 / 0 ms [allocation failure].
-      492063 ms: Mark-sweep 1334.9 (1457.9) -> 1335.0 (1457.9) MB, 468.7 / 0 ms [last resort gc].
-      492527 ms: Mark-sweep 1335.0 (1457.9) -> 1335.0 (1457.9) MB, 464.2 / 0 ms [last resort gc].
-
-
-      <--- JS stacktrace --->
-
-      ==== JS stack trace =========================================
-
-      Security context: 0x3ae023cb4629 <JS Object>
-      
-      FATAL ERROR: CALL_AND_RETRY_LAST Allocation failed - process out of memory
-      Abort trap: 6
-    */
-
-
-
+    //jsonfile.writeFile("collection_counts.json", collection_counts, {spaces: 2}, function(err){ console.error(err);});  
+  
     /*** Test Item 4: PCA & MDS calculated with each geneset
      ***/
 

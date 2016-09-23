@@ -210,16 +210,36 @@ jsonfile.readFile("lookup_elem.json", function(err, obj) {
 jsonfile.readFile("manifest_elem.json", function(err, obj) {
 	manifest_elem = obj;
 	format.h2("From Collection Perspective");
+	format.text("Key words to describe manifest collection");
+	format.text("Key | Annotation");
+	format.table("--------- | ----------- ");
+	var manifest_keys_annot_keys = Object.keys(manifest_keys_annot); 
+    for(var i=0;i<manifest_keys_annot_keys.length;i++){
+    	format.table(manifest_keys_annot_keys[i] + " | " + manifest_keys_annot[manifest_keys_annot_keys[i]]);
+    }   
+
 	format.h3("Manifest Dataset");
+	format.text("This field is identical to lookup_oncoscape_datasource's disease field.");
 	var manifest_keys_annot_keys = manifest_elem.dataset;
+	format.text("Disease Code | Disease Name");
+    format.table("--------- | ----------- "); 
 	manifest_keys_annot_keys.forEach(function(m){
-		format.table(m);
+		format.table(m + " | " + lookup_elem.name[lookup_elem.disease.indexOf(m.toLowerCase())]);
 	});
+
+	format.h3("All the datatypes within Database");
+	var manifest_type_keys = manifest_elem.dataType;
+  	format.text("collection type | Annotation");
+	format.table("--------- | ----------- ");
+  	for(p=0;p<manifest_type_keys.length;p++){
+    	format.table(manifest_type_keys[p] + " | " + type_keys_annot[manifest_type_keys[p]]);
+    } 
+    
 });
 
 
-format.h1("DataBase Description");
-format.text("We use two collections to track the meta information. 'manifest' is organized by collection. 'lookup_oncoscape_datasource' is organized by disease.");
+format.h1("Database Description");
+format.text("We use two collections to track the metadata for all the data collections within our database. 'manifest' is organized by collection. 'lookup_oncoscape_datasource' is organized by disease.");
 
 
 
