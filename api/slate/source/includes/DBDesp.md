@@ -95,6 +95,276 @@ edges | derived collection to describe edges between genes and patients use for 
 ptDegree | derived collection to describe the weight of patients based on on the number of data points use for Markers and Patients (one of the Oncoscape tools)
 geneDegree | derived collection to describe the weight of genes based on on the number of data points use for Markers and Patients (one of the Oncoscape tools)
 
+### All the data sources within Database
+
+collection source | Annotation
+--------- | ----------- 
+tcga | <a href='https://gdc.cancer.gov/'>TCGA</a>
+broad | <a href='https://gdac.broadinstitute.org//'>Broad Firehose</a>
+hgnc | <a href='http://www.genenames.org/'>HUGO Gene Nomenclature Committee</a>
+cBio | <a href='http://www.cbioportal.org/'>cBioPortal</a>
+bradleyLab | <a href='www.fredhutch.org/en/labs/labs-import/bradley-lab.html/'>Bradley Lab</a>
+demo | <a href='oncoscape.sttrcancer.org/'>Demo data source</a>
+ucsc-PNAS | <a href='http://www.pnas.org/content/113/19/5394.full/'>Publication</a>
+ucsc | <a href='https://genome-cancer.ucsc.edu/'>UCSC</a>
+orgHs | <a href='https://bioconductor.org/packages/release/data/annotation/html/org.Hs.eg.db.html/'>Genome wide annotation for Human</a>
+
+### Collection Process Details
+
+import
+
+mutSig2
+
+clinical
+
+v4p0
+
+v1p0
+
+null
+
+v4p8
+
+HM27
+
+RNAseq-bc
+
+RPPA-zscore
+
+miso
+
+flow
+
+gistic
+
+gistic2thd
+
+mutation
+
+mutationBroadGene
+
+mutationBcmGene
+
+wxs
+
+HM450
+
+Agilent-median-zscore
+
+seq-median-zscore
+
+mutationCuratedWustlGene
+
+mut
+
+Agilent
+
+seq
+
+RPPA
+
+ExonJunctions
+
+U133
+
+length
+
+position-min-abs-start
+
+position
+
+1e+05
+
+prcomp-All Genes-mut01
+
+prcomp-All Genes-mut01-1e+05
+
+prcomp-TCGA GBM classifiers-mut01
+
+prcomp-TCGA GBM classifiers-mut01-1e+05
+
+prcomp-Marker genes 545-mut01
+
+prcomp-Marker genes 545-mut01-1e+05
+
+prcomp-TCGA pancan mutated-mut01
+
+prcomp-TCGA pancan mutated-mut01-1e+05
+
+prcomp-oncoVogel274-mut01
+
+prcomp-oncoVogel274-mut01-1e+05
+
+prcomp-Oncoplex-mut01
+
+prcomp-Oncoplex-mut01-1e+05
+
+prcomp-OSCC Chen 131 probes-mut01
+
+prcomp-OSCC Chen 131 probes-mut01-1e+05
+
+prcomp-OSCC Chen 9 genes-mut01
+
+prcomp-OSCC Chen 9 genes-mut01-1e+05
+
+prcomp-All Genes-methylation-HM27
+
+prcomp-All Genes-methylation-HM27-1e+05
+
+prcomp-TCGA GBM classifiers-methylation-HM27
+
+prcomp-TCGA GBM classifiers-methylation-HM27-1e+05
+
+prcomp-Marker genes 545-methylation-HM27
+
+prcomp-Marker genes 545-methylation-HM27-1e+05
+
+prcomp-TCGA pancan mutated-methylation-HM27
+
+prcomp-TCGA pancan mutated-methylation-HM27-1e+05
+
+prcomp-oncoVogel274-methylation-HM27
+
+prcomp-oncoVogel274-methylation-HM27-1e+05
+
+prcomp-Oncoplex-methylation-HM27
+
+prcomp-Oncoplex-methylation-HM27-1e+05
+
+prcomp-OSCC Chen 131 probes-methylation-HM27
+
+prcomp-OSCC Chen 131 probes-methylation-HM27-1e+05
+
+prcomp-OSCC Chen 9 genes-methylation-HM27
+
+prcomp-OSCC Chen 9 genes-methylation-HM27-1e+05
+
+prcomp-All Genes-protein
+
+prcomp-All Genes-protein-1e+05
+
+prcomp-All Genes-cnv
+
+prcomp-All Genes-cnv-1e+05
+
+prcomp-TCGA GBM classifiers-cnv
+
+prcomp-TCGA GBM classifiers-cnv-1e+05
+
+prcomp-Marker genes 545-cnv
+
+prcomp-Marker genes 545-cnv-1e+05
+
+prcomp-TCGA pancan mutated-cnv
+
+prcomp-TCGA pancan mutated-cnv-1e+05
+
+prcomp-oncoVogel274-cnv
+
+prcomp-oncoVogel274-cnv-1e+05
+
+prcomp-Oncoplex-cnv
+
+prcomp-Oncoplex-cnv-1e+05
+
+prcomp-OSCC Chen 131 probes-cnv
+
+prcomp-OSCC Chen 131 probes-cnv-1e+05
+
+prcomp-OSCC Chen 9 genes-cnv
+
+prcomp-OSCC Chen 9 genes-cnv-1e+05
+
+HiSeq
+
+mds-All Genes-cnv-mut01-ucsc-PNAS
+
+mds-All Genes-cnv-mut01-1e+05-ucsc-PNAS
+
+mds-TCGA GBM classifiers-cnv-mut01-ucsc-PNAS
+
+mds-TCGA GBM classifiers-cnv-mut01-1e+05-ucsc-PNAS
+
+mds-Marker genes 545-cnv-mut01-ucsc-PNAS
+
+mds-Marker genes 545-cnv-mut01-1e+05-ucsc-PNAS
+
+mds-TCGA pancan mutated-cnv-mut01-ucsc-PNAS
+
+mds-TCGA pancan mutated-cnv-mut01-1e+05-ucsc-PNAS
+
+mds-oncoVogel274-cnv-mut01-ucsc-PNAS
+
+mds-oncoVogel274-cnv-mut01-1e+05-ucsc-PNAS
+
+mds-Oncoplex-cnv-mut01-ucsc-PNAS
+
+mds-Oncoplex-cnv-mut01-1e+05-ucsc-PNAS
+
+mds-OSCC Chen 131 probes-cnv-mut01-ucsc-PNAS
+
+mds-OSCC Chen 131 probes-cnv-mut01-1e+05-ucsc-PNAS
+
+mds-OSCC Chen 9 genes-cnv-mut01-ucsc-PNAS
+
+mds-OSCC Chen 9 genes-cnv-mut01-1e+05-ucsc-PNAS
+
+mds-All Genes-cnv-mut01-ucsc
+
+mds-All Genes-cnv-mut01-1e+05-ucsc
+
+mds-TCGA GBM classifiers-cnv-mut01-ucsc
+
+mds-TCGA GBM classifiers-cnv-mut01-1e+05-ucsc
+
+mds-Marker genes 545-cnv-mut01-ucsc
+
+mds-Marker genes 545-cnv-mut01-1e+05-ucsc
+
+mds-TCGA pancan mutated-cnv-mut01-ucsc
+
+mds-TCGA pancan mutated-cnv-mut01-1e+05-ucsc
+
+mds-oncoVogel274-cnv-mut01-ucsc
+
+mds-oncoVogel274-cnv-mut01-1e+05-ucsc
+
+mds-Oncoplex-cnv-mut01-ucsc
+
+mds-Oncoplex-cnv-mut01-1e+05-ucsc
+
+mds-OSCC Chen 131 probes-cnv-mut01-ucsc
+
+mds-OSCC Chen 131 probes-cnv-mut01-1e+05-ucsc
+
+mds-OSCC Chen 9 genes-cnv-mut01-ucsc
+
+mds-OSCC Chen 9 genes-cnv-mut01-1e+05-ucsc
+
+v2p0
+
+v4p4
+
+v1p5
+
+v2p1
+
+v1p7
+
+TCGA GBM classifiers
+
+Marker genes 545
+
+TCGA pancan mutated
+
+oncoVogel274
+
+Oncoplex
+
+OSCC Chen 131 probes
+
+OSCC Chen 9 genes
+
 ## From Disease Perspective
 
 Key words to describe lookup_oncoscape_datasource collection
