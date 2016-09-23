@@ -115,16 +115,16 @@
 
     db = yield comongo.client.connect('mongodb://oncoscapeRead:i1f4d9botHD4xnZ'+
       '@oncoscape-dev-db1.sttrcancer.io:27017,oncoscape-dev-db2.sttrcancer.io:27017,'+
-      'oncoscape-dev-db3.sttrcancer.io:27017/pancan12?authSource=admin&replicaSet=rs0');
+      'oncoscape-dev-db3.sttrcancer.io:27017/tcga?authSource=admin&replicaSet=rs0');
 
     /*** Test Item 2: one-to-one mapping between all the collections in the database and 
          lookup_oncoscape_datasources collection
      ***/
-    //collection = yield comongo.db.collection(db, 'lookup_oncoscape_datasources');
-    collection = yield comongo.db.collection(db, 'blca_edges_ucsc_markergenes545-mut01-cnv');
-    collection_arr = yield collection.find({}).toArray();
-    yield comongo.db.close(db);
-  }).catch(onerror);
+    collection = yield comongo.db.collection(db, 'lookup_oncoscape_datasources');
+    // collection = yield comongo.db.collection(db, 'blca_edges_ucsc_markergenes545-mut01-cnv');
+    // collection_arr = yield collection.find({}).toArray();
+  //   yield comongo.db.close(db);
+  // }).catch(onerror);
 
     disease_tables = yield collection.find({}).toArray();
     var count = yield collection.count();
@@ -188,20 +188,28 @@
     //AN EXEPRIMENT TO FIND THE COUNTS FOR ALL COLLECTIONS
     var elem = {};
     var fields = [];
-    for(var i=0;i<collections.length;i++){
+    //for(var i=0;i<collections.length;i++){
+    for(var i=100;i<101;i++){  
       elem = {};
       fields = [];
-      //console.log(collections[i]['s']['name']);
-      collection = yield comongo.db.collection(db, collections[i]['s']['name']);
-      count = yield collection.count();
-      var one = yield collection.findOne();
-      fields = Object.keys(one)
-      console.log(fields);
-      //console.log(count);
-      elem['collection'] = collections[i]['s']['name'];
-      elem['count'] = count;
-      elem['fields'] = fields;
-      collection_counts.push(elem);
+      console.log(collections[i]['s']['name']);
+      if(collections[i]['s']['name'] != 'system.users'){
+        collection = yield comongo.db.collection(db, collections[i]['s']['name']);
+        count = yield collection.count();
+        // var one = yield collection.findOne();
+        // fields = Object.keys(one);
+        // elem['collection'] = collections[i]['s']['name'];
+        // elem['count'] = count;
+        // elem['fields'] = fields;
+        // collection_counts.push(elem);
+      
+        var cursor = yield collection.find().limit(1).toArray();
+        collection.find().batchSize(100).nextObject(function(err, item) {
+          console.dir(item);
+        });
+      }
+      console.log(i);
+      
     }
     jsonfile.writeFile("collection_counts.json", collection_counts, {spaces: 2}, function(err){ console.error(err);});  
     // collections.forEach(function(col){
