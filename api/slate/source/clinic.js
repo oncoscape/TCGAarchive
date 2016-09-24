@@ -2,27 +2,27 @@
 var jsonfile = require("jsonfile");
 var cbio_annotation = {};
 var ucsc_annotation = {};
-// var cbio_annot = cbio_annotation.filter(function(c){
-//     if('collection' in c) 
-//       return typeof c != 'undefined'
-//  });
-// jsonfile.readFile("cbio_annot.json", function(err, obj) {
-//   cbio_annotation = obj;
-// });
+var cbio_annot = cbio_annotation.filter(function(c){
+    if('collection' in c) 
+      return typeof c != 'undefined'
+ });
+jsonfile.readFile("cbio_annot.json", function(err, obj) {
+  cbio_annotation = obj;
+});
 
-// cbio_annotation = cbio_annotation.map(function(c){
-//    var elem = {};
-//    elem.source = c.source;
-//    elem.type = c.type;
-//    elem.collection = c.collection;
-//    elem.sampleSize = c.sampleSize;
-//    elem.GENETIC_ALTERATION_TYPE = c.GENETIC_ALTERATION_TYPE;
-//    elem.DATATYPE = c.DATATYPE;
-//    elem.NAME = c.NAME;
-//    elem.DESCRIPTION = c.DESCRIPTION;
-//    return elem;
-//  });
-//  jsonfile.writeFile("cbio_annot_reorganized.json", cbio_annotation);
+cbio_annotation = cbio_annotation.map(function(c){
+   var elem = {};
+   elem.source = c.source;
+   elem.type = c.type;
+   elem.collection = c.collection;
+   elem.sampleSize = c.sampleSize;
+   elem.GENETIC_ALTERATION_TYPE = c.GENETIC_ALTERATION_TYPE;
+   elem.DATATYPE = c.DATATYPE;
+   elem.NAME = c.NAME;
+   elem.DESCRIPTION = c.DESCRIPTION;
+   return elem;
+ });
+ jsonfile.writeFile("cbio_annot_reorganized.json", cbio_annotation);
 
 jsonfile.readFile("cbio_annot_reorganized.json", function(err, obj) {
   cbio_annotation = obj;
@@ -34,10 +34,8 @@ jsonfile.readFile("ucsc_mol_annotation.json", function(err, obj) {
 });
 
 
-var cbio_o = [];
-jsonfile.readFile("cbio_mol_annotation.json", function(err, obj){ cbio_o = obj;});
 var mol_annot = [];
-var mol_annotation = ucsc_annotation.concat(cbio_o);
+var mol_annotation = ucsc_annotation.concat(cbio_annotation);
 mol_annot = mol_annotation.map(function(m){
   var e = {};
   if('source' in m){
@@ -73,12 +71,11 @@ mol_annot = mol_annotation.map(function(m){
     return e;
   }
 });
-var mol_annot_fn = [];
-mol_annot.forEach(function(m){
-  if(typeof(m) !== undefined){
-    mol_annot_fn.push(m);
-  }
+jsonfile.writeFile("molecular_annotation.json", mol_annot, {spaces: 2}, function(err) {
+  console.error(err)
 });
+
+
 var comongo = require('co-mongodb');
 var co = require('co');
 var disease_tables = [];
