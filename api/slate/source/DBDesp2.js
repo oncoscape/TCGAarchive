@@ -234,19 +234,7 @@ jsonfile.readFile("manifest_elem.json", function(err, obj) {
   	for(p=0;p<manifest_type_keys.length;p++){
     	format.table(manifest_type_keys[p] + " | " + type_keys_annot[manifest_type_keys[p]]);
     } 
-
-    format.h3("All the data sources within Database");
-	var manifest_type_keys = Object.keys(source_keys_annot);
-  	format.text("collection source | Annotation");
-	format.table("--------- | ----------- ");
-  	for(var n=0;n<manifest_type_keys.length;n++){
-    	format.table(manifest_type_keys[n] + " | " + source_keys_annot[manifest_type_keys[n]]);
-    } 
     
-    format.h3("Collection Process Details");
-    manifest_elem.processName.forEach(function(e){
-    	format.text(e);
-    });
 });
 
 

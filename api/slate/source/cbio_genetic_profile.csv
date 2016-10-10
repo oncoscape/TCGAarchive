@@ -1,0 +1,422 @@
+2,acc_tcga_gistic,1,COPY_NUMBER_ALTERATION,DISCRETE,Putative copy-number alterations from GISTIC,Putative copy-number calls on 90 cases determined using GISTIC 2.0. Values: -2 = homozygous deletion; -1 = hemizygous deletion; 0 = neutral / no change; 1 = gain; 2 = high level amplification.,1
+3,acc_tcga_rna_seq_v2_mrna,1,MRNA_EXPRESSION,Z-SCORE,mRNA expression (RNA Seq V2 RSEM),Expression levels for 20532 genes in 79 acc cases (RNA Seq V2 RSEM).,0
+4,acc_tcga_rna_seq_v2_mrna_median_Zscores,1,MRNA_EXPRESSION,Z-SCORE,mRNA Expression z-Scores (RNA Seq V2 RSEM),mRNA z-Scores (RNA Seq V2 RSEM) compared to the expression distribution of each gene tumors that are diploid for this gene.,1
+5,acc_tcga_log2CNA,1,COPY_NUMBER_ALTERATION,LOG-VALUE,Log2 copy-number values,Log2 copy-number values for each gene (from Affymetrix SNP6).,0
+6,acc_tcga_methylation_hm450,1,METHYLATION,CONTINUOUS,Methylation (HM450),"Methylation (HM450) beta-values for genes in 80 cases. For genes with multiple methylation probes, the probe most anti-correlated with expression.",0
+7,acc_tcga_mutations,1,MUTATION_EXTENDED,MAF,Mutations,Mutation data from whole exome sequencing.,1
+8,acc_tcga_RPPA_protein_level,1,PROTEIN_ARRAY_PROTEIN_LEVEL,Z-SCORE,protein/phosphoprotein level (RPPA),Protein or phosphoprotein level (Z-scores) measured by reverse phase protein array (RPPA),1
+9,blca_tcga_gistic,2,COPY_NUMBER_ALTERATION,DISCRETE,Putative copy-number alterations from GISTIC,Putative copy-number calls on 408 cases determined using GISTIC 2.0. Values: -2 = homozygous deletion; -1 = hemizygous deletion; 0 = neutral / no change; 1 = gain; 2 = high level amplification.,1
+10,blca_tcga_rna_seq_v2_mrna,2,MRNA_EXPRESSION,Z-SCORE,mRNA expression (RNA Seq V2 RSEM),Expression levels for 20532 genes in 376 blca cases (RNA Seq V2 RSEM).,0
+11,blca_tcga_rna_seq_v2_mrna_median_Zscores,2,MRNA_EXPRESSION,Z-SCORE,mRNA Expression z-Scores (RNA Seq V2 RSEM),mRNA z-Scores (RNA Seq V2 RSEM) compared to the expression distribution of each gene tumors that are diploid for this gene.,1
+12,blca_tcga_log2CNA,2,COPY_NUMBER_ALTERATION,LOG-VALUE,Log2 copy-number values,Log2 copy-number values for each gene (from Affymetrix SNP6).,0
+13,blca_tcga_methylation_hm450,2,METHYLATION,CONTINUOUS,Methylation (HM450),"Methylation (HM450) beta-values for genes in 388 cases. For genes with multiple methylation probes, the probe most anti-correlated with expression.",0
+14,blca_tcga_mutations,2,MUTATION_EXTENDED,MAF,Mutations,Mutation data from whole exome sequencing.,1
+15,blca_tcga_RPPA_protein_level,2,PROTEIN_ARRAY_PROTEIN_LEVEL,Z-SCORE,protein/phosphoprotein level (RPPA),Protein or phosphoprotein level (Z-scores) measured by reverse phase protein array (RPPA),1
+16,brca_tcga_gistic,3,COPY_NUMBER_ALTERATION,DISCRETE,Putative copy-number alterations from GISTIC,Putative copy-number calls on 1079 cases determined using GISTIC 2.0. Values: -2 = homozygous deletion; -1 = hemizygous deletion; 0 = neutral / no change; 1 = gain; 2 = high level amplification.,1
+17,brca_tcga_mrna_median_Zscores,3,MRNA_EXPRESSION,Z-SCORE,mRNA Expression z-Scores (microarray),mRNA z-Scores (Agilent microarray) compared to the expression distribution of each gene tumors that are diploid for this gene.,1
+18,brca_tcga_rna_seq_v2_mrna,3,MRNA_EXPRESSION,Z-SCORE,mRNA expression (RNA Seq V2 RSEM),Expression levels for 20532 genes in 1209 brca cases (RNA Seq V2 RSEM).,0
+19,brca_tcga_rna_seq_v2_mrna_median_Zscores,3,MRNA_EXPRESSION,Z-SCORE,mRNA Expression z-Scores (RNA Seq V2 RSEM),mRNA z-Scores (RNA Seq V2 RSEM) compared to the expression distribution of each gene tumors that are diploid for this gene.,1
+20,brca_tcga_log2CNA,3,COPY_NUMBER_ALTERATION,LOG-VALUE,Log2 copy-number values,Log2 copy-number values for each gene (from Affymetrix SNP6).,0
+21,brca_tcga_methylation_hm27,3,METHYLATION,CONTINUOUS,Methylation (HM27),"Methylation (HM27) beta-values for genes in 342 cases. For genes with multiple methylation probes, the probe most anti-correlated with expression.",0
+22,brca_tcga_methylation_hm450,3,METHYLATION,CONTINUOUS,Methylation (HM450),"Methylation (HM450) beta-values for genes in 833 cases. For genes with multiple methylation probes, the probe most anti-correlated with expression.",0
+23,brca_tcga_mutations,3,MUTATION_EXTENDED,MAF,Mutations,Mutation data from whole exome sequencing.,1
+24,brca_tcga_RPPA_protein_level,3,PROTEIN_ARRAY_PROTEIN_LEVEL,Z-SCORE,protein/phosphoprotein level (RPPA),Protein or phosphoprotein level (Z-scores) measured by reverse phase protein array (RPPA),1
+25,brca_tcga_mrna,3,MRNA_EXPRESSION,Z-SCORE,mRNA expression (microarray),Expression levels for 17215 genes in 590 brca cases (Agilent microarray).,0
+26,cesc_tcga_gistic,4,COPY_NUMBER_ALTERATION,DISCRETE,Putative copy-number alterations from GISTIC,Putative copy-number calls on 295 cases determined using GISTIC 2.0. Values: -2 = homozygous deletion; -1 = hemizygous deletion; 0 = neutral / no change; 1 = gain; 2 = high level amplification.,1
+27,cesc_tcga_rna_seq_v2_mrna,4,MRNA_EXPRESSION,Z-SCORE,mRNA expression (RNA Seq V2 RSEM),Expression levels for 20532 genes in 256 cesc cases (RNA Seq V2 RSEM).,0
+28,cesc_tcga_rna_seq_v2_mrna_median_Zscores,4,MRNA_EXPRESSION,Z-SCORE,mRNA Expression z-Scores (RNA Seq V2 RSEM),mRNA z-Scores (RNA Seq V2 RSEM) compared to the expression distribution of each gene tumors that are diploid for this gene.,1
+29,cesc_tcga_log2CNA,4,COPY_NUMBER_ALTERATION,LOG-VALUE,Log2 copy-number values,Log2 copy-number values for each gene (from Affymetrix SNP6).,0
+30,cesc_tcga_methylation_hm450,4,METHYLATION,CONTINUOUS,Methylation (HM450),"Methylation (HM450) beta-values for genes in 260 cases. For genes with multiple methylation probes, the probe most anti-correlated with expression.",0
+31,cesc_tcga_mutations,4,MUTATION_EXTENDED,MAF,Mutations,Mutation data from whole exome sequencing.,1
+32,coadread_tcga_gistic,5,COPY_NUMBER_ALTERATION,DISCRETE,Putative copy-number alterations from GISTIC,Putative copy-number calls on 615 cases determined using GISTIC 2.0. Values: -2 = homozygous deletion; -1 = hemizygous deletion; 0 = neutral / no change; 1 = gain; 2 = high level amplification.,1
+33,coadread_tcga_mrna_median_Zscores,5,MRNA_EXPRESSION,Z-SCORE,mRNA Expression z-Scores (microarray),mRNA z-Scores (Agilent microarray) compared to the expression distribution of each gene tumors that are diploid for this gene.,1
+34,coadread_tcga_rna_seq_v2_mrna,5,MRNA_EXPRESSION,Z-SCORE,mRNA expression (RNA Seq V2 RSEM),Expression levels for 20532 genes in 415 coadread cases (RNA Seq V2 RSEM).,0
+35,coadread_tcga_rna_seq_v2_mrna_median_Zscores,5,MRNA_EXPRESSION,Z-SCORE,mRNA Expression z-Scores (RNA Seq V2 RSEM),mRNA z-Scores (RNA Seq V2 RSEM) compared to the expression distribution of each gene tumors that are diploid for this gene.,1
+36,coadread_tcga_log2CNA,5,COPY_NUMBER_ALTERATION,LOG-VALUE,Log2 copy-number values,Log2 copy-number values for each gene (from Affymetrix SNP6).,0
+37,coadread_tcga_methylation_hm27,5,METHYLATION,CONTINUOUS,Methylation (HM27),"Methylation (HM27) beta-values for genes in 275 cases. For genes with multiple methylation probes, the probe most anti-correlated with expression.",0
+38,coadread_tcga_methylation_hm450,5,METHYLATION,CONTINUOUS,Methylation (HM450),"Methylation (HM450) beta-values for genes in 428 cases. For genes with multiple methylation probes, the probe most anti-correlated with expression.",0
+39,coadread_tcga_mutations,5,MUTATION_EXTENDED,MAF,Mutations,Mutation data from whole exome sequencing.,1
+40,coadread_tcga_RPPA_protein_level,5,PROTEIN_ARRAY_PROTEIN_LEVEL,Z-SCORE,protein/phosphoprotein level (RPPA),Protein or phosphoprotein level (Z-scores) measured by reverse phase protein array (RPPA),1
+41,coadread_tcga_mrna,5,MRNA_EXPRESSION,Z-SCORE,mRNA expression (microarray),Expression levels for 17215 genes in 244 coadread cases (Agilent microarray).,0
+42,dlbc_tcga_gistic,6,COPY_NUMBER_ALTERATION,DISCRETE,Putative copy-number alterations from GISTIC,Putative copy-number calls on 48 cases determined using GISTIC 2.0. Values: -2 = homozygous deletion; -1 = hemizygous deletion; 0 = neutral / no change; 1 = gain; 2 = high level amplification.,1
+43,dlbc_tcga_rna_seq_v2_mrna,6,MRNA_EXPRESSION,Z-SCORE,mRNA expression (RNA Seq V2 RSEM),Expression levels for 20532 genes in 28 dlbc cases (RNA Seq V2 RSEM).,0
+44,dlbc_tcga_rna_seq_v2_mrna_median_Zscores,6,MRNA_EXPRESSION,Z-SCORE,mRNA Expression z-Scores (RNA Seq V2 RSEM),mRNA z-Scores (RNA Seq V2 RSEM) compared to the expression distribution of each gene tumors that are diploid for this gene.,1
+45,dlbc_tcga_log2CNA,6,COPY_NUMBER_ALTERATION,LOG-VALUE,Log2 copy-number values,Log2 copy-number values for each gene (from Affymetrix SNP6).,0
+46,dlbc_tcga_methylation_hm450,6,METHYLATION,CONTINUOUS,Methylation (HM450),"Methylation (HM450) beta-values for genes in 48 cases. For genes with multiple methylation probes, the probe most anti-correlated with expression.",0
+47,esca_tcga_gistic,7,COPY_NUMBER_ALTERATION,DISCRETE,Putative copy-number alterations from GISTIC,Putative copy-number calls on 184 cases determined using GISTIC 2.0. Values: -2 = homozygous deletion; -1 = hemizygous deletion; 0 = neutral / no change; 1 = gain; 2 = high level amplification.,1
+48,esca_tcga_log2CNA,7,COPY_NUMBER_ALTERATION,LOG-VALUE,Log2 copy-number values,Log2 copy-number values for each gene (from Affymetrix SNP6).,0
+49,esca_tcga_methylation_hm450,7,METHYLATION,CONTINUOUS,Methylation (HM450),"Methylation (HM450) beta-values for genes in 202 cases. For genes with multiple methylation probes, the probe most anti-correlated with expression.",0
+50,gbm_tcga_gistic,8,COPY_NUMBER_ALTERATION,DISCRETE,Putative copy-number alterations from GISTIC,Putative copy-number calls on 577 cases determined using GISTIC 2.0. Values: -2 = homozygous deletion; -1 = hemizygous deletion; 0 = neutral / no change; 1 = gain; 2 = high level amplification.,1
+51,gbm_tcga_mrna_U133,8,MRNA_EXPRESSION,CONTINUOUS,mRNA expression (U133 microarray only),mRNA expression data from the Affymetrix U133 microarray.,0
+52,gbm_tcga_mrna_U133_Zscores,8,MRNA_EXPRESSION,Z-SCORE,mRNA Expression z-Scores (U133 microarray only),mRNA z-Scores  (U133 microarray only) compared to the expression distribution of each gene tumors that are diploid for this gene.,1
+53,gbm_tcga_mrna_median_Zscores,8,MRNA_EXPRESSION,Z-SCORE,mRNA Expression z-Scores (microarray),mRNA z-Scores (Agilent microarray) compared to the expression distribution of each gene tumors that are diploid for this gene.,1
+54,gbm_tcga_rna_seq_v2_mrna,8,MRNA_EXPRESSION,Z-SCORE,mRNA expression (RNA Seq V2 RSEM),Expression levels for 20532 genes in 166 gbm cases (RNA Seq V2 RSEM).,0
+55,gbm_tcga_rna_seq_v2_mrna_median_Zscores,8,MRNA_EXPRESSION,Z-SCORE,mRNA Expression z-Scores (RNA Seq V2 RSEM),mRNA z-Scores (RNA Seq V2 RSEM) compared to the expression distribution of each gene tumors that are diploid for this gene.,1
+56,gbm_tcga_log2CNA,8,COPY_NUMBER_ALTERATION,LOG-VALUE,Log2 copy-number values,Log2 copy-number values for each gene (from Affymetrix SNP6).,0
+57,gbm_tcga_methylation_hm27,8,METHYLATION,CONTINUOUS,Methylation (HM27),"Methylation (HM27) beta-values for genes in 285 cases. For genes with multiple methylation probes, the probe most anti-correlated with expression.",0
+58,gbm_tcga_methylation_hm450,8,METHYLATION,CONTINUOUS,Methylation (HM450),"Methylation (HM450) beta-values for genes in 144 cases. For genes with multiple methylation probes, the probe most anti-correlated with expression.",0
+59,gbm_tcga_mutations,8,MUTATION_EXTENDED,MAF,Mutations,Mutation data from whole exome sequencing.,1
+60,gbm_tcga_RPPA_protein_level,8,PROTEIN_ARRAY_PROTEIN_LEVEL,Z-SCORE,protein/phosphoprotein level (RPPA),Protein or phosphoprotein level (Z-scores) measured by reverse phase protein array (RPPA),1
+61,gbm_tcga_mrna,8,MRNA_EXPRESSION,Z-SCORE,mRNA expression (microarray),Expression levels for 17215 genes in 411 gbm cases (Agilent microarray).,0
+62,hnsc_tcga_gistic,9,COPY_NUMBER_ALTERATION,DISCRETE,Putative copy-number alterations from GISTIC,Putative copy-number calls on 522 cases determined using GISTIC 2.0. Values: -2 = homozygous deletion; -1 = hemizygous deletion; 0 = neutral / no change; 1 = gain; 2 = high level amplification.,1
+63,hnsc_tcga_rna_seq_v2_mrna,9,MRNA_EXPRESSION,Z-SCORE,mRNA expression (RNA Seq V2 RSEM),Expression levels for 20532 genes in 541 hnsc cases (RNA Seq V2 RSEM).,0
+64,hnsc_tcga_rna_seq_v2_mrna_median_Zscores,9,MRNA_EXPRESSION,Z-SCORE,mRNA Expression z-Scores (RNA Seq V2 RSEM),mRNA z-Scores (RNA Seq V2 RSEM) compared to the expression distribution of each gene tumors that are diploid for this gene.,1
+65,hnsc_tcga_log2CNA,9,COPY_NUMBER_ALTERATION,LOG-VALUE,Log2 copy-number values,Log2 copy-number values for each gene (from Affymetrix SNP6).,0
+66,hnsc_tcga_methylation_hm450,9,METHYLATION,CONTINUOUS,Methylation (HM450),"Methylation (HM450) beta-values for genes in 580 cases. For genes with multiple methylation probes, the probe most anti-correlated with expression.",0
+67,hnsc_tcga_mutations,9,MUTATION_EXTENDED,MAF,Mutations,Mutation data from whole exome sequencing.,1
+68,hnsc_tcga_RPPA_protein_level,9,PROTEIN_ARRAY_PROTEIN_LEVEL,Z-SCORE,protein/phosphoprotein level (RPPA),Protein or phosphoprotein level (Z-scores) measured by reverse phase protein array (RPPA),1
+69,kich_tcga_gistic,10,COPY_NUMBER_ALTERATION,DISCRETE,Putative copy-number alterations from GISTIC,Putative copy-number calls on 66 cases determined using GISTIC 2.0. Values: -2 = homozygous deletion; -1 = hemizygous deletion; 0 = neutral / no change; 1 = gain; 2 = high level amplification.,1
+70,kich_tcga_rna_seq_v2_mrna,10,MRNA_EXPRESSION,Z-SCORE,mRNA expression (RNA Seq V2 RSEM),Expression levels for 20532 genes in 91 kich cases (RNA Seq V2 RSEM).,0
+71,kich_tcga_rna_seq_v2_mrna_median_Zscores,10,MRNA_EXPRESSION,Z-SCORE,mRNA Expression z-Scores (RNA Seq V2 RSEM),mRNA z-Scores (RNA Seq V2 RSEM) compared to the expression distribution of each gene tumors that are diploid for this gene.,1
+72,kich_tcga_log2CNA,10,COPY_NUMBER_ALTERATION,LOG-VALUE,Log2 copy-number values,Log2 copy-number values for each gene (from Affymetrix SNP6).,0
+73,kich_tcga_methylation_hm450,10,METHYLATION,CONTINUOUS,Methylation (HM450),"Methylation (HM450) beta-values for genes in 66 cases. For genes with multiple methylation probes, the probe most anti-correlated with expression.",0
+74,kich_tcga_mutations,10,MUTATION_EXTENDED,MAF,Mutations,Mutation data from whole exome sequencing.,1
+75,kirc_tcga_gistic,11,COPY_NUMBER_ALTERATION,DISCRETE,Putative copy-number alterations from GISTIC,Putative copy-number calls on 528 cases determined using GISTIC 2.0. Values: -2 = homozygous deletion; -1 = hemizygous deletion; 0 = neutral / no change; 1 = gain; 2 = high level amplification.,1
+76,kirc_tcga_mrna_median_Zscores,11,MRNA_EXPRESSION,Z-SCORE,mRNA Expression z-Scores (microarray),mRNA z-Scores (Agilent microarray) compared to the expression distribution of each gene tumors that are diploid for this gene.,1
+77,kirc_tcga_rna_seq_v2_mrna,11,MRNA_EXPRESSION,Z-SCORE,mRNA expression (RNA Seq V2 RSEM),Expression levels for 20532 genes in 604 kirc cases (RNA Seq V2 RSEM).,0
+78,kirc_tcga_rna_seq_v2_mrna_median_Zscores,11,MRNA_EXPRESSION,Z-SCORE,mRNA Expression z-Scores (RNA Seq V2 RSEM),mRNA z-Scores (RNA Seq V2 RSEM) compared to the expression distribution of each gene tumors that are diploid for this gene.,1
+79,kirc_tcga_log2CNA,11,COPY_NUMBER_ALTERATION,LOG-VALUE,Log2 copy-number values,Log2 copy-number values for each gene (from Affymetrix SNP6).,0
+80,kirc_tcga_methylation_hm27,11,METHYLATION,CONTINUOUS,Methylation (HM27),"Methylation (HM27) beta-values for genes in 418 cases. For genes with multiple methylation probes, the probe most anti-correlated with expression.",0
+81,kirc_tcga_methylation_hm450,11,METHYLATION,CONTINUOUS,Methylation (HM450),"Methylation (HM450) beta-values for genes in 480 cases. For genes with multiple methylation probes, the probe most anti-correlated with expression.",0
+82,kirc_tcga_mutations,11,MUTATION_EXTENDED,MAF,Mutations,Mutation data from whole exome sequencing.,1
+83,kirc_tcga_RPPA_protein_level,11,PROTEIN_ARRAY_PROTEIN_LEVEL,Z-SCORE,protein/phosphoprotein level (RPPA),Protein or phosphoprotein level (Z-scores) measured by reverse phase protein array (RPPA),1
+84,kirc_tcga_mrna,11,MRNA_EXPRESSION,Z-SCORE,mRNA expression (microarray),Expression levels for 17215 genes in 72 kirc cases (Agilent microarray).,0
+85,kirp_tcga_gistic,12,COPY_NUMBER_ALTERATION,DISCRETE,Putative copy-number alterations from GISTIC,Putative copy-number calls on 288 cases determined using GISTIC 2.0. Values: -2 = homozygous deletion; -1 = hemizygous deletion; 0 = neutral / no change; 1 = gain; 2 = high level amplification.,1
+86,kirp_tcga_mrna_median_Zscores,12,MRNA_EXPRESSION,Z-SCORE,mRNA Expression z-Scores (microarray),mRNA z-Scores (Agilent microarray) compared to the expression distribution of each gene tumors that are diploid for this gene.,1
+87,kirp_tcga_rna_seq_v2_mrna,12,MRNA_EXPRESSION,Z-SCORE,mRNA expression (RNA Seq V2 RSEM),Expression levels for 20532 genes in 322 kirp cases (RNA Seq V2 RSEM).,0
+88,kirp_tcga_rna_seq_v2_mrna_median_Zscores,12,MRNA_EXPRESSION,Z-SCORE,mRNA Expression z-Scores (RNA Seq V2 RSEM),mRNA z-Scores (RNA Seq V2 RSEM) compared to the expression distribution of each gene tumors that are diploid for this gene.,1
+89,kirp_tcga_log2CNA,12,COPY_NUMBER_ALTERATION,LOG-VALUE,Log2 copy-number values,Log2 copy-number values for each gene (from Affymetrix SNP6).,0
+90,kirp_tcga_methylation_hm27,12,METHYLATION,CONTINUOUS,Methylation (HM27),"Methylation (HM27) beta-values for genes in 21 cases. For genes with multiple methylation probes, the probe most anti-correlated with expression.",0
+91,kirp_tcga_methylation_hm450,12,METHYLATION,CONTINUOUS,Methylation (HM450),"Methylation (HM450) beta-values for genes in 271 cases. For genes with multiple methylation probes, the probe most anti-correlated with expression.",0
+92,kirp_tcga_mutations,12,MUTATION_EXTENDED,MAF,Mutations,Mutation data from whole exome sequencing.,1
+93,kirp_tcga_RPPA_protein_level,12,PROTEIN_ARRAY_PROTEIN_LEVEL,Z-SCORE,protein/phosphoprotein level (RPPA),Protein or phosphoprotein level (Z-scores) measured by reverse phase protein array (RPPA),1
+94,kirp_tcga_mrna,12,MRNA_EXPRESSION,Z-SCORE,mRNA expression (microarray),Expression levels for 17215 genes in 16 kirp cases (Agilent microarray).,0
+95,laml_tcga_gistic,13,COPY_NUMBER_ALTERATION,DISCRETE,Putative copy-number alterations from GISTIC,Putative copy-number calls on 191 cases determined using GISTIC 2.0. Values: -2 = homozygous deletion; -1 = hemizygous deletion; 0 = neutral / no change; 1 = gain; 2 = high level amplification.,1
+96,laml_tcga_rna_seq_mrna_median_Zscores,13,MRNA_EXPRESSION,Z-SCORE,mRNA Expression z-Scores (RNA Seq RPKM),mRNA z-Scores (RNA Seq RPKM) compared to the expression distribution of each gene tumors that are diploid for this gene.,1
+97,laml_tcga_rna_seq_mrna,13,MRNA_EXPRESSION,Z-SCORE,mRNA expression (RNA Seq RPKM),Expression levels for 20443 genes in 179 laml cases (RNA Seq RPKM).,0
+98,laml_tcga_rna_seq_v2_mrna,13,MRNA_EXPRESSION,Z-SCORE,mRNA expression (RNA Seq V2 RSEM),Expression levels for 20532 genes in 173 laml cases (RNA Seq V2 RSEM).,0
+99,laml_tcga_rna_seq_v2_mrna_median_Zscores,13,MRNA_EXPRESSION,Z-SCORE,mRNA Expression z-Scores (RNA Seq V2 RSEM),mRNA z-Scores (RNA Seq V2 RSEM) compared to the expression distribution of each gene tumors that are diploid for this gene.,1
+100,laml_tcga_log2CNA,13,COPY_NUMBER_ALTERATION,LOG-VALUE,Log2 copy-number values,Log2 copy-number values for each gene (from Affymetrix SNP6).,0
+101,laml_tcga_methylation_hm27,13,METHYLATION,CONTINUOUS,Methylation (HM27),"Methylation (HM27) beta-values for genes in 194 cases. For genes with multiple methylation probes, the probe most anti-correlated with expression.",0
+102,laml_tcga_methylation_hm450,13,METHYLATION,CONTINUOUS,Methylation (HM450),"Methylation (HM450) beta-values for genes in 194 cases. For genes with multiple methylation probes, the probe most anti-correlated with expression.",0
+103,laml_tcga_mutations,13,MUTATION_EXTENDED,MAF,Mutations,Mutation data from whole exome sequencing.,1
+104,lgg_tcga_gistic,14,COPY_NUMBER_ALTERATION,DISCRETE,Putative copy-number alterations from GISTIC,Putative copy-number calls on 513 cases determined using GISTIC 2.0. Values: -2 = homozygous deletion; -1 = hemizygous deletion; 0 = neutral / no change; 1 = gain; 2 = high level amplification.,1
+105,lgg_tcga_mrna_median_Zscores,14,MRNA_EXPRESSION,Z-SCORE,mRNA Expression z-Scores (microarray),mRNA z-Scores (Agilent microarray) compared to the expression distribution of each gene tumors that are diploid for this gene.,1
+106,lgg_tcga_rna_seq_v2_mrna,14,MRNA_EXPRESSION,Z-SCORE,mRNA expression (RNA Seq V2 RSEM),Expression levels for 20532 genes in 527 lgg cases (RNA Seq V2 RSEM).,0
+107,lgg_tcga_rna_seq_v2_mrna_median_Zscores,14,MRNA_EXPRESSION,Z-SCORE,mRNA Expression z-Scores (RNA Seq V2 RSEM),mRNA z-Scores (RNA Seq V2 RSEM) compared to the expression distribution of each gene tumors that are diploid for this gene.,1
+108,lgg_tcga_log2CNA,14,COPY_NUMBER_ALTERATION,LOG-VALUE,Log2 copy-number values,Log2 copy-number values for each gene (from Affymetrix SNP6).,0
+109,lgg_tcga_methylation_hm450,14,METHYLATION,CONTINUOUS,Methylation (HM450),"Methylation (HM450) beta-values for genes in 530 cases. For genes with multiple methylation probes, the probe most anti-correlated with expression.",0
+110,lgg_tcga_mutations,14,MUTATION_EXTENDED,MAF,Mutations,Mutation data from whole exome sequencing.,1
+111,lgg_tcga_RPPA_protein_level,14,PROTEIN_ARRAY_PROTEIN_LEVEL,Z-SCORE,protein/phosphoprotein level (RPPA),Protein or phosphoprotein level (Z-scores) measured by reverse phase protein array (RPPA),1
+112,lgg_tcga_mrna,14,MRNA_EXPRESSION,Z-SCORE,mRNA expression (microarray),Expression levels for 17215 genes in 27 lgg cases (Agilent microarray).,0
+113,lihc_tcga_gistic,15,COPY_NUMBER_ALTERATION,DISCRETE,Putative copy-number alterations from GISTIC,Putative copy-number calls on 370 cases determined using GISTIC 2.0. Values: -2 = homozygous deletion; -1 = hemizygous deletion; 0 = neutral / no change; 1 = gain; 2 = high level amplification.,1
+114,lihc_tcga_rna_seq_v2_mrna,15,MRNA_EXPRESSION,Z-SCORE,mRNA expression (RNA Seq V2 RSEM),Expression levels for 20532 genes in 319 lihc cases (RNA Seq V2 RSEM).,0
+115,lihc_tcga_rna_seq_v2_mrna_median_Zscores,15,MRNA_EXPRESSION,Z-SCORE,mRNA Expression z-Scores (RNA Seq V2 RSEM),mRNA z-Scores (RNA Seq V2 RSEM) compared to the expression distribution of each gene tumors that are diploid for this gene.,1
+116,lihc_tcga_log2CNA,15,COPY_NUMBER_ALTERATION,LOG-VALUE,Log2 copy-number values,Log2 copy-number values for each gene (from Affymetrix SNP6).,0
+117,lihc_tcga_methylation_hm450,15,METHYLATION,CONTINUOUS,Methylation (HM450),"Methylation (HM450) beta-values for genes in 342 cases. For genes with multiple methylation probes, the probe most anti-correlated with expression.",0
+118,lihc_tcga_mutations,15,MUTATION_EXTENDED,MAF,Mutations,Mutation data from whole exome sequencing.,1
+119,luad_tcga_gistic,16,COPY_NUMBER_ALTERATION,DISCRETE,Putative copy-number alterations from GISTIC,Putative copy-number calls on 515 cases determined using GISTIC 2.0. Values: -2 = homozygous deletion; -1 = hemizygous deletion; 0 = neutral / no change; 1 = gain; 2 = high level amplification.,1
+120,luad_tcga_mrna_median_Zscores,16,MRNA_EXPRESSION,Z-SCORE,mRNA Expression z-Scores (microarray),mRNA z-Scores (Agilent microarray) compared to the expression distribution of each gene tumors that are diploid for this gene.,1
+121,luad_tcga_rna_seq_v2_mrna,16,MRNA_EXPRESSION,Z-SCORE,mRNA expression (RNA Seq V2 RSEM),Expression levels for 20532 genes in 548 luad cases (RNA Seq V2 RSEM).,0
+122,luad_tcga_rna_seq_v2_mrna_median_Zscores,16,MRNA_EXPRESSION,Z-SCORE,mRNA Expression z-Scores (RNA Seq V2 RSEM),mRNA z-Scores (RNA Seq V2 RSEM) compared to the expression distribution of each gene tumors that are diploid for this gene.,1
+123,luad_tcga_log2CNA,16,COPY_NUMBER_ALTERATION,LOG-VALUE,Log2 copy-number values,Log2 copy-number values for each gene (from Affymetrix SNP6).,0
+124,luad_tcga_methylation_hm27,16,METHYLATION,CONTINUOUS,Methylation (HM27),"Methylation (HM27) beta-values for genes in 150 cases. For genes with multiple methylation probes, the probe most anti-correlated with expression.",0
+125,luad_tcga_methylation_hm450,16,METHYLATION,CONTINUOUS,Methylation (HM450),"Methylation (HM450) beta-values for genes in 483 cases. For genes with multiple methylation probes, the probe most anti-correlated with expression.",0
+126,luad_tcga_mutations,16,MUTATION_EXTENDED,MAF,Mutations,Mutation data from whole exome sequencing.,1
+127,luad_tcga_RPPA_protein_level,16,PROTEIN_ARRAY_PROTEIN_LEVEL,Z-SCORE,protein/phosphoprotein level (RPPA),Protein or phosphoprotein level (Z-scores) measured by reverse phase protein array (RPPA),1
+128,luad_tcga_mrna,16,MRNA_EXPRESSION,Z-SCORE,mRNA expression (microarray),Expression levels for 17215 genes in 32 luad cases (Agilent microarray).,0
+129,lusc_tcga_gistic,17,COPY_NUMBER_ALTERATION,DISCRETE,Putative copy-number alterations from GISTIC,Putative copy-number calls on 501 cases determined using GISTIC 2.0. Values: -2 = homozygous deletion; -1 = hemizygous deletion; 0 = neutral / no change; 1 = gain; 2 = high level amplification.,1
+130,lusc_tcga_mrna_U133,17,MRNA_EXPRESSION,CONTINUOUS,mRNA expression (U133 microarray only),mRNA expression data from the Affymetrix U133 microarray.,0
+131,lusc_tcga_mrna_U133_Zscores,17,MRNA_EXPRESSION,Z-SCORE,mRNA Expression z-Scores (U133 microarray only),mRNA z-Scores  (U133 microarray only) compared to the expression distribution of each gene tumors that are diploid for this gene.,1
+132,lusc_tcga_mrna_median_Zscores,17,MRNA_EXPRESSION,Z-SCORE,mRNA Expression z-Scores (microarray),mRNA z-Scores (Agilent microarray) compared to the expression distribution of each gene tumors that are diploid for this gene.,1
+133,lusc_tcga_rna_seq_v2_mrna,17,MRNA_EXPRESSION,Z-SCORE,mRNA expression (RNA Seq V2 RSEM),Expression levels for 20532 genes in 552 lusc cases (RNA Seq V2 RSEM).,0
+134,lusc_tcga_rna_seq_v2_mrna_median_Zscores,17,MRNA_EXPRESSION,Z-SCORE,mRNA Expression z-Scores (RNA Seq V2 RSEM),mRNA z-Scores (RNA Seq V2 RSEM) compared to the expression distribution of each gene tumors that are diploid for this gene.,1
+135,lusc_tcga_log2CNA,17,COPY_NUMBER_ALTERATION,LOG-VALUE,Log2 copy-number values,Log2 copy-number values for each gene (from Affymetrix SNP6).,0
+136,lusc_tcga_methylation_hm27,17,METHYLATION,CONTINUOUS,Methylation (HM27),"Methylation (HM27) beta-values for genes in 160 cases. For genes with multiple methylation probes, the probe most anti-correlated with expression.",0
+137,lusc_tcga_methylation_hm450,17,METHYLATION,CONTINUOUS,Methylation (HM450),"Methylation (HM450) beta-values for genes in 401 cases. For genes with multiple methylation probes, the probe most anti-correlated with expression.",0
+138,lusc_tcga_mutations,17,MUTATION_EXTENDED,MAF,Mutations,Mutation data from whole exome sequencing.,1
+139,lusc_tcga_RPPA_protein_level,17,PROTEIN_ARRAY_PROTEIN_LEVEL,Z-SCORE,protein/phosphoprotein level (RPPA),Protein or phosphoprotein level (Z-scores) measured by reverse phase protein array (RPPA),1
+140,lusc_tcga_mrna,17,MRNA_EXPRESSION,Z-SCORE,mRNA expression (microarray),Expression levels for 17215 genes in 154 lusc cases (Agilent microarray).,0
+141,ov_tcga_gistic,18,COPY_NUMBER_ALTERATION,DISCRETE,Putative copy-number alterations from GISTIC,Putative copy-number calls on 579 cases determined using GISTIC 2.0. Values: -2 = homozygous deletion; -1 = hemizygous deletion; 0 = neutral / no change; 1 = gain; 2 = high level amplification.,1
+142,ov_tcga_mrna_U133,18,MRNA_EXPRESSION,CONTINUOUS,mRNA expression (U133 microarray only),mRNA expression data from the Affymetrix U133 microarray.,0
+143,ov_tcga_mrna_U133_Zscores,18,MRNA_EXPRESSION,Z-SCORE,mRNA Expression z-Scores (U133 microarray only),mRNA z-Scores  (U133 microarray only) compared to the expression distribution of each gene tumors that are diploid for this gene.,1
+144,ov_tcga_mrna_median_Zscores,18,MRNA_EXPRESSION,Z-SCORE,mRNA Expression z-Scores (microarray),mRNA z-Scores (Agilent microarray) compared to the expression distribution of each gene tumors that are diploid for this gene.,1
+145,ov_tcga_rna_seq_v2_mrna,18,MRNA_EXPRESSION,Z-SCORE,mRNA expression (RNA Seq V2 RSEM),Expression levels for 20532 genes in 265 ov cases (RNA Seq V2 RSEM).,0
+146,ov_tcga_rna_seq_v2_mrna_median_Zscores,18,MRNA_EXPRESSION,Z-SCORE,mRNA Expression z-Scores (RNA Seq V2 RSEM),mRNA z-Scores (RNA Seq V2 RSEM) compared to the expression distribution of each gene tumors that are diploid for this gene.,1
+147,ov_tcga_log2CNA,18,COPY_NUMBER_ALTERATION,LOG-VALUE,Log2 copy-number values,Log2 copy-number values for each gene (from Affymetrix SNP6).,0
+148,ov_tcga_methylation_hm27,18,METHYLATION,CONTINUOUS,Methylation (HM27),"Methylation (HM27) beta-values for genes in 612 cases. For genes with multiple methylation probes, the probe most anti-correlated with expression.",0
+149,ov_tcga_methylation_hm450,18,METHYLATION,CONTINUOUS,Methylation (HM450),"Methylation (HM450) beta-values for genes in 10 cases. For genes with multiple methylation probes, the probe most anti-correlated with expression.",0
+150,ov_tcga_mutations,18,MUTATION_EXTENDED,MAF,Mutations,Mutation data from whole exome sequencing.,1
+151,ov_tcga_RPPA_protein_level,18,PROTEIN_ARRAY_PROTEIN_LEVEL,Z-SCORE,protein/phosphoprotein level (RPPA),Protein or phosphoprotein level (Z-scores) measured by reverse phase protein array (RPPA),1
+152,ov_tcga_mrna,18,MRNA_EXPRESSION,Z-SCORE,mRNA expression (microarray),Expression levels for 17215 genes in 561 ov cases (Agilent microarray).,0
+153,paad_tcga_gistic,19,COPY_NUMBER_ALTERATION,DISCRETE,Putative copy-number alterations from GISTIC,Putative copy-number calls on 184 cases determined using GISTIC 2.0. Values: -2 = homozygous deletion; -1 = hemizygous deletion; 0 = neutral / no change; 1 = gain; 2 = high level amplification.,1
+154,paad_tcga_rna_seq_v2_mrna,19,MRNA_EXPRESSION,Z-SCORE,mRNA expression (RNA Seq V2 RSEM),Expression levels for 20532 genes in 183 paad cases (RNA Seq V2 RSEM).,0
+155,paad_tcga_rna_seq_v2_mrna_median_Zscores,19,MRNA_EXPRESSION,Z-SCORE,mRNA Expression z-Scores (RNA Seq V2 RSEM),mRNA z-Scores (RNA Seq V2 RSEM) compared to the expression distribution of each gene tumors that are diploid for this gene.,1
+156,paad_tcga_log2CNA,19,COPY_NUMBER_ALTERATION,LOG-VALUE,Log2 copy-number values,Log2 copy-number values for each gene (from Affymetrix SNP6).,0
+157,paad_tcga_methylation_hm450,19,METHYLATION,CONTINUOUS,Methylation (HM450),"Methylation (HM450) beta-values for genes in 156 cases. For genes with multiple methylation probes, the probe most anti-correlated with expression.",0
+158,paad_tcga_mutations,19,MUTATION_EXTENDED,MAF,Mutations,Mutation data from whole exome sequencing.,1
+159,paad_tcga_RPPA_protein_level,19,PROTEIN_ARRAY_PROTEIN_LEVEL,Z-SCORE,protein/phosphoprotein level (RPPA),Protein or phosphoprotein level (Z-scores) measured by reverse phase protein array (RPPA),1
+160,pcpg_tcga_gistic,20,COPY_NUMBER_ALTERATION,DISCRETE,Putative copy-number alterations from GISTIC,Putative copy-number calls on 162 cases determined using GISTIC 2.0. Values: -2 = homozygous deletion; -1 = hemizygous deletion; 0 = neutral / no change; 1 = gain; 2 = high level amplification.,1
+161,pcpg_tcga_rna_seq_v2_mrna,20,MRNA_EXPRESSION,Z-SCORE,mRNA expression (RNA Seq V2 RSEM),Expression levels for 20532 genes in 187 pcpg cases (RNA Seq V2 RSEM).,0
+162,pcpg_tcga_rna_seq_v2_mrna_median_Zscores,20,MRNA_EXPRESSION,Z-SCORE,mRNA Expression z-Scores (RNA Seq V2 RSEM),mRNA z-Scores (RNA Seq V2 RSEM) compared to the expression distribution of each gene tumors that are diploid for this gene.,1
+163,pcpg_tcga_log2CNA,20,COPY_NUMBER_ALTERATION,LOG-VALUE,Log2 copy-number values,Log2 copy-number values for each gene (from Affymetrix SNP6).,0
+164,pcpg_tcga_methylation_hm450,20,METHYLATION,CONTINUOUS,Methylation (HM450),"Methylation (HM450) beta-values for genes in 187 cases. For genes with multiple methylation probes, the probe most anti-correlated with expression.",0
+165,pcpg_tcga_mutations,20,MUTATION_EXTENDED,MAF,Mutations,Mutation data from whole exome sequencing.,1
+166,prad_tcga_gistic,21,COPY_NUMBER_ALTERATION,DISCRETE,Putative copy-number alterations from GISTIC,Putative copy-number calls on 492 cases determined using GISTIC 2.0. Values: -2 = homozygous deletion; -1 = hemizygous deletion; 0 = neutral / no change; 1 = gain; 2 = high level amplification.,1
+167,prad_tcga_rna_seq_v2_mrna,21,MRNA_EXPRESSION,Z-SCORE,mRNA expression (RNA Seq V2 RSEM),Expression levels for 20532 genes in 539 prad cases (RNA Seq V2 RSEM).,0
+168,prad_tcga_rna_seq_v2_mrna_median_Zscores,21,MRNA_EXPRESSION,Z-SCORE,mRNA Expression z-Scores (RNA Seq V2 RSEM),mRNA z-Scores (RNA Seq V2 RSEM) compared to the expression distribution of each gene tumors that are diploid for this gene.,1
+169,prad_tcga_log2CNA,21,COPY_NUMBER_ALTERATION,LOG-VALUE,Log2 copy-number values,Log2 copy-number values for each gene (from Affymetrix SNP6).,0
+170,prad_tcga_methylation_hm450,21,METHYLATION,CONTINUOUS,Methylation (HM450),"Methylation (HM450) beta-values for genes in 475 cases. For genes with multiple methylation probes, the probe most anti-correlated with expression.",0
+171,prad_tcga_mutations,21,MUTATION_EXTENDED,MAF,Mutations,Mutation data from whole exome sequencing.,1
+172,prad_tcga_RPPA_protein_level,21,PROTEIN_ARRAY_PROTEIN_LEVEL,Z-SCORE,protein/phosphoprotein level (RPPA),Protein or phosphoprotein level (Z-scores) measured by reverse phase protein array (RPPA),1
+173,sarc_tcga_gistic,22,COPY_NUMBER_ALTERATION,DISCRETE,Putative copy-number alterations from GISTIC,Putative copy-number calls on 257 cases determined using GISTIC 2.0. Values: -2 = homozygous deletion; -1 = hemizygous deletion; 0 = neutral / no change; 1 = gain; 2 = high level amplification.,1
+174,sarc_tcga_rna_seq_v2_mrna,22,MRNA_EXPRESSION,Z-SCORE,mRNA expression (RNA Seq V2 RSEM),Expression levels for 20532 genes in 263 sarc cases (RNA Seq V2 RSEM).,0
+175,sarc_tcga_rna_seq_v2_mrna_median_Zscores,22,MRNA_EXPRESSION,Z-SCORE,mRNA Expression z-Scores (RNA Seq V2 RSEM),mRNA z-Scores (RNA Seq V2 RSEM) compared to the expression distribution of each gene tumors that are diploid for this gene.,1
+176,sarc_tcga_log2CNA,22,COPY_NUMBER_ALTERATION,LOG-VALUE,Log2 copy-number values,Log2 copy-number values for each gene (from Affymetrix SNP6).,0
+177,sarc_tcga_methylation_hm450,22,METHYLATION,CONTINUOUS,Methylation (HM450),"Methylation (HM450) beta-values for genes in 249 cases. For genes with multiple methylation probes, the probe most anti-correlated with expression.",0
+178,skcm_tcga_gistic,23,COPY_NUMBER_ALTERATION,DISCRETE,Putative copy-number alterations from GISTIC,Putative copy-number calls on 366 cases determined using GISTIC 2.0. Values: -2 = homozygous deletion; -1 = hemizygous deletion; 0 = neutral / no change; 1 = gain; 2 = high level amplification.,1
+179,skcm_tcga_rna_seq_v2_mrna,23,MRNA_EXPRESSION,Z-SCORE,mRNA expression (RNA Seq V2 RSEM),Expression levels for 20532 genes in 471 skcm cases (RNA Seq V2 RSEM).,0
+180,skcm_tcga_rna_seq_v2_mrna_median_Zscores,23,MRNA_EXPRESSION,Z-SCORE,mRNA Expression z-Scores (RNA Seq V2 RSEM),mRNA z-Scores (RNA Seq V2 RSEM) compared to the expression distribution of each gene tumors that are diploid for this gene.,1
+181,skcm_tcga_log2CNA,23,COPY_NUMBER_ALTERATION,LOG-VALUE,Log2 copy-number values,Log2 copy-number values for each gene (from Affymetrix SNP6).,0
+182,skcm_tcga_methylation_hm450,23,METHYLATION,CONTINUOUS,Methylation (HM450),"Methylation (HM450) beta-values for genes in 463 cases. For genes with multiple methylation probes, the probe most anti-correlated with expression.",0
+183,skcm_tcga_mutations,23,MUTATION_EXTENDED,MAF,Mutations,Mutation data from whole exome sequencing.,1
+184,skcm_tcga_RPPA_protein_level,23,PROTEIN_ARRAY_PROTEIN_LEVEL,Z-SCORE,protein/phosphoprotein level (RPPA),Protein or phosphoprotein level (Z-scores) measured by reverse phase protein array (RPPA),1
+185,stad_tcga_gistic,24,COPY_NUMBER_ALTERATION,DISCRETE,Putative copy-number alterations from GISTIC,Putative copy-number calls on 441 cases determined using GISTIC 2.0. Values: -2 = homozygous deletion; -1 = hemizygous deletion; 0 = neutral / no change; 1 = gain; 2 = high level amplification.,1
+186,stad_tcga_rna_seq_mrna_median_Zscores,24,MRNA_EXPRESSION,Z-SCORE,mRNA Expression z-Scores (RNA Seq RPKM),mRNA z-Scores (RNA Seq RPKM) compared to the expression distribution of each gene tumors that are diploid for this gene.,1
+187,stad_tcga_rna_seq_mrna,24,MRNA_EXPRESSION,Z-SCORE,mRNA expression (RNA Seq RPKM),Expression levels for 29699 genes in 36 stad cases (RNA Seq RPKM).,0
+188,stad_tcga_log2CNA,24,COPY_NUMBER_ALTERATION,LOG-VALUE,Log2 copy-number values,Log2 copy-number values for each gene (from Affymetrix SNP6).,0
+189,stad_tcga_methylation_hm27,24,METHYLATION,CONTINUOUS,Methylation (HM27),"Methylation (HM27) beta-values for genes in 73 cases. For genes with multiple methylation probes, the probe most anti-correlated with expression.",0
+190,stad_tcga_methylation_hm450,24,METHYLATION,CONTINUOUS,Methylation (HM450),"Methylation (HM450) beta-values for genes in 340 cases. For genes with multiple methylation probes, the probe most anti-correlated with expression.",0
+191,stad_tcga_mutations,24,MUTATION_EXTENDED,MAF,Mutations,Mutation data from whole exome sequencing.,1
+192,stad_tcga_RPPA_protein_level,24,PROTEIN_ARRAY_PROTEIN_LEVEL,Z-SCORE,protein/phosphoprotein level (RPPA),Protein or phosphoprotein level (Z-scores) measured by reverse phase protein array (RPPA),1
+193,thca_tcga_gistic,25,COPY_NUMBER_ALTERATION,DISCRETE,Putative copy-number alterations from GISTIC,Putative copy-number calls on 501 cases determined using GISTIC 2.0. Values: -2 = homozygous deletion; -1 = hemizygous deletion; 0 = neutral / no change; 1 = gain; 2 = high level amplification.,1
+194,thca_tcga_rna_seq_v2_mrna,25,MRNA_EXPRESSION,Z-SCORE,mRNA expression (RNA Seq V2 RSEM),Expression levels for 20532 genes in 568 thca cases (RNA Seq V2 RSEM).,0
+195,thca_tcga_rna_seq_v2_mrna_median_Zscores,25,MRNA_EXPRESSION,Z-SCORE,mRNA Expression z-Scores (RNA Seq V2 RSEM),mRNA z-Scores (RNA Seq V2 RSEM) compared to the expression distribution of each gene tumors that are diploid for this gene.,1
+196,thca_tcga_log2CNA,25,COPY_NUMBER_ALTERATION,LOG-VALUE,Log2 copy-number values,Log2 copy-number values for each gene (from Affymetrix SNP6).,0
+197,thca_tcga_methylation_hm450,25,METHYLATION,CONTINUOUS,Methylation (HM450),"Methylation (HM450) beta-values for genes in 567 cases. For genes with multiple methylation probes, the probe most anti-correlated with expression.",0
+198,thca_tcga_mutations,25,MUTATION_EXTENDED,MAF,Mutations,Mutation data from whole exome sequencing.,1
+199,thca_tcga_RPPA_protein_level,25,PROTEIN_ARRAY_PROTEIN_LEVEL,Z-SCORE,protein/phosphoprotein level (RPPA),Protein or phosphoprotein level (Z-scores) measured by reverse phase protein array (RPPA),1
+200,ucec_tcga_gistic,26,COPY_NUMBER_ALTERATION,DISCRETE,Putative copy-number alterations from GISTIC,Putative copy-number calls on 539 cases determined using GISTIC 2.0. Values: -2 = homozygous deletion; -1 = hemizygous deletion; 0 = neutral / no change; 1 = gain; 2 = high level amplification.,1
+201,ucec_tcga_mrna_median_Zscores,26,MRNA_EXPRESSION,Z-SCORE,mRNA Expression z-Scores (microarray),mRNA z-Scores (Agilent microarray) compared to the expression distribution of each gene tumors that are diploid for this gene.,1
+202,ucec_tcga_rna_seq_v2_mrna,26,MRNA_EXPRESSION,Z-SCORE,mRNA expression (RNA Seq V2 RSEM),Expression levels for 20532 genes in 194 ucec cases (RNA Seq V2 RSEM).,0
+203,ucec_tcga_rna_seq_v2_mrna_median_Zscores,26,MRNA_EXPRESSION,Z-SCORE,mRNA Expression z-Scores (RNA Seq V2 RSEM),mRNA z-Scores (RNA Seq V2 RSEM) compared to the expression distribution of each gene tumors that are diploid for this gene.,1
+204,ucec_tcga_log2CNA,26,COPY_NUMBER_ALTERATION,LOG-VALUE,Log2 copy-number values,Log2 copy-number values for each gene (from Affymetrix SNP6).,0
+205,ucec_tcga_methylation_hm27,26,METHYLATION,CONTINUOUS,Methylation (HM27),"Methylation (HM27) beta-values for genes in 118 cases. For genes with multiple methylation probes, the probe most anti-correlated with expression.",0
+206,ucec_tcga_methylation_hm450,26,METHYLATION,CONTINUOUS,Methylation (HM450),"Methylation (HM450) beta-values for genes in 478 cases. For genes with multiple methylation probes, the probe most anti-correlated with expression.",0
+207,ucec_tcga_mutations,26,MUTATION_EXTENDED,MAF,Mutations,Mutation data from whole exome sequencing.,1
+208,ucec_tcga_RPPA_protein_level,26,PROTEIN_ARRAY_PROTEIN_LEVEL,Z-SCORE,protein/phosphoprotein level (RPPA),Protein or phosphoprotein level (Z-scores) measured by reverse phase protein array (RPPA),1
+209,ucec_tcga_mrna,26,MRNA_EXPRESSION,Z-SCORE,mRNA expression (microarray),Expression levels for 17215 genes in 54 ucec cases (Agilent microarray).,0
+210,ucs_tcga_gistic,27,COPY_NUMBER_ALTERATION,DISCRETE,Putative copy-number alterations from GISTIC,Putative copy-number calls on 56 cases determined using GISTIC 2.0. Values: -2 = homozygous deletion; -1 = hemizygous deletion; 0 = neutral / no change; 1 = gain; 2 = high level amplification.,1
+211,ucs_tcga_rna_seq_v2_mrna,27,MRNA_EXPRESSION,Z-SCORE,mRNA expression (RNA Seq V2 RSEM),Expression levels for 20532 genes in 57 ucs cases (RNA Seq V2 RSEM).,0
+212,ucs_tcga_rna_seq_v2_mrna_median_Zscores,27,MRNA_EXPRESSION,Z-SCORE,mRNA Expression z-Scores (RNA Seq V2 RSEM),mRNA z-Scores (RNA Seq V2 RSEM) compared to the expression distribution of each gene tumors that are diploid for this gene.,1
+213,ucs_tcga_log2CNA,27,COPY_NUMBER_ALTERATION,LOG-VALUE,Log2 copy-number values,Log2 copy-number values for each gene (from Affymetrix SNP6).,0
+214,ucs_tcga_methylation_hm450,27,METHYLATION,CONTINUOUS,Methylation (HM450),"Methylation (HM450) beta-values for genes in 57 cases. For genes with multiple methylation probes, the probe most anti-correlated with expression.",0
+215,ucs_tcga_mutations,27,MUTATION_EXTENDED,MAF,Mutations,Mutation data from whole exome sequencing.,1
+216,acyc_mskcc_cna,28,COPY_NUMBER_ALTERATION,DISCRETE,Putative copy-number alterations,Putative copy-number calls. Values: -2 = homozygous deletion; -1 = hemizygous deletion; 0 = neutral / no change; 1 = gain; 2 = high level amplification.,1
+217,acyc_mskcc_mutations,28,MUTATION_EXTENDED,MAF,Mutations,Somatic mutations from exome sequencing of 60 tumor/normal pairs.,1
+218,blca_bgi_mutations,29,MUTATION_EXTENDED,MAF,Mutations,Mutation data from Exome and whole-genome sequencing of 99 bladder cancer samples.,1
+219,blca_mskcc_solit_2012_cna,30,COPY_NUMBER_ALTERATION,DISCRETE,Putative copy-number alterations (RAE),Putative copy-number calls in 97 samples determined using standard RAE on Agilent 1M data. Values: -2 = homozygous deletion; -1 = hemizygous deletion; 0 = neutral / no change; 1 = gain; 2 = high level amplification.,1
+220,blca_mskcc_solit_2012_mrna,30,MRNA_EXPRESSION,Z-SCORE,mRNA expression (Illumina),mRNA expression values on 60 samples (Illumina microarrays),0
+221,blca_mskcc_solit_2012_zscores,30,MRNA_EXPRESSION,Z-SCORE,mRNA expression z-scores (Illumina),mRNA expression z-scores on 60 samples (Illumina microarrays),1
+222,blca_mskcc_solit_2012_mutations,30,MUTATION_EXTENDED,MAF,Mutations,"Mutation status of AKT1, AKT3, BRAF, CDKN2A, FGFR3, KRAS, PIK3CA, PIK3R1, PTEN, RB1, TP53, and TSC1 in 97 samples.",1
+223,blca_mskcc_solit_2014_cna,31,COPY_NUMBER_ALTERATION,DISCRETE,Putative copy-number alterations (IMPACT),Putative copy-number calls derived from IMPACT data. Values: -2 = homozygous deletion; -1 = hemizygous deletion; 0 = neutral / no change; 1 = gain; 2 = high level amplification.,1
+224,blca_mskcc_solit_2014_log2CNA,31,COPY_NUMBER_ALTERATION,LOG-VALUE,Log2 copy-number values,Log2 copy-number values for each gene.,0
+225,blca_mskcc_solit_2014_mutations,31,MUTATION_EXTENDED,MAF,Mutations,Mutation status from targeted sequencing (IMPACT assay).,1
+226,blca_tcga_pub_gistic,32,COPY_NUMBER_ALTERATION,DISCRETE,Putative copy-number alterations from GISTIC,Putative copy-number calls on 182 cases determined using GISTIC 2.0. Values: -2 = homozygous deletion; -1 = hemizygous deletion; 0 = neutral / no change; 1 = gain; 2 = high level amplification.,1
+227,blca_tcga_pub_rna_seq_v2_mrna,32,MRNA_EXPRESSION,Z-SCORE,mRNA expression (RNA Seq V2 RSEM),Expression levels for 20532 genes in 182 blca cases (RNA Seq V2 RSEM).,0
+228,blca_tcga_pub_rna_seq_v2_mrna_median_Zscores,32,MRNA_EXPRESSION,Z-SCORE,mRNA Expression z-Scores (RNA Seq V2 RSEM),mRNA z-Scores (RNA Seq V2 RSEM) compared to the expression distribution of each gene tumors that are diploid for this gene.,1
+229,blca_tcga_pub_log2CNA,32,COPY_NUMBER_ALTERATION,LOG-VALUE,Log2 copy-number values,Log2 copy-number values for each gene (from Affymetrix SNP6).,0
+230,blca_tcga_pub_methylation_hm450,32,METHYLATION,CONTINUOUS,Methylation (HM450),"Methylation (HM450) beta-values for genes in 201 cases. For genes with multiple methylation probes, the probe least correlated with expression.",0
+231,blca_tcga_pub_mutations,32,MUTATION_EXTENDED,MAF,Mutations,Mutation data from whole exome sequencing.,1
+232,blca_tcga_pub_RPPA_protein_level,32,PROTEIN_ARRAY_PROTEIN_LEVEL,Z-SCORE,protein/phosphoprotein level (RPPA),Protein or phosphoprotein level (Z-scores) measured by reverse phase protein array (RPPA),1
+233,brca_bccrc_mutations,33,MUTATION_EXTENDED,MAF,Mutations,Somatic mutations from exome sequencing of 65 tumor/normal pairs.,1
+234,brca_broad_mutations,34,MUTATION_EXTENDED,MAF,Mutations,Somatic mutations from exome sequencing of 103 tumor/normal pairs.,1
+235,brca_sanger_mutations,35,MUTATION_EXTENDED,MAF,Mutations,Somatic mutations from exome sequencing of 100 tumor/normal pairs.,1
+236,brca_tcga_pub_gistic,36,COPY_NUMBER_ALTERATION,DISCRETE,Putative copy-number alterations from GISTIC,Putative copy-number from GISTIC 2.0. Values: -2 = homozygous deletion; -1 = hemizygous deletion; 0 = neutral / no change; 1 = gain; 2 = high level amplification.,1
+237,brca_tcga_pub_mrna_median_Zscores,36,MRNA_EXPRESSION,Z-SCORE,mRNA Expression z-Scores (microarray),mRNA z-Scores (Agilent microarray) compared to the expression distribution of each gene tumors that are diploid for this gene.,1
+238,brca_tcga_pub_log2CNA,36,COPY_NUMBER_ALTERATION,LOG-VALUE,Log2 copy-number values,Log2 copy-number values for each gene (from Affymetrix SNP6).,0
+239,brca_tcga_pub_methylation_hm27,36,METHYLATION,CONTINUOUS,Methylation (HM27),"Methylation beta-values (HM27 platform). For genes with multiple methylation probes, the probe least correlated with expression is selected.",0
+240,brca_tcga_pub_mutations,36,MUTATION_EXTENDED,MAF,Mutations,Mutation data from whole exome sequencing.,1
+241,brca_tcga_pub_RPPA_protein_level,36,PROTEIN_ARRAY_PROTEIN_LEVEL,Z-SCORE,protein/phosphoprotein level (RPPA),Protein or phosphoprotein level (Z-scores) measured by reverse phase protein array (RPPA),1
+242,brca_tcga_pub_mirna,36,MRNA_EXPRESSION,CONTINUOUS,microRNA expression,Expression levels for microRNAs.,0
+243,brca_tcga_pub_mirna_median_Zscores,36,MRNA_EXPRESSION,Z-SCORE,microRNA expression Z-scores,microRNA expression Z-scores compared to all tumors.,0
+244,brca_tcga_pub_mrna_merged_median_Zscores,36,MRNA_EXPRESSION,Z-SCORE,mRNA/miRNA expression Z-scores (all genes),"mRNA and microRNA Z-scores merged: mRNA expression Z-scores compared to diploid tumors (diploid for each gene), median values from all three mRNA expression platforms; and miRNA z-Scores compared to all tumours.",1
+245,brca_tcga_pub_mrna,36,MRNA_EXPRESSION,Z-SCORE,mRNA expression (microarray),Expression levels (Agilent microarray).,0
+246,cellline_ccle_broad_CNA,37,COPY_NUMBER_ALTERATION,DISCRETE,Putative copy-number alterations,"Putative copy-number calls in 972 samples determined by GISTIC2: -2 = homozygous deletion; -1 = hemizygous deletion; 0 = neutral / no change; 1 = gain; 2 = high level amplification. GISTIC2 was run using the GenePattern website, using the CCLE segmented data downloaded from the CCLE website and all the default parameters, except the confidence, which we increased from 0.75 to 0.99.",1
+247,cellline_ccle_broad_mrna_median_Zscores,37,MRNA_EXPRESSION,Z-SCORE,mRNA Expression z-Scores (microarray),mRNA z-Scores (Affymetrix microarray),1
+248,cellline_ccle_broad_log2CNA,37,COPY_NUMBER_ALTERATION,LOG-VALUE,Log2 copy-number values,Log2 copy-number values for each gene (from Affymetrix SNP6).,0
+249,cellline_ccle_broad_mutations,37,MUTATION_EXTENDED,MAF,Mutations,Mutation data from targeted sequencing (1561 genes).,1
+250,cellline_ccle_broad_mrna,37,MRNA_EXPRESSION,Z-SCORE,mRNA expression (microarray),Expression levels for 16219 genes in 991 samples (Affymetrix microarray).,0
+251,cellline_nci60_CNA,38,COPY_NUMBER_ALTERATION,DISCRETE ,Putative copy-number alterations from discretization,Putative copy-number calls in 60 samples: -2 = homozygous deletion; -1 = hemizygous deletion; 0 = neutral / no change; 1 = gain; 2 = high level amplification. Putative copy-number calls in 972 samples determined by GISTIC2: -2 = homozygous deletion; -1 = hemizygous deletion; 0 = neutral / no change; 1 = gain; 2 = high level amplification. GISTIC2 was run using the GenePattern website.,1
+252,cellline_nci60_mrna_median_Zscores,38,MRNA_EXPRESSION,Z-SCORE,mRNA Expression z-Scores (combined microarray),mRNA z-Scores (5 Platform Gene Transcript),1
+253,cellline_nci60_log2CNA,38,COPY_NUMBER_ALTERATION,LOG-VALUE,Log2 copy-number values,Log2 copy-number values for each gene (from Affymetrix 500K SNP).,0
+254,cellline_nci60_mutations,38,MUTATION_EXTENDED,MAF,Mutations,Mutation data from exome sequencing (includes only type-2 mutations).,1
+255,chol_jhu_2013_mutations,39,MUTATION_EXTENDED,MAF,Mutations,Exomic Sequencing of 32 cases of intrahepatic cholangiocarcinomas and  8 cases of Gall Bladder.,1
+256,chol_nccs_2013_mutations,40,MUTATION_EXTENDED,MAF,Mutations,Somatic mutations from exome sequencing of 15 cases.,1
+257,chol_nus_2012_mutations,41,MUTATION_EXTENDED,MAF,Mutations,Exomic Sequencing of 8 cases of Opisthorchis viverrini-related cholangiocarcinoma.,1
+258,coadread_genentech_mutations,42,MUTATION_EXTENDED,MAF,Mutations,Somatic mutations from exome sequencing of 72 tumor/normal pairs.,1
+259,coadread_mskcc_mutations,43,MUTATION_EXTENDED,MAF,Mutations,Somatic mutations from 69 patients each having a primary and a metastatic mutation.,1
+260,coadread_tcga_pub_gistic,44,COPY_NUMBER_ALTERATION,DISCRETE,Putative copy-number alterations from GISTIC,Putative copy-number calls from GISTIC 2.0. Values: -2 = homozygous deletion; -1 = hemizygous deletion; 0 = neutral / no change; 1 = gain; 2 = high level amplification.,1
+261,coadread_tcga_pub_rna_seq_mrna_median_Zscores,44,MRNA_EXPRESSION,Z-SCORE,mRNA Expression z-Scores (RNA Seq RPKM),mRNA z-Scores (RNA Seq RPKM) compared to the expression distribution of each gene tumors that are diploid for this gene.,1
+262,coadread_tcga_pub_mrna_median_Zscores,44,MRNA_EXPRESSION,Z-SCORE,mRNA Expression z-Scores (microarray),mRNA z-Scores (Agilent microarray) compared to the expression distribution of each gene tumors that are diploid for this gene.,1
+263,coadread_tcga_pub_rna_seq_mrna,44,MRNA_EXPRESSION,Z-SCORE,mRNA expression (RNA Seq RPKM),Expression levels (RNA Seq RPKM).,0
+264,coadread_tcga_pub_log2CNA,44,COPY_NUMBER_ALTERATION,LOG-VALUE,Log2 copy-number values,Log2 copy-number values for each gene (from Affymetrix SNP6).,0
+265,coadread_tcga_pub_methylation_hm27,44,METHYLATION,CONTINUOUS,Methylation (HM27),"Methylation beta-values (HM27 platform). For genes with multiple methylation probes, the probe least correlated with expression is selected.",0
+266,coadread_tcga_pub_mutations,44,MUTATION_EXTENDED,MAF,Mutations,Mutation data from whole exome sequencing.,1
+267,coadread_tcga_pub_mirna,44,MRNA_EXPRESSION,CONTINUOUS,microRNA expression,expression levels for microRNAs.,0
+268,coadread_tcga_pub_mirna_median_Zscores,44,MRNA_EXPRESSION,Z-SCORE,microRNA expression Z-scores,microRNA expression Z-scores compared to all tumors.,0
+269,coadread_tcga_pub_mrna_merged_median_Zscores,44,MRNA_EXPRESSION,Z-SCORE,mRNA/miRNA expression Z-scores (all genes),"mRNA and microRNA Z-scores merged: mRNA expression Z-scores compared to diploid tumors (diploid for each gene), median values from all three mRNA expression platforms; and miRNA z-Scores compared to all tumours.",1
+270,coadread_tcga_pub_mrna,44,MRNA_EXPRESSION,Z-SCORE,mRNA expression (microarray),Expression levels (Agilent microarray).,0
+271,esca_broad_mutations,45,MUTATION_EXTENDED,MAF,Mutations,Somatic mutations from exome sequencing of 149 tumor/normal pairs.,1
+272,escc_icgc_mutations,46,MUTATION_EXTENDED,MAF,Mutations,Somatic mutations from genome or exome sequencing of 88 tumor/normal pairs.,1
+273,gbm_tcga_pub_cna_rae,47,COPY_NUMBER_ALTERATION,DISCRETE,"Putative copy-number alterations (RAE, 203 cases) ",Putative copy-number calls for all genes in 203 GBM cases. Copy number calls were determined from the Agilent 244k platform using the RAE algorithm by Barry Taylor @ MSKCC. Values: -2 = homozygous deletion; -1 = hemizygous deletion; 0 = neutral / no change; 1 = gain; 2 = high level amplification.,1
+274,gbm_tcga_pub_cna_consensus,47,COPY_NUMBER_ALTERATION,DISCRETE,"Putative copy-number alterations (Consensus, GBM Pathways, 206 cases)","Putative copy-number calls for genes implicated in glioblastoma (206 cases). These calls were used for the pathway analysis in the initial TCGA manuscript, and they are the consensus of a combination of the Agilent 244k and Affymetrix SNP6 platforms and three different methods (RAE, GISTIC, GTS). Values: -2 = homozygous deletion; -1 = hemizygous deletion; 0 = neutral / no change; 1 = gain; 2 = high level amplification.",1
+275,gbm_tcga_pub_mrna_median_Zscores,47,MRNA_EXPRESSION,Z-SCORE,mRNA Expression z-Scores (microarray),"18,698 genes in 503 GBM cases using median expression values from the Affymetrix U133, Affymetrix Exon, and Agilent Platforms. z-Scores are computed relative to the expression distribution of each gene in tumors that are diploid for this gene.",1
+276,gbm_tcga_pub_methylation,47,METHYLATION,CONTINUOUS,Methylation,"Methylation beta-values (Infinium HumanMethylation27 platform). For genes with multiple methylation probes, the probe most negatively correlated with expression is used.",0
+277,gbm_tcga_pub_mutations,47,MUTATION_EXTENDED,MAF,Mutations,Mutation data for ~1200 sequenced genes (Phases I/II of the TCGA glioblastoma project).,1
+278,gbm_tcga_pub_mirna,47,MRNA_EXPRESSION,CONTINUOUS,microRNA expression,expression levels for microRNAs.,0
+279,gbm_tcga_pub_mirna_median_Zscores,47,MRNA_EXPRESSION,Z-SCORE,microRNA expression Z-scores,microRNA expression Z-scores compared to all tumors.,0
+280,gbm_tcga_pub_mrna_merged_median_Zscores,47,MRNA_EXPRESSION,Z-SCORE,mRNA/miRNA expression Z-scores (all genes),"mRNA and microRNA Z-scores merged: mRNA expression Z-scores compared to diploid tumors (diploid for each gene), median values from all three mRNA expression platforms; and miRNA z-Scores compared to all tumours.",1
+281,gbm_tcga_pub_mrna,47,MRNA_EXPRESSION,Z-SCORE,mRNA expression,"mRNA expression levels for 18,698 genes in 503 GBM cases using integrated values from the Affymetrix U133, Affymetrix Exon, and Agilent Platforms.",0
+282,gbm_tcga_pub2013_gistic,48,COPY_NUMBER_ALTERATION,DISCRETE,Putative copy-number alterations from GISTIC,Putative copy-number calls on 563 cases determined using GISTIC 2.0. Values: -2 = homozygous deletion; -1 = hemizygous deletion; 0 = neutral / no change; 1 = gain; 2 = high level amplification.,1
+283,gbm_tcga_pub2013_rna_seq_v2_mrna,48,MRNA_EXPRESSION,,mRNA expression (RNA Seq V2 RSEM),Expression levels for 20532 genes in 154 GBM cases (RNA Seq V2 RSEM).,0
+284,gbm_tcga_pub2013_rna_seq_v2_mrna_median_Zscores,48,MRNA_EXPRESSION,Z-SCORE,mRNA Expression z-Scores (RNA Seq V2 RSEM),mRNA z-Scores (RNA Seq V2 RSEM) compared to the expression distribution of each gene tumors that are diploid for this gene.,1
+285,gbm_tcga_pub2013_log2CNA,48,COPY_NUMBER_ALTERATION,LOG-VALUE,Log2 copy-number values,Log2 copy-number values for each gene (from Affymetrix SNP6).,0
+286,gbm_tcga_pub2013_mutations,48,MUTATION_EXTENDED,MAF,Mutations,Mutation data from whole-exome sequencing of 291 tumors.,1
+287,gbm_tcga_pub2013_RPPA_protein_level,48,PROTEIN_ARRAY_PROTEIN_LEVEL,Z-SCORE,protein/phosphoprotein level (RPPA),Protein or phosphoprotein level (Z-scores) measured by reverse phase protein array (RPPA),1
+288,hnsc_broad_mutations,49,MUTATION_EXTENDED,MAF,Mutations,Somatic mutations from exome sequencing of 74 tumor/normal pairs.,1
+289,hnsc_jhu_mutations,50,MUTATION_EXTENDED,MAF,Mutations,Somatic mutations from exome sequencing of 32 tumor/normal pairs.,1
+290,hnsc_tcga_pub_gistic,51,COPY_NUMBER_ALTERATION,DISCRETE,Putative copy-number alterations from GISTIC,Putative copy-number calls on 306 cases determined using GISTIC 2.0. Values: -2 = homozygous deletion; -1 = hemizygous deletion; 0 = neutral / no change; 1 = gain; 2 = high level amplification.,1
+291,hnsc_tcga_pub_rna_seq_v2_mrna,51,MRNA_EXPRESSION,Z-SCORE,mRNA expression (RNA Seq V2 RSEM),Expression levels for 20532 genes in 303 hnsc cases (RNA Seq V2 RSEM).,0
+292,hnsc_tcga_pub_rna_seq_v2_mrna_median_Zscores,51,MRNA_EXPRESSION,Z-SCORE,mRNA Expression z-Scores (RNA Seq V2 RSEM),mRNA z-Scores (RNA Seq V2 RSEM) compared to the expression distribution of each gene tumors that are diploid for this gene.,1
+293,hnsc_tcga_pub_log2CNA,51,COPY_NUMBER_ALTERATION,LOG-VALUE,Log2 copy-number values,Log2 copy-number values for each gene (from Affymetrix SNP6).,0
+294,hnsc_tcga_pub_methylation_hm450,51,METHYLATION,CONTINUOUS,Methylation (HM450),"Methylation (HM450) beta-values for genes in 310 cases. For genes with multiple methylation probes, the probe least correlated with expression.",0
+295,hnsc_tcga_pub_mutations,51,MUTATION_EXTENDED,MAF,Mutations,Mutation data from whole exome sequencing.,1
+296,hnsc_tcga_pub_RPPA_protein_level,51,PROTEIN_ARRAY_PROTEIN_LEVEL,Z-SCORE,protein/phosphoprotein level (RPPA),Protein or phosphoprotein level (Z-scores) measured by reverse phase protein array (RPPA),1
+297,kich_tcga_pub_gistic,52,COPY_NUMBER_ALTERATION,DISCRETE,Putative copy-number alterations from GISTIC,Putative copy-number calls on 66 cases determined using GISTIC 2.0. Values: -2 = homozygous deletion; -1 = hemizygous deletion; 0 = neutral / no change; 1 = gain; 2 = high level amplification.,1
+298,kich_tcga_pub_rna_seq_v2_mrna,52,MRNA_EXPRESSION,Z-SCORE,mRNA expression (RNA Seq V2 RSEM),Expression levels for 20532 genes in 91 kich cases (RNA Seq V2 RSEM).,0
+299,kich_tcga_pub_rna_seq_v2_mrna_median_Zscores,52,MRNA_EXPRESSION,Z-SCORE,mRNA Expression z-Scores (RNA Seq V2 RSEM),mRNA z-Scores (RNA Seq V2 RSEM) compared to the expression distribution of each gene tumors that are diploid for this gene.,1
+300,kich_tcga_pub_log2CNA,52,COPY_NUMBER_ALTERATION,LOG-VALUE,Log2 copy-number values,Log2 copy-number values for each gene (from Affymetrix SNP6).,0
+301,kich_tcga_pub_methylation_hm450,52,METHYLATION,CONTINUOUS,Methylation (HM450),"Methylation (HM450) beta-values for genes in 66 cases. For genes with multiple methylation probes, the probe most anti-correlated with expression.",0
+302,kich_tcga_pub_mutations,52,MUTATION_EXTENDED,MAF,Mutations,"Mutation data from whole exome sequencing. From the KICH AWG, March 2013.",1
+303,kirc_bgi_mutations,53,MUTATION_EXTENDED,MAF,Mutations,Somatic mutations from exome sequencing of 100 tumor/normal pairs.,1
+304,kirc_tcga_pub_gistic,54,COPY_NUMBER_ALTERATION,DISCRETE,Putative copy-number alterations from GISTIC,Putative copy-number calls on 436 cases determined using GISTIC 2.0. Values: -2 = homozygous deletion; -1 = hemizygous deletion; 0 = neutral / no change; 1 = gain; 2 = high level amplification.,1
+305,kirc_tcga_pub_mrna_median_Zscores,54,MRNA_EXPRESSION,Z-SCORE,mRNA Expression z-Scores (microarray),mRNA z-Scores (Agilent microarray) compared to the expression distribution of each gene tumors that are diploid for this gene.,1
+306,kirc_tcga_pub_rna_seq_v2_mrna,54,MRNA_EXPRESSION,Z-SCORE,mRNA expression (RNA Seq V2 RSEM),Expression levels for 20532 genes in 469 kirc cases (RNA Seq V2 RSEM).,0
+307,kirc_tcga_pub_rna_seq_v2_mrna_median_Zscores,54,MRNA_EXPRESSION,Z-SCORE,mRNA Expression z-Scores (RNA Seq V2 RSEM),mRNA z-Scores (RNA Seq V2 RSEM) compared to the expression distribution of each gene tumors that are diploid for this gene.,1
+308,kirc_tcga_pub_log2CNA,54,COPY_NUMBER_ALTERATION,LOG-VALUE,Log2 copy-number values,Log2 copy-number values for each gene (from Affymetrix SNP6).,0
+309,kirc_tcga_pub_methylation_hm27,54,METHYLATION,CONTINUOUS,Methylation (HM27),"Methylation (HM27) beta-values for genes in 219 cases. For genes with multiple methylation probes, the probe least correlated with expression.",0
+310,kirc_tcga_pub_mutations,54,MUTATION_EXTENDED,MAF,Mutations,Mutation data from whole exome sequencing.,1
+311,kirc_tcga_pub_RPPA_protein_level,54,PROTEIN_ARRAY_PROTEIN_LEVEL,Z-SCORE,protein/phosphoprotein level (RPPA),Protein or phosphoprotein level (Z-scores) measured by reverse phase protein array (RPPA),1
+312,kirc_tcga_pub_mirna,54,MRNA_EXPRESSION,CONTINUOUS,microRNA expression,expression levels for microRNAs.,0
+313,kirc_tcga_pub_mirna_median_Zscores,54,MRNA_EXPRESSION,Z-SCORE,microRNA expression Z-scores,microRNA expression Z-scores compared to all tumors.,0
+314,kirc_tcga_pub_mrna_merged_median_Zscores,54,MRNA_EXPRESSION,Z-SCORE,mRNA/miRNA expression Z-scores (all genes),"mRNA and microRNA Z-scores merged: mRNA expression Z-scores compared to diploid tumors (diploid for each gene), median values from all three mRNA expression platforms; and miRNA z-Scores compared to all tumours.",1
+315,kirc_tcga_pub_mrna,54,MRNA_EXPRESSION,Z-SCORE,mRNA expression (microarray),Expression levels for 17190 genes in 72 kirc cases (Agilent microarray).,0
+316,laml_tcga_pub_gistic,55,COPY_NUMBER_ALTERATION,DISCRETE,Putative copy-number alterations from GISTIC,Putative copy-number calls determined using GISTIC 2.0. Values: -2 = homozygous deletion; -1 = hemizygous deletion; 0 = neutral / no change; 1 = gain; 2 = high level amplification.,1
+317,laml_tcga_pub_rna_seq_v2_mrna,55,MRNA_EXPRESSION,Z-SCORE,mRNA expression (RNA Seq V2 RSEM),Expression levels from RNA sequecing (RNA Seq V2 RSEM).,0
+318,laml_tcga_pub_rna_seq_v2_mrna_median_Zscores,55,MRNA_EXPRESSION,Z-SCORE,mRNA Expression z-Scores (RNA Seq V2 RSEM),mRNA z-Scores (RNA Seq V2 RSEM) compared to the expression distribution of each gene tumors that are diploid for this gene.,1
+319,laml_tcga_pub_log2CNA,55,COPY_NUMBER_ALTERATION,LOG-VALUE,Log2 copy-number values,Log2 copy-number values for each gene (from Affymetrix SNP6).,0
+320,laml_tcga_pub_methylation_hm27,55,METHYLATION,CONTINUOUS,Methylation (HM27),"Methylation (HM27) beta-values. For genes with multiple methylation probes, the probe least correlated with expression.",0
+321,laml_tcga_pub_methylation_hm450,55,METHYLATION,CONTINUOUS,Methylation (HM450),"Methylation (HM450) beta-values. For genes with multiple methylation probes, the probe least correlated with expression.",0
+322,laml_tcga_pub_mutations,55,MUTATION_EXTENDED,MAF,Mutations,Mutation data from whole exome or genome sequencing.,1
+323,lihc_amc_prv_SNP-FASST2,56,COPY_NUMBER_ALTERATION,,Putative copy-number alterations from SNP-FASST2,Putative copy-number calls on 231 cases determined using SNP-FASST2. Values: -2 = homozygous deletion; -1 = hemizygous deletion; 0 = neutral / no change; 1 = gain; 2 = high level amplification.,1
+324,lihc_amc_prv_mutations,56,MUTATION_EXTENDED,,Mutations,Mutation data from whole exome sequencing.,1
+325,lihc_riken_mutations,57,MUTATION_EXTENDED,MAF,Mutations,Somatic mutations from whole genome sequencing of 27 tumor/normal pairs.,1
+326,luad_broad_cna,58,COPY_NUMBER_ALTERATION,DISCRETE,Putative copy-number alterations,Putative copy-number calls in 388 samples. Values: -2 = homozygous deletion; -1 = hemizygous deletion; 0 = neutral / no change; 1 = gain; 2 = high level amplification.,1
+327,luad_broad_mutations,58,MUTATION_EXTENDED,MAF,Mutations,Somatic mutations from exome sequencing of 183 tumor/normal pairs.,1
+328,luad_tcga_pub_gistic,59,COPY_NUMBER_ALTERATION,DISCRETE,Putative copy-number alterations from GISTIC,Putative copy-number calls on 230 cases determined using GISTIC 2.0. Values: -2 = homozygous deletion; -1 = hemizygous deletion; 0 = neutral / no change; 1 = gain; 2 = high level amplification.,1
+329,luad_tcga_pub_mrna_median_Zscores,59,MRNA_EXPRESSION,Z-SCORE,mRNA Expression z-Scores (microarray),mRNA z-Scores (Agilent microarray) compared to the expression distribution of each gene tumors that are diploid for this gene.,1
+330,luad_tcga_pub_rna_seq_v2_mrna,59,MRNA_EXPRESSION,Z-SCORE,mRNA expression (RNA Seq V2 RSEM),Expression levels for 20532 genes in 230 luad cases (RNA Seq V2 RSEM).,0
+331,luad_tcga_pub_rna_seq_v2_mrna_median_Zscores,59,MRNA_EXPRESSION,Z-SCORE,mRNA Expression z-Scores (RNA Seq V2 RSEM),mRNA z-Scores (RNA Seq V2 RSEM) compared to the expression distribution of each gene tumors that are diploid for this gene.,1
+332,luad_tcga_pub_log2CNA,59,COPY_NUMBER_ALTERATION,LOG-VALUE,Log2 copy-number values,Log2 copy-number values for each gene (from Affymetrix SNP6).,0
+333,luad_tcga_pub_methylation_hm27,59,METHYLATION,CONTINUOUS,Methylation (HM27),"Methylation (HM27) beta-values for genes in 126 cases. For genes with multiple methylation probes, the probe least correlated with expression.",0
+334,luad_tcga_pub_methylation_hm450,59,METHYLATION,CONTINUOUS,Methylation (HM450),"Methylation (HM450) beta-values for genes in 435 cases. For genes with multiple methylation probes, the probe least correlated with expression.",0
+335,luad_tcga_pub_mutations,59,MUTATION_EXTENDED,MAF,Mutations,Mutation data from whole exome sequencing.,1
+336,luad_tcga_pub_RPPA_protein_level,59,PROTEIN_ARRAY_PROTEIN_LEVEL,Z-SCORE,protein/phosphoprotein level (RPPA),Protein or phosphoprotein level (Z-scores) measured by reverse phase protein array (RPPA),1
+337,luad_tcga_pub_mrna,59,MRNA_EXPRESSION,Z-SCORE,mRNA expression (microarray),Expression levels for 17235 genes in 32 luad cases (Agilent microarray).,0
+338,luad_tsp_mutations,60,MUTATION_EXTENDED,MAF,Mutations,Somatic mutations from targeted sequencing of 163 tumor/normal pairs.,1
+339,lusc_tcga_pub_gistic,61,COPY_NUMBER_ALTERATION,DISCRETE,Putative copy-number alterations from GISTIC,Putative copy-number calls from GISTIC 2.0. Values: -2 = homozygous deletion; -1 = hemizygous deletion; 0 = neutral / no change; 1 = gain; 2 = high level amplification.,1
+340,lusc_tcga_pub_rna_seq_mrna_median_Zscores,61,MRNA_EXPRESSION,Z-SCORE,mRNA Expression z-Scores (RNA Seq RPKM),mRNA z-Scores (RNA Seq RPKM) compared to the expression distribution of each gene tumors that are diploid for this gene.,1
+341,lusc_tcga_pub_mrna_median_Zscores,61,MRNA_EXPRESSION,Z-SCORE,mRNA Expression z-Scores (microarray),mRNA z-Scores (Agilent microarray) compared to the expression distribution of each gene tumors that are diploid for this gene.,1
+342,lusc_tcga_pub_rna_seq_mrna,61,MRNA_EXPRESSION,Z-SCORE,mRNA expression (RNA Seq RPKM),Expression levels (RNA Seq RPKM).,0
+343,lusc_tcga_pub_log2CNA,61,COPY_NUMBER_ALTERATION,LOG-VALUE,Log2 copy-number values,Log2 copy-number values for each gene (from Affymetrix SNP6).,0
+344,lusc_tcga_pub_methylation_hm27,61,METHYLATION,CONTINUOUS,Methylation (HM27),"Methylation beta-values (HM27 platform). For genes with multiple methylation probes, the probe least correlated with expression is selected.",0
+345,lusc_tcga_pub_mutations,61,MUTATION_EXTENDED,MAF,Mutations,Mutation data from whole exome sequencing.,1
+346,lusc_tcga_pub_mirna,61,MRNA_EXPRESSION,CONTINUOUS,microRNA expression,Expression levels for microRNAs.,0
+347,lusc_tcga_pub_mirna_median_Zscores,61,MRNA_EXPRESSION,Z-SCORE,microRNA expression Z-scores,microRNA expression Z-scores compared to all tumors.,0
+348,lusc_tcga_pub_mrna_merged_median_Zscores,61,MRNA_EXPRESSION,Z-SCORE,mRNA/miRNA expression Z-scores (all genes),"mRNA and microRNA Z-scores merged: mRNA expression Z-scores compared to diploid tumors (diploid for each gene), median values from all three mRNA expression platforms; and miRNA z-Scores compared to all tumours.",1
+349,lusc_tcga_pub_mrna,61,MRNA_EXPRESSION,Z-SCORE,mRNA expression (microarray),Expression levels (Agilent microarray).,0
+350,mbl_broad_mutations,62,MUTATION_EXTENDED,MAF,Mutations,Somatic mutations from exome sequencing of 92 tumor/normal pairs.,1
+351,mbl_icgc_mutations,63,MUTATION_EXTENDED,MAF,Mutations,Exome sequencing of 125 tumor normal pairs.,1
+352,mbl_pcgp_mutations,64,MUTATION_EXTENDED,MAF,Mutations,Somatic mutations from whole genome sequencing of 37 tumor/normal pairs.,1
+353,mm_broad_mutations,65,MUTATION_EXTENDED,MAF,Mutations,Somatic mutations from exome sequencing of 205 tumor/normal pairs.,1
+354,mpnst_mskcc_cna,66,COPY_NUMBER_ALTERATION,DISCRETE,Putative copy-number alterations,Putative copy-number calls. Values: -2 = homozygous deletion; -1 = hemizygous deletion; 0 = neutral / no change; 1 = gain; 2 = high level amplification.,1
+355,mpnst_mskcc_mutations,66,MUTATION_EXTENDED,MAF,Mutations,Somatic mutations from exome sequencing of 15 tumor/normal pairs.,1
+356,npc_nusingapore_mutations,67,MUTATION_EXTENDED,MAF,Somatic mutations,Somatic mutation status from Whole genome sequencing on 56 NPC samples.,1
+357,ov_tcga_pub_gistic,68,COPY_NUMBER_ALTERATION,DISCRETE,Putative copy-number alterations (GISTIC),Putative copy-number calls determined using Gistic2 on the MSKCC Agilent 1M data. Values: -2 = homozygous deletion; -1 = hemizygous deletion; 0 = neutral / no change; 1 = gain; 2 = high level amplification.,1
+358,ov_tcga_pub_mrna_median_Zscores,68,MRNA_EXPRESSION,Z-SCORE,mRNA expression Z-scores (all genes),"mRNA expression Z-scores compared to diploid tumors (diploid for each gene), median values from all three mRNA expression platforms.",1
+359,ov_tcga_pub_log2CNA,68,COPY_NUMBER_ALTERATION,LOG-VALUE,Log2 copy-number values,Log2 copy-number values for each gene (from Affymetrix SNP6 segmented data).,0
+360,ov_tcga_pub_methylation_hm27,68,METHYLATION,CONTINUOUS,Methylation (HM27),"Methylation beta-values (HM27 platform). For genes with multiple methylation probes, the probe most negatively correlated with expression is used.",0
+361,ov_tcga_pub_mutations,68,MUTATION_EXTENDED,MAF,Mutations,Somatic mutations and BRCA1 and BRCA2 germline mutations from whole exome sequencing. ,1
+362,ov_tcga_pub_mirna,68,MRNA_EXPRESSION,CONTINUOUS,microRNA expression,expression levels for microRNAs.,0
+363,ov_tcga_pub_mirna_median_Zscores,68,MRNA_EXPRESSION,Z-SCORE,microRNA expression Z-scores,microRNA expression Z-scores compared to all tumors.,0
+364,ov_tcga_pub_mrna_merged_median_Zscores,68,MRNA_EXPRESSION,Z-SCORE,mRNA/miRNA expression Z-scores (all genes),"mRNA and microRNA Z-scores merged: mRNA expression Z-scores compared to diploid tumors (diploid for each gene), median values from all three mRNA expression platforms; and miRNA z-Scores compared to all tumours.",1
+365,ov_tcga_pub_mrna_median,68,MRNA_EXPRESSION,Z-SCORE,mRNA expression (all genes),"mRNA expression values, median values from all three mRNA expression platforms.",0
+366,paad_icgc_mutations,69,MUTATION_EXTENDED,MAF,Mutations,Somatic mutations from exome sequencing of 99 tumor/normal pairs.,1
+367,prad_broad_cna,70,COPY_NUMBER_ALTERATION,DISCRETE,Putative copy-number alterations,Putative copy-number calls. Values: -2 = homozygous deletion; -1 = hemizygous deletion; 0 = neutral / no change; 1 = gain; 2 = high level amplification.,1
+368,prad_broad_mrna_median_Zscores,70,MRNA_EXPRESSION,Z-SCORE,mRNA Expression z-Scores (microarray),mRNA z-Scores (Agilent microarray) compared to the expression distribution of each gene tumors that are diploid for this gene.,1
+369,prad_broad_mutations,70,MUTATION_EXTENDED,MAF,Mutations,Somatic mutations from exome sequencing of 112 tumor/normal pairs.,1
+370,prad_broad_mrna,70,MRNA_EXPRESSION,Z-SCORE,mRNA expression,mRNA expression values from 31 samples,0
+371,prad_broad_2013_cna,71,COPY_NUMBER_ALTERATION,DISCRETE,Putative copy-number alterations,Putative copy-number calls. Values: -2 = homozygous deletion; -1 = hemizygous deletion; 0 = neutral / no change; 1 = gain; 2 = high level amplification.,1
+372,prad_broad_2013_log2CNA,71,COPY_NUMBER_ALTERATION,LOG-VALUE,Log2 copy-number values,Log2 copy-number values for each gene.,0
+373,prad_broad_2013_mutations,71,MUTATION_EXTENDED,MAF,Mutations,Somatic mutations from whole-genome sequencing of 57 tumor/normal pairs.,1
+374,prad_broad_2013_mrna,71,MRNA_EXPRESSION,Z-SCORE,mRNA expression,mRNA expression values from 16 tumor/normal pairs,0
+375,prad_mich_cna,72,COPY_NUMBER_ALTERATION,DISCRETE,Putative copy-number alterations,Putative copy-number calls. Values: -2 = homozygous deletion; -1 = hemizygous deletion; 0 = neutral / no change; 1 = gain; 2 = high level amplification.,1
+376,prad_mich_mutations,72,MUTATION_EXTENDED,MAF,Mutations,Somatic mutations from exome sequencing of 61 tumor/normal pairs.,1
+377,prad_mich_mrna,72,MRNA_EXPRESSION,Z-SCORE,mRNA expression,mRNA expression values from 94 samples,0
+378,prad_mskcc_cna,73,COPY_NUMBER_ALTERATION,DISCRETE,Putative copy-number alterations (RAE),"Putative copy-number calls of protein-coding and microRNA genes, determined using the RAE algorithm (Taylor et al. PLoS One. 2008). Values: -2 = homozygous deletion; -1 = hemizygous deletion; 0 = no change; 1 = gain; 2 = high level amplification",1
+379,prad_mskcc_mrna_zbynorm,73,MRNA_EXPRESSION,Z-SCORE,mRNA Expression Z-Scores vs Normals,mRNA Z-Scores compared to expression in normal prostate samples,1
+380,prad_mskcc_mutations,73,MUTATION_EXTENDED,MAF,Mutations,"Validated somatic mutations, known oncogenic, and cell line mutations (135 sequenced genes)",1
+381,prad_mskcc_mrna,73,MRNA_EXPRESSION,Z-SCORE,mRNA Expression,log2 whole transcript mRNA expression values (Affymetrix Human Exon 1.0 ST arrays),0
+382,prad_mskcc_mrna_outliers,73,MRNA_EXPRESSION,DISCRETE,mRNA Expression Outliers,"mRNA expression outliers compared to normal prostate (-1 = underexpressed, 1 = overexpressed)",1
+383,prad_mskcc_2014_cna,74,COPY_NUMBER_ALTERATION,DISCRETE,COPY_NUMBER_ALTERATION,Discrete copy-number calls from the RAE algorithm. -2 = putative homozygous deletion; -1 = putative hemizygous deletion; 0 = copy-neutral; 1 = low-level gain; 2 = high-level amplification.,1
+384,prad_mskcc_cheny1_organoids_2014_rna_seq_rna,75,MRNA_EXPRESSION,,mRNA expression (RNA Seq FPKM),mRNA expression (RNA Seq FPKM),0
+385,prad_mskcc_cheny1_organoids_2014_mutations,75,MUTATION_EXTENDED,MAF,Mutations,Somatic mutations from exome sequencing.,1
+386,sarc_mskcc_cna,76,COPY_NUMBER_ALTERATION,DISCRETE,Putative copy-number alterations (RAE) ,"Putative copy-number calls, determined using the RAE algorithm from Affymetrix 250K SNP array data. Values: -2 = homozygous deletion; -1 = hemizygous deletion; 0 = neutral / no change; 1 = gain; 2 = high level amplification.",1
+387,sarc_mskcc_mrna_znormal,76,MRNA_EXPRESSION,Z-SCORE,mRNA Z-scores vs normal fat,"mRNA Z-scores compared to expression in normal fat samples. Only for subtypes arising from an adipose precursor cell (DDLPS, PLEO, MYXOID).",1
+388,sarc_mskcc_mutations,76,MUTATION_EXTENDED,MAF,Mutations,"Validated somatic mutations (Sanger biochemistry, 722 protein-coding genes and microRNAs).",1
+389,sarc_mskcc_mrna,76,MRNA_EXPRESSION,Z-SCORE,mRNA expression ,mRNA expression data (Affymetrix U133A).,0
+390,sarc_mskcc_mrna_outlier,76,MRNA_EXPRESSION,DISCRETE,mRNA outliers ,"mRNA expression outliers compared to normal fat (-1 = underexpressed, 1 = overexpressed). Only for subtypes arising from an adipose precursor cell (DDLPS, PLEO, MYXOID).",1
+391,scco_mskcc_mutations,77,MUTATION_EXTENDED,MAF,Mutations,Somatic mutations from targeted sequencing of 12 SCCO samples.,1
+392,sclc_clcgp_mutations,78,MUTATION_EXTENDED,MAF,Mutations,Somatic mutations from exome sequencing of 29 tumor/normal pairs.,1
+393,sclc_jhu_mutations,79,MUTATION_EXTENDED,MAF,Mutations,Somatic mutations from exome sequencing of 42 tumor/normal pairs.,1
+394,skcm_broad_mutations,80,MUTATION_EXTENDED,MAF,Mutations,Somatic mutations from exome sequencing of 121 tumor/normal pairs.,1
+395,skcm_broad_dfarber_mutations,81,MUTATION_EXTENDED,MAF,Mutations,Somatic mutations from whole genome sequencing of 25 metastatic melanomas.,1
+396,skcm_yale_mutations,82,MUTATION_EXTENDED,MAF,Mutations,Somatic mutations from exome sequencing of 91 tumor/normal pairs.,1
+397,stad_pfizer_uhongkong_mutations,83,MUTATION_EXTENDED,MAF,Mutations,Somatic mutations from whole genome sequencing of 100 tumor/normal pairs.,1
+398,stad_tcga_pub_gistic,84,COPY_NUMBER_ALTERATION,DISCRETE,Putative copy-number alterations from GISTIC,Putative copy-number calls on 293 cases determined using GISTIC 2.0. Values: -2 = homozygous deletion; -1 = hemizygous deletion; 0 = neutral / no change; 1 = gain; 2 = high level amplification.,1
+399,stad_tcga_pub_rna_seq_v2_mrna,84,MRNA_EXPRESSION,Z-SCORE,mRNA expression (RNA Seq V2 RSEM),mRNA expression levels (BCGSC).,0
+400,stad_tcga_pub_rna_seq_v2_mrna_median_Zscores,84,MRNA_EXPRESSION,Z-SCORE,mRNA expression z-Scores (RNA Seq V2 RSEM),mRNA z-Scores (RNA Seq V2 RSEM) compared to the expression distribution of each gene tumors that are diploid for this gene.,1
+401,stad_tcga_pub_log2CNA,84,COPY_NUMBER_ALTERATION,LOG-VALUE,Log2 copy-number values,Log2 copy-number values for each gene (from Affymetrix SNP6).,0
+402,stad_tcga_pub_mutations,84,MUTATION_EXTENDED,MAF,Mutations,Mutation data from whole exome sequencing.,1
+403,stad_uhongkong_mutations,85,MUTATION_EXTENDED,MAF,Mutations,Somatic mutations from exome sequencing of 22 gastric samples.,1
+404,stad_utokyo_mutations,86,MUTATION_EXTENDED,MAF,Mutations,Somatic mutations from exome sequencing of 30 tumor/normal pairs.,1
+405,thca_tcga_pub_gistic,87,COPY_NUMBER_ALTERATION,DISCRETE,Putative copy-number alterations from GISTIC,Putative copy-number calls on 496 cases determined using GISTIC 2.0. Values: -2 = homozygous deletion; -1 = hemizygous deletion; 0 = neutral / no change; 1 = gain; 2 = high level amplification.,1
+406,thca_tcga_pub_rna_seq_v2_mrna,87,MRNA_EXPRESSION,Z-SCORE,mRNA expression (RNA Seq V2 RSEM),Expression levels for 20532 genes in 486 thca cases (RNA Seq V2 RSEM).,0
+407,thca_tcga_pub_rna_seq_v2_mrna_median_Zscores,87,MRNA_EXPRESSION,Z-SCORE,mRNA Expression z-Scores (RNA Seq V2 RSEM),mRNA z-Scores (RNA Seq V2 RSEM) compared to the expression distribution of each gene tumors that are diploid for this gene.,1
+408,thca_tcga_pub_log2CNA,87,COPY_NUMBER_ALTERATION,LOG-VALUE,Log2 copy-number values,Log2 copy-number values for each gene (from Affymetrix SNP6).,0
+409,thca_tcga_pub_methylation_hm450,87,METHYLATION,CONTINUOUS,Methylation (HM450),"Methylation (HM450) beta-values for genes in 504 cases. For genes with multiple methylation probes, the probe most anti-correlated with expression.",0
+410,thca_tcga_pub_mutations,87,MUTATION_EXTENDED,MAF,Mutations,Mutation data from whole exome sequencing.,1
+411,thca_tcga_pub_RPPA_protein_level,87,PROTEIN_ARRAY_PROTEIN_LEVEL,Z-SCORE,protein/phosphoprotein level (RPPA),Protein or phosphoprotein level (Z-scores) measured by reverse phase protein array (RPPA),1
+412,ucec_tcga_pub_gistic,88,COPY_NUMBER_ALTERATION,DISCRETE,Putative copy-number alterations from GISTIC,Putative copy-number calls on 363 cases determined using GISTIC 2.0. Values: -2 = homozygous deletion; -1 = hemizygous deletion; 0 = neutral / no change; 1 = gain; 2 = high level amplification.,1
+413,ucec_tcga_pub_mrna_median_Zscores,88,MRNA_EXPRESSION,Z-SCORE,mRNA Expression z-Scores (microarray),mRNA z-Scores (Agilent microarray) compared to the expression distribution of each gene tumors that are diploid for this gene.,1
+414,ucec_tcga_pub_rna_seq_v2_mrna,88,MRNA_EXPRESSION,Z-SCORE,mRNA expression (RNA Seq V2 RSEM),Expression levels for 20532 genes in 333 ucec cases (RNA Seq V2 RSEM).,0
+415,ucec_tcga_pub_rna_seq_v2_mrna_median_Zscores,88,MRNA_EXPRESSION,Z-SCORE,mRNA Expression z-Scores (RNA Seq V2 RSEM),mRNA z-Scores (RNA Seq V2 RSEM) compared to the expression distribution of each gene tumors that are diploid for this gene.,1
+416,ucec_tcga_pub_log2CNA,88,COPY_NUMBER_ALTERATION,LOG-VALUE,Log2 copy-number values,Log2 copy-number values for each gene (from Affymetrix SNP6).,0
+417,ucec_tcga_pub_methylation_hm27,88,METHYLATION,CONTINUOUS,Methylation (HM27),"Methylation (HM27) beta-values for genes in 117 cases. For genes with multiple methylation probes, the probe least correlated with expression.",0
+418,ucec_tcga_pub_mutations,88,MUTATION_EXTENDED,MAF,Mutations,Mutation data from whole exome sequencing.,1
+419,ucec_tcga_pub_RPPA_protein_level,88,PROTEIN_ARRAY_PROTEIN_LEVEL,Z-SCORE,protein/phosphoprotein level (RPPA),Protein or phosphoprotein level (Z-scores) measured by reverse phase protein array (RPPA),1
+420,ucec_tcga_pub_mrna,88,MRNA_EXPRESSION,Z-SCORE,mRNA expression (microarray),Expression levels for 17190 genes in 54 ucec cases (Agilent microarray).,0
+421,brca_bccrc_xenograft_2014_gistic,89,COPY_NUMBER_ALTERATION,DISCRETE,Putative copy-number alterations,Putative copy-number alterations for the Breast Xenograft Evolution study.,1
+422,brca_bccrc_xenograft_2014_log2CNA,89,COPY_NUMBER_ALTERATION,LOG-VALUE,Log2 copy-number values,Log2 copy-number values for the Breast Xenograft Evolution study.,0
+423,brca_bccrc_xenograft_2014_mutations,89,MUTATION_EXTENDED,MAF,Mutations,Mutation data for the Breast Xenograft Evolution study.,1

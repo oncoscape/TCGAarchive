@@ -1,0 +1,101 @@
+{
+  "Patient_History": {
+    "pt": {
+      "properties": {
+        "patient_ID": {
+          "type": "string",
+          "format": "tcga_id"
+        },
+        "days_to_birth": {
+          "type": "integer"
+        },
+        "diagnosis_year": {
+          "type": "integer"
+        },
+        "history_lgg_dx_of_brain_tissue": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "patient_ID",
+        "days_to_birth",
+        "diagnosis_year"
+      ],
+      "additionalProperties": true
+    }
+  },
+  "Timelines": {
+    "pt": {
+      "properties": {
+        "patient_ID": {
+          "type": "string",
+          "format": "tcga_id"
+        },
+        "days_to_birth": {
+          "type": "integer"
+        },
+        "diagnosis_year": {
+          "type": "integer"
+        },
+        "history_lgg_dx_of_brain_tissue": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "patient_ID",
+        "days_to_birth",
+        "diagnosis_year"
+      ],
+      "additionalProperties": true
+    },
+    "drug": {
+      "properties": {
+        "patient_ID": {
+          "type": "string",
+          "format": "tcga_id"
+        }
+      },
+      "required": [
+        "patient_ID"
+      ],
+      "additionalProperties": true
+    },
+    "rad": {
+      "properties": {
+        "patient_ID": {
+          "type": "string",
+          "format": "tcga_id"
+        }
+      },
+      "required": [
+        "patient_ID"
+      ],
+      "additionalProperties": true
+    }
+  },
+  "Markers_Patients": {
+    "pt": {
+      "properties": {
+        "patient_ID": {
+          "type": "string",
+          "format": "tcga_id"
+        },
+        "days_to_birth": {
+          "type": "integer"
+        },
+        "diagnosis_year": {
+          "type": "integer"
+        },
+        "history_lgg_dx_of_brain_tissue": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "patient_ID",
+        "days_to_birth",
+        "diagnosis_year"
+      ],
+      "additionalProperties": true
+    }
+  }
+}

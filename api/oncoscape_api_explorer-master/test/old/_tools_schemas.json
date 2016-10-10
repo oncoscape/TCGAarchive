@@ -1,0 +1,88 @@
+{
+	"Patient_History":{
+			   "pt":{
+					"properties":{
+					   "patient_ID": {"type": "string"},
+						"days_to_birth": {"type": "integer"},
+						"diagnosis_year": {"type": "integer"},
+						"history_lgg_dx_of_brain_tissue":{"type":"boolean"}
+							},
+					"required": ["patient_ID","days_to_birth","diagnosis_year"],
+					"additionalProperties": true	
+					}
+	},
+	"Timelines":{
+			   "pt":{
+					"properties":{
+					   "patient_ID": {"type": "string"},
+						"days_to_birth": {"type": "integer"},
+						"diagnosis_year": {"type": "integer"},
+						"history_lgg_dx_of_brain_tissue":{"type":"boolean"}
+							},
+					"required": ["patient_ID","days_to_birth","diagnosis_year"],
+					"additionalProperties": true	
+				},
+				"drug":{
+					"properties":{
+					   "patient_ID": {"type": "string"}
+					},
+					"required": ["patient_ID"],
+					"additionalProperties": true	
+				},	
+				"rad":{
+					"properties":{
+					   "patient_ID": {"type": "string"}
+					 },
+					"required": ["patient_ID"],
+					"additionalProperties": true	
+					}
+    },
+    "Patients_and_Markers":{
+			   "pt":{
+					"properties":{
+					   "patient_ID": {"type": "string"},
+						"days_to_birth": {"type": "integer"},
+						"diagnosis_year": {"type": "integer"},
+						"history_lgg_dx_of_brain_tissue":{"type":"boolean"}
+							},
+					"required": ["patient_ID","days_to_birth","diagnosis_year"],
+					"additionalProperties": true	
+					}
+	 },	
+	"PCA" :{
+			   "pt":{
+					"properties":{
+					   "patient_ID": {"type": "string"},
+						"days_to_birth": {"type": "integer"},
+						"diagnosis_year": {"type": "integer"},
+						"history_lgg_dx_of_brain_tissue":{"type":"boolean"}
+							},
+					"required": ["patient_ID","days_to_birth","diagnosis_year"],
+					"additionalProperties": true	
+					}
+	},
+	"PLSR":{
+			   "pt":{
+					"properties":{
+					   "patient_ID": {"type": "string"},
+						"days_to_birth": {"type": "integer"},
+						"diagnosis_year": {"type": "integer"},
+						"history_lgg_dx_of_brain_tissue":{"type":"boolean"}
+							},
+					"required": ["patient_ID","days_to_birth","diagnosis_year"],
+					"additionalProperties": true	
+					}
+	}, 
+	"Survival":{
+			   "pt":{
+					"properties":{
+					   "patient_ID": {"type": "string"},
+						"days_to_birth": {"type": "integer"},
+						"diagnosis_year": {"type": "integer"},
+						"history_lgg_dx_of_brain_tissue":{"type":"boolean"}
+							},
+					"required": ["patient_ID","days_to_birth","diagnosis_year"],
+					"additionalProperties": true	
+					}
+	}		
+}

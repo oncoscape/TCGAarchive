@@ -1,0 +1,1079 @@
+[
+  {
+    "disease": "acc",
+    "Patient_History": {
+      "pt": {
+        "count": 92,
+        "passedPercentage": 100,
+        "error": {}
+      }
+    },
+    "Timelines": {
+      "pt": {
+        "count": 92,
+        "passedPercentage": 100,
+        "error": {}
+      },
+      "drug": {
+        "count": 18,
+        "passedPercentage": 100,
+        "error": {}
+      },
+      "rad": {
+        "count": 30,
+        "passedPercentage": 100,
+        "error": {}
+      }
+    }
+  },
+  {
+    "disease": "blca",
+    "Patient_History": {
+      "pt": {
+        "count": 412,
+        "passedPercentage": 95.39,
+        "error": {
+          "should have required property 'days_to_birth'": 1,
+          "should have required property 'diagnosis_year'": 18
+        }
+      }
+    },
+    "Timelines": {
+      "pt": {
+        "count": 412,
+        "passedPercentage": 95.39,
+        "error": {
+          "should have required property 'days_to_birth'": 1,
+          "should have required property 'diagnosis_year'": 18
+        }
+      },
+      "drug": {
+        "count": 303,
+        "passedPercentage": 100,
+        "error": {}
+      },
+      "rad": {
+        "count": 46,
+        "passedPercentage": 100,
+        "error": {}
+      }
+    }
+  },
+  {
+    "disease": "brca",
+    "Patient_History": {
+      "pt": {
+        "count": 1097,
+        "passedPercentage": 98.36,
+        "error": {
+          "should have required property 'days_to_birth'": 16,
+          "should have required property 'diagnosis_year'": 2
+        }
+      }
+    },
+    "Timelines": {
+      "pt": {
+        "count": 1097,
+        "passedPercentage": 98.36,
+        "error": {
+          "should have required property 'days_to_birth'": 16,
+          "should have required property 'diagnosis_year'": 2
+        }
+      },
+      "drug": {
+        "count": 2406,
+        "passedPercentage": 100,
+        "error": {}
+      },
+      "rad": {
+        "count": 618,
+        "passedPercentage": 100,
+        "error": {}
+      }
+    }
+  },
+  {
+    "disease": "cesc",
+    "Patient_History": {
+      "pt": {
+        "count": 307,
+        "passedPercentage": 98.7,
+        "error": {
+          "should have required property 'diagnosis_year'": 2,
+          "should have required property 'days_to_birth'": 2
+        }
+      }
+    },
+    "Timelines": {
+      "pt": {
+        "count": 307,
+        "passedPercentage": 98.7,
+        "error": {
+          "should have required property 'diagnosis_year'": 2,
+          "should have required property 'days_to_birth'": 2
+        }
+      },
+      "drug": {
+        "count": 199,
+        "passedPercentage": 100,
+        "error": {}
+      },
+      "rad": {
+        "count": 276,
+        "passedPercentage": 100,
+        "error": {}
+      }
+    }
+  },
+  {
+    "disease": "chol",
+    "Patient_History": {
+      "pt": {
+        "count": 45,
+        "passedPercentage": 0,
+        "error": {
+          "should have required property 'diagnosis_year'": 45
+        }
+      }
+    },
+    "Timelines": {
+      "pt": {
+        "count": 45,
+        "passedPercentage": 0,
+        "error": {
+          "should have required property 'diagnosis_year'": 45
+        }
+      },
+      "drug": {
+        "count": 14,
+        "passedPercentage": 100,
+        "error": {}
+      },
+      "rad": {
+        "count": 1,
+        "passedPercentage": 100,
+        "error": {}
+      }
+    }
+  },
+  {
+    "disease": "coad",
+    "Patient_History": {
+      "pt": {
+        "count": 459,
+        "passedPercentage": 99.56,
+        "error": {
+          "should have required property 'days_to_birth'": 2
+        }
+      }
+    },
+    "Timelines": {
+      "pt": {
+        "count": 459,
+        "passedPercentage": 99.56,
+        "error": {
+          "should have required property 'days_to_birth'": 2
+        }
+      },
+      "drug": {
+        "count": 593,
+        "passedPercentage": 100,
+        "error": {}
+      },
+      "rad": {
+        "count": 20,
+        "passedPercentage": 100,
+        "error": {}
+      }
+    }
+  },
+  {
+    "disease": "dlbc",
+    "Patient_History": {
+      "pt": {
+        "count": 48,
+        "passedPercentage": 100,
+        "error": {}
+      }
+    },
+    "Timelines": {
+      "pt": {
+        "count": 48,
+        "passedPercentage": 100,
+        "error": {}
+      },
+      "drug": {
+        "count": 225,
+        "passedPercentage": 100,
+        "error": {}
+      },
+      "rad": {
+        "count": 10,
+        "passedPercentage": 100,
+        "error": {}
+      }
+    }
+  },
+  {
+    "disease": "esca",
+    "Patient_History": {
+      "pt": {
+        "count": 185,
+        "passedPercentage": 96.22,
+        "error": {
+          "should have required property 'diagnosis_year'": 7
+        }
+      }
+    },
+    "Timelines": {
+      "pt": {
+        "count": 185,
+        "passedPercentage": 96.22,
+        "error": {
+          "should have required property 'diagnosis_year'": 7
+        }
+      },
+      "drug": {
+        "count": 82,
+        "passedPercentage": 100,
+        "error": {}
+      },
+      "rad": {
+        "count": 50,
+        "passedPercentage": 100,
+        "error": {}
+      }
+    }
+  },
+  {
+    "disease": "gbm",
+    "Patient_History": {
+      "pt": {
+        "count": 596,
+        "passedPercentage": 100,
+        "error": {}
+      }
+    },
+    "Timelines": {
+      "pt": {
+        "count": 596,
+        "passedPercentage": 100,
+        "error": {}
+      },
+      "drug": {
+        "count": 1505,
+        "passedPercentage": 100,
+        "error": {}
+      },
+      "rad": {
+        "count": 550,
+        "passedPercentage": 100,
+        "error": {}
+      }
+    }
+  },
+  {
+    "disease": "hnsc",
+    "Patient_History": {
+      "pt": {
+        "count": 528,
+        "passedPercentage": 99.81,
+        "error": {
+          "should have required property 'days_to_birth'": 1
+        }
+      }
+    },
+    "Timelines": {
+      "pt": {
+        "count": 528,
+        "passedPercentage": 99.81,
+        "error": {
+          "should have required property 'days_to_birth'": 1
+        }
+      },
+      "drug": {
+        "count": 353,
+        "passedPercentage": 100,
+        "error": {}
+      },
+      "rad": {
+        "count": 467,
+        "passedPercentage": 100,
+        "error": {}
+      }
+    }
+  },
+  {
+    "disease": "kich",
+    "Patient_History": {
+      "pt": {
+        "count": 113,
+        "passedPercentage": 100,
+        "error": {}
+      }
+    },
+    "Timelines": {
+      "pt": {
+        "count": 113,
+        "passedPercentage": 100,
+        "error": {}
+      },
+      "drug": {
+        "count": 21,
+        "passedPercentage": 100,
+        "error": {}
+      },
+      "rad": {
+        "count": 1,
+        "passedPercentage": 100,
+        "error": {}
+      }
+    }
+  },
+  {
+    "disease": "kirc",
+    "Patient_History": {
+      "pt": {
+        "count": 537,
+        "passedPercentage": 99.81,
+        "error": {
+          "should have required property 'days_to_birth'": 1
+        }
+      }
+    },
+    "Timelines": {
+      "pt": {
+        "count": 537,
+        "passedPercentage": 99.81,
+        "error": {
+          "should have required property 'days_to_birth'": 1
+        }
+      },
+      "drug": {
+        "count": 168,
+        "passedPercentage": 100,
+        "error": {}
+      },
+      "rad": {
+        "count": 72,
+        "passedPercentage": 100,
+        "error": {}
+      }
+    }
+  },
+  {
+    "disease": "kirp",
+    "Patient_History": {
+      "pt": {
+        "count": 291,
+        "passedPercentage": 90.72,
+        "error": {
+          "should have required property 'days_to_birth'": 5,
+          "should have required property 'diagnosis_year'": 22
+        }
+      }
+    },
+    "Timelines": {
+      "pt": {
+        "count": 291,
+        "passedPercentage": 90.72,
+        "error": {
+          "should have required property 'days_to_birth'": 5,
+          "should have required property 'diagnosis_year'": 22
+        }
+      },
+      "drug": {
+        "count": 47,
+        "passedPercentage": 100,
+        "error": {}
+      },
+      "rad": {
+        "count": 15,
+        "passedPercentage": 100,
+        "error": {}
+      }
+    }
+  },
+  {
+    "disease": "laml",
+    "Patient_History": {
+      "pt": {
+        "count": 200,
+        "passedPercentage": 100,
+        "error": {}
+      }
+    },
+    "Timelines": {
+      "pt": {
+        "count": 200,
+        "passedPercentage": 100,
+        "error": {}
+      },
+      "drug": "Disease does not have this Collection",
+      "rad": "Disease does not have this Collection"
+    }
+  },
+  {
+    "disease": "lgg",
+    "Patient_History": {
+      "pt": {
+        "count": 515,
+        "passedPercentage": 35.339999999999996,
+        "error": {
+          "should match format \"tcga_id\"": 333
+        }
+      }
+    },
+    "Timelines": {
+      "pt": {
+        "count": 515,
+        "passedPercentage": 35.339999999999996,
+        "error": {
+          "should match format \"tcga_id\"": 333
+        }
+      },
+      "drug": {
+        "count": 695,
+        "passedPercentage": 100,
+        "error": {}
+      },
+      "rad": {
+        "count": 345,
+        "passedPercentage": 0,
+        "error": {
+          "should match format \"tcga_id\"": 345
+        }
+      }
+    }
+  },
+  {
+    "disease": "lich",
+    "Patient_History": {
+      "pt": {
+        "count": 377,
+        "passedPercentage": 0,
+        "error": {
+          "should match format \"tcga_id\"": 377
+        }
+      }
+    },
+    "Timelines": {
+      "pt": {
+        "count": 377,
+        "passedPercentage": 0,
+        "error": {
+          "should match format \"tcga_id\"": 377
+        }
+      },
+      "drug": {
+        "count": 66,
+        "passedPercentage": 0,
+        "error": {
+          "should match format \"tcga_id\"": 66
+        }
+      },
+      "rad": {
+        "count": 11,
+        "passedPercentage": 0,
+        "error": {
+          "should match format \"tcga_id\"": 11
+        }
+      }
+    }
+  },
+  {
+    "disease": "luad",
+    "Patient_History": {
+      "pt": {
+        "count": 522,
+        "passedPercentage": 0,
+        "error": {
+          "should match format \"tcga_id\"": 522
+        }
+      }
+    },
+    "Timelines": {
+      "pt": {
+        "count": 522,
+        "passedPercentage": 0,
+        "error": {
+          "should match format \"tcga_id\"": 522
+        }
+      },
+      "drug": {
+        "count": 461,
+        "passedPercentage": 0,
+        "error": {
+          "should match format \"tcga_id\"": 461
+        }
+      },
+      "rad": {
+        "count": 126,
+        "passedPercentage": 0,
+        "error": {
+          "should match format \"tcga_id\"": 126
+        }
+      }
+    }
+  },
+  {
+    "disease": "lusc",
+    "Patient_History": {
+      "pt": {
+        "count": 504,
+        "passedPercentage": 0,
+        "error": {
+          "should match format \"tcga_id\"": 504
+        }
+      }
+    },
+    "Timelines": {
+      "pt": {
+        "count": 504,
+        "passedPercentage": 0,
+        "error": {
+          "should match format \"tcga_id\"": 504
+        }
+      },
+      "drug": {
+        "count": 357,
+        "passedPercentage": 0,
+        "error": {
+          "should match format \"tcga_id\"": 357
+        }
+      },
+      "rad": {
+        "count": 73,
+        "passedPercentage": 0,
+        "error": {
+          "should match format \"tcga_id\"": 73
+        }
+      }
+    }
+  },
+  {
+    "disease": "meso",
+    "Patient_History": {
+      "pt": {
+        "count": 87,
+        "passedPercentage": 0,
+        "error": {
+          "should match format \"tcga_id\"": 87
+        }
+      }
+    },
+    "Timelines": {
+      "pt": {
+        "count": 87,
+        "passedPercentage": 0,
+        "error": {
+          "should match format \"tcga_id\"": 87
+        }
+      },
+      "drug": {
+        "count": 159,
+        "passedPercentage": 0,
+        "error": {
+          "should match format \"tcga_id\"": 159
+        }
+      },
+      "rad": {
+        "count": 31,
+        "passedPercentage": 0,
+        "error": {
+          "should match format \"tcga_id\"": 31
+        }
+      }
+    }
+  },
+  {
+    "disease": "ov",
+    "Patient_History": {
+      "pt": {
+        "count": 587,
+        "passedPercentage": 0,
+        "error": {
+          "should match format \"tcga_id\"": 587
+        }
+      }
+    },
+    "Timelines": {
+      "pt": {
+        "count": 587,
+        "passedPercentage": 0,
+        "error": {
+          "should match format \"tcga_id\"": 587
+        }
+      },
+      "drug": {
+        "count": 2516,
+        "passedPercentage": 0,
+        "error": {
+          "should match format \"tcga_id\"": 2516
+        }
+      },
+      "rad": {
+        "count": 36,
+        "passedPercentage": 0,
+        "error": {
+          "should match format \"tcga_id\"": 36
+        }
+      }
+    }
+  },
+  {
+    "disease": "paad",
+    "Patient_History": {
+      "pt": {
+        "count": 185,
+        "passedPercentage": 0,
+        "error": {
+          "should match format \"tcga_id\"": 185
+        }
+      }
+    },
+    "Timelines": {
+      "pt": {
+        "count": 185,
+        "passedPercentage": 0,
+        "error": {
+          "should match format \"tcga_id\"": 185
+        }
+      },
+      "drug": {
+        "count": 254,
+        "passedPercentage": 0,
+        "error": {
+          "should match format \"tcga_id\"": 254
+        }
+      },
+      "rad": {
+        "count": 47,
+        "passedPercentage": 0,
+        "error": {
+          "should match format \"tcga_id\"": 47
+        }
+      }
+    }
+  },
+  {
+    "disease": "pcpg",
+    "Patient_History": {
+      "pt": {
+        "count": 179,
+        "passedPercentage": 0,
+        "error": {
+          "should match format \"tcga_id\"": 179
+        }
+      }
+    },
+    "Timelines": {
+      "pt": {
+        "count": 179,
+        "passedPercentage": 0,
+        "error": {
+          "should match format \"tcga_id\"": 179
+        }
+      },
+      "drug": {
+        "count": 6,
+        "passedPercentage": 0,
+        "error": {
+          "should match format \"tcga_id\"": 6
+        }
+      },
+      "rad": {
+        "count": 6,
+        "passedPercentage": 0,
+        "error": {
+          "should match format \"tcga_id\"": 6
+        }
+      }
+    }
+  },
+  {
+    "disease": "prad",
+    "Patient_History": {
+      "pt": {
+        "count": 500,
+        "passedPercentage": 0,
+        "error": {
+          "should match format \"tcga_id\"": 500
+        }
+      }
+    },
+    "Timelines": {
+      "pt": {
+        "count": 500,
+        "passedPercentage": 0,
+        "error": {
+          "should match format \"tcga_id\"": 500
+        }
+      },
+      "drug": {
+        "count": 130,
+        "passedPercentage": 0,
+        "error": {
+          "should match format \"tcga_id\"": 130
+        }
+      },
+      "rad": {
+        "count": 83,
+        "passedPercentage": 0,
+        "error": {
+          "should match format \"tcga_id\"": 83
+        }
+      }
+    }
+  },
+  {
+    "disease": "read",
+    "Patient_History": {
+      "pt": {
+        "count": 170,
+        "passedPercentage": 0,
+        "error": {
+          "should match format \"tcga_id\"": 170
+        }
+      }
+    },
+    "Timelines": {
+      "pt": {
+        "count": 170,
+        "passedPercentage": 0,
+        "error": {
+          "should match format \"tcga_id\"": 170
+        }
+      },
+      "drug": {
+        "count": 231,
+        "passedPercentage": 0,
+        "error": {
+          "should match format \"tcga_id\"": 231
+        }
+      },
+      "rad": {
+        "count": 30,
+        "passedPercentage": 0,
+        "error": {
+          "should match format \"tcga_id\"": 30
+        }
+      }
+    }
+  },
+  {
+    "disease": "sarc",
+    "Patient_History": {
+      "pt": {
+        "count": 261,
+        "passedPercentage": 0,
+        "error": {
+          "should match format \"tcga_id\"": 261
+        }
+      }
+    },
+    "Timelines": {
+      "pt": {
+        "count": 261,
+        "passedPercentage": 0,
+        "error": {
+          "should match format \"tcga_id\"": 261
+        }
+      },
+      "drug": {
+        "count": 208,
+        "passedPercentage": 0,
+        "error": {
+          "should match format \"tcga_id\"": 208
+        }
+      },
+      "rad": {
+        "count": 99,
+        "passedPercentage": 0,
+        "error": {
+          "should match format \"tcga_id\"": 99
+        }
+      }
+    }
+  },
+  {
+    "disease": "skcm",
+    "Patient_History": {
+      "pt": {
+        "count": 470,
+        "passedPercentage": 0,
+        "error": {
+          "should match format \"tcga_id\"": 470
+        }
+      }
+    },
+    "Timelines": {
+      "pt": {
+        "count": 470,
+        "passedPercentage": 0,
+        "error": {
+          "should match format \"tcga_id\"": 470
+        }
+      },
+      "drug": {
+        "count": 265,
+        "passedPercentage": 0,
+        "error": {
+          "should match format \"tcga_id\"": 265
+        }
+      },
+      "rad": {
+        "count": 147,
+        "passedPercentage": 0,
+        "error": {
+          "should match format \"tcga_id\"": 147
+        }
+      }
+    }
+  },
+  {
+    "disease": "stad",
+    "Patient_History": {
+      "pt": {
+        "count": 443,
+        "passedPercentage": 0,
+        "error": {
+          "should match format \"tcga_id\"": 443
+        }
+      }
+    },
+    "Timelines": {
+      "pt": {
+        "count": 443,
+        "passedPercentage": 0,
+        "error": {
+          "should match format \"tcga_id\"": 443
+        }
+      },
+      "drug": {
+        "count": 463,
+        "passedPercentage": 0,
+        "error": {
+          "should match format \"tcga_id\"": 463
+        }
+      },
+      "rad": {
+        "count": 82,
+        "passedPercentage": 0,
+        "error": {
+          "should match format \"tcga_id\"": 82
+        }
+      }
+    }
+  },
+  {
+    "disease": "tgct",
+    "Patient_History": {
+      "pt": {
+        "count": 134,
+        "passedPercentage": 0,
+        "error": {
+          "should match format \"tcga_id\"": 134
+        }
+      }
+    },
+    "Timelines": {
+      "pt": {
+        "count": 134,
+        "passedPercentage": 0,
+        "error": {
+          "should match format \"tcga_id\"": 134
+        }
+      },
+      "drug": {
+        "count": 171,
+        "passedPercentage": 0,
+        "error": {
+          "should match format \"tcga_id\"": 171
+        }
+      },
+      "rad": {
+        "count": 25,
+        "passedPercentage": 0,
+        "error": {
+          "should match format \"tcga_id\"": 25
+        }
+      }
+    }
+  },
+  {
+    "disease": "thca",
+    "Patient_History": {
+      "pt": {
+        "count": 507,
+        "passedPercentage": 0,
+        "error": {
+          "should match format \"tcga_id\"": 507
+        }
+      }
+    },
+    "Timelines": {
+      "pt": {
+        "count": 507,
+        "passedPercentage": 0,
+        "error": {
+          "should match format \"tcga_id\"": 507
+        }
+      },
+      "drug": {
+        "count": 56,
+        "passedPercentage": 0,
+        "error": {
+          "should match format \"tcga_id\"": 56
+        }
+      },
+      "rad": {
+        "count": 292,
+        "passedPercentage": 0,
+        "error": {
+          "should match format \"tcga_id\"": 292
+        }
+      }
+    }
+  },
+  {
+    "disease": "thym",
+    "Patient_History": {
+      "pt": {
+        "count": 124,
+        "passedPercentage": 0,
+        "error": {
+          "should match format \"tcga_id\"": 124
+        }
+      }
+    },
+    "Timelines": {
+      "pt": {
+        "count": 124,
+        "passedPercentage": 0,
+        "error": {
+          "should match format \"tcga_id\"": 124
+        }
+      },
+      "drug": {
+        "count": 16,
+        "passedPercentage": 0,
+        "error": {
+          "should match format \"tcga_id\"": 16
+        }
+      },
+      "rad": {
+        "count": 45,
+        "passedPercentage": 0,
+        "error": {
+          "should match format \"tcga_id\"": 45
+        }
+      }
+    }
+  },
+  {
+    "disease": "ucec",
+    "Patient_History": {
+      "pt": {
+        "count": 548,
+        "passedPercentage": 0,
+        "error": {
+          "should match format \"tcga_id\"": 548
+        }
+      }
+    },
+    "Timelines": {
+      "pt": {
+        "count": 548,
+        "passedPercentage": 0,
+        "error": {
+          "should match format \"tcga_id\"": 548
+        }
+      },
+      "drug": {
+        "count": 479,
+        "passedPercentage": 0,
+        "error": {
+          "should match format \"tcga_id\"": 479
+        }
+      },
+      "rad": {
+        "count": 304,
+        "passedPercentage": 0,
+        "error": {
+          "should match format \"tcga_id\"": 304
+        }
+      }
+    }
+  },
+  {
+    "disease": "ucs",
+    "Patient_History": {
+      "pt": {
+        "count": 57,
+        "passedPercentage": 0,
+        "error": {
+          "should match format \"tcga_id\"": 57
+        }
+      }
+    },
+    "Timelines": {
+      "pt": {
+        "count": 57,
+        "passedPercentage": 0,
+        "error": {
+          "should match format \"tcga_id\"": 57
+        }
+      },
+      "drug": {
+        "count": 95,
+        "passedPercentage": 0,
+        "error": {
+          "should match format \"tcga_id\"": 95
+        }
+      },
+      "rad": {
+        "count": 34,
+        "passedPercentage": 0,
+        "error": {
+          "should match format \"tcga_id\"": 34
+        }
+      }
+    }
+  },
+  {
+    "disease": "uvm",
+    "Patient_History": {
+      "pt": {
+        "count": 80,
+        "passedPercentage": 0,
+        "error": {
+          "should match format \"tcga_id\"": 80
+        }
+      }
+    },
+    "Timelines": {
+      "pt": {
+        "count": 80,
+        "passedPercentage": 0,
+        "error": {
+          "should match format \"tcga_id\"": 80
+        }
+      },
+      "drug": {
+        "count": 4,
+        "passedPercentage": 0,
+        "error": {
+          "should match format \"tcga_id\"": 4
+        }
+      },
+      "rad": {
+        "count": 2,
+        "passedPercentage": 0,
+        "error": {
+          "should match format \"tcga_id\"": 2
+        }
+      }
+    }
+  }
+]

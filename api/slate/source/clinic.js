@@ -2,27 +2,27 @@
 var jsonfile = require("jsonfile");
 var cbio_annotation = {};
 var ucsc_annotation = {};
-var cbio_annot = cbio_annotation.filter(function(c){
-    if('collection' in c) 
-      return typeof c != 'undefined'
- });
-jsonfile.readFile("cbio_annot.json", function(err, obj) {
-  cbio_annotation = obj;
-});
+// var cbio_annot = cbio_annotation.filter(function(c){
+//     if('collection' in c) 
+//       return typeof c != 'undefined'
+//  });
+// jsonfile.readFile("cbio_annot.json", function(err, obj) {
+//   cbio_annotation = obj;
+// });
 
-cbio_annotation = cbio_annotation.map(function(c){
-   var elem = {};
-   elem.source = c.source;
-   elem.type = c.type;
-   elem.collection = c.collection;
-   elem.sampleSize = c.sampleSize;
-   elem.GENETIC_ALTERATION_TYPE = c.GENETIC_ALTERATION_TYPE;
-   elem.DATATYPE = c.DATATYPE;
-   elem.NAME = c.NAME;
-   elem.DESCRIPTION = c.DESCRIPTION;
-   return elem;
- });
- jsonfile.writeFile("cbio_annot_reorganized.json", cbio_annotation);
+// cbio_annotation = cbio_annotation.map(function(c){
+//    var elem = {};
+//    elem.source = c.source;
+//    elem.type = c.type;
+//    elem.collection = c.collection;
+//    elem.sampleSize = c.sampleSize;
+//    elem.GENETIC_ALTERATION_TYPE = c.GENETIC_ALTERATION_TYPE;
+//    elem.DATATYPE = c.DATATYPE;
+//    elem.NAME = c.NAME;
+//    elem.DESCRIPTION = c.DESCRIPTION;
+//    return elem;
+//  });
+//  jsonfile.writeFile("cbio_annot_reorganized.json", cbio_annotation);
 
 jsonfile.readFile("cbio_annot_reorganized.json", function(err, obj) {
   cbio_annotation = obj;
@@ -32,49 +32,6 @@ jsonfile.readFile("cbio_annot_reorganized.json", function(err, obj) {
 jsonfile.readFile("ucsc_mol_annotation.json", function(err, obj) {
   ucsc_annotation = obj;
 });
-
-
-var mol_annot = [];
-var mol_annotation = ucsc_annotation.concat(cbio_annotation);
-mol_annot = mol_annotation.map(function(m){
-  var e = {};
-  if('source' in m){
-    e.source = m.source;
-    e.type = m.type;
-    e.collection = m.collection;
-    e.sampleSize = m.sampleSize;
-    if('wrangler' in m){
-      e.wrangler = m.wrangler;
-    }else{
-      e.wrangler = "";
-    }
-    if('wranglingProcedure' in m){
-      e.wranglingProcedure = m.wranglingProcedure;
-    }else{
-      e.wranglingProcedure = "";
-    }
-    if('description' in m){
-      e.description = m.description;
-    }else{
-      e.description = m.DESCRIPTION;
-    }
-    if('GENETIC_ALTERATION_TYPE' in m){
-      e.geneticAlterationType = m.GENETIC_ALTERATION_TYPE;
-    }else{
-      e.geneticAlterationType = "";
-    }
-    if('DATATYPE' in m){
-      e.datatype = m.DATATYPE;
-    }else{
-      e.datatype = "";
-    }
-    return e;
-  }
-});
-jsonfile.writeFile("molecular_annotation.json", mol_annot, {spaces: 2}, function(err) {
-  console.error(err)
-});
-
 
 var comongo = require('co-mongodb');
 var co = require('co');
@@ -166,7 +123,7 @@ var disease_code = {
 
 // format.h2("Mongo DB Connection");
 // format.codeJSStart('const mongoose = require(\"mongoose\");');
-// format.table('mongoose.connect(\"mongodb://oncoscape-dev-db1.sttrcancer.io:27017,oncoscape-dev-db2.sttrcancer.io:27017,oncoscape-dev-db3.sttrcancer.io:27017/pancan12?authSource=admin\",{user: \"oncoscapeRead\",pass: \"i1f4d9botHD4xnZ\"});');
+// format.table('mongoose.connect(\"mongodb://oncoscape-dev-db1.sttrcancer.io:27017,oncoscape-dev-db2.sttrcancer.io:27017,oncoscape-dev-db3.sttrcancer.io:27017/tcga?authSource=admin\",{user: \"oncoscapeRead\",pass: \"i1f4d9botHD4xnZ\"});');
 // format.table('var connection = mongoose.connection;');
 // format.table('var db = connection.db;');
 // format.codeStop();
@@ -253,7 +210,7 @@ function filterByDataTypeCat(value, obj) {
 
 co(function *() {
 
-  db = yield comongo.client.connect('mongodb://oncoscapeRead:i1f4d9botHD4xnZ@oncoscape-dev-db1.sttrcancer.io:27017,oncoscape-dev-db2.sttrcancer.io:27017,oncoscape-dev-db3.sttrcancer.io:27017/pancan12?authSource=admin&replicaSet=rs0');
+  db = yield comongo.client.connect('mongodb://oncoscapeRead:i1f4d9botHD4xnZ@oncoscape-dev-db1.sttrcancer.io:27017,oncoscape-dev-db2.sttrcancer.io:27017,oncoscape-dev-db3.sttrcancer.io:27017/tcga?authSource=admin&replicaSet=rs0');
   
   /* REST API Query on gbm_patient_tcga_clinical */
   collection = yield comongo.db.collection(db, 'gbm_patient_tcga_clinical');
@@ -261,6 +218,7 @@ co(function *() {
   // var max_ind = 0;
   // var max_len = 0;
   // var ind = 0;
+  format.h1("Rest API Queries");
   format.h2("Example to access one collection from browser");
   format.h3("HTTP Request");
   format.text("Collections are accessable at the host: http://dev.oncoscape.sttrcancer.io/api/");
@@ -483,7 +441,7 @@ co(function *() {
       format.h2(datasources[i].disease.toUpperCase() + " - " + disease_code[datasources[i].disease.toUpperCase()]);
       var datasource = datasources[i];
       var mol_colls = [];
-      //db = yield comongo.client.connect('mongodb://oncoscapeRead:i1f4d9botHD4xnZ@oncoscape-dev-db1.sttrcancer.io:27017,oncoscape-dev-db2.sttrcancer.io:27017,oncoscape-dev-db3.sttrcancer.io:27017/pancan12?authSource=admin&replicaSet=rs0');
+      //db = yield comongo.client.connect('mongodb://oncoscapeRead:i1f4d9botHD4xnZ@oncoscape-dev-db1.sttrcancer.io:27017,oncoscape-dev-db2.sttrcancer.io:27017,oncoscape-dev-db3.sttrcancer.io:27017/tcga?authSource=admin&replicaSet=rs0');
       format.text("Collection Name | Collection Type | Data Source | Data Type");
       format.table("--------- | ----------- | ----------- | -----------"); 
       elem_source = datasource.source;
