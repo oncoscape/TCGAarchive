@@ -8,6 +8,11 @@
 cd oncoscape-api-explorer/test
 ```
 
+### Daily Database Sanitory Checking
+
+Direct to the current database subfolder and run **generateDailyReport.js** 
+The output is a markdown file stored in report subfolder under the current directory
+
 
 ### Using cursor to loop through the entire database collections
 
