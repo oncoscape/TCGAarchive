@@ -213,13 +213,21 @@ co(function *() {
   format.h3("The number listed in manifest is: ");
   format.text(manifest_listed_collections.length);
   format.h3("Compare the existing collections against lookup_listed_collections: ");
+  format.codeStart();
   format.text(existing_collection_names.arraysCompare(lookup_listed_collections));
+  format.codeStop();
   format.h3("Compare lookup_listed_collections against the existing collections: ");
+  format.codeStart();
   format.text(lookup_listed_collections.arraysCompare(existing_collection_names));
+  format.codeStop();
   format.h3("Compare the existing collections against manifest_listed_collections: ");
+  format.codeStart();
   format.text(existing_collection_names.arraysCompare(manifest_listed_collections));
+  format.codeStop();
   format.h3("Compare manifest_listed_collections against the existing collections: ");
+  format.codeStart();
   format.text(manifest_listed_collections.arraysCompare(existing_collection_names));
+  format.codeStop();
   
 
   /*** survey the collections that exist in the tcga database
