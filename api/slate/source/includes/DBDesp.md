@@ -65,7 +65,7 @@ meso | Mesothelioma
 
 ### source
 
-<a href='https://gdc.cancer.gov/'>TCGA</a>
+<a target="_blank" href='https://gdc.cancer.gov/'>TCGA</a>
 
 ### clinical
 
@@ -86,12 +86,12 @@ newTumor-followUp | possible follow-up records for the new tumor events
 
 molecular collection source | Annotation
 --------- | ----------- 
-broad | <a href='https://gdac.broadinstitute.org//'>Broad Firehose</a>
-cBio | <a href='http://www.cbioportal.org/'>cBioPortal</a>
-ucsc-PNAS | <a href='http://www.pnas.org/content/113/19/5394.full/'>Publication</a>
-ucsc | <a href='https://genome-cancer.ucsc.edu/'>UCSC</a>
-bradleyLab | <a href='www.fredhutch.org/en/labs/labs-import/bradley-lab.html/'>Bradley Lab</a>
-demo | <a href='oncoscape.sttrcancer.org/'>Demo data source</a>
+broad | <a target="_blank" href='https://gdac.broadinstitute.org//'>Broad Firehose</a>
+cBio | <a target="_blank" href='http://www.cbioportal.org/'>cBioPortal</a>
+ucsc-PNAS | <a target="_blank" href='http://www.pnas.org/content/113/19/5394.full/'>Publication</a>
+ucsc | <a target="_blank" href='https://genome-cancer.ucsc.edu/'>UCSC</a>
+bradleyLab | <a target="_blank" href='www.fredhutch.org/en/labs/labs-import/bradley-lab.html/'>Bradley Lab</a>
+demo | <a target="_blank" href='oncoscape.sttrcancer.org/'>Demo data source</a>
 
 molecular collection type | Annotation
 --------- | ----------- 
@@ -108,9 +108,9 @@ facs | Fluorescence-activated cell sorting data
 
 category collection source | Annotation
 --------- | ----------- 
-tcga | <a href='https://gdc.cancer.gov/'>TCGA</a>
-hgnc | <a href='http://www.genenames.org/'>HUGO Gene Nomenclature Committee</a>
-orgHs | <a href='https://bioconductor.org/packages/release/data/annotation/html/org.Hs.eg.db.html/'>Genome wide annotation for Human</a>
+tcga | <a target="_blank" href='https://gdc.cancer.gov/'>TCGA</a>
+hgnc | <a target="_blank" href='http://www.genenames.org/'>HUGO Gene Nomenclature Committee</a>
+orgHs | <a target="_blank" href='https://bioconductor.org/packages/release/data/annotation/html/org.Hs.eg.db.html/'>Genome wide annotation for Human</a>
 
 category collection type | Annotation
 --------- | ----------- 
@@ -121,8 +121,8 @@ genesets | a collection of multiple genesets with specific genes in each set
 
 calculated collection source | Annotation
 --------- | ----------- 
-ucsc | <a href='https://genome-cancer.ucsc.edu/'>UCSC</a>
-broad | <a href='https://gdac.broadinstitute.org//'>Broad Firehose</a>
+ucsc | <a target="_blank" href='https://genome-cancer.ucsc.edu/'>UCSC</a>
+broad | <a target="_blank" href='https://gdac.broadinstitute.org//'>Broad Firehose</a>
 
 calculated collection type | Annotation
 --------- | ----------- 
@@ -146,8 +146,8 @@ OSCC Chen 9 genes | hg19_genesets_hgnc_import[6]
 
 edges collection source | Annotation
 --------- | ----------- 
-broad | <a href='https://gdac.broadinstitute.org//'>Broad Firehose</a>
-ucsc | <a href='https://genome-cancer.ucsc.edu/'>UCSC</a>
+broad | <a target="_blank" href='https://gdac.broadinstitute.org//'>Broad Firehose</a>
+ucsc | <a target="_blank" href='https://genome-cancer.ucsc.edu/'>UCSC</a>
 
 ## From Collection Perspective
 
