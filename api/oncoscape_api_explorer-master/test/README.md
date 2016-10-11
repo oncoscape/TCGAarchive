@@ -13,6 +13,11 @@ cd oncoscape-api-explorer/test
 Direct to the current database subfolder and run **generateDailyReport.js** 
 The output is a markdown file stored in report subfolder under the current directory
 
+```sh
+cd tcga
+report/log_10112016.md 
+node generateDailyReport.js >> report/log_10112016.md 
+```
 
 ### Using cursor to loop through the entire database collections
 
