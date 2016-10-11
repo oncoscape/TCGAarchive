@@ -29,8 +29,8 @@
     "mut":{
            "properties":{
               "gene": {"type": "string"},
-              "min": {"type": "string"},
-              "max": {"type": "string"},
+              "min": {"type": ["string", "null"]},
+              "max": {"type": ["string", "null"]},
               "patients": {
                         "type": "object",
                         "patternProperties": {
