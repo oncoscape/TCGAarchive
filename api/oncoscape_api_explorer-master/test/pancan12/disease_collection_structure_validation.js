@@ -10,12 +10,12 @@
 var jsonfile = require("jsonfile");
 var u = require("underscore");
 var test = {
-  "pca" : require("./moduleTesting/test_pca.js"),
-  "spreadsheet" : require("./moduleTesting/test_Spreadsheet.js"),
-  "timelines" : require("./moduleTesting/test_Timelines.js"),
-  "clusters" : require("./moduleTesting/test_Clusters.js"),
-  "heatmap" : require("./moduleTesting/test_Heatmap.js"),
-  "sunburst" : require("./moduleTesting/test_Sunburst.js")
+  "pca" : require(".././moduleTesting/test_pca.js"),
+  "spreadsheet" : require(".././moduleTesting/test_Spreadsheet.js"),
+  "timelines" : require(".././moduleTesting/test_Timelines.js"),
+  "clusters" : require(".././moduleTesting/test_Clusters.js"),
+  "heatmap" : require(".././moduleTesting/test_Heatmap.js"),
+  "sunburst" : require(".././moduleTesting/test_Sunburst.js")
 }
 
 var Ajv = require('ajv');
@@ -289,7 +289,19 @@ connection.once('open', function(){
       elem['Pathways'] =  "✔️😃"; 
       elem['Timelines'] = {};
       console.log("Current dataset is: ", diseases[index]);
-     
+      // if('category' in disease_arr[index]){
+      //   disease_arr[index]['category'].forEach(function(err, i){
+      //     var c = disease_arr[index]['category'][i];
+      //     // console.log(c);
+      //     if(c['type'] == 'color' && typeof(c['collection']) == "string"){
+      //       elem['general']['category_color_collction'] = "Color Exists✔️😃";
+      //     }else{
+      //       elem['general']['category_color_collction'] = "Color DOES NOT Exist❌";
+      //     }
+      //   });
+      // }else{
+      //   elem['general']['category_color_collction'] = "Color DOES NOT Exist❌";
+      // }
       
       if('edges' in disease_arr[index]){
         disease_arr[index]['edges'].forEach(function(err, i){

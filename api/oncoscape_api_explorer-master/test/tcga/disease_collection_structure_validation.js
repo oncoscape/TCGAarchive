@@ -10,12 +10,12 @@
 var jsonfile = require("jsonfile");
 var u = require("underscore");
 var test = {
-  "pca" : require("./moduleTesting/test_pca.js"),
-  "spreadsheet" : require("./moduleTesting/test_Spreadsheet.js"),
-  "timelines" : require("./moduleTesting/test_Timelines.js"),
-  "clusters" : require("./moduleTesting/test_Clusters.js"),
-  "heatmap" : require("./moduleTesting/test_Heatmap.js"),
-  "sunburst" : require("./moduleTesting/test_Sunburst.js")
+  "pca" : require(".././moduleTesting/test_pca.js"),
+  "spreadsheet" : require(".././moduleTesting/test_Spreadsheet.js"),
+  "timelines" : require(".././moduleTesting/test_Timelines.js"),
+  "clusters" : require(".././moduleTesting/test_Clusters.js"),
+  "heatmap" : require(".././moduleTesting/test_Heatmap.js"),
+  "sunburst" : require(".././moduleTesting/test_Sunburst.js")
 }
 
 var Ajv = require('ajv');
@@ -104,11 +104,11 @@ var diseaseCollectionSchema = {
 
 };
 
-jsonfile.readFile('schema_pancan12.json', function(err, obj){
+jsonfile.readFile('schema_tcga.json', function(err, obj){
   schemas = obj;
 });
 
-jsonfile.readFile('ajv_v2.json', function(err, obj){
+jsonfile.readFile('ajv_tcga_v2.json', function(err, obj){
   ajvMsg = obj;
 });
 
@@ -151,7 +151,7 @@ Array.prototype.findScoreByType = function(t) {
 };
 
 mongoose.connect(
-    'mongodb://oncoscape-dev-db1.sttrcancer.io:27017,oncoscape-dev-db2.sttrcancer.io:27017,oncoscape-dev-db3.sttrcancer.io:27017/pancan12?authSource=admin', {
+    'mongodb://oncoscape-dev-db1.sttrcancer.io:27017,oncoscape-dev-db2.sttrcancer.io:27017,oncoscape-dev-db3.sttrcancer.io:27017/tcga?authSource=admin', {
         db: {
             native_parser: true
         },
@@ -176,7 +176,7 @@ var tools = [];
 connection.once('open', function(){
 
     // Testing the disease collection structure using tcga:brain as a gold standard
-    // current database : pancan12
+    // current database : tcga
 
     lookupByDisease = connection.db.collection("lookup_oncoscape_datasources").find();
     lookupByDisease.each(function(err, item){
@@ -235,6 +235,13 @@ connection.once('open', function(){
           }
     });
 
+    render_pca = connection.db.collection("render_pca").find();
+    render_pca.each(function(err, item){
+          if(item != null){
+            render_pca_arr.push(item);
+          }
+    });
+
     var general = {
       'lookupDataSource': "Exists✔️😃",
       'lookupTools': "Exists✔️😃",
@@ -289,7 +296,19 @@ connection.once('open', function(){
       elem['Pathways'] =  "✔️😃"; 
       elem['Timelines'] = {};
       console.log("Current dataset is: ", diseases[index]);
-     
+      // if('category' in disease_arr[index]){
+      //   disease_arr[index]['category'].forEach(function(err, i){
+      //     var c = disease_arr[index]['category'][i];
+      //     // console.log(c);
+      //     if(c['type'] == 'color' && typeof(c['collection']) == "string"){
+      //       elem['general']['category_color_collction'] = "Color Exists✔️😃";
+      //     }else{
+      //       elem['general']['category_color_collction'] = "Color DOES NOT Exist❌";
+      //     }
+      //   });
+      // }else{
+      //   elem['general']['category_color_collction'] = "Color DOES NOT Exist❌";
+      // }
       
       if('edges' in disease_arr[index]){
         disease_arr[index]['edges'].forEach(function(err, i){
@@ -315,7 +334,7 @@ connection.once('open', function(){
       
       report_arr.push(elem);
     });
-    // jsonfile.writeFile("testReports/report_arr.json", report_arr, {spaces: 4}, function(err){ console.error(err);});  
+    // jsonfile.writeFile("report_tcga_arr.json", report_arr, {spaces: 4}, function(err){ console.error(err);});  
     // mongoose.connection.close();
    
 });
