@@ -15,7 +15,7 @@ The output is a markdown file stored in report subfolder under the current direc
 
 ```sh
 cd tcga
-report/log_10112016.md
+report/log_10112016.md 
 date > report/log_10112016.md
 node generateDailyReport.js >> report/log_10112016.md 
 ```
