@@ -17,6 +17,7 @@ Array.prototype.arraysCompare = function(ref) {
           elem.itemsNotInRef.push(this[i]);
         }
     }
+    elem.itemsNotInRef = elem.itemsNotInRef.sort();
     return elem;
 };
 
@@ -208,26 +209,26 @@ co(function *() {
       inListedNotInDB.push(l);
     }
   });
-
-  format.h2("The number of the collections in database tcga is: ");
+  format.h1("Part I: Checking existing collections against lookup_oncoscape_datasources and manifest files");
+  format.h3("The number of the collections in database tcga is: ");
   format.text(existing_collection_names.length);
-  format.h2("The number listed in lookup_oncoscape_datasources is: "); 
+  format.h3("The number listed in lookup_oncoscape_datasources is: "); 
   format.text(lookup_listed_collections.length);
-  format.h2("The number listed in manifest is: ");
+  format.h3("The number listed in manifest is: ");
   format.text(manifest_listed_collections.length);
-  format.h2("Compare the existing collections against lookup_listed_collections: ");
+  format.h3("Compare the existing collections against lookup_listed_collections: ");
   format.codeStart();
   format.text(existing_collection_names.arraysCompare(lookup_listed_collections));
   format.codeStop();
-  format.h2("Compare lookup_listed_collections against the existing collections: ");
+  format.h3("Compare lookup_listed_collections against the existing collections: ");
   format.codeStart();
   format.text(lookup_listed_collections.arraysCompare(existing_collection_names));
   format.codeStop();
-  format.h2("Compare the existing collections against manifest_listed_collections: ");
+  format.h3("Compare the existing collections against manifest_listed_collections: ");
   format.codeStart();
   format.text(existing_collection_names.arraysCompare(manifest_listed_collections));
   format.codeStop();
-  format.h2("Compare manifest_listed_collections against the existing collections: ");
+  format.h3("Compare manifest_listed_collections against the existing collections: ");
   format.codeStart();
   format.text(manifest_listed_collections.arraysCompare(existing_collection_names));
   format.codeStop();
@@ -238,7 +239,7 @@ co(function *() {
                                    listed in render_patient
         
    ***/
-  format.h2("Checking rendering collections");
+  format.h1("Part II: Checking rendering collections");
   format.h3("render_pca compare to existing pcascores");
   collection = yield comongo.db.collection(db, 'render_pca');
   render_pca = yield collection.find({},{'disease':true, 'source':true, 'type':true, 'geneset':true}).toArray();
@@ -247,11 +248,11 @@ co(function *() {
     "HM27": "methylation-hm27", 
     "RPPA-zscore": "protein",
     "gistic": "cnv", 
-    "import":"",
-    "gistic2thd": "",
-    "mutation": "", 
-    "mutationBroadGene": "", 
-    "mutationBcmGene": ""
+    "import":"mut01",
+    "gistic2thd": "cnv",
+    "mutation": "mut01", 
+    "mutationBroadGene": "mut01", 
+    "mutationBcmGene": "mut01"
   };
   var existing_pcascores = [];
   var rendering_pca_potential_collections = [];
@@ -260,7 +261,7 @@ co(function *() {
   var pcascores_postfix = []; 
   existing_pcascores.forEach(function(e){pcascores_postfix.push(e.split("-")[e.split("-").length-1]);});
   pcascores_postfix = pcascores_postfix.unique();
-  format.text("According to the collection names, there should be listed types in pcascores: ");
+  format.text("According to the collection names, there should be listed types in existing pcascores: ");
   format.codeStart();
   format.text(pcascores_postfix);
   format.codeStop();
@@ -274,11 +275,11 @@ co(function *() {
   });
   
 
-  format.h2("Compare the existing collections against render_pca: ");
+  format.h3("Compare the existing collections against render_pca: ");
   format.codeStart();
   format.text(existing_pcascores.arraysCompare(rendering_pca_potential_collections));
   format.codeStop();
-  format.h2("Compare render_pca against the existing collections: ");
+  format.h3("Compare render_pca against the existing collections: ");
   format.codeStart();
   format.text(rendering_pca_potential_collections.arraysCompare(existing_pcascores));
   format.codeStop();
@@ -294,36 +295,52 @@ co(function *() {
   // 'mutation',
   // 'mutationBroadGene',
   // 'mutationBcmGene' ]
-  format.h3("render_patient compare to existing mds");
+  format.h2("render_patient compare to existing mds");
   collection = yield comongo.db.collection(db, 'render_patient');
   render_patient = yield collection.find({type:"cluster"}, {'dataset':true, 'type':true, 'name':true, 'source':true}).toArray();
   var existing_mds = [];
   var rendering_pt_potential_collections = [];
-  var mdsSourceMapping = {
-    "ucsc-pnas": "ucsc",
-    "ucsc": "ucsc"
-  };
+  // var mdsSourceMapping = {
+  //   "ucsc-pnas": "ucsc",
+  //   "ucsc": "ucsc"
+  // };
   existing_collection_names.forEach(function(e){if(e.includes('mds') && (!e.includes("-1e+05"))) existing_mds.push(e);});
   render_patient.forEach(function(r){
     if(r.name.includes("mds")){
-      var str = r.dataset + "_mds_" + mdsSourceMapping[r.source[0]] + "_mds-"+ r.name.replace(/ /g, "-");
+      var str;
+      if(Array.isArray(r.source)){
+        str = r.dataset + "_mds_" + r.source[0] + "_" + r.name.replace(/ /g, "");
+      }else{
+        str = r.dataset + "_mds_" + r.source + "_" + r.name.replace(/ /g, "");
+      }
+      
       str = str.toLowerCase();
       rendering_pt_potential_collections.push(str);  
     }
   });
-  format.h2("Compare the existing collections against render_patient: ");
+
+  var render_patient_weird_ex = {
+    // "_id" : ObjectId("57dc4bf961f0f92bdd372afb"),
+    "type" : "cluster",
+    "name" : "pca-OSCC Chen 9 genes-mut01",
+    "source" : "broad"
+  };
+
+  format.h3("Compare the existing collections against render_patient: ");
   format.codeStart();
   format.text(existing_mds.arraysCompare(rendering_pt_potential_collections));
   format.codeStop();
-  format.h2("Compare render_patient against the existing collections: ");
+  format.h3("Compare render_patient against the existing collections: ");
   format.codeStart();
   format.text(rendering_pt_potential_collections.arraysCompare(existing_mds));
+  format.codeComment("In render_patient, there are documents with 'cluster' as type, yet 'pca-' as name prefix.");
+  format.text(render_patient_weird_ex);
   format.codeStop();
 
 
   // report the collection erros from ajv_tcga_v2.json 
   
-  format.h2("Run the DB against schema_tcga.json, below lists the error message: ");
+  format.h1("Part III: Run the DB against schema_tcga.json, below lists the error message: ");
   format.codeStart();
   ajvMsg.forEach(function(a){
     if(a.passedRate < 1){
