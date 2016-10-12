@@ -35,11 +35,11 @@ var categoried_collection_length;
 var category_index;
 var elem = {};
 
-jsonfile.readFile("collection_counts_tcga.json", function(err, obj) {
+jsonfile.readFile("../collection_counts.json", function(err, obj) {
   collections = obj;
 });
 
-jsonfile.readFile("schema_tcga.json", function(err, obj) {
+jsonfile.readFile("../schemas.json", function(err, obj) {
   schemas = obj;
   dataType = Object.keys(schemas);
   dataType_length = dataType.length;

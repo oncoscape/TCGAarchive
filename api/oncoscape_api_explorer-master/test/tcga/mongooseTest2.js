@@ -8,7 +8,7 @@
 var jsonfile = require("jsonfile");
 var ajvMsg = [];
 
-jsonfile.readFile("ajv_tcga.json", function(err, obj) {
+jsonfile.readFile("ajv_1012.json", function(err, obj) {
   ajvMsg = obj;
 });
 

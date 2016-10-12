@@ -182,7 +182,7 @@ co(function *() {
     console.log("******* current index is: ", i);
     
   }
-  jsonfile.writeFile("collection_counts_tcga.json", collection_counts, {spaces: 2}, function(err){ console.error(err);});  
+  jsonfile.writeFile("../collection_counts.json", collection_counts, {spaces: 2}, function(err){ console.error(err);});  
   
   /*** Test Item 4: PCA & MDS calculated with each geneset
    ***/
