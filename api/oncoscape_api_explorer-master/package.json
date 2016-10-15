@@ -53,9 +53,11 @@
     "fs": "0.0.2",
     "graceful-fs": "^4.1.5",
     "gulp-htmlparser": "0.0.4",
-    "jsonfile": "^2.3.1",
+    "jsonfile": "^2.4.0",
     "mongodb": "^2.2.5",
+    "mongoose": "^4.6.3",
     "mpromise": "^0.5.5",
+    "node-async-loop": "^1.2.2",
     "readdir-scoped-modules": "^1.0.2"
   }
 }
