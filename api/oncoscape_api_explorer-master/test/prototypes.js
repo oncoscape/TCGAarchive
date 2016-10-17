@@ -69,6 +69,16 @@ Array.prototype.findCollectionsByType = function(v){
   return arr;
 };
 
+Array.prototype.findObjsByType = function(v){
+  var arr = [];
+  for(var i = 0; i < this.length; i++) {
+    if(this[i].type === v){
+      arr.push(this[i]);
+    } 
+  }
+  return arr;
+};
+
 Array.prototype.table = function(uniqueArray) {
     var elem = {};
     uniqueArray.forEach(function(u){

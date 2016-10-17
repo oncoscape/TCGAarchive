@@ -1,4 +1,4 @@
-#### Roadmap to Oncoscape API testing folder. The testing occurs at three different levels: 
+# Roadmap to Oncoscape API testing folder. The testing occurs at three different levels: 
 
 - datasource level
 - data quatlification for tool applications
@@ -15,7 +15,7 @@ The output is a markdown file stored in report subfolder under the current direc
 
 ```sh
 cd tcga
-report/log_10112016.md 
+report/log_10112016.md
 date > report/log_10112016.md
 node generateDailyReport.js >> report/log_10112016.md 
 ```
@@ -58,4 +58,20 @@ This is the code to generate report_arr.json, using brain as standard
 
  - test the patient IDs according to patient collection for tool testing, especially for Markers&Patients
 
+
+# Running Procedure
+### Step I:
+- cd test/tcga
+- node generate_collections_counts.js //output will be in the test folder as "collection_counts.json"
+
+### Step II:
+- in interactive node mode, run mongooseTest.js
+- save ajvMsg as a json object
+
+### Step III:
+- in interactive node mode, run mongooseTest2.js
+- save ajvMsg_v2 as a json object
+
+### Step IV:
+-  
 

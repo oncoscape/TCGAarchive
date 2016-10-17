@@ -141,7 +141,7 @@ var onerror = function(e){
   console.log(e);
 }
 
-jsonfile.readFile('ajv_1012_v2.json', function(err, obj){ajvMsg = obj;});
+jsonfile.readFile('ajv_tcga_v2.json', function(err, obj){ajvMsg = obj;});
 
 co(function *() {
 
