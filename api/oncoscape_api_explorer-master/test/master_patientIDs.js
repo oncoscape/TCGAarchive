@@ -48,96 +48,60 @@ mongoose.connect(
  
 var connection = mongoose.connection;
 var status = [];
- 
- 
-connection.once('open', function(){
+
+
+
+//connection.once('open', function(){
     var db = connection.db;
     var index = 0;
     var ajvMsg_length = ajvMsg.length;
- /* This section theoretically runs throughout the entire DB, but will cause memory leak
+    /* This section theoretically runs throughout the entire DB, but will cause memory leak
      */
     asyncLoop(ajvMsg, function(d, next){  
-    	console.log("*************", d.collection);
+      console.log("*************", d.collection);
 
-    	var obtainPatientIDList = function(d){
-	        // var tableName = disease_ajvMsg[index].collection;
-	        // var t = disease_ajvMsg[index].type;
-	        var tableName = d.collection;
-	        var t = d.type;
-	        var collection = db.collection(tableName);
-	        var cursor = collection.find();
-	        var elem = d;
-	        elem.pList = [];
-	        var count = 0;
-	      
-	        if(["mut", "mut01", "methylation", "rna", "protein", "cnv"].indexOf(t) > -1){
-	          console.log('within molecular');
-	          cursor.each(function(err, item){
-	            if(item != null){
-	              console.log(count++);
-	              elem.pList = elem.pList.concat(Object.keys(item.patients)).unique();
-	            }
-	          });
-	        }else if(t == "color"){
-	          console.log('within color');
-	          cursor.each(function(err, item){
-	            if(item != null){
-	              item.data.forEach(function(e){
-	                elem.pList = elem.pList.concat(e.values).unique();
-	              });
-	            }
-	          });
-	        }else if(t == "events"){
-	          console.log("within events");
-	          cursor.each(function(err, item){
-	            if(item != null){
-	              elem.pList = elem.pList.concat(Object.keys(item)).unique();
-	            }
-	          });
-	        }else if(["patient", "drug", "newTumor", "otherMalignancy", "radiation", "followUp", "newTumor-followUp"].indexOf(t) > -1){
-	          console.log("within clinical");
-	          console.log(count++);
-	          collection.distinct('patient_ID').then(function(ids){
-	            elem.pList = elem.pList.concat(ids).unique();
-	            //next();
-	            //return elem;
-	          });
-	          
-	        }else if(["pcaScores", "mds"].indexOf(t) > -1){
-	          console.log("within pcaScores or mds");
-	          cursor.each(function(err, item){
-	            console.log(count++);
-	            if(item != null){
-	              elem.pList = elem.pList.concat(Object.keys(item.data)).unique();
-	            }
-	          }); 
-	        }else if(t == "edges"){
-	          console.log("within edges");
-	          collection.distinct('p').then(function(ids){
-	            elem.pList = elem.pList.concat(ids).unique();
-	            //next();
-	          }); 
-	        }else if(t == "ptDegree"){
-	          console.log("within ptDegree");
-	          cursor.each(function(err, item){
-	            console.log(count++);
-	            if(item != null){
-	              elem.pList = elem.pList.push(Object.keys(item)[1]).unique();
-	            }
-	          });
-	        }else{
-	          console.log("&&&& THIS TYPE IS NOT INCLUDES: ", t);
-	        }
-	        return elem;
-	      };
-
-      // Call obtainPatientIDList recursively
-	    if(index < ajvMsg_length){
-	        //status.push(obtainPatientIDList(d));
-	        next();
-	        index++;
-	        console.log("index is: ", index);
-	     }
+      // var disease_ajvMsg = ajvMsg.findCollectionsByDisease(d); 
+      // var ajvMsg_length = disease_ajvMsg.length; 
+      // var index = 0;
+      
+      var obtainPtIDs = function(){
+        // var tableName = disease_ajvMsg[index].collection;
+        // var t = disease_ajvMsg[index].type;
+        var tableName = d.collection;
+        var t = d.type;
+        var collection = db.collection(tableName);
+        var cursor = collection.find();
+        var elem = d;
+        elem.ptIDs = [];
+        var count = 0;
+        
+  
+        if(["patient", "drug", "newTumor", "otherMalignancy", "radiation", "followUp", "newTumor-followUp"].indexOf(t) > -1){
+          console.log("within clinical");
+          console.log(count++);
+  
+          collection.distinct('patient_ID').then(function(ids){
+          	console.log(ids);
+          	elem.ptIDs = elem.ptIDs.concat(ids).unique();
+          }).then(function(){
+          	status.push(elem);
+          	next();
+          });
+        }
+        else{
+          console.log("&&&& THIS TYPE IS NOT INCLUDES: ", t);
+          index += 1;
+          next();
+        }
+        
+        status.push(elem);
+      };
+      // Call obtainPtIDs recursively
+      if(ptList[d.disease] != 0){
+        obtainPtIDs();
+      }else{
+        next();
+      }
     }, function (err)
     {
         if (err)
@@ -148,7 +112,6 @@ connection.once('open', function(){
      
         console.log('Finished!');
     });
- 
    
 });
  

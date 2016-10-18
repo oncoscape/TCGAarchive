@@ -172,7 +172,12 @@ co(function *() {
   lookup_table.forEach(function(d){
     for(var u=0; u<usedFields.length; u++){
       if(usedFields[u] in d){
-        if('collection' in d[usedFields[u]]){
+        if(usedFields[u] == 'clinical'){
+          var obj = d['clinical'];
+          Object.keys(obj).forEach(function(k){
+            lookup_listed_collections.push(obj[k]);
+          });
+        }else if('collection' in d[usedFields[u]]){
           lookup_listed_collections.push(d[usedFields[u]['collection']]);
         }else if(Array.isArray(d[usedFields[u]])){
           var arr = d[usedFields[u]];
@@ -181,12 +186,8 @@ co(function *() {
               lookup_listed_collections.push(a['collection']);
             }else if('edges' in a){
               lookup_listed_collections.push(a['edges']);
-            }else if('patientWeights' in a){
               lookup_listed_collections.push(a['patientWeights']);
-            }else if('genesWeights' in a){
               lookup_listed_collections.push(a['genesWeights']);
-            }else {
-              lookup_listed_collections.push(a);
             }
           })
         }
@@ -267,10 +268,25 @@ co(function *() {
   var pcascores_postfix = []; 
   existing_pcascores.forEach(function(e){pcascores_postfix.push(e.split("-")[e.split("-").length-1]);});
   pcascores_postfix = pcascores_postfix.unique();
-  format.text("According to the collection names, there should be listed types in existing pcascores: ");
+  format.text("Mapping from render_pca type to the pcascores name postfix:");
+  format.codeStart();
+  format.text(pcaScoreTypeMapping);
+  format.codeStop();
+  format.text("From the pcaScores collection names, the existing types lists below: ");
   format.codeStart();
   format.text(pcascores_postfix);
   format.codeStop();
+  //render_pca_missing_collections.length: 264
+  var render_pca_missed_types = render_pca_missing_collections.map(function(r){return r.type;});
+  format.text("Are there any types that render_pca doesn't include? :");
+  format.codeStart();
+  format.text(render_pca_missed_types.unique());
+  format.codeStop();
+  // [ 'import',
+  // 'gistic2thd',
+  // 'mutation',
+  // 'mutationBroadGene',
+  // 'mutationBcmGene' ]
   //[ 'mut01', 'cnv', 'hm27', 'protein' ]
 
 
@@ -290,17 +306,7 @@ co(function *() {
   format.text(rendering_pca_potential_collections.arraysCompare(existing_pcascores));
   format.codeStop();
 
-  //render_pca_missing_collections.length: 264
-  var render_pca_missed_types = render_pca_missing_collections.map(function(r){return r.type;});
-  format.text("render_pca doesn't have below types:");
-  format.codeStart();
-  format.text(render_pca_missed_types.unique());
-  format.codeStop();
-  // [ 'import',
-  // 'gistic2thd',
-  // 'mutation',
-  // 'mutationBroadGene',
-  // 'mutationBcmGene' ]
+  
   format.h2("render_patient compare to existing mds");
   collection = yield comongo.db.collection(db, 'render_patient');
   render_patient = yield collection.find({type:"cluster"}, {'dataset':true, 'type':true, 'name':true, 'source':true}).toArray();
