@@ -97,9 +97,13 @@ connection.once('open', function(){
             var valid = ajv.validate(schemas[t], item);
             if(!valid){
               var e = {};
-              e.errorType = ajv.errors[0].schemaPath; 
+              //e.errorType = ajv.errors[0].schemaPath; 
+              console.log("&&&&&&&&&&&&&&&&&&&&&&&&&&");
               console.log(ajv.errors);
-              console.log("&&&&&&&&&")
+              console.log("&&&&&&&&&");
+              console.log(item);
+              console.log("*********");
+              e.errorType = ajv.errors; 
               error_elem.push(e);
             }
             else{
@@ -135,7 +139,7 @@ connection.once('open', function(){
             console.error('Error: ' + err.message);
             return;
         }
-     
+        jsonfile.writeFile("ajv_tcga_10182016.json", ajvMsg, {spaces: 4}, function(err){ console.error(err);}); 
         console.log('Finished!');
     });
 

@@ -75,7 +75,16 @@ var status = [];
         elem.ptIDs = [];
         var count = 0;
         
-  
+        if(["mut", "mut01", "methylation", "rna", "protein", "cnv"].indexOf(t) > -1){
+          console.log('within molecular');
+          cursor.each(function(err, item){
+            if(item != null){
+              elem.ptIDs = elem.ptIDs.concat(Object.keys(item.patients)).unique();
+            }else{
+              return elem;
+            }
+          });
+        }else
         if(t == "color"){
             console.log('within color');
             cursor.each(function(err, item){
@@ -96,8 +105,42 @@ var status = [];
                 return elem;
               }
             });
-          }
-        else{
+          }else if(["patient", "drug", "newTumor", "otherMalignancy", "radiation", "followUp", "newTumor-followUp"].indexOf(t) > -1){
+            console.log("within clinical");
+            console.log(count++);
+            collection.distinct('patient_ID').then(function(ids){
+              elem.ptIDs = elem.ptIDs.concat(ids).unique();
+              //next();
+              return elem;
+            });
+          }else if(["pcaScores", "mds"].indexOf(t) > -1){
+            console.log("within pcaScores or mds");
+            cursor.each(function(err, item){
+              console.log(count++);
+              if(item != null){
+                elem.ptIDs = elem.ptIDs.concat(Object.keys(item.data)).unique();
+              }else{
+                return elem;
+              }
+            }); 
+          }else if(t == "edges"){
+            console.log("within edges");
+            collection.distinct('p').then(function(ids){
+              elem.ptIDs = elem.ptIDs.concat(ids).unique();
+              return elem;
+            }); 
+          }else if(t == "ptDegree"){
+            console.log("within ptDegree");
+            cursor.each(function(err, item){
+              console.log(count++);
+              if(item != null){
+                elem.ptIDs.push(Object.keys(item)[1]);
+              }else{
+                elem.ptIDs.unique();
+                return elem;
+              }
+            });
+          }else{
           console.log("&&&& THIS TYPE IS NOT INCLUDES: ", t);
           index += 1;
           return elem;

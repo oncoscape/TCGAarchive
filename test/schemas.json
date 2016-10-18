@@ -29,12 +29,12 @@
     "mut":{
            "properties":{
               "gene": {"type": "string"},
-              "min": {"type": "string"},
-              "max": {"type": "string"},
+              "min": {"type": ["string", "null"]},
+              "max": {"type": ["string", "null"]},
               "patients": {
                         "type": "object",
                         "patternProperties": {
-                           "TCGA-[A-Z0-9]{2}-[A-Z0-9]{4}-[0-9]{2}": { "type": "string" }
+                           "TCGA-[A-Z0-9]{2}-[A-Z0-9]{4}-[0-9]{2}": { "type": ["string", "null"]}
                         }
                     }   
               },
@@ -44,8 +44,8 @@
     "mut01":{
         "properties":{
             "gene": {"type": "string"},
-            "min": {"type": "number"},
-            "max": {"type": "number"},
+            "min": {"type": ["number", "null"]},
+            "max": {"type": ["number", "null"]},
             "patients": {
                         "type": "object",
                         "patternProperties": {

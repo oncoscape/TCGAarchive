@@ -37,7 +37,7 @@
 	          cursor.each(function(err, item){
 	            if(item != null){
 	              item.data.forEach(function(e){
-	                elem.pList = elem.pList.concat(e.values).unique();
+	                elem.ptIDs = elem.ptIDs.concat(e.values).unique();
 	              });
 	            }else{
 	            	return elem;
@@ -47,7 +47,7 @@
 	          console.log("within events");
 	          cursor.each(function(err, item){
 	            if(item != null){
-	              elem.pList = elem.pList.concat(Object.keys(item)).unique();
+	              elem.ptIDs = elem.ptIDs.concat(Object.keys(item)).unique();
 	            }else{
 	            	return elem;
 	            }
@@ -56,7 +56,7 @@
 	          console.log("within clinical");
 	          console.log(count++);
 	          collection.distinct('patient_ID').then(function(ids){
-	            elem.pList = elem.pList.concat(ids).unique();
+	            elem.ptIDs = elem.ptIDs.concat(ids).unique();
 	            //next();
 	            return elem;
 	          });
@@ -65,7 +65,7 @@
 	          cursor.each(function(err, item){
 	            console.log(count++);
 	            if(item != null){
-	              elem.pList = elem.pList.concat(Object.keys(item.data)).unique();
+	              elem.ptIDs = elem.ptIDs.concat(Object.keys(item.data)).unique();
 	            }else{
 	            	return elem;
 	            }
@@ -73,7 +73,7 @@
 	        }else if(t == "edges"){
 	          console.log("within edges");
 	          collection.distinct('p').then(function(ids){
-	            elem.pList = elem.pList.concat(ids).unique();
+	            elem.ptIDs = elem.ptIDs.concat(ids).unique();
 	            return elem;
 	          }); 
 	        }else if(t == "ptDegree"){
@@ -81,8 +81,12 @@
 	          cursor.each(function(err, item){
 	            console.log(count++);
 	            if(item != null){
-	              elem.pList = elem.pList.push(Object.keys(item)[1]).unique();
+	              elem.ptIDs = elem.ptIDs.push(Object.keys(item)[1]).unique();
 	            }else{
 	            	return elem;
 	            }
-	          });
+
+
+
+
+	            
