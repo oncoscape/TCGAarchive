@@ -1,6 +1,9 @@
 # Large Data Archive & Output
 data/
 
+.Rhistory
+scripts/slurm-*
+
 # slate
 *.gem
 *.rbc
