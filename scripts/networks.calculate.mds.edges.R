@@ -1,6 +1,3 @@
-library(org.Hs.eg.db)
-library(jsonlite)
-
 rm(list = ls(all = TRUE))
 options(stringsAsFactors = FALSE)
 
@@ -111,11 +108,10 @@ save.pca<- function(oCollection, geneset=NA, scaleFactor=NA){
 	process$center="TRUE"; process$scaled="TRUE"
 	#process <- list(process)
 
-	oCollection.pca = oCollection
-	oCollection.pca$dataType = "pcaScores"
-	oCollection.pca$processName = outputName
-	oCollection.pca$collection = collection.create.name(oCollection.pca)
-	
+	oCollection.pca.scaled = update.oCollection(oCollection, dataType="pcaScores", processName=processName, process=process)
+	process$scale = NA
+	oCollection.pca = update.oCollection(oCollection.pca.scaled, processName=outputName, process=process)
+
 	prev.run <- collection.exists(oCollection.pca$collection)
 	if(prev.run){  print("Skipping."); return(); }
 	
@@ -148,12 +144,10 @@ save.pca<- function(oCollection, geneset=NA, scaleFactor=NA){
 	}
 	  
 	   PCs <- tryCatch(
-		  prcomp(na.omit(mtx),center=T,scale=T),
-		  error=function(error.message){
-			 print("ERROR: PRCOMP!")
-		    print(error.message)
-			 return(NA);
-			 })
+		   prcomp(na.omit(mtx),center=T,scale=T),
+		   error=function(error.message){
+			 print("ERROR: PRCOMP!"); print(error.message)
+			 return(NA); })
    
 	   if(all(is.na(PCs)))	   return();
 	
@@ -167,7 +161,6 @@ save.pca<- function(oCollection, geneset=NA, scaleFactor=NA){
 	   ## ----- Save Raw Scores ------
 	   scores.list <- lapply(rownames(scores), function(name){ scores[name,1:3]})
 	   names(scores.list) <- rownames(scores)
-	   process$scale = NA
 	   result <- list(disease=oCollection$dataset,source = oCollection$source, type=oCollection$process$type, geneset=genesetName,scale=NA, pc1=propVar[1], pc2=propVar[2] ,pc3=propVar[3],data=scores.list)
 
 	   insert.collection(oCollection.pca, list(result) )
@@ -176,7 +169,6 @@ save.pca<- function(oCollection, geneset=NA, scaleFactor=NA){
 	   loadings <- PCs$rotation
 	   loading.list <- lapply(rownames(loadings), function(name){ loadings[name,1:3]})
 	   names(loading.list) <- rownames(loadings)
-	   process$scale = NA
 	   result <- list(disease=oCollection$dataset,source = oCollection$source, type=oCollection$process$type, geneset=genesetName,scale=NA, data=loading.list)
 	   oCollection.loadings = update.oCollection(oCollection.pca, dataType ="pcaLoadings")
 	   insert.collection(oCollection.loadings, list(result) )
@@ -187,9 +179,7 @@ save.pca<- function(oCollection, geneset=NA, scaleFactor=NA){
 	     pc3 <- scores[,1:3]; colnames(pc3) <- c("x", "y", "z")
 	     scores.list <- scaleSamplesToChromosomes(pc3, chrDim)
 	     #names(scores.list) <- rownames(scores)
-	     process$scale = scaleFactor
 	     result <- list(disease=oCollection$dataset,source=oCollection$source, type=process$input, geneset=genesetName,scale=scaleFactor, pc1=propVar[1], pc2=propVar[2] ,pc3=propVar[3],data=scores.list)
-	     oCollection.pca.scaled <- update.oCollection(oCollection.pca, processName=processName, process=list(process))
 	     insert.collection(oCollection.pca.scaled, list(result) )
 	     
      }
@@ -294,7 +284,8 @@ run.batch.patient_similarity <- function(lCollection, scaleFactor=NA){
   gistic.scores <-c(-2,-1,1, 2)
   
   # Loop for each dataset
-  for (i in 1:nrow(lCollection)){
+  process_patientSimilarity <- function(i){
+    
     oCollection <- lCollection[i,]
     #oCollection = create.oCollection(dataset=collection$dataset, dataType, source, processName, parent, process)
     ## MDS
@@ -343,6 +334,20 @@ run.batch.patient_similarity <- function(lCollection, scaleFactor=NA){
 
 	} # for diseaseName	
   
+  commands <- c("save.pca","save.mds.innerProduct")
+  
+  pt.cluster_worker <- function() {
+    bindToEnv(objNames=c(mongo_commands, commands,'genesets'))
+    function(i) {
+      process_patientSimilarity(i)
+    }
+  }
+  
+  # Loop for each dataset/source type, get mut &/or cnv edges
+  #batch_result <- parLapply(cluster_cores,1:nrow(lCollection), pt.cluster_worker())
+        batch_result <- lapply(1:nrow(lCollection), function(i){process_patientSimilarity(i)})  
+  
+  
 }
 #----------------------------------------------------------------------------------------------------
 get.network_edges <- function(mtx,samples, genes, edgeTypes){
@@ -377,12 +382,12 @@ save.edge.files <- function(oCollection, result){
   
   temp <- as.list(table(sapply(result,function(edge) edge$p)))
   node1_counts <- lapply(names(temp), function(el) temp[el])
-  oCollection.pt =   oCollection.gene = update.oCollection(oCollection, dataType = "ptDegree")
+  oCollection.pt =   oCollection.gene = update.oCollection(oCollection, dataType = "ptdegree")
   insert.collection(oCollection.pt, node1_counts )
   
   temp <- as.list(table(sapply(result,function(edge) edge$g)))
   node2_counts <- lapply(names(temp), function(el) temp[el])
-  oCollection.gene = update.oCollection(oCollection, dataType = "geneDegree")
+  oCollection.gene = update.oCollection(oCollection, dataType = "genedegree")
   insert.collection(oCollection.gene, node2_counts )
 }
 #----------------------------------------------------------------------------------------------------
@@ -393,7 +398,7 @@ get.edgePairs <- function(collection, genesetName, ...){
     mtx <- convert.to.mtx(collection)
     
     ## get and save edge pairs
-    edgePairs <- get.network_edges(t(mtx), samples=NA, genes=goi, ...)
+    edgePairs <- get.network_edges(mtx, samples=NA, genes=goi, ...)
 
   return(edgePairs)
 }
@@ -403,73 +408,89 @@ run.batch.network_edges <- function(lCollection){
 
   cat("-calculating edges\n")
 
-    dataType <- "network"
-
-    origin <- lapply(lCollection , function(oCollection){
-      c(dataset = oCollection$dataset, source = oCollection$source)
-    })
-    origin <- unique(origin)
+    origin <- unique(lCollection[,c("dataset", "source")])
     # get unique dataset & source types
     
-    # Loop for each dataset/source type, get mut &/or cnv edges
-    for (sourceSet in origin){
-            
-		  is.mut01 <- sapply(lCollection, function(oCollection){oCollection$dataset== sourceSet[["dataset"]] &
-		                                                   oCollection$source == sourceSet[["source"]] &
-		                                                   oCollection$dataType=="mut01"})
-		  mut01_colls <- lCollection[is.mut01]
-      is.cnv <- sapply(lCollection, function(oCollection){oCollection$dataset== sourceSet[["dataset"]] &
-                                                          oCollection$source == sourceSet[["source"]] &
-                                                       oCollection$dataType=="cnv"})
-      cnv_colls <- lCollection[is.cnv]
+    process_edgeType <- function(i){
       
-		  if(length(mut01_colls)==0 & length(cnv_colls) ==0) next;
-		  cat(sourceSet[["dataset"]], "\n")		  
-		  
-      for(geneset in genesets){
+      sourceSet = origin[i,]  
+      mut01_colls <- subset(lCollection, dataset==sourceSet$dataset & source==sourceSet$source & dataType== "mut01")
+      cnv_colls   <- subset(lCollection, dataset==sourceSet$dataset & source==sourceSet$source & dataType== "cnv")
+      
+      if(nrow(mut01_colls)==0 & nrow(cnv_colls) ==0) return(FALSE);
+      cat(sourceSet$dataset, "\n")		  
+
+      edgetypes = c()
+      if(nrow(mut01_colls)>0){ edgetypes = c("mut01") }
+      if(nrow(cnv_colls)  >0){ edgetypes = c(edgetypes, "cnv") }
+      
+      for(geneset in genesets$name){
         EdgeList_mut <- EdgeList_cnv <- list()
         parent <- list()
-        process <- list(geneset=geneset$name)
+        process <- list(geneset=geneset)
         
         oCollection.mds =create.oCollection(sourceSet$dataset, dataType="edges",sourceSet$source,
-                                            processName=paste(geneset$name, "mut01-cnv", sep="-"), parent=parent, process=process)
+                                            processName=paste(geneset, edgetypes, sep="-"), parent=parent, process=process)
         
         prev.run <- collection.exists(oCollection.mds$collection)
         if(prev.run){ print("Skipping."); next();  }
         
-        if(length(mut01_colls)>0){
-          mut01_coll <- mut01_colls[[1]]
+        if(nrow(mut01_colls)>0){
+          mut01_coll <- mut01_colls[1,]
           coll <- mongo(mut01_coll$collection, db=db, url=host)$find()
-          EdgeList_mut <- get.edgePairs(coll, geneset$name, edgeTypes=list("0"="1"))
-          oCollection.mds$parent <- list(mut01_coll$`_id`)
+          EdgeList_mut <- get.edgePairs(coll, geneset, edgeTypes=list("0"="1"))
+          
+          parent <- mongo.manifest$find(toJSON(list(collection=mut01_coll$collection), auto_unbox=T), fields=toJSON(list('_id'=1), auto_unbox = T))
+          oCollection.mds$parent <- list(parent)
           oCollection.mds$process$edgeType <- "mut01"
         }
-        if(length(cnv_colls)>0){
-          cnv_coll <- cnv_colls[[1]]
-          coll <- mongo.find.all(mongo, paste(db,cnv_coll$collection, sep="."))
-          EdgeList_cnv <- get.edgePairs(coll, geneset$name, edgeTypes=list("-2"="-2", "-1"="-1", "1"="1", "2"="2"))
-          oCollection.mds$parent <- c(oCollection.mds$parent, cnv_coll$`_id`)
+        if(nrow(cnv_colls)>0){
+          cnv_coll <- cnv_colls[1,]
+          coll <- mongo(cnv_coll$collection,db=db, url=host)$find()
+          EdgeList_cnv <- get.edgePairs(coll, geneset, edgeTypes=list("-2"="-2", "-1"="-1", "1"="1", "2"="2"))
+          
+          parent <- mongo.manifest$find(toJSON(list(collection=cnv_coll$collection), auto_unbox=T), fields=toJSON(list('_id'=1), auto_unbox = T))
+          oCollection.mds$parent <- c(oCollection.mds$parent, parent)
           oCollection.mds$process$edgeType <- c(oCollection.mds$process$edgeType, "cnv")
         }
-		    oCollection.mds = update.oCollection(oCollection.mds, processName=paste(unlist(process), collapse="-"))
-		    newEdges <- c(EdgeList_mut, EdgeList_cnv)
-		        
-		    save.edge.files(oCollection.mds, result=newEdges)				  
-            
-		}# for genesetName
-  } #collection dataset/source type
+        oCollection.mds = update.oCollection(oCollection.mds, processName=paste(unlist(oCollection.mds$process), collapse="-"))
+        newEdges <- c(EdgeList_mut, EdgeList_cnv)
+        
+        save.edge.files(oCollection.mds, result=newEdges)				  
+        
+      }# for genesetName
+      return(TRUE);
+    }#collection dataset/source type
 
+    edge_commands <- c("get.edgePairs","save.edge.files")
+    
+    edges_worker <- function() {
+      bindToEnv(objNames=c(mongo_commands, edge_commands,'genesets', 'origin'))
+      function(i) {
+        process_edgeType(i)
+      }
+    }
+    
+    # Loop for each dataset/source type, get mut &/or cnv edges
+    batch_result <- parLapply(cluster_cores,1:nrow(origin), edges_worker())
+#      batch_result <- lapply(1:nrow(origin), function(i){process_edgeType(i)})  
 }
 
 
 #----------------------------------------------------------------------------------------------------
 ## must first initialize server (through shell >mongod)
 mongo <- connect.to.mongo()
+genesets <-     mongo("hg19_genesets_hgnc_import", db=db, url=host)$find("{}")
+
+#num_cores <- detectCores() - 1
+num_cores <- 1
+cluster_cores <- makeCluster(num_cores, type="FORK")
 
 commands <- c("cluster", "edges")
-#commands <- "cluster"
+commands <- "cluster"
+#commands <- "edges"
 
-genesets <-     mongo("hg19_genesets_hgnc_import", db=db, url=host)$find("{}")
+#clusterExport(cluster_cores, c("genesets", "mongo"))
 
 if("cluster" %in% commands){
   # calculate patient similarity
@@ -482,10 +503,11 @@ if("cluster" %in% commands){
 if("edges" %in% commands){
   # map edges for all patients between CNV/Mut and Geneset tables
   molecular_manifest <- mongo.manifest$find(
-                            query='{ "dataType":{"$in":["cnv","mut01"]}}')
+    query='{ "dataType":{"$in":["cnv","mut01"]}}')
+#                                query='{ "dataType":{"$in":["cnv","mut01"]}, "source":"ucsc", "dataset":"lung"}')
   
   run.batch.network_edges(molecular_manifest)
 }
 
-
-close.mongo(mongo)
+stopCluster(cluster_cores)
+close.mongo()

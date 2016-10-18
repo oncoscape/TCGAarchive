@@ -30,6 +30,9 @@
 	"directory": "../data/demo/",
 	"file": "mtx.flow.demo.tsv"
 	},
+
+
+
 	{
 	"dataset": "acc",
 	"source": "ucsc",
@@ -111,6 +114,412 @@
 	"type": "protein",		
 	"process": "RPPA",
 	"directory": "../data/UCSC/READ/",
+	"file": "RPPA"
+	},
+	{
+	"dataset": "hnsc",
+	"source": "ucsc",
+	"type": "rna",		
+	"process": "HiSeq",
+	"directory": "../data/UCSC/HNSC/",
+	"file": "HiSeqV2"
+	},{
+	"dataset": "hnsc",
+	"source": "ucsc",
+	"type": "protein",		
+	"process": "RPPA",
+	"directory": "../data/UCSC/HNSC/",
+	"file": "RPPA"
+	},
+	{
+	"dataset": "lgg",
+	"source": "ucsc",
+	"type": "rna",		
+	"process": "HiSeq",
+	"directory": "../data/UCSC/LGG/",
+	"file": "HiSeqV2"
+	},{
+	"dataset": "lgg",
+	"source": "ucsc",
+	"type": "protein",		
+	"process": "RPPA",
+	"directory": "../data/UCSC/LGG/",
+	"file": "RPPA"
+	},
+	{
+	"dataset": "luad",
+	"source": "ucsc",
+	"type": "rna",		
+	"process": "HiSeq",
+	"directory": "../data/UCSC/LUAD/",
+	"file": "HiSeqV2"
+	},{
+	"dataset": "luad",
+	"source": "ucsc",
+	"type": "protein",		
+	"process": "RPPA",
+	"directory": "../data/UCSC/LUAD/",
+	"file": "RPPA"
+	},
+	{
+	"dataset": "lusc",
+	"source": "ucsc",
+	"type": "rna",		
+	"process": "HiSeq",
+	"directory": "../data/UCSC/LUSC/",
+	"file": "HiSeqV2"
+	},{
+	"dataset": "lusc",
+	"source": "ucsc",
+	"type": "protein",		
+	"process": "RPPA",
+	"directory": "../data/UCSC/LUSC/",
+	"file": "RPPA"
+	},
+	{
+	"dataset": "lung",
+	"source": "ucsc",
+	"type": "rna",		
+	"process": "HiSeq",
+	"directory": "../data/UCSC/LUNG/",
+	"file": "HiSeqV2"
+	},
+	{
+	"dataset": "prad",
+	"source": "ucsc",
+	"type": "rna",		
+	"process": "HiSeq",
+	"directory": "../data/UCSC/PRAD/",
+	"file": "HiSeqV2"
+	},{
+	"dataset": "prad",
+	"source": "ucsc",
+	"type": "protein",		
+	"process": "RPPA",
+	"directory": "../data/UCSC/PRAD/",
+	"file": "RPPA"
+	},
+	{
+	"dataset": "paad",
+	"source": "ucsc",
+	"type": "rna",		
+	"process": "HiSeq",
+	"directory": "../data/UCSC/PAAD/",
+	"file": "HiSeqV2"
+	},{
+	"dataset": "paad",
+	"source": "ucsc",
+	"type": "protein",		
+	"process": "RPPA",
+	"directory": "../data/UCSC/PAAD/",
+	"file": "RPPA"
+	},
+	{
+	"dataset": "blca",
+	"source": "ucsc",
+	"type": "rna",		
+	"process": "HiSeq",
+	"directory": "../data/UCSC/BLCA/",
+	"file": "HiSeqV2"
+	},{
+	"dataset": "blca",
+	"source": "ucsc",
+	"type": "protein",		
+	"process": "RPPA",
+	"directory": "../data/UCSC/BLCA/",
+	"file": "RPPA"
+	},
+	{
+	"dataset": "cesc",
+	"source": "ucsc",
+	"type": "rna",		
+	"process": "HiSeq",
+	"directory": "../data/UCSC/CESC/",
+	"file": "HiSeqV2"
+	},{
+	"dataset": "cesc",
+	"source": "ucsc",
+	"type": "protein",		
+	"process": "RPPA",
+	"directory": "../data/UCSC/CESC/",
+	"file": "RPPA"
+	},
+	{
+	"dataset": "chol",
+	"source": "ucsc",
+	"type": "rna",		
+	"process": "HiSeq",
+	"directory": "../data/UCSC/CHOL/",
+	"file": "HiSeqV2"
+	},{
+	"dataset": "chol",
+	"source": "ucsc",
+	"type": "protein",		
+	"process": "RPPA",
+	"directory": "../data/UCSC/CHOL/",
+	"file": "RPPA"
+	},
+	{
+	"dataset": "dlbc",
+	"source": "ucsc",
+	"type": "rna",		
+	"process": "HiSeq",
+	"directory": "../data/UCSC/DLBC/",
+	"file": "HiSeqV2"
+	},{
+	"dataset": "dlbc",
+	"source": "ucsc",
+	"type": "protein",		
+	"process": "RPPA",
+	"directory": "../data/UCSC/DLBC/",
+	"file": "RPPA"
+	},
+	{
+	"dataset": "esca",
+	"source": "ucsc",
+	"type": "rna",		
+	"process": "HiSeq",
+	"directory": "../data/UCSC/ESCA/",
+	"file": "HiSeqV2"
+	},{
+	"dataset": "esca",
+	"source": "ucsc",
+	"type": "protein",		
+	"process": "RPPA",
+	"directory": "../data/UCSC/ESCA/",
+	"file": "RPPA"
+	},
+	{
+	"dataset": "laml",
+	"source": "ucsc",
+	"type": "rna",		
+	"process": "HiSeq",
+	"directory": "../data/UCSC/LAML/",
+	"file": "HiSeqV2"
+	},
+	{
+	"dataset": "sarc",
+	"source": "ucsc",
+	"type": "rna",		
+	"process": "HiSeq",
+	"directory": "../data/UCSC/SARC/",
+	"file": "HiSeqV2"
+	},{
+	"dataset": "sarc",
+	"source": "ucsc",
+	"type": "protein",		
+	"process": "RPPA",
+	"directory": "../data/UCSC/SARC/",
+	"file": "RPPA"
+	},
+	{
+	"dataset": "stad",
+	"source": "ucsc",
+	"type": "rna",		
+	"process": "HiSeq",
+	"directory": "../data/UCSC/STAD/",
+	"file": "HiSeqV2"
+	},{
+	"dataset": "stad",
+	"source": "ucsc",
+	"type": "protein",		
+	"process": "RPPA",
+	"directory": "../data/UCSC/STAD/",
+	"file": "RPPA"
+	},
+	{
+	"dataset": "kich",
+	"source": "ucsc",
+	"type": "rna",		
+	"process": "HiSeq",
+	"directory": "../data/UCSC/KICH/",
+	"file": "HiSeqV2"
+	},{
+	"dataset": "kich",
+	"source": "ucsc",
+	"type": "protein",		
+	"process": "RPPA",
+	"directory": "../data/UCSC/KICH/",
+	"file": "RPPA"
+	},
+	{
+	"dataset": "kirp",
+	"source": "ucsc",
+	"type": "rna",		
+	"process": "HiSeq",
+	"directory": "../data/UCSC/KIRP/",
+	"file": "HiSeqV2"
+	},{
+	"dataset": "kirp",
+	"source": "ucsc",
+	"type": "protein",		
+	"process": "RPPA",
+	"directory": "../data/UCSC/KIRP/",
+	"file": "RPPA"
+	},
+	{
+	"dataset": "lihc",
+	"source": "ucsc",
+	"type": "rna",		
+	"process": "HiSeq",
+	"directory": "../data/UCSC/LIHC/",
+	"file": "HiSeqV2"
+	},{
+	"dataset": "lihc",
+	"source": "ucsc",
+	"type": "protein",		
+	"process": "RPPA",
+	"directory": "../data/UCSC/LIHC/",
+	"file": "RPPA"
+	},
+	{
+	"dataset": "skcm",
+	"source": "ucsc",
+	"type": "rna",		
+	"process": "HiSeq",
+	"directory": "../data/UCSC/SKCM/",
+	"file": "HiSeqV2"
+	},{
+	"dataset": "skcm",
+	"source": "ucsc",
+	"type": "protein",		
+	"process": "RPPA",
+	"directory": "../data/UCSC/SKCM/",
+	"file": "RPPA"
+	},
+	{
+	"dataset": "thca",
+	"source": "ucsc",
+	"type": "rna",		
+	"process": "HiSeq",
+	"directory": "../data/UCSC/THCA/",
+	"file": "HiSeqV2"
+	},{
+	"dataset": "thca",
+	"source": "ucsc",
+	"type": "protein",		
+	"process": "RPPA",
+	"directory": "../data/UCSC/THCA/",
+	"file": "RPPA"
+	},
+	{
+	"dataset": "ucec",
+	"source": "ucsc",
+	"type": "rna",		
+	"process": "HiSeq",
+	"directory": "../data/UCSC/UCEC/",
+	"file": "HiSeqV2"
+	},{
+	"dataset": "ucec",
+	"source": "ucsc",
+	"type": "protein",		
+	"process": "RPPA",
+	"directory": "../data/UCSC/UCEC/",
+	"file": "RPPA"
+	},
+	{
+	"dataset": "ucs",
+	"source": "ucsc",
+	"type": "rna",		
+	"process": "HiSeq",
+	"directory": "../data/UCSC/UCS/",
+	"file": "HiSeqV2"
+	},{
+	"dataset": "ucs",
+	"source": "ucsc",
+	"type": "protein",		
+	"process": "RPPA",
+	"directory": "../data/UCSC/UCS/",
+	"file": "RPPA"
+	},
+	{
+	"dataset": "uvm",
+	"source": "ucsc",
+	"type": "rna",		
+	"process": "HiSeq",
+	"directory": "../data/UCSC/UVM/",
+	"file": "HiSeqV2"
+	},{
+	"dataset": "uvm",
+	"source": "ucsc",
+	"type": "protein",		
+	"process": "RPPA",
+	"directory": "../data/UCSC/UVM/",
+	"file": "RPPA"
+	},
+	{
+	"dataset": "thym",
+	"source": "ucsc",
+	"type": "rna",		
+	"process": "HiSeq",
+	"directory": "../data/UCSC/THYM/",
+	"file": "HiSeqV2"
+	},{
+	"dataset": "thym",
+	"source": "ucsc",
+	"type": "protein",		
+	"process": "RPPA",
+	"directory": "../data/UCSC/THYM/",
+	"file": "RPPA"
+	},
+	{
+	"dataset": "tgct",
+	"source": "ucsc",
+	"type": "rna",		
+	"process": "HiSeq",
+	"directory": "../data/UCSC/TGCT/",
+	"file": "HiSeqV2"
+	},{
+	"dataset": "tgct",
+	"source": "ucsc",
+	"type": "protein",		
+	"process": "RPPA",
+	"directory": "../data/UCSC/TGCT/",
+	"file": "RPPA"
+	},
+	{
+	"dataset": "pcpg",
+	"source": "ucsc",
+	"type": "rna",		
+	"process": "HiSeq",
+	"directory": "../data/UCSC/PCPG/",
+	"file": "HiSeqV2"
+	},{
+	"dataset": "pcpg",
+	"source": "ucsc",
+	"type": "protein",		
+	"process": "RPPA",
+	"directory": "../data/UCSC/PCPG/",
+	"file": "RPPA"
+	},
+	{
+	"dataset": "ov",
+	"source": "ucsc",
+	"type": "rna",		
+	"process": "HiSeq",
+	"directory": "../data/UCSC/OV/",
+	"file": "HiSeqV2"
+	},{
+	"dataset": "ov",
+	"source": "ucsc",
+	"type": "protein",		
+	"process": "RPPA",
+	"directory": "../data/UCSC/OV/",
+	"file": "RPPA"
+	},
+	{
+	"dataset": "meso",
+	"source": "ucsc",
+	"type": "rna",		
+	"process": "HiSeq",
+	"directory": "../data/UCSC/MESO/",
+	"file": "HiSeqV2"
+	},{
+	"dataset": "meso",
+	"source": "ucsc",
+	"type": "protein",		
+	"process": "RPPA",
+	"directory": "../data/UCSC/MESO/",
 	"file": "RPPA"
 	},
 {

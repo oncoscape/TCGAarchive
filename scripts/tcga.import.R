@@ -426,15 +426,15 @@ os.batch.map.samples <- function(){
  
   datasets <- mongo.lookup$find()
   
-  for(dataset in datasets){
-    
+  for(i in 1:nrow(datasets)){
+    dataset = datasets[i,]
     ptMap <- list()
     if("molecular" %in% names(dataset)){
       print(paste("mapping sample ids for ", dataset$disease, sep=""))
 
       for(molColl in dataset$molecular){
       	con <- mongo(molColl$collection, db=db, url=host)
-        collection <- con$find()[[1]]
+        collection <- con$find()
         ptMap <- map.sample.ids(names(collection$patients), dataset$source, ptMap)
       }
       insert.collection.separate(paste(dataset$disease,dataset$source,"sample_map", sep="_"), list(ptMap))
@@ -445,6 +445,8 @@ os.batch.map.samples <- function(){
      
 
 }
+
+
 # Run Block  -------------------------------------------------------
 
 ## must first initialize server (through shell >mongod)
@@ -456,7 +458,7 @@ commands <- c("categories", "clinical", "molecular", "scale", "lookup", "sample"
 #commands <- c("scale")
 #commands <- "clinical"
 #commands <- "lookup"
-#commands <- "sample"
+commands <- "sample"
 
 args = commandArgs(trailingOnly=TRUE)
 if(length(args) != 0 )
@@ -481,8 +483,15 @@ if("scale" %in% commands){
 
 if("lookup" %in% commands){
 	lookup_tools <- fromJSON("../manifests/os.lookup_tools.json", simplifyVector = F)
-	insert.collection.separate("lookup_oncoscape_tools", lookup_tools)
-
+	con <- mongo("lookup_oncoscape_tools", db=db, url=host)
+	con$insert(toJSON(lookup_tools, auto_unbox = T))
+	rm(con)
+	
+	render_pathways <- fromJSON("../manifests/render_pathways.json", simplifyVector = F)
+	con <- mongo("render_pathways", db=db, url=host)
+	con$insert(toJSON(render_pathways, auto_unbox = T))
+	rm(con)
+	
 #	ImmuneTree <- fromJSON("../data/categories/biomarkerTree.json", simplifyVector = F)
 #	insert.collection.separate("biomarker_immune_tree", list(ImmuneTree))
 }

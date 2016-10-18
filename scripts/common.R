@@ -5,6 +5,10 @@ library(stringr)
 library(plyr)
 library(jsonlite)
 library(mongolite)
+library(parallel)
+source("bindToEnv.R")
+
+mongo_commands <- c("mongo","mongo.manifest","mongo.lookup", "create.oCollection", "collection.exists","update.oCollection")
 
 date <- as.character(Sys.Date())
 chromosomes <- c(seq(1:22), "X", "Y")
@@ -16,7 +20,9 @@ location = "dev"
 if(location == "dev"){
 	user="oncoscape"
 	password = Sys.getenv("dev_oncoscape_pw")
-	host<- paste("mongodb://",user,":",password,"@oncoscape-dev-db1.sttrcancer.io:27017,oncoscape-dev-db2.sttrcancer.io:27017,oncoscape-dev-db3.sttrcancer.io:27017", sep="")
+	host<- paste("mongodb://",user,":",password,"@oncoscape-dev-db1.sttrcancer.io:27017,oncoscape-dev-db2.sttrcancer.io:27017,oncoscape-dev-db3.sttrcancer.io:27017",sep="")
+	#host<- paste("mongodb://",user,":",password,"@oncoscape-dev-db1.sttrcancer.io:27017,oncoscape-dev-db2.sttrcancer.io:27017,oncoscape-dev-db3.sttrcancer.io:27017","?socketTimeoutMS=36000000", sep="")
+	  #?socketTimeoutMS=36000000 still fails, just waits longer
 }
 
 dataset_map <- list(
@@ -131,7 +137,15 @@ lookupList = list(
   edges=list(type="edges",
              data.load = "os.data.load.XXX",
              insert.lookup = "insert.lookup.network",
-             insert.document = "insert.document.edges" ),
+             insert.document = "insert.document.list" ),
+  ptdegree=list(type="edges",
+             data.load = "os.data.load.XXX",
+             insert.lookup = "insert.lookup.network",
+             insert.document = "insert.document.list" ),
+  genedegree=list(type="edges",
+             data.load = "os.data.load.XXX",
+             insert.lookup = "insert.lookup.network",
+             insert.document = "insert.document.list" ),
   events=list(type="clinical",
                data.load = "os.data.load.clinical.events",
                insert.lookup = "insert.lookup.clinical",
@@ -213,7 +227,7 @@ collection.exists <- function( collection.name){
 #---------------------------------------------------------
 update.oCollection <- function(oCollection, dataset=NA, dataType=NA,source=NA, processName=NA, parent=NA, process=NA){
   
-  newCollection = oCollection
+  newCollection = as.list(oCollection)
   if(!missing(dataset)) newCollection$dataset = dataset
   if(!missing(dataType)) newCollection$dataType = dataType
   if(!missing(source)) newCollection$source = source
@@ -275,20 +289,18 @@ insert.lookup.sourceTypeCollection <- function(oCollection){
 #---------------------------------------------------------
 insert.lookup.clinical <- function(oCollection){
   add.collection <- list()
-  add.collection[oCollection$dataType] <- oCollection$collection
-  new.collection = list(); 
-  new.collection[["clinical"]] = add.collection
-  push.collection = list("$push"=new.collection)
+  add.collection[paste("clinical",oCollection$dataType, sep=".")] <- oCollection$collection
+  set.collection = list("$set"=add.collection)
 
-  return(push.collection)
+  return(set.collection)
 }
 #---------------------------------------------------------
 insert.lookup.network <- function(oCollection){
   ptweights   <- gsub("\\s+", "", tolower(paste(oCollection$dataset, "ptDegree", oCollection$source, oCollection$processName, sep="_")))
   geneweights <- gsub("\\s+", "", tolower(paste(oCollection$dataset, "geneDegree", oCollection$source, oCollection$processName, sep="_")))
-  add.collection <- list(data.frame(name=oCollection$process$geneset,source=oCollection$source, edges=oCollection$collection, 
+  add.collection <- list(name=oCollection$process$geneset,source=oCollection$source, edges=oCollection$collection, 
                                     patientWeights=ptweights, 
-                                    genesWeights=geneweights))
+                                    genesWeights=geneweights)
  
   new.collection = list(); 
   new.collection[["edges"]] = add.collection
@@ -316,16 +328,15 @@ insert.lookup <- function(oCollection){
   
   dataType = oCollection$dataType
   if(dataType %in% names(lookupList)){
-    oLookup = do.call(lookupList[[dataType]][["insert.lookup"]],list(oCollection))
-    ## insert lookup into mongo collection
-    mongo.lookup$update(query, toJSON(oLookup, auto_unbox = T), upsert=T)
-  
-  }else{
     if(dataType %in% c("ptDegree", "geneDegree")){
       print(paste(dataType, "lookup info processed with edge creation", sep=" "))
     }else{
-      print(paste("WARNING: data type not recognized:", dataType, sep=" "))
+      oLookup = do.call(lookupList[[dataType]][["insert.lookup"]],list(oCollection))
+      ## insert lookup into mongo collection
+      mongo.lookup$update(query, toJSON(oLookup, auto_unbox = T), upsert=T)
     }
+  }else{
+      print(paste("WARNING: data type not recognized:", dataType, sep=" "))
   }
 }
 #---------------------------------------------------------
@@ -347,7 +358,7 @@ insert.document.molecular = function(con, result){
               , auto_unbox=T, na="null")); 
     status$nInserted;
   })
-  return (c(n.pass= sum(unlist(insert.pass)), n.records = nrow(result) ) )
+  return (c(n.pass= sum(unlist(insert.pass)), n.records = nrow(result$data) ) )
 }
 #---------------------------------------------------------
 insert.document.facs = function(con, result){
@@ -410,11 +421,14 @@ insert.document.geneset = function(con, result){
 #---------------------------------------------------------
 insert.collection <- function(oCollection, result){
   
+    if(class(oCollection) != "list") oCollection <- as.list(oCollection)
   ## insert new collection data
       con <- mongo(oCollection$collection, db=db, url=host)
 
       doc.pass <- insert.prep(oCollection)
       if(!doc.pass){print("Skipping."); return()}
+
+      print(paste(oCollection$dataset, oCollection$dataType, oCollection$collection))
       
       if(oCollection$dataType %in% names(lookupList)){
         ## insert each document into collection 
@@ -454,7 +468,7 @@ remove.collection <- function(oCollection){
   con <- mongo(oCollection$collection, db=db, url=host)
   con$drop()
   
-  mongo.manifest$remove(paste("{'collection':",oCollection$collection, "}"))
+  mongo.manifest$remove(paste('{"collection":"',oCollection$collection, '"}'))
   remove.lookup(oCollection)
   
   print(paste(oCollection$collection, "removed."))
@@ -472,10 +486,14 @@ remove.lookup <- function(oCollection){
     matched.record = which(sapply(collections, function(el){el$collection == oCollection$collection}))
     collections[[matched.record]]$collection = NULL 
     lookup.doc[[lookupType]] = collections
+  }else if(dataType %in% c("edges", "genedegree", "ptdegree")){
+    
+    matched.record = subset(collections[[1]], oCollection$collection == edges | oCollection$collection == patientWeights | oCollection$collection == genesWeights)
+    collections[[1]] <- collections[[1]][-rownames(matched.record),]
+    lookup.doc[[lookupType]] = collections
   }
-  ### TO DO:
-  # else if(dataType %in% c("edges")){
-  #}else if(dataType %in% c("patient", "drug", "radiation", "followUp-v1p0","followUp-v1p5","followUp-v2p0", "followUp-v2p1", "followUp-v4p0","followUp-v4p4","followUp-v4p8", "newTumor", "newTumor-followUp-v1p0", "newTumor-followUp-v4p0","newTumor-followUp-v4p4","newTumor-followUp-v4p8", "otherMalignancy-v4p0", "events")){
+      ### TO DO:
+  #else if(dataType %in% c("patient", "drug", "radiation", "followUp-v1p0","followUp-v1p5","followUp-v2p0", "followUp-v2p1", "followUp-v4p0","followUp-v4p4","followUp-v4p8", "newTumor", "newTumor-followUp-v1p0", "newTumor-followUp-v4p0","newTumor-followUp-v4p4","newTumor-followUp-v4p8", "otherMalignancy-v4p0", "events")){
   #}else if{}
   
   mongo.lookup$update(query, update=lookup.doc)
@@ -487,15 +505,15 @@ insert.collection.separate<- function(name, indiv.collection){
   name <- tolower(name)
   con <- mongo(name, db=db, url=host)
   
-  if(con$count() != 0){
-    print(paste(name, " already exists. Skipping.", sep=""))
-	rm(con)
-    return()
-  }  
+#  if(con$count() != 0){
+#    print(paste(name, " already exists. Skipping.", sep=""))
+#	rm(con)
+#    return()
+#  }  
   
   ## add collection to database
   lapply(indiv.collection, function(item){
-    con$insert(toJSON(item, auto_unbox = T))
+    con$insert(item)
   })
   rm(con)
  
