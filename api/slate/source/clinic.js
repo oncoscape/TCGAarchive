@@ -123,7 +123,7 @@ var disease_code = {
 
 // format.h2("Mongo DB Connection");
 // format.codeJSStart('const mongoose = require(\"mongoose\");');
-// format.table('mongoose.connect(\"mongodb://oncoscape-dev-db1.sttrcancer.io:27017,oncoscape-dev-db2.sttrcancer.io:27017,oncoscape-dev-db3.sttrcancer.io:27017/tcga?authSource=admin\",{user: \"oncoscapeRead\",pass: \"i1f4d9botHD4xnZ\"});');
+// format.table('mongoose.connect(\"mongodb://oncoscape-dev-db1.sttrcancer.io:27017,oncoscape-dev-db2.sttrcancer.io:27017,oncoscape-dev-db3.sttrcancer.io:27017/pancan12?authSource=admin\",{user: \"oncoscapeRead\",pass: \"i1f4d9botHD4xnZ\"});');
 // format.table('var connection = mongoose.connection;');
 // format.table('var db = connection.db;');
 // format.codeStop();
@@ -210,7 +210,7 @@ function filterByDataTypeCat(value, obj) {
 
 co(function *() {
 
-  db = yield comongo.client.connect('mongodb://oncoscapeRead:i1f4d9botHD4xnZ@oncoscape-dev-db1.sttrcancer.io:27017,oncoscape-dev-db2.sttrcancer.io:27017,oncoscape-dev-db3.sttrcancer.io:27017/tcga?authSource=admin&replicaSet=rs0');
+  db = yield comongo.client.connect('mongodb://oncoscapeRead:i1f4d9botHD4xnZ@oncoscape-dev-db1.sttrcancer.io:27017,oncoscape-dev-db2.sttrcancer.io:27017,oncoscape-dev-db3.sttrcancer.io:27017/pancan12?authSource=admin&replicaSet=rs0');
   
   /* REST API Query on gbm_patient_tcga_clinical */
   collection = yield comongo.db.collection(db, 'gbm_patient_tcga_clinical');
@@ -218,12 +218,8 @@ co(function *() {
   // var max_ind = 0;
   // var max_len = 0;
   // var ind = 0;
-  format.h1("Rest API Queries");
   format.h2("Example to access one collection from browser");
   format.h3("HTTP Request");
-  format.text("Collections are accessable at the host: http://dev.oncoscape.sttrcancer.io/api/");
-  format.text("The endpoint of oncoscape API is a unique URL. Every endpoint points to a unique collection.");
-  format.table("Below lists more details of the organization of the Oncoscape Mongo Database and the collections organized by disease type.");
   format.url("GET http://dev.oncoscape.sttrcancer.io/api/gbm_patient_tcga_clinical/");
   format.codeComment("Here we only show the first record in gbm_patient_tcga_clinical");
   format.codeStart();
@@ -441,7 +437,7 @@ co(function *() {
       format.h2(datasources[i].disease.toUpperCase() + " - " + disease_code[datasources[i].disease.toUpperCase()]);
       var datasource = datasources[i];
       var mol_colls = [];
-      //db = yield comongo.client.connect('mongodb://oncoscapeRead:i1f4d9botHD4xnZ@oncoscape-dev-db1.sttrcancer.io:27017,oncoscape-dev-db2.sttrcancer.io:27017,oncoscape-dev-db3.sttrcancer.io:27017/tcga?authSource=admin&replicaSet=rs0');
+      //db = yield comongo.client.connect('mongodb://oncoscapeRead:i1f4d9botHD4xnZ@oncoscape-dev-db1.sttrcancer.io:27017,oncoscape-dev-db2.sttrcancer.io:27017,oncoscape-dev-db3.sttrcancer.io:27017/pancan12?authSource=admin&replicaSet=rs0');
       format.text("Collection Name | Collection Type | Data Source | Data Type");
       format.table("--------- | ----------- | ----------- | -----------"); 
       elem_source = datasource.source;
