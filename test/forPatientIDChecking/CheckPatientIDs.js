@@ -14,16 +14,16 @@ var asyncLoop = require('node-async-loop');
 const mongoose = require("mongoose");
 var ajvMsg, collection, schemas, ptList;
 
-jsonfile.readFile("tcga/ptList.json", function(err, obj){
+jsonfile.readFile("../datasourceTesting/ptList.json", function(err, obj){
   ptList = obj;
 });
 
 
-jsonfile.readFile("tcga/ajv_1012_v2.json", function(err, obj) {
+jsonfile.readFile("../datasourceTesting/ajv_tcga_v2.json", function(err, obj) {
   ajvMsg = obj;
 });
 
-jsonfile.readFile("schemas.json", function(err, obj) {
+jsonfile.readFile("../schemas.json", function(err, obj) {
   schemas = obj;
 });
 

@@ -12,9 +12,7 @@ var jsonfile = require("jsonfile");
 var assert = require('assert');
 var Ajv = require('ajv');
 var ajv = new Ajv({allErrors: true});
-var forEach = require('async-foreach').forEach;
 var asyncLoop = require('node-async-loop');
-var async = require('async');
 var ajvMsg = [];
 var collection;
 var collections = [];
@@ -84,6 +82,7 @@ connection.once('open', function(){
 
       var processNextTable = function(){
         var tableName = categoried_collections[category_index];
+        console.log(tableName);
         console.log("test" , col_count++);
         var collection = db.collection(tableName);
         var cursor = collection.find();
@@ -99,6 +98,8 @@ connection.once('open', function(){
             if(!valid){
               var e = {};
               e.errorType = ajv.errors[0].schemaPath; 
+              console.log(ajv.errors);
+              console.log("&&&&&&&&&")
               error_elem.push(e);
             }
             else{

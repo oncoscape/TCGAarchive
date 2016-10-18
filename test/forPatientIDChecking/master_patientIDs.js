@@ -14,19 +14,19 @@ const mongoose = require("mongoose");
  
 var ajvMsg, collection, schemas, ptList;
  
-jsonfile.readFile("tcga/ptList.json", function(err, obj){
+jsonfile.readFile("../datasourceTesting/ptList.json", function(err, obj){
   ptList = obj;
 });
- 
- 
-jsonfile.readFile("tcga/ajv_1012_v2.json", function(err, obj) {
+
+
+jsonfile.readFile("../datasourceTesting/ajv_tcga_v2.json", function(err, obj) {
   ajvMsg = obj;
 });
- 
-jsonfile.readFile("schemas.json", function(err, obj) {
+
+jsonfile.readFile("../schemas.json", function(err, obj) {
   schemas = obj;
 });
- 
+
 var diseases = ajvMsg.map(function(a){return a.disease;});
 diseases = diseases.unique();
  
@@ -64,7 +64,7 @@ var status = [];
       // var ajvMsg_length = disease_ajvMsg.length; 
       // var index = 0;
       
-      var obtainPtIDs = function(){
+      var obtainPtIDs = function(d){
         // var tableName = disease_ajvMsg[index].collection;
         // var t = disease_ajvMsg[index].type;
         var tableName = d.collection;
@@ -76,32 +76,42 @@ var status = [];
         var count = 0;
         
   
-        if(["patient", "drug", "newTumor", "otherMalignancy", "radiation", "followUp", "newTumor-followUp"].indexOf(t) > -1){
-          console.log("within clinical");
-          console.log(count++);
-  
-          collection.distinct('patient_ID').then(function(ids){
-          	console.log(ids);
-          	elem.ptIDs = elem.ptIDs.concat(ids).unique();
-          }).then(function(){
-          	status.push(elem);
-          	next();
-          });
-        }
+        if(t == "color"){
+            console.log('within color');
+            cursor.each(function(err, item){
+              if(item != null){
+                item.data.forEach(function(e){
+                  elem.ptIDs = elem.ptIDs.concat(e.values).unique();
+                });
+              }else{
+                return elem;
+              }
+            });
+          }else if(t == "events"){
+            console.log("within events");
+            cursor.each(function(err, item){
+              if(item != null){
+                elem.ptIDs = elem.ptIDs.concat(Object.keys(item)).unique();
+              }else{
+                return elem;
+              }
+            });
+          }
         else{
           console.log("&&&& THIS TYPE IS NOT INCLUDES: ", t);
           index += 1;
-          next();
+          return elem;
         }
         
-        status.push(elem);
+        return elem;
+        // status.push(elem);
       };
       // Call obtainPtIDs recursively
-      if(ptList[d.disease] != 0){
-        obtainPtIDs();
-      }else{
-        next();
-      }
+      // if(ptList[d.disease] != 0){
+      //   obtainPtIDs();
+      // }else{
+      //   next();
+      // }
     }, function (err)
     {
         if (err)
@@ -113,7 +123,7 @@ var status = [];
         console.log('Finished!');
     });
    
-});
+//});
  
  
  
