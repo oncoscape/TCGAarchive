@@ -29,7 +29,8 @@ build/
 _yardoc
 doc/
 .idea/
-
+ 
+ 
 # data-explorer
 node_modules
 dist
