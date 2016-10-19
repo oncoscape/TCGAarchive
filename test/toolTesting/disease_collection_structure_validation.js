@@ -28,8 +28,7 @@ const mongoose = require("mongoose");
 var lookupByDisease = [];
 var lookupByTool = [];
 var disease_arr = [];
-var render_pca;
-var render_pca_arr = [];
+var render_pca_diseases;
 var render_chr;
 var render_chr_arr = [];
 var render_pt;
@@ -105,7 +104,7 @@ var diseaseCollectionSchema = {
 };
 
 jsonfile.readFile('../schema.json').then(function(err, obj){schemas = obj;});
-
+jsonfile.readFile('../ptList.json').then(function(err, obj){ptList = obj;});
 jsonfile.readFile('../datasourceTesting/ajv_tcga_v2_10182016.json').then(function(err, obj){ajvMsg = obj;});
 
 Array.prototype.findCollectionsByDisease = function(d){
@@ -188,24 +187,24 @@ connection.once('open', function(){
             }
           }     
     }); 
-    
-    disease_arr.forEach(function(d){
-      var ptIDs = [];
-      if(('clinical' in d)&&('patient' in d['clinical'])){
-        var pt = connection.db.collection(d['clinical']['patient']).find({},{'patient_ID':true});
-        pt.each(function(err, item){
-          if(item != null)
-          ptIDs.push(item['patient_ID']);
-        });
-      }
-      ptList[d.disease] = ptIDs;
-    });
 
-    Object.keys(ptList).forEach(function(k){
-       ptList[k] = u.uniq(ptList[k]);
-    });
-    
-    jsonfile.writeFile('ptList.json', ptList, {spaces:4});
+    // disease_arr.forEach(function(d){
+    //   var ptIDs = [];
+    //   if(('clinical' in d)&&('patient' in d['clinical'])){
+    //     var pt = connection.db.collection(d['clinical']['patient']).find({},{'patient_ID':true});
+    //     pt.each(function(err, item){
+    //       if(item != null)
+    //       ptIDs.push(item['patient_ID']);
+    //     });
+    //   }
+    //   ptList[d.disease] = ptIDs;
+    // });
+
+    // Object.keys(ptList).forEach(function(k){
+    //    ptList[k] = u.uniq(ptList[k]);
+    // });
+
+    //jsonfile.writeFile('ptList.json', ptList, {spaces:4});
     /* it's worthwhile to check the entire ajvMsg's collections on patientIDs
         add the disease-specific patientIDs to the schema and re-run ajvMsg
      */
@@ -230,7 +229,8 @@ connection.once('open', function(){
             render_pt_arr.push(item['name']);
           }
     });
-    
+    connection.db.collection("render_pca").distinct("disease").then(function(obj){render_pca_diseases = obj;});
+
     var general = {
       'lookupDataSource': "Exists✔️😃",
       'lookupTools': "Exists✔️😃",
@@ -239,7 +239,7 @@ connection.once('open', function(){
       'render_pca': "Exists✔️😃 Can run PCA✔️😃",
       'render_pathways': "Exists✔️😃 Can run Pathways✔️😃"
     };
-    
+
     connection.db.listCollections().toArray(function(err, collections){  
         collections.forEach(function(c){
           all_collections.push(c['name']);
@@ -302,7 +302,7 @@ connection.once('open', function(){
 
       
       elem['Spreadsheet'] = test.spreadsheet.ExecTest(diseases[index], ajvMsg)? "✔️😃" : "❌";
-      elem['PCA'] = test.pca.ExecTest(diseases[index], ajvMsg)? "✔️😃" : "❌";
+      elem['PCA'] = test.pca.ExecTest(diseases[index], render_pca_diseases)? "✔️😃" : "❌";
       elem['Timelines'] = test.timelines.ExecTest(diseases[index], disease_arr)? "✔️😃" : "❌";
       elem['Clusters'] = test.clusters.ExecTest(diseases[index], ajvMsg)? "✔️😃" : "❌";
       elem['Heatmap'] = test.heatmap.ExecTest(diseases[index], disease_arr)? "✔️😃" : "❌";
