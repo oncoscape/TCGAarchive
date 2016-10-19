@@ -8,7 +8,7 @@
 var jsonfile = require("jsonfile-promised");
 var ajvMsg;
 
-jsonfile.readFile("ajv_tcga.json").then(function(obj){ajvMsg = obj;});
+jsonfile.readFile("ajv_tcga_10182016.json").then(function(obj){ajvMsg = obj;});
 
 Array.prototype.unique = function() {
         var arr = [];
@@ -26,8 +26,8 @@ Array.prototype.table = function(uniqueArray) {
         elem[u] = 0;
     });
     for(var i = 0; i < this.length; i++){
-        if(uniqueArray.indexOf(this[i]['errorType']) > -1){
-            elem[this[i]['errorType']]++;
+        if(uniqueArray.indexOf(this[i]['errors']) > -1){
+            elem[this[i]['errors']]++;
         }
     }
     return elem;
@@ -37,7 +37,7 @@ Array.prototype.table = function(uniqueArray) {
 Object.prototype.nestedUnique = function(){
     var ar = [];
     this['errors'].forEach(function(a){
-        ar.push(a['errorType']);
+        ar.push("dataPath:" + a.errorType[0].dataPath+"; schemaPath:" + a.errorType[0].schemaPath + "; message: "+ a.errorType[0].message);
     });
     return ar.unique();
 };
@@ -56,4 +56,4 @@ ajvMsg_v2 = ajvMsg.map(function(a){
     return elem;
 });
 
-jsonfile.writeFile('ajv_tcga_v2.json', ajvMsg_v2, {spaces:4});
+jsonfile.writeFile('ajv_tcga_v2_10182016.json', ajvMsg_v2, {spaces:4});
