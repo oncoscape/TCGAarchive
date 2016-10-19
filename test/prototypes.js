@@ -19,6 +19,25 @@ Array.prototype.arraysCompare = function(ref) {
     return elem;
 };
 
+Object.prototype.nestedUniqueCount = function(){
+    var errorCount = {};
+    var ar = [];
+    var str;
+    this['errors'].forEach(function(a){
+        a.errorType.forEach(function(e){
+          str = e.schemaPath + " [message: "+ e.message + "]; Number of Violation: ";  
+          if(ar.contains(str)){
+            errorCount[str]++;
+          }else{
+            ar.push(str);
+            errorCount[str]=1;
+          }
+        });
+    });
+    //return ar.unique();
+    return errorCount;
+};
+
 Array.prototype.arraysCompareV2 = function(ref) {
     var elem = {};
     elem.overlapCount = 0;
