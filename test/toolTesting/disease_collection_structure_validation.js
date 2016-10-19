@@ -7,7 +7,7 @@
             - incorperate the datasource quality data into tool validation
 
 */
-var jsonfile = require("jsonfile");
+var jsonfile = require("jsonfile-promised");
 var u = require("underscore");
 var test = {
   "pca" : require("./moduleTesting/test_pca.js"),
@@ -104,13 +104,9 @@ var diseaseCollectionSchema = {
 
 };
 
-jsonfile.readFile('schema_pancan12.json', function(err, obj){
-  schemas = obj;
-});
+jsonfile.readFile('../schema.json').then(function(err, obj){schemas = obj;});
 
-jsonfile.readFile('ajv_v2.json', function(err, obj){
-  ajvMsg = obj;
-});
+jsonfile.readFile('../datasourceTesting/ajv_v2.json').then(function(err, obj){ajvMsg = obj;});
 
 Array.prototype.findCollectionsByDisease = function(d){
   var arr = [];
