@@ -32,7 +32,7 @@ Object.prototype.nestedUniqueCount = function(){
     var str;
     this['errors'].forEach(function(a){
         a.errorType.forEach(function(e){
-          str = e.schemaPath + "; message: "+ e.message;  
+          str = e.schemaPath + " [message: "+ e.message + "]; Number of Violation: ";  
           if(ar.contains(str)){
             errorCount[str]++;
           }else{

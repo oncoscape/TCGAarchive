@@ -1,4 +1,6 @@
-//Test_PCA.js
+//Test_Spreadsheet.js
+//check the ajvMsg json object to see, for any given disease, if one of the clinical collecitons exists
+
 var exports = module.exports = {};
 
 exports.ExecTest = function(disease, ajvMsg){

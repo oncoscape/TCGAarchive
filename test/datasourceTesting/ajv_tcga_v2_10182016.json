@@ -835,8 +835,8 @@
         "totalCounts": 824,
         "passedRate": 0.9466019417475728,
         "errorMessage": {
-            "#/properties/histologic_diagnosis/type; message: should be string": 10,
-            "#/properties/diagnosis_year/type; message: should be number": 36
+            "#/properties/histologic_diagnosis/type [message: should be string]; Number of Violation: ": 10,
+            "#/properties/diagnosis_year/type [message: should be number]; Number of Violation: ": 36
         }
     },
     {
@@ -856,9 +856,9 @@
         "totalCounts": 1044,
         "passedRate": 0.9636015325670498,
         "errorMessage": {
-            "#/properties/age_at_initial_pathologic_diagnosis/type; message: should be number": 38,
-            "#/properties/days_to_diagnosis/type; message: should be number": 38,
-            "#/properties/diagnosis_year/type; message: should be number": 20
+            "#/properties/age_at_initial_pathologic_diagnosis/type [message: should be number]; Number of Violation: ": 38,
+            "#/properties/days_to_diagnosis/type [message: should be number]; Number of Violation: ": 38,
+            "#/properties/diagnosis_year/type [message: should be number]; Number of Violation: ": 20
         }
     },
     {
@@ -869,7 +869,7 @@
         "totalCounts": 45,
         "passedRate": 0,
         "errorMessage": {
-            "#/required; message: should have required property 'diagnosis_year'": 45
+            "#/required [message: should have required property 'diagnosis_year']; Number of Violation: ": 45
         }
     },
     {
@@ -880,7 +880,7 @@
         "totalCounts": 2222,
         "passedRate": 0.5364536453645364,
         "errorMessage": {
-            "#/properties/histologic_diagnosis/type; message: should be string": 1030
+            "#/properties/histologic_diagnosis/type [message: should be string]; Number of Violation: ": 1030
         }
     },
     {
@@ -909,7 +909,7 @@
         "totalCounts": 80,
         "passedRate": 0,
         "errorMessage": {
-            "#/properties/histologic_diagnosis/type; message: should be string": 80
+            "#/properties/histologic_diagnosis/type [message: should be string]; Number of Violation: ": 80
         }
     },
     {
@@ -920,7 +920,7 @@
         "totalCounts": 340,
         "passedRate": 0.9647058823529412,
         "errorMessage": {
-            "#/properties/histologic_diagnosis/type; message: should be string": 12
+            "#/properties/histologic_diagnosis/type [message: should be string]; Number of Violation: ": 12
         }
     },
     {
@@ -931,8 +931,8 @@
         "totalCounts": 377,
         "passedRate": 0,
         "errorMessage": {
-            "#/required; message: should have required property 'diagnosis_year'": 377,
-            "#/properties/days_to_diagnosis/type; message: should be number": 1
+            "#/required [message: should have required property 'diagnosis_year']; Number of Violation: ": 377,
+            "#/properties/days_to_diagnosis/type [message: should be number]; Number of Violation: ": 1
         }
     },
     {
@@ -952,8 +952,8 @@
         "totalCounts": 291,
         "passedRate": 0.9140893470790378,
         "errorMessage": {
-            "#/properties/days_to_diagnosis/type; message: should be number": 25,
-            "#/properties/diagnosis_year/type; message: should be number": 22
+            "#/properties/days_to_diagnosis/type [message: should be number]; Number of Violation: ": 25,
+            "#/properties/diagnosis_year/type [message: should be number]; Number of Violation: ": 22
         }
     },
     {
@@ -964,7 +964,7 @@
         "totalCounts": 185,
         "passedRate": 0.9621621621621622,
         "errorMessage": {
-            "#/properties/diagnosis_year/type; message: should be number": 7
+            "#/properties/diagnosis_year/type [message: should be number]; Number of Violation: ": 7
         }
     },
     {
@@ -975,9 +975,9 @@
         "totalCounts": 1008,
         "passedRate": 0.9503968253968254,
         "errorMessage": {
-            "#/properties/age_at_initial_pathologic_diagnosis/type; message: should be number": 18,
-            "#/properties/days_to_diagnosis/type; message: should be number": 50,
-            "#/properties/diagnosis_year/type; message: should be number": 34
+            "#/properties/age_at_initial_pathologic_diagnosis/type [message: should be number]; Number of Violation: ": 18,
+            "#/properties/days_to_diagnosis/type [message: should be number]; Number of Violation: ": 50,
+            "#/properties/diagnosis_year/type [message: should be number]; Number of Violation: ": 34
         }
     },
     {
@@ -997,8 +997,8 @@
         "totalCounts": 1000,
         "passedRate": 0.938,
         "errorMessage": {
-            "#/properties/diagnosis_year/type; message: should be number": 62,
-            "#/properties/days_to_diagnosis/type; message: should be number": 62
+            "#/properties/diagnosis_year/type [message: should be number]; Number of Violation: ": 62,
+            "#/properties/days_to_diagnosis/type [message: should be number]; Number of Violation: ": 62
         }
     },
     {
@@ -1009,8 +1009,8 @@
         "totalCounts": 470,
         "passedRate": 0.9765957446808511,
         "errorMessage": {
-            "#/properties/days_to_diagnosis/type; message: should be number": 8,
-            "#/properties/diagnosis_year/type; message: should be number": 3
+            "#/properties/days_to_diagnosis/type [message: should be number]; Number of Violation: ": 8,
+            "#/properties/diagnosis_year/type [message: should be number]; Number of Violation: ": 3
         }
     },
     {
@@ -1021,7 +1021,7 @@
         "totalCounts": 124,
         "passedRate": 0.9919354838709677,
         "errorMessage": {
-            "#/properties/days_to_diagnosis/type; message: should be number": 1
+            "#/properties/days_to_diagnosis/type [message: should be number]; Number of Violation: ": 1
         }
     },
     {
@@ -1032,7 +1032,7 @@
         "totalCounts": 307,
         "passedRate": 0.993485342019544,
         "errorMessage": {
-            "#/properties/diagnosis_year/type; message: should be number": 2
+            "#/properties/diagnosis_year/type [message: should be number]; Number of Violation: ": 2
         }
     },
     {
@@ -1052,9 +1052,9 @@
         "totalCounts": 2194,
         "passedRate": 0.027347310847766638,
         "errorMessage": {
-            "#/properties/histologic_diagnosis/type; message: should be string": 2134,
-            "#/properties/diagnosis_year/type; message: should be number": 6,
-            "#/properties/days_to_diagnosis/type; message: should be number": 2
+            "#/properties/histologic_diagnosis/type [message: should be string]; Number of Violation: ": 2134,
+            "#/properties/diagnosis_year/type [message: should be number]; Number of Violation: ": 6,
+            "#/properties/days_to_diagnosis/type [message: should be number]; Number of Violation: ": 2
         }
     },
     {
@@ -1083,10 +1083,10 @@
         "totalCounts": 443,
         "passedRate": 0.9796839729119639,
         "errorMessage": {
-            "#/properties/histologic_diagnosis/type; message: should be string": 3,
-            "#/properties/age_at_initial_pathologic_diagnosis/type; message: should be number": 5,
-            "#/properties/days_to_diagnosis/type; message: should be number": 6,
-            "#/properties/diagnosis_year/type; message: should be number": 1
+            "#/properties/histologic_diagnosis/type [message: should be string]; Number of Violation: ": 3,
+            "#/properties/age_at_initial_pathologic_diagnosis/type [message: should be number]; Number of Violation: ": 5,
+            "#/properties/days_to_diagnosis/type [message: should be number]; Number of Violation: ": 6,
+            "#/properties/diagnosis_year/type [message: should be number]; Number of Violation: ": 1
         }
     },
     {
@@ -1097,7 +1097,7 @@
         "totalCounts": 522,
         "passedRate": 0.9846743295019157,
         "errorMessage": {
-            "#/properties/diagnosis_year/type; message: should be number": 8
+            "#/properties/diagnosis_year/type [message: should be number]; Number of Violation: ": 8
         }
     },
     {
@@ -1108,8 +1108,8 @@
         "totalCounts": 1056,
         "passedRate": 0.9981060606060606,
         "errorMessage": {
-            "#/properties/age_at_initial_pathologic_diagnosis/type; message: should be number": 2,
-            "#/properties/days_to_diagnosis/type; message: should be number": 2
+            "#/properties/age_at_initial_pathologic_diagnosis/type [message: should be number]; Number of Violation: ": 2,
+            "#/properties/days_to_diagnosis/type [message: should be number]; Number of Violation: ": 2
         }
     },
     {
@@ -1120,7 +1120,7 @@
         "totalCounts": 918,
         "passedRate": 0.9891067538126361,
         "errorMessage": {
-            "#/properties/histologic_diagnosis/type; message: should be string": 10
+            "#/properties/histologic_diagnosis/type [message: should be string]; Number of Violation: ": 10
         }
     },
     {
@@ -1167,8 +1167,8 @@
         "totalCounts": 548,
         "passedRate": 0.9835766423357665,
         "errorMessage": {
-            "#/properties/days_to_diagnosis/type; message: should be number": 6,
-            "#/properties/diagnosis_year/type; message: should be number": 8
+            "#/properties/days_to_diagnosis/type [message: should be number]; Number of Violation: ": 6,
+            "#/properties/diagnosis_year/type [message: should be number]; Number of Violation: ": 8
         }
     },
     {
@@ -1179,9 +1179,9 @@
         "totalCounts": 370,
         "passedRate": 0.9891891891891892,
         "errorMessage": {
-            "#/properties/diagnosis_year/type; message: should be number": 2,
-            "#/properties/days_to_diagnosis/type; message: should be number": 2,
-            "#/properties/histologic_diagnosis/type; message: should be string": 2
+            "#/properties/diagnosis_year/type [message: should be number]; Number of Violation: ": 2,
+            "#/properties/days_to_diagnosis/type [message: should be number]; Number of Violation: ": 2,
+            "#/properties/histologic_diagnosis/type [message: should be string]; Number of Violation: ": 2
         }
     },
     {
@@ -2191,7 +2191,7 @@
         "totalCounts": 111,
         "passedRate": 0.972972972972973,
         "errorMessage": {
-            "#/properties/patient_ID/pattern; message: should match pattern \"TCGA-[A-Z0-9]{2}-[A-Z0-9]{4}-[0-9]{2}\"": 3
+            "#/properties/patient_ID/pattern [message: should match pattern \"TCGA-[A-Z0-9]{2}-[A-Z0-9]{4}-[0-9]{2}\"]; Number of Violation: ": 3
         }
     },
     {
@@ -2247,7 +2247,7 @@
         "totalCounts": 222,
         "passedRate": 0.990990990990991,
         "errorMessage": {
-            "#/properties/patient_ID/pattern; message: should match pattern \"TCGA-[A-Z0-9]{2}-[A-Z0-9]{4}-[0-9]{2}\"": 2
+            "#/properties/patient_ID/pattern [message: should match pattern \"TCGA-[A-Z0-9]{2}-[A-Z0-9]{4}-[0-9]{2}\"]; Number of Violation: ": 2
         }
     },
     {

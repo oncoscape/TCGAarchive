@@ -106,7 +106,7 @@ var diseaseCollectionSchema = {
 
 jsonfile.readFile('../schema.json').then(function(err, obj){schemas = obj;});
 
-jsonfile.readFile('../datasourceTesting/ajv_v2.json').then(function(err, obj){ajvMsg = obj;});
+jsonfile.readFile('../datasourceTesting/ajv_tcga_v2_10182016.json').then(function(err, obj){ajvMsg = obj;});
 
 Array.prototype.findCollectionsByDisease = function(d){
   var arr = [];
@@ -188,7 +188,7 @@ connection.once('open', function(){
             }
           }     
     }); 
-
+    
     disease_arr.forEach(function(d){
       var ptIDs = [];
       if(('clinical' in d)&&('patient' in d['clinical'])){
@@ -204,8 +204,8 @@ connection.once('open', function(){
     Object.keys(ptList).forEach(function(k){
        ptList[k] = u.uniq(ptList[k]);
     });
-
-    jsonfile.writeFile('ptList.json', ptList, {spaces:4}, function(err){console.log(err);});
+    
+    jsonfile.writeFile('ptList.json', ptList, {spaces:4});
     /* it's worthwhile to check the entire ajvMsg's collections on patientIDs
         add the disease-specific patientIDs to the schema and re-run ajvMsg
      */
@@ -230,7 +230,7 @@ connection.once('open', function(){
             render_pt_arr.push(item['name']);
           }
     });
-
+    
     var general = {
       'lookupDataSource': "Exists✔️😃",
       'lookupTools': "Exists✔️😃",
@@ -273,7 +273,6 @@ connection.once('open', function(){
     });
 
 
-
     diseases.forEach(function(err, index){
       elem = {};
       elem['disease'] = diseases[index];
@@ -311,7 +310,7 @@ connection.once('open', function(){
       
       report_arr.push(elem);
     });
-    // jsonfile.writeFile("testReports/report_arr.json", report_arr, {spaces: 4}, function(err){ console.error(err);});  
+    jsonfile.writeFile("report_arr.json", report_arr, {spaces: 4});  
     // mongoose.connection.close();
    
 });
