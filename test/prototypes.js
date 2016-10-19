@@ -19,6 +19,26 @@ Array.prototype.arraysCompare = function(ref) {
     return elem;
 };
 
+Array.prototype.arraysCompareV2 = function(ref) {
+    var elem = {};
+    elem.overlapCount = 0;
+    elem.itemsNotInRef = [];
+    elem.refItemsNotInSelf = [];
+    for(var i = 0; i < this.length; i++) {
+        if(ref.indexOf(this[i]) > -1){
+          elem.countInRef++;
+        }else{
+          elem.itemsNotInRef.push(this[i]);
+        }
+    }
+    for(var j = 0; j < ref.length; j++){
+        if(this.indexOf(ref[j]) == -1){
+          elem.refItemsNotInSelf.push(ref[j]);
+        }
+    }
+    return elem;
+};
+
 Array.prototype.unique = function() {
     var arr = [];
     for(var i = 0; i < this.length; i++) {

@@ -5,12 +5,16 @@
             - re-organize the error messages 
             - calculate the passed percentage at collection level
 */
-var jsonfile = require("jsonfile");
-var ajvMsg = [];
 
-jsonfile.readFile("ajv_tcga.json", function(err, obj) {
-  ajvMsg = obj;
-});
+var jsonfile = require("jsonfile-promised");
+var ajvMsg;
+
+Array.prototype.contains = function(v) {
+    for(var i = 0; i < this.length; i++) {
+        if(this[i] === v) return true;
+    }
+    return false;
+};
 
 Array.prototype.unique = function() {
         var arr = [];
@@ -22,40 +26,43 @@ Array.prototype.unique = function() {
         return arr; 
     };
 
-Array.prototype.table = function(uniqueArray) {
-    var elem = {};
-    uniqueArray.forEach(function(u){
-        elem[u] = 0;
-    });
-    for(var i = 0; i < this.length; i++){
-        if(uniqueArray.indexOf(this[i]['errorType']) > -1){
-            elem[this[i]['errorType']]++;
-        }
-    }
-    return elem;
 
-};
 
-Object.prototype.nestedUnique = function(){
+Object.prototype.nestedUniqueCount = function(){
+    var errorCount = {};
     var ar = [];
+    var str;
     this['errors'].forEach(function(a){
-        ar.push(a['errorType']);
+        a.errorType.forEach(function(e){
+          str = e.schemaPath + " [message: "+ e.message + "]; Number of Violation: ";  
+          if(ar.contains(str)){
+            errorCount[str]++;
+          }else{
+            ar.push(str);
+            errorCount[str]=1;
+          }
+        });
     });
-    return ar.unique();
+    //return ar.unique();
+    return errorCount;
 };
 
-console.log(ajvMsg.length);
-
-ajvMsg_v2 = ajvMsg.map(function(a){
-    var elem = {};
-    elem.collection = a.collection;
-    elem.type = a.type;
-    elem.disease = a.disease;
-    elem.passedCounts = a.passedCounts;
-    elem.totalCounts = a.totalCounts;
-    elem.passedRate = a.passedCounts/a.totalCounts;
-    elem.errorMessage = a.errors.table(a.nestedUnique());
-    return elem;
+jsonfile.readFile("ajv_tcga_10182016.json").then(function(obj){
+    ajvMsg = obj;
+}).then(function(){
+    ajvMsg_v2 = ajvMsg.map(function(a){
+        var elem = {};
+        elem.collection = a.collection;
+        elem.type = a.type;
+        elem.disease = a.disease;
+        elem.passedCounts = a.passedCounts;
+        elem.totalCounts = a.totalCounts;
+        elem.passedRate = a.passedCounts/a.totalCounts;
+        elem.errorMessage = a.nestedUniqueCount();
+        //elem.errorMessage = a.errors.tableV2(a.nestedUnique());
+        return elem;
+    });
+}).then(function(){
+    jsonfile.writeFile('ajv_tcga_v2_10182016.json', ajvMsg_v2, {spaces:4});
 });
 
-jsonfile.writeFile('ajv_tcga_v2.json', ajvMsg_v2, {spaces:4}, function(err){console.log(err);});

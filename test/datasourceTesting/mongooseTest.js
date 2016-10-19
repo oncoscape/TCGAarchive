@@ -8,13 +8,11 @@ Purposes
           and run schemas.json ajv validation on each collection 
           error message at the document level will be reported
 */
-var jsonfile = require("jsonfile");
+var jsonfile = require("jsonfile-promised");
 var assert = require('assert');
 var Ajv = require('ajv');
 var ajv = new Ajv({allErrors: true});
-var forEach = require('async-foreach').forEach;
 var asyncLoop = require('node-async-loop');
-var async = require('async');
 var ajvMsg = [];
 var collection;
 var collections = [];
@@ -35,16 +33,12 @@ var categoried_collection_length;
 var category_index;
 var elem = {};
 
-jsonfile.readFile("../collection_counts.json", function(err, obj) {
-  collections = obj;
-});
-
-jsonfile.readFile("../schemas.json", function(err, obj) {
-  schemas = obj;
+jsonfile.readFile("../collection_counts.json").then(function(res){collections = res;});
+jsonfile.readFile("../schemas.json").then(function(res){
+  schemas = res;
   dataType = Object.keys(schemas);
   dataType_length = dataType.length;
 });
-
 
 Array.prototype.findCollectionsByType = function(v){
   var arr = [];
@@ -84,6 +78,7 @@ connection.once('open', function(){
 
       var processNextTable = function(){
         var tableName = categoried_collections[category_index];
+        console.log(tableName);
         console.log("test" , col_count++);
         var collection = db.collection(tableName);
         var cursor = collection.find();
@@ -98,7 +93,13 @@ connection.once('open', function(){
             var valid = ajv.validate(schemas[t], item);
             if(!valid){
               var e = {};
-              e.errorType = ajv.errors[0].schemaPath; 
+             //e.errorType = ajv.errors[0].schemaPath; 
+              console.log("&&&&&&&&&&&&&&&&&&&&&&&&&&");
+              console.log(ajv.errors);
+              console.log("&&&&&&&&&");
+              console.log(item);
+              console.log("*********");
+              e.errorType = ajv.errors; 
               error_elem.push(e);
             }
             else{
@@ -134,7 +135,7 @@ connection.once('open', function(){
             console.error('Error: ' + err.message);
             return;
         }
-     
+        jsonfile.writeFile("ajv_tcga_10182016.json", ajvMsg, {spaces: 4}); 
         console.log('Finished!');
     });
 

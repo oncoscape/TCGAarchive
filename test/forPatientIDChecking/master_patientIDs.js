@@ -1,3 +1,150 @@
+Array.prototype.contains = function(v) {
+    for(var i = 0; i < this.length; i++) {
+        if(this[i] === v) return true;
+    }
+    return false;
+};
+
+Array.prototype.arraysCompare = function(ref) {
+    var elem = {};
+    elem.countInRef = 0;
+    elem.itemsNotInRef = [];
+    for(var i = 0; i < this.length; i++) {
+        if(ref.indexOf(this[i]) > -1){
+          elem.countInRef++;
+        }else{
+          elem.itemsNotInRef.push(this[i]);
+        }
+    }
+    return elem;
+};
+
+Array.prototype.arraysCompareV2 = function(ref) {
+    var elem = {};
+    elem.overlapCount = 0;
+    elem.itemsNotInRef = [];
+    elem.refItemsNotInSelf = [];
+    for(var i = 0; i < this.length; i++) {
+        if(ref.indexOf(this[i]) > -1){
+          elem.countInRef++;
+        }else{
+          elem.itemsNotInRef.push(this[i]);
+        }
+    }
+    for(var j = 0; j < ref.length; j++){
+        if(this.indexOf(ref[j]) == -1){
+          elem.refItemsNotInSelf.push(ref[j]);
+        }
+    }
+    return elem;
+};
+
+Array.prototype.unique = function() {
+    var arr = [];
+    for(var i = 0; i < this.length; i++) {
+        if(arr.indexOf(this[i]) === -1) {
+            arr.push(this[i]);
+        }
+    }
+    return arr; 
+};
+
+Array.prototype.findTypeByCollection = function(v){
+  for(var i = 0; i < this.length; i++) {
+    if(this[i].collection === v){
+      //console.log(this[i].collection);
+      //return this[i].dataType;
+      return this[i].dataType;
+    } 
+  }
+  return false;
+};
+
+Array.prototype.findCollectionsByDisease = function(d){
+  var arr = [];
+  for(var i = 0; i < this.length; i++) {
+    if(this[i].disease === d){
+      arr.push(this[i]);
+    } 
+  }
+  return arr;
+};
+
+Array.prototype.findScoreByDiseaseByType = function(t, d) {
+  var passedRateArray = [];
+  this.forEach(function(a){
+    if(a.type==t && a.disease==d) 
+      passedRateArray.push(a.passedRate);
+  });
+  return passedRateArray;
+};
+
+Array.prototype.findCollectionsByType = function(v){
+  var arr = [];
+  for(var i = 0; i < this.length; i++) {
+    if(this[i].type === v){
+      arr.push(this[i].collection);
+    } 
+  }
+  return arr;
+};
+
+Array.prototype.findObjsByType = function(v){
+  var arr = [];
+  for(var i = 0; i < this.length; i++) {
+    if(this[i].type === v){
+      arr.push(this[i]);
+    } 
+  }
+  return arr;
+};
+
+Array.prototype.table = function(uniqueArray) {
+    var elem = {};
+    uniqueArray.forEach(function(u){
+        elem[u] = 0;
+    });
+    for(var i = 0; i < this.length; i++){
+        if(uniqueArray.indexOf(this[i]['errorType']) > -1){
+            elem[this[i]['errorType']]++;
+        }
+    }
+    return elem;
+
+};
+
+Object.prototype.nestedUnique = function(){
+    var ar = [];
+    this['errors'].forEach(function(a){
+        ar.push(a['errorType']);
+    });
+    return ar.unique();
+};
+
+var format = {
+  h1: function(text) { console.log(); console.log('# '+text); },
+  h2: function(text) { console.log(); console.log('## '+text); },
+  h3: function(text) { console.log(); console.log('### '+text); },
+  h4: function(text) { console.log(); console.log('#### '+text); },
+  textbold: function(text) { console.log(); console.log(); console.log('**'+ text+'**'); },
+  textlist: function(text){ console.log(); console.log('- '+ text);  },
+  textsublist: function(text){ console.log('  * '+ text);  },
+  text: function(text){ console.log(); console.log(text);  },
+  url: function(text) {console.log(); console.log('`' + text + '`'); console.log();},
+  codeStart: function() { console.log(); console.log('```'); },
+  codeComment: function(text) {console.log(); console.log('> ' + text); console.log(); },
+  codeStop: function() {console.log('```');  console.log(); },
+  code: function(text) { console.log('"'+ text + '"'); },
+  jsonfy: function(text) { console.log('{' + text + '}');},
+  codeRStart: function(text) {  console.log(); console.log("```r");},
+  codeMongoStart: function(text) {  console.log(); console.log("```shell"); },
+  codeJSStart: function(text) {  console.log(); console.log("```javascript"); },
+  codePyStart: function(text) {  console.log(); console.log("```python"); },
+  codeJSONStart: function(text) {  console.log(); console.log("```json"); },
+  table: function(text){ console.log(text);  }
+};
+
+
 /*
 This is the code to generate a master patient ID table from each disease's collections other than clinical collections.
 requires: mongoose
@@ -8,28 +155,28 @@ Purposes
           and run schemas.json ajv validation on each collection
           error message at the document level will be reported
 */
-var jsonfile = require("jsonfile");
+var jsonfile = require("jsonfile-promised");
 var asyncLoop = require('node-async-loop');
 const mongoose = require("mongoose");
  
-var ajvMsg, collection, schemas, ptList;
+var ajvMsg, collection, schemas, ptList, diseases,ajvMsg_length;
  
-jsonfile.readFile("tcga/ptList.json", function(err, obj){
+jsonfile.readFile("../datasourceTesting/ptList.json").then(function(obj){
   ptList = obj;
 });
- 
- 
-jsonfile.readFile("tcga/ajv_1012_v2.json", function(err, obj) {
+
+
+jsonfile.readFile("../datasourceTesting/ajv_tcga_v2.json").then(function(obj){
   ajvMsg = obj;
+  diseases = ajvMsg.map(function(a){return a.disease;});
+  diseases = diseases.unique();
+  ajvMsg_length = ajvMsg.length;
 });
- 
-jsonfile.readFile("schemas.json", function(err, obj) {
+
+jsonfile.readFile("../schemas.json").then(function(obj){
   schemas = obj;
 });
- 
-var diseases = ajvMsg.map(function(a){return a.disease;});
-diseases = diseases.unique();
- 
+
 mongoose.connect(
     'mongodb://oncoscape-dev-db1.sttrcancer.io:27017,oncoscape-dev-db2.sttrcancer.io:27017,oncoscape-dev-db3.sttrcancer.io:27017/tcga?authSource=admin', {
         db: {
@@ -54,53 +201,117 @@ var status = [];
 //connection.once('open', function(){
     var db = connection.db;
     var index = 0;
-    var ajvMsg_length = ajvMsg.length;
     /* This section theoretically runs throughout the entire DB, but will cause memory leak
      */
+    
     asyncLoop(ajvMsg, function(d, next){  
-      console.log("*************", d.collection);
 
       // var disease_ajvMsg = ajvMsg.findCollectionsByDisease(d); 
       // var ajvMsg_length = disease_ajvMsg.length; 
       // var index = 0;
       
-      var obtainPtIDs = function(){
+      var obtainPtIDs = function(d){
         // var tableName = disease_ajvMsg[index].collection;
         // var t = disease_ajvMsg[index].type;
-        var tableName = d.collection;
-        var t = d.type;
-        var collection = db.collection(tableName);
-        var cursor = collection.find();
-        var elem = d;
-        elem.ptIDs = [];
-        var count = 0;
-        
-  
-        if(["patient", "drug", "newTumor", "otherMalignancy", "radiation", "followUp", "newTumor-followUp"].indexOf(t) > -1){
-          console.log("within clinical");
-          console.log(count++);
-  
-          collection.distinct('patient_ID').then(function(ids){
-          	console.log(ids);
-          	elem.ptIDs = elem.ptIDs.concat(ids).unique();
-          }).then(function(){
-          	status.push(elem);
-          	next();
-          });
-        }
-        else{
-          console.log("&&&& THIS TYPE IS NOT INCLUDES: ", t);
+        return new Promise(function(resolve, reject){
+          var tableName = d.collection;
+          var t = d.type;
+          var collection = db.collection(tableName);
+          var cursor = collection.find();
+          var elem = d;
+          elem.ptIDs = [];
+          var count = 0;
+          console.log("text1");
+          if(["mut", "mut01", "methylation", "rna", "protein", "cnv"].indexOf(t) > -1){
+            //console.log('within molecular');
+            cursor.each(function(err, item){
+              if(item != null){
+                elem.ptIDs = elem.ptIDs.concat(Object.keys(item.patients)).unique();
+              }else{
+                //return elem;
+                //resolve(elem);
+              }
+            });
+          }else if(t == "color"){
+              //console.log('within color');
+              console.log("text2");
+              cursor.each(function(err, item){
+                if(item != null){
+                  item.data.forEach(function(e){
+                    elem.ptIDs = elem.ptIDs.concat(e.values).unique();
+                  });
+                }else{
+                  //return elem;
+                  //resolve(elem);
+                }
+              });
+          }else if(t == "events"){
+            //console.log("within events");
+            cursor.each(function(err, item){
+              if(item != null){
+                elem.ptIDs = elem.ptIDs.concat(Object.keys(item)).unique();
+              }else{
+                //return elem;
+                //resolve(elem);
+              }
+            });
+          }else if(["patient", "drug", "newTumor", "otherMalignancy", "radiation", "followUp", "newTumor-followUp"].indexOf(t) > -1){
+            //console.log("within clinical");
+            collection.distinct('patient_ID').then(function(ids){
+              elem.ptIDs = elem.ptIDs.concat(ids).unique();
+              //next();
+              //return elem;
+              //resolve(elem);
+            });
+          }else if(["pcaScores", "mds"].indexOf(t) > -1){
+            //console.log("within pcaScores or mds");
+            cursor.each(function(err, item){
+             if(item != null){
+                elem.ptIDs = elem.ptIDs.concat(Object.keys(item.data)).unique();
+              }else{
+                //return elem;
+                //resolve(elem);
+              }
+            }); 
+          }else if(t == "edges"){
+            //console.log("within edges");
+            collection.distinct('p').then(function(ids){
+              elem.ptIDs = elem.ptIDs.concat(ids).unique();
+              //return elem;
+              //resolve(elem);
+            }); 
+          }else if(t == "ptDegree"){
+            //console.log("within ptDegree");
+            cursor.each(function(err, item){
+              if(item != null){
+                elem.ptIDs.push(Object.keys(item)[1]);
+              }else{
+                elem.ptIDs.unique();
+                //return elem;
+                //resolve(elem);
+              }
+            });
+          }else{
+          //console.log("&&&& THIS TYPE IS NOT INCLUDES: ", t);
           index += 1;
-          next();
-        }
-        
-        status.push(elem);
+          //return elem;
+          //resolve(elem);
+          }
+        });
+        //return elem;
+        // status.push(elem);
+        resolve(elem);
       };
-      // Call obtainPtIDs recursively
-      if(ptList[d.disease] != 0){
-        obtainPtIDs();
-      }else{
-        next();
+
+
+      if(index < ajvMsg_length){
+        console.log("text3");
+        obtainPtIDs(d).then(function(res){
+          console.log(res);
+          index++;
+          next();
+        });
+        
       }
     }, function (err)
     {
@@ -113,7 +324,6 @@ var status = [];
         console.log('Finished!');
     });
    
-});
  
  
  
