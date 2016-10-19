@@ -1,0 +1,139 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   'node-jsonfile-promised',
+1 verbose cli   '--save' ]
+2 info using npm@2.15.0
+3 info using node@v4.4.2
+4 verbose install initial load of /Users/zhangj4/Desktop/canaantt_git/TCGAarchive-master/TCGAarchive/test/package.json
+5 verbose installManyTop reading scoped package data from /Users/zhangj4/Desktop/canaantt_git/TCGAarchive-master/TCGAarchive/test/node_modules/ajv/package.json
+6 verbose installManyTop reading scoped package data from /Users/zhangj4/Desktop/canaantt_git/TCGAarchive-master/TCGAarchive/test/node_modules/assert/package.json
+7 verbose installManyTop reading scoped package data from /Users/zhangj4/Desktop/canaantt_git/TCGAarchive-master/TCGAarchive/test/node_modules/babel-core/package.json
+8 verbose installManyTop reading scoped package data from /Users/zhangj4/Desktop/canaantt_git/TCGAarchive-master/TCGAarchive/test/node_modules/babel-preset-es2015/package.json
+9 verbose installManyTop reading scoped package data from /Users/zhangj4/Desktop/canaantt_git/TCGAarchive-master/TCGAarchive/test/node_modules/babel-register/package.json
+10 verbose installManyTop reading scoped package data from /Users/zhangj4/Desktop/canaantt_git/TCGAarchive-master/TCGAarchive/test/node_modules/bluebird/package.json
+11 verbose installManyTop reading scoped package data from /Users/zhangj4/Desktop/canaantt_git/TCGAarchive-master/TCGAarchive/test/node_modules/browser-sync/package.json
+12 verbose installManyTop reading scoped package data from /Users/zhangj4/Desktop/canaantt_git/TCGAarchive-master/TCGAarchive/test/node_modules/bson/package.json
+13 verbose installManyTop reading scoped package data from /Users/zhangj4/Desktop/canaantt_git/TCGAarchive-master/TCGAarchive/test/node_modules/co/package.json
+14 verbose installManyTop reading scoped package data from /Users/zhangj4/Desktop/canaantt_git/TCGAarchive-master/TCGAarchive/test/node_modules/co-mongo/package.json
+15 verbose installManyTop reading scoped package data from /Users/zhangj4/Desktop/canaantt_git/TCGAarchive-master/TCGAarchive/test/node_modules/co-mongodb/package.json
+16 verbose installManyTop reading scoped package data from /Users/zhangj4/Desktop/canaantt_git/TCGAarchive-master/TCGAarchive/test/node_modules/del/package.json
+17 verbose installManyTop reading scoped package data from /Users/zhangj4/Desktop/canaantt_git/TCGAarchive-master/TCGAarchive/test/node_modules/express/package.json
+18 verbose installManyTop reading scoped package data from /Users/zhangj4/Desktop/canaantt_git/TCGAarchive-master/TCGAarchive/test/node_modules/fs/package.json
+19 verbose installManyTop reading scoped package data from /Users/zhangj4/Desktop/canaantt_git/TCGAarchive-master/TCGAarchive/test/node_modules/graceful-fs/package.json
+20 verbose installManyTop reading scoped package data from /Users/zhangj4/Desktop/canaantt_git/TCGAarchive-master/TCGAarchive/test/node_modules/gulp/package.json
+21 verbose installManyTop reading scoped package data from /Users/zhangj4/Desktop/canaantt_git/TCGAarchive-master/TCGAarchive/test/node_modules/gulp-autoprefixer/package.json
+22 verbose installManyTop reading scoped package data from /Users/zhangj4/Desktop/canaantt_git/TCGAarchive-master/TCGAarchive/test/node_modules/gulp-babel/package.json
+23 verbose installManyTop reading scoped package data from /Users/zhangj4/Desktop/canaantt_git/TCGAarchive-master/TCGAarchive/test/node_modules/gulp-cache/package.json
+24 verbose installManyTop reading scoped package data from /Users/zhangj4/Desktop/canaantt_git/TCGAarchive-master/TCGAarchive/test/node_modules/gulp-cssnano/package.json
+25 verbose installManyTop reading scoped package data from /Users/zhangj4/Desktop/canaantt_git/TCGAarchive-master/TCGAarchive/test/node_modules/gulp-eslint/package.json
+26 verbose installManyTop reading scoped package data from /Users/zhangj4/Desktop/canaantt_git/TCGAarchive-master/TCGAarchive/test/node_modules/gulp-htmlmin/package.json
+27 verbose installManyTop reading scoped package data from /Users/zhangj4/Desktop/canaantt_git/TCGAarchive-master/TCGAarchive/test/node_modules/gulp-htmlparser/package.json
+28 verbose installManyTop reading scoped package data from /Users/zhangj4/Desktop/canaantt_git/TCGAarchive-master/TCGAarchive/test/node_modules/gulp-if/package.json
+29 verbose installManyTop reading scoped package data from /Users/zhangj4/Desktop/canaantt_git/TCGAarchive-master/TCGAarchive/test/node_modules/gulp-imagemin/package.json
+30 verbose installManyTop reading scoped package data from /Users/zhangj4/Desktop/canaantt_git/TCGAarchive-master/TCGAarchive/test/node_modules/gulp-load-plugins/package.json
+31 verbose installManyTop reading scoped package data from /Users/zhangj4/Desktop/canaantt_git/TCGAarchive-master/TCGAarchive/test/node_modules/gulp-plumber/package.json
+32 verbose installManyTop reading scoped package data from /Users/zhangj4/Desktop/canaantt_git/TCGAarchive-master/TCGAarchive/test/node_modules/gulp-size/package.json
+33 verbose installManyTop reading scoped package data from /Users/zhangj4/Desktop/canaantt_git/TCGAarchive-master/TCGAarchive/test/node_modules/gulp-sourcemaps/package.json
+34 verbose installManyTop reading scoped package data from /Users/zhangj4/Desktop/canaantt_git/TCGAarchive-master/TCGAarchive/test/node_modules/gulp-uglify/package.json
+35 verbose installManyTop reading scoped package data from /Users/zhangj4/Desktop/canaantt_git/TCGAarchive-master/TCGAarchive/test/node_modules/gulp-useref/package.json
+36 verbose installManyTop reading scoped package data from /Users/zhangj4/Desktop/canaantt_git/TCGAarchive-master/TCGAarchive/test/node_modules/jsonfile/package.json
+37 verbose installManyTop reading scoped package data from /Users/zhangj4/Desktop/canaantt_git/TCGAarchive-master/TCGAarchive/test/node_modules/main-bower-files/package.json
+38 verbose installManyTop reading scoped package data from /Users/zhangj4/Desktop/canaantt_git/TCGAarchive-master/TCGAarchive/test/node_modules/mongodb/package.json
+39 verbose installManyTop reading scoped package data from /Users/zhangj4/Desktop/canaantt_git/TCGAarchive-master/TCGAarchive/test/node_modules/mongodb-proxy/package.json
+40 verbose installManyTop reading scoped package data from /Users/zhangj4/Desktop/canaantt_git/TCGAarchive-master/TCGAarchive/test/node_modules/mongoose/package.json
+41 verbose installManyTop reading scoped package data from /Users/zhangj4/Desktop/canaantt_git/TCGAarchive-master/TCGAarchive/test/node_modules/mpromise/package.json
+42 verbose installManyTop reading scoped package data from /Users/zhangj4/Desktop/canaantt_git/TCGAarchive-master/TCGAarchive/test/node_modules/node-async-loop/package.json
+43 verbose installManyTop reading scoped package data from /Users/zhangj4/Desktop/canaantt_git/TCGAarchive-master/TCGAarchive/test/node_modules/readdir-scoped-modules/package.json
+44 verbose installManyTop reading scoped package data from /Users/zhangj4/Desktop/canaantt_git/TCGAarchive-master/TCGAarchive/test/node_modules/wiredep/package.json
+45 info package.json fs@0.0.2 fs is also the name of a node core module.
+46 info package.json fs@0.0.2 No description
+47 info package.json fs@0.0.2 No repository field.
+48 info package.json assert@1.4.1 assert is also the name of a node core module.
+49 info package.json wiredep@2.2.2 No license field.
+50 verbose readDependencies loading dependencies from /Users/zhangj4/Desktop/canaantt_git/TCGAarchive-master/TCGAarchive/test/package.json
+51 silly cache add args [ 'node-jsonfile-promised', null ]
+52 verbose cache add spec node-jsonfile-promised
+53 silly cache add parsed spec Result {
+53 silly cache add   raw: 'node-jsonfile-promised',
+53 silly cache add   scope: null,
+53 silly cache add   name: 'node-jsonfile-promised',
+53 silly cache add   rawSpec: '',
+53 silly cache add   spec: 'latest',
+53 silly cache add   type: 'tag' }
+54 silly addNamed node-jsonfile-promised@latest
+55 verbose addNamed "latest" is being treated as a dist-tag for node-jsonfile-promised
+56 info addNameTag [ 'node-jsonfile-promised', 'latest' ]
+57 silly mapToRegistry name node-jsonfile-promised
+58 silly mapToRegistry using default registry
+59 silly mapToRegistry registry https://registry.npmjs.org/
+60 silly mapToRegistry data Result {
+60 silly mapToRegistry   raw: 'node-jsonfile-promised',
+60 silly mapToRegistry   scope: null,
+60 silly mapToRegistry   name: 'node-jsonfile-promised',
+60 silly mapToRegistry   rawSpec: '',
+60 silly mapToRegistry   spec: 'latest',
+60 silly mapToRegistry   type: 'tag' }
+61 silly mapToRegistry uri https://registry.npmjs.org/node-jsonfile-promised
+62 verbose addNameTag registry:https://registry.npmjs.org/node-jsonfile-promised not in flight; fetching
+63 verbose request uri https://registry.npmjs.org/node-jsonfile-promised
+64 verbose request no auth needed
+65 info attempt registry request try #1 at 4:13:02 PM
+66 verbose request id 07eae5f2b4f58e03
+67 http request GET https://registry.npmjs.org/node-jsonfile-promised
+68 http 404 https://registry.npmjs.org/node-jsonfile-promised
+69 verbose headers { 'content-type': 'application/json',
+69 verbose headers   'cache-control': 'max-age=0',
+69 verbose headers   'content-length': '2',
+69 verbose headers   'accept-ranges': 'bytes',
+69 verbose headers   date: 'Tue, 18 Oct 2016 23:13:02 GMT',
+69 verbose headers   via: '1.1 varnish',
+69 verbose headers   age: '0',
+69 verbose headers   connection: 'keep-alive',
+69 verbose headers   'x-served-by': 'cache-sea1927-SEA',
+69 verbose headers   'x-cache': 'MISS',
+69 verbose headers   'x-cache-hits': '0',
+69 verbose headers   'x-timer': 'S1476832382.587710,VS0,VE83',
+69 verbose headers   vary: 'Accept-Encoding' }
+70 silly get cb [ 404,
+70 silly get   { 'content-type': 'application/json',
+70 silly get     'cache-control': 'max-age=0',
+70 silly get     'content-length': '2',
+70 silly get     'accept-ranges': 'bytes',
+70 silly get     date: 'Tue, 18 Oct 2016 23:13:02 GMT',
+70 silly get     via: '1.1 varnish',
+70 silly get     age: '0',
+70 silly get     connection: 'keep-alive',
+70 silly get     'x-served-by': 'cache-sea1927-SEA',
+70 silly get     'x-cache': 'MISS',
+70 silly get     'x-cache-hits': '0',
+70 silly get     'x-timer': 'S1476832382.587710,VS0,VE83',
+70 silly get     vary: 'Accept-Encoding' } ]
+71 verbose stack Error: Registry returned 404 for GET on https://registry.npmjs.org/node-jsonfile-promised
+71 verbose stack     at makeError (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:264:12)
+71 verbose stack     at CachingRegistryClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:242:14)
+71 verbose stack     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:172:14)
+71 verbose stack     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:199:22)
+71 verbose stack     at emitTwo (events.js:87:13)
+71 verbose stack     at Request.emit (events.js:172:7)
+71 verbose stack     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1036:10)
+71 verbose stack     at emitOne (events.js:82:20)
+71 verbose stack     at Request.emit (events.js:169:7)
+71 verbose stack     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:963:12)
+72 verbose statusCode 404
+73 verbose pkgid node-jsonfile-promised
+74 verbose cwd /Users/zhangj4/Desktop/canaantt_git/TCGAarchive-master/TCGAarchive/test/forPatientIDChecking
+75 error Darwin 16.0.0
+76 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "install" "node-jsonfile-promised" "--save"
+77 error node v4.4.2
+78 error npm  v2.15.0
+79 error code E404
+80 error 404 Registry returned 404 for GET on https://registry.npmjs.org/node-jsonfile-promised
+80 error 404
+80 error 404 'node-jsonfile-promised' is not in the npm registry.
+80 error 404 You should bug the author to publish it (or use the name yourself!)
+80 error 404
+80 error 404 Note that you can also install from a
+80 error 404 tarball, folder, http url, or git url.
+81 verbose exit [ 1, true ]

@@ -5,12 +5,10 @@
             - re-organize the error messages 
             - calculate the passed percentage at collection level
 */
-var jsonfile = require("jsonfile");
-var ajvMsg = [];
+var jsonfile = require("jsonfile-promised");
+var ajvMsg;
 
-jsonfile.readFile("ajv_tcga.json", function(err, obj) {
-  ajvMsg = obj;
-});
+jsonfile.readFile("ajv_tcga.json").then(function(obj){ajvMsg = obj;});
 
 Array.prototype.unique = function() {
         var arr = [];
@@ -58,4 +56,4 @@ ajvMsg_v2 = ajvMsg.map(function(a){
     return elem;
 });
 
-jsonfile.writeFile('ajv_tcga_v2.json', ajvMsg_v2, {spaces:4}, function(err){console.log(err);});
+jsonfile.writeFile('ajv_tcga_v2.json', ajvMsg_v2, {spaces:4});

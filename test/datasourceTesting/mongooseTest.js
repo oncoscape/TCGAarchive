@@ -8,7 +8,7 @@ Purposes
           and run schemas.json ajv validation on each collection 
           error message at the document level will be reported
 */
-var jsonfile = require("jsonfile");
+var jsonfile = require("jsonfile-promised");
 var assert = require('assert');
 var Ajv = require('ajv');
 var ajv = new Ajv({allErrors: true});
@@ -33,16 +33,12 @@ var categoried_collection_length;
 var category_index;
 var elem = {};
 
-jsonfile.readFile("../collection_counts.json", function(err, obj) {
-  collections = obj;
-});
-
-jsonfile.readFile("../schemas.json", function(err, obj) {
-  schemas = obj;
+jsonfile.readFile("../collection_counts.json").then(function(res){collections = res;});
+jsonfile.readFile("../schemas.json").then(function(res){
+  schemas = res;
   dataType = Object.keys(schemas);
   dataType_length = dataType.length;
 });
-
 
 Array.prototype.findCollectionsByType = function(v){
   var arr = [];
@@ -139,7 +135,7 @@ connection.once('open', function(){
             console.error('Error: ' + err.message);
             return;
         }
-        jsonfile.writeFile("ajv_tcga_10182016.json", ajvMsg, {spaces: 4}, function(err){ console.error(err);}); 
+        jsonfile.writeFile("ajv_tcga_10182016.json", ajvMsg, {spaces: 4}); 
         console.log('Finished!');
     });
 
