@@ -217,15 +217,10 @@ connection.once('open', function(){
     var general = {
       'lookupDataSource': "Exists✔️😃",
       'lookupTools': "Exists✔️😃"
-      // ,
-      // 'render_chromosome': "Exists✔️😃 Can run M+P✔️😃",
-      // 'render_patient': "Exists✔️😃 Can run M+P✔️😃",
-      // 'render_pca': "Exists✔️😃 Can run PCA✔️😃",
-      // 'render_pathways': "Exists✔️😃 Can run Pathways✔️😃"
     };
 
     connection.db.listCollections().toArray().then(function(collections){
-          all_collections = collections.map(function(c){return c.name;});
+        all_collections = collections.map(function(c){return c.name;});
      
         if(all_collections.indexOf("lookup_oncoscape_datasources") == -1){
           console.log("lookup_oncoscape_datasources DOES NOT exist❌");
@@ -237,18 +232,6 @@ connection.once('open', function(){
           console.log("lookup_oncoscape_tools DOES NOT exist❌");
           general['lookupTools'] = "DOES NOT exist";
         }
-        // if(all_collections.indexOf("render_chromosome") == -1){
-        //   console.log("render_chromosome DOES NOT exist❌ M+P cannot run.");
-        //   general['render_chromosome'] = "DOES NOT exist. CANNOT run M+P❌";
-        // }
-        // if(all_collections.indexOf("render_patient") == -1){
-        //   console.log("render_patient DOES NOT exist❌ M+P cannot run.");
-        //   general['render_patient'] = "DOES NOT exist. CANNOT run M+P❌";
-        // }
-        // if(all_collections.indexOf("render_pathways") == -1){
-        //   console.log("render_pathways DOES NOT exist❌ PCA cannot run.");
-        //   general['render_pathways'] = "DOES NOT exist. CANNOT run Pathways❌";
-        // }
     });
 
 
