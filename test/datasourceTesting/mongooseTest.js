@@ -93,7 +93,7 @@ connection.once('open', function(){
             var valid = ajv.validate(schemas[t], item);
             if(!valid){
               var e = {};
-              //e.errorType = ajv.errors[0].schemaPath; 
+             //e.errorType = ajv.errors[0].schemaPath; 
               console.log("&&&&&&&&&&&&&&&&&&&&&&&&&&");
               console.log(ajv.errors);
               console.log("&&&&&&&&&");

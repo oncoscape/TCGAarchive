@@ -44,6 +44,7 @@
     "mut01":{
         "properties":{
             "gene": {"type": "string"},
+
             "min": {"type": ["number", "null"]},
             "max": {"type": ["number", "null"]},
             "patients": {

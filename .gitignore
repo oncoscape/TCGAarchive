@@ -1,6 +1,9 @@
 # Large Data Archive & Output
 data/
 
+.Rhistory
+scripts/slurm-*
+
 # slate
 *.gem
 *.rbc
@@ -26,7 +29,8 @@ build/
 _yardoc
 doc/
 .idea/
-
+ 
+ 
 # data-explorer
 node_modules
 dist

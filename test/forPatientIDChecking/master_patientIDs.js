@@ -205,7 +205,6 @@ var status = [];
      */
     
     asyncLoop(ajvMsg, function(d, next){  
-      //console.log("*************", d.collection);
 
       // var disease_ajvMsg = ajvMsg.findCollectionsByDisease(d); 
       // var ajvMsg_length = disease_ajvMsg.length; 
@@ -325,7 +324,6 @@ var status = [];
         console.log('Finished!');
     });
    
-//});
  
  
  

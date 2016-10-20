@@ -18,7 +18,6 @@ jsonfile.readFile("../datasourceTesting/ptList.json", function(err, obj){
   ptList = obj;
 });
 
-
 jsonfile.readFile("../datasourceTesting/ajv_tcga_v2.json", function(err, obj) {
   ajvMsg = obj;
 });

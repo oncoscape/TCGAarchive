@@ -5,6 +5,7 @@
             - re-organize the error messages 
             - calculate the passed percentage at collection level
 */
+
 var jsonfile = require("jsonfile-promised");
 var ajvMsg;
 
@@ -24,6 +25,7 @@ Array.prototype.unique = function() {
         }
         return arr; 
     };
+
 
 
 Object.prototype.nestedUniqueCount = function(){
@@ -63,6 +65,4 @@ jsonfile.readFile("ajv_tcga_10182016.json").then(function(obj){
 }).then(function(){
     jsonfile.writeFile('ajv_tcga_v2_10182016.json', ajvMsg_v2, {spaces:4});
 });
-
-
 

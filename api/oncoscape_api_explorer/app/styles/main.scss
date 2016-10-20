@@ -1,0 +1,20 @@
+$icon-font-path: '../fonts/';
+
+// bower:scss
+@import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+// endbower
+
+.tray{
+  height:   100vh;
+  background-color: #EEE;
+}
+
+.content{
+  height:   100vh;
+}
+
+.panel-group{
+	width: $("#sideBar").width()
+}
+
+

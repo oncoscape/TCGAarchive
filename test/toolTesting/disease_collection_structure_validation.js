@@ -7,6 +7,7 @@
             - incorperate the datasource quality data into tool validation
 
 */
+
 var jsonfile = require("jsonfile-promised");
 var u = require("underscore");
 var test = {
@@ -188,6 +189,7 @@ connection.once('open', function(){
           }     
     }); 
 
+
     // disease_arr.forEach(function(d){
     //   var ptIDs = [];
     //   if(('clinical' in d)&&('patient' in d['clinical'])){
@@ -205,6 +207,7 @@ connection.once('open', function(){
     // });
 
     //jsonfile.writeFile('ptList.json', ptList, {spaces:4});
+
     /* it's worthwhile to check the entire ajvMsg's collections on patientIDs
         add the disease-specific patientIDs to the schema and re-run ajvMsg
      */
@@ -229,6 +232,7 @@ connection.once('open', function(){
             render_pt_arr.push(item['name']);
           }
     });
+
     connection.db.collection("render_pca").distinct("disease").then(function(obj){render_pca_diseases = obj;});
 
     var general = {
@@ -302,6 +306,7 @@ connection.once('open', function(){
 
       
       elem['Spreadsheet'] = test.spreadsheet.ExecTest(diseases[index], ajvMsg)? "✔️😃" : "❌";
+
       elem['PCA'] = test.pca.ExecTest(diseases[index], render_pca_diseases)? "✔️😃" : "❌";
       elem['Timelines'] = test.timelines.ExecTest(diseases[index], disease_arr)? "✔️😃" : "❌";
       elem['Clusters'] = test.clusters.ExecTest(diseases[index], ajvMsg)? "✔️😃" : "❌";
@@ -310,6 +315,7 @@ connection.once('open', function(){
       
       report_arr.push(elem);
     });
+
     jsonfile.writeFile("report_arr.json", report_arr, {spaces: 4});  
     // mongoose.connection.close();
    

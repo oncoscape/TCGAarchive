@@ -1,3 +1,4 @@
+
 Array.prototype.contains = function(v) {
     for(var i = 0; i < this.length; i++) {
         if(this[i] === v) return true;
@@ -156,6 +157,7 @@ jsonfile.readFile("../report/patientIDstatus_rna_10152016.json").then(function(r
 jsonfile.readFile("../report/patientIDstatus_mut_10152016.json").then(function(res){mut_p =res;});
 jsonfile.readFile("../report/patientIDstatus_protein_10152016.json").then(function(res){prot_p =res;});
 jsonfile.readFile("../report/patientIDstatus_woMol_10142016.json").then(function(res){woMol_p =res;});
+
 
 co(function *() {
 
@@ -374,7 +376,6 @@ co(function *() {
 
   // report the earlier version patient ID checking
 
-  
 
   patientID_errors = cnv_p.concat(meth_p, mut01_p, mut_p, rna_p, meth_p, woMol_p);
   jsonfile.writeFile("patientID_errors.json", patientID_errors, {spaces:4});
