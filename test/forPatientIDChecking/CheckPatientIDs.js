@@ -9,20 +9,20 @@ Purposes
           and run schemas.json ajv validation on each collection 
           error message at the document level will be reported
 */
-var jsonfile = require("jsonfile");
+var jsonfile = require("jsonfile-promised");
 var asyncLoop = require('node-async-loop');
 const mongoose = require("mongoose");
 var ajvMsg, collection, schemas, ptList;
 
-jsonfile.readFile("../datasourceTesting/ptList.json", function(err, obj){
+jsonfile.readFile("../datasourceTesting/ptList.json").then(function(obj){
   ptList = obj;
 });
 
-jsonfile.readFile("../datasourceTesting/ajv_tcga_v2.json", function(err, obj) {
+jsonfile.readFile("../datasourceTesting/ajv_tcga_v2_10182016.json").then(function(obj){
   ajvMsg = obj;
 });
 
-jsonfile.readFile("../schemas.json", function(err, obj) {
+jsonfile.readFile("../schemas.json").then(function(obj){
   schemas = obj;
 });
 
@@ -55,8 +55,8 @@ connection.once('open', function(){
 
     /* this section is to run molecular collection type by type
      */
-    var status_mut01 = [];
-    var ajvMsg_mol = ajvMsg.findObjsByType("mut01");
+    var status_protein = [];
+    var ajvMsg_mol = ajvMsg.findObjsByType("protein");
     asyncLoop(ajvMsg_mol, function(d, next){  
       console.log("*************", d.collection);
 
@@ -79,15 +79,15 @@ connection.once('open', function(){
             if(item != null){
               console.log(count++);
               var evaluation = Object.keys(item.patients).arraysCompare(ptList[d.disease]);
-              if(evaluation.itemsNotInRef.length != 0){
-                  elem.ptIDStatus = elem.ptIDStatus.concat(evaluation.itemsNotInRef).unique();
-              }
+              //if(evaluation.itemsNotInRef.length != 0){
+                  elem.ptIDStatus = elem.ptIDStatus.concat(evaluation).unique();
+              //}
             }else{
               next();
             }
           });
         }
-        status_mut01.push(elem);
+        status_protein.push(elem);
       };
       
       // Call processNextCollection recursively
@@ -106,7 +106,7 @@ connection.once('open', function(){
      
         console.log('One molecular type is Finished!');
     });
-    jsonfile.writeFile("status_mut01_10152016.json", status_mut01, {spaces: 4}, function(err){ console.error(err);}); 
+    jsonfile.writeFile("status_protein_10192016.json", status_protein, {spaces: 4}, function(err){ console.error(err);}); 
 
     /* This section theoretically runs throughout the entire DB, but will cause memory leak
      */
