@@ -26,6 +26,7 @@ This is the code to generate ajv.json, the stage I datasource schema validation
   - Use schema[type] against each document in each colleciton and collect all the possible errors. 
 
 **Here is an example of schema for pcaScores collections:**
+
 ```
 "pcaScores":{
         "properties":{
@@ -137,7 +138,8 @@ firstly check if the required collection(s) exists for tool usage
 
 **Here shows the collection schema describing the brain dataset from observation:**
 
-```var diseaseCollectionSchema = {
+```
+var diseaseCollectionSchema = {
     "properties": {
         "disease": {"type": "string"}, 
         "source" : {"type": "string", "default": "TCGA"}, 
