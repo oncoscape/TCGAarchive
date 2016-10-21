@@ -44,100 +44,143 @@ get.processed.mtx <- function(mtx, dimension){
 # -------------------------------------------------------
 
 ### Load Annotation
-os.data.load.annotation <- function(inputFile){
+os.data.load.annotation <- function(oCollection, inputFile){
   
-  mtx <- matrix();
-  
-    mtx<- read.delim(inputFile, header=F) 
+    mtx<- read.delim(inputFile, header=T) 
 
-    mtx.Data<- get.processed.mtx(mtx, dimension= c("row", "col"))
-    mtx <- mtx.Data$data; 
-    dimnames(mtx) <- list(mtx.Data$rownames, mtx.Data$colnames)
+#    mtx.Data<- get.processed.mtx(mtx, dimension= c( "col"))
+#    mtx <- mtx.Data$data; 
+#    dimnames(mtx) <- list(mtx.Data$rownames, mtx.Data$colnames)
 
-    data.list <- lapply(rownames(mtx), function(idName){
-        list(id=idName, data = mtx[idName,])
-      })
-  return(data.list)
+    insert.collection(oCollection, mtx)
+    
 }
-
 
 # -------------------------------------------------------
 ### Load Function Takes An Import File + Column List & Returns A DataFrame
-os.data.load.molecular <- function(inputFile, type){
+os.data.load.molecular <- function(oCollection, inputFile){
   
   mtx <- matrix();
   
-  if(grepl("\\.RData$",inputFile)){
-    mtx <- get(load(inputFile))
-    if(all(grepl("^TCGA", rownames(mtx)))) { mtx <- t(mtx)}
-    colType <- "patient"; rowType <- "gene"
-    colnames(mtx) <- gsub("\\.", "-", colnames(mtx)); 
-    
-    if(!grepl("\\-\\d\\d$",colnames(mtx))){
-      colnames(mtx) <- paste(colnames(mtx), "01", sep="-")
-    }
-    
-
-    if(type != "mut"){ 
-      rowname <- rownames(mtx)
-      mtx <- apply(mtx, 2, as.numeric)
-      rownames(mtx) <- rowname
-    }
-    
-      data.list <- lapply(rownames(mtx), function(geneName){
-        list(gene=geneName, min=min(mtx[geneName,]), max=max(mtx[geneName,]), patients = as.list(mtx[geneName,]))
-      })
-    
- 
-  } else{ 
+  if(oCollection$dataType == "psi"){
     mtx<- read.delim(inputFile, header=F) 
     #orient mtx so row: gene, col: patient/sample
     if(all(grepl("^TCGA", mtx[-1,1]))) { mtx <- t(mtx)}
-    #colType <- "patient"; rowType <- "gene"
     
     mtx.Data<- get.processed.mtx(mtx, dimension= c("row", "col"))
     mtx <- mtx.Data$data; 
     dimnames(mtx) <- list(mtx.Data$rownames, mtx.Data$colnames)
-    colnames(mtx) <- gsub("\\.", "-", colnames(mtx)); 
     
-    if(!all(grepl("\\-\\d\\d$",colnames(mtx)))){
-      colnames(mtx) <- paste(colnames(mtx), "01", sep="-")
-    }
+    fields = toJSON(list(event=1,HGNC_symbol=1), auto_unbox = T)
+    psi.annotation = mongo("hg19_annotation_bradleylab_exonjunctions", db=db, url=host)$find(fields=fields)
     
-    removers <- which(is.na(rownames(mtx)))
-    if(length(removers >0))
-      mtx <- mtx[-removers,]
-    
-    if(type != "mut"){
-      rowname <- rownames(mtx)
-      mtx <- apply(mtx, 2, as.numeric)
-      rownames(mtx) <- rowname
-    }
-    
-    if(type == "facs"){
-      data.list <- lapply(colnames(mtx), function(ptName){
-        list(patient=ptName, markers = mtx[,ptName])
-      }) 
-    } else{
-      data.list <- lapply(rownames(mtx), function(geneName){
-        list(gene=geneName, min=min(mtx[geneName,]), max=max(mtx[geneName,]), patients = as.list(mtx[geneName,]))
-      })
-    }
+    ids = lapply(rownames(mtx), function(id) c(event=id, gene=psi.annotation[psi.annotation$event==id,"HGNC_symbol"]))
+    names(ids)=rownames(mtx)
+    result = list(ids=ids,data=mtx)
+    insert.collection(oCollection, result)
+    return();
     
   }
-  return(data.list)
+  else if(grepl("\\.RData$",inputFile)){
+    mtx <- get(load(inputFile))
+    if(all(grepl("^TCGA", rownames(mtx)))) { mtx <- t(mtx)}
+    #colType <- "patient"; rowType <- "gene"
+
+  } else if(grepl("\\.maf$",inputFile)){
+    maf<- read.delim(inputFile, header=T)
+    nonsyn.mtx <- subset(maf, Variant_Classification != "Silent")
+    nonsyn.mtx[,"Tumor_Sample_Barcode"] <- gsub("\\w-\\w{3}-\\w{4}-\\w{2}$","",nonsyn.mtx[,"Tumor_Sample_Barcode"])
+    
+    genes.unique <- unique(nonsyn.mtx[,"Hugo_Symbol"])
+    pts.unique <- unique(nonsyn.mtx[,"Tumor_Sample_Barcode"])
+    
+    mtx <- matrix("", nrow=length(genes.unique), ncol=length(pts.unique),
+                  dimnames=list(genes.unique, pts.unique))
+    for(i in 1:nrow(nonsyn.mtx)){
+      gene = nonsyn.mtx[i,"Hugo_Symbol"];
+      pt <- nonsyn.mtx[i,"Tumor_Sample_Barcode"]
+      p.Change = nonsyn.mtx[i,"Protein_Change"]
+      if(mtx[gene,pt] == "") mtx[gene,pt] = p.Change
+      else mtx[gene,pt] = paste(mtx[gene,pt], p.Change, sep=";")
+    }
+    
+  } else if(grepl("^GSE",inputFile)){
+    #readLines: grep(^!, line); save metadata, tab separated key values
+    #!Series_platform_id	"GPL570"
+    #blank line
+    #!Sample_
+    #!Sample_characteristics_ch1 <sample specific descriptors> - may have multiple lines based on characteristic - "Gender:female", "Histology:Synovial sarcoma"
+    #!Sample_title <sample specific descriptors>
+    #!series_matrix_table_begin
+    # rows: probes, cols: GSM samples
+    
+    #skipLines = 0
+    #while(grepl("^!", line = readLines(inputFile))){
+      #skipLines = skipLines +1
+    #}
+    #mtx = read.delim(inputFile, skip=skipLines, header=T, sep="\t")
+    
+    ## Read GPL file
+    #read lines: grep(^#, line); column decriptors, key = value
+    #Gene Symbol = description
+
+        #skipLines = 0
+    #while(grepl("^!", line = readLines(GPLFile))){
+    #skipLines = skipLines +1
+    #}
+    #gpl = read.delim(GPLFile, skip=skipLines, header=T, sep="\t")
+    
+        
+    #ids = lapply(rownames(mtx), function(id) c(probe=id, gene=gpl[id,"Gene.Symbol"]))
+    #names(ids)=rownames(mtx)
+    #result = list(ids=ids,data=mtx)
+    #insert.collection(oCollection, result)
+    
+    #return();
+    
+  }else{ 
+    mtx<- read.delim(inputFile, header=F) 
+    #orient mtx so row: gene, col: patient/sample
+    if(all(grepl("^TCGA", mtx[-1,1]))) { mtx <- t(mtx)}
+
+    mtx.Data<- get.processed.mtx(mtx, dimension= c("row", "col"))
+    mtx <- mtx.Data$data; 
+    dimnames(mtx) <- list(mtx.Data$rownames, mtx.Data$colnames)
+    
+   }
+
+  colnames(mtx) <- gsub("\\.", "-", colnames(mtx)); 
+  if(!all(grepl("\\-\\d\\d$",colnames(mtx)))){
+    colnames(mtx) <- paste(colnames(mtx), "01", sep="-")
+  }
+  
+  removers <- which(is.na(rownames(mtx)))
+  if(length(removers >0))
+    mtx <- mtx[-removers,]
+  
+  
+  if(oCollection$dataType != "mut"){
+    rowname <- rownames(mtx)
+    mtx <- apply(mtx, 2, as.numeric)
+    rownames(mtx) <- rowname
+  }
+  ids = lapply(rownames(mtx), function(id) c(gene=id))
+  names(ids)=rownames(mtx)
+  result = list(ids=ids,data=mtx)
+  insert.collection(oCollection, result)
+  
 }
 
 #---------------------------------------------------------
 ### Load Function Takes An Import File + Column List & Returns A DataFrame
-os.data.load.clinical.events <- function(inputFile){
+os.data.load.clinical.events <- function(oCollection, inputFile){
   
   if(grepl("\\.RData$",inputFile)){
     origList <- get(load(inputFile))
     
     event.list <- lapply(origList, function(event){
       patientID <- gsub("\\.", "-", event$PatientID);  
-      if(!grepl("\\-\\d\\d$",patientID)){
+      if(!any(grepl("\\-\\d\\d$",patientID))){
         patientID <- paste(patientID, "01", sep="-")
       } 
       name <- event$Name
@@ -167,14 +210,15 @@ os.data.load.clinical.events <- function(inputFile){
         eventList[[id]] <- list(event)
       }
     }
-      return(list(eventList))
+    insert.collection(oCollection, list(eventList))
+    #  return(list(eventList))
   }
   else{ print("WARNING: do not know how to translate event list yet")}
   
 }
 
 #---------------------------------------------------------
-os.data.load.clinical <- function(inputFile, checkEnumerations=FALSE, checkClassType = "character"){
+os.data.load.clinical <- function(oCollection, inputFile, checkEnumerations=FALSE, checkClassType = "character"){
   
   # Columns :: Create List From Url
   header <- readLines(inputFile, n=3)
@@ -184,17 +228,17 @@ os.data.load.clinical <- function(inputFile, checkEnumerations=FALSE, checkClass
   unMappedData <- list();
   tcga_columns <- columns
   
-  if(grepl("../archive/clinical/nationwidechildrens.org_clinical_patient_skcm.txt",inputFile)){
+  if(grepl("../data/clinical/nationwidechildrens.org_clinical_patient_skcm.txt",inputFile)){
     columns[match("submitted_tumor_site", columns)] = "skcm_tissue_site"
     columns[match("submitted_tumor_site", columns)] = "skcm_tumor_type"
   }
-  if(grepl("../archive/clinical/nationwidechildrens.org_follow_up_v2.0_skcm.txt",inputFile)){
+  if(grepl("../data/clinical/nationwidechildrens.org_follow_up_v2.0_skcm.txt",inputFile)){
     columns[match("new_tumor_event_type", columns)] = "skcm_tumor_event_type"
   }
-  if(grepl("../archive/clinical/nationwidechildrens.org_clinical_patient_thca.txt",inputFile)){
+  if(grepl("../data/clinical/nationwidechildrens.org_clinical_patient_thca.txt",inputFile)){
     columns[columns=="metastatic_dx_confirmed_by_other"] = "thca_metastatic_dx_confirmed_by_other"
   }
-  if(grepl("../archive/clinical/nationwidechildrens.org_clinical_patient_kirp.txt",inputFile)){
+  if(grepl("../data/clinical/nationwidechildrens.org_clinical_patient_kirp.txt",inputFile)){
     columns[columns=="tumor_type"] = "disease_subtype"
   }
   
@@ -252,20 +296,15 @@ os.data.load.clinical <- function(inputFile, checkEnumerations=FALSE, checkClass
   mappedTable$patient_ID <- gsub("\\.", "\\-", mappedTable$patient_ID)
   mappedTable$patient_ID <- paste(mappedTable$patient_ID, "-01", sep="")
   
-  mappedList <- lapply(rownames(mappedTable), function(rowID){
-    mappedTable[rowID,]
-  })
+  insert.collection(oCollection, mappedTable)
   
-  return(list("mapped"=mappedList, "unmapped" = unMappedData, "cde"=cbind(tcga_columns,columns,cde_ids, column_type)))
+#  return(list("mapped"=mappedTable, "unmapped" = unMappedData, "cde"=cbind(tcga_columns,columns,cde_ids, column_type)))
 }
 #---------------------------------------------------------
-os.data.load.genome <- function( inputFile = inputFile){
+os.data.load.json <- function(oCollection, inputFile = inputFile){
   
-  genesets<- fromJSON(inputFile) 
-  
-  geneset.list <- apply(genesets, 1, function(row){ list(name=row[["name"]],genes=row[["genes"]])})
-  
-  return(geneset.list)
+  oJson<- fromJSON(inputFile, simplifyVector = F) 
+  insert.collection(oCollection, oJson)
   
 }
 #---------------------------------------------------------
@@ -278,19 +317,10 @@ os.data.batch <- function(manifest, ...){
   
   # Loop for each file to load
   for (i in 1:nrow(datasets)){
-    process <- list(type="import", scale=NA)
-    processName = "import"
 
     sourceObj <- datasets[i,]
     stopifnot(all(c("dataset","source", "type","process") %in% names(sourceObj)))
     cat(sourceObj$dataset,sourceObj$source, sourceObj$type,"\n")
-    
-    prev.run <- collection.exists(mongo,db, dataset=sourceObj$dataset, dataType=sourceObj$type,
-                                  source=sourceObj$source,processName=sourceObj$process)
-    if(prev.run){
-      print("Skipping.")
-      next;
-    }
     
     #specific for raw data import
     stopifnot(all(c("directory", "file") %in% names(sourceObj)))
@@ -300,38 +330,21 @@ os.data.batch <- function(manifest, ...){
     inputFile <- paste(inputDirectory, sourceObj$file, sep = "")
     
     dataType <- sourceObj$type
-    #			resultObj <- list(dataset = sourceObj$dataset, type = dataType)
+    process <- list(type=sourceObj$process, scale=NA)
+    oCollection <- create.oCollection(dataset=sourceObj$dataset, dataType=sourceObj$type,
+                                      source=sourceObj$source,processName=sourceObj$process,
+                                      parent = sourceObj$parent, process = process)
     
-    if(dataType %in%  c("cnv","mut01", "mut", "rna", "protein", "methylation", "facs", "psi")){
-      # Load Data Frame - map and filter by named columns
-      resultObj <- os.data.load.molecular( inputFile = inputFile, type=dataType)
-      process$type <- sourceObj$process
-      
-    }
-    else if(dataType %in% c("annotation")){
-      resultObj <- os.data.load.annotation(inputFile=inputFile)
-    }
-    else if(dataType %in%  c("patient", "drug", "radiation", "followUp-v1p0","followUp-v1p5", "followUp-v2p1", "followUp-v4p0","followUp-v4p8","followUp-v4p4", "newTumor", "newTumor-followUp-v4p0","newTumor-followUp-v4p4","newTumor-followUp-v4p8", "otherMalignancy-v4p0")){
-      # Load Data Frame - map and filter by named columns
-      result <- os.data.load.clinical( inputFile = inputFile, ...)
-      resultObj <- result$mapped
-      #				resultObj$cde <- list(result$cde)
-      
-    }else if(dataType %in%  c("events")){
-      resultObj <- os.data.load.clinical.events( inputFile = inputFile)
-    } else if(dataType %in%  c("genes", "chromosome", "centromere", "genesets")){
-      resultObj <- os.data.load.genome( inputFile = inputFile)
-    }else {
-      print(paste("WARNING: data type not recognized:", dataType, sep=" "))
-      next;
-    }
+    prev.run <- collection.exists(oCollection$collection)
+    if(prev.run) next;
     
-    parent <-  NA
-    
-    save.collection(mongo,db, dataset=sourceObj$dataset, dataType=dataType, source=sourceObj$source,
-                    result=resultObj,parent=parent, process=process,processName=sourceObj$process)
+    if(dataType %in% names(lookupList))
+      do.call(lookupList[[dataType]][["data.load"]], list(oCollection, inputFile))
+    else
+         print(paste("WARNING: data type not recognized for loading:", dataType))
+
   }  # dataset
-  return()
+  
 }
 
 #----------------------------------------------------------------------------------------------------
@@ -349,7 +362,7 @@ get.category.data<- function(name, table, cat.col.name, color.col.name= "color")
     data <- list(	name=cat.name, color=color)
     data$values = gsub("\\.", "\\-", rownames(table)[matches])
 
-    if(!grepl("\\-\\d\\d$",data$values)){
+    if(!any(grepl("\\-\\d\\d$",data$values))){
       data$values <- paste(data$values, "01", sep="-")
     }
     
@@ -368,7 +381,7 @@ add.category.fromFile <- function(file, name, col.name, dataset, type){
 }
 
 #----------------------------------------------------------------------------------------------------
-os.save.categories <- function(datasets = c("brain")){
+os.data.load.categories <- function(datasets = c("brain")){
   
   color.categories <- list()
   type= "color"
@@ -377,24 +390,23 @@ os.save.categories <- function(datasets = c("brain")){
     
     ## Patient Colors by Diagnosis, glioma8, tumorGrade, verhaak
     color.categories <- list(
-      add.category.fromFile(file='../archive/categories/brain/tumorDiagnosis.RData', name="diagnosis", col.name="diagnosis", dataset="brain", type=type) ,
-      add.category.fromFile(file='../archive/categories/brain/ericsEightGliomaClusters.RData', name="glioma8", col.name="cluster", dataset="brain", type=type) ,
-      add.category.fromFile(file='../archive/categories/brain/metabolicExpressionStemness.RData', name="metabolicExpressionStemness", col.name="cluster", dataset="brain", type=type) ,
-      add.category.fromFile(file='../archive/categories/brain/tumorGrade.RData', name="tumorGrade", col.name="cluster", dataset="brain", type=type) ,
-      add.category.fromFile(file='../archive/categories/brain/verhaakGbmClustersAugmented.RData', name="verhaakPlus1", col.name="cluster", dataset="brain", type=type) 
+      add.category.fromFile(file='../data/categories/brain/tumorDiagnosis.RData', name="diagnosis", col.name="diagnosis", dataset="brain", type=type) ,
+      add.category.fromFile(file='../data/categories/brain/ericsEightGliomaClusters.RData', name="glioma8", col.name="cluster", dataset="brain", type=type) ,
+      add.category.fromFile(file='../data/categories/brain/metabolicExpressionStemness.RData', name="metabolicExpressionStemness", col.name="cluster", dataset="brain", type=type) ,
+      add.category.fromFile(file='../data/categories/brain/tumorGrade.RData', name="tumorGrade", col.name="cluster", dataset="brain", type=type) ,
+      add.category.fromFile(file='../data/categories/brain/verhaakGbmClustersAugmented.RData', name="verhaakPlus1", col.name="cluster", dataset="brain", type=type) 
     )
-    
-    save.collection(mongo,db, dataset="brain", dataType=type, source="tcga",
-                    result=color.categories,parent=NA, process=list(type="import"),processName="import")
+    oCollection <- create.oCollection(dataset="brain", dataType=type, source="tcga", processName="import",parent=NA, process=list(type="import"))
+    insert.collection(oCollection, color.categories )
     
   }
   if("brca" %in% datasets){
-    categories.list <- fromJSON("../archive/categories/brca/colorCategories.json", simplifyVector = FALSE)
-#    color.categories <- apply(categories.list, 1, function(colorcat){list(dataset=colorcat$dataset, type=colorcat$type, name=colorcat$name, data=colorcat$data)})
-     save.collection(mongo,db, dataset="brca", dataType=type, source="tcga",
-                    result=categories.list,parent=NA, process=list(type="import"),processName="import")
-    
-  }
+    categories.list <- fromJSON("../data/categories/brca/colorCategories.json", simplifyVector = FALSE)
+
+     oCollection <- create.oCollection(dataset="brca", dataType=type, source="tcga", processName="import",parent=NA, process=list(type="import"))
+     insert.collection(oCollection, categories.list )
+     
+    }
 }
 #----------------------------------------------------------------------------------------------------
 map.sample.ids <- function(samples, source, mapping=list()){
@@ -412,19 +424,20 @@ map.sample.ids <- function(samples, source, mapping=list()){
 #----------------------------------------------------------------------------------------------------
 os.batch.map.samples <- function(){
  
-  datasets <- mongo.find.all(mongo, paste(db, "lookup_oncoscape_datasources", sep="."))
+  datasets <- mongo.lookup$find()
   
-  for(dataset in datasets){
-    
+  for(i in 1:nrow(datasets)){
+    dataset = datasets[i,]
     ptMap <- list()
     if("molecular" %in% names(dataset)){
       print(paste("mapping sample ids for ", dataset$disease, sep=""))
 
       for(molColl in dataset$molecular){
-        collection <- mongo.find.all(mongo, paste(db, molColl$collection, sep="."))[[1]]
+      	con <- mongo(molColl$collection, db=db, url=host)
+        collection <- con$find()
         ptMap <- map.sample.ids(names(collection$patients), dataset$source, ptMap)
       }
-      save.indiv.collection(mongo, db, paste(dataset$disease,dataset$source,"sample_map", sep="_"), list(ptMap))
+      insert.collection.separate(paste(dataset$disease,dataset$source,"sample_map", sep="_"), list(ptMap))
     }
     
     
@@ -432,6 +445,8 @@ os.batch.map.samples <- function(){
      
 
 }
+
+
 # Run Block  -------------------------------------------------------
 
 ## must first initialize server (through shell >mongod)
@@ -441,20 +456,22 @@ commands <- c("categories", "clinical", "molecular", "scale", "lookup", "sample"
 #commands <- c("categories")
 #commands <- c("molecular")
 #commands <- c("scale")
-commands <- "clinical"
+#commands <- "clinical"
 #commands <- "lookup"
-#commands <- "sample"
+commands <- "sample"
 
 args = commandArgs(trailingOnly=TRUE)
 if(length(args) != 0 )
   manifest <- args
 
 if("categories" %in% commands) 
-  os.save.categories( datasets=c( "brain", "brca"))
+  os.data.load.categories( datasets=c( "brain", "brca"))
 
-if("molecular" %in% commands) 
-  os.data.batch("../manifests/os.full.molecular.manifest.json")
-
+if("molecular" %in% commands){
+  os.data.batch("../manifests/os.ucsc.molecular.manifest.json")
+#  os.data.batch("../manifests/os.full.molecular.manifest.json")
+#  os.data.batch("../manifests/os.firehose.molecular.manifest.json")
+}
 if("clinical" %in% commands) 
   os.data.batch("../manifests/os.tcga.full.clinical.manifest.json",
                 checkEnumerations = FALSE,
@@ -466,11 +483,17 @@ if("scale" %in% commands){
 
 if("lookup" %in% commands){
 	lookup_tools <- fromJSON("../manifests/os.lookup_tools.json", simplifyVector = F)
-	save.indiv.collection(mongo,db,"lookup_oncoscape_tools", lookup_tools)
-
-	ImmuneTree <- fromJSON("../archive/categories/biomarkerTree.json", simplifyVector = F)
-	save.indiv.collection(mongo,db,"biomarker_immune_tree", list(ImmuneTree))
+	con <- mongo("lookup_oncoscape_tools", db=db, url=host)
+	con$insert(toJSON(lookup_tools, auto_unbox = T))
+	rm(con)
 	
+	render_pathways <- fromJSON("../manifests/render_pathways.json", simplifyVector = F)
+	con <- mongo("render_pathways", db=db, url=host)
+	con$insert(toJSON(render_pathways, auto_unbox = T))
+	rm(con)
+	
+#	ImmuneTree <- fromJSON("../data/categories/biomarkerTree.json", simplifyVector = F)
+#	insert.collection.separate("biomarker_immune_tree", list(ImmuneTree))
 }
 
 if("sample" %in% commands){
@@ -478,4 +501,4 @@ if("sample" %in% commands){
   os.batch.map.samples()
 }
 
-close.mongo(mongo)
+close.mongo()

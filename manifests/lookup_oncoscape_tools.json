@@ -1,4 +1,4 @@
-[{
+{
     "name" : "Markers + Patients",
     "route" : "markers",
     "img" : "markers.png",
@@ -6,11 +6,18 @@
     "desc" : "Link copy number variation and mutation data to patients."
 },
 {
-    "name" : "Spreadsheet",
-    "route" : "history",
-    "img" : "history.png",
-    "beta" : false,
+    "name" : "Timelines",
+    "route" : "timelines",
+    "img" : "timelines.png",
+    "beta" : true,
     "desc" : ""
+},
+{
+    "name" : "Survival",
+    "route" : "survival",
+    "img" : "survival.png",
+    "beta" : false,
+    "desc" : "Compare survival rates of selected patients against the remaining population in a Kaplan Meier plot."
 },
 {
     "name" : "Pathways",
@@ -18,6 +25,13 @@
     "img" : "pathways.png",
     "beta" : false,
     "desc" : "Map patient specific expression levels on a hand curated network of genes."
+},
+{
+    "name" : "Spreadsheet",
+    "route" : "history",
+    "img" : "history.png",
+    "beta" : false,
+    "desc" : ""
 },
 {
     "name" : "PLSR",
@@ -55,23 +69,9 @@
     "desc" : ""
 },
 {
-    "name" : "Timelines",
-    "route" : "timelines",
-    "img" : "timelines.png",
-    "beta" : true,
-    "desc" : ""
-},
-{
-    "name" : "Survival",
-    "route" : "survival",
-    "img" : "survival.png",
-    "beta" : false,
-    "desc" : "Compare survival rates of selected patients against the remaining population in a Kaplan Meier plot."
-},
-{
-     "name" : "MetaData",
+    "name" : "MetaData",
     "route" : "metadata",
     "img" : "metadata.png",
     "beta" : true,
     "desc" : ""
-}]
+}

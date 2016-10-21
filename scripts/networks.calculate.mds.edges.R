@@ -108,7 +108,11 @@ save.pca<- function(oCollection, geneset=NA, scaleFactor=NA){
 	process$center="TRUE"; process$scaled="TRUE"
 	#process <- list(process)
 
+<<<<<<< HEAD
 	oCollection.pca.scaled = update.oCollection(oCollection, dataType="pcascores", processName=processName, process=process)
+=======
+	oCollection.pca.scaled = update.oCollection(oCollection, dataType="pcaScores", processName=processName, process=process)
+>>>>>>> mongolite
 	process$scale = NA
 	oCollection.pca = update.oCollection(oCollection.pca.scaled, processName=outputName, process=process)
 
@@ -170,7 +174,11 @@ save.pca<- function(oCollection, geneset=NA, scaleFactor=NA){
 	   loading.list <- lapply(rownames(loadings), function(name){ loadings[name,1:3]})
 	   names(loading.list) <- rownames(loadings)
 	   result <- list(disease=oCollection$dataset,source = oCollection$source, type=oCollection$process$type, geneset=genesetName,scale=NA, data=loading.list)
+<<<<<<< HEAD
 	   oCollection.loadings = update.oCollection(oCollection.pca, dataType ="pcaloadings")
+=======
+	   oCollection.loadings = update.oCollection(oCollection.pca, dataType ="pcaLoadings")
+>>>>>>> mongolite
 	   insert.collection(oCollection.loadings, list(result) )
 
      ## ----- Save Scaled Scores ------
