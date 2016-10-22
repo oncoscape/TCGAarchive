@@ -454,11 +454,11 @@ mongo <- connect.to.mongo()
 
 commands <- c("categories", "clinical", "molecular", "scale", "lookup", "sample")
 #commands <- c("categories")
-#commands <- c("molecular")
+commands <- c("molecular")
 #commands <- c("scale")
 #commands <- "clinical"
 #commands <- "lookup"
-commands <- "sample"
+#commands <- "sample"
 
 args = commandArgs(trailingOnly=TRUE)
 if(length(args) != 0 )
