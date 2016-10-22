@@ -50,6 +50,7 @@
     "co": "^4.6.0",
     "co-mongo": "0.0.2",
     "co-mongodb": "^0.1.0",
+    "filehandler": "0.0.0",
     "fs": "0.0.2",
     "graceful-fs": "^4.1.5",
     "gulp-htmlparser": "0.0.4",
@@ -57,6 +58,7 @@
     "jsonfile-promised": "0.0.1",
     "mongodb": "^2.2.5",
     "mongoose": "^4.6.3",
+    "monitor-dashboard": "^0.6.7",
     "mpromise": "^0.5.5",
     "node-async-loop": "^1.2.2",
     "readdir-scoped-modules": "^1.0.2"

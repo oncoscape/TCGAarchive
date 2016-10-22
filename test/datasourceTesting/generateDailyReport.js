@@ -17,7 +17,45 @@ Array.prototype.arraysCompare = function(ref) {
           elem.itemsNotInRef.push(this[i]);
         }
     }
-    elem.itemsNotInRef = elem.itemsNotInRef.sort();
+    return elem;
+};
+
+Object.prototype.nestedUniqueCount = function(){
+    var errorCount = {};
+    var ar = [];
+    var str;
+    this['errors'].forEach(function(a){
+        a.errorType.forEach(function(e){
+          str = e.schemaPath + " [message: "+ e.message + "]; Number of Violation: ";  
+          if(ar.contains(str)){
+            errorCount[str]++;
+          }else{
+            ar.push(str);
+            errorCount[str]=1;
+          }
+        });
+    });
+    //return ar.unique();
+    return errorCount;
+};
+
+Array.prototype.arraysCompareV2 = function(ref) {
+    var elem = {};
+    elem.overlapCount = 0;
+    elem.itemsNotInRef = [];
+    elem.refItemsNotInSelf = [];
+    for(var i = 0; i < this.length; i++) {
+        if(ref.indexOf(this[i]) > -1){
+          elem.countInRef++;
+        }else{
+          elem.itemsNotInRef.push(this[i]);
+        }
+    }
+    for(var j = 0; j < ref.length; j++){
+        if(this.indexOf(ref[j]) == -1){
+          elem.refItemsNotInSelf.push(ref[j]);
+        }
+    }
     return elem;
 };
 
@@ -71,6 +109,25 @@ Array.prototype.findCollectionsByType = function(v){
   return arr;
 };
 
+Array.prototype.findObjsByType = function(v){
+  var arr = [];
+  for(var i = 0; i < this.length; i++) {
+    if(this[i].type === v){
+      arr.push(this[i]);
+    } 
+  }
+  return arr;
+};
+
+Array.prototype.findObjByDiseaseByType = function(t, d) {
+  var arr = [];
+  this.forEach(function(a){
+    if(a.type==t && a.disease==d) 
+      arr.push(a);
+  });
+  return arr;
+};
+
 Array.prototype.table = function(uniqueArray) {
     var elem = {};
     uniqueArray.forEach(function(u){
@@ -117,6 +174,7 @@ var format = {
 };
 
 
+
 var comongo = require('co-mongodb');
 var co = require('co');
 var db, collections, existing_collection_names, manifest;
@@ -137,26 +195,12 @@ var ajvMsg_report = [];
 var render_pca_missing_collections = [];
 var render_pt_missing_collections = [];
 var patientIDs_status=[], patientID_errors = [];
-
+var status_DTS = [];
 var onerror = function(e){
   console.log(e);
 }
-
-jsonfile.readFile('ajv_tcga_v2.json').then(function(res){ajvMsg =res;});
-
-// jsonfile.readFile("patientID_errors.json", function(obj, err){
-//   patientIDs_status = obj;
-// });
-var patientIDs_status, patientID_errors;
-var cnv_p, meth_p, mut01_p, mut_p, rna_p, prot_p, woMol_p;
-jsonfile.readFile("../report/patientIDstatus_meth_10152016.json").then(function(res){meth_p =res;});
-jsonfile.readFile("../report/patientIDstatus_mut01_10152016.json").then(function(res){mut01_p =res;});
-jsonfile.readFile("../report/patientIDstatus_cnv_10152016.json").then(function(res){cnv_p =res;});
-jsonfile.readFile("../report/patientIDstatus_mut01_10152016.json").then(function(res){mut01_p =res;});
-jsonfile.readFile("../report/patientIDstatus_rna_10152016.json").then(function(res){rna_p =res;});
-jsonfile.readFile("../report/patientIDstatus_mut_10152016.json").then(function(res){mut_p =res;});
-jsonfile.readFile("../report/patientIDstatus_protein_10152016.json").then(function(res){prot_p =res;});
-jsonfile.readFile("../report/patientIDstatus_woMol_10142016.json").then(function(res){woMol_p =res;});
+jsonfile.readFile('ajv_tcga_v2_10202016.json').then(function(res){ajvMsg =res;});
+jsonfile.readFile("../forPatientIDChecking/patientIDsErrorCountsByDiseaseByType.json").then(function(obj){status_DTS=obj;});
 
 
 co(function *() {
@@ -362,7 +406,7 @@ co(function *() {
 
   // report the collection erros from ajv_tcga_v2.json 
   
-  format.h1("Part III: Run the DB against schema_tcga.json, below lists the error message: ");
+  format.h1("Part III: Run the DB against schemas.json, below lists the error message: ");
   format.codeStart();
   ajvMsg.forEach(function(a){
     if(a.passedRate < 1){
@@ -375,22 +419,59 @@ co(function *() {
   // format.codeStop();
 
   // report the earlier version patient ID checking
-
-
-  patientID_errors = cnv_p.concat(meth_p, mut01_p, mut_p, rna_p, meth_p, woMol_p);
-  jsonfile.writeFile("patientID_errors.json", patientID_errors, {spaces:4});
-  patientID_errors = patientID_errors.filter(function(p){return (p.ptIDStatus.length >0);});
-
-  patientID_errors.sort(function(a, b){
-    return b.ptIDStatus.length - a.ptIDStatus.length;
-  });
-  var dis = patientID_errors.map(function(p){return ("Error Counts: " + p.ptIDStatus.length + " [Details: " +p.disease + " "+  p.type + " "+ p.collection + "]");});
   
   format.h1("Part IV: Checked the patient IDs against disease patient collection IDs:");
+  var uniqueTypes = status_DTS.map(function(p){return p.type;}).unique();
+  var uniqueDiseases = status_DTS.map(function(p){return p.disease;}).unique();
+
+  format.h3("The aggregated result grouped by Disease types and Data Types");
+  var diseasesWithPIDErros = status_DTS.filter(function(s){return s.IDnotInPtCounts >0;}).map(function(s){return s.disease;}).unique();
+  format.codeComment("Below lists the disease types, whose patient IDs in some if not all collections are NOT included in the clinical patient IDs.");
   format.codeStart();
-  format.text(dis);
+  format.text(diseasesWithPIDErros);
+  // [ 'lgg','brca','brain','lusc','hnsc','kirp','luad','gbm','thca','read',
+  //   'thym','sarc','pcpg','kirc','coad','ov','paad','cesc','chol','esca',
+  //   'tgct','blca','ucec','kich','stad','dlbc','lihc','prad','acc','laml',
+  //   'coadread','skcm','lung' ]
+  format.codeComment("Below lists the disease types, whose patient IDs in all collections are included in the clinical patient IDs.");
+  format.text(diseasesWithPIDErros.arraysCompareV2(uniqueDiseases).refItemsNotInSelf);
+  // { overlapCount: 0,
+  //   itemsNotInRef: [],
+  //   refItemsNotInSelf: [ 'uvm', 'meso', 'ucs' ],
+  //   countInRef: NaN }
   format.codeStop();
 
+
+  var typesWithPIDErros = status_DTS.filter(function(s){return s.IDnotInPtCounts >0;}).map(function(s){return s.type;}).unique();
+  format.codeComment("Below lists the data types, whose patient IDs in some if not all collections are NOT included in the clinical patient IDs.");
+  format.codeStart();
+  format.text(typesWithPIDErros);
+  // [ 'cnv','protein','events','mut','mds','mut01','edges','otherMalignancy',
+  //   'pcaScores','methylation','rna','color','ptDegree' ]
+  format.codeComment("Below lists the data types, whose patient IDs in some if not all collections are NOT included in the clinical patient IDs.");
+  format.text(typesWithPIDErros.arraysCompareV2(uniqueTypes).refItemsNotInSelf);
+  // { overlapCount: 0,
+  //   itemsNotInRef: [],
+  //   refItemsNotInSelf: 
+  //    [ 'radiation',
+  //      'patient',
+  //      'drug',
+  //      'newTumor',
+  //      'followUp',
+  //      'newTumor-followUp' ],
+  //   countInRef: NaN }
+  format.codeStop();
+  format.text("Detailed aggregated report lists here:");
+  format.codeStart();
+  status_DTS.filter(function(s){
+    return s.IDnotInPtCounts > 0;
+  }).sort(function(a, b){ 
+    return a.IDnotInPtCounts - b.IDnotInPtCounts
+  }).forEach(function(s){
+    format.text(s);
+  });
+  format.codeStop();
+  
   yield comongo.db.close(db);
 }).catch(onerror);
 

@@ -118,6 +118,15 @@ Array.prototype.findObjsByType = function(v){
   return arr;
 };
 
+Array.prototype.findObjByDiseaseByType = function(t, d) {
+  var arr = [];
+  this.forEach(function(a){
+    if(a.type==t && a.disease==d) 
+      arr.push(a);
+  });
+  return arr;
+};
+
 Array.prototype.table = function(uniqueArray) {
     var elem = {};
     uniqueArray.forEach(function(u){
