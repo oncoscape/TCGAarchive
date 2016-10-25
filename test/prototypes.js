@@ -45,7 +45,7 @@ Array.prototype.arraysCompareV2 = function(ref) {
     elem.refItemsNotInSelf = [];
     for(var i = 0; i < this.length; i++) {
         if(ref.indexOf(this[i]) > -1){
-          elem.countInRef++;
+          elem.overlapCount++;
         }else{
           elem.itemsNotInRef.push(this[i]);
         }

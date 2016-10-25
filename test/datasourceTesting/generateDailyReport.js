@@ -46,7 +46,7 @@ Array.prototype.arraysCompareV2 = function(ref) {
     elem.refItemsNotInSelf = [];
     for(var i = 0; i < this.length; i++) {
         if(ref.indexOf(this[i]) > -1){
-          elem.countInRef++;
+          elem.overlapCount++;
         }else{
           elem.itemsNotInRef.push(this[i]);
         }
@@ -248,10 +248,11 @@ co(function *() {
       }
     }
   });//flatten all the collections from lookup_oncoscape_datasources 
+  lookup_listed_collections = lookup_listed_collections..unique();
 
   manifest = yield comongo.db.collection(db, "manifest");
   manifest_arr = yield manifest.find({}).toArray();
-  manifest_listed_collections = manifest_arr.map(function(m){ return (m.collection);});
+  manifest_listed_collections = manifest_arr.map(function(m){ return (m.collection);}).unique();
 
   collections = yield comongo.db.collections(db);
   existing_collection_names = collections.map(function(c){

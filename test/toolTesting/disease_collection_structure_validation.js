@@ -179,7 +179,7 @@ var report_arr = [];
 var elem = {};
 var diseases = [];
 var tools = [];
-
+var diseaseCollectionStructuralStatus = [];
 connection.once('open', function(){
 
     // Testing the disease collection structure using tcga:brain as a gold standard
@@ -188,6 +188,9 @@ connection.once('open', function(){
     lookupByDisease = connection.db.collection("lookup_oncoscape_datasources").find().toArray();
     lookupByDisease.then(function(obj){
       obj.forEach(function(item){
+            var elem = {};
+            elem.disease = item['disease'];
+            elem.collectionStructural = [];
             console.log(item['disease']);
             diseases.push(item['disease']);
             disease_arr.push(item);
@@ -196,9 +199,13 @@ connection.once('open', function(){
             var valid = ajv.validate(diseaseCollectionSchema, item);
             if(!valid){
               console.log(ajv.errors);
-          } 
+              elem.collectionStructural = ajv.errors;
+          }
+          diseaseCollectionStructuralStatus.push(elem); 
         });      
     }); 
+
+    jsonfile.writeFile("diseaseCollectionStructuralStatus.json", diseaseCollectionStructuralStatus, {spaces:4});
 
     lookupByTool = connection.db.collection("lookup_oncoscape_tools").find().toArray().then(function(obj){
        tools = obj.map(function(o){return o.name;});   
