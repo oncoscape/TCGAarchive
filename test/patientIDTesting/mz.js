@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const fs = require("fs");
 const _ = require("underscore");
-const input = require("../datasourceTesting/ajv_tcga_v2_10182016.json");
+const input = require("../datasourceTesting/ajv_tcga_v2_10262016.json");
 var asyncLoop = require('node-async-loop');
 // Connect To Database
 var mongo = function(mongoose){
@@ -147,8 +147,22 @@ Promise.all([mongo(mongoose),filestream(fs)]).then(function(response){
     asyncLoop(input, function(d, next){ 
       promiseFactory(db, d.collection, d.type, d.disease).then(function(res){
         console.log(index++);
-        fs.appendFile('./output.json',JSON.stringify(res, null, 4),function (err) {console.log(err); });
-         next();
+        //console.log(JSON.stringify(res, null, 4));
+        file.write(JSON.stringify(res, null, 4));
+        //fs.appendFile('./output.json',JSON.stringify(res, null, 4),function (err) {console.log(err); });
+        // fs.open('./output.json', JSON.stringify(res, null, 4), (err, fd) => {
+        //   if (err) {
+        //     if (err.code === "EEXIST") {
+        //       console.error('myfile already exists');
+        //       return;
+        //     } else {
+        //       throw err;
+        //     }
+        //   }
+
+        //   writeMyData(fd);
+        // });
+        next();
       });
     }, function (err)
     {
