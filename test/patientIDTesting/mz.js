@@ -53,46 +53,42 @@ var promiseFactory = function(db, collection, type){
         db.collection(collection).mapReduce(
         function(){ for (var key in this.data) { emit(key, null); } },
         function(key, value) { return null }, 
-        { out: {inline:1} }
-        ).then(function(r){ resolve( r.map(function(v){ return v._id; }) ); });
+        { out: {inline:1} }).then(function(r){ resolve( r.map(function(v){ return v._id; }) ); });
         break;
 
-      case "MUT":
-      case "MUT01":
-      case "METHYLATION":
-      case "RNA":
-      case "PROTEIN":
-      case "CNV":
-        db.collection(collection).mapReduce(
-            function(){ for (var key in this.patients) { emit(key, null); } },
-            function(key, value) { return null }, 
-            { out: {inline:1} }
-          ).then(function(r){ resolve( r.map(function(v){ return v._id; }) ); });
-        break;
+      // case "MUT":
+      // case "MUT01":
+      // case "METHYLATION":
+      // case "RNA":
+      // case "PROTEIN":
+      // case "CNV":
+      //   db.collection(collection).mapReduce(
+      //       function(){ for (var key in this.patients) { emit(key, null); } },
+      //       function(key, value) { return null }, 
+      //       { out: {inline:1} }).then(function(r){ resolve( r.map(function(v){ return v._id; }) ); });
+      //   break;
 
-      case "COLOR":
-        db.collection(collection).distinct("data.values").then(function(r){ resolve(r);});
-        break;
+      // case "COLOR":
+      //   db.collection(collection).distinct("data.values").then(function(r){ resolve(r);});
+      //   break;
 
-      case "EVENTS":
-        db.collection(collection).mapReduce(
-            function(){ for (var key in this) { emit(key, null); } },
-            function(key, value) { return null }, 
-            { out: {inline:1} }
-          ).then(function(r){ resolve( r.map(function(v){ return v._id; }) ); });
-        break;  
+      // case "EVENTS":
+      //   db.collection(collection).mapReduce(
+      //       function(){ for (var key in this) { emit(key, null); } },
+      //       function(key, value) { return null }, 
+      //       { out: {inline:1} }).then(function(r){ resolve( r.map(function(v){ return v._id; }) ); });
+      //   break;  
 
-      case "EDGES":
-        db.collection(collection).distinct("p").then(function(r){ resolve(r); });
-        break;  
+      // case "EDGES":
+      //   db.collection(collection).distinct("p").then(function(r){ resolve(r); });
+      //   break;  
 
-      case "PTDEGREE":
-        db.collection(collection).mapReduce(
-            function(){ for (var key in this) { emit(key, null); } },
-            function(key, value) { return null }, 
-            { out: {inline:1} }
-          ).then(function(r){ resolve( r.map(function(v){ return v._id; }) ); });
-        break;
+      // case "PTDEGREE":
+      //   db.collection(collection).mapReduce(
+      //       function(){ for (var key in this) { emit(key, null); } },
+      //       function(key, value) { return null }, 
+      //       { out: {inline:1} }).then(function(r){ resolve( r.map(function(v){ return v._id; }) ); });
+      //   break;
       default:
         resolve([]);
         break;
@@ -105,11 +101,17 @@ var processDisease = function(db, disease){
   return new Promise(function(resolve, reject){
       var promises = disease.sort(function(a,b){ return (a.type<b.type) ? -1 : 1; })
                             .map(function(collection){
-                                  return promiseFactory(this, collection.collection, collection.type);
+                                  var elem = {};
+                                  elem.disease = disease;
+                                  elem.type = collection.type;
+                                  elem.collection = collection.collection;
+                                  elem.IDs = promiseFactory(this, collection.collection, collection.type);
+                                  return elem;
                                 }, db);
       Promise.all(promises).then(function(results){
-                                  var diseaseIds = _.union.apply(null, results)
-                                  resolve(diseaseIds);
+                                  //var diseaseIds = _.union.apply(null, results)
+
+                                  resolve(results);
                                 });
     });
 }
@@ -126,8 +128,9 @@ Promise.all([mongo(mongoose),filestream(fs)]).then(function(response){
     // Only Process First Two For Test
     diseaseNames.forEach(function(diseaseName){
       console.log("Processing: " + diseaseName);
-      processDisease(db, diseases[diseaseName]).then(function(ids){
-        console.log(ids.join(" + "));
+      processDisease(db, diseases[diseaseName]).then(function(res){
+        //console.log(ids.join(" + "));
+        console.dir(res.length);
       });
     });
 });

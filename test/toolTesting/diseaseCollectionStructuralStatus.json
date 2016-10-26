@@ -48,21 +48,30 @@
         "collectionStructural": [
             {
                 "keyword": "required",
-                "dataPath": "",
-                "schemaPath": "#/required",
-                "params": {
-                    "missingProperty": "calculated"
-                },
-                "message": "should have required property 'calculated'"
-            },
-            {
-                "keyword": "required",
                 "dataPath": ".clinical",
                 "schemaPath": "#/properties/clinical/required",
                 "params": {
                     "missingProperty": "events"
                 },
                 "message": "should have required property 'events'"
+            },
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "newTumor"
+                },
+                "message": "should have required property 'newTumor'"
+            },
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "otherMalignancy"
+                },
+                "message": "should have required property 'otherMalignancy'"
             }
         ]
     },

@@ -7,7 +7,7 @@
 */
 
 var jsonfile = require("jsonfile-promised");
-var ajvMsg;
+var ajvMsg, ajvMsg_v2;
 
 Array.prototype.contains = function(v) {
     for(var i = 0; i < this.length; i++) {
@@ -47,22 +47,27 @@ Object.prototype.nestedUniqueCount = function(){
     return errorCount;
 };
 
-jsonfile.readFile("ajv_tcga_10182016.json").then(function(obj){
+jsonfile.readFile("ajv_tcga_10252016.json").then(function(obj){
     ajvMsg = obj;
 }).then(function(){
     ajvMsg_v2 = ajvMsg.map(function(a){
         var elem = {};
-        elem.collection = a.collection;
-        elem.type = a.type;
-        elem.disease = a.disease;
-        elem.passedCounts = a.passedCounts;
-        elem.totalCounts = a.totalCounts;
-        elem.passedRate = a.passedCounts/a.totalCounts;
-        elem.errorMessage = a.nestedUniqueCount();
+        if(a!=null){
+            elem.collection = a.collection;
+            elem.type = a.type;
+            elem.disease = a.disease;
+            elem.passedCounts = a.passedCounts;
+            elem.totalCounts = a.totalCounts;
+            elem.passedRate = a.passedCounts/a.totalCounts;
+            elem.errorMessage = a.nestedUniqueCount();
+        }else{
+            elem = null;
+        }
+        
         //elem.errorMessage = a.errors.tableV2(a.nestedUnique());
         return elem;
     });
 }).then(function(){
-    jsonfile.writeFile('ajv_tcga_v2_10182016.json', ajvMsg_v2, {spaces:4});
+    jsonfile.writeFile('ajv_tcga_v2_10252016.json', ajvMsg_v2, {spaces:4});
 });
 

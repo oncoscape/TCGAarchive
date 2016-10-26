@@ -1,5 +1,17 @@
 [
   {
+    "collection": "tgct_mut01_ucsc_broad",
+    "count": 39589,
+    "fields": [
+      "_id",
+      "gene",
+      "min",
+      "max",
+      "patients"
+    ],
+    "type": "mut01"
+  },
+  {
     "collection": "lusc_mds_cbio_mds-markergenes545-cnv-mut01-cbio",
     "count": 1,
     "fields": [
@@ -1404,6 +1416,19 @@
     "type": "pcaScores"
   },
   {
+    "collection": "cesc_mds_ucsc_mds-markergenes545-cnv-mut01-1e+05-ucsc",
+    "count": 1,
+    "fields": [
+      "_id",
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
+    ],
+    "type": "mds"
+  },
+  {
     "collection": "brain_pcascores_cbio_prcomp-allgenes-mut01",
     "count": 1,
     "fields": [
@@ -1822,17 +1847,6 @@
     "type": "geneDegree"
   },
   {
-    "collection": "hnsc_edges_broad_oncovogel274",
-    "count": 2500,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
-  },
-  {
     "collection": "luad_pcascores_ucsc_prcomp-osccchen9genes-cnv-1e+05",
     "count": 1,
     "fields": [
@@ -2164,6 +2178,19 @@
     "type": "pcaLoadings"
   },
   {
+    "collection": "acc_mds_ucsc_mds-tcgagbmclassifiers-cnv-mut01-ucsc",
+    "count": 1,
+    "fields": [
+      "_id",
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
+    ],
+    "type": "mds"
+  },
+  {
     "collection": "blca_newtumor-followup_tcga_v4p0",
     "count": 346,
     "fields": [
@@ -2246,17 +2273,6 @@
   {
     "collection": "brain_edges_broad_oncovogel274-mut01",
     "count": 2595,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
-  },
-  {
-    "collection": "lusc_edges_broad_oncovogel274",
-    "count": 1185,
     "fields": [
       "_id",
       "m",
@@ -2619,15 +2635,17 @@
     "type": "pcaLoadings"
   },
   {
-    "collection": "kich_edges_broad_tcgapancanmutated",
-    "count": 55,
+    "collection": "acc_mds_ucsc_mds-allgenes-cnv-mut01-1e+05-ucsc",
+    "count": 1,
     "fields": [
       "_id",
-      "m",
-      "g",
-      "p"
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
     ],
-    "type": "edges"
+    "type": "mds"
   },
   {
     "collection": "luad_edges_broad_osccchen131probes-mut01",
@@ -2856,17 +2874,6 @@
       "data"
     ],
     "type": "pcaLoadings"
-  },
-  {
-    "collection": "blca_edges_broad_oncoplex",
-    "count": 2953,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
   },
   {
     "collection": "prad_pcaloadings_ucsc_prcomp-markergenes545-rna-hiseq",
@@ -3309,17 +3316,6 @@
     "type": "pcaScores"
   },
   {
-    "collection": "hnsc_edges_broad_markergenes545",
-    "count": 4371,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
-  },
-  {
     "collection": "brain_pcaloadings_cbio_prcomp-oncoplex-cnv",
     "count": 1,
     "fields": [
@@ -3738,17 +3734,6 @@
     "type": "pcaScores"
   },
   {
-    "collection": "kirp_edges_broad_markergenes545",
-    "count": 772,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
-  },
-  {
     "collection": "lung_pcaloadings_cbio_prcomp-oncoplex-rna-seq",
     "count": 1,
     "fields": [
@@ -3930,17 +3915,6 @@
     "type": "pcaScores"
   },
   {
-    "collection": "skcm_edges_broad_oncoplex",
-    "count": 3004,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
-  },
-  {
     "collection": "brca_followup_tcga_v1p5",
     "count": 228,
     "fields": [
@@ -4012,28 +3986,6 @@
       "ABCA1"
     ],
     "type": "geneDegree"
-  },
-  {
-    "collection": "brca_edges_broad_osccchen131probes",
-    "count": 431,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
-  },
-  {
-    "collection": "coadread_edges_ucsc_markergenes545",
-    "count": 123390,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
   },
   {
     "collection": "coadread_genedegree_cbio_tcgapancanmutated-mut01-cnv",
@@ -4888,17 +4840,6 @@
     "type": "mut"
   },
   {
-    "collection": "brain_edges_broad_tcgapancanmutated",
-    "count": 1628,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
-  },
-  {
     "collection": "lgg_edges_broad_tcgapancanmutated-mut01",
     "count": 1187,
     "fields": [
@@ -5319,6 +5260,19 @@
     "type": "pcaScores"
   },
   {
+    "collection": "chol_mds_ucsc_mds-tcgagbmclassifiers-cnv-mut01-1e+05-ucsc",
+    "count": 1,
+    "fields": [
+      "_id",
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
+    ],
+    "type": "mds"
+  },
+  {
     "collection": "laml_mds_ucsc_mds-osccchen131probes-cnv-mut01-ucsc",
     "count": 1,
     "fields": [
@@ -5475,6 +5429,19 @@
       "APC"
     ],
     "type": "geneDegree"
+  },
+  {
+    "collection": "acc_mds_ucsc_mds-osccchen9genes-cnv-mut01-1e+05-ucsc",
+    "count": 1,
+    "fields": [
+      "_id",
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
+    ],
+    "type": "mds"
   },
   {
     "collection": "coadread_pcascores_cbio_prcomp-markergenes545-rna-agilent-1e+05",
@@ -5881,6 +5848,19 @@
   },
   {
     "collection": "luad_mds_ucsc_mds-tcgapancanmutated-cnv-mut01-ucsc",
+    "count": 1,
+    "fields": [
+      "_id",
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
+    ],
+    "type": "mds"
+  },
+  {
+    "collection": "chol_mds_ucsc_mds-tcgapancanmutated-cnv-mut01-1e+05-ucsc",
     "count": 1,
     "fields": [
       "_id",
@@ -6347,7 +6327,7 @@
     "type": "pcaScores"
   },
   {
-    "collection": "sarc_pcascores_ucsc_prcomp-tcgagbmclassifiers-cnv",
+    "collection": "brain_pcascores_cbio_prcomp-tcgapancanmutated-methylation-hm27-1e+05",
     "count": 1,
     "fields": [
       "_id",
@@ -6364,15 +6344,21 @@
     "type": "pcaScores"
   },
   {
-    "collection": "stad_edges_broad_markergenes545",
-    "count": 5940,
+    "collection": "sarc_pcascores_ucsc_prcomp-tcgagbmclassifiers-cnv",
+    "count": 1,
     "fields": [
       "_id",
-      "m",
-      "g",
-      "p"
+      "disease",
+      "source",
+      "type",
+      "geneset",
+      "scale",
+      "pc1",
+      "pc2",
+      "pc3",
+      "data"
     ],
-    "type": "edges"
+    "type": "pcaScores"
   },
   {
     "collection": "brca_pcaloadings_cbio_prcomp-markergenes545-rna-agilent-median-zscore",
@@ -6659,17 +6645,6 @@
     "type": "mds"
   },
   {
-    "collection": "esca_edges_broad_markergenes545",
-    "count": 3914,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
-  },
-  {
     "collection": "kich_ptdegree_broad_tcgapancanmutated-mut01",
     "count": 34,
     "fields": [
@@ -6822,6 +6797,19 @@
     "type": "pcaLoadings"
   },
   {
+    "collection": "sarc_mds_ucsc_mds-tcgagbmclassifiers-cnv-mut01-ucsc",
+    "count": 1,
+    "fields": [
+      "_id",
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
+    ],
+    "type": "mds"
+  },
+  {
     "collection": "brca_pcaloadings_ucsc_prcomp-oncoplex-cnv",
     "count": 1,
     "fields": [
@@ -6960,17 +6948,6 @@
       "data"
     ],
     "type": "mds"
-  },
-  {
-    "collection": "gbm_edges_ucsc_tcgapancanmutated",
-    "count": 10640,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
   },
   {
     "collection": "luad_pcascores_ucsc_prcomp-oncovogel274-mut01",
@@ -7305,6 +7282,19 @@
     "type": "ptDegree"
   },
   {
+    "collection": "sarc_mds_ucsc_mds-markergenes545-cnv-mut01-1e+05-ucsc",
+    "count": 1,
+    "fields": [
+      "_id",
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
+    ],
+    "type": "mds"
+  },
+  {
     "collection": "uvm_pcascores_ucsc_prcomp-allgenes-protein",
     "count": 1,
     "fields": [
@@ -7610,15 +7600,17 @@
     "type": "pcaLoadings"
   },
   {
-    "collection": "kich_edges_broad_osccchen9genes",
-    "count": 23,
+    "collection": "cesc_mds_ucsc_mds-oncovogel274-cnv-mut01-ucsc",
+    "count": 1,
     "fields": [
       "_id",
-      "m",
-      "g",
-      "p"
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
     ],
-    "type": "edges"
+    "type": "mds"
   },
   {
     "collection": "lusc_pcascores_broad_prcomp-allgenes-mut01",
@@ -7790,6 +7782,19 @@
     "type": "pcaScores"
   },
   {
+    "collection": "esca_mds_ucsc_mds-oncoplex-cnv-mut01-1e+05-ucsc",
+    "count": 1,
+    "fields": [
+      "_id",
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
+    ],
+    "type": "mds"
+  },
+  {
     "collection": "uvm_othermalignancy_tcga_v4p0",
     "count": 4,
     "fields": [
@@ -7901,6 +7906,20 @@
     "type": "ptDegree"
   },
   {
+    "collection": "brain_pcaloadings_cbio_prcomp-tcgagbmclassifiers-methylation-hm27",
+    "count": 1,
+    "fields": [
+      "_id",
+      "disease",
+      "source",
+      "type",
+      "geneset",
+      "scale",
+      "data"
+    ],
+    "type": "pcaLoadings"
+  },
+  {
     "collection": "prad_pcascores_ucsc_prcomp-osccchen131probes-rna-hiseq-1e+05",
     "count": 1,
     "fields": [
@@ -8008,6 +8027,18 @@
       "p"
     ],
     "type": "edges"
+  },
+  {
+    "collection": "thym_mut01_ucsc_broad",
+    "count": 39854,
+    "fields": [
+      "_id",
+      "gene",
+      "min",
+      "max",
+      "patients"
+    ],
+    "type": "mut01"
   },
   {
     "collection": "lihc_pcascores_ucsc_prcomp-osccchen9genes-rna-hiseq",
@@ -8163,6 +8194,19 @@
     "type": "pcaScores"
   },
   {
+    "collection": "chol_mds_ucsc_mds-osccchen9genes-cnv-mut01-ucsc",
+    "count": 1,
+    "fields": [
+      "_id",
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
+    ],
+    "type": "mds"
+  },
+  {
     "collection": "skcm_pcascores_broad_prcomp-markergenes545-mut01",
     "count": 1,
     "fields": [
@@ -8254,17 +8298,6 @@
     "type": "mds"
   },
   {
-    "collection": "acc_edges_broad_osccchen131probes",
-    "count": 83,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
-  },
-  {
     "collection": "brain_genedegree_ucsc_oncoplex-mut01-cnv",
     "count": 259,
     "fields": [
@@ -8306,6 +8339,19 @@
       "p"
     ],
     "type": "edges"
+  },
+  {
+    "collection": "acc_mds_ucsc_mds-oncovogel274-cnv-mut01-ucsc",
+    "count": 1,
+    "fields": [
+      "_id",
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
+    ],
+    "type": "mds"
   },
   {
     "collection": "brca_pcaloadings_ucsc_prcomp-allgenes-cnv",
@@ -8415,6 +8461,18 @@
     "type": "pcaLoadings"
   },
   {
+    "collection": "uvm_mut01_ucsc_broadcurated",
+    "count": 39381,
+    "fields": [
+      "_id",
+      "gene",
+      "min",
+      "max",
+      "patients"
+    ],
+    "type": "mut01"
+  },
+  {
     "collection": "blca_pcascores_ucsc_prcomp-oncoplex-mut01",
     "count": 1,
     "fields": [
@@ -8476,17 +8534,6 @@
       "data"
     ],
     "type": "pcaScores"
-  },
-  {
-    "collection": "dlbc_edges_broad_tcgapancanmutated",
-    "count": 87,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
   },
   {
     "collection": "cesc_edges_broad_oncovogel274-mut01",
@@ -8565,6 +8612,19 @@
       "TCGA-05-4244-01"
     ],
     "type": "ptDegree"
+  },
+  {
+    "collection": "esca_mds_ucsc_mds-tcgapancanmutated-cnv-mut01-ucsc",
+    "count": 1,
+    "fields": [
+      "_id",
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
+    ],
+    "type": "mds"
   },
   {
     "collection": "gbm_pcascores_ucsc_prcomp-tcgapancanmutated-mut01",
@@ -8657,6 +8717,18 @@
     "type": "pcaLoadings"
   },
   {
+    "collection": "pcpg_mut01_ucsc_broad",
+    "count": 39499,
+    "fields": [
+      "_id",
+      "gene",
+      "min",
+      "max",
+      "patients"
+    ],
+    "type": "mut01"
+  },
+  {
     "collection": "brain_ptdegree_ucsc-pnas_markergenes545-mut01-cnv",
     "count": 1040,
     "fields": [
@@ -8687,6 +8759,19 @@
       "data"
     ],
     "type": "pcaLoadings"
+  },
+  {
+    "collection": "cesc_mds_ucsc_mds-osccchen9genes-cnv-mut01-1e+05-ucsc",
+    "count": 1,
+    "fields": [
+      "_id",
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
+    ],
+    "type": "mds"
   },
   {
     "collection": "esca_pcascores_ucsc_prcomp-oncovogel274-cnv",
@@ -8949,17 +9034,6 @@
     "type": "cnv"
   },
   {
-    "collection": "lusc_edges_broad_tcgapancanmutated",
-    "count": 509,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
-  },
-  {
     "collection": "chol_ptdegree_ucsc_oncovogel274-cnv",
     "count": 35,
     "fields": [
@@ -9191,17 +9265,6 @@
     "type": "pcaScores"
   },
   {
-    "collection": "gbm_edges_broad_osccchen131probes",
-    "count": 157,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
-  },
-  {
     "collection": "brain_edges_cbio_osccchen9genes-mut01-cnv",
     "count": 2949,
     "fields": [
@@ -9277,7 +9340,7 @@
   },
   {
     "collection": "render_pca",
-    "count": 448,
+    "count": 1066,
     "fields": [
       "_id",
       "disease",
@@ -9511,28 +9574,6 @@
       "data"
     ],
     "type": "pcaLoadings"
-  },
-  {
-    "collection": "paad_edges_broad_tcgagbmclassifiers",
-    "count": 1386,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
-  },
-  {
-    "collection": "paad_edges_broad_tcgapancanmutated",
-    "count": 510,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
   },
   {
     "collection": "brca_pcascores_ucsc_prcomp-tcgapancanmutated-mut01",
@@ -10227,17 +10268,6 @@
       "data"
     ],
     "type": "pcaScores"
-  },
-  {
-    "collection": "kich_edges_broad_oncoplex",
-    "count": 120,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
   },
   {
     "collection": "prad_tcga_sample_map",
@@ -11019,6 +11049,19 @@
     "type": "pcaScores"
   },
   {
+    "collection": "cesc_mds_ucsc_mds-allgenes-cnv-mut01-ucsc",
+    "count": 1,
+    "fields": [
+      "_id",
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
+    ],
+    "type": "mds"
+  },
+  {
     "collection": "gbm_ptdegree_ucsc_osccchen131probes-mut01-cnv",
     "count": 583,
     "fields": [
@@ -11054,17 +11097,6 @@
       "data"
     ],
     "type": "pcaScores"
-  },
-  {
-    "collection": "kich_edges_broad_tcgagbmclassifiers",
-    "count": 219,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
   },
   {
     "collection": "brca_pcascores_cbio_prcomp-tcgagbmclassifiers-mut01",
@@ -11347,17 +11379,6 @@
     "type": "pcaLoadings"
   },
   {
-    "collection": "lihc_edges_broad_oncovogel274",
-    "count": 1226,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
-  },
-  {
     "collection": "gbm_pcascores_broad_prcomp-oncoplex-mut01-1e+05",
     "count": 1,
     "fields": [
@@ -11373,17 +11394,6 @@
       "data"
     ],
     "type": "pcaScores"
-  },
-  {
-    "collection": "acc_edges_broad_tcgapancanmutated",
-    "count": 117,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
   },
   {
     "collection": "lgg_ptdegree_broad_tcgagbmclassifiers-mut01",
@@ -11581,17 +11591,6 @@
     "type": "newTumor"
   },
   {
-    "collection": "lihc_edges_broad_markergenes545",
-    "count": 2074,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
-  },
-  {
     "collection": "cesc_pcaloadings_broad_prcomp-markergenes545-mut01",
     "count": 1,
     "fields": [
@@ -11764,6 +11763,19 @@
     "type": "pcaLoadings"
   },
   {
+    "collection": "acc_mds_ucsc_mds-oncovogel274-cnv-mut01-1e+05-ucsc",
+    "count": 1,
+    "fields": [
+      "_id",
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
+    ],
+    "type": "mds"
+  },
+  {
     "collection": "dlbc_drug_tcga_clinical",
     "count": 225,
     "fields": [
@@ -11830,6 +11842,19 @@
     "type": "pcaScores"
   },
   {
+    "collection": "cesc_mds_ucsc_mds-oncoplex-cnv-mut01-ucsc",
+    "count": 1,
+    "fields": [
+      "_id",
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
+    ],
+    "type": "mds"
+  },
+  {
     "collection": "sarc_pcascores_ucsc_prcomp-oncoplex-cnv-1e+05",
     "count": 1,
     "fields": [
@@ -11845,17 +11870,6 @@
       "data"
     ],
     "type": "pcaScores"
-  },
-  {
-    "collection": "cesc_edges_broad_tcgapancanmutated",
-    "count": 335,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
   },
   {
     "collection": "esca_genedegree_ucsc_oncoplex-cnv",
@@ -12103,15 +12117,17 @@
     "type": "pcaLoadings"
   },
   {
-    "collection": "ucec_edges_broad_markergenes545",
-    "count": 4600,
+    "collection": "chol_mds_ucsc_mds-markergenes545-cnv-mut01-1e+05-ucsc",
+    "count": 1,
     "fields": [
       "_id",
-      "m",
-      "g",
-      "p"
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
     ],
-    "type": "edges"
+    "type": "mds"
   },
   {
     "collection": "lgg_edges_ucsc_tcgagbmclassifiers-mut01-cnv",
@@ -12380,6 +12396,19 @@
       "data"
     ],
     "type": "pcaLoadings"
+  },
+  {
+    "collection": "esca_mds_ucsc_mds-allgenes-cnv-mut01-ucsc",
+    "count": 1,
+    "fields": [
+      "_id",
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
+    ],
+    "type": "mds"
   },
   {
     "collection": "laml_pcascores_ucsc_prcomp-markergenes545-mut01-1e+05",
@@ -13065,6 +13094,23 @@
     "type": "edges"
   },
   {
+    "collection": "brain_pcascores_cbio_prcomp-oncoplex-methylation-hm27",
+    "count": 1,
+    "fields": [
+      "_id",
+      "disease",
+      "source",
+      "type",
+      "geneset",
+      "scale",
+      "pc1",
+      "pc2",
+      "pc3",
+      "data"
+    ],
+    "type": "pcaScores"
+  },
+  {
     "collection": "dlbc_genedegree_broad_tcgapancanmutated",
     "count": 39,
     "fields": [
@@ -13117,6 +13163,19 @@
       "data"
     ],
     "type": "pcaScores"
+  },
+  {
+    "collection": "chol_mds_ucsc_mds-osccchen131probes-cnv-mut01-1e+05-ucsc",
+    "count": 1,
+    "fields": [
+      "_id",
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
+    ],
+    "type": "mds"
   },
   {
     "collection": "laml_ptdegree_ucsc_tcgapancanmutated-mut01-cnv",
@@ -13539,6 +13598,18 @@
     "type": "pcaLoadings"
   },
   {
+    "collection": "ucs_mut01_ucsc_broad",
+    "count": 39729,
+    "fields": [
+      "_id",
+      "gene",
+      "min",
+      "max",
+      "patients"
+    ],
+    "type": "mut01"
+  },
+  {
     "collection": "stad_genedegree_ucsc_tcgapancanmutated-mut01",
     "count": 62,
     "fields": [
@@ -13575,17 +13646,6 @@
       "ABCA1"
     ],
     "type": "geneDegree"
-  },
-  {
-    "collection": "blca_edges_broad_osccchen131probes",
-    "count": 712,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
   },
   {
     "collection": "luad_genedegree_ucsc_oncovogel274-mut01-cnv",
@@ -13917,17 +13977,6 @@
     "type": "mut"
   },
   {
-    "collection": "gbm_edges_broad_tcgagbmclassifiers",
-    "count": 737,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
-  },
-  {
     "collection": "brain_mds_ucsc-pnas_mds-oncoplex-cnv-mut01-1e+05-ucsc-pnas",
     "count": 1,
     "fields": [
@@ -14239,17 +14288,6 @@
     "type": "pcaScores"
   },
   {
-    "collection": "blca_edges_broad_osccchen9genes",
-    "count": 274,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
-  },
-  {
     "collection": "prad_pcascores_cbio_prcomp-allgenes-cnv-1e+05",
     "count": 1,
     "fields": [
@@ -14401,6 +14439,18 @@
       "data"
     ],
     "type": "pcaScores"
+  },
+  {
+    "collection": "sarc_mut01_ucsc_broad",
+    "count": 40233,
+    "fields": [
+      "_id",
+      "gene",
+      "min",
+      "max",
+      "patients"
+    ],
+    "type": "mut01"
   },
   {
     "collection": "coadread_pcascores_ucsc_prcomp-tcgapancanmutated-cnv",
@@ -14585,28 +14635,6 @@
     "type": "mds"
   },
   {
-    "collection": "thca_edges_broad_tcgagbmclassifiers",
-    "count": 407,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
-  },
-  {
-    "collection": "gbm_edges_ucsc_oncovogel274",
-    "count": 48755,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
-  },
-  {
     "collection": "brca_edges_broad_osccchen9genes-mut01",
     "count": 318,
     "fields": [
@@ -14693,17 +14721,6 @@
       "TCGA-3C-AAAU-01"
     ],
     "type": "ptDegree"
-  },
-  {
-    "collection": "hnsc_edges_broad_osccchen9genes",
-    "count": 584,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
   },
   {
     "collection": "brca_pcaloadings_ucsc_prcomp-oncoplex-mut01",
@@ -15060,17 +15077,6 @@
     "type": "pcaScores"
   },
   {
-    "collection": "cesc_edges_broad_osccchen131probes",
-    "count": 163,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
-  },
-  {
     "collection": "prad_followup_tcga_v1p0",
     "count": 1016,
     "fields": [
@@ -15379,17 +15385,6 @@
       "TCGA-2F-A9KO-01"
     ],
     "type": "ptDegree"
-  },
-  {
-    "collection": "prad_edges_broad_osccchen131probes",
-    "count": 177,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
   },
   {
     "collection": "coadread_pcaloadings_ucsc_prcomp-oncovogel274-mut01",
@@ -15770,15 +15765,17 @@
     "type": "pcaLoadings"
   },
   {
-    "collection": "paad_edges_broad_oncovogel274",
-    "count": 968,
+    "collection": "acc_mds_ucsc_mds-oncoplex-cnv-mut01-1e+05-ucsc",
+    "count": 1,
     "fields": [
       "_id",
-      "m",
-      "g",
-      "p"
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
     ],
-    "type": "edges"
+    "type": "mds"
   },
   {
     "collection": "dlbc_edges_broad_tcgapancanmutated-mut01",
@@ -16189,17 +16186,6 @@
       "data"
     ],
     "type": "pcaScores"
-  },
-  {
-    "collection": "luad_edges_broad_oncovogel274",
-    "count": 3718,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
   },
   {
     "collection": "brca_pcaloadings_cbio_prcomp-oncoplex-cnv",
@@ -16706,17 +16692,6 @@
     "type": "pcaScores"
   },
   {
-    "collection": "stad_edges_broad_oncovogel274",
-    "count": 3409,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
-  },
-  {
     "collection": "lihc_pcascores_broad_prcomp-tcgapancanmutated-mut01",
     "count": 1,
     "fields": [
@@ -16746,6 +16721,19 @@
       "data"
     ],
     "type": "pcaLoadings"
+  },
+  {
+    "collection": "acc_mds_ucsc_mds-allgenes-cnv-mut01-ucsc",
+    "count": 1,
+    "fields": [
+      "_id",
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
+    ],
+    "type": "mds"
   },
   {
     "collection": "coadread_pcascores_cbio_prcomp-allgenes-protein",
@@ -17376,6 +17364,19 @@
       "data"
     ],
     "type": "pcaLoadings"
+  },
+  {
+    "collection": "cesc_mds_ucsc_mds-markergenes545-cnv-mut01-ucsc",
+    "count": 1,
+    "fields": [
+      "_id",
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
+    ],
+    "type": "mds"
   },
   {
     "collection": "meso_pcaloadings_ucsc_prcomp-oncovogel274-rna-hiseq",
@@ -18016,6 +18017,20 @@
     "type": "ptDegree"
   },
   {
+    "collection": "brain_pcaloadings_cbio_prcomp-osccchen131probes-methylation-hm27",
+    "count": 1,
+    "fields": [
+      "_id",
+      "disease",
+      "source",
+      "type",
+      "geneset",
+      "scale",
+      "data"
+    ],
+    "type": "pcaLoadings"
+  },
+  {
     "collection": "paad_genedegree_broad_oncoplex-mut01",
     "count": 209,
     "fields": [
@@ -18197,17 +18212,6 @@
     "type": "pcaLoadings"
   },
   {
-    "collection": "chol_edges_broad_oncovogel274",
-    "count": 160,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
-  },
-  {
     "collection": "hnsc_pcascores_ucsc_prcomp-tcgapancanmutated-mut01-1e+05",
     "count": 1,
     "fields": [
@@ -18225,15 +18229,17 @@
     "type": "pcaScores"
   },
   {
-    "collection": "prad_edges_broad_tcgapancanmutated",
-    "count": 338,
+    "collection": "dlbc_mds_ucsc_mds-allgenes-cnv-mut01-ucsc",
+    "count": 1,
     "fields": [
       "_id",
-      "m",
-      "g",
-      "p"
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
     ],
-    "type": "edges"
+    "type": "mds"
   },
   {
     "collection": "brain_edges_broad_markergenes545-mut01",
@@ -18320,17 +18326,6 @@
       "data"
     ],
     "type": "pcaScores"
-  },
-  {
-    "collection": "ucec_edges_broad_tcgagbmclassifiers",
-    "count": 5150,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
   },
   {
     "collection": "prad_ptdegree_ucsc_osccchen131probes-mut01-cnv",
@@ -18648,6 +18643,23 @@
     "type": "geneDegree"
   },
   {
+    "collection": "brain_pcascores_cbio_prcomp-oncoplex-methylation-hm27-1e+05",
+    "count": 1,
+    "fields": [
+      "_id",
+      "disease",
+      "source",
+      "type",
+      "geneset",
+      "scale",
+      "pc1",
+      "pc2",
+      "pc3",
+      "data"
+    ],
+    "type": "pcaScores"
+  },
+  {
     "collection": "luad_pcaloadings_ucsc_prcomp-tcgapancanmutated-cnv",
     "count": 1,
     "fields": [
@@ -18722,6 +18734,19 @@
       "AKT3"
     ],
     "type": "geneDegree"
+  },
+  {
+    "collection": "acc_mds_ucsc_mds-oncoplex-cnv-mut01-ucsc",
+    "count": 1,
+    "fields": [
+      "_id",
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
+    ],
+    "type": "mds"
   },
   {
     "collection": "sarc_pcascores_broad_prcomp-tcgagbmclassifiers-mut01",
@@ -19338,6 +19363,18 @@
     "type": "pcaScores"
   },
   {
+    "collection": "kirp_mut01_ucsc_broadcurated",
+    "count": 33357,
+    "fields": [
+      "_id",
+      "gene",
+      "min",
+      "max",
+      "patients"
+    ],
+    "type": false
+  },
+  {
     "collection": "paad_othermalignancy_tcga_v4p0",
     "count": 46,
     "fields": [
@@ -19426,6 +19463,19 @@
     "type": "pcaScores"
   },
   {
+    "collection": "cesc_mds_ucsc_mds-oncoplex-cnv-mut01-1e+05-ucsc",
+    "count": 1,
+    "fields": [
+      "_id",
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
+    ],
+    "type": "mds"
+  },
+  {
     "collection": "lgg_mds_ucsc_mds-tcgagbmclassifiers-cnv-mut01-ucsc",
     "count": 1,
     "fields": [
@@ -19507,6 +19557,19 @@
     "type": "pcaLoadings"
   },
   {
+    "collection": "sarc_mds_ucsc_mds-oncoplex-cnv-mut01-1e+05-ucsc",
+    "count": 1,
+    "fields": [
+      "_id",
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
+    ],
+    "type": "mds"
+  },
+  {
     "collection": "brain_pcascores_broad_prcomp-oncoplex-mut01",
     "count": 1,
     "fields": [
@@ -19522,6 +19585,18 @@
       "data"
     ],
     "type": "pcaScores"
+  },
+  {
+    "collection": "kich_mut01_ucsc_broad",
+    "count": 39440,
+    "fields": [
+      "_id",
+      "gene",
+      "min",
+      "max",
+      "patients"
+    ],
+    "type": false
   },
   {
     "collection": "uvm_followup_tcga_v4p0",
@@ -19566,6 +19641,18 @@
       "data"
     ],
     "type": "pcaScores"
+  },
+  {
+    "collection": "stad_mut01_ucsc_broadcurated",
+    "count": 40157,
+    "fields": [
+      "_id",
+      "gene",
+      "min",
+      "max",
+      "patients"
+    ],
+    "type": "mut01"
   },
   {
     "collection": "paad_radiation_tcga_clinical",
@@ -20523,6 +20610,23 @@
     "type": "ptDegree"
   },
   {
+    "collection": "brain_pcascores_cbio_prcomp-tcgagbmclassifiers-methylation-hm27",
+    "count": 1,
+    "fields": [
+      "_id",
+      "disease",
+      "source",
+      "type",
+      "geneset",
+      "scale",
+      "pc1",
+      "pc2",
+      "pc3",
+      "data"
+    ],
+    "type": "pcaScores"
+  },
+  {
     "collection": "brca_edges_ucsc_oncovogel274-mut01-cnv",
     "count": 132524,
     "fields": [
@@ -20631,6 +20735,19 @@
     "type": "pcaLoadings"
   },
   {
+    "collection": "cesc_mds_ucsc_mds-tcgagbmclassifiers-cnv-mut01-1e+05-ucsc",
+    "count": 1,
+    "fields": [
+      "_id",
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
+    ],
+    "type": "mds"
+  },
+  {
     "collection": "stad_pcascores_ucsc_prcomp-oncoplex-rna-hiseq",
     "count": 1,
     "fields": [
@@ -20704,6 +20821,23 @@
   },
   {
     "collection": "lihc_pcascores_broad_prcomp-markergenes545-mut01",
+    "count": 1,
+    "fields": [
+      "_id",
+      "disease",
+      "source",
+      "type",
+      "geneset",
+      "scale",
+      "pc1",
+      "pc2",
+      "pc3",
+      "data"
+    ],
+    "type": "pcaScores"
+  },
+  {
+    "collection": "brain_pcascores_cbio_prcomp-tcgapancanmutated-methylation-hm27",
     "count": 1,
     "fields": [
       "_id",
@@ -20869,6 +21003,19 @@
       "ABAT"
     ],
     "type": "geneDegree"
+  },
+  {
+    "collection": "acc_mds_ucsc_mds-tcgapancanmutated-cnv-mut01-1e+05-ucsc",
+    "count": 1,
+    "fields": [
+      "_id",
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
+    ],
+    "type": "mds"
   },
   {
     "collection": "hnsc_pcaloadings_cbio_prcomp-tcgapancanmutated-cnv",
@@ -21572,17 +21719,6 @@
     "type": "edges"
   },
   {
-    "collection": "brain_edges_broad_tcgagbmclassifiers",
-    "count": 1977,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
-  },
-  {
     "collection": "paad_ptdegree_ucsc_osccchen9genes-mut01-cnv",
     "count": 159,
     "fields": [
@@ -21590,17 +21726,6 @@
       "TCGA-2J-AAB1-01"
     ],
     "type": "ptDegree"
-  },
-  {
-    "collection": "ucec_edges_broad_osccchen9genes",
-    "count": 135,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
   },
   {
     "collection": "coadread_pcascores_cbio_prcomp-tcgapancanmutated-methylation-hm27",
@@ -21777,17 +21902,6 @@
     "type": "ptDegree"
   },
   {
-    "collection": "acc_edges_broad_osccchen9genes",
-    "count": 24,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
-  },
-  {
     "collection": "coadread_pcascores_ucsc_prcomp-tcgapancanmutated-cnv-1e+05",
     "count": 1,
     "fields": [
@@ -21862,6 +21976,19 @@
       "data"
     ],
     "type": "pcaLoadings"
+  },
+  {
+    "collection": "chol_mds_ucsc_mds-markergenes545-cnv-mut01-ucsc",
+    "count": 1,
+    "fields": [
+      "_id",
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
+    ],
+    "type": "mds"
   },
   {
     "collection": "laml_pcascores_ucsc_prcomp-osccchen131probes-cnv-1e+05",
@@ -22630,17 +22757,6 @@
     "type": "pcaScores"
   },
   {
-    "collection": "lihc_edges_broad_tcgagbmclassifiers",
-    "count": 1972,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
-  },
-  {
     "collection": "skcm_ptdegree_broad_tcgapancanmutated",
     "count": 270,
     "fields": [
@@ -22768,7 +22884,7 @@
     "type": "pcaLoadings"
   },
   {
-    "collection": "brain_mds_ucsc-pnas_mds-tcgagbmclassifiers-cnv-mut01-ucsc-pnas",
+    "collection": "esca_mds_ucsc_mds-tcgagbmclassifiers-cnv-mut01-1e+05-ucsc",
     "count": 1,
     "fields": [
       "_id",
@@ -22781,15 +22897,17 @@
     "type": "mds"
   },
   {
-    "collection": "lgg_edges_broad_osccchen9genes",
-    "count": 305,
+    "collection": "brain_mds_ucsc-pnas_mds-tcgagbmclassifiers-cnv-mut01-ucsc-pnas",
+    "count": 1,
     "fields": [
       "_id",
-      "m",
-      "g",
-      "p"
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
     ],
-    "type": "edges"
+    "type": "mds"
   },
   {
     "collection": "ucs_pcaloadings_ucsc_prcomp-tcgapancanmutated-rna-hiseq",
@@ -23303,17 +23421,6 @@
       "data"
     ],
     "type": "pcaScores"
-  },
-  {
-    "collection": "stad_edges_broad_tcgapancanmutated",
-    "count": 1209,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
   },
   {
     "collection": "lung_pcascores_cbio_prcomp-osccchen131probes-rna-agilent",
@@ -23840,17 +23947,6 @@
     "type": "pcaScores"
   },
   {
-    "collection": "prad_edges_broad_markergenes545",
-    "count": 1275,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
-  },
-  {
     "collection": "dlbc_mut01_broad_mutsig2",
     "count": 5925,
     "fields": [
@@ -24322,6 +24418,19 @@
     "type": "pcaLoadings"
   },
   {
+    "collection": "esca_mds_ucsc_mds-osccchen131probes-cnv-mut01-ucsc",
+    "count": 1,
+    "fields": [
+      "_id",
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
+    ],
+    "type": "mds"
+  },
+  {
     "collection": "lgg_pcascores_ucsc_prcomp-osccchen9genes-cnv-1e+05",
     "count": 1,
     "fields": [
@@ -24537,17 +24646,6 @@
     "type": "pcaLoadings"
   },
   {
-    "collection": "kich_edges_broad_oncovogel274",
-    "count": 125,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
-  },
-  {
     "collection": "prad_pcascores_cbio_prcomp-osccchen131probes-rna-agilent",
     "count": 1,
     "fields": [
@@ -24623,17 +24721,6 @@
       "data"
     ],
     "type": "pcaLoadings"
-  },
-  {
-    "collection": "coadread_edges_ucsc_oncovogel274",
-    "count": 61725,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
   },
   {
     "collection": "paad_pcaloadings_cbio_prcomp-oncovogel274-rna-seq",
@@ -24736,17 +24823,6 @@
       "data"
     ],
     "type": "pcaScores"
-  },
-  {
-    "collection": "thca_edges_broad_oncoplex",
-    "count": 549,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
   },
   {
     "collection": "lihc_pcascores_broad_prcomp-tcgagbmclassifiers-mut01",
@@ -24898,17 +24974,6 @@
       "patients"
     ],
     "type": "protein"
-  },
-  {
-    "collection": "paad_edges_broad_osccchen9genes",
-    "count": 177,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
   },
   {
     "collection": "hnsc_mds_cbio_mds-allgenes-cnv-mut01-cbio",
@@ -25546,6 +25611,23 @@
     "type": "edges"
   },
   {
+    "collection": "brain_pcascores_cbio_prcomp-allgenes-protein",
+    "count": 1,
+    "fields": [
+      "_id",
+      "disease",
+      "source",
+      "type",
+      "geneset",
+      "scale",
+      "pc1",
+      "pc2",
+      "pc3",
+      "data"
+    ],
+    "type": "pcaScores"
+  },
+  {
     "collection": "lung_pcascores_cbio_prcomp-osccchen9genes-mut01-1e+05",
     "count": 1,
     "fields": [
@@ -25620,17 +25702,6 @@
       "data"
     ],
     "type": "pcaScores"
-  },
-  {
-    "collection": "esca_edges_broad_osccchen131probes",
-    "count": 258,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
   },
   {
     "collection": "gbm_genedegree_ucsc_tcgapancanmutated-mut01-cnv",
@@ -26175,32 +26246,6 @@
     "type": "pcaScores"
   },
   {
-    "collection": "kirc_othermalignancy_tcga_v4p0",
-    "count": 111,
-    "fields": [
-      "_id",
-      "patient_ID",
-      "malignancy_type",
-      "days_to_diagnosis",
-      "surgery_procedure",
-      "days_to_surgery",
-      "pharmaceutical_therapy",
-      "drug_therapy_name",
-      "days_to_drug_start",
-      "radiation_therapy",
-      "history_rt_tx_to_site_of_tumor",
-      "days_to_radiation_start",
-      "ajcc_staging_edition",
-      "pathologic_stage_T",
-      "pathologic_stage_N",
-      "pathologic_stage_M",
-      "pathologic_stage_S",
-      "clinical_stage_S",
-      "laterality"
-    ],
-    "type": "otherMalignancy"
-  },
-  {
     "collection": "prad_genedegree_ucsc_oncovogel274-mut01-cnv",
     "count": 268,
     "fields": [
@@ -26638,17 +26683,6 @@
     "type": "pcaScores"
   },
   {
-    "collection": "sarc_edges_broad_markergenes545",
-    "count": 706,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
-  },
-  {
     "collection": "ucec_pcascores_ucsc_prcomp-markergenes545-rna-hiseq-1e+05",
     "count": 1,
     "fields": [
@@ -26892,17 +26926,6 @@
       "data"
     ],
     "type": "pcaScores"
-  },
-  {
-    "collection": "paad_edges_broad_oncoplex",
-    "count": 944,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
   },
   {
     "collection": "skcm_pcascores_broad_prcomp-allgenes-mut01",
@@ -27673,6 +27696,19 @@
       "data"
     ],
     "type": "pcaScores"
+  },
+  {
+    "collection": "dlbc_mds_ucsc_mds-markergenes545-cnv-mut01-1e+05-ucsc",
+    "count": 1,
+    "fields": [
+      "_id",
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
+    ],
+    "type": "mds"
   },
   {
     "collection": "kirp_pcascores_broad_prcomp-tcgagbmclassifiers-mut01-1e+05",
@@ -28580,17 +28616,6 @@
     "type": "pcaScores"
   },
   {
-    "collection": "gbm_edges_broad_markergenes545",
-    "count": 1335,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
-  },
-  {
     "collection": "hnsc_edges_ucsc_osccchen9genes-mut01-cnv",
     "count": 2414,
     "fields": [
@@ -28826,6 +28851,19 @@
   },
   {
     "collection": "laml_mds_ucsc_mds-tcgapancanmutated-cnv-mut01-ucsc",
+    "count": 1,
+    "fields": [
+      "_id",
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
+    ],
+    "type": "mds"
+  },
+  {
+    "collection": "chol_mds_ucsc_mds-oncoplex-cnv-mut01-ucsc",
     "count": 1,
     "fields": [
       "_id",
@@ -29393,17 +29431,6 @@
       "data"
     ],
     "type": "pcaScores"
-  },
-  {
-    "collection": "blca_edges_broad_tcgapancanmutated",
-    "count": 1454,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
   },
   {
     "collection": "brca_pcascores_broad_prcomp-markergenes545-mut01",
@@ -30005,17 +30032,6 @@
     "type": "pcaScores"
   },
   {
-    "collection": "dlbc_edges_broad_markergenes545",
-    "count": 485,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
-  },
-  {
     "collection": "paad_genedegree_broad_osccchen9genes",
     "count": 7,
     "fields": [
@@ -30023,28 +30039,6 @@
       "AKT3"
     ],
     "type": "geneDegree"
-  },
-  {
-    "collection": "esca_edges_broad_tcgagbmclassifiers",
-    "count": 3808,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
-  },
-  {
-    "collection": "prad_edges_broad_oncoplex",
-    "count": 717,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
   },
   {
     "collection": "brca_genedegree_broad_tcgapancanmutated",
@@ -30063,17 +30057,6 @@
       "ABAT"
     ],
     "type": "geneDegree"
-  },
-  {
-    "collection": "acc_edges_broad_markergenes545",
-    "count": 517,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
   },
   {
     "collection": "coadread_genedegree_ucsc_markergenes545",
@@ -30259,6 +30242,23 @@
       "TCGA-3X-AAV9-01"
     ],
     "type": "ptDegree"
+  },
+  {
+    "collection": "brain_pcascores_cbio_prcomp-markergenes545-methylation-hm27-1e+05",
+    "count": 1,
+    "fields": [
+      "_id",
+      "disease",
+      "source",
+      "type",
+      "geneset",
+      "scale",
+      "pc1",
+      "pc2",
+      "pc3",
+      "data"
+    ],
+    "type": "pcaScores"
   },
   {
     "collection": "brca_edges_ucsc_oncoplex-mut01-cnv",
@@ -30671,6 +30671,19 @@
       "data"
     ],
     "type": "pcaLoadings"
+  },
+  {
+    "collection": "dlbc_mds_ucsc_mds-osccchen9genes-cnv-mut01-1e+05-ucsc",
+    "count": 1,
+    "fields": [
+      "_id",
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
+    ],
+    "type": "mds"
   },
   {
     "collection": "gbm_pcascores_broad_prcomp-allgenes-mut01",
@@ -31328,6 +31341,19 @@
     "type": "pcaLoadings"
   },
   {
+    "collection": "sarc_mds_ucsc_mds-allgenes-cnv-mut01-1e+05-ucsc",
+    "count": 1,
+    "fields": [
+      "_id",
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
+    ],
+    "type": "mds"
+  },
+  {
     "collection": "lusc_pcascores_cbio_prcomp-tcgagbmclassifiers-methylation-hm450-1e+05",
     "count": 1,
     "fields": [
@@ -31691,6 +31717,35 @@
       "ABLIM3"
     ],
     "type": "geneDegree"
+  },
+  {
+    "collection": "brain_pcascores_cbio_prcomp-oncovogel274-methylation-hm27",
+    "count": 1,
+    "fields": [
+      "_id",
+      "disease",
+      "source",
+      "type",
+      "geneset",
+      "scale",
+      "pc1",
+      "pc2",
+      "pc3",
+      "data"
+    ],
+    "type": "pcaScores"
+  },
+  {
+    "collection": "kirc_mut01_ucsc_pancanaws",
+    "count": 39531,
+    "fields": [
+      "_id",
+      "gene",
+      "min",
+      "max",
+      "patients"
+    ],
+    "type": false
   },
   {
     "collection": "gbm_mut01_ucsc_mutationbroadgene",
@@ -32368,17 +32423,6 @@
     "type": "pcaScores"
   },
   {
-    "collection": "lusc_edges_broad_markergenes545",
-    "count": 2456,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
-  },
-  {
     "collection": "luad_genedegree_cbio_osccchen9genes-mut01-cnv",
     "count": 8,
     "fields": [
@@ -32547,17 +32591,6 @@
     "type": "pcaScores"
   },
   {
-    "collection": "luad_edges_broad_osccchen131probes",
-    "count": 1153,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
-  },
-  {
     "collection": "gbm_ptdegree_ucsc_oncoplex",
     "count": 590,
     "fields": [
@@ -32707,17 +32740,6 @@
       "data"
     ],
     "type": "pcaLoadings"
-  },
-  {
-    "collection": "thca_edges_broad_osccchen9genes",
-    "count": 8,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
   },
   {
     "collection": "brain_genedegree_ucsc-pnas_oncoplex-mut01-cnv",
@@ -33163,17 +33185,6 @@
       "data"
     ],
     "type": "mds"
-  },
-  {
-    "collection": "ucec_edges_broad_osccchen131probes",
-    "count": 756,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
   },
   {
     "collection": "luad_pcascores_ucsc_prcomp-oncovogel274-mut01-1e+05",
@@ -34329,17 +34340,6 @@
     "type": "pcaScores"
   },
   {
-    "collection": "brain_edges_broad_oncoplex",
-    "count": 2397,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
-  },
-  {
     "collection": "brain_newtumor_tcga_clinical",
     "count": 148,
     "fields": [
@@ -34468,17 +34468,6 @@
       "TCGA-2H-A9GF-01"
     ],
     "type": "ptDegree"
-  },
-  {
-    "collection": "lgg_edges_broad_oncoplex",
-    "count": 1656,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
   },
   {
     "collection": "hnsc_pcascores_cbio_prcomp-tcgapancanmutated-methylation-hm450-1e+05",
@@ -34646,6 +34635,19 @@
       "TCGA-3L-AA1B-01"
     ],
     "type": "ptDegree"
+  },
+  {
+    "collection": "dlbc_mds_ucsc_mds-oncovogel274-cnv-mut01-ucsc",
+    "count": 1,
+    "fields": [
+      "_id",
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
+    ],
+    "type": "mds"
   },
   {
     "collection": "kirp_ptdegree_broad_tcgagbmclassifiers-mut01",
@@ -34914,6 +34916,19 @@
     "type": "pcaScores"
   },
   {
+    "collection": "acc_mds_ucsc_mds-osccchen131probes-cnv-mut01-ucsc",
+    "count": 1,
+    "fields": [
+      "_id",
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
+    ],
+    "type": "mds"
+  },
+  {
     "collection": "brain_pcaloadings_cbio_prcomp-osccchen131probes-cnv",
     "count": 1,
     "fields": [
@@ -35096,17 +35111,6 @@
     "type": "pcaScores"
   },
   {
-    "collection": "kirc_edges_broad_tcgagbmclassifiers",
-    "count": 1245,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
-  },
-  {
     "collection": "skcm_genedegree_broad_tcgapancanmutated",
     "count": 59,
     "fields": [
@@ -35145,17 +35149,6 @@
       "data"
     ],
     "type": "mds"
-  },
-  {
-    "collection": "stad_edges_broad_tcgagbmclassifiers",
-    "count": 6668,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
   },
   {
     "collection": "lgg_edges_broad_tcgagbmclassifiers-mut01",
@@ -35590,17 +35583,6 @@
     "type": "pcaScores"
   },
   {
-    "collection": "kirp_edges_broad_osccchen131probes",
-    "count": 105,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
-  },
-  {
     "collection": "laml_pcaloadings_ucsc_prcomp-markergenes545-cnv",
     "count": 1,
     "fields": [
@@ -35832,6 +35814,19 @@
     "type": "pcaLoadings"
   },
   {
+    "collection": "acc_mds_ucsc_mds-markergenes545-cnv-mut01-ucsc",
+    "count": 1,
+    "fields": [
+      "_id",
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
+    ],
+    "type": "mds"
+  },
+  {
     "collection": "lusc_edges_broad_osccchen9genes-mut01",
     "count": 198,
     "fields": [
@@ -36025,17 +36020,6 @@
       "data"
     ],
     "type": "pcaScores"
-  },
-  {
-    "collection": "skcm_edges_broad_tcgagbmclassifiers",
-    "count": 6503,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
   },
   {
     "collection": "dlbc_followup_tcga_v4p4",
@@ -37334,6 +37318,18 @@
     "type": "pcaLoadings"
   },
   {
+    "collection": "thca_mut01_ucsc_broad",
+    "count": 39728,
+    "fields": [
+      "_id",
+      "gene",
+      "min",
+      "max",
+      "patients"
+    ],
+    "type": "mut01"
+  },
+  {
     "collection": "lung_mds_ucsc_mds-allgenes-cnv-mut01-1e+05-ucsc",
     "count": 1,
     "fields": [
@@ -37851,17 +37847,6 @@
       "TCGA-BA-4074-01"
     ],
     "type": "ptDegree"
-  },
-  {
-    "collection": "lihc_edges_broad_osccchen131probes",
-    "count": 278,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
   },
   {
     "collection": "coadread_pcaloadings_cbio_prcomp-tcgapancanmutated-cnv",
@@ -38438,17 +38423,6 @@
       "data"
     ],
     "type": "pcaScores"
-  },
-  {
-    "collection": "cesc_edges_broad_oncovogel274",
-    "count": 791,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
   },
   {
     "collection": "lgg_pcascores_broad_prcomp-tcgapancanmutated-mut01",
@@ -40353,17 +40327,6 @@
     "type": "pcaLoadings"
   },
   {
-    "collection": "skcm_edges_broad_tcgapancanmutated",
-    "count": 858,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
-  },
-  {
     "collection": "laml_pcaloadings_ucsc_prcomp-allgenes-rna-hiseq",
     "count": 1,
     "fields": [
@@ -40622,6 +40585,19 @@
     "type": "geneDegree"
   },
   {
+    "collection": "acc_mds_ucsc_mds-markergenes545-cnv-mut01-1e+05-ucsc",
+    "count": 1,
+    "fields": [
+      "_id",
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
+    ],
+    "type": "mds"
+  },
+  {
     "collection": "laml_pcascores_ucsc_prcomp-osccchen131probes-rna-hiseq",
     "count": 1,
     "fields": [
@@ -40668,6 +40644,19 @@
       "data"
     ],
     "type": "pcaLoadings"
+  },
+  {
+    "collection": "esca_mds_ucsc_mds-osccchen9genes-cnv-mut01-1e+05-ucsc",
+    "count": 1,
+    "fields": [
+      "_id",
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
+    ],
+    "type": "mds"
   },
   {
     "collection": "brca_pcascores_broad_prcomp-osccchen9genes-mut01-1e+05",
@@ -41349,6 +41338,19 @@
     "type": "pcaScores"
   },
   {
+    "collection": "dlbc_mds_ucsc_mds-oncovogel274-cnv-mut01-1e+05-ucsc",
+    "count": 1,
+    "fields": [
+      "_id",
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
+    ],
+    "type": "mds"
+  },
+  {
     "collection": "thca_followup_tcga_v2p0",
     "count": 103,
     "fields": [
@@ -41408,17 +41410,6 @@
     "type": "geneDegree"
   },
   {
-    "collection": "sarc_edges_broad_tcgagbmclassifiers",
-    "count": 531,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
-  },
-  {
     "collection": "coadread_pcascores_ucsc_prcomp-oncoplex-cnv",
     "count": 1,
     "fields": [
@@ -41447,17 +41438,6 @@
       "data"
     ],
     "type": "mds"
-  },
-  {
-    "collection": "thca_edges_broad_tcgapancanmutated",
-    "count": 404,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
   },
   {
     "collection": "lgg_pcascores_ucsc_prcomp-tcgapancanmutated-mut01-1e+05",
@@ -41672,17 +41652,6 @@
       "data"
     ],
     "type": "pcaScores"
-  },
-  {
-    "collection": "lung_edges_ucsc_markergenes545",
-    "count": 311468,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
   },
   {
     "collection": "brca_edges_broad_tcgagbmclassifiers-mut01",
@@ -43096,6 +43065,20 @@
     "type": "followUp"
   },
   {
+    "collection": "brain_pcaloadings_cbio_prcomp-oncovogel274-methylation-hm27",
+    "count": 1,
+    "fields": [
+      "_id",
+      "disease",
+      "source",
+      "type",
+      "geneset",
+      "scale",
+      "data"
+    ],
+    "type": "pcaLoadings"
+  },
+  {
     "collection": "paad_pcascores_broad_prcomp-tcgagbmclassifiers-mut01",
     "count": 1,
     "fields": [
@@ -43454,6 +43437,19 @@
     "type": "mut"
   },
   {
+    "collection": "sarc_mds_ucsc_mds-allgenes-cnv-mut01-ucsc",
+    "count": 1,
+    "fields": [
+      "_id",
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
+    ],
+    "type": "mds"
+  },
+  {
     "collection": "hnsc_ptdegree_broad_osccchen9genes",
     "count": 390,
     "fields": [
@@ -43465,28 +43461,6 @@
   {
     "collection": "dlbc_edges_ucsc_tcgapancanmutated-cnv",
     "count": 640,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
-  },
-  {
-    "collection": "luad_edges_broad_tcgagbmclassifiers",
-    "count": 7335,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
-  },
-  {
-    "collection": "coadread_edges_ucsc_osccchen131probes",
-    "count": 23033,
     "fields": [
       "_id",
       "m",
@@ -43614,17 +43588,6 @@
       "data"
     ],
     "type": "pcaScores"
-  },
-  {
-    "collection": "blca_edges_broad_tcgagbmclassifiers",
-    "count": 4675,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
   },
   {
     "collection": "hnsc_ptdegree_broad_markergenes545-mut01",
@@ -43818,17 +43781,6 @@
     "type": "pcaScores"
   },
   {
-    "collection": "dlbc_edges_broad_oncovogel274",
-    "count": 292,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
-  },
-  {
     "collection": "paad_pcaloadings_broad_prcomp-tcgagbmclassifiers-mut01",
     "count": 1,
     "fields": [
@@ -43855,17 +43807,6 @@
       "data"
     ],
     "type": "pcaLoadings"
-  },
-  {
-    "collection": "lgg_edges_broad_tcgapancanmutated",
-    "count": 1187,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
   },
   {
     "collection": "blca_pcaloadings_ucsc_prcomp-markergenes545-rna-hiseq",
@@ -44092,19 +44033,8 @@
     "type": "pcaScores"
   },
   {
-    "collection": "acc_edges_broad_oncovogel274",
-    "count": 266,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
-  },
-  {
     "collection": "render_patient",
-    "count": 551,
+    "count": 1310,
     "fields": [
       "_id",
       "dataset",
@@ -44218,28 +44148,6 @@
       "data"
     ],
     "type": "mds"
-  },
-  {
-    "collection": "kirp_edges_broad_tcgapancanmutated",
-    "count": 164,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
-  },
-  {
-    "collection": "paad_edges_broad_markergenes545",
-    "count": 1574,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
   },
   {
     "collection": "laml_pcascores_ucsc_prcomp-markergenes545-rna-hiseq",
@@ -44813,26 +44721,17 @@
     "type": "rna"
   },
   {
-    "collection": "luad_edges_broad_tcgapancanmutated",
-    "count": 1441,
+    "collection": "sarc_mds_ucsc_mds-tcgapancanmutated-cnv-mut01-1e+05-ucsc",
+    "count": 1,
     "fields": [
       "_id",
-      "m",
-      "g",
-      "p"
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
     ],
-    "type": "edges"
-  },
-  {
-    "collection": "lusc_edges_broad_osccchen131probes",
-    "count": 370,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
+    "type": "mds"
   },
   {
     "collection": "blca_genedegree_broad_osccchen131probes-mut01",
@@ -44885,17 +44784,6 @@
       "patients"
     ],
     "type": "cnv"
-  },
-  {
-    "collection": "paad_edges_broad_osccchen131probes",
-    "count": 240,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
   },
   {
     "collection": "coadread_pcascores_cbio_prcomp-allgenes-rna-seq-1e+05",
@@ -45365,17 +45253,6 @@
     "type": "pcaLoadings"
   },
   {
-    "collection": "luad_edges_broad_oncoplex",
-    "count": 3682,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
-  },
-  {
     "collection": "blca_edges_broad_osccchen131probes-mut01",
     "count": 712,
     "fields": [
@@ -45719,28 +45596,6 @@
     "type": "mds"
   },
   {
-    "collection": "lusc_edges_broad_osccchen9genes",
-    "count": 198,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
-  },
-  {
-    "collection": "cesc_edges_broad_osccchen9genes",
-    "count": 35,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
-  },
-  {
     "collection": "dlbc_genedegree_ucsc_oncoplex-cnv",
     "count": 257,
     "fields": [
@@ -45909,17 +45764,6 @@
     "type": "pcaScores"
   },
   {
-    "collection": "hnsc_edges_broad_tcgapancanmutated",
-    "count": 1209,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
-  },
-  {
     "collection": "lgg_edges_ucsc_osccchen9genes-mut01-cnv",
     "count": 1009,
     "fields": [
@@ -45929,6 +45773,20 @@
       "p"
     ],
     "type": "edges"
+  },
+  {
+    "collection": "brain_pcaloadings_cbio_prcomp-allgenes-methylation-hm27",
+    "count": 1,
+    "fields": [
+      "_id",
+      "disease",
+      "source",
+      "type",
+      "geneset",
+      "scale",
+      "data"
+    ],
+    "type": "pcaLoadings"
   },
   {
     "collection": "brca_pcaloadings_ucsc_prcomp-markergenes545-cnv",
@@ -46709,17 +46567,6 @@
     "type": "edges"
   },
   {
-    "collection": "prad_edges_broad_oncovogel274",
-    "count": 736,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
-  },
-  {
     "collection": "hnsc_pcascores_cbio_prcomp-allgenes-methylation-hm450",
     "count": 1,
     "fields": [
@@ -46891,6 +46738,15 @@
       "data"
     ],
     "type": "pcaScores"
+  },
+  {
+    "collection": "system.js",
+    "count": 2,
+    "fields": [
+      "_id",
+      "value"
+    ],
+    "type": false
   },
   {
     "collection": "thym_followup_tcga_v4p0",
@@ -47087,6 +46943,19 @@
     "type": "pcaLoadings"
   },
   {
+    "collection": "cesc_mds_ucsc_mds-osccchen9genes-cnv-mut01-ucsc",
+    "count": 1,
+    "fields": [
+      "_id",
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
+    ],
+    "type": "mds"
+  },
+  {
     "collection": "stad_pcascores_broad_prcomp-oncoplex-mut01-1e+05",
     "count": 1,
     "fields": [
@@ -47224,17 +47093,6 @@
       "therapy_regimen_other"
     ],
     "type": "radiation"
-  },
-  {
-    "collection": "chol_edges_broad_osccchen9genes",
-    "count": 11,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
   },
   {
     "collection": "brca_genedegree_broad_oncoplex-mut01",
@@ -47378,17 +47236,6 @@
       "data"
     ],
     "type": "pcaScores"
-  },
-  {
-    "collection": "brain_edges_broad_markergenes545",
-    "count": 3697,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
   },
   {
     "collection": "brca_genedegree_cbio_osccchen131probes-mut01-cnv",
@@ -48875,6 +48722,19 @@
     "type": "pcaScores"
   },
   {
+    "collection": "chol_mds_ucsc_mds-allgenes-cnv-mut01-ucsc",
+    "count": 1,
+    "fields": [
+      "_id",
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
+    ],
+    "type": "mds"
+  },
+  {
     "collection": "acc_ptdegree_ucsc_oncoplex-cnv",
     "count": 89,
     "fields": [
@@ -49140,17 +49000,6 @@
       "data"
     ],
     "type": "pcaScores"
-  },
-  {
-    "collection": "cesc_edges_broad_markergenes545",
-    "count": 1394,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
   },
   {
     "collection": "lihc_pcaloadings_broad_prcomp-markergenes545-mut01",
@@ -49809,6 +49658,19 @@
     "type": "pcaScores"
   },
   {
+    "collection": "esca_mds_ucsc_mds-tcgagbmclassifiers-cnv-mut01-ucsc",
+    "count": 1,
+    "fields": [
+      "_id",
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
+    ],
+    "type": "mds"
+  },
+  {
     "collection": "lung_mds_ucsc_mds-allgenes-cnv-mut01-ucsc",
     "count": 1,
     "fields": [
@@ -50222,6 +50084,23 @@
     "type": "mds"
   },
   {
+    "collection": "brain_pcascores_cbio_prcomp-osccchen131probes-methylation-hm27-1e+05",
+    "count": 1,
+    "fields": [
+      "_id",
+      "disease",
+      "source",
+      "type",
+      "geneset",
+      "scale",
+      "pc1",
+      "pc2",
+      "pc3",
+      "data"
+    ],
+    "type": "pcaScores"
+  },
+  {
     "collection": "laml_pcaloadings_ucsc_prcomp-oncovogel274-cnv",
     "count": 1,
     "fields": [
@@ -50236,6 +50115,23 @@
     "type": "pcaLoadings"
   },
   {
+    "collection": "brain_pcascores_cbio_prcomp-markergenes545-methylation-hm27",
+    "count": 1,
+    "fields": [
+      "_id",
+      "disease",
+      "source",
+      "type",
+      "geneset",
+      "scale",
+      "pc1",
+      "pc2",
+      "pc3",
+      "data"
+    ],
+    "type": "pcaScores"
+  },
+  {
     "collection": "brain_ptdegree_ucsc_oncoplex-mut01-cnv",
     "count": 1115,
     "fields": [
@@ -50243,6 +50139,20 @@
       "TCGA-02-0001-01"
     ],
     "type": "ptDegree"
+  },
+  {
+    "collection": "brain_pcaloadings_cbio_prcomp-osccchen9genes-methylation-hm27",
+    "count": 1,
+    "fields": [
+      "_id",
+      "disease",
+      "source",
+      "type",
+      "geneset",
+      "scale",
+      "data"
+    ],
+    "type": "pcaLoadings"
   },
   {
     "collection": "brca_pcascores_broad_prcomp-oncovogel274-mut01",
@@ -50566,6 +50476,19 @@
     "type": "pcaLoadings"
   },
   {
+    "collection": "acc_mds_ucsc_mds-tcgagbmclassifiers-cnv-mut01-1e+05-ucsc",
+    "count": 1,
+    "fields": [
+      "_id",
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
+    ],
+    "type": "mds"
+  },
+  {
     "collection": "skcm_edges_broad_tcgagbmclassifiers-mut01",
     "count": 6503,
     "fields": [
@@ -50609,17 +50532,6 @@
       "data"
     ],
     "type": "pcaScores"
-  },
-  {
-    "collection": "coadread_edges_ucsc_osccchen9genes",
-    "count": 2050,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
   },
   {
     "collection": "gbm_mds_ucsc_mds-tcgapancanmutated-cnv-mut01-ucsc",
@@ -51338,6 +51250,19 @@
     "type": "pcaScores"
   },
   {
+    "collection": "cesc_mds_ucsc_mds-tcgapancanmutated-cnv-mut01-ucsc",
+    "count": 1,
+    "fields": [
+      "_id",
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
+    ],
+    "type": "mds"
+  },
+  {
     "collection": "paad_pcaloadings_ucsc_prcomp-oncovogel274-cnv",
     "count": 1,
     "fields": [
@@ -51519,43 +51444,6 @@
     "type": "pcaLoadings"
   },
   {
-    "collection": "luad_othermalignancy_tcga_v4p0",
-    "count": 222,
-    "fields": [
-      "_id",
-      "patient_ID",
-      "malignancy_type",
-      "laterality",
-      "surgery_procedure",
-      "pharmaceutical_therapy",
-      "drug_therapy_name",
-      "radiation_therapy",
-      "history_rt_tx_to_site_of_tumor",
-      "days_to_diagnosis",
-      "days_to_surgery",
-      "ajcc_staging_edition",
-      "days_to_drug_start",
-      "pathologic_stage_T",
-      "days_to_radiation_start",
-      "pathologic_stage_N",
-      "pathologic_stage_M",
-      "pathologic_stage_S",
-      "clinical_stage_S"
-    ],
-    "type": "otherMalignancy"
-  },
-  {
-    "collection": "coadread_edges_ucsc_tcgapancanmutated",
-    "count": 13915,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
-  },
-  {
     "collection": "brain_genedegree_cbio_osccchen9genes-mut01-cnv",
     "count": 8,
     "fields": [
@@ -51565,17 +51453,6 @@
     "type": "geneDegree"
   },
   {
-    "collection": "esca_edges_broad_osccchen9genes",
-    "count": 192,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
-  },
-  {
     "collection": "gbm_genedegree_broad_tcgapancanmutated",
     "count": 38,
     "fields": [
@@ -51583,6 +51460,23 @@
       "APC"
     ],
     "type": "geneDegree"
+  },
+  {
+    "collection": "brain_pcascores_cbio_prcomp-allgenes-protein-1e+05",
+    "count": 1,
+    "fields": [
+      "_id",
+      "disease",
+      "source",
+      "type",
+      "geneset",
+      "scale",
+      "pc1",
+      "pc2",
+      "pc3",
+      "data"
+    ],
+    "type": "pcaScores"
   },
   {
     "collection": "hnsc_pcascores_cbio_prcomp-tcgapancanmutated-mut01",
@@ -51697,17 +51591,6 @@
       "data"
     ],
     "type": "pcaScores"
-  },
-  {
-    "collection": "hnsc_edges_broad_osccchen131probes",
-    "count": 609,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
   },
   {
     "collection": "luad_pcaloadings_ucsc_prcomp-osccchen131probes-mut01",
@@ -52969,17 +52852,6 @@
     "type": "patient"
   },
   {
-    "collection": "cesc_edges_broad_tcgagbmclassifiers",
-    "count": 1419,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
-  },
-  {
     "collection": "coadread_ptdegree_ucsc_oncovogel274",
     "count": 600,
     "fields": [
@@ -53163,6 +53035,19 @@
       "data"
     ],
     "type": "pcaScores"
+  },
+  {
+    "collection": "chol_mds_ucsc_mds-oncovogel274-cnv-mut01-1e+05-ucsc",
+    "count": 1,
+    "fields": [
+      "_id",
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
+    ],
+    "type": "mds"
   },
   {
     "collection": "lgg_pcascores_ucsc_prcomp-oncovogel274-cnv-1e+05",
@@ -53948,6 +53833,19 @@
     "type": "pcaScores"
   },
   {
+    "collection": "dlbc_mds_ucsc_mds-allgenes-cnv-mut01-1e+05-ucsc",
+    "count": 1,
+    "fields": [
+      "_id",
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
+    ],
+    "type": "mds"
+  },
+  {
     "collection": "coadread_pcascores_ucsc_prcomp-markergenes545-mut01",
     "count": 1,
     "fields": [
@@ -54090,17 +53988,6 @@
     "type": "newTumor-followUp"
   },
   {
-    "collection": "sarc_edges_broad_osccchen9genes",
-    "count": 80,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
-  },
-  {
     "collection": "acc_ptdegree_broad_tcgapancanmutated",
     "count": 58,
     "fields": [
@@ -54108,6 +53995,18 @@
       "TCGA-OR-A5J2-01"
     ],
     "type": "ptDegree"
+  },
+  {
+    "collection": "lihc_mut01_ucsc_bcm",
+    "count": 39428,
+    "fields": [
+      "_id",
+      "gene",
+      "min",
+      "max",
+      "patients"
+    ],
+    "type": "mut01"
   },
   {
     "collection": "brain_mds_ucsc_mds-oncoplex-cnv-mut01-1e+05-ucsc",
@@ -54138,6 +54037,18 @@
       "data"
     ],
     "type": "pcaScores"
+  },
+  {
+    "collection": "esca_mut01_ucsc_broad",
+    "count": 40236,
+    "fields": [
+      "_id",
+      "gene",
+      "min",
+      "max",
+      "patients"
+    ],
+    "type": "mut01"
   },
   {
     "collection": "stad_edges_broad_osccchen9genes-mut01",
@@ -54273,17 +54184,6 @@
     "type": "geneDegree"
   },
   {
-    "collection": "acc_edges_broad_oncoplex",
-    "count": 268,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
-  },
-  {
     "collection": "coadread_pcaloadings_cbio_prcomp-allgenes-rna-agilent",
     "count": 1,
     "fields": [
@@ -54401,17 +54301,6 @@
       "data"
     ],
     "type": "pcaScores"
-  },
-  {
-    "collection": "kirp_edges_broad_osccchen9genes",
-    "count": 15,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
   },
   {
     "collection": "brain_edges_ucsc-pnas_oncovogel274-mut01-cnv",
@@ -54577,17 +54466,6 @@
     "type": "pcaScores"
   },
   {
-    "collection": "acc_edges_broad_tcgagbmclassifiers",
-    "count": 564,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
-  },
-  {
     "collection": "hnsc_genedegree_broad_oncoplex-mut01",
     "count": 245,
     "fields": [
@@ -54693,17 +54571,6 @@
       "data"
     ],
     "type": "pcaScores"
-  },
-  {
-    "collection": "coadread_edges_ucsc_tcgagbmclassifiers",
-    "count": 172286,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
   },
   {
     "collection": "brca_patient_tcga_clinical",
@@ -54816,17 +54683,6 @@
     "type": "patient"
   },
   {
-    "collection": "lung_edges_ucsc_oncoplex",
-    "count": 148612,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
-  },
-  {
     "collection": "skcm_pcaloadings_ucsc_prcomp-tcgapancanmutated-rna-hiseq",
     "count": 1,
     "fields": [
@@ -54912,17 +54768,6 @@
       "data"
     ],
     "type": "pcaScores"
-  },
-  {
-    "collection": "kirc_edges_broad_oncoplex",
-    "count": 1052,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
   },
   {
     "collection": "hnsc_mut_broad_mutsig2",
@@ -57074,6 +56919,19 @@
     "type": "pcaScores"
   },
   {
+    "collection": "cesc_mds_ucsc_mds-allgenes-cnv-mut01-1e+05-ucsc",
+    "count": 1,
+    "fields": [
+      "_id",
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
+    ],
+    "type": "mds"
+  },
+  {
     "collection": "kirp_pcascores_broad_prcomp-tcgapancanmutated-mut01-1e+05",
     "count": 1,
     "fields": [
@@ -57290,6 +57148,19 @@
       "data"
     ],
     "type": "pcaScores"
+  },
+  {
+    "collection": "chol_mds_ucsc_mds-tcgagbmclassifiers-cnv-mut01-ucsc",
+    "count": 1,
+    "fields": [
+      "_id",
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
+    ],
+    "type": "mds"
   },
   {
     "collection": "gbm_pcascores_broad_prcomp-tcgapancanmutated-mut01-1e+05",
@@ -57872,6 +57743,31 @@
     "type": "pcaScores"
   },
   {
+    "collection": "dlbc_mut01_ucsc_bcm",
+    "count": 39389,
+    "fields": [
+      "_id",
+      "gene",
+      "min",
+      "max",
+      "patients"
+    ],
+    "type": "mut01"
+  },
+  {
+    "collection": "dlbc_mds_ucsc_mds-osccchen131probes-cnv-mut01-1e+05-ucsc",
+    "count": 1,
+    "fields": [
+      "_id",
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
+    ],
+    "type": "mds"
+  },
+  {
     "collection": "prad_edges_ucsc_oncoplex-mut01-cnv",
     "count": 18352,
     "fields": [
@@ -57965,6 +57861,19 @@
     "type": "pcaScores"
   },
   {
+    "collection": "cesc_mds_ucsc_mds-tcgagbmclassifiers-cnv-mut01-ucsc",
+    "count": 1,
+    "fields": [
+      "_id",
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
+    ],
+    "type": "mds"
+  },
+  {
     "collection": "lihc_pcaloadings_broad_prcomp-osccchen9genes-mut01",
     "count": 1,
     "fields": [
@@ -57991,15 +57900,17 @@
     "type": "rna"
   },
   {
-    "collection": "lusc_edges_broad_tcgagbmclassifiers",
-    "count": 2296,
+    "collection": "cesc_mds_ucsc_mds-osccchen131probes-cnv-mut01-1e+05-ucsc",
+    "count": 1,
     "fields": [
       "_id",
-      "m",
-      "g",
-      "p"
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
     ],
-    "type": "edges"
+    "type": "mds"
   },
   {
     "collection": "brca_ptdegree_broad_osccchen9genes",
@@ -58152,15 +58063,21 @@
     "type": "pcaLoadings"
   },
   {
-    "collection": "gbm_edges_broad_tcgapancanmutated",
-    "count": 441,
+    "collection": "brain_pcascores_cbio_prcomp-tcgagbmclassifiers-methylation-hm27-1e+05",
+    "count": 1,
     "fields": [
       "_id",
-      "m",
-      "g",
-      "p"
+      "disease",
+      "source",
+      "type",
+      "geneset",
+      "scale",
+      "pc1",
+      "pc2",
+      "pc3",
+      "data"
     ],
-    "type": "edges"
+    "type": "pcaScores"
   },
   {
     "collection": "thca_pcascores_ucsc_prcomp-tcgapancanmutated-rna-hiseq-1e+05",
@@ -58367,6 +58284,18 @@
     "type": "pcaLoadings"
   },
   {
+    "collection": "chol_mut01_ucsc_broad",
+    "count": 39568,
+    "fields": [
+      "_id",
+      "gene",
+      "min",
+      "max",
+      "patients"
+    ],
+    "type": "mut01"
+  },
+  {
     "collection": "sarc_pcascores_broad_prcomp-tcgagbmclassifiers-mut01-1e+05",
     "count": 1,
     "fields": [
@@ -58468,6 +58397,19 @@
       "data"
     ],
     "type": "pcaScores"
+  },
+  {
+    "collection": "sarc_mds_ucsc_mds-tcgagbmclassifiers-cnv-mut01-1e+05-ucsc",
+    "count": 1,
+    "fields": [
+      "_id",
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
+    ],
+    "type": "mds"
   },
   {
     "collection": "lusc_ptdegree_ucsc_tcgapancanmutated-mut01-cnv",
@@ -58779,6 +58721,23 @@
     "type": "pcaScores"
   },
   {
+    "collection": "brain_pcascores_cbio_prcomp-allgenes-methylation-hm27",
+    "count": 1,
+    "fields": [
+      "_id",
+      "disease",
+      "source",
+      "type",
+      "geneset",
+      "scale",
+      "pc1",
+      "pc2",
+      "pc3",
+      "data"
+    ],
+    "type": "pcaScores"
+  },
+  {
     "collection": "blca_mds_ucsc_mds-osccchen9genes-cnv-mut01-1e+05-ucsc",
     "count": 1,
     "fields": [
@@ -58804,6 +58763,19 @@
       "data"
     ],
     "type": "pcaLoadings"
+  },
+  {
+    "collection": "sarc_mds_ucsc_mds-osccchen131probes-cnv-mut01-ucsc",
+    "count": 1,
+    "fields": [
+      "_id",
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
+    ],
+    "type": "mds"
   },
   {
     "collection": "lung_facs_demo_flow",
@@ -58880,17 +58852,6 @@
     "type": "pcaScores"
   },
   {
-    "collection": "luad_edges_broad_osccchen9genes",
-    "count": 411,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
-  },
-  {
     "collection": "lihc_pcascores_broad_prcomp-oncovogel274-mut01-1e+05",
     "count": 1,
     "fields": [
@@ -58936,17 +58897,6 @@
     "type": "ptDegree"
   },
   {
-    "collection": "prad_edges_broad_osccchen9genes",
-    "count": 63,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
-  },
-  {
     "collection": "sarc_genedegree_ucsc_tcgagbmclassifiers-cnv",
     "count": 769,
     "fields": [
@@ -58988,6 +58938,18 @@
       "data"
     ],
     "type": "pcaScores"
+  },
+  {
+    "collection": "ov_mut01_ucsc_pancanaws",
+    "count": 293,
+    "fields": [
+      "_id",
+      "gene",
+      "min",
+      "max",
+      "patients"
+    ],
+    "type": false
   },
   {
     "collection": "lung_pcascores_cbio_prcomp-markergenes545-rna-u133-1e+05",
@@ -59151,26 +59113,17 @@
     "type": "pcaLoadings"
   },
   {
-    "collection": "thca_edges_broad_osccchen131probes",
-    "count": 58,
+    "collection": "esca_mds_ucsc_mds-osccchen131probes-cnv-mut01-1e+05-ucsc",
+    "count": 1,
     "fields": [
       "_id",
-      "m",
-      "g",
-      "p"
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
     ],
-    "type": "edges"
-  },
-  {
-    "collection": "sarc_edges_broad_tcgapancanmutated",
-    "count": 206,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
+    "type": "mds"
   },
   {
     "collection": "ucec_pcaloadings_broad_prcomp-tcgapancanmutated-mut01",
@@ -59485,7 +59438,7 @@
     "type": "pcaScores"
   },
   {
-    "collection": "paad_mds_ucsc_mds-allgenes-cnv-mut01-ucsc",
+    "collection": "sarc_mds_ucsc_mds-osccchen9genes-cnv-mut01-ucsc",
     "count": 1,
     "fields": [
       "_id",
@@ -59498,15 +59451,17 @@
     "type": "mds"
   },
   {
-    "collection": "chol_edges_broad_osccchen131probes",
-    "count": 25,
+    "collection": "paad_mds_ucsc_mds-allgenes-cnv-mut01-ucsc",
+    "count": 1,
     "fields": [
       "_id",
-      "m",
-      "g",
-      "p"
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
     ],
-    "type": "edges"
+    "type": "mds"
   },
   {
     "collection": "thym_pcascores_ucsc_prcomp-osccchen9genes-rna-hiseq-1e+05",
@@ -59823,6 +59778,23 @@
       "data"
     ],
     "type": "mds"
+  },
+  {
+    "collection": "brain_pcascores_cbio_prcomp-osccchen131probes-methylation-hm27",
+    "count": 1,
+    "fields": [
+      "_id",
+      "disease",
+      "source",
+      "type",
+      "geneset",
+      "scale",
+      "pc1",
+      "pc2",
+      "pc3",
+      "data"
+    ],
+    "type": "pcaScores"
   },
   {
     "collection": "brca_pcascores_cbio_prcomp-oncovogel274-methylation-hm450-1e+05",
@@ -60371,17 +60343,6 @@
     "type": "mds"
   },
   {
-    "collection": "sarc_edges_broad_oncovogel274",
-    "count": 405,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
-  },
-  {
     "collection": "ov_patient_tcga_clinical",
     "count": 587,
     "fields": [
@@ -60894,17 +60855,6 @@
     "type": "ptDegree"
   },
   {
-    "collection": "sarc_edges_broad_osccchen131probes",
-    "count": 90,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
-  },
-  {
     "collection": "lusc_ptdegree_ucsc_osccchen9genes-mut01-cnv",
     "count": 489,
     "fields": [
@@ -61375,17 +61325,6 @@
       "patients"
     ],
     "type": "rna"
-  },
-  {
-    "collection": "lung_edges_ucsc_tcgagbmclassifiers",
-    "count": 438034,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
   },
   {
     "collection": "blca_pcascores_ucsc_prcomp-osccchen9genes-cnv-1e+05",
@@ -61893,17 +61832,6 @@
       "ALK"
     ],
     "type": "geneDegree"
-  },
-  {
-    "collection": "gbm_edges_ucsc_tcgagbmclassifiers",
-    "count": 135399,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
   },
   {
     "collection": "skcm_pcascores_ucsc_prcomp-osccchen9genes-rna-hiseq-1e+05",
@@ -62523,17 +62451,6 @@
     "type": "pcaScores"
   },
   {
-    "collection": "dlbc_edges_broad_osccchen9genes",
-    "count": 11,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
-  },
-  {
     "collection": "lung_pcascores_ucsc_prcomp-markergenes545-cnv-1e+05",
     "count": 1,
     "fields": [
@@ -62853,6 +62770,19 @@
     "type": "pcaScores"
   },
   {
+    "collection": "esca_mds_ucsc_mds-allgenes-cnv-mut01-1e+05-ucsc",
+    "count": 1,
+    "fields": [
+      "_id",
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
+    ],
+    "type": "mds"
+  },
+  {
     "collection": "lung_pcascores_ucsc_prcomp-osccchen9genes-mut01-1e+05",
     "count": 1,
     "fields": [
@@ -62882,17 +62812,6 @@
       "data"
     ],
     "type": "pcaLoadings"
-  },
-  {
-    "collection": "lihc_edges_broad_tcgapancanmutated",
-    "count": 574,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
   },
   {
     "collection": "dlbc_ptdegree_broad_oncoplex",
@@ -63770,6 +63689,19 @@
     "type": "pcaScores"
   },
   {
+    "collection": "dlbc_mds_ucsc_mds-osccchen9genes-cnv-mut01-ucsc",
+    "count": 1,
+    "fields": [
+      "_id",
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
+    ],
+    "type": "mds"
+  },
+  {
     "collection": "lgg_genedegree_ucsc_osccchen9genes-mut01-cnv",
     "count": 8,
     "fields": [
@@ -63925,17 +63857,6 @@
       "data"
     ],
     "type": "pcaLoadings"
-  },
-  {
-    "collection": "chol_edges_ucsc_tcgagbmclassifiers",
-    "count": 11218,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
   },
   {
     "collection": "gbm_events_tcga_clinical",
@@ -64717,6 +64638,19 @@
     "type": "pcaScores"
   },
   {
+    "collection": "acc_mds_ucsc_mds-osccchen131probes-cnv-mut01-1e+05-ucsc",
+    "count": 1,
+    "fields": [
+      "_id",
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
+    ],
+    "type": "mds"
+  },
+  {
     "collection": "laml_pcaloadings_ucsc_prcomp-tcgagbmclassifiers-rna-hiseq",
     "count": 1,
     "fields": [
@@ -65067,17 +65001,6 @@
       "data"
     ],
     "type": "pcaScores"
-  },
-  {
-    "collection": "hnsc_edges_broad_oncoplex",
-    "count": 2347,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
   },
   {
     "collection": "lgg_events_tcga_clinical",
@@ -65604,17 +65527,6 @@
     "type": "pcaScores"
   },
   {
-    "collection": "chol_edges_broad_markergenes545",
-    "count": 246,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
-  },
-  {
     "collection": "kirp_pcascores_ucsc_prcomp-oncoplex-rna-hiseq-1e+05",
     "count": 1,
     "fields": [
@@ -65794,17 +65706,6 @@
       "ABAT"
     ],
     "type": "geneDegree"
-  },
-  {
-    "collection": "dlbc_edges_broad_osccchen131probes",
-    "count": 73,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
   },
   {
     "collection": "brain_mds_ucsc_mds-tcgagbmclassifiers-cnv-mut01-ucsc",
@@ -66092,17 +65993,6 @@
   {
     "collection": "brain_edges_cbio_oncovogel274-mut01-cnv",
     "count": 102847,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
-  },
-  {
-    "collection": "lung_edges_ucsc_tcgapancanmutated",
-    "count": 34687,
     "fields": [
       "_id",
       "m",
@@ -66548,6 +66438,19 @@
     "type": "edges"
   },
   {
+    "collection": "sarc_mds_ucsc_mds-osccchen131probes-cnv-mut01-1e+05-ucsc",
+    "count": 1,
+    "fields": [
+      "_id",
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
+    ],
+    "type": "mds"
+  },
+  {
     "collection": "brain_ptdegree_broad_oncovogel274",
     "count": 760,
     "fields": [
@@ -66555,17 +66458,6 @@
       "TCGA-02-0003-01"
     ],
     "type": "ptDegree"
-  },
-  {
-    "collection": "lihc_edges_broad_oncoplex",
-    "count": 1131,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
   },
   {
     "collection": "thca_pcaloadings_broad_prcomp-tcgapancanmutated-mut01",
@@ -66720,17 +66612,6 @@
     "type": "geneDegree"
   },
   {
-    "collection": "prad_edges_broad_tcgagbmclassifiers",
-    "count": 1098,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
-  },
-  {
     "collection": "brca_genedegree_ucsc_tcgapancanmutated-mut01-cnv",
     "count": 62,
     "fields": [
@@ -66778,15 +66659,17 @@
     "type": "edges"
   },
   {
-    "collection": "chol_edges_broad_tcgapancanmutated",
-    "count": 82,
+    "collection": "sarc_mds_ucsc_mds-markergenes545-cnv-mut01-ucsc",
+    "count": 1,
     "fields": [
       "_id",
-      "m",
-      "g",
-      "p"
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
     ],
-    "type": "edges"
+    "type": "mds"
   },
   {
     "collection": "brain_pcascores_cbio_prcomp-markergenes545-mut01",
@@ -66818,17 +66701,6 @@
       "data"
     ],
     "type": "pcaLoadings"
-  },
-  {
-    "collection": "brain_edges_broad_osccchen131probes",
-    "count": 353,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
   },
   {
     "collection": "kich_genedegree_broad_markergenes545-mut01",
@@ -67045,6 +66917,18 @@
     "type": "pcaScores"
   },
   {
+    "collection": "skcm_mut01_ucsc_broad",
+    "count": 40305,
+    "fields": [
+      "_id",
+      "gene",
+      "min",
+      "max",
+      "patients"
+    ],
+    "type": "mut01"
+  },
+  {
     "collection": "paad_mds_cbio_mds-markergenes545-cnv-mut01-cbio",
     "count": 1,
     "fields": [
@@ -67128,17 +67012,6 @@
   {
     "collection": "lusc_edges_ucsc_oncoplex-mut01-cnv",
     "count": 79089,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
-  },
-  {
-    "collection": "lihc_edges_broad_osccchen9genes",
-    "count": 138,
     "fields": [
       "_id",
       "m",
@@ -67894,15 +67767,17 @@
     "type": "mds"
   },
   {
-    "collection": "chol_edges_broad_oncoplex",
-    "count": 152,
+    "collection": "sarc_mds_ucsc_mds-osccchen9genes-cnv-mut01-1e+05-ucsc",
+    "count": 1,
     "fields": [
       "_id",
-      "m",
-      "g",
-      "p"
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
     ],
-    "type": "edges"
+    "type": "mds"
   },
   {
     "collection": "acc_ptdegree_broad_oncovogel274-mut01",
@@ -68589,6 +68464,19 @@
       "data"
     ],
     "type": "pcaScores"
+  },
+  {
+    "collection": "dlbc_mds_ucsc_mds-oncoplex-cnv-mut01-1e+05-ucsc",
+    "count": 1,
+    "fields": [
+      "_id",
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
+    ],
+    "type": "mds"
   },
   {
     "collection": "lihc_othermalignancy_tcga_v4p0",
@@ -69365,6 +69253,19 @@
     "type": "pcaLoadings"
   },
   {
+    "collection": "dlbc_mds_ucsc_mds-tcgapancanmutated-cnv-mut01-1e+05-ucsc",
+    "count": 1,
+    "fields": [
+      "_id",
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
+    ],
+    "type": "mds"
+  },
+  {
     "collection": "hnsc_patient_tcga_na",
     "count": 1056,
     "fields": [
@@ -69492,17 +69393,6 @@
       "data"
     ],
     "type": "pcaScores"
-  },
-  {
-    "collection": "lgg_edges_broad_markergenes545",
-    "count": 2361,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
   },
   {
     "collection": "prad_mds_cbio_mds-oncoplex-cnv-mut01-1e+05-cbio",
@@ -69819,6 +69709,20 @@
     "type": "pcaScores"
   },
   {
+    "collection": "brain_pcaloadings_cbio_prcomp-tcgapancanmutated-methylation-hm27",
+    "count": 1,
+    "fields": [
+      "_id",
+      "disease",
+      "source",
+      "type",
+      "geneset",
+      "scale",
+      "data"
+    ],
+    "type": "pcaLoadings"
+  },
+  {
     "collection": "lusc_newtumor_tcga_clinical",
     "count": 72,
     "fields": [
@@ -69902,17 +69806,6 @@
       "ABCA1"
     ],
     "type": "geneDegree"
-  },
-  {
-    "collection": "ucec_edges_broad_oncovogel274",
-    "count": 2971,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
   },
   {
     "collection": "lung_pcascores_cbio_prcomp-markergenes545-rna-agilent-1e+05",
@@ -70003,17 +69896,6 @@
     "type": "pcaLoadings"
   },
   {
-    "collection": "brca_edges_broad_oncoplex",
-    "count": 2230,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
-  },
-  {
     "collection": "lung_edges_ucsc_tcgapancanmutated-mut01-cnv",
     "count": 34687,
     "fields": [
@@ -70023,6 +69905,20 @@
       "p"
     ],
     "type": "edges"
+  },
+  {
+    "collection": "brain_pcaloadings_cbio_prcomp-markergenes545-methylation-hm27",
+    "count": 1,
+    "fields": [
+      "_id",
+      "disease",
+      "source",
+      "type",
+      "geneset",
+      "scale",
+      "data"
+    ],
+    "type": "pcaLoadings"
   },
   {
     "collection": "cesc_pcaloadings_broad_prcomp-tcgapancanmutated-mut01",
@@ -70057,17 +69953,6 @@
       "ABCA1"
     ],
     "type": "geneDegree"
-  },
-  {
-    "collection": "lgg_edges_broad_osccchen131probes",
-    "count": 196,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
   },
   {
     "collection": "luad_pcaloadings_cbio_prcomp-markergenes545-rna-seq",
@@ -70211,6 +70096,19 @@
     "type": "pcaLoadings"
   },
   {
+    "collection": "chol_mds_ucsc_mds-allgenes-cnv-mut01-1e+05-ucsc",
+    "count": 1,
+    "fields": [
+      "_id",
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
+    ],
+    "type": "mds"
+  },
+  {
     "collection": "ov_newtumor-followup_tcga_v1p0",
     "count": 513,
     "fields": [
@@ -70336,17 +70234,6 @@
       "ABCB1"
     ],
     "type": "geneDegree"
-  },
-  {
-    "collection": "esca_edges_broad_oncovogel274",
-    "count": 2334,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
   },
   {
     "collection": "luad_events_tcga_clinical",
@@ -70995,6 +70882,23 @@
     "type": "edges"
   },
   {
+    "collection": "brain_pcascores_cbio_prcomp-oncovogel274-methylation-hm27-1e+05",
+    "count": 1,
+    "fields": [
+      "_id",
+      "disease",
+      "source",
+      "type",
+      "geneset",
+      "scale",
+      "pc1",
+      "pc2",
+      "pc3",
+      "data"
+    ],
+    "type": "pcaScores"
+  },
+  {
     "collection": "prad_pcascores_cbio_prcomp-osccchen131probes-mut01-1e+05",
     "count": 1,
     "fields": [
@@ -71037,17 +70941,6 @@
       "data"
     ],
     "type": "pcaLoadings"
-  },
-  {
-    "collection": "luad_edges_broad_markergenes545",
-    "count": 7318,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
   },
   {
     "collection": "ov_radiation_tcga_clinical",
@@ -71275,15 +71168,17 @@
     "type": "geneDegree"
   },
   {
-    "collection": "lusc_edges_broad_oncoplex",
-    "count": 1139,
+    "collection": "cesc_mds_ucsc_mds-oncovogel274-cnv-mut01-1e+05-ucsc",
+    "count": 1,
     "fields": [
       "_id",
-      "m",
-      "g",
-      "p"
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
     ],
-    "type": "edges"
+    "type": "mds"
   },
   {
     "collection": "ucs_newtumor-followup_tcga_v4p0",
@@ -71326,17 +71221,6 @@
       "data"
     ],
     "type": "mds"
-  },
-  {
-    "collection": "kirp_edges_broad_oncovogel274",
-    "count": 461,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
   },
   {
     "collection": "lihc_genedegree_broad_markergenes545-mut01",
@@ -71463,6 +71347,20 @@
       "data"
     ],
     "type": "mds"
+  },
+  {
+    "collection": "brain_pcaloadings_cbio_prcomp-allgenes-protein",
+    "count": 1,
+    "fields": [
+      "_id",
+      "disease",
+      "source",
+      "type",
+      "geneset",
+      "scale",
+      "data"
+    ],
+    "type": "pcaLoadings"
   },
   {
     "collection": "luad_pcascores_cbio_prcomp-markergenes545-methylation-hm450",
@@ -71617,6 +71515,18 @@
     "type": "geneDegree"
   },
   {
+    "collection": "render_patient_orig",
+    "count": 551,
+    "fields": [
+      "_id",
+      "dataset",
+      "type",
+      "name",
+      "data"
+    ],
+    "type": false
+  },
+  {
     "collection": "meso_pcascores_ucsc_prcomp-oncovogel274-rna-hiseq",
     "count": 1,
     "fields": [
@@ -71649,6 +71559,19 @@
       "data"
     ],
     "type": "pcaScores"
+  },
+  {
+    "collection": "sarc_mds_ucsc_mds-oncovogel274-cnv-mut01-1e+05-ucsc",
+    "count": 1,
+    "fields": [
+      "_id",
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
+    ],
+    "type": "mds"
   },
   {
     "collection": "stad_pcaloadings_ucsc_prcomp-oncoplex-mut01",
@@ -72776,6 +72699,19 @@
       "data"
     ],
     "type": "pcaScores"
+  },
+  {
+    "collection": "chol_mds_ucsc_mds-tcgapancanmutated-cnv-mut01-ucsc",
+    "count": 1,
+    "fields": [
+      "_id",
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
+    ],
+    "type": "mds"
   },
   {
     "collection": "lusc_pcaloadings_ucsc_prcomp-oncoplex-cnv",
@@ -73978,6 +73914,19 @@
     "type": "pcaLoadings"
   },
   {
+    "collection": "esca_mds_ucsc_mds-tcgapancanmutated-cnv-mut01-1e+05-ucsc",
+    "count": 1,
+    "fields": [
+      "_id",
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
+    ],
+    "type": "mds"
+  },
+  {
     "collection": "brain_pcascores_ucsc_prcomp-tcgapancanmutated-mut01-1e+05",
     "count": 1,
     "fields": [
@@ -74179,6 +74128,19 @@
       "data"
     ],
     "type": "pcaScores"
+  },
+  {
+    "collection": "chol_mds_ucsc_mds-osccchen131probes-cnv-mut01-ucsc",
+    "count": 1,
+    "fields": [
+      "_id",
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
+    ],
+    "type": "mds"
   },
   {
     "collection": "brca_pcascores_cbio_prcomp-osccchen131probes-mut01-1e+05",
@@ -74802,6 +74764,19 @@
     "type": "pcaScores"
   },
   {
+    "collection": "esca_mds_ucsc_mds-oncoplex-cnv-mut01-ucsc",
+    "count": 1,
+    "fields": [
+      "_id",
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
+    ],
+    "type": "mds"
+  },
+  {
     "collection": "hnsc_pcascores_ucsc_prcomp-osccchen9genes-mut01",
     "count": 1,
     "fields": [
@@ -74923,17 +74898,6 @@
       "data"
     ],
     "type": "pcaScores"
-  },
-  {
-    "collection": "stad_edges_broad_osccchen9genes",
-    "count": 262,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
   },
   {
     "collection": "thca_edges_broad_tcgapancanmutated-mut01",
@@ -75169,6 +75133,23 @@
       "ABCA1"
     ],
     "type": "geneDegree"
+  },
+  {
+    "collection": "brain_pcascores_cbio_prcomp-allgenes-methylation-hm27-1e+05",
+    "count": 1,
+    "fields": [
+      "_id",
+      "disease",
+      "source",
+      "type",
+      "geneset",
+      "scale",
+      "pc1",
+      "pc2",
+      "pc3",
+      "data"
+    ],
+    "type": "pcaScores"
   },
   {
     "collection": "lung_pcascores_ucsc_prcomp-oncovogel274-rna-hiseq",
@@ -75683,17 +75664,6 @@
       "ABCA1"
     ],
     "type": "geneDegree"
-  },
-  {
-    "collection": "blca_edges_broad_markergenes545",
-    "count": 5175,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
   },
   {
     "collection": "ucec_pcascores_ucsc_prcomp-oncoplex-rna-hiseq-1e+05",
@@ -76334,17 +76304,6 @@
     "type": "patient"
   },
   {
-    "collection": "coadread_edges_ucsc_oncoplex",
-    "count": 60218,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
-  },
-  {
     "collection": "lung_pcaloadings_cbio_prcomp-oncovogel274-rna-agilent",
     "count": 1,
     "fields": [
@@ -76465,17 +76424,6 @@
       "data"
     ],
     "type": "pcaScores"
-  },
-  {
-    "collection": "lung_edges_ucsc_osccchen131probes",
-    "count": 56994,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
   },
   {
     "collection": "kirc_genedegree_broad_oncovogel274-mut01",
@@ -76612,6 +76560,19 @@
     "type": "ptDegree"
   },
   {
+    "collection": "sarc_mds_ucsc_mds-oncovogel274-cnv-mut01-ucsc",
+    "count": 1,
+    "fields": [
+      "_id",
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
+    ],
+    "type": "mds"
+  },
+  {
     "collection": "stad_pcascores_ucsc_prcomp-markergenes545-rna-hiseq",
     "count": 1,
     "fields": [
@@ -76663,15 +76624,17 @@
     "type": "pcaScores"
   },
   {
-    "collection": "kirc_edges_broad_markergenes545",
-    "count": 1594,
+    "collection": "esca_mds_ucsc_mds-markergenes545-cnv-mut01-1e+05-ucsc",
+    "count": 1,
     "fields": [
       "_id",
-      "m",
-      "g",
-      "p"
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
     ],
-    "type": "edges"
+    "type": "mds"
   },
   {
     "collection": "lusc_pcascores_cbio_prcomp-markergenes545-rna-agilent",
@@ -76693,17 +76656,6 @@
   {
     "collection": "blca_edges_ucsc_oncovogel274-mut01-cnv",
     "count": 55774,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
-  },
-  {
-    "collection": "thca_edges_broad_markergenes545",
-    "count": 722,
     "fields": [
       "_id",
       "m",
@@ -76809,17 +76761,6 @@
       "patients"
     ],
     "type": "rna"
-  },
-  {
-    "collection": "brca_edges_broad_tcgagbmclassifiers",
-    "count": 2869,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
   },
   {
     "collection": "brca_color_tcga_import",
@@ -76969,17 +76910,6 @@
       "ABLIM3"
     ],
     "type": "geneDegree"
-  },
-  {
-    "collection": "sarc_edges_broad_oncoplex",
-    "count": 392,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
   },
   {
     "collection": "stad_genedegree_broad_tcgapancanmutated-mut01",
@@ -78099,6 +78029,19 @@
     "type": "pcaScores"
   },
   {
+    "collection": "dlbc_mds_ucsc_mds-tcgapancanmutated-cnv-mut01-ucsc",
+    "count": 1,
+    "fields": [
+      "_id",
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
+    ],
+    "type": "mds"
+  },
+  {
     "collection": "cesc_pcascores_ucsc_prcomp-tcgapancanmutated-cnv-1e+05",
     "count": 1,
     "fields": [
@@ -78171,6 +78114,19 @@
       "data"
     ],
     "type": "pcaScores"
+  },
+  {
+    "collection": "dlbc_mds_ucsc_mds-osccchen131probes-cnv-mut01-ucsc",
+    "count": 1,
+    "fields": [
+      "_id",
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
+    ],
+    "type": "mds"
   },
   {
     "collection": "hnsc_pcascores_ucsc_prcomp-allgenes-cnv-1e+05",
@@ -78281,15 +78237,17 @@
     "type": "mds"
   },
   {
-    "collection": "gbm_edges_broad_oncovogel274",
-    "count": 753,
+    "collection": "dlbc_mds_ucsc_mds-markergenes545-cnv-mut01-ucsc",
+    "count": 1,
     "fields": [
       "_id",
-      "m",
-      "g",
-      "p"
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
     ],
-    "type": "edges"
+    "type": "mds"
   },
   {
     "collection": "skcm_edges_broad_tcgapancanmutated-mut01",
@@ -78593,6 +78551,19 @@
     "type": "pcaScores"
   },
   {
+    "collection": "dlbc_mds_ucsc_mds-oncoplex-cnv-mut01-ucsc",
+    "count": 1,
+    "fields": [
+      "_id",
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
+    ],
+    "type": "mds"
+  },
+  {
     "collection": "dlbc_rna_ucsc_hiseq",
     "count": 20530,
     "fields": [
@@ -78793,6 +78764,19 @@
   },
   {
     "collection": "lusc_mds_cbio_mds-allgenes-cnv-mut01-cbio",
+    "count": 1,
+    "fields": [
+      "_id",
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
+    ],
+    "type": "mds"
+  },
+  {
+    "collection": "chol_mds_ucsc_mds-osccchen9genes-cnv-mut01-1e+05-ucsc",
     "count": 1,
     "fields": [
       "_id",
@@ -79070,15 +79054,17 @@
     "type": "pcaScores"
   },
   {
-    "collection": "esca_edges_broad_oncoplex",
-    "count": 1313,
+    "collection": "esca_mds_ucsc_mds-oncovogel274-cnv-mut01-1e+05-ucsc",
+    "count": 1,
     "fields": [
       "_id",
-      "m",
-      "g",
-      "p"
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
     ],
-    "type": "edges"
+    "type": "mds"
   },
   {
     "collection": "kirp_pcascores_broad_prcomp-oncoplex-mut01-1e+05",
@@ -80222,17 +80208,6 @@
     "type": "pcaLoadings"
   },
   {
-    "collection": "kirp_edges_broad_oncoplex",
-    "count": 431,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
-  },
-  {
     "collection": "luad_ptdegree_broad_oncoplex-mut01",
     "count": 525,
     "fields": [
@@ -80542,17 +80517,6 @@
     "type": "pcaLoadings"
   },
   {
-    "collection": "kirc_edges_broad_tcgapancanmutated",
-    "count": 640,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
-  },
-  {
     "collection": "coadread_mds_cbio_mds-osccchen9genes-cnv-mut01-1e+05-cbio",
     "count": 1,
     "fields": [
@@ -80662,7 +80626,7 @@
   },
   {
     "collection": "manifest",
-    "count": 5744,
+    "count": 5884,
     "fields": [
       "_id",
       "dataset",
@@ -81497,17 +81461,6 @@
     "type": "mds"
   },
   {
-    "collection": "brain_edges_broad_osccchen9genes",
-    "count": 392,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
-  },
-  {
     "collection": "dlbc_ptdegree_broad_markergenes545",
     "count": 48,
     "fields": [
@@ -81823,6 +81776,19 @@
       "data"
     ],
     "type": "color"
+  },
+  {
+    "collection": "esca_mds_ucsc_mds-oncovogel274-cnv-mut01-ucsc",
+    "count": 1,
+    "fields": [
+      "_id",
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
+    ],
+    "type": "mds"
   },
   {
     "collection": "coadread_pcaloadings_ucsc_prcomp-osccchen131probes-cnv",
@@ -82381,28 +82347,6 @@
     "type": "ptDegree"
   },
   {
-    "collection": "ucec_edges_broad_oncoplex",
-    "count": 2879,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
-  },
-  {
-    "collection": "thca_edges_broad_oncovogel274",
-    "count": 558,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
-  },
-  {
     "collection": "coadread_pcaloadings_cbio_prcomp-oncovogel274-methylation-hm27",
     "count": 1,
     "fields": [
@@ -82698,6 +82642,19 @@
     "type": "pcaScores"
   },
   {
+    "collection": "dlbc_mds_ucsc_mds-tcgagbmclassifiers-cnv-mut01-1e+05-ucsc",
+    "count": 1,
+    "fields": [
+      "_id",
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
+    ],
+    "type": "mds"
+  },
+  {
     "collection": "sarc_genedegree_ucsc_tcgapancanmutated-cnv",
     "count": 59,
     "fields": [
@@ -82802,17 +82759,6 @@
     "type": "pcaScores"
   },
   {
-    "collection": "stad_edges_broad_oncoplex",
-    "count": 3227,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
-  },
-  {
     "collection": "cesc_ptdegree_broad_tcgapancanmutated",
     "count": 137,
     "fields": [
@@ -82871,6 +82817,19 @@
       "data"
     ],
     "type": "pcaScores"
+  },
+  {
+    "collection": "sarc_mds_ucsc_mds-oncoplex-cnv-mut01-ucsc",
+    "count": 1,
+    "fields": [
+      "_id",
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
+    ],
+    "type": "mds"
   },
   {
     "collection": "dlbc_pcaloadings_ucsc_prcomp-osccchen9genes-cnv",
@@ -83321,17 +83280,6 @@
       "data"
     ],
     "type": "pcaScores"
-  },
-  {
-    "collection": "gbm_edges_ucsc_oncoplex",
-    "count": 48114,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
   },
   {
     "collection": "prad_pcascores_cbio_prcomp-osccchen9genes-rna-agilent",
@@ -84029,17 +83977,6 @@
       "TCGA-KL-8323-01"
     ],
     "type": "ptDegree"
-  },
-  {
-    "collection": "brca_edges_broad_oncovogel274",
-    "count": 2368,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
   },
   {
     "collection": "luad_genedegree_broad_oncoplex-mut01",
@@ -85387,17 +85324,6 @@
     "type": "pcaScores"
   },
   {
-    "collection": "brca_edges_broad_osccchen9genes",
-    "count": 318,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
-  },
-  {
     "collection": "luad_edges_cbio_oncovogel274-mut01-cnv",
     "count": 72577,
     "fields": [
@@ -85735,6 +85661,20 @@
     "type": "pcaLoadings"
   },
   {
+    "collection": "brain_pcaloadings_cbio_prcomp-oncoplex-methylation-hm27",
+    "count": 1,
+    "fields": [
+      "_id",
+      "disease",
+      "source",
+      "type",
+      "geneset",
+      "scale",
+      "data"
+    ],
+    "type": "pcaLoadings"
+  },
+  {
     "collection": "blca_pcaloadings_ucsc_prcomp-osccchen9genes-mut01",
     "count": 1,
     "fields": [
@@ -85784,6 +85724,19 @@
       "AKT3"
     ],
     "type": "geneDegree"
+  },
+  {
+    "collection": "cesc_mds_ucsc_mds-tcgapancanmutated-cnv-mut01-1e+05-ucsc",
+    "count": 1,
+    "fields": [
+      "_id",
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
+    ],
+    "type": "mds"
   },
   {
     "collection": "brca_pcascores_cbio_prcomp-osccchen9genes-rna-seq-median-zscore-1e+05",
@@ -85865,6 +85818,18 @@
     "type": "pcaLoadings"
   },
   {
+    "collection": "ucec_mut01_ucsc_pancanaws",
+    "count": 39616,
+    "fields": [
+      "_id",
+      "gene",
+      "min",
+      "max",
+      "patients"
+    ],
+    "type": "mut01"
+  },
+  {
     "collection": "lgg_pcascores_ucsc_prcomp-allgenes-cnv",
     "count": 1,
     "fields": [
@@ -85926,15 +85891,17 @@
     "type": "pcaScores"
   },
   {
-    "collection": "esca_edges_broad_tcgapancanmutated",
-    "count": 924,
+    "collection": "sarc_mds_ucsc_mds-tcgapancanmutated-cnv-mut01-ucsc",
+    "count": 1,
     "fields": [
       "_id",
-      "m",
-      "g",
-      "p"
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
     ],
-    "type": "edges"
+    "type": "mds"
   },
   {
     "collection": "thca_genedegree_broad_tcgagbmclassifiers",
@@ -86271,17 +86238,6 @@
     "type": "pcaScores"
   },
   {
-    "collection": "kirc_edges_broad_osccchen9genes",
-    "count": 30,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
-  },
-  {
     "collection": "chol_edges_ucsc_osccchen9genes-cnv",
     "count": 140,
     "fields": [
@@ -86539,17 +86495,6 @@
     "type": "pcaScores"
   },
   {
-    "collection": "cesc_edges_broad_oncoplex",
-    "count": 758,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
-  },
-  {
     "collection": "brca_pcascores_cbio_prcomp-oncoplex-rna-agilent-median-zscore",
     "count": 1,
     "fields": [
@@ -86609,6 +86554,18 @@
       "data"
     ],
     "type": "pcaScores"
+  },
+  {
+    "collection": "acc_mut01_ucsc_broadcurated",
+    "count": 39666,
+    "fields": [
+      "_id",
+      "gene",
+      "min",
+      "max",
+      "patients"
+    ],
+    "type": "mut01"
   },
   {
     "collection": "lusc_pcaloadings_ucsc_prcomp-allgenes-rna-hiseq",
@@ -87033,17 +86990,6 @@
     "type": "pcaScores"
   },
   {
-    "collection": "kich_edges_broad_osccchen131probes",
-    "count": 28,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
-  },
-  {
     "collection": "kich_ptdegree_broad_oncoplex-mut01",
     "count": 54,
     "fields": [
@@ -87111,17 +87057,6 @@
       "laterality"
     ],
     "type": "otherMalignancy"
-  },
-  {
-    "collection": "blca_edges_broad_oncovogel274",
-    "count": 3083,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
   },
   {
     "collection": "stad_ptdegree_broad_oncovogel274-mut01",
@@ -87573,17 +87508,6 @@
     "type": "edges"
   },
   {
-    "collection": "brain_edges_broad_oncovogel274",
-    "count": 2595,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
-  },
-  {
     "collection": "coadread_mds_ucsc_mds-oncovogel274-cnv-mut01-ucsc",
     "count": 1,
     "fields": [
@@ -87719,6 +87643,18 @@
     "type": "pcaScores"
   },
   {
+    "collection": "cesc_mut01_ucsc_ucsc",
+    "count": 39616,
+    "fields": [
+      "_id",
+      "gene",
+      "min",
+      "max",
+      "patients"
+    ],
+    "type": "mut01"
+  },
+  {
     "collection": "paad_pcascores_cbio_prcomp-markergenes545-cnv-1e+05",
     "count": 1,
     "fields": [
@@ -87852,17 +87788,6 @@
       "patients"
     ],
     "type": "rna"
-  },
-  {
-    "collection": "kirc_edges_broad_oncovogel274",
-    "count": 1116,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
   },
   {
     "collection": "hnsc_mds_cbio_mds-oncoplex-cnv-mut01-cbio",
@@ -88102,6 +88027,19 @@
     "type": "geneDegree"
   },
   {
+    "collection": "acc_mds_ucsc_mds-osccchen9genes-cnv-mut01-ucsc",
+    "count": 1,
+    "fields": [
+      "_id",
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
+    ],
+    "type": "mds"
+  },
+  {
     "collection": "stad_genedegree_broad_tcgapancanmutated",
     "count": 60,
     "fields": [
@@ -88109,6 +88047,23 @@
       "APC"
     ],
     "type": "geneDegree"
+  },
+  {
+    "collection": "brain_pcascores_cbio_prcomp-osccchen9genes-methylation-hm27-1e+05",
+    "count": 1,
+    "fields": [
+      "_id",
+      "disease",
+      "source",
+      "type",
+      "geneset",
+      "scale",
+      "pc1",
+      "pc2",
+      "pc3",
+      "data"
+    ],
+    "type": "pcaScores"
   },
   {
     "collection": "skcm_pcaloadings_broad_prcomp-allgenes-mut01",
@@ -90008,17 +89963,6 @@
     "type": "pcaScores"
   },
   {
-    "collection": "kirp_edges_broad_tcgagbmclassifiers",
-    "count": 672,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
-  },
-  {
     "collection": "paad_rna_cbio_seq",
     "count": 20444,
     "fields": [
@@ -90143,17 +90087,6 @@
     "type": "pcaScores"
   },
   {
-    "collection": "gbm_edges_broad_oncoplex",
-    "count": 741,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
-  },
-  {
     "collection": "ucec_pcascores_broad_prcomp-allgenes-mut01",
     "count": 1,
     "fields": [
@@ -90169,17 +90102,6 @@
       "data"
     ],
     "type": "pcaScores"
-  },
-  {
-    "collection": "kirc_edges_broad_osccchen131probes",
-    "count": 203,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
   },
   {
     "collection": "gbm_pcascores_ucsc_prcomp-markergenes545-cnv-1e+05",
@@ -90234,17 +90156,6 @@
       "data"
     ],
     "type": "pcaScores"
-  },
-  {
-    "collection": "gbm_edges_ucsc_markergenes545",
-    "count": 110038,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
   },
   {
     "collection": "ucec_pcascores_ucsc_prcomp-oncovogel274-rna-hiseq-1e+05",
@@ -90347,15 +90258,20 @@
     "type": "pcaScores"
   },
   {
-    "collection": "dlbc_edges_broad_oncoplex",
-    "count": 247,
+    "collection": "render_pca_orig",
+    "count": 448,
     "fields": [
       "_id",
-      "m",
-      "g",
-      "p"
+      "disease",
+      "source",
+      "type",
+      "geneset",
+      "pc1",
+      "pc2",
+      "pc3",
+      "data"
     ],
-    "type": "edges"
+    "type": false
   },
   {
     "collection": "paad_pcascores_cbio_prcomp-tcgagbmclassifiers-mut01",
@@ -91169,6 +91085,19 @@
     "type": "pcaScores"
   },
   {
+    "collection": "cesc_mds_ucsc_mds-osccchen131probes-cnv-mut01-ucsc",
+    "count": 1,
+    "fields": [
+      "_id",
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
+    ],
+    "type": "mds"
+  },
+  {
     "collection": "hnsc_protein_cbio_rppa",
     "count": 160,
     "fields": [
@@ -91253,6 +91182,23 @@
       "data"
     ],
     "type": "pcaLoadings"
+  },
+  {
+    "collection": "brain_pcascores_cbio_prcomp-osccchen9genes-methylation-hm27",
+    "count": 1,
+    "fields": [
+      "_id",
+      "disease",
+      "source",
+      "type",
+      "geneset",
+      "scale",
+      "pc1",
+      "pc2",
+      "pc3",
+      "data"
+    ],
+    "type": "pcaScores"
   },
   {
     "collection": "hnsc_edges_cbio_markergenes545-mut01-cnv",
@@ -91823,15 +91769,17 @@
     "type": "pcaLoadings"
   },
   {
-    "collection": "gbm_edges_broad_osccchen9genes",
-    "count": 87,
+    "collection": "chol_mds_ucsc_mds-oncoplex-cnv-mut01-1e+05-ucsc",
+    "count": 1,
     "fields": [
       "_id",
-      "m",
-      "g",
-      "p"
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
     ],
-    "type": "edges"
+    "type": "mds"
   },
   {
     "collection": "blca_pcaloadings_ucsc_prcomp-osccchen131probes-mut01",
@@ -91943,17 +91891,6 @@
     "type": "ptDegree"
   },
   {
-    "collection": "dlbc_edges_broad_tcgagbmclassifiers",
-    "count": 462,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
-  },
-  {
     "collection": "skcm_pcascores_ucsc_prcomp-osccchen131probes-rna-hiseq",
     "count": 1,
     "fields": [
@@ -92004,17 +91941,6 @@
       "TCGA-3L-AA1B-01"
     ],
     "type": "ptDegree"
-  },
-  {
-    "collection": "chol_edges_broad_tcgagbmclassifiers",
-    "count": 205,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
   },
   {
     "collection": "lung_pcascores_cbio_prcomp-markergenes545-methylation-hm450",
@@ -92176,17 +92102,6 @@
       "data"
     ],
     "type": "mds"
-  },
-  {
-    "collection": "kich_edges_broad_markergenes545",
-    "count": 244,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
   },
   {
     "collection": "kirp_ptdegree_broad_oncovogel274",
@@ -92521,17 +92436,6 @@
     "type": "pcaScores"
   },
   {
-    "collection": "stad_edges_broad_osccchen131probes",
-    "count": 1032,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
-  },
-  {
     "collection": "dlbc_pcascores_ucsc_prcomp-osccchen131probes-rna-hiseq",
     "count": 1,
     "fields": [
@@ -92547,17 +92451,6 @@
       "data"
     ],
     "type": "pcaScores"
-  },
-  {
-    "collection": "skcm_edges_broad_markergenes545",
-    "count": 6186,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
   },
   {
     "collection": "stad_pcascores_ucsc_prcomp-oncoplex-mut01",
@@ -92735,17 +92628,6 @@
       "data"
     ],
     "type": "pcaScores"
-  },
-  {
-    "collection": "lgg_edges_broad_oncovogel274",
-    "count": 1842,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
   },
   {
     "collection": "kirc_edges_broad_osccchen131probes-mut01",
@@ -92929,6 +92811,19 @@
     "type": "edges"
   },
   {
+    "collection": "dlbc_mds_ucsc_mds-tcgagbmclassifiers-cnv-mut01-ucsc",
+    "count": 1,
+    "fields": [
+      "_id",
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
+    ],
+    "type": "mds"
+  },
+  {
     "collection": "paad_pcascores_ucsc_prcomp-oncoplex-cnv",
     "count": 1,
     "fields": [
@@ -92987,17 +92882,6 @@
       "ABCD2"
     ],
     "type": "geneDegree"
-  },
-  {
-    "collection": "brca_edges_broad_tcgapancanmutated",
-    "count": 1286,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
   },
   {
     "collection": "cesc_edges_broad_osccchen131probes-mut01",
@@ -93104,6 +92988,18 @@
     "type": "pcaLoadings"
   },
   {
+    "collection": "meso_mut01_ucsc_broad",
+    "count": 39973,
+    "fields": [
+      "_id",
+      "gene",
+      "min",
+      "max",
+      "patients"
+    ],
+    "type": "mut01"
+  },
+  {
     "collection": "blca_pcaloadings_broad_prcomp-markergenes545-mut01",
     "count": 1,
     "fields": [
@@ -93159,17 +93055,6 @@
       "data"
     ],
     "type": "pcaScores"
-  },
-  {
-    "collection": "brca_edges_broad_markergenes545",
-    "count": 3467,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
   },
   {
     "collection": "blca_edges_broad_markergenes545-mut01",
@@ -93387,6 +93272,19 @@
       "data"
     ],
     "type": "pcaScores"
+  },
+  {
+    "collection": "acc_mds_ucsc_mds-tcgapancanmutated-cnv-mut01-ucsc",
+    "count": 1,
+    "fields": [
+      "_id",
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
+    ],
+    "type": "mds"
   },
   {
     "collection": "acc_edges_broad_osccchen131probes-mut01",
@@ -93697,26 +93595,17 @@
     "type": "newTumor-followUp"
   },
   {
-    "collection": "hnsc_edges_broad_tcgagbmclassifiers",
-    "count": 3850,
+    "collection": "esca_mds_ucsc_mds-markergenes545-cnv-mut01-ucsc",
+    "count": 1,
     "fields": [
       "_id",
-      "m",
-      "g",
-      "p"
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
     ],
-    "type": "edges"
-  },
-  {
-    "collection": "lgg_edges_broad_tcgagbmclassifiers",
-    "count": 1240,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
+    "type": "mds"
   },
   {
     "collection": "brain_mds_cbio_mds-osccchen9genes-cnv-mut01-1e+05-cbio",
@@ -94138,17 +94027,6 @@
     "type": "pcaLoadings"
   },
   {
-    "collection": "skcm_edges_broad_osccchen9genes",
-    "count": 190,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
-  },
-  {
     "collection": "stad_pcascores_broad_prcomp-oncoplex-mut01",
     "count": 1,
     "fields": [
@@ -94164,17 +94042,6 @@
       "data"
     ],
     "type": "pcaScores"
-  },
-  {
-    "collection": "ucec_edges_broad_tcgapancanmutated",
-    "count": 1324,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
   },
   {
     "collection": "coadread_pcascores_cbio_prcomp-osccchen131probes-methylation-hm27-1e+05",
@@ -95103,17 +94970,6 @@
     "type": "geneDegree"
   },
   {
-    "collection": "dlbc_edges_ucsc_tcgagbmclassifiers",
-    "count": 7793,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
-  },
-  {
     "collection": "ucec_edges_broad_osccchen131probes-mut01",
     "count": 756,
     "fields": [
@@ -95969,6 +95825,19 @@
     "type": "ptDegree"
   },
   {
+    "collection": "chol_mds_ucsc_mds-oncovogel274-cnv-mut01-ucsc",
+    "count": 1,
+    "fields": [
+      "_id",
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
+    ],
+    "type": "mds"
+  },
+  {
     "collection": "hnsc_pcaloadings_ucsc_prcomp-tcgapancanmutated-cnv",
     "count": 1,
     "fields": [
@@ -96030,6 +95899,19 @@
     "type": "pcaScores"
   },
   {
+    "collection": "esca_mds_ucsc_mds-osccchen9genes-cnv-mut01-ucsc",
+    "count": 1,
+    "fields": [
+      "_id",
+      "type",
+      "dataset",
+      "name",
+      "scale",
+      "data"
+    ],
+    "type": "mds"
+  },
+  {
     "collection": "luad_pcascores_cbio_prcomp-osccchen131probes-methylation-hm27-1e+05",
     "count": 1,
     "fields": [
@@ -96071,17 +95953,6 @@
       "data"
     ],
     "type": "pcaScores"
-  },
-  {
-    "collection": "skcm_edges_broad_oncovogel274",
-    "count": 3047,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
   },
   {
     "collection": "lusc_pcascores_ucsc_prcomp-markergenes545-rna-hiseq",
@@ -96179,17 +96050,6 @@
       "data"
     ],
     "type": "pcaScores"
-  },
-  {
-    "collection": "skcm_edges_broad_osccchen131probes",
-    "count": 1175,
-    "fields": [
-      "_id",
-      "m",
-      "g",
-      "p"
-    ],
-    "type": "edges"
   },
   {
     "collection": "paad_genedegree_broad_osccchen131probes-mut01",

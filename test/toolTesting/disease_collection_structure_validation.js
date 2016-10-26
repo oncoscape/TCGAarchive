@@ -23,10 +23,11 @@ var test = {
 
 var Ajv = require('ajv');
 var ajv = new Ajv({allErrors: true});
-var ajvMsg = [];
+const schemas = require("../schemas.json");
+const ptList = require("./ptList.json");
+const ajvMsg = require("../datasourceTesting/ajv_tcga_v2_10182016.json");
 var collection;
 var all_collections = [];
-var schemas = {};
 const mongoose = require("mongoose");
 var lookupByDisease = [];
 var lookupByTool = [];
@@ -36,8 +37,6 @@ var render_chr;
 var render_chr_arr = [];
 var render_pt;
 var render_pt_arr = [];
-var ajvMsg = [];
-var ptList = {};
 var diseaseCollectionSchema = {
     "properties": {
         "disease": {"type": "string"}, 
@@ -106,9 +105,6 @@ var diseaseCollectionSchema = {
 
 };
 
-jsonfile.readFile('../schema.json').then(function(obj){schemas = obj;});
-jsonfile.readFile('../ptList.json').then(function(obj){ptList = obj;});
-jsonfile.readFile('../datasourceTesting/ajv_tcga_v2_10182016.json').then(function(obj){ajvMsg = obj;});
 
 Array.prototype.findCollectionsByDisease = function(d){
   var arr = [];
@@ -171,7 +167,7 @@ mongoose.connect(
         },
         user: 'oncoscapeRead',
         pass: 'i1f4d9botHD4xnZ'
-    });
+});
 
 var connection = mongoose.connection;
 var j = 0;

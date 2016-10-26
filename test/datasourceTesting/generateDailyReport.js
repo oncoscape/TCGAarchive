@@ -190,18 +190,17 @@ var collection_counts = [];
 var render_pca = [];
 var render_patient = [];
 var jsonfile = require("jsonfile-promised");
-var ajvMsg = [];
+var ajvMsg = require("./ajv_tcga_v2_10252016.json");
+var status_DTS = require("../forPatientIDChecking/patientIDsErrorCountsByDiseaseByType.json");
+var diseaseCollectionStructureStatus = require("../toolTesting/diseaseCollectionStructuralStatus.json");
 var ajvMsg_report = [];
 var render_pca_missing_collections = [];
 var render_pt_missing_collections = [];
 var patientIDs_status=[], patientID_errors = [];
-var status_DTS = [];
+
 var onerror = function(e){
   console.log(e);
 }
-jsonfile.readFile('ajv_tcga_v2_10202016.json').then(function(res){ajvMsg =res;});
-jsonfile.readFile("../forPatientIDChecking/patientIDsErrorCountsByDiseaseByType.json").then(function(obj){status_DTS=obj;});
-
 
 co(function *() {
 
@@ -248,7 +247,7 @@ co(function *() {
       }
     }
   });//flatten all the collections from lookup_oncoscape_datasources 
-  lookup_listed_collections = lookup_listed_collections..unique();
+  lookup_listed_collections = lookup_listed_collections.unique();
 
   manifest = yield comongo.db.collection(db, "manifest");
   manifest_arr = yield manifest.find({}).toArray();
@@ -280,20 +279,20 @@ co(function *() {
   format.text(manifest_listed_collections.length);
   format.h3("Compare the existing collections against lookup_listed_collections: ");
   format.codeStart();
-  format.text(existing_collection_names.arraysCompare(lookup_listed_collections));
+  format.text(existing_collection_names.arraysCompareV2(lookup_listed_collections));
   format.codeStop();
-  format.h3("Compare lookup_listed_collections against the existing collections: ");
-  format.codeStart();
-  format.text(lookup_listed_collections.arraysCompare(existing_collection_names));
-  format.codeStop();
+  // format.h3("Compare lookup_listed_collections against the existing collections: ");
+  // format.codeStart();
+  // format.text(lookup_listed_collections.arraysCompareV2(existing_collection_names));
+  // format.codeStop();
   format.h3("Compare the existing collections against manifest_listed_collections: ");
   format.codeStart();
-  format.text(existing_collection_names.arraysCompare(manifest_listed_collections));
+  format.text(existing_collection_names.arraysCompareV2(manifest_listed_collections));
   format.codeStop();
-  format.h3("Compare manifest_listed_collections against the existing collections: ");
-  format.codeStart();
-  format.text(manifest_listed_collections.arraysCompare(existing_collection_names));
-  format.codeStop();
+  // format.h3("Compare manifest_listed_collections against the existing collections: ");
+  // format.codeStart();
+  // format.text(manifest_listed_collections.arraysCompareV2(existing_collection_names));
+  // format.codeStop();
   
 
   /*** survey the collections that exist in the tcga database
@@ -354,12 +353,12 @@ co(function *() {
 
   format.h3("Compare the existing collections against render_pca: ");
   format.codeStart();
-  format.text(existing_pcascores.arraysCompare(rendering_pca_potential_collections));
+  format.text(existing_pcascores.arraysCompareV2(rendering_pca_potential_collections));
   format.codeStop();
-  format.h3("Compare render_pca against the existing collections: ");
-  format.codeStart();
-  format.text(rendering_pca_potential_collections.arraysCompare(existing_pcascores));
-  format.codeStop();
+  // format.h3("Compare render_pca against the existing collections: ");
+  // format.codeStart();
+  // format.text(rendering_pca_potential_collections.arraysCompare(existing_pcascores));
+  // format.codeStop();
 
   
   format.h2("render_patient compare to existing mds");
@@ -395,22 +394,22 @@ co(function *() {
 
   format.h3("Compare the existing collections against render_patient: ");
   format.codeStart();
-  format.text(existing_mds.arraysCompare(rendering_pt_potential_collections));
+  format.text(existing_mds.arraysCompareV2(rendering_pt_potential_collections));
   format.codeStop();
-  format.h3("Compare render_patient against the existing collections: ");
-  format.codeStart();
-  format.text(rendering_pt_potential_collections.arraysCompare(existing_mds));
-  format.codeComment("In render_patient, there are documents with 'cluster' as type, yet 'pca-' as name prefix.");
-  format.text(render_patient_weird_ex);
-  format.codeStop();
+  // format.h3("Compare render_patient against the existing collections: ");
+  // format.codeStart();
+  // format.text(rendering_pt_potential_collections.arraysCompare(existing_mds));
+  // format.codeComment("In render_patient, there are documents with 'cluster' as type, yet 'pca-' as name prefix.");
+  // format.text(render_patient_weird_ex);
+  // format.codeStop();
 
 
   // report the collection erros from ajv_tcga_v2.json 
   
-  format.h1("Part III: Run the DB against schemas.json, below lists the error message: ");
+  format.h1("Part III: Data Structural Errors - Run the DB against schemas.json, below lists the error message: ");
   format.codeStart();
   ajvMsg.forEach(function(a){
-    if(a.passedRate < 1){
+    if(a!=null && a.passedRate < 1){
       format.text(a);
     }
   });
@@ -419,9 +418,26 @@ co(function *() {
   // format.code(ajvMsg_report);
   // format.codeStop();
 
+  // report disease collection structural status against brain in lookup_oncoscape_datasources
+  format.h1("Part IV: Check diseae collection structural status against brain in lookup_oncoscape_datasources");
+  var diseaseCollection = diseaseCollectionStructureStatus.filter(function(d){
+                                              return d.collectionStructural.length>0; }).map(function(m){
+                                              var elem = {};
+                                              elem.disease = m.disease;
+                                              elem.errors = [];
+                                              m.collectionStructural.forEach(function(n){
+                                                elem.errors.push(n.schemaPath+'['+n.message + ']');
+                                              });
+                                              return elem;})
+
+  format.codeStart();
+  format.text(diseaseCollection);
+  format.codeStop();
+
+
   // report the earlier version patient ID checking
-  
-  format.h1("Part IV: Checked the patient IDs against disease patient collection IDs:");
+
+  format.h1("Part V: Checked the patient IDs against disease patient collection IDs:");
   var uniqueTypes = status_DTS.map(function(p){return p.type;}).unique();
   var uniqueDiseases = status_DTS.map(function(p){return p.disease;}).unique();
 

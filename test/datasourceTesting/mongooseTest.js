@@ -126,7 +126,7 @@ connection.once('open', function(){
             console.error('Error: ' + err.message);
             return;
         }
-        jsonfile.writeFile("ajv_tcga_10182016.json", ajvMsg, {spaces: 4}); 
+        jsonfile.writeFile("ajv_tcga_10252016.json", ajvMsg, {spaces: 4}); 
         console.log('Finished!');
         console.timeEnd();
     });
