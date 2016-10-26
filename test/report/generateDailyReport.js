@@ -197,7 +197,36 @@ var ajvMsg_report = [];
 var render_pca_missing_collections = [];
 var render_pt_missing_collections = [];
 var patientIDs_status=[], patientID_errors = [];
-
+const pcaScoreTypeMapping = {
+    "mutSig2": "mut01",
+    "HM27": "methylation-hm27", 
+    "RPPA-zscore": "protein",
+    "gistic": "cnv", 
+    "import":"mut01",
+    "gistic2thd": "cnv",
+    "mutation": "mut01", 
+    "mutationBroadGene": "mut01", 
+    "mutationBcmGene": "mut01",
+    'mut01-mutSig2': "mut01",
+    'methylation-HM27': "methylation-hm27", 
+    'protein-RPPA-zscore': "protein",
+    'cnv-gistic': "cnv", 
+    'cnv-gistic2thd':"cnv",
+    'mut01-mutation': "mut01", 
+    'mut01-mutationBroadGene': "mut01", 
+    'mut01-mutationBcmGene': "mut01", 
+    'mut01-wxs': "mut01", 
+    'methylation-HM450': "methylation-hm450", 
+    'rna-Agilent-median-zscore': "rna-agilent-median-zscore", 
+    'rna-seq-median-zscore': "rna-seq-median-zscore", 
+    'mut01-mutationCuratedWustlGene': "mut01",
+    'mut-mut': "mut01",
+    'rna-Agilent': "rna-agilent", 
+    'rna-seq': "rna-seq", 
+    'protein-RPPA': "protein",
+    'rna-U133': "rna-u133", 
+    'rna-HiSeq': "rna-hiseq"
+  };
 var onerror = function(e){
   console.log(e);
 }
@@ -304,36 +333,7 @@ co(function *() {
   format.h3("render_pca compare to existing pcascores");
   collection = yield comongo.db.collection(db, 'render_pca');
   render_pca = yield collection.find({},{'disease':true, 'source':true, 'type':true, 'geneset':true}).toArray();
-  var pcaScoreTypeMapping = {
-    "mutSig2": "mut01",
-    "HM27": "methylation-hm27", 
-    "RPPA-zscore": "protein",
-    "gistic": "cnv", 
-    "import":"mut01",
-    "gistic2thd": "cnv",
-    "mutation": "mut01", 
-    "mutationBroadGene": "mut01", 
-    "mutationBcmGene": "mut01",
-    'mut01-mutSig2': "mut01",
-    'methylation-HM27': "methylation-hm27", 
-    'protein-RPPA-zscore': "protein",
-    'cnv-gistic': "cnv", 
-    'cnv-gistic2thd':"cnv",
-    'mut01-mutation': "mut01", 
-    'mut01-mutationBroadGene': "mut01", 
-    'mut01-mutationBcmGene': "mut01", 
-    'mut01-wxs': "mut01", 
-    'methylation-HM450': "methylation-hm450", 
-    'rna-Agilent-median-zscore': "rna-agilent-median-zscore", 
-    'rna-seq-median-zscore': "rna-seq-median-zscore", 
-    'mut01-mutationCuratedWustlGene': "mut01",
-    'mut-mut': "mut",
-    'rna-Agilent': "rna-agilent", 
-    'rna-seq': "rna-seq", 
-    'protein-RPPA': "protein",
-    'rna-U133': "rna-u133", 
-    'rna-HiSeq': "rna-hiseq"
-  };
+  
   var existing_pcascores = [];
   var rendering_pca_potential_collections = [];
   existing_collection_names.forEach(function(e){if(e.includes('pcascores') && (!e.includes("-1e+05"))) existing_pcascores.push(e);});
