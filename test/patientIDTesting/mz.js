@@ -142,11 +142,11 @@ Promise.all([mongo(mongoose),filestream(fs)]).then(function(response){
     //     //console.dir(res);
     //   });
     // });
-    console.log("test1");
+    var index = 0;
+    console.log(index);
     asyncLoop(input, function(d, next){ 
-      console.log("test2");
       promiseFactory(db, d.collection, d.type, d.disease).then(function(res){
-        console.log(res);
+        console.log(index++);
         fs.appendFile('./output.json',JSON.stringify(res, null, 4),function (err) {console.log(err); });
          next();
       });
