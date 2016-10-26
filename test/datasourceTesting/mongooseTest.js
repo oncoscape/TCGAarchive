@@ -25,7 +25,7 @@ var passed_elem;
 var error_elem = [];
 var elem = {};
 
-jsonfile.readFile("../collection_counts.json").then(function(res){collections = res;});
+jsonfile.readFile("../collection_counts_10262016.json").then(function(res){collections = res;});
 jsonfile.readFile("../schemas.json").then(function(res){
   schemas = res;
   dataType = Object.keys(schemas);
@@ -126,7 +126,7 @@ connection.once('open', function(){
             console.error('Error: ' + err.message);
             return;
         }
-        jsonfile.writeFile("ajv_tcga_10252016.json", ajvMsg, {spaces: 4}); 
+        jsonfile.writeFile("ajv_tcga_10262016.json", ajvMsg, {spaces: 4}); 
         console.log('Finished!');
         console.timeEnd();
     });

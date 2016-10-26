@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const fs = require("fs");
 const _ = require("underscore");
 const input = require("../datasourceTesting/ajv_tcga_v2_10182016.json");
-
+var asyncLoop = require('node-async-loop');
 // Connect To Database
 var mongo = function(mongoose){
   return new Promise(function(resolve, reject) {
@@ -34,9 +34,13 @@ var filestream = function(fs){
 };
 
 // Get Promises Based On Collection Type
-var promiseFactory = function(db, collection, type){
+var promiseFactory = function(db, collection, type, disease){
   return new Promise(function(resolve, reject){
+    var elem = {};
+    elem.collection = collection;
+    elem.type = type;
     type = type.trim().toUpperCase();
+    console.log(collection);   
     switch(type){
       case "PATIENT":
       case "DRUG":
@@ -45,7 +49,9 @@ var promiseFactory = function(db, collection, type){
       case "RADIATION":
       case "FOLLOWUP":
       case "NEWTUMOR-FOLLOWUP":
-        db.collection(collection).distinct("patient_ID").then(function(r){ resolve(r); });
+        db.collection(collection).distinct("patient_ID").then(function(r){ 
+          elem.IDs = r;
+          resolve(elem); });
         break;
 
       case "PCASCORES":
@@ -53,44 +59,49 @@ var promiseFactory = function(db, collection, type){
         db.collection(collection).mapReduce(
         function(){ for (var key in this.data) { emit(key, null); } },
         function(key, value) { return null }, 
-        { out: {inline:1} }).then(function(r){ resolve( r.map(function(v){ return v._id; }) ); });
+        { out: {inline:1} }).then(function(r){ elem.IDs = r.map(function(v){ return v._id; }); resolve(elem); });
         break;
 
-      // case "MUT":
-      // case "MUT01":
-      // case "METHYLATION":
-      // case "RNA":
-      // case "PROTEIN":
-      // case "CNV":
-      //   db.collection(collection).mapReduce(
-      //       function(){ for (var key in this.patients) { emit(key, null); } },
-      //       function(key, value) { return null }, 
-      //       { out: {inline:1} }).then(function(r){ resolve( r.map(function(v){ return v._id; }) ); });
-      //   break;
+      case "MUT":
+      case "MUT01":
+      case "METHYLATION":
+      case "RNA":
+      case "PROTEIN":
+      case "CNV":    
+        elem.IDs = db.collection(collection).mapReduce(
+            function(){ for (var key in this.patients) { emit(key, null); } },
+            function(key, value) { return null }, 
+            { out: {inline:1} }).then(function(r){ elem.IDs = r.map(function(v){ return v._id; }); resolve(elem); });
+        break;
 
-      // case "COLOR":
-      //   db.collection(collection).distinct("data.values").then(function(r){ resolve(r);});
-      //   break;
+      case "COLOR":
+        db.collection(collection).distinct("data.values").then(function(r){ 
+          elem.IDs = r;
+          resolve(elem); });
+        break;
 
-      // case "EVENTS":
-      //   db.collection(collection).mapReduce(
-      //       function(){ for (var key in this) { emit(key, null); } },
-      //       function(key, value) { return null }, 
-      //       { out: {inline:1} }).then(function(r){ resolve( r.map(function(v){ return v._id; }) ); });
-      //   break;  
+      case "EVENTS":
+        elem.IDs = db.collection(collection).mapReduce(
+            function(){ for (var key in this) { emit(key, null); } },
+            function(key, value) { return null }, 
+            { out: {inline:1} }).then(function(r){ elem.IDs = r.map(function(v){ return v._id; }); resolve(elem); });
+        break;
 
-      // case "EDGES":
-      //   db.collection(collection).distinct("p").then(function(r){ resolve(r); });
-      //   break;  
 
-      // case "PTDEGREE":
-      //   db.collection(collection).mapReduce(
-      //       function(){ for (var key in this) { emit(key, null); } },
-      //       function(key, value) { return null }, 
-      //       { out: {inline:1} }).then(function(r){ resolve( r.map(function(v){ return v._id; }) ); });
-      //   break;
+      case "EDGES":
+        db.collection(collection).distinct("p").then(function(r){ 
+          elem.IDs = r;
+          resolve(elem); });
+        break;
+
+      case "PTDEGREE":
+        elem.IDs = db.collection(collection).mapReduce(
+            function(){ for (var key in this) { emit(key, null); } },
+            function(key, value) { return null }, 
+            { out: {inline:1} }).then(function(r){ elem.IDs = r.map(function(v){ return v._id; }); resolve(elem); });
+        break;
       default:
-        resolve([]);
+        resolve(elem);
         break;
     }
   });
@@ -101,16 +112,10 @@ var processDisease = function(db, disease){
   return new Promise(function(resolve, reject){
       var promises = disease.sort(function(a,b){ return (a.type<b.type) ? -1 : 1; })
                             .map(function(collection){
-                                  var elem = {};
-                                  elem.disease = disease;
-                                  elem.type = collection.type;
-                                  elem.collection = collection.collection;
-                                  elem.IDs = promiseFactory(this, collection.collection, collection.type);
-                                  return elem;
+                                  return promiseFactory(this, collection.collection, collection.type, disease);
                                 }, db);
       Promise.all(promises).then(function(results){
                                   //var diseaseIds = _.union.apply(null, results)
-
                                   resolve(results);
                                 });
     });
@@ -118,20 +123,43 @@ var processDisease = function(db, disease){
 
 // Main
 var diseases;
+console.time();
 Promise.all([mongo(mongoose),filestream(fs)]).then(function(response){
     var db = response[0];
     var file = response[1];
 
     // Loop Through Diseases + Process
     diseases = _.groupBy(input, function(item){ return item.disease; });
-    var diseaseNames = Object.keys(diseases).splice(0,1);
+    //var diseaseNames = Object.keys(diseases).splice(0,1);
     // Only Process First Two For Test
-    diseaseNames.forEach(function(diseaseName){
-      console.log("Processing: " + diseaseName);
-      processDisease(db, diseases[diseaseName]).then(function(res){
-        //console.log(ids.join(" + "));
-        console.dir(res.length);
+    // diseaseNames.forEach(function(diseaseName){
+    //   console.log("Processing: " + diseaseName);
+    //   processDisease(db, diseases[diseaseName]).then(function(res){
+    //     //console.log(ids.join(" + "));
+    //     console.log("RECEIVED FROM PROCESS");
+    //     //console.log(res);
+    //     fs.appendFile('./output.json',JSON.stringify(res),function (err) {console.log(err); });
+    //     //console.dir(res);
+    //   });
+    // });
+    console.log("test1");
+    asyncLoop(input, function(d, next){ 
+      console.log("test2");
+      promiseFactory(db, d.collection, d.type, d.disease).then(function(res){
+        console.log(res);
+        fs.appendFile('./output.json',JSON.stringify(res, null, 4),function (err) {console.log(err); });
+         next();
       });
+    }, function (err)
+    {
+        if (err)
+        {
+            console.error('Error: ' + err.message);
+            return;
+        }
+        console.log('Finished!');
+        console.timeEnd();
     });
+  
 });
 

@@ -280,6 +280,14 @@
         "errors": []
     },
     {
+        "collection": "tgct_mut01_ucsc_broad",
+        "type": "mut01",
+        "disease": "tgct",
+        "passedCounts": 39589,
+        "totalCounts": 39589,
+        "errors": []
+    },
+    {
         "collection": "thca_mut01_broad_mutsig2",
         "type": "mut01",
         "disease": "thca",
@@ -288,11 +296,35 @@
         "errors": []
     },
     {
+        "collection": "thym_mut01_ucsc_broad",
+        "type": "mut01",
+        "disease": "thym",
+        "passedCounts": 39854,
+        "totalCounts": 39854,
+        "errors": []
+    },
+    {
+        "collection": "uvm_mut01_ucsc_broadcurated",
+        "type": "mut01",
+        "disease": "uvm",
+        "passedCounts": 39381,
+        "totalCounts": 39381,
+        "errors": []
+    },
+    {
         "collection": "lusc_mut01_ucsc_mutationbroadgene",
         "type": "mut01",
         "disease": "lusc",
         "passedCounts": 40208,
         "totalCounts": 40208,
+        "errors": []
+    },
+    {
+        "collection": "pcpg_mut01_ucsc_broad",
+        "type": "mut01",
+        "disease": "pcpg",
+        "passedCounts": 39499,
+        "totalCounts": 39499,
         "errors": []
     },
     {
@@ -320,6 +352,22 @@
         "errors": []
     },
     {
+        "collection": "ucs_mut01_ucsc_broad",
+        "type": "mut01",
+        "disease": "ucs",
+        "passedCounts": 39729,
+        "totalCounts": 39729,
+        "errors": []
+    },
+    {
+        "collection": "sarc_mut01_ucsc_broad",
+        "type": "mut01",
+        "disease": "sarc",
+        "passedCounts": 40233,
+        "totalCounts": 40233,
+        "errors": []
+    },
+    {
         "collection": "stad_mut01_ucsc_mutationbcmgene",
         "type": "mut01",
         "disease": "stad",
@@ -333,6 +381,14 @@
         "disease": "lihc",
         "passedCounts": 12678,
         "totalCounts": 12678,
+        "errors": []
+    },
+    {
+        "collection": "stad_mut01_ucsc_broadcurated",
+        "type": "mut01",
+        "disease": "stad",
+        "passedCounts": 40157,
+        "totalCounts": 40157,
         "errors": []
     },
     {
@@ -432,6 +488,14 @@
         "errors": []
     },
     {
+        "collection": "thca_mut01_ucsc_broad",
+        "type": "mut01",
+        "disease": "thca",
+        "passedCounts": 39728,
+        "totalCounts": 39728,
+        "errors": []
+    },
+    {
         "collection": "luad_mut01_cbio_mut",
         "type": "mut01",
         "disease": "luad",
@@ -504,6 +568,22 @@
         "errors": []
     },
     {
+        "collection": "lihc_mut01_ucsc_bcm",
+        "type": "mut01",
+        "disease": "lihc",
+        "passedCounts": 39428,
+        "totalCounts": 39428,
+        "errors": []
+    },
+    {
+        "collection": "esca_mut01_ucsc_broad",
+        "type": "mut01",
+        "disease": "esca",
+        "passedCounts": 40236,
+        "totalCounts": 40236,
+        "errors": []
+    },
+    {
         "collection": "brain_mut01_ucsc_import",
         "type": "mut01",
         "disease": "brain",
@@ -525,6 +605,22 @@
         "disease": "lgg",
         "passedCounts": 11223,
         "totalCounts": 11223,
+        "errors": []
+    },
+    {
+        "collection": "dlbc_mut01_ucsc_bcm",
+        "type": "mut01",
+        "disease": "dlbc",
+        "passedCounts": 39389,
+        "totalCounts": 39389,
+        "errors": []
+    },
+    {
+        "collection": "chol_mut01_ucsc_broad",
+        "type": "mut01",
+        "disease": "chol",
+        "passedCounts": 39568,
+        "totalCounts": 39568,
         "errors": []
     },
     {
@@ -557,6 +653,14 @@
         "disease": "paad",
         "passedCounts": 11375,
         "totalCounts": 11375,
+        "errors": []
+    },
+    {
+        "collection": "skcm_mut01_ucsc_broad",
+        "type": "mut01",
+        "disease": "skcm",
+        "passedCounts": 40305,
+        "totalCounts": 40305,
         "errors": []
     },
     {
@@ -616,11 +720,35 @@
         "errors": []
     },
     {
+        "collection": "ucec_mut01_ucsc_pancanaws",
+        "type": "mut01",
+        "disease": "ucec",
+        "passedCounts": 39616,
+        "totalCounts": 39616,
+        "errors": []
+    },
+    {
+        "collection": "acc_mut01_ucsc_broadcurated",
+        "type": "mut01",
+        "disease": "acc",
+        "passedCounts": 39666,
+        "totalCounts": 39666,
+        "errors": []
+    },
+    {
         "collection": "ucec_mut01_broad_mutsig2",
         "type": "mut01",
         "disease": "ucec",
         "passedCounts": 15212,
         "totalCounts": 15212,
+        "errors": []
+    },
+    {
+        "collection": "cesc_mut01_ucsc_ucsc",
+        "type": "mut01",
+        "disease": "cesc",
+        "passedCounts": 39616,
+        "totalCounts": 39616,
         "errors": []
     },
     {
@@ -661,6 +789,14 @@
         "disease": "lung",
         "passedCounts": 16655,
         "totalCounts": 16655,
+        "errors": []
+    },
+    {
+        "collection": "meso_mut01_ucsc_broad",
+        "type": "mut01",
+        "disease": "meso",
+        "passedCounts": 39973,
+        "totalCounts": 39973,
         "errors": []
     },
     {
@@ -55368,7 +55504,6 @@
         "totalCounts": 46,
         "errors": []
     },
-    null,
     {
         "collection": "gbm_othermalignancy_tcga_v4p0",
         "type": "otherMalignancy",
@@ -55409,7 +55544,6 @@
         "totalCounts": 386,
         "errors": []
     },
-    null,
     {
         "collection": "ucs_othermalignancy_tcga_v4p0",
         "type": "otherMalignancy",
@@ -82643,6 +82777,14 @@
         "errors": []
     },
     {
+        "collection": "cesc_mds_ucsc_mds-markergenes545-cnv-mut01-1e+05-ucsc",
+        "type": "mds",
+        "disease": "cesc",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
         "collection": "prad_mds_cbio_mds-markergenes545-cnv-mut01-cbio",
         "type": "mds",
         "disease": "prad",
@@ -82691,9 +82833,25 @@
         "errors": []
     },
     {
+        "collection": "acc_mds_ucsc_mds-tcgagbmclassifiers-cnv-mut01-ucsc",
+        "type": "mds",
+        "disease": "acc",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
         "collection": "gbm_mds_ucsc_mds-osccchen9genes-cnv-mut01-1e+05-ucsc",
         "type": "mds",
         "disease": "gbm",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
+        "collection": "acc_mds_ucsc_mds-allgenes-cnv-mut01-1e+05-ucsc",
+        "type": "mds",
+        "disease": "acc",
         "passedCounts": 1,
         "totalCounts": 1,
         "errors": []
@@ -82779,9 +82937,25 @@
         "errors": []
     },
     {
+        "collection": "chol_mds_ucsc_mds-tcgagbmclassifiers-cnv-mut01-1e+05-ucsc",
+        "type": "mds",
+        "disease": "chol",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
         "collection": "laml_mds_ucsc_mds-osccchen131probes-cnv-mut01-ucsc",
         "type": "mds",
         "disease": "laml",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
+        "collection": "acc_mds_ucsc_mds-osccchen9genes-cnv-mut01-1e+05-ucsc",
+        "type": "mds",
+        "disease": "acc",
         "passedCounts": 1,
         "totalCounts": 1,
         "errors": []
@@ -82843,6 +83017,14 @@
         "errors": []
     },
     {
+        "collection": "chol_mds_ucsc_mds-tcgapancanmutated-cnv-mut01-1e+05-ucsc",
+        "type": "mds",
+        "disease": "chol",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
         "collection": "brain_mds_ucsc-pnas_mds-oncovogel274-cnv-mut01-1e+05-ucsc-pnas",
         "type": "mds",
         "disease": "brain",
@@ -82875,6 +83057,14 @@
         "errors": []
     },
     {
+        "collection": "sarc_mds_ucsc_mds-tcgagbmclassifiers-cnv-mut01-ucsc",
+        "type": "mds",
+        "disease": "sarc",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
         "collection": "brain_mds_cbio_mds-allgenes-cnv-mut01-1e+05-cbio",
         "type": "mds",
         "disease": "brain",
@@ -82894,6 +83084,14 @@
         "collection": "paad_mds_ucsc_mds-osccchen131probes-cnv-mut01-ucsc",
         "type": "mds",
         "disease": "paad",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
+        "collection": "sarc_mds_ucsc_mds-markergenes545-cnv-mut01-1e+05-ucsc",
+        "type": "mds",
+        "disease": "sarc",
         "passedCounts": 1,
         "totalCounts": 1,
         "errors": []
@@ -82923,6 +83121,22 @@
         "errors": []
     },
     {
+        "collection": "cesc_mds_ucsc_mds-oncovogel274-cnv-mut01-ucsc",
+        "type": "mds",
+        "disease": "cesc",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
+        "collection": "esca_mds_ucsc_mds-oncoplex-cnv-mut01-1e+05-ucsc",
+        "type": "mds",
+        "disease": "esca",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
         "collection": "luad_mds_ucsc_mds-tcgapancanmutated-cnv-mut01-1e+05-ucsc",
         "type": "mds",
         "disease": "luad",
@@ -82934,6 +83148,14 @@
         "collection": "gbm_mds_ucsc_mds-osccchen131probes-cnv-mut01-ucsc",
         "type": "mds",
         "disease": "gbm",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
+        "collection": "chol_mds_ucsc_mds-osccchen9genes-cnv-mut01-ucsc",
+        "type": "mds",
+        "disease": "chol",
         "passedCounts": 1,
         "totalCounts": 1,
         "errors": []
@@ -82955,6 +83177,14 @@
         "errors": []
     },
     {
+        "collection": "acc_mds_ucsc_mds-oncovogel274-cnv-mut01-ucsc",
+        "type": "mds",
+        "disease": "acc",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
         "collection": "paad_mds_ucsc_mds-oncoplex-cnv-mut01-ucsc",
         "type": "mds",
         "disease": "paad",
@@ -82963,9 +83193,25 @@
         "errors": []
     },
     {
+        "collection": "esca_mds_ucsc_mds-tcgapancanmutated-cnv-mut01-ucsc",
+        "type": "mds",
+        "disease": "esca",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
         "collection": "prad_mds_cbio_mds-tcgapancanmutated-cnv-mut01-cbio",
         "type": "mds",
         "disease": "prad",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
+        "collection": "cesc_mds_ucsc_mds-osccchen9genes-cnv-mut01-1e+05-ucsc",
+        "type": "mds",
+        "disease": "cesc",
         "passedCounts": 1,
         "totalCounts": 1,
         "errors": []
@@ -82995,6 +83241,14 @@
         "errors": []
     },
     {
+        "collection": "cesc_mds_ucsc_mds-allgenes-cnv-mut01-ucsc",
+        "type": "mds",
+        "disease": "cesc",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
         "collection": "coadread_mds_ucsc_mds-tcgapancanmutated-cnv-mut01-1e+05-ucsc",
         "type": "mds",
         "disease": "coadread",
@@ -83003,9 +83257,41 @@
         "errors": []
     },
     {
+        "collection": "acc_mds_ucsc_mds-oncovogel274-cnv-mut01-1e+05-ucsc",
+        "type": "mds",
+        "disease": "acc",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
+        "collection": "cesc_mds_ucsc_mds-oncoplex-cnv-mut01-ucsc",
+        "type": "mds",
+        "disease": "cesc",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
+        "collection": "chol_mds_ucsc_mds-markergenes545-cnv-mut01-1e+05-ucsc",
+        "type": "mds",
+        "disease": "chol",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
         "collection": "lgg_mds_ucsc_mds-osccchen131probes-cnv-mut01-1e+05-ucsc",
         "type": "mds",
         "disease": "lgg",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
+        "collection": "esca_mds_ucsc_mds-allgenes-cnv-mut01-ucsc",
+        "type": "mds",
+        "disease": "esca",
         "passedCounts": 1,
         "totalCounts": 1,
         "errors": []
@@ -83022,6 +83308,14 @@
         "collection": "paad_mds_cbio_mds-markergenes545-cnv-mut01-1e+05-cbio",
         "type": "mds",
         "disease": "paad",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
+        "collection": "chol_mds_ucsc_mds-osccchen131probes-cnv-mut01-1e+05-ucsc",
+        "type": "mds",
+        "disease": "chol",
         "passedCounts": 1,
         "totalCounts": 1,
         "errors": []
@@ -83147,6 +83441,14 @@
         "errors": []
     },
     {
+        "collection": "acc_mds_ucsc_mds-oncoplex-cnv-mut01-1e+05-ucsc",
+        "type": "mds",
+        "disease": "acc",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
         "collection": "brca_mds_ucsc_mds-oncovogel274-cnv-mut01-ucsc",
         "type": "mds",
         "disease": "brca",
@@ -83174,6 +83476,14 @@
         "collection": "hnsc_mds_ucsc_mds-tcgapancanmutated-cnv-mut01-ucsc",
         "type": "mds",
         "disease": "hnsc",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
+        "collection": "acc_mds_ucsc_mds-allgenes-cnv-mut01-ucsc",
+        "type": "mds",
+        "disease": "acc",
         "passedCounts": 1,
         "totalCounts": 1,
         "errors": []
@@ -83211,6 +83521,14 @@
         "errors": []
     },
     {
+        "collection": "cesc_mds_ucsc_mds-markergenes545-cnv-mut01-ucsc",
+        "type": "mds",
+        "disease": "cesc",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
         "collection": "lgg_mds_ucsc_mds-markergenes545-cnv-mut01-ucsc",
         "type": "mds",
         "disease": "lgg",
@@ -83222,6 +83540,14 @@
         "collection": "lung_mds_cbio_mds-tcgagbmclassifiers-cnv-mut01-cbio",
         "type": "mds",
         "disease": "lung",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
+        "collection": "dlbc_mds_ucsc_mds-allgenes-cnv-mut01-ucsc",
+        "type": "mds",
+        "disease": "dlbc",
         "passedCounts": 1,
         "totalCounts": 1,
         "errors": []
@@ -83275,6 +83601,14 @@
         "errors": []
     },
     {
+        "collection": "acc_mds_ucsc_mds-oncoplex-cnv-mut01-ucsc",
+        "type": "mds",
+        "disease": "acc",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
         "collection": "lusc_mds_cbio_mds-oncoplex-cnv-mut01-cbio",
         "type": "mds",
         "disease": "lusc",
@@ -83307,6 +83641,14 @@
         "errors": []
     },
     {
+        "collection": "cesc_mds_ucsc_mds-oncoplex-cnv-mut01-1e+05-ucsc",
+        "type": "mds",
+        "disease": "cesc",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
         "collection": "lgg_mds_ucsc_mds-tcgagbmclassifiers-cnv-mut01-ucsc",
         "type": "mds",
         "disease": "lgg",
@@ -83315,9 +83657,33 @@
         "errors": []
     },
     {
+        "collection": "sarc_mds_ucsc_mds-oncoplex-cnv-mut01-1e+05-ucsc",
+        "type": "mds",
+        "disease": "sarc",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
         "collection": "brain_mds_cbio_mds-oncovogel274-cnv-mut01-cbio",
         "type": "mds",
         "disease": "brain",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
+        "collection": "cesc_mds_ucsc_mds-tcgagbmclassifiers-cnv-mut01-1e+05-ucsc",
+        "type": "mds",
+        "disease": "cesc",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
+        "collection": "acc_mds_ucsc_mds-tcgapancanmutated-cnv-mut01-1e+05-ucsc",
+        "type": "mds",
+        "disease": "acc",
         "passedCounts": 1,
         "totalCounts": 1,
         "errors": []
@@ -83379,6 +83745,14 @@
         "errors": []
     },
     {
+        "collection": "chol_mds_ucsc_mds-markergenes545-cnv-mut01-ucsc",
+        "type": "mds",
+        "disease": "chol",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
         "collection": "gbm_mds_ucsc_mds-allgenes-cnv-mut01-ucsc",
         "type": "mds",
         "disease": "gbm",
@@ -83398,6 +83772,14 @@
         "collection": "paad_mds_cbio_mds-tcgapancanmutated-cnv-mut01-1e+05-cbio",
         "type": "mds",
         "disease": "paad",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
+        "collection": "esca_mds_ucsc_mds-tcgagbmclassifiers-cnv-mut01-1e+05-ucsc",
+        "type": "mds",
+        "disease": "esca",
         "passedCounts": 1,
         "totalCounts": 1,
         "errors": []
@@ -83438,6 +83820,14 @@
         "collection": "paad_mds_cbio_mds-osccchen131probes-cnv-mut01-1e+05-cbio",
         "type": "mds",
         "disease": "paad",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
+        "collection": "esca_mds_ucsc_mds-osccchen131probes-cnv-mut01-ucsc",
+        "type": "mds",
+        "disease": "esca",
         "passedCounts": 1,
         "totalCounts": 1,
         "errors": []
@@ -83571,6 +83961,14 @@
         "errors": []
     },
     {
+        "collection": "dlbc_mds_ucsc_mds-markergenes545-cnv-mut01-1e+05-ucsc",
+        "type": "mds",
+        "disease": "dlbc",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
         "collection": "luad_mds_cbio_mds-allgenes-cnv-mut01-1e+05-cbio",
         "type": "mds",
         "disease": "luad",
@@ -83595,6 +83993,14 @@
         "errors": []
     },
     {
+        "collection": "chol_mds_ucsc_mds-oncoplex-cnv-mut01-ucsc",
+        "type": "mds",
+        "disease": "chol",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
         "collection": "luad_mds_ucsc_mds-oncovogel274-cnv-mut01-ucsc",
         "type": "mds",
         "disease": "luad",
@@ -83611,9 +84017,25 @@
         "errors": []
     },
     {
+        "collection": "dlbc_mds_ucsc_mds-osccchen9genes-cnv-mut01-1e+05-ucsc",
+        "type": "mds",
+        "disease": "dlbc",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
         "collection": "lung_mds_ucsc_mds-osccchen131probes-cnv-mut01-1e+05-ucsc",
         "type": "mds",
         "disease": "lung",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
+        "collection": "sarc_mds_ucsc_mds-allgenes-cnv-mut01-1e+05-ucsc",
+        "type": "mds",
+        "disease": "sarc",
         "passedCounts": 1,
         "totalCounts": 1,
         "errors": []
@@ -83723,9 +84145,25 @@
         "errors": []
     },
     {
+        "collection": "dlbc_mds_ucsc_mds-oncovogel274-cnv-mut01-ucsc",
+        "type": "mds",
+        "disease": "dlbc",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
         "collection": "paad_mds_cbio_mds-osccchen9genes-cnv-mut01-cbio",
         "type": "mds",
         "disease": "paad",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
+        "collection": "acc_mds_ucsc_mds-osccchen131probes-cnv-mut01-ucsc",
+        "type": "mds",
+        "disease": "acc",
         "passedCounts": 1,
         "totalCounts": 1,
         "errors": []
@@ -83766,6 +84204,14 @@
         "collection": "hnsc_mds_ucsc_mds-oncoplex-cnv-mut01-1e+05-ucsc",
         "type": "mds",
         "disease": "hnsc",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
+        "collection": "acc_mds_ucsc_mds-markergenes545-cnv-mut01-ucsc",
+        "type": "mds",
+        "disease": "acc",
         "passedCounts": 1,
         "totalCounts": 1,
         "errors": []
@@ -83867,6 +84313,22 @@
         "errors": []
     },
     {
+        "collection": "acc_mds_ucsc_mds-markergenes545-cnv-mut01-1e+05-ucsc",
+        "type": "mds",
+        "disease": "acc",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
+        "collection": "esca_mds_ucsc_mds-osccchen9genes-cnv-mut01-1e+05-ucsc",
+        "type": "mds",
+        "disease": "esca",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
         "collection": "prad_mds_cbio_mds-tcgapancanmutated-cnv-mut01-1e+05-cbio",
         "type": "mds",
         "disease": "prad",
@@ -83886,6 +84348,14 @@
         "collection": "lung_mds_cbio_mds-osccchen9genes-cnv-mut01-1e+05-cbio",
         "type": "mds",
         "disease": "lung",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
+        "collection": "dlbc_mds_ucsc_mds-oncovogel274-cnv-mut01-1e+05-ucsc",
+        "type": "mds",
+        "disease": "dlbc",
         "passedCounts": 1,
         "totalCounts": 1,
         "errors": []
@@ -83939,6 +84409,14 @@
         "errors": []
     },
     {
+        "collection": "sarc_mds_ucsc_mds-allgenes-cnv-mut01-ucsc",
+        "type": "mds",
+        "disease": "sarc",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
         "collection": "coadread_mds_cbio_mds-tcgapancanmutated-cnv-mut01-1e+05-cbio",
         "type": "mds",
         "disease": "coadread",
@@ -83958,6 +84436,14 @@
         "collection": "lung_mds_ucsc_mds-markergenes545-cnv-mut01-1e+05-ucsc",
         "type": "mds",
         "disease": "lung",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
+        "collection": "sarc_mds_ucsc_mds-tcgapancanmutated-cnv-mut01-1e+05-ucsc",
+        "type": "mds",
+        "disease": "sarc",
         "passedCounts": 1,
         "totalCounts": 1,
         "errors": []
@@ -84043,9 +84529,25 @@
         "errors": []
     },
     {
+        "collection": "cesc_mds_ucsc_mds-osccchen9genes-cnv-mut01-ucsc",
+        "type": "mds",
+        "disease": "cesc",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
         "collection": "brain_mds_ucsc-pnas_mds-osccchen9genes-cnv-mut01-ucsc-pnas",
         "type": "mds",
         "disease": "brain",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
+        "collection": "chol_mds_ucsc_mds-allgenes-cnv-mut01-ucsc",
+        "type": "mds",
+        "disease": "chol",
         "passedCounts": 1,
         "totalCounts": 1,
         "errors": []
@@ -84062,6 +84564,14 @@
         "collection": "luad_mds_cbio_mds-tcgapancanmutated-cnv-mut01-cbio",
         "type": "mds",
         "disease": "luad",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
+        "collection": "esca_mds_ucsc_mds-tcgagbmclassifiers-cnv-mut01-ucsc",
+        "type": "mds",
+        "disease": "esca",
         "passedCounts": 1,
         "totalCounts": 1,
         "errors": []
@@ -84091,9 +84601,25 @@
         "errors": []
     },
     {
+        "collection": "acc_mds_ucsc_mds-tcgagbmclassifiers-cnv-mut01-1e+05-ucsc",
+        "type": "mds",
+        "disease": "acc",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
         "collection": "gbm_mds_ucsc_mds-tcgapancanmutated-cnv-mut01-ucsc",
         "type": "mds",
         "disease": "gbm",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
+        "collection": "cesc_mds_ucsc_mds-tcgapancanmutated-cnv-mut01-ucsc",
+        "type": "mds",
+        "disease": "cesc",
         "passedCounts": 1,
         "totalCounts": 1,
         "errors": []
@@ -84139,6 +84665,14 @@
         "errors": []
     },
     {
+        "collection": "chol_mds_ucsc_mds-oncovogel274-cnv-mut01-1e+05-ucsc",
+        "type": "mds",
+        "disease": "chol",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
         "collection": "luad_mds_ucsc_mds-tcgagbmclassifiers-cnv-mut01-1e+05-ucsc",
         "type": "mds",
         "disease": "luad",
@@ -84158,6 +84692,14 @@
         "collection": "prad_mds_ucsc_mds-oncovogel274-cnv-mut01-ucsc",
         "type": "mds",
         "disease": "prad",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
+        "collection": "dlbc_mds_ucsc_mds-allgenes-cnv-mut01-1e+05-ucsc",
+        "type": "mds",
+        "disease": "dlbc",
         "passedCounts": 1,
         "totalCounts": 1,
         "errors": []
@@ -84259,9 +84801,25 @@
         "errors": []
     },
     {
+        "collection": "cesc_mds_ucsc_mds-allgenes-cnv-mut01-1e+05-ucsc",
+        "type": "mds",
+        "disease": "cesc",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
         "collection": "lusc_mds_cbio_mds-osccchen131probes-cnv-mut01-cbio",
         "type": "mds",
         "disease": "lusc",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
+        "collection": "chol_mds_ucsc_mds-tcgagbmclassifiers-cnv-mut01-ucsc",
+        "type": "mds",
+        "disease": "chol",
         "passedCounts": 1,
         "totalCounts": 1,
         "errors": []
@@ -84299,6 +84857,14 @@
         "errors": []
     },
     {
+        "collection": "dlbc_mds_ucsc_mds-osccchen131probes-cnv-mut01-1e+05-ucsc",
+        "type": "mds",
+        "disease": "dlbc",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
         "collection": "coadread_mds_cbio_mds-tcgapancanmutated-cnv-mut01-cbio",
         "type": "mds",
         "disease": "coadread",
@@ -84307,9 +84873,33 @@
         "errors": []
     },
     {
+        "collection": "cesc_mds_ucsc_mds-tcgagbmclassifiers-cnv-mut01-ucsc",
+        "type": "mds",
+        "disease": "cesc",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
+        "collection": "cesc_mds_ucsc_mds-osccchen131probes-cnv-mut01-1e+05-ucsc",
+        "type": "mds",
+        "disease": "cesc",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
         "collection": "lusc_mds_ucsc_mds-oncovogel274-cnv-mut01-1e+05-ucsc",
         "type": "mds",
         "disease": "lusc",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
+        "collection": "sarc_mds_ucsc_mds-tcgagbmclassifiers-cnv-mut01-1e+05-ucsc",
+        "type": "mds",
+        "disease": "sarc",
         "passedCounts": 1,
         "totalCounts": 1,
         "errors": []
@@ -84331,6 +84921,14 @@
         "errors": []
     },
     {
+        "collection": "sarc_mds_ucsc_mds-osccchen131probes-cnv-mut01-ucsc",
+        "type": "mds",
+        "disease": "sarc",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
         "collection": "paad_mds_ucsc_mds-allgenes-cnv-mut01-1e+05-ucsc",
         "type": "mds",
         "disease": "paad",
@@ -84347,6 +84945,14 @@
         "errors": []
     },
     {
+        "collection": "esca_mds_ucsc_mds-osccchen131probes-cnv-mut01-1e+05-ucsc",
+        "type": "mds",
+        "disease": "esca",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
         "collection": "brain_mds_ucsc_mds-markergenes545-cnv-mut01-ucsc",
         "type": "mds",
         "disease": "brain",
@@ -84358,6 +84964,14 @@
         "collection": "lung_mds_cbio_mds-oncoplex-cnv-mut01-cbio",
         "type": "mds",
         "disease": "lung",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
+        "collection": "sarc_mds_ucsc_mds-osccchen9genes-cnv-mut01-ucsc",
+        "type": "mds",
+        "disease": "sarc",
         "passedCounts": 1,
         "totalCounts": 1,
         "errors": []
@@ -84499,6 +85113,14 @@
         "errors": []
     },
     {
+        "collection": "esca_mds_ucsc_mds-allgenes-cnv-mut01-1e+05-ucsc",
+        "type": "mds",
+        "disease": "esca",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
         "collection": "brain_mds_ucsc_mds-osccchen9genes-cnv-mut01-ucsc",
         "type": "mds",
         "disease": "brain",
@@ -84510,6 +85132,22 @@
         "collection": "prad_mds_ucsc_mds-markergenes545-cnv-mut01-ucsc",
         "type": "mds",
         "disease": "prad",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
+        "collection": "dlbc_mds_ucsc_mds-osccchen9genes-cnv-mut01-ucsc",
+        "type": "mds",
+        "disease": "dlbc",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
+        "collection": "acc_mds_ucsc_mds-osccchen131probes-cnv-mut01-1e+05-ucsc",
+        "type": "mds",
+        "disease": "acc",
         "passedCounts": 1,
         "totalCounts": 1,
         "errors": []
@@ -84579,6 +85217,14 @@
         "errors": []
     },
     {
+        "collection": "sarc_mds_ucsc_mds-osccchen131probes-cnv-mut01-1e+05-ucsc",
+        "type": "mds",
+        "disease": "sarc",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
         "collection": "brca_mds_cbio_mds-oncovogel274-cnv-mut01-cbio",
         "type": "mds",
         "disease": "brca",
@@ -84590,6 +85236,14 @@
         "collection": "luad_mds_ucsc_mds-osccchen131probes-cnv-mut01-ucsc",
         "type": "mds",
         "disease": "luad",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
+        "collection": "sarc_mds_ucsc_mds-markergenes545-cnv-mut01-ucsc",
+        "type": "mds",
+        "disease": "sarc",
         "passedCounts": 1,
         "totalCounts": 1,
         "errors": []
@@ -84659,6 +85313,22 @@
         "errors": []
     },
     {
+        "collection": "sarc_mds_ucsc_mds-osccchen9genes-cnv-mut01-1e+05-ucsc",
+        "type": "mds",
+        "disease": "sarc",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
+        "collection": "dlbc_mds_ucsc_mds-oncoplex-cnv-mut01-1e+05-ucsc",
+        "type": "mds",
+        "disease": "dlbc",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
         "collection": "lgg_mds_ucsc_mds-tcgagbmclassifiers-cnv-mut01-1e+05-ucsc",
         "type": "mds",
         "disease": "lgg",
@@ -84694,6 +85364,14 @@
         "collection": "prad_mds_cbio_mds-allgenes-cnv-mut01-cbio",
         "type": "mds",
         "disease": "prad",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
+        "collection": "dlbc_mds_ucsc_mds-tcgapancanmutated-cnv-mut01-1e+05-ucsc",
+        "type": "mds",
+        "disease": "dlbc",
         "passedCounts": 1,
         "totalCounts": 1,
         "errors": []
@@ -84747,6 +85425,14 @@
         "errors": []
     },
     {
+        "collection": "chol_mds_ucsc_mds-allgenes-cnv-mut01-1e+05-ucsc",
+        "type": "mds",
+        "disease": "chol",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
         "collection": "hnsc_mds_cbio_mds-oncovogel274-cnv-mut01-1e+05-cbio",
         "type": "mds",
         "disease": "hnsc",
@@ -84771,6 +85457,14 @@
         "errors": []
     },
     {
+        "collection": "cesc_mds_ucsc_mds-oncovogel274-cnv-mut01-1e+05-ucsc",
+        "type": "mds",
+        "disease": "cesc",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
         "collection": "luad_mds_ucsc_mds-osccchen9genes-cnv-mut01-1e+05-ucsc",
         "type": "mds",
         "disease": "luad",
@@ -84790,6 +85484,14 @@
         "collection": "lung_mds_ucsc_mds-osccchen131probes-cnv-mut01-ucsc",
         "type": "mds",
         "disease": "lung",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
+        "collection": "sarc_mds_ucsc_mds-oncovogel274-cnv-mut01-1e+05-ucsc",
+        "type": "mds",
+        "disease": "sarc",
         "passedCounts": 1,
         "totalCounts": 1,
         "errors": []
@@ -84859,6 +85561,14 @@
         "errors": []
     },
     {
+        "collection": "chol_mds_ucsc_mds-tcgapancanmutated-cnv-mut01-ucsc",
+        "type": "mds",
+        "disease": "chol",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
         "collection": "lusc_mds_cbio_mds-oncoplex-cnv-mut01-1e+05-cbio",
         "type": "mds",
         "disease": "lusc",
@@ -84875,6 +85585,22 @@
         "errors": []
     },
     {
+        "collection": "esca_mds_ucsc_mds-tcgapancanmutated-cnv-mut01-1e+05-ucsc",
+        "type": "mds",
+        "disease": "esca",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
+        "collection": "chol_mds_ucsc_mds-osccchen131probes-cnv-mut01-ucsc",
+        "type": "mds",
+        "disease": "chol",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
         "collection": "paad_mds_ucsc_mds-tcgapancanmutated-cnv-mut01-ucsc",
         "type": "mds",
         "disease": "paad",
@@ -84886,6 +85612,14 @@
         "collection": "brain_mds_cbio_mds-tcgapancanmutated-cnv-mut01-cbio",
         "type": "mds",
         "disease": "brain",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
+        "collection": "esca_mds_ucsc_mds-oncoplex-cnv-mut01-ucsc",
+        "type": "mds",
+        "disease": "esca",
         "passedCounts": 1,
         "totalCounts": 1,
         "errors": []
@@ -84926,6 +85660,22 @@
         "collection": "lusc_mds_cbio_mds-tcgapancanmutated-cnv-mut01-1e+05-cbio",
         "type": "mds",
         "disease": "lusc",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
+        "collection": "sarc_mds_ucsc_mds-oncovogel274-cnv-mut01-ucsc",
+        "type": "mds",
+        "disease": "sarc",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
+        "collection": "esca_mds_ucsc_mds-markergenes545-cnv-mut01-1e+05-ucsc",
+        "type": "mds",
+        "disease": "esca",
         "passedCounts": 1,
         "totalCounts": 1,
         "errors": []
@@ -84979,6 +85729,22 @@
         "errors": []
     },
     {
+        "collection": "dlbc_mds_ucsc_mds-tcgapancanmutated-cnv-mut01-ucsc",
+        "type": "mds",
+        "disease": "dlbc",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
+        "collection": "dlbc_mds_ucsc_mds-osccchen131probes-cnv-mut01-ucsc",
+        "type": "mds",
+        "disease": "dlbc",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
         "collection": "coadread_mds_ucsc_mds-osccchen9genes-cnv-mut01-1e+05-ucsc",
         "type": "mds",
         "disease": "coadread",
@@ -84998,6 +85764,14 @@
         "collection": "brca_mds_cbio_mds-oncovogel274-cnv-mut01-1e+05-cbio",
         "type": "mds",
         "disease": "brca",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
+        "collection": "dlbc_mds_ucsc_mds-markergenes545-cnv-mut01-ucsc",
+        "type": "mds",
+        "disease": "dlbc",
         "passedCounts": 1,
         "totalCounts": 1,
         "errors": []
@@ -85035,6 +85809,14 @@
         "errors": []
     },
     {
+        "collection": "dlbc_mds_ucsc_mds-oncoplex-cnv-mut01-ucsc",
+        "type": "mds",
+        "disease": "dlbc",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
         "collection": "lusc_mds_cbio_mds-allgenes-cnv-mut01-cbio",
         "type": "mds",
         "disease": "lusc",
@@ -85043,9 +85825,25 @@
         "errors": []
     },
     {
+        "collection": "chol_mds_ucsc_mds-osccchen9genes-cnv-mut01-1e+05-ucsc",
+        "type": "mds",
+        "disease": "chol",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
         "collection": "brain_mds_cbio_mds-osccchen131probes-cnv-mut01-1e+05-cbio",
         "type": "mds",
         "disease": "brain",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
+        "collection": "esca_mds_ucsc_mds-oncovogel274-cnv-mut01-1e+05-ucsc",
+        "type": "mds",
+        "disease": "esca",
         "passedCounts": 1,
         "totalCounts": 1,
         "errors": []
@@ -85115,6 +85913,14 @@
         "errors": []
     },
     {
+        "collection": "esca_mds_ucsc_mds-oncovogel274-cnv-mut01-ucsc",
+        "type": "mds",
+        "disease": "esca",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
         "collection": "paad_mds_cbio_mds-tcgagbmclassifiers-cnv-mut01-1e+05-cbio",
         "type": "mds",
         "disease": "paad",
@@ -85166,6 +85972,22 @@
         "collection": "coadread_mds_cbio_mds-oncoplex-cnv-mut01-cbio",
         "type": "mds",
         "disease": "coadread",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
+        "collection": "dlbc_mds_ucsc_mds-tcgagbmclassifiers-cnv-mut01-1e+05-ucsc",
+        "type": "mds",
+        "disease": "dlbc",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
+        "collection": "sarc_mds_ucsc_mds-oncoplex-cnv-mut01-ucsc",
+        "type": "mds",
+        "disease": "sarc",
         "passedCounts": 1,
         "totalCounts": 1,
         "errors": []
@@ -85267,9 +86089,25 @@
         "errors": []
     },
     {
+        "collection": "cesc_mds_ucsc_mds-tcgapancanmutated-cnv-mut01-1e+05-ucsc",
+        "type": "mds",
+        "disease": "cesc",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
         "collection": "hnsc_mds_ucsc_mds-markergenes545-cnv-mut01-1e+05-ucsc",
         "type": "mds",
         "disease": "hnsc",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
+        "collection": "sarc_mds_ucsc_mds-tcgapancanmutated-cnv-mut01-ucsc",
+        "type": "mds",
+        "disease": "sarc",
         "passedCounts": 1,
         "totalCounts": 1,
         "errors": []
@@ -85334,6 +86172,14 @@
         "collection": "hnsc_mds_cbio_mds-oncoplex-cnv-mut01-cbio",
         "type": "mds",
         "disease": "hnsc",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
+        "collection": "acc_mds_ucsc_mds-osccchen9genes-cnv-mut01-ucsc",
+        "type": "mds",
+        "disease": "acc",
         "passedCounts": 1,
         "totalCounts": 1,
         "errors": []
@@ -85419,6 +86265,22 @@
         "errors": []
     },
     {
+        "collection": "cesc_mds_ucsc_mds-osccchen131probes-cnv-mut01-ucsc",
+        "type": "mds",
+        "disease": "cesc",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
+        "collection": "chol_mds_ucsc_mds-oncoplex-cnv-mut01-1e+05-ucsc",
+        "type": "mds",
+        "disease": "chol",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
         "collection": "lung_mds_cbio_mds-allgenes-cnv-mut01-cbio",
         "type": "mds",
         "disease": "lung",
@@ -85443,9 +86305,33 @@
         "errors": []
     },
     {
+        "collection": "dlbc_mds_ucsc_mds-tcgagbmclassifiers-cnv-mut01-ucsc",
+        "type": "mds",
+        "disease": "dlbc",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
         "collection": "luad_mds_cbio_mds-osccchen9genes-cnv-mut01-1e+05-cbio",
         "type": "mds",
         "disease": "luad",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
+        "collection": "acc_mds_ucsc_mds-tcgapancanmutated-cnv-mut01-ucsc",
+        "type": "mds",
+        "disease": "acc",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
+        "collection": "esca_mds_ucsc_mds-markergenes545-cnv-mut01-ucsc",
+        "type": "mds",
+        "disease": "esca",
         "passedCounts": 1,
         "totalCounts": 1,
         "errors": []
@@ -85499,9 +86385,25 @@
         "errors": []
     },
     {
+        "collection": "chol_mds_ucsc_mds-oncovogel274-cnv-mut01-ucsc",
+        "type": "mds",
+        "disease": "chol",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
         "collection": "paad_mds_ucsc_mds-osccchen131probes-cnv-mut01-1e+05-ucsc",
         "type": "mds",
         "disease": "paad",
+        "passedCounts": 1,
+        "totalCounts": 1,
+        "errors": []
+    },
+    {
+        "collection": "esca_mds_ucsc_mds-osccchen9genes-cnv-mut01-ucsc",
+        "type": "mds",
+        "disease": "esca",
         "passedCounts": 1,
         "totalCounts": 1,
         "errors": []
@@ -85626,7 +86528,6 @@
         "totalCounts": 609,
         "errors": []
     },
-    null,
     {
         "collection": "paad_edges_ucsc_markergenes545-mut01-cnv",
         "type": "edges",
@@ -85643,7 +86544,6 @@
         "totalCounts": 2595,
         "errors": []
     },
-    null,
     {
         "collection": "sarc_edges_ucsc_osccchen9genes-cnv",
         "type": "edges",
@@ -85668,7 +86568,6 @@
         "totalCounts": 30224,
         "errors": []
     },
-    null,
     {
         "collection": "luad_edges_broad_osccchen131probes-mut01",
         "type": "edges",
@@ -85677,7 +86576,6 @@
         "totalCounts": 1153,
         "errors": []
     },
-    null,
     {
         "collection": "brain_edges_broad_tcgapancanmutated-mut01",
         "type": "edges",
@@ -85694,12 +86592,6 @@
         "totalCounts": 117,
         "errors": []
     },
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
     {
         "collection": "lgg_edges_broad_tcgapancanmutated-mut01",
         "type": "edges",
@@ -85764,7 +86656,6 @@
         "totalCounts": 5230,
         "errors": []
     },
-    null,
     {
         "collection": "luad_edges_cbio_tcgapancanmutated-mut01-cnv",
         "type": "edges",
@@ -85773,8 +86664,6 @@
         "totalCounts": 15698,
         "errors": []
     },
-    null,
-    null,
     {
         "collection": "sarc_edges_ucsc_tcgapancanmutated-cnv",
         "type": "edges",
@@ -85799,7 +86688,6 @@
         "totalCounts": 30,
         "errors": []
     },
-    null,
     {
         "collection": "cesc_edges_broad_tcgagbmclassifiers-mut01",
         "type": "edges",
@@ -85832,7 +86720,6 @@
         "totalCounts": 2712,
         "errors": []
     },
-    null,
     {
         "collection": "kirp_edges_broad_osccchen9genes-mut01",
         "type": "edges",
@@ -85841,7 +86728,6 @@
         "totalCounts": 15,
         "errors": []
     },
-    null,
     {
         "collection": "cesc_edges_broad_oncovogel274-mut01",
         "type": "edges",
@@ -85866,7 +86752,6 @@
         "totalCounts": 292,
         "errors": []
     },
-    null,
     {
         "collection": "kirp_edges_broad_markergenes545-mut01",
         "type": "edges",
@@ -85883,7 +86768,6 @@
         "totalCounts": 1842,
         "errors": []
     },
-    null,
     {
         "collection": "brain_edges_cbio_osccchen9genes-mut01-cnv",
         "type": "edges",
@@ -85924,8 +86808,6 @@
         "totalCounts": 2361,
         "errors": []
     },
-    null,
-    null,
     {
         "collection": "paad_edges_broad_markergenes545-mut01",
         "type": "edges",
@@ -85934,7 +86816,6 @@
         "totalCounts": 1574,
         "errors": []
     },
-    null,
     {
         "collection": "hnsc_edges_ucsc_markergenes545-mut01-cnv",
         "type": "edges",
@@ -85959,7 +86840,6 @@
         "totalCounts": 431,
         "errors": []
     },
-    null,
     {
         "collection": "acc_edges_broad_oncovogel274-mut01",
         "type": "edges",
@@ -85968,8 +86848,6 @@
         "totalCounts": 266,
         "errors": []
     },
-    null,
-    null,
     {
         "collection": "esca_edges_ucsc_oncovogel274-cnv",
         "type": "edges",
@@ -85978,7 +86856,6 @@
         "totalCounts": 27708,
         "errors": []
     },
-    null,
     {
         "collection": "kich_edges_broad_osccchen9genes-mut01",
         "type": "edges",
@@ -85987,7 +86864,6 @@
         "totalCounts": 23,
         "errors": []
     },
-    null,
     {
         "collection": "stad_edges_ucsc_markergenes545-mut01",
         "type": "edges",
@@ -85996,7 +86872,6 @@
         "totalCounts": 4964,
         "errors": []
     },
-    null,
     {
         "collection": "lgg_edges_ucsc_tcgagbmclassifiers-mut01-cnv",
         "type": "edges",
@@ -86069,7 +86944,6 @@
         "totalCounts": 1128,
         "errors": []
     },
-    null,
     {
         "collection": "lihc_edges_broad_oncovogel274-mut01",
         "type": "edges",
@@ -86078,10 +86952,6 @@
         "totalCounts": 1226,
         "errors": []
     },
-    null,
-    null,
-    null,
-    null,
     {
         "collection": "brca_edges_broad_osccchen9genes-mut01",
         "type": "edges",
@@ -86090,7 +86960,6 @@
         "totalCounts": 318,
         "errors": []
     },
-    null,
     {
         "collection": "brain_edges_ucsc-pnas_markergenes545-mut01-cnv",
         "type": "edges",
@@ -86099,7 +86968,6 @@
         "totalCounts": 161316,
         "errors": []
     },
-    null,
     {
         "collection": "sarc_edges_broad_osccchen131probes-mut01",
         "type": "edges",
@@ -86108,7 +86976,6 @@
         "totalCounts": 90,
         "errors": []
     },
-    null,
     {
         "collection": "gbm_edges_ucsc_oncovogel274-mut01-cnv",
         "type": "edges",
@@ -86117,7 +86984,6 @@
         "totalCounts": 48755,
         "errors": []
     },
-    null,
     {
         "collection": "dlbc_edges_broad_tcgapancanmutated-mut01",
         "type": "edges",
@@ -86150,8 +87016,6 @@
         "totalCounts": 1458,
         "errors": []
     },
-    null,
-    null,
     {
         "collection": "chol_edges_ucsc_oncoplex-cnv",
         "type": "edges",
@@ -86224,8 +87088,6 @@
         "totalCounts": 2456,
         "errors": []
     },
-    null,
-    null,
     {
         "collection": "brain_edges_broad_markergenes545-mut01",
         "type": "edges",
@@ -86234,7 +87096,6 @@
         "totalCounts": 3697,
         "errors": []
     },
-    null,
     {
         "collection": "luad_edges_broad_osccchen9genes-mut01",
         "type": "edges",
@@ -86355,8 +87216,6 @@
         "totalCounts": 14763,
         "errors": []
     },
-    null,
-    null,
     {
         "collection": "cesc_edges_ucsc_osccchen131probes-cnv",
         "type": "edges",
@@ -86365,7 +87224,6 @@
         "totalCounts": 11106,
         "errors": []
     },
-    null,
     {
         "collection": "lung_edges_ucsc_osccchen131probes-mut01-cnv",
         "type": "edges",
@@ -86398,8 +87256,6 @@
         "totalCounts": 313,
         "errors": []
     },
-    null,
-    null,
     {
         "collection": "luad_edges_broad_oncovogel274-mut01",
         "type": "edges",
@@ -86408,7 +87264,6 @@
         "totalCounts": 3718,
         "errors": []
     },
-    null,
     {
         "collection": "acc_edges_ucsc_tcgapancanmutated-cnv",
         "type": "edges",
@@ -86417,7 +87272,6 @@
         "totalCounts": 2658,
         "errors": []
     },
-    null,
     {
         "collection": "thca_edges_broad_tcgagbmclassifiers-mut01",
         "type": "edges",
@@ -86434,10 +87288,6 @@
         "totalCounts": 61606,
         "errors": []
     },
-    null,
-    null,
-    null,
-    null,
     {
         "collection": "paad_edges_ucsc_oncovogel274-mut01-cnv",
         "type": "edges",
@@ -86478,7 +87328,6 @@
         "totalCounts": 26810,
         "errors": []
     },
-    null,
     {
         "collection": "brain_edges_cbio_oncoplex-mut01-cnv",
         "type": "edges",
@@ -86487,7 +87336,6 @@
         "totalCounts": 97662,
         "errors": []
     },
-    null,
     {
         "collection": "brca_edges_cbio_osccchen9genes-mut01-cnv",
         "type": "edges",
@@ -86496,7 +87344,6 @@
         "totalCounts": 4685,
         "errors": []
     },
-    null,
     {
         "collection": "coadread_edges_cbio_oncoplex-mut01-cnv",
         "type": "edges",
@@ -86553,7 +87400,6 @@
         "totalCounts": 3850,
         "errors": []
     },
-    null,
     {
         "collection": "hnsc_edges_ucsc_osccchen9genes-mut01-cnv",
         "type": "edges",
@@ -86586,7 +87432,6 @@
         "totalCounts": 564,
         "errors": []
     },
-    null,
     {
         "collection": "ucec_edges_broad_markergenes545-mut01",
         "type": "edges",
@@ -86611,10 +87456,6 @@
         "totalCounts": 29522,
         "errors": []
     },
-    null,
-    null,
-    null,
-    null,
     {
         "collection": "brca_edges_ucsc_oncoplex-mut01-cnv",
         "type": "edges",
@@ -86719,7 +87560,6 @@
         "totalCounts": 196,
         "errors": []
     },
-    null,
     {
         "collection": "ucec_edges_broad_oncovogel274-mut01",
         "type": "edges",
@@ -86736,7 +87576,6 @@
         "totalCounts": 2953,
         "errors": []
     },
-    null,
     {
         "collection": "brain_edges_ucsc-pnas_oncoplex-mut01-cnv",
         "type": "edges",
@@ -86745,8 +87584,6 @@
         "totalCounts": 72631,
         "errors": []
     },
-    null,
-    null,
     {
         "collection": "luad_edges_cbio_tcgagbmclassifiers-mut01-cnv",
         "type": "edges",
@@ -86771,7 +87608,6 @@
         "totalCounts": 1286,
         "errors": []
     },
-    null,
     {
         "collection": "chol_edges_broad_markergenes545-mut01",
         "type": "edges",
@@ -86788,7 +87624,6 @@
         "totalCounts": 268,
         "errors": []
     },
-    null,
     {
         "collection": "laml_edges_ucsc_oncovogel274-mut01-cnv",
         "type": "edges",
@@ -86805,8 +87640,6 @@
         "totalCounts": 2815,
         "errors": []
     },
-    null,
-    null,
     {
         "collection": "lgg_edges_broad_tcgagbmclassifiers-mut01",
         "type": "edges",
@@ -86831,7 +87664,6 @@
         "totalCounts": 706,
         "errors": []
     },
-    null,
     {
         "collection": "blca_edges_ucsc_tcgagbmclassifiers-mut01-cnv",
         "type": "edges",
@@ -86864,7 +87696,6 @@
         "totalCounts": 24187,
         "errors": []
     },
-    null,
     {
         "collection": "prad_edges_broad_oncoplex-mut01",
         "type": "edges",
@@ -86881,8 +87712,6 @@
         "totalCounts": 53444,
         "errors": []
     },
-    null,
-    null,
     {
         "collection": "ucec_edges_broad_oncoplex-mut01",
         "type": "edges",
@@ -86915,7 +87744,6 @@
         "totalCounts": 3409,
         "errors": []
     },
-    null,
     {
         "collection": "hnsc_edges_cbio_tcgapancanmutated-mut01-cnv",
         "type": "edges",
@@ -86948,8 +87776,6 @@
         "totalCounts": 3004,
         "errors": []
     },
-    null,
-    null,
     {
         "collection": "lusc_edges_ucsc_markergenes545-mut01-cnv",
         "type": "edges",
@@ -86958,7 +87784,6 @@
         "totalCounts": 164238,
         "errors": []
     },
-    null,
     {
         "collection": "brca_edges_broad_tcgagbmclassifiers-mut01",
         "type": "edges",
@@ -86999,8 +87824,6 @@
         "totalCounts": 640,
         "errors": []
     },
-    null,
-    null,
     {
         "collection": "coadread_edges_cbio_osccchen9genes-mut01-cnv",
         "type": "edges",
@@ -87009,7 +87832,6 @@
         "totalCounts": 2046,
         "errors": []
     },
-    null,
     {
         "collection": "prad_edges_ucsc_osccchen131probes-mut01-cnv",
         "type": "edges",
@@ -87018,8 +87840,6 @@
         "totalCounts": 7232,
         "errors": []
     },
-    null,
-    null,
     {
         "collection": "hnsc_edges_cbio_osccchen131probes-mut01-cnv",
         "type": "edges",
@@ -87036,9 +87856,6 @@
         "totalCounts": 29628,
         "errors": []
     },
-    null,
-    null,
-    null,
     {
         "collection": "kirp_edges_broad_tcgagbmclassifiers-mut01",
         "type": "edges",
@@ -87063,9 +87880,6 @@
         "totalCounts": 160,
         "errors": []
     },
-    null,
-    null,
-    null,
     {
         "collection": "luad_edges_cbio_osccchen131probes-mut01-cnv",
         "type": "edges",
@@ -87074,7 +87888,6 @@
         "totalCounts": 26822,
         "errors": []
     },
-    null,
     {
         "collection": "blca_edges_broad_osccchen131probes-mut01",
         "type": "edges",
@@ -87083,8 +87896,6 @@
         "totalCounts": 712,
         "errors": []
     },
-    null,
-    null,
     {
         "collection": "luad_edges_ucsc_osccchen9genes-mut01-cnv",
         "type": "edges",
@@ -87093,7 +87904,6 @@
         "totalCounts": 2765,
         "errors": []
     },
-    null,
     {
         "collection": "lgg_edges_ucsc_osccchen9genes-mut01-cnv",
         "type": "edges",
@@ -87166,7 +87976,6 @@
         "totalCounts": 60218,
         "errors": []
     },
-    null,
     {
         "collection": "luad_edges_ucsc_tcgagbmclassifiers-mut01-cnv",
         "type": "edges",
@@ -87175,8 +87984,6 @@
         "totalCounts": 211655,
         "errors": []
     },
-    null,
-    null,
     {
         "collection": "kirp_edges_broad_oncoplex-mut01",
         "type": "edges",
@@ -87185,7 +87992,6 @@
         "totalCounts": 431,
         "errors": []
     },
-    null,
     {
         "collection": "brain_edges_broad_osccchen9genes-mut01",
         "type": "edges",
@@ -87258,7 +88064,6 @@
         "totalCounts": 6503,
         "errors": []
     },
-    null,
     {
         "collection": "gbm_edges_ucsc_markergenes545-mut01-cnv",
         "type": "edges",
@@ -87283,9 +88088,6 @@
         "totalCounts": 24,
         "errors": []
     },
-    null,
-    null,
-    null,
     {
         "collection": "brain_edges_cbio_osccchen131probes-mut01-cnv",
         "type": "edges",
@@ -87302,7 +88104,6 @@
         "totalCounts": 24945,
         "errors": []
     },
-    null,
     {
         "collection": "laml_edges_ucsc_osccchen131probes-mut01-cnv",
         "type": "edges",
@@ -87359,7 +88160,6 @@
         "totalCounts": 26823,
         "errors": []
     },
-    null,
     {
         "collection": "stad_edges_broad_osccchen9genes-mut01",
         "type": "edges",
@@ -87368,8 +88168,6 @@
         "totalCounts": 262,
         "errors": []
     },
-    null,
-    null,
     {
         "collection": "brain_edges_ucsc-pnas_oncovogel274-mut01-cnv",
         "type": "edges",
@@ -87386,7 +88184,6 @@
         "totalCounts": 305,
         "errors": []
     },
-    null,
     {
         "collection": "brain_edges_ucsc-pnas_tcgagbmclassifiers-mut01-cnv",
         "type": "edges",
@@ -87395,9 +88192,6 @@
         "totalCounts": 207872,
         "errors": []
     },
-    null,
-    null,
-    null,
     {
         "collection": "paad_edges_ucsc_oncoplex-mut01-cnv",
         "type": "edges",
@@ -87446,8 +88240,6 @@
         "totalCounts": 18352,
         "errors": []
     },
-    null,
-    null,
     {
         "collection": "gbm_edges_ucsc_osccchen131probes-mut01-cnv",
         "type": "edges",
@@ -87480,8 +88272,6 @@
         "totalCounts": 8048,
         "errors": []
     },
-    null,
-    null,
     {
         "collection": "chol_edges_ucsc_oncovogel274-cnv",
         "type": "edges",
@@ -87498,8 +88288,6 @@
         "totalCounts": 27538,
         "errors": []
     },
-    null,
-    null,
     {
         "collection": "esca_edges_broad_osccchen131probes-mut01",
         "type": "edges",
@@ -87508,7 +88296,6 @@
         "totalCounts": 258,
         "errors": []
     },
-    null,
     {
         "collection": "lihc_edges_broad_osccchen9genes-mut01",
         "type": "edges",
@@ -87517,8 +88304,6 @@
         "totalCounts": 138,
         "errors": []
     },
-    null,
-    null,
     {
         "collection": "hnsc_edges_broad_oncovogel274-mut01",
         "type": "edges",
@@ -87543,7 +88328,6 @@
         "totalCounts": 1386,
         "errors": []
     },
-    null,
     {
         "collection": "hnsc_edges_ucsc_oncoplex-mut01-cnv",
         "type": "edges",
@@ -87560,8 +88344,6 @@
         "totalCounts": 2955,
         "errors": []
     },
-    null,
-    null,
     {
         "collection": "gbm_edges_ucsc_tcgagbmclassifiers-mut01-cnv",
         "type": "edges",
@@ -87586,7 +88368,6 @@
         "totalCounts": 1192,
         "errors": []
     },
-    null,
     {
         "collection": "chol_edges_broad_oncoplex-mut01",
         "type": "edges",
@@ -87611,10 +88392,6 @@
         "totalCounts": 23033,
         "errors": []
     },
-    null,
-    null,
-    null,
-    null,
     {
         "collection": "brain_edges_cbio_oncovogel274-mut01-cnv",
         "type": "edges",
@@ -87623,7 +88400,6 @@
         "totalCounts": 102847,
         "errors": []
     },
-    null,
     {
         "collection": "blca_edges_ucsc_markergenes545-mut01-cnv",
         "type": "edges",
@@ -87648,7 +88424,6 @@
         "totalCounts": 48114,
         "errors": []
     },
-    null,
     {
         "collection": "thca_edges_broad_osccchen131probes-mut01",
         "type": "edges",
@@ -87657,7 +88432,6 @@
         "totalCounts": 58,
         "errors": []
     },
-    null,
     {
         "collection": "brca_edges_ucsc_tcgagbmclassifiers-mut01-cnv",
         "type": "edges",
@@ -87666,8 +88440,6 @@
         "totalCounts": 373994,
         "errors": []
     },
-    null,
-    null,
     {
         "collection": "lusc_edges_ucsc_tcgagbmclassifiers-mut01-cnv",
         "type": "edges",
@@ -87692,8 +88464,6 @@
         "totalCounts": 79089,
         "errors": []
     },
-    null,
-    null,
     {
         "collection": "lusc_edges_ucsc_osccchen9genes-mut01-cnv",
         "type": "edges",
@@ -87734,7 +88504,6 @@
         "totalCounts": 157,
         "errors": []
     },
-    null,
     {
         "collection": "luad_edges_cbio_markergenes545-mut01-cnv",
         "type": "edges",
@@ -87759,8 +88528,6 @@
         "totalCounts": 240,
         "errors": []
     },
-    null,
-    null,
     {
         "collection": "lung_edges_ucsc_tcgapancanmutated-mut01-cnv",
         "type": "edges",
@@ -87777,7 +88544,6 @@
         "totalCounts": 172286,
         "errors": []
     },
-    null,
     {
         "collection": "esca_edges_broad_tcgapancanmutated-mut01",
         "type": "edges",
@@ -87786,7 +88552,6 @@
         "totalCounts": 462,
         "errors": []
     },
-    null,
     {
         "collection": "luad_edges_ucsc_oncovogel274-mut01-cnv",
         "type": "edges",
@@ -87803,7 +88568,6 @@
         "totalCounts": 192,
         "errors": []
     },
-    null,
     {
         "collection": "brain_edges_broad_osccchen131probes-mut01",
         "type": "edges",
@@ -87812,8 +88576,6 @@
         "totalCounts": 353,
         "errors": []
     },
-    null,
-    null,
     {
         "collection": "prad_edges_broad_osccchen9genes-mut01",
         "type": "edges",
@@ -87878,7 +88640,6 @@
         "totalCounts": 264626,
         "errors": []
     },
-    null,
     {
         "collection": "thca_edges_broad_tcgapancanmutated-mut01",
         "type": "edges",
@@ -87903,7 +88664,6 @@
         "totalCounts": 171453,
         "errors": []
     },
-    null,
     {
         "collection": "ucec_edges_broad_tcgapancanmutated-mut01",
         "type": "edges",
@@ -87920,7 +88680,6 @@
         "totalCounts": 13915,
         "errors": []
     },
-    null,
     {
         "collection": "laml_edges_ucsc_oncoplex-mut01-cnv",
         "type": "edges",
@@ -87929,8 +88688,6 @@
         "totalCounts": 2373,
         "errors": []
     },
-    null,
-    null,
     {
         "collection": "blca_edges_ucsc_oncovogel274-mut01-cnv",
         "type": "edges",
@@ -87939,9 +88696,6 @@
         "totalCounts": 55774,
         "errors": []
     },
-    null,
-    null,
-    null,
     {
         "collection": "stad_edges_broad_tcgapancanmutated-mut01",
         "type": "edges",
@@ -87982,7 +88736,6 @@
         "totalCounts": 27486,
         "errors": []
     },
-    null,
     {
         "collection": "skcm_edges_broad_tcgapancanmutated-mut01",
         "type": "edges",
@@ -88023,7 +88776,6 @@
         "totalCounts": 55,
         "errors": []
     },
-    null,
     {
         "collection": "blca_edges_broad_tcgagbmclassifiers-mut01",
         "type": "edges",
@@ -88080,7 +88832,6 @@
         "totalCounts": 177,
         "errors": []
     },
-    null,
     {
         "collection": "acc_edges_ucsc_osccchen131probes-cnv",
         "type": "edges",
@@ -88105,7 +88856,6 @@
         "totalCounts": 126965,
         "errors": []
     },
-    null,
     {
         "collection": "brain_edges_broad_oncoplex-mut01",
         "type": "edges",
@@ -88122,7 +88872,6 @@
         "totalCounts": 4651,
         "errors": []
     },
-    null,
     {
         "collection": "paad_edges_ucsc_osccchen9genes-mut01-cnv",
         "type": "edges",
@@ -88147,8 +88896,6 @@
         "totalCounts": 392,
         "errors": []
     },
-    null,
-    null,
     {
         "collection": "skcm_edges_broad_markergenes545-mut01",
         "type": "edges",
@@ -88157,7 +88904,6 @@
         "totalCounts": 6186,
         "errors": []
     },
-    null,
     {
         "collection": "esca_edges_ucsc_tcgagbmclassifiers-cnv",
         "type": "edges",
@@ -88166,7 +88912,6 @@
         "totalCounts": 78380,
         "errors": []
     },
-    null,
     {
         "collection": "gbm_edges_ucsc_osccchen9genes-mut01-cnv",
         "type": "edges",
@@ -88191,7 +88936,6 @@
         "totalCounts": 2166,
         "errors": []
     },
-    null,
     {
         "collection": "lgg_edges_ucsc_markergenes545-mut01-cnv",
         "type": "edges",
@@ -88216,7 +88960,6 @@
         "totalCounts": 1032,
         "errors": []
     },
-    null,
     {
         "collection": "luad_edges_cbio_oncovogel274-mut01-cnv",
         "type": "edges",
@@ -88233,7 +88976,6 @@
         "totalCounts": 4371,
         "errors": []
     },
-    null,
     {
         "collection": "kich_edges_broad_markergenes545-mut01",
         "type": "edges",
@@ -88266,7 +89008,6 @@
         "totalCounts": 30062,
         "errors": []
     },
-    null,
     {
         "collection": "chol_edges_ucsc_osccchen9genes-cnv",
         "type": "edges",
@@ -88275,7 +89016,6 @@
         "totalCounts": 140,
         "errors": []
     },
-    null,
     {
         "collection": "stad_edges_ucsc_oncoplex-mut01",
         "type": "edges",
@@ -88284,8 +89024,6 @@
         "totalCounts": 2691,
         "errors": []
     },
-    null,
-    null,
     {
         "collection": "gbm_edges_broad_oncoplex-mut01",
         "type": "edges",
@@ -88302,8 +89040,6 @@
         "totalCounts": 889,
         "errors": []
     },
-    null,
-    null,
     {
         "collection": "lusc_edges_broad_osccchen131probes-mut01",
         "type": "edges",
@@ -88320,9 +89056,6 @@
         "totalCounts": 1139,
         "errors": []
     },
-    null,
-    null,
-    null,
     {
         "collection": "blca_edges_ucsc_tcgapancanmutated-mut01-cnv",
         "type": "edges",
@@ -88331,8 +89064,6 @@
         "totalCounts": 12686,
         "errors": []
     },
-    null,
-    null,
     {
         "collection": "luad_edges_broad_oncoplex-mut01",
         "type": "edges",
@@ -88357,7 +89088,6 @@
         "totalCounts": 118766,
         "errors": []
     },
-    null,
     {
         "collection": "brain_edges_ucsc_osccchen131probes-mut01-cnv",
         "type": "edges",
@@ -88366,9 +89096,6 @@
         "totalCounts": 25970,
         "errors": []
     },
-    null,
-    null,
-    null,
     {
         "collection": "paad_edges_ucsc_osccchen131probes-mut01-cnv",
         "type": "edges",
@@ -88385,9 +89112,6 @@
         "totalCounts": 1394,
         "errors": []
     },
-    null,
-    null,
-    null,
     {
         "collection": "kirc_edges_broad_osccchen131probes-mut01",
         "type": "edges",
@@ -88404,7 +89128,6 @@
         "totalCounts": 2074,
         "errors": []
     },
-    null,
     {
         "collection": "cesc_edges_broad_osccchen131probes-mut01",
         "type": "edges",
@@ -88421,7 +89144,6 @@
         "totalCounts": 574,
         "errors": []
     },
-    null,
     {
         "collection": "blca_edges_broad_markergenes545-mut01",
         "type": "edges",
@@ -88446,10 +89168,6 @@
         "totalCounts": 219,
         "errors": []
     },
-    null,
-    null,
-    null,
-    null,
     {
         "collection": "hnsc_edges_cbio_oncoplex-mut01-cnv",
         "type": "edges",
@@ -88462,11 +89180,10 @@
         "collection": "luad_edges_ucsc_markergenes545-mut01-cnv",
         "type": "edges",
         "disease": "luad",
-        "passedCounts": 152239,
-        "totalCounts": 152239,
+        "passedCounts": 60101,
+        "totalCounts": 60101,
         "errors": []
     },
-    null,
     {
         "collection": "ucec_edges_broad_osccchen131probes-mut01",
         "type": "edges",
@@ -88507,7 +89224,6 @@
         "totalCounts": 6781,
         "errors": []
     },
-    null,
     {
         "collection": "dlbc_edges_broad_markergenes545-mut01",
         "type": "edges",
@@ -88516,7 +89232,6 @@
         "totalCounts": 485,
         "errors": []
     },
-    null,
     {
         "collection": "laml_edges_ucsc_tcgapancanmutated-mut01-cnv",
         "type": "edges",
@@ -92133,14 +92848,7 @@
         "totalCounts": 426,
         "errors": []
     },
-    {
-        "collection": "chol_ptdegree_ucsc_osccchen131probes-cnv",
-        "type": "ptDegree",
-        "disease": "chol",
-        "passedCounts": 34,
-        "totalCounts": 34,
-        "errors": []
-    },
+    null,
     {
         "collection": "lusc_ptdegree_broad_oncovogel274",
         "type": "ptDegree",
