@@ -9,7 +9,7 @@ var mongo = function(mongoose){
     var connection = mongoose.connect( 
       'mongodb://oncoscape-dev-db1.sttrcancer.io:27017,oncoscape-dev-db2.sttrcancer.io:27017,oncoscape-dev-db3.sttrcancer.io:27017/tcga?authSource=admin', {
              db: { native_parser: true },
-             server: { poolSize: 5, reconnectTries: Number.MAX_VALUE },
+             server: { poolSize: 5, reconnectTries: Number.MAX_VALUE,socketOptions: { keepAlive: 300000, connectTimeoutMS: 30000 }},
              replset: { rs_name: 'rs0' },
              user: 'oncoscapeRead',
              pass: 'i1f4d9botHD4xnZ'
@@ -42,25 +42,25 @@ var promiseFactory = function(db, collection, type, disease){
     type = type.trim().toUpperCase();
     console.log(collection);   
     switch(type){
-      case "PATIENT":
-      case "DRUG":
-      case "NEWTUMOR":
-      case "OTHERMALIGNANCY":
-      case "RADIATION":
-      case "FOLLOWUP":
-      case "NEWTUMOR-FOLLOWUP":
-        db.collection(collection).distinct("patient_ID").then(function(r){ 
-          elem.IDs = r;
-          resolve(elem); });
-        break;
+      // case "PATIENT":
+      // case "DRUG":
+      // case "NEWTUMOR":
+      // case "OTHERMALIGNANCY":
+      // case "RADIATION":
+      // case "FOLLOWUP":
+      // case "NEWTUMOR-FOLLOWUP":
+      //   db.collection(collection).distinct("patient_ID").then(function(r){ 
+      //     elem.IDs = r;
+      //     resolve(elem); });
+      //   break;
 
-      case "PCASCORES":
-      case "MDS":
-        db.collection(collection).mapReduce(
-        function(){ for (var key in this.data) { emit(key, null); } },
-        function(key, value) { return null }, 
-        { out: {inline:1} }).then(function(r){ elem.IDs = r.map(function(v){ return v._id; }); resolve(elem); });
-        break;
+      // case "PCASCORES":
+      // case "MDS":
+      //   db.collection(collection).mapReduce(
+      //   function(){ for (var key in this.data) { emit(key, null); } },
+      //   function(key, value) { return null }, 
+      //   { out: {inline:1} }).then(function(r){ elem.IDs = r.map(function(v){ return v._id; }); resolve(elem); });
+      //   break;
 
       case "MUT":
       case "MUT01":
@@ -74,32 +74,32 @@ var promiseFactory = function(db, collection, type, disease){
             { out: {inline:1} }).then(function(r){ elem.IDs = r.map(function(v){ return v._id; }); resolve(elem); });
         break;
 
-      case "COLOR":
-        db.collection(collection).distinct("data.values").then(function(r){ 
-          elem.IDs = r;
-          resolve(elem); });
-        break;
+      // case "COLOR":
+      //   db.collection(collection).distinct("data.values").then(function(r){ 
+      //     elem.IDs = r;
+      //     resolve(elem); });
+      //   break;
 
-      case "EVENTS":
-        elem.IDs = db.collection(collection).mapReduce(
-            function(){ for (var key in this) { emit(key, null); } },
-            function(key, value) { return null }, 
-            { out: {inline:1} }).then(function(r){ elem.IDs = r.map(function(v){ return v._id; }); resolve(elem); });
-        break;
+      // case "EVENTS":
+      //   elem.IDs = db.collection(collection).mapReduce(
+      //       function(){ for (var key in this) { emit(key, null); } },
+      //       function(key, value) { return null }, 
+      //       { out: {inline:1} }).then(function(r){ elem.IDs = r.map(function(v){ return v._id; }); resolve(elem); });
+      //   break;
 
 
-      case "EDGES":
-        db.collection(collection).distinct("p").then(function(r){ 
-          elem.IDs = r;
-          resolve(elem); });
-        break;
+      // case "EDGES":
+      //   db.collection(collection).distinct("p").then(function(r){ 
+      //     elem.IDs = r;
+      //     resolve(elem); });
+      //   break;
 
-      case "PTDEGREE":
-        elem.IDs = db.collection(collection).mapReduce(
-            function(){ for (var key in this) { emit(key, null); } },
-            function(key, value) { return null }, 
-            { out: {inline:1} }).then(function(r){ elem.IDs = r.map(function(v){ return v._id; }); resolve(elem); });
-        break;
+      // case "PTDEGREE":
+      //   elem.IDs = db.collection(collection).mapReduce(
+      //       function(){ for (var key in this) { emit(key, null); } },
+      //       function(key, value) { return null }, 
+      //       { out: {inline:1} }).then(function(r){ elem.IDs = r.map(function(v){ return v._id; }); resolve(elem); });
+      //   break;
       default:
         resolve(elem);
         break;
@@ -127,43 +127,34 @@ console.time();
 Promise.all([mongo(mongoose),filestream(fs)]).then(function(response){
     var db = response[0];
     var file = response[1];
+//     var o = input.filter(function(m){return m.collection == 'luad_methylation_cbio_hm27';})[0];
+//     console.log(promiseFactory(db, o.collection, o.type, o.collection.split("_")[0]));
+// });
 
     // Loop Through Diseases + Process
-    diseases = _.groupBy(input, function(item){ return item.disease; });
-    //var diseaseNames = Object.keys(diseases).splice(0,1);
-    // Only Process First Two For Test
+    // diseases = _.groupBy(input, function(item){ return item.disease; });
+    // var diseaseNames = Object.keys(diseases).splice(0,1);
+    // //Only Process First Two For Test
     // diseaseNames.forEach(function(diseaseName){
     //   console.log("Processing: " + diseaseName);
     //   processDisease(db, diseases[diseaseName]).then(function(res){
-    //     //console.log(ids.join(" + "));
-    //     console.log("RECEIVED FROM PROCESS");
-    //     //console.log(res);
-    //     fs.appendFile('./output.json',JSON.stringify(res),function (err) {console.log(err); });
-    //     //console.dir(res);
+    //     file.write(JSON.stringify(res, null, 4));
     //   });
     // });
     var index = 0;
     console.log(index);
     asyncLoop(input, function(d, next){ 
-      promiseFactory(db, d.collection, d.type, d.disease).then(function(res){
-        console.log(index++);
-        //console.log(JSON.stringify(res, null, 4));
-        file.write(JSON.stringify(res, null, 4));
-        //fs.appendFile('./output.json',JSON.stringify(res, null, 4),function (err) {console.log(err); });
-        // fs.open('./output.json', JSON.stringify(res, null, 4), (err, fd) => {
-        //   if (err) {
-        //     if (err.code === "EEXIST") {
-        //       console.error('myfile already exists');
-        //       return;
-        //     } else {
-        //       throw err;
-        //     }
-        //   }
-
-        //   writeMyData(fd);
-        // });
+      console.log(d);
+      if('collection' in d){
+        promiseFactory(db, d.collection, d.type, d.disease).then(function(res){
+          console.log(index++);
+          //console.log(JSON.stringify(res, null, 4));
+          file.write(JSON.stringify(res, null, 4));
+          next();
+        });
+      }else{
         next();
-      });
+      }
     }, function (err)
     {
         if (err)

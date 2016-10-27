@@ -113,7 +113,7 @@
               "pathologic_method.1" : {"type": ["string", "null"]},
               "pharmaceutical_tx_adjuvant" : {"type": ["boolean", "null"]},
               "anatomic_organ_subdivision" : {"type": ["string", "null"]},
-              "histologic_diagnosis" : {"type": "string"},
+              "histologic_diagnosis" : {"type": ["string", "null"]},
               "histologic_diagnosis.1" : {"type": ["string", "null"]},
               "grade" : {"type": ["string", "null"]},
               "laterality" : {"type": ["string", "null"]},
@@ -719,7 +719,7 @@
           "required": ["_id", "dataset", "type", "process", "data"],
           "additionalProperties": true   
           },
-    "pcaScores":{
+    "pcascores":{
         "properties":{
             "disease": {"type": "string"},
             "source": {"type": "string"},
@@ -754,7 +754,7 @@
           "required": ["type", "disease", "source", "scale", "data"],
           "additionalProperties": true  
           },
-    "pcaLoadings":{
+    "pcaloadings":{
         "properties":{
             "disease": {"type": "string"},
             "source": {"type": "string"},
