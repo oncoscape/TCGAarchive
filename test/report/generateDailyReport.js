@@ -20,6 +20,16 @@ Array.prototype.arraysCompare = function(ref) {
     return elem;
 };
 
+Array.prototype.containPartialString = function(regex){
+   var arr = [];
+   for(var i = 0; i< this.length; i++){
+     if(this[i].match(regex) != null ){
+      arr = arr.concat(this[i]);
+     }
+   }
+   return arr;
+};
+
 Object.prototype.nestedUniqueCount = function(){
     var errorCount = {};
     var ar = [];
@@ -35,7 +45,6 @@ Object.prototype.nestedUniqueCount = function(){
           }
         });
     });
-    //return ar.unique();
     return errorCount;
 };
 
@@ -177,6 +186,7 @@ var format = {
 
 var comongo = require('co-mongodb');
 var co = require('co');
+var u = require('underscore');
 var db, collections, existing_collection_names, manifest;
 var manifest_arr = [];
 var lookup_table = [];
@@ -287,7 +297,15 @@ co(function *() {
     return c['s']['name'];
   }); //getting the names of all collections
 
-  
+  /* Need to clean up the existing_collection_names
+
+   */
+  existing_sample_maps = existing_collection_names.containPartialString(/[A-Za-z0-9_]+_sample_map/g);
+  existing_renders = existing_collection_names.containPartialString(/render_+/g);
+  existing_lookups = existing_collection_names.containPartialString(/lookup_+/g);
+  existing_manifest = existing_collection_names.containPartialString(/manifest+/g);
+  existing_collection_names = u.difference(existing_collection_names, existing_sample_maps.concat(existing_renders,existing_lookups,existing_manifest, ["system.js"]));
+
   existing_collection_names.forEach(function(c){
     if(lookup_listed_collections.indexOf(c) == -1){
       inDBNotInListed.push(c);

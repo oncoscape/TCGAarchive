@@ -5,6 +5,16 @@ Array.prototype.contains = function(v) {
     return false;
 };
 
+Array.prototype.containPartialString = function(regex){
+   var arr = [];
+   for(var i = 0; i< this.length; i++){
+     if(this[i].match(regex) != null ){
+      arr = arr.concat(this[i]);
+     }
+   }
+   return arr;
+};
+
 Array.prototype.arraysCompare = function(ref) {
     var elem = {};
     elem.countInRef = 0;
