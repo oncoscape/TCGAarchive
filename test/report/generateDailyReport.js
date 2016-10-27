@@ -200,7 +200,7 @@ var collection_counts = [];
 var render_pca = [];
 var render_patient = [];
 var jsonfile = require("jsonfile-promised");
-var ajvMsg = require("../datasourceTesting/ajv_tcga_v2_10252016.json");
+var ajvMsg = require("../datasourceTesting/ajv_tcga_v2_10262016.json");
 var status_DTS = require("../forPatientIDChecking/patientIDsErrorCountsByDiseaseByType.json");
 var diseaseCollectionStructureStatus = require("../toolTesting/diseaseCollectionStructuralStatus.json");
 var ajvMsg_report = [];
@@ -208,32 +208,24 @@ var render_pca_missing_collections = [];
 var render_pt_missing_collections = [];
 var patientIDs_status=[], patientID_errors = [];
 const pcaScoreTypeMapping = {
-    "mutSig2": "mut01",
-    "HM27": "methylation-hm27", 
-    "RPPA-zscore": "protein",
-    "gistic": "cnv", 
-    "import":"mut01",
-    "gistic2thd": "cnv",
-    "mutation": "mut01", 
-    "mutationBroadGene": "mut01", 
-    "mutationBcmGene": "mut01",
-    'mut01-mutSig2': "mut01",
-    'methylation-HM27': "methylation-hm27", 
-    'protein-RPPA-zscore': "protein",
     'cnv-gistic': "cnv", 
     'cnv-gistic2thd':"cnv",
+    "import":"mut01",
+    'methylation-HM27': "methylation-hm27", 
+    'methylation-HM450': "methylation-hm450", 
+    'mut-mut': "mut01",
+    'mut01-mutSig2': "mut01",
     'mut01-mutation': "mut01", 
     'mut01-mutationBroadGene': "mut01", 
     'mut01-mutationBcmGene': "mut01", 
     'mut01-wxs': "mut01", 
-    'methylation-HM450': "methylation-hm450", 
+    'mut01-mutationCuratedWustlGene': "mut01",
+    'protein-RPPA': "protein",
+    'protein-RPPA-zscore': "protein",
+    'rna-Agilent': "rna-agilent", 
     'rna-Agilent-median-zscore': "rna-agilent-median-zscore", 
     'rna-seq-median-zscore': "rna-seq-median-zscore", 
-    'mut01-mutationCuratedWustlGene': "mut01",
-    'mut-mut': "mut01",
-    'rna-Agilent': "rna-agilent", 
     'rna-seq': "rna-seq", 
-    'protein-RPPA': "protein",
     'rna-U133': "rna-u133", 
     'rna-HiSeq': "rna-hiseq"
   };
