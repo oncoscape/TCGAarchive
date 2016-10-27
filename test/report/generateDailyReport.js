@@ -210,7 +210,7 @@ var patientIDs_status=[], patientID_errors = [];
 const pcaScoreTypeMapping = {
     'cnv-gistic': "cnv", 
     'cnv-gistic2thd':"cnv",
-    "import":"mut01",
+    'import':"mut01",
     'methylation-HM27': "methylation-hm27", 
     'methylation-HM450': "methylation-hm450", 
     'mut-mut': "mut01",
