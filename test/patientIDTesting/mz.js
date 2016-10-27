@@ -9,8 +9,8 @@ var mongo = function(mongoose){
     var connection = mongoose.connect( 
       'mongodb://oncoscape-dev-db1.sttrcancer.io:27017,oncoscape-dev-db2.sttrcancer.io:27017,oncoscape-dev-db3.sttrcancer.io:27017/tcga?authSource=admin', {
              db: { native_parser: true },
-             server: { poolSize: 5, reconnectTries: Number.MAX_VALUE,socketOptions: { keepAlive: 300000, connectTimeoutMS: 30000 }},
-             replset: { rs_name: 'rs0' },
+             server: { poolSize: 5, reconnectTries: Number.MAX_VALUE,socketOptions: { keepAlive: 3000000, connectTimeoutMS: 300000, socketTimeoutMS: 300000}},
+             replset: { rs_name: 'rs0', socketOptions: { keepAlive: 3000000, connectTimeoutMS: 300000, socketTimeoutMS: 300000}},
              user: 'oncoscapeRead',
              pass: 'i1f4d9botHD4xnZ'
          });
@@ -42,25 +42,25 @@ var promiseFactory = function(db, collection, type, disease){
     type = type.trim().toUpperCase();
     console.log(collection);   
     switch(type){
-      // case "PATIENT":
-      // case "DRUG":
-      // case "NEWTUMOR":
-      // case "OTHERMALIGNANCY":
-      // case "RADIATION":
-      // case "FOLLOWUP":
-      // case "NEWTUMOR-FOLLOWUP":
-      //   db.collection(collection).distinct("patient_ID").then(function(r){ 
-      //     elem.IDs = r;
-      //     resolve(elem); });
-      //   break;
+      case "PATIENT":
+      case "DRUG":
+      case "NEWTUMOR":
+      case "OTHERMALIGNANCY":
+      case "RADIATION":
+      case "FOLLOWUP":
+      case "NEWTUMOR-FOLLOWUP":
+        db.collection(collection).distinct("patient_ID").then(function(r){ 
+          elem.IDs = r;
+          resolve(elem); });
+        break;
 
-      // case "PCASCORES":
-      // case "MDS":
-      //   db.collection(collection).mapReduce(
-      //   function(){ for (var key in this.data) { emit(key, null); } },
-      //   function(key, value) { return null }, 
-      //   { out: {inline:1} }).then(function(r){ elem.IDs = r.map(function(v){ return v._id; }); resolve(elem); });
-      //   break;
+      case "PCASCORES":
+      case "MDS":
+        db.collection(collection).mapReduce(
+        function(){ for (var key in this.data) { emit(key, null); } },
+        function(key, value) { return null }, 
+        { out: {inline:1} }).then(function(r){ elem.IDs = r.map(function(v){ return v._id; }); resolve(elem); });
+        break;
 
       case "MUT":
       case "MUT01":
@@ -74,32 +74,32 @@ var promiseFactory = function(db, collection, type, disease){
             { out: {inline:1} }).then(function(r){ elem.IDs = r.map(function(v){ return v._id; }); resolve(elem); });
         break;
 
-      // case "COLOR":
-      //   db.collection(collection).distinct("data.values").then(function(r){ 
-      //     elem.IDs = r;
-      //     resolve(elem); });
-      //   break;
+      case "COLOR":
+        db.collection(collection).distinct("data.values").then(function(r){ 
+          elem.IDs = r;
+          resolve(elem); });
+        break;
 
-      // case "EVENTS":
-      //   elem.IDs = db.collection(collection).mapReduce(
-      //       function(){ for (var key in this) { emit(key, null); } },
-      //       function(key, value) { return null }, 
-      //       { out: {inline:1} }).then(function(r){ elem.IDs = r.map(function(v){ return v._id; }); resolve(elem); });
-      //   break;
+      case "EVENTS":
+        elem.IDs = db.collection(collection).mapReduce(
+            function(){ for (var key in this) { emit(key, null); } },
+            function(key, value) { return null }, 
+            { out: {inline:1} }).then(function(r){ elem.IDs = r.map(function(v){ return v._id; }); resolve(elem); });
+        break;
 
 
-      // case "EDGES":
-      //   db.collection(collection).distinct("p").then(function(r){ 
-      //     elem.IDs = r;
-      //     resolve(elem); });
-      //   break;
+      case "EDGES":
+        db.collection(collection).distinct("p").then(function(r){ 
+          elem.IDs = r;
+          resolve(elem); });
+        break;
 
-      // case "PTDEGREE":
-      //   elem.IDs = db.collection(collection).mapReduce(
-      //       function(){ for (var key in this) { emit(key, null); } },
-      //       function(key, value) { return null }, 
-      //       { out: {inline:1} }).then(function(r){ elem.IDs = r.map(function(v){ return v._id; }); resolve(elem); });
-      //   break;
+      case "PTDEGREE":
+        elem.IDs = db.collection(collection).mapReduce(
+            function(){ for (var key in this) { emit(key, null); } },
+            function(key, value) { return null }, 
+            { out: {inline:1} }).then(function(r){ elem.IDs = r.map(function(v){ return v._id; }); resolve(elem); });
+        break;
       default:
         resolve(elem);
         break;
