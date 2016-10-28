@@ -293,7 +293,7 @@ co(function *() {
   /* Need to clean up the existing_collection_names
 
    */
-  existing_sample_maps = existing_collection_names.containPartialString(/[A-Za-z0-9_]+_sample_map/g);
+  existing_sample_maps = existing_collection_names.containPartialString(/[A-Za-z0-9_-]+_sample_map/g);
   existing_renders = existing_collection_names.containPartialString(/render_+/g);
   existing_lookups = existing_collection_names.containPartialString(/lookup_+/g);
   existing_manifest = existing_collection_names.containPartialString(/manifest+/g);
@@ -348,6 +348,9 @@ co(function *() {
   var existing_pcascores = [];
   var rendering_pca_potential_collections = [];
   existing_collection_names.forEach(function(e){if(e.includes('pcascores') && (!e.includes("-1e+05"))) existing_pcascores.push(e);});
+  var existing_pca_removal = existing_pcascores.containPartialString(/[A-Za-z0-9_-]+-mut01/g);
+  existing_pcascores = u.difference(existing_pcascores, existing_pca_removal);
+
 
   var pcascores_postfix = []; 
   existing_pcascores.forEach(function(e){pcascores_postfix.push(e.split("-")[e.split("-").length-1]);});
@@ -360,13 +363,13 @@ co(function *() {
   format.codeStart();
   format.text(pcascores_postfix);
   format.codeStop();
-  //render_pca_missing_collections.length: 264
-  var render_pca_missed_types = render_pca_missing_collections.map(function(r){return r.type;});
-  format.text("Are there any types that render_pca doesn't include? :");
-  format.codeStart();
-  format.text(render_pca_missed_types.unique());
-  format.codeStop();
-  // [ 'import',
+  // //render_pca_missing_collections.length: 264
+  // var render_pca_missed_types = render_pca_missing_collections.map(function(r){return r.type;});
+  // format.text("Are there any types that render_pca doesn't include? :");
+  // format.codeStart();
+  // format.text(render_pca_missed_types.unique());
+  // format.codeStop();
+  // // [ 'import',
   // 'gistic2thd',
   // 'mutation',
   // 'mutationBroadGene',
@@ -379,7 +382,9 @@ co(function *() {
     str = str.toLowerCase();
     rendering_pca_potential_collections.push(str);  
   });
-  
+  var rendering_pca_potential_removal = rendering_pca_potential_collections.containPartialString(/[A-Za-z0-9_-]+-mut01/g);
+  rendering_pca_potential_collections = u.difference(rendering_pca_potential_collections, rendering_pca_potential_removal);
+
 
   format.h3("Compare the existing collections against render_pca: ");
   format.codeStart();
@@ -414,13 +419,6 @@ co(function *() {
       rendering_pt_potential_collections.push(str);  
     }
   });
-
-  var render_patient_weird_ex = {
-    // "_id" : ObjectId("57dc4bf961f0f92bdd372afb"),
-    "type" : "cluster",
-    "name" : "pca-OSCC Chen 9 genes-mut01",
-    "source" : "broad"
-  };
 
   format.h3("Compare the existing collections against render_patient: ");
   format.codeStart();
