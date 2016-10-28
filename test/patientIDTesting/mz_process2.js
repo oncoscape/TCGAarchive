@@ -10,18 +10,20 @@ var IDErrors = IDReporting.filter(function(m){
 // 	return b.IDstatus.itemsNotInRef.length - a.IDstatus.itemsNotInRef.length;
 // });
 
-var IDErrors_brief = IDErrors.filter(function(m){return m.IDstatus.itemsNotInRef.length!=0;}).map(function(m){
-	var elem = {};
-	var el = {};
-	elem.collection = m.collection;
-	elem.disease = m.disease;
-	elem.type = m.type;
-	el.overlapCount = m.IDstatus.overlapCount;
-	el.itemsNotInRefLength = m.IDstatus.itemsNotInRef.length;
-	el.itemsNotInRef = m.IDstatus.itemsNotInRef.splice(0, 5);
-	elem.IDstatus = el;
-	return elem;
-});
+var IDErrors_brief = IDErrors.filter(function(m){return m.IDstatus.itemsNotInRef.length!=0;})
+
+// .map(function(m){
+// 	var elem = {};
+// 	var el = {};
+// 	elem.collection = m.collection;
+// 	elem.disease = m.disease;
+// 	elem.type = m.type;
+// 	el.overlapCount = m.IDstatus.overlapCount;
+// 	el.itemsNotInRefLength = m.IDstatus.itemsNotInRef.length;
+// 	el.itemsNotInRef = m.IDstatus.itemsNotInRef.splice(0, 5);
+// 	elem.IDstatus = el;
+// 	return elem;
+// });
 
 var IDErrors_briefv2 = [];
 for(var i=0; i<IDErrors_brief.length;i++){
