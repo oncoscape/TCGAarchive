@@ -3314,7 +3314,7 @@
         "passedRate": 1,
         "errorMessage": {}
     },
-    null,
+    {},
     {
         "collection": "thca_rna_ucsc_hiseq",
         "type": "rna",
@@ -3603,7 +3603,7 @@
         "passedRate": 1,
         "errorMessage": {}
     },
-    null,
+    {},
     {
         "collection": "meso_protein_ucsc_rppa",
         "type": "protein",
@@ -23017,7 +23017,7 @@
         "passedRate": 1,
         "errorMessage": {}
     },
-    null,
+    {},
     {
         "collection": "brain_pcascores_ucsc_prcomp-oncoplex-mut01-1e+05",
         "type": "pcascores",
@@ -37877,7 +37877,7 @@
         "passedRate": 1,
         "errorMessage": {}
     },
-    null,
+    {},
     {
         "collection": "lihc_edges_broad_oncoplex-mut01",
         "type": "edges",
@@ -42459,7 +42459,7 @@
         "passedRate": 1,
         "errorMessage": {}
     },
-    null,
+    {},
     {
         "collection": "esca_ptdegree_ucsc_oncoplex-cnv",
         "type": "ptDegree",
@@ -44665,7 +44665,7 @@
         "passedRate": 1,
         "errorMessage": {}
     },
-    null,
+    {},
     {
         "collection": "blca_genedegree_ucsc_oncoplex-mut01-cnv",
         "type": "geneDegree",

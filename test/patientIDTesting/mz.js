@@ -39,6 +39,7 @@ var promiseFactory = function(db, collection, type, disease){
     var elem = {};
     elem.collection = collection;
     elem.type = type;
+    elem.disease = disease;
     type = type.trim().toUpperCase();
     console.log(collection);   
     switch(type){
@@ -62,17 +63,17 @@ var promiseFactory = function(db, collection, type, disease){
         { out: {inline:1} }).then(function(r){ elem.IDs = r.map(function(v){ return v._id; }); resolve(elem); });
         break;
 
-      case "MUT":
-      case "MUT01":
-      case "METHYLATION":
-      case "RNA":
-      case "PROTEIN":
-      case "CNV":    
-        elem.IDs = db.collection(collection).mapReduce(
-            function(){ for (var key in this.patients) { emit(key, null); } },
-            function(key, value) { return null }, 
-            { out: {inline:1} }).then(function(r){ elem.IDs = r.map(function(v){ return v._id; }); resolve(elem); });
-        break;
+      // case "MUT":
+      // case "MUT01":
+      // case "METHYLATION":
+      // case "RNA":
+      // case "PROTEIN":
+      // case "CNV":    
+      //   elem.IDs = db.collection(collection).mapReduce(
+      //       function(){ for (var key in this.patients) { emit(key, null); } },
+      //       function(key, value) { return null }, 
+      //       { out: {inline:1} }).then(function(r){ elem.IDs = r.map(function(v){ return v._id; }); resolve(elem); });
+      //   break;
 
       case "COLOR":
         db.collection(collection).distinct("data.values").then(function(r){ 
@@ -84,7 +85,7 @@ var promiseFactory = function(db, collection, type, disease){
         elem.IDs = db.collection(collection).mapReduce(
             function(){ for (var key in this) { emit(key, null); } },
             function(key, value) { return null }, 
-            { out: {inline:1} }).then(function(r){ elem.IDs = r.map(function(v){ return v._id; }); resolve(elem); });
+            { out: {inline:1} }).then(function(r){ elem.IDs = _.without(r.map(function(v){ return v._id; }), '_id'); resolve(elem); });
         break;
 
 
@@ -98,7 +99,7 @@ var promiseFactory = function(db, collection, type, disease){
         elem.IDs = db.collection(collection).mapReduce(
             function(){ for (var key in this) { emit(key, null); } },
             function(key, value) { return null }, 
-            { out: {inline:1} }).then(function(r){ elem.IDs = r.map(function(v){ return v._id; }); resolve(elem); });
+            { out: {inline:1} }).then(function(r){ elem.IDs = _.without(r.map(function(v){ return v._id; }), '_id'); resolve(elem); });
         break;
       default:
         resolve(elem);
@@ -163,7 +164,7 @@ Promise.all([mongo(mongoose),filestream(fs)]).then(function(response){
             return;
         }
         console.log('Finished!');
-        console.timeEnd();
+        console.timeEnd(); // 126372ms without Molecular types
     });
   
 });

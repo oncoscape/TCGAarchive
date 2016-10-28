@@ -60,8 +60,6 @@ jsonfile.readFile("ajv_tcga_10262016.json").then(function(obj){
             elem.totalCounts = a.totalCounts;
             elem.passedRate = a.passedCounts/a.totalCounts;
             elem.errorMessage = a.nestedUniqueCount();
-        }else{
-            elem = null;
         }
         
         //elem.errorMessage = a.errors.tableV2(a.nestedUnique());
