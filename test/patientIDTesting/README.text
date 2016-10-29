@@ -1,0 +1,5 @@
+> node mz.js
+This code will generate output.json. Need to manually replace "}{" with "},{" and add "[" and "]". 
+
+> node mz_process.js > output2.json
+The out put needs to add "," and "[]"
