@@ -529,7 +529,7 @@ co(function *() {
   format.text(typesWithGeneIDErros);
   // [ 'cnv','protein','events','mut','mds','mut01','edges','otherMalignancy',
   //   'pcaScores','methylation','rna','color','ptDegree' ]
-  format.codeComment("Below lists the data types, whose gene symbols in some if not all collections are NOT included in the HGNC gene symbols");
+  format.codeComment("Below lists the data types, whose gene symbols in some if not all collections are included in the HGNC gene symbols");
   var totalTypes =['mut','mut01','methylation','rna','protein','cnv','facs','genesets','annotation','genedegree','edges','genes','pcaloadings' ];   
   format.text(u.difference(totalTypes, typesWithGeneIDErros));
   format.codeStop();
