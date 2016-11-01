@@ -68,7 +68,8 @@ var promiseFactory = function(db, collection, type, disease){
       case "METHYLATION":
       case "RNA":
       case "PROTEIN":
-      case "CNV":    
+      case "CNV":
+      case "PSI":    
         elem.IDs = db.collection(collection).mapReduce(
             function(){ for (var key in this.patients) { emit(key, null); } },
             function(key, value) { return null }, 

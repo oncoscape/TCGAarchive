@@ -201,8 +201,9 @@ var render_pca = [];
 var render_patient = [];
 var jsonfile = require("jsonfile-promised");
 var ajvMsg = require("../datasourceTesting/ajv_tcga_v2_10262016.json");
-//var status_DTS = require("../forPatientIDChecking/patientIDsErrorCountsByDiseaseByType.json");
-var status_DTS = require("../patientIDTesting/IDstatus_errors_brief.json");
+//var patientID_status = require("../forPatientIDChecking/patientIDsErrorCountsByDiseaseByType.json");
+var patientID_status = require("../patientIDTesting/IDstatus_errors_brief.json");
+var gene_status = require("../geneSymbols/geneIDstatus_errors_brief.json");
 var diseaseCollectionStructureStatus = require("../toolTesting/diseaseCollectionStructuralStatus.json");
 var ajvMsg_report = [];
 var render_pca_missing_collections = [];
@@ -468,7 +469,7 @@ co(function *() {
   format.h1("Part V: Checked the patient IDs against disease patient collection IDs:");
   
   format.h3("The aggregated result grouped by Disease types and Data Types");
-  var diseasesWithPIDErros = u.uniq(status_DTS.map(function(m){return m.disease;}));
+  var diseasesWithPIDErros = u.uniq(patientID_status.map(function(m){return m.disease;}));
   format.codeComment("Below lists the disease types, whose patient IDs in some if not all collections are NOT included in the clinical patient IDs.");
   format.codeStart();
   format.text(diseasesWithPIDErros);
@@ -486,7 +487,7 @@ co(function *() {
   format.codeStop();
 
 
-  var typesWithPIDErros =  u.uniq(status_DTS.map(function(m){return m.type;}));
+  var typesWithPIDErros =  u.uniq(patientID_status.map(function(m){return m.type;}));
   format.codeComment("Below lists the data types, whose patient IDs in some if not all collections are NOT included in the clinical patient IDs.");
   format.codeStart();
   format.text(typesWithPIDErros);
@@ -508,9 +509,36 @@ co(function *() {
   format.codeStop();
   format.text("Detailed aggregated report lists here (sorted by subfield IDstatus.itemsNotInRefLength):");
   format.codeStart();
-  status_DTS.forEach(function(s){format.text(s);});
+  patientID_status.forEach(function(s){format.text(s);});
   format.codeStop();
   
+  format.h1("Part VI: Checked the gene symbols against HGNC gene symbols: ");
+
+  format.h3("The aggregated result grouped by Disease types and Data Types");
+  var diseasesWithGeneIDErrors = u.uniq(gene_status.map(function(m){return m.disease;}));
+  format.codeComment("Below lists the disease types, whose gene symbols in some if not all collections are NOT included in the HGNC gene symbols");
+  format.codeStart();
+  format.text(diseasesWithGeneIDErrors);
+  format.codeComment("Below lists the disease types, whose gene symbols in all collections are included in the HGNC gene symbols");
+  var totalDiseases = [ 'brain','lusc','hnsc','coadread','brca','gbm','lgg','luad','lung','prad','esca','dlbc','ucs','blca','coad','thca','acc','lihc','paad','ov','skcm','chol','kirc','read','kirp','meso','uvm','cesc','ucec','pcpg','thym','sarc','stad','tgct','kich','laml'];
+  format.text(u.difference(totalDiseases, diseasesWithGeneIDErrors));
+  format.codeStop();
+  var typesWithGeneIDErros =  u.uniq(gene_status.map(function(m){return m.type;}));
+  format.codeComment("Below lists the data types, whose gene symbols in some if not all collections are NOT included in the HGNC gene symbols");
+  format.codeStart();
+  format.text(typesWithGeneIDErros);
+  // [ 'cnv','protein','events','mut','mds','mut01','edges','otherMalignancy',
+  //   'pcaScores','methylation','rna','color','ptDegree' ]
+  format.codeComment("Below lists the data types, whose gene symbols in some if not all collections are NOT included in the HGNC gene symbols");
+  var totalTypes =['mut','mut01','methylation','rna','protein','cnv','facs','genesets','annotation','genedegree','edges','genes','pcaloadings' ];   
+  format.text(u.difference(totalTypes, typesWithGeneIDErros));
+  format.codeStop();
+  format.text("Detailed aggregated report lists here (sorted by subfield geneIDstatus.itemsNotInRefLength):");
+  format.codeStart();
+  gene_status.forEach(function(s){format.text(s);});
+  format.codeStop();
+  
+
   yield comongo.db.close(db);
 }).catch(onerror);
 
