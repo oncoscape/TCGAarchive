@@ -47,7 +47,7 @@ Object.prototype.nestedUniqueCount = function(){
     return errorCount;
 };
 
-jsonfile.readFile("ajv_tcga_10262016.json").then(function(obj){
+jsonfile.readFile("ajv_tcga_11022016.json").then(function(obj){
     ajvMsg = obj;
 }).then(function(){
     ajvMsg_v2 = ajvMsg.map(function(a){
@@ -66,6 +66,6 @@ jsonfile.readFile("ajv_tcga_10262016.json").then(function(obj){
         return elem;
     });
 }).then(function(){
-    jsonfile.writeFile('ajv_tcga_v2_10262016.json', ajvMsg_v2, {spaces:4});
+    jsonfile.writeFile('ajv_tcga_v2_11022016.json', ajvMsg_v2, {spaces:4});
 });
 

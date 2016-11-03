@@ -182,7 +182,36 @@ var format = {
   table: function(text){ console.log(text);  }
 };
 
-
+var checkClinicalFields = function(db, collection, type, disease){
+  return new Promise(function(resolve, reject){
+    var elem = {};
+    elem.collection = collection;
+    elem.type = type;
+    elem.disease = disease;
+    elem.fieldDuplicates = [];
+    //console.log(collection);
+    var count = 0; 
+    var cursor = db.collection(collection).find();
+    cursor.each(function(err, item){
+        if(item != null){
+          //console.log(count++);
+          var dup =[];
+          var dupObj = u.countBy(Object.keys(item));
+          //console.log(dupObj);
+          Object.keys(dupObj).forEach(function(el){
+            //console.log(el);
+            if(dupObj[el] > 1) dup.push(el);});
+          // console.log(dup);
+          //.filter(function(m){return m>1;});
+          //if(dup.length > 0){
+            elem.fieldDuplicates = elem.fieldDuplicates.concat(dup);
+          //}
+        }else{
+         resolve(elem);
+        }
+      });
+  });
+}  
 
 var comongo = require('co-mongodb');
 var co = require('co');
@@ -200,7 +229,7 @@ var collection_counts = [];
 var render_pca = [];
 var render_patient = [];
 var jsonfile = require("jsonfile-promised");
-var ajvMsg = require("../datasourceTesting/ajv_tcga_v2_10262016.json");
+var ajvMsg = require("../datasourceTesting/ajv_tcga_v2_11022016.json");
 //var patientID_status = require("../forPatientIDChecking/patientIDsErrorCountsByDiseaseByType.json");
 var patientID_status = require("../patientIDTesting/IDstatus_errors_brief.json");
 var gene_status = require("../geneSymbols/geneIDstatus_errors_brief.json");
@@ -231,6 +260,11 @@ const pcaScoreTypeMapping = {
     'rna-U133': "rna-u133", 
     'rna-HiSeq': "rna-hiseq"
   };
+var clinicalTypes = ["patient","drug","newTumor","otherMalignancy","radiation","followUp","newTumor-followUp"];
+var clinical_input = ajvMsg.filter(function(m){return (clinicalTypes.indexOf(m.type) > -1);});
+
+
+
 var onerror = function(e){
   console.log(e);
 }
@@ -463,10 +497,20 @@ co(function *() {
   format.text(diseaseCollection);
   format.codeStop();
 
+  format.h1("Part V: Check if there is any duplicated fields in Clinical Collections:");
+  var clinicalDupFields = [];
+  for(var i=0; i<clinical_input.length;i++){
+    var d = clinical_input[i];
+    checkClinicalFields(db, d.collection, d.type, d.disease).then(function(res){
+          //console.log(index++);
+          console.log(res.fieldDuplicates);
+          clinicalDupFields.push(res);
+    });
+  }  
+  format.h3(clinicalDupFields);
 
   // report the earlier version patient ID checking
-
-  format.h1("Part V: Checked the patient IDs against disease patient collection IDs:");
+  format.h1("Part VI: Checked the patient IDs against disease patient collection IDs:");
   
   format.h3("The aggregated result grouped by Disease types and Data Types");
   var diseasesWithPIDErros = u.uniq(patientID_status.map(function(m){return m.disease;}));
@@ -512,7 +556,7 @@ co(function *() {
   patientID_status.forEach(function(s){format.text(s);});
   format.codeStop();
   
-  format.h1("Part VI: Checked the gene symbols against HGNC gene symbols: ");
+  format.h1("Part VII: Checked the gene symbols against HGNC gene symbols: ");
 
   format.h3("The aggregated result grouped by Disease types and Data Types");
   var diseasesWithGeneIDErrors = u.uniq(gene_status.map(function(m){return m.disease;}));

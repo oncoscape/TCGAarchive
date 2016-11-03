@@ -126,9 +126,11 @@ connection.once('open', function(){
             console.error('Error: ' + err.message);
             return;
         }
-        jsonfile.writeFile("ajv_tcga_10262016.json", ajvMsg, {spaces: 4}); 
+        jsonfile.writeFile("ajv_tcga_11022016.json", ajvMsg, {spaces: 4}); 
         console.log('Finished!');
         console.timeEnd();
     });
 
-});
+});//4863997ms
+
+

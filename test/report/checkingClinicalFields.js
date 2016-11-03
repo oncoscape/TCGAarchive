@@ -39,7 +39,7 @@ var promiseFactory = function(db, collection, type, disease){
           //console.log(count++);
           var dup =[];
           var dupObj = u.countBy(Object.keys(item));
-          console.log(dupObj);
+          //console.log(dupObj);
           Object.keys(dupObj).forEach(function(el){
             //console.log(el);
             if(dupObj[el] > 1) dup.push(el);});
