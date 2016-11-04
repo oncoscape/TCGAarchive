@@ -1,24 +1,45 @@
-
-Array.prototype.contains = function(v) {
-    for(var i = 0; i < this.length; i++) {
-        if(this[i] === v) return true;
-    }
-    return false;
-};
-
-Array.prototype.arraysCompare = function(ref) {
-    var elem = {};
-    elem.countInRef = 0;
-    elem.itemsNotInRef = [];
-    for(var i = 0; i < this.length; i++) {
-        if(ref.indexOf(this[i]) > -1){
-          elem.countInRef++;
-        }else{
-          elem.itemsNotInRef.push(this[i]);
-        }
-    }
-    return elem;
-};
+var comongo = require('co-mongodb');
+var co = require('co');
+var u = require('underscore');
+var jsonfile = require("jsonfile-promised");
+var ajvMsg = require("../datasourceTesting/ajv_tcga_v2_11022016.json");
+var patientID_status = require("../patientIDTesting/IDstatus_errors_brief.json");
+var gene_status = require("../geneSymbols/geneIDstatus_errors_brief.json");
+var diseaseCollectionStructureStatus = require("../toolTesting/diseaseCollectionStructuralStatus.json");
+var duplicatedFields = require("./duplicatedFields.json");
+var db, collections, existing_collection_names, manifest;
+var manifest_arr = [];
+var lookup_table = [];
+var lookup_listed_collections = [];
+var manifest_listed_collections = [];
+var keyFields = [];
+var render_pca = [];
+var render_patient = [];
+var usedFields = ['annotation','location','category','molecular','clinical','calculated','edges'];
+const pcaScoreTypeMapping = {
+    'cnv-gistic': "cnv", 
+    'cnv-gistic2thd':"cnv",
+    'import':"mut01",
+    'methylation-HM27': "methylation-hm27", 
+    'methylation-HM450': "methylation-hm450", 
+    'mut-mut': "mut01",
+    'mut01-mutSig2': "mut01",
+    'mut01-mutation': "mut01", 
+    'mut01-mutationBroadGene': "mut01", 
+    'mut01-mutationBcmGene': "mut01", 
+    'mut01-wxs': "mut01", 
+    'mut01-mutationCuratedWustlGene': "mut01",
+    'protein-RPPA': "protein",
+    'protein-RPPA-zscore': "protein",
+    'rna-Agilent': "rna-agilent", 
+    'rna-Agilent-median-zscore': "rna-agilent-median-zscore", 
+    'rna-seq-median-zscore': "rna-seq-median-zscore", 
+    'rna-seq': "rna-seq", 
+    'rna-U133': "rna-u133", 
+    'rna-HiSeq': "rna-hiseq"
+  };
+var clinicalTypes = ["patient","drug","newTumor","otherMalignancy","radiation","followUp","newTumor-followUp"];
+var clinical_input = ajvMsg.filter(function(m){return (clinicalTypes.indexOf(m.type) > -1);});
 
 Array.prototype.containPartialString = function(regex){
    var arr = [];
@@ -28,24 +49,6 @@ Array.prototype.containPartialString = function(regex){
      }
    }
    return arr;
-};
-
-Object.prototype.nestedUniqueCount = function(){
-    var errorCount = {};
-    var ar = [];
-    var str;
-    this['errors'].forEach(function(a){
-        a.errorType.forEach(function(e){
-          str = e.schemaPath + " [message: "+ e.message + "]; Number of Violation: ";  
-          if(ar.contains(str)){
-            errorCount[str]++;
-          }else{
-            ar.push(str);
-            errorCount[str]=1;
-          }
-        });
-    });
-    return errorCount;
 };
 
 Array.prototype.arraysCompareV2 = function(ref) {
@@ -76,87 +79,6 @@ Array.prototype.unique = function() {
         }
     }
     return arr; 
-};
-
-Array.prototype.findTypeByCollection = function(v){
-  for(var i = 0; i < this.length; i++) {
-    if(this[i].collection === v){
-      //console.log(this[i].collection);
-      //return this[i].dataType;
-      return this[i].dataType;
-    } 
-  }
-  return false;
-};
-
-Array.prototype.findCollectionsByDisease = function(d){
-  var arr = [];
-  for(var i = 0; i < this.length; i++) {
-    if(this[i].disease === d){
-      arr.push(this[i]);
-    } 
-  }
-  return arr;
-};
-
-Array.prototype.findScoreByDiseaseByType = function(t, d) {
-  var passedRateArray = [];
-  this.forEach(function(a){
-    if(a.type==t && a.disease==d) 
-      passedRateArray.push(a.passedRate);
-  });
-  return passedRateArray;
-};
-
-Array.prototype.findCollectionsByType = function(v){
-  var arr = [];
-  for(var i = 0; i < this.length; i++) {
-    if(this[i].type === v){
-      arr.push(this[i].collection);
-    } 
-  }
-  return arr;
-};
-
-Array.prototype.findObjsByType = function(v){
-  var arr = [];
-  for(var i = 0; i < this.length; i++) {
-    if(this[i].type === v){
-      arr.push(this[i]);
-    } 
-  }
-  return arr;
-};
-
-Array.prototype.findObjByDiseaseByType = function(t, d) {
-  var arr = [];
-  this.forEach(function(a){
-    if(a.type==t && a.disease==d) 
-      arr.push(a);
-  });
-  return arr;
-};
-
-Array.prototype.table = function(uniqueArray) {
-    var elem = {};
-    uniqueArray.forEach(function(u){
-        elem[u] = 0;
-    });
-    for(var i = 0; i < this.length; i++){
-        if(uniqueArray.indexOf(this[i]['errorType']) > -1){
-            elem[this[i]['errorType']]++;
-        }
-    }
-    return elem;
-
-};
-
-Object.prototype.nestedUnique = function(){
-    var ar = [];
-    this['errors'].forEach(function(a){
-        ar.push(a['errorType']);
-    });
-    return ar.unique();
 };
 
 var format = {
@@ -212,56 +134,6 @@ var checkClinicalFields = function(db, collection, type, disease){
       });
   });
 }  
-
-var comongo = require('co-mongodb');
-var co = require('co');
-var u = require('underscore');
-var db, collections, existing_collection_names, manifest;
-var manifest_arr = [];
-var lookup_table = [];
-var lookup_listed_collections = [];
-var manifest_listed_collections = [];
-var keyFields = [];
-var usedFields = ['annotation','location','category','molecular','clinical','calculated','edges'];
-var inDBNotInListed = [];
-var inListedNotInDB = [];
-var collection_counts = [];
-var render_pca = [];
-var render_patient = [];
-var jsonfile = require("jsonfile-promised");
-var ajvMsg = require("../datasourceTesting/ajv_tcga_v2_11022016.json");
-//var patientID_status = require("../forPatientIDChecking/patientIDsErrorCountsByDiseaseByType.json");
-var patientID_status = require("../patientIDTesting/IDstatus_errors_brief.json");
-var gene_status = require("../geneSymbols/geneIDstatus_errors_brief.json");
-var diseaseCollectionStructureStatus = require("../toolTesting/diseaseCollectionStructuralStatus.json");
-var ajvMsg_report = [];
-var render_pca_missing_collections = [];
-var render_pt_missing_collections = [];
-var patientIDs_status=[], patientID_errors = [];
-const pcaScoreTypeMapping = {
-    'cnv-gistic': "cnv", 
-    'cnv-gistic2thd':"cnv",
-    'import':"mut01",
-    'methylation-HM27': "methylation-hm27", 
-    'methylation-HM450': "methylation-hm450", 
-    'mut-mut': "mut01",
-    'mut01-mutSig2': "mut01",
-    'mut01-mutation': "mut01", 
-    'mut01-mutationBroadGene': "mut01", 
-    'mut01-mutationBcmGene': "mut01", 
-    'mut01-wxs': "mut01", 
-    'mut01-mutationCuratedWustlGene': "mut01",
-    'protein-RPPA': "protein",
-    'protein-RPPA-zscore': "protein",
-    'rna-Agilent': "rna-agilent", 
-    'rna-Agilent-median-zscore': "rna-agilent-median-zscore", 
-    'rna-seq-median-zscore': "rna-seq-median-zscore", 
-    'rna-seq': "rna-seq", 
-    'rna-U133': "rna-u133", 
-    'rna-HiSeq': "rna-hiseq"
-  };
-var clinicalTypes = ["patient","drug","newTumor","otherMalignancy","radiation","followUp","newTumor-followUp"];
-var clinical_input = ajvMsg.filter(function(m){return (clinicalTypes.indexOf(m.type) > -1);});
 
 
 
@@ -334,17 +206,6 @@ co(function *() {
   existing_manifest = existing_collection_names.containPartialString(/manifest+/g);
   existing_collection_names = u.difference(existing_collection_names, existing_sample_maps.concat(existing_renders,existing_lookups,existing_manifest, ["system.js"]));
 
-  existing_collection_names.forEach(function(c){
-    if(lookup_listed_collections.indexOf(c) == -1){
-      inDBNotInListed.push(c);
-    }
-  });
-
-  lookup_listed_collections.forEach(function(l){
-    if(existing_collection_names.indexOf(l) == -1){
-      inListedNotInDB.push(l);
-    }
-  });
   format.h1("Part I: Checking existing collections against lookup_oncoscape_datasources and manifest files");
   format.h3("The number of the collections in database tcga is: ");
   format.text(existing_collection_names.length);
@@ -356,18 +217,10 @@ co(function *() {
   format.codeStart();
   format.text(existing_collection_names.arraysCompareV2(lookup_listed_collections));
   format.codeStop();
-  // format.h3("Compare lookup_listed_collections against the existing collections: ");
-  // format.codeStart();
-  // format.text(lookup_listed_collections.arraysCompareV2(existing_collection_names));
-  // format.codeStop();
   format.h3("Compare the existing collections against manifest_listed_collections: ");
   format.codeStart();
   format.text(existing_collection_names.arraysCompareV2(manifest_listed_collections));
   format.codeStop();
-  // format.h3("Compare manifest_listed_collections against the existing collections: ");
-  // format.codeStart();
-  // format.text(manifest_listed_collections.arraysCompareV2(existing_collection_names));
-  // format.codeStop();
   
 
   /*** survey the collections that exist in the tcga database
@@ -477,9 +330,6 @@ co(function *() {
     }
   });
   format.codeStop();
-  // format.codeStart();
-  // format.code(ajvMsg_report);
-  // format.codeStop();
 
   // report disease collection structural status against brain in lookup_oncoscape_datasources
   format.h1("Part IV: Check diseae collection structural status against brain in lookup_oncoscape_datasources");
@@ -497,17 +347,10 @@ co(function *() {
   format.text(diseaseCollection);
   format.codeStop();
 
-  format.h1("Part V: Check if there is any duplicated fields in Clinical Collections:");
-  var clinicalDupFields = [];
-  for(var i=0; i<clinical_input.length;i++){
-    var d = clinical_input[i];
-    checkClinicalFields(db, d.collection, d.type, d.disease).then(function(res){
-          //console.log(index++);
-          console.log(res.fieldDuplicates);
-          clinicalDupFields.push(res);
-    });
-  }  
-  format.h3(clinicalDupFields);
+  format.h1("Part V: Check if there are any duplicated fields in Clinical Collections:");
+  format.codeStart();
+  format.text(duplicatedFields);
+  format.codeStop();  
 
   // report the earlier version patient ID checking
   format.h1("Part VI: Checked the patient IDs against disease patient collection IDs:");

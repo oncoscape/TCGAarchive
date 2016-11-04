@@ -1,11 +1,13 @@
 var mongoose = require("mongoose");
 const u = require("underscore");
+const jsonfile = require("jsonfile-promised");
 const input = require("../datasourceTesting/ajv_tcga_v2_10262016.json");
 var asyncLoop = require('node-async-loop');
 var db;
 var clinicalTypes = ["patient","drug","newTumor","otherMalignancy","radiation","followUp","newTumor-followUp"];
 var clinical_input = input.filter(function(m){return (clinicalTypes.indexOf(m.type) > -1);});
 var output = [];
+var duplicatedFieldsByType = [];
 
 var mongo = function(mongoose){
   return new Promise(function(resolve, reject) {
@@ -30,28 +32,31 @@ var promiseFactory = function(db, collection, type, disease){
     elem.collection = collection;
     elem.type = type;
     elem.disease = disease;
-    elem.fieldDuplicates = [];
     console.log(collection);
     var count = 0; 
-    var cursor = db.collection(collection).find();
-    cursor.each(function(err, item){
-        if(item != null){
-          //console.log(count++);
-          var dup =[];
-          var dupObj = u.countBy(Object.keys(item));
-          //console.log(dupObj);
-          Object.keys(dupObj).forEach(function(el){
-            //console.log(el);
-            if(dupObj[el] > 1) dup.push(el);});
-          // console.log(dup);
-          //.filter(function(m){return m>1;});
-          //if(dup.length > 0){
-            elem.fieldDuplicates = elem.fieldDuplicates.concat(dup);
-          //}
-        }else{
-         resolve(elem);
-        }
-      });
+    elem.IDs = db.collection(collection).mapReduce(
+                  function(){ for (var key in this) { emit(key, null); } },
+                  function(key, value) { return null }, 
+                  { out: {inline:1} }).then(function(r){ elem.IDs = r.map(function(v){ return v._id; });resolve(elem); });
+    //var cursor = db.collection(collection).find();
+    // cursor.each(function(err, item){
+    //     if(item != null){
+    //       //console.log(count++);
+    //       var dup =[];
+    //       var dupObj = u.countBy(Object.keys(item));
+    //       //console.log(dupObj);
+    //       Object.keys(dupObj).forEach(function(el){
+    //         //console.log(el);
+    //         if(dupObj[el] > 1) dup.push(el);});
+    //       // console.log(dup);
+    //       //.filter(function(m){return m>1;});
+    //       //if(dup.length > 0){
+    //         elem.fieldDuplicates = elem.fieldDuplicates.concat(dup);
+    //       //}
+    //     }else{
+    //      resolve(elem);
+    //     }
+    //   });
   });
 }  
 
@@ -64,7 +69,7 @@ mongo(mongoose).then(function(response){
       if('collection' in d){
         promiseFactory(db, d.collection, d.type, d.disease).then(function(res){
           //console.log(index++);
-          console.log(res.fieldDuplicates);
+          //console.log(res.fieldDuplicates);
           output.push(res);
           //console.log(JSON.stringify(res, null, 4));
           //file.write(JSON.stringify(res, null, 4));
@@ -81,11 +86,41 @@ mongo(mongoose).then(function(response){
             return;
         }
         console.log('Finished!');
-        console.log("The Result of Checking Duplicated Fields in all Clinical Collections is: ");
-        console.log(output.filter(function(m){return m.fieldDuplicates.length > 0 ;}));
+        
+        output.map(function(m){
+          m.potentialDupFields = m.IDs.filter(function(n){return n.match(/[A-Za-z0-9_]+\.[0-9]{1}/g)!=null;});
+          return m;
+        }); //pull out all the .1 collection fields
 
+        output.filter(function(o){
+          var res = o.potentialDupFields.filter(function(str){ return o.IDs.indexOf(str.split(".")[0]) == -1;});
+          console.log(res);
+          return res.length !=0;
+        }); // check if all the core ids exist in the collection fields, otherwise return the .1 name without original core id field
+        var groupByType = u.groupBy(output, 'type');
+        //groupByType.patient.map(function(m){return m.potentialDupFields;}).reduce(function(a, b){return u.uniq(a.concat(b));});
+
+        duplicatedFieldsByType = Object.keys(groupByType).map(function(k){
+          var elem = {};
+          elem.type = k;
+          elem.affectedDisease = [];
+          elem.affectedCollections = [];
+          elem.typePotentialDup = groupByType[k].map(function(m){
+                                                  if(m.potentialDupFields.length != 0){
+                                                    elem.affectedDisease.push(m.disease);
+                                                    elem.affectedCollections.push(m.collection);
+                                                   } 
+                                                  return m.potentialDupFields;
+                                                }).reduce(function(a, b){
+                                                  return u.uniq(a.concat(b));
+                                                });
+          return elem;
+        });
+        jsonfile.writeFile("duplicatedFields.json", duplicatedFieldsByType, {spaces: 4}, function(err){ console.error(err);}); 
         console.timeEnd(); // 
     });
   });
+
+
 
 
