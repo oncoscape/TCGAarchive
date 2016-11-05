@@ -68,6 +68,22 @@ Array.prototype.arraysCompareV2 = function(ref) {
     return elem;
 };
 
+Array.prototype.includesArray = function(arr){
+    var elem = {};
+    var includes = [];
+    var notIncludes = [];
+    for(var i=0; i<this.length; i++){
+        if(arr.indexOf(this[i]) > -1){
+            includes.push(this[i]);
+        }else{
+            notIncludes.push(this[i]);
+        }
+    }
+    elem.includes = includes;
+    elem.notIncluded = notIncluded;
+    return elem;
+};
+
 Array.prototype.unique = function() {
     var arr = [];
     for(var i = 0; i < this.length; i++) {
