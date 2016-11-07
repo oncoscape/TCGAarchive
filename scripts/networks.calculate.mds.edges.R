@@ -108,11 +108,7 @@ save.pca<- function(oCollection, geneset=NA, scaleFactor=NA){
 	process$center="TRUE"; process$scaled="TRUE"
 	#process <- list(process)
 
-<<<<<<< HEAD
 	oCollection.pca.scaled = update.oCollection(oCollection, dataType="pcascores", processName=processName, process=process)
-=======
-	oCollection.pca.scaled = update.oCollection(oCollection, dataType="pcaScores", processName=processName, process=process)
->>>>>>> mongolite
 	process$scale = NA
 	oCollection.pca = update.oCollection(oCollection.pca.scaled, processName=outputName, process=process)
 
@@ -165,7 +161,7 @@ save.pca<- function(oCollection, geneset=NA, scaleFactor=NA){
 	   ## ----- Save Raw Scores ------
 	   scores.list <- lapply(rownames(scores), function(name){ scores[name,1:3]})
 	   names(scores.list) <- rownames(scores)
-	   result <- list(disease=oCollection$dataset,source = oCollection$source, type=oCollection$process$type, geneset=genesetName,scale=NA, pc1=propVar[1], pc2=propVar[2] ,pc3=propVar[3],data=scores.list)
+	   result <- list(disease=oCollection$dataset,source = oCollection$source, type=paste(oCollection$dataType, oCollection$process$type,sep="-"), geneset=genesetName,scale=NA, pc1=propVar[1], pc2=propVar[2] ,pc3=propVar[3],data=scores.list)
 
 	   insert.collection(oCollection.pca, list(result) )
 	   
@@ -173,12 +169,8 @@ save.pca<- function(oCollection, geneset=NA, scaleFactor=NA){
 	   loadings <- PCs$rotation
 	   loading.list <- lapply(rownames(loadings), function(name){ loadings[name,1:3]})
 	   names(loading.list) <- rownames(loadings)
-	   result <- list(disease=oCollection$dataset,source = oCollection$source, type=oCollection$process$type, geneset=genesetName,scale=NA, data=loading.list)
-<<<<<<< HEAD
+	   result <- list(disease=oCollection$dataset,source = oCollection$source, type=paste(oCollection$dataType, oCollection$process$type,sep="-"), geneset=genesetName,scale=NA, data=loading.list)
 	   oCollection.loadings = update.oCollection(oCollection.pca, dataType ="pcaloadings")
-=======
-	   oCollection.loadings = update.oCollection(oCollection.pca, dataType ="pcaLoadings")
->>>>>>> mongolite
 	   insert.collection(oCollection.loadings, list(result) )
 
      ## ----- Save Scaled Scores ------
@@ -187,7 +179,7 @@ save.pca<- function(oCollection, geneset=NA, scaleFactor=NA){
 	     pc3 <- scores[,1:3]; colnames(pc3) <- c("x", "y", "z")
 	     scores.list <- scaleSamplesToChromosomes(pc3, chrDim)
 	     #names(scores.list) <- rownames(scores)
-	     result <- list(disease=oCollection$dataset,source=oCollection$source, type=process$input, geneset=genesetName,scale=scaleFactor, pc1=propVar[1], pc2=propVar[2] ,pc3=propVar[3],data=scores.list)
+	     result <- list(disease=oCollection$dataset,source=oCollection$source, type=paste(oCollection$dataType, oCollection$process$type,sep="-"), geneset=genesetName,scale=scaleFactor, pc1=propVar[1], pc2=propVar[2] ,pc3=propVar[3],data=scores.list)
 	     insert.collection(oCollection.pca.scaled, list(result) )
 	     
      }
@@ -490,8 +482,8 @@ run.batch.network_edges <- function(lCollection){
 mongo <- connect.to.mongo()
 genesets <-     mongo("hg19_genesets_hgnc_import", db=db, url=host)$find("{}")
 
-#num_cores <- detectCores() - 1
-num_cores <- 1
+num_cores <- detectCores() - 1
+#num_cores <- 1
 cluster_cores <- makeCluster(num_cores, type="FORK")
 
 commands <- c("cluster", "edges")

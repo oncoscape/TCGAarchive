@@ -9,7 +9,7 @@
 		"diagnosis_year": ["initial_pathologic_dx_year"]
 	},
 	"os.class.gender": {
-		"gender": ["gender"]
+		"sex": ["gender"]
 	},
 	"os.class.ethnicity": {
 		"ethnicity": ["ethnicity"]

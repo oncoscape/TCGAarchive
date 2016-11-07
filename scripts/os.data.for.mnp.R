@@ -109,7 +109,7 @@ os.save.pca <- function(scaleFactor=NA){
 ##----------------------------
 commands <- c("patient", "pca", "chromosome")
 #commands <- c("pca", "chromosome")
-commands <- "patient"
+commands <- c("patient", "pca")
 
 connect.to.mongo()
 scaleFactor = 100000
@@ -121,6 +121,8 @@ if("patient" %in% commands){
   os.save.ptLayouts(mds_colls, scaleFactor=scaleFactor) 
   
   pca_colls <- mongo.manifest$find( query=paste('{"dataType":"pcaScores", "process.scale":',as.integer(scaleFactor),'}', sep=""))
+  os.save.pca.ptLayouts(pca_colls, scaleFactor=scaleFactor) 
+  pca_colls <- mongo.manifest$find( query=paste('{"dataType":"pcascores", "process.scale":',as.integer(scaleFactor),'}', sep=""))
   os.save.pca.ptLayouts(pca_colls, scaleFactor=scaleFactor) 
   
 }

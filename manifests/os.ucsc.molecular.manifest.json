@@ -31,8 +31,155 @@
 	"file": "mtx.flow.demo.tsv"
 	},
 
-
-
+	{
+	"dataset": "acc",
+	"source": "ucsc",
+	"type": "mut01",		
+	"process": "broadcurated",
+	"directory": "../data/UCSC/ACC/",
+	"file": "mutation_curated_broad_gene"
+	},{
+	"dataset": "cesc",
+	"source": "ucsc",
+	"type": "mut01",		
+	"process": "ucsc",
+	"directory": "../data/UCSC/CESC/",
+	"file": "mutation_ucsc_maf_gene"
+	},{
+	"dataset": "chol",
+	"source": "ucsc",
+	"type": "mut01",		
+	"process": "broad",
+	"directory": "../data/UCSC/CHOL/",
+	"file": "mutation_broad_gene"
+	},{
+	"dataset": "dlbc",
+	"source": "ucsc",
+	"type": "mut01",		
+	"process": "bcm",
+	"directory": "../data/UCSC/DLBC/",
+	"file": "mutation_bcm_gene"
+	},{
+	"dataset": "esca",
+	"source": "ucsc",
+	"type": "mut01",		
+	"process": "broad",
+	"directory": "../data/UCSC/ESCA/",
+	"file": "mutation_broad_gene"
+	},{
+	"dataset": "kich",
+	"source": "ucsc",
+	"type": "mut01",		
+	"process": "broad",
+	"directory": "../data/UCSC/KICH/",
+	"file": "mutation_broad_gene"
+	},{
+	"dataset": "kirc",
+	"source": "ucsc",
+	"type": "mut01",		
+	"process": "pancanAWS",
+	"directory": "../data/UCSC/KIRC/",
+	"file": "mutation"
+	},{
+	"dataset": "kirp",
+	"source": "ucsc",
+	"type": "mut01",		
+	"process": "broadcurated",
+	"directory": "../data/UCSC/KIRP/",
+	"file": "mutation_curated_broad_gene"
+	},{
+	"dataset": "lihc",
+	"source": "ucsc",
+	"type": "mut01",		
+	"process": "bcm",
+	"directory": "../data/UCSC/LIHC/",
+	"file": "mutation_bcm_gene"
+	},{
+	"dataset": "meso",
+	"source": "ucsc",
+	"type": "mut01",		
+	"process": "broad",
+	"directory": "../data/UCSC/MESO/",
+	"file": "mutation_broad_gene"
+	},{
+	"dataset": "ov",
+	"source": "ucsc",
+	"type": "mut01",		
+	"process": "pancanAWS",
+	"directory": "../data/UCSC/OV/",
+	"file": "mutation"
+	},{
+	"dataset": "pcpg",
+	"source": "ucsc",
+	"type": "mut01",		
+	"process": "broad",
+	"directory": "../data/UCSC/PCPG/",
+	"file": "mutation_broad_gene"
+	},{
+	"dataset": "sarc",
+	"source": "ucsc",
+	"type": "mut01",		
+	"process": "broad",
+	"directory": "../data/UCSC/SARC/",
+	"file": "mutation_broad_gene"
+	},{
+	"dataset": "skcm",
+	"source": "ucsc",
+	"type": "mut01",		
+	"process": "broad",
+	"directory": "../data/UCSC/SKCM/",
+	"file": "mutation_broad_gene"
+	},{
+	"dataset": "stad",
+	"source": "ucsc",
+	"type": "mut01",		
+	"process": "broadcurated",
+	"directory": "../data/UCSC/STAD/",
+	"file": "mutation_curated_broad_gene"
+	},{
+	"dataset": "tgct",
+	"source": "ucsc",
+	"type": "mut01",		
+	"process": "broad",
+	"directory": "../data/UCSC/TGCT/",
+	"file": "mutation_broad_gene"
+	},{
+	"dataset": "thca",
+	"source": "ucsc",
+	"type": "mut01",		
+	"process": "broad",
+	"directory": "../data/UCSC/THCA/",
+	"file": "mutation_broad_gene"
+	},{
+	"dataset": "thym",
+	"source": "ucsc",
+	"type": "mut01",		
+	"process": "broad",
+	"directory": "../data/UCSC/THYM/",
+	"file": "mutation_broad_gene"
+	},{
+	"dataset": "ucec",
+	"source": "ucsc",
+	"type": "mut01",		
+	"process": "pancanAWS",
+	"directory": "../data/UCSC/UCEC/",
+	"file": "mutation"
+	},{
+	"dataset": "ucs",
+	"source": "ucsc",
+	"type": "mut01",		
+	"process": "broad",
+	"directory": "../data/UCSC/UCS/",
+	"file": "mutation_broad_gene"
+	},{
+	"dataset": "uvm",
+	"source": "ucsc",
+	"type": "mut01",		
+	"process": "broadcurated",
+	"directory": "../data/UCSC/UVM/",
+	"file": "mutation_curated_broad_gene"
+	},
+	
 	{
 	"dataset": "acc",
 	"source": "ucsc",

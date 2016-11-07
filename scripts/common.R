@@ -98,6 +98,10 @@ lookupList = list(
            data.load = "os.data.load.molecular",
            insert.lookup = "insert.lookup.sourceTypeCollection",
            insert.document = "insert.document.facs" ),
+  biomarker=list(type="molecular",
+            data.load = "os.create.biomarker.tree",
+            insert.lookup = "insert.lookup.sourceTypeCollection",
+            insert.document = "insert.document.list" ),
   mds=list(type="calculated",
            data.load = "os.data.load.XXX",
            insert.lookup = "insert.lookup.sourceTypeCollection",
@@ -268,6 +272,26 @@ collection.create.name <- function( oCollection){
   return(collection.uniqueName)
 }
 #---------------------------------------------------------
+merge.collections <- function(oCollection1, oCollection2){
+  
+  oCollection  <- update.oCollection(oCollection1, parent=c(oCollection1$`_id`, oCollection2$`_id`), processName="merged")
+  con1 <- mongo(oCollection1$collection, db=db, url=host)
+  con2 <- mongo(oCollection2$collection, db=db, url=host)
+  con  <- mongo(oCollection$collection,  db=db, url=host)
+  
+  if(con1$count() > con2$count()){
+    con1$aggregate(paste('[{"$match": {} }, { "$out": "',oCollection$collection,'" }]' , sep=""))
+    con$insert(con2$find())
+  } else {
+    con2$aggregate(paste('[{"$match": {} }, { "$out": "',oCollection$collection,'" }]' , sep=""))
+    con$insert(con1$find())
+  }
+  
+  ## add document to manifest collection
+  mongo.manifest$insert( toJSON(oCollection, auto_unbox=T))
+ 
+}
+#---------------------------------------------------------
 insert.prep <- function(oCollection){
   #dataset, dataType,source, processName, parent, process
   
@@ -288,10 +312,20 @@ insert.lookup.sourceTypeCollection <- function(oCollection){
 } 
 #---------------------------------------------------------
 insert.lookup.clinical <- function(oCollection){
-  add.collection <- list()
-  add.collection[paste("clinical",oCollection$dataType, sep=".")] <- oCollection$collection
-  set.collection = list("$set"=add.collection)
-
+  
+  clinical.field = mongo.lookup$find(query=paste('{"disease":"',oCollection$dataset, '"}', sep=""), fields= paste('{"clinical.', oCollection$dataType, '":1}', sep=""))
+  if(nchar(clinical.field[,2]) > 0 & oCollection$processName != "merged"){
+    existingCollection <- mongo.manifest$find(query=paste('{"collection":"',clinical.field[,2],'"}',sep=""), fields='{}')
+    newCollection      <- mongo.manifest$find(query=paste('{"collection":"',oCollection$collection,'"}',sep=""), fields='{}')
+    
+    oCollection <- merge.collections(newCollection, existingCollection)
+    
+  }
+  
+    add.collection <- list()
+    add.collection[paste("clinical",oCollection$dataType, sep=".")] <- oCollection$collection
+    set.collection = list("$set"=add.collection)
+ 
   return(set.collection)
 }
 #---------------------------------------------------------
@@ -488,7 +522,7 @@ remove.collection <- function(oCollection){
   if(con$count()>0)
     con$drop()
   
-  mongo.manifest$remove(paste('{"collection":"',oCollection$collection, '"}'))
+  mongo.manifest$remove(toJSON(list(collection=oCollection$collection), auto_unbox = T), multiple=TRUE)
   remove.lookup(oCollection)
   
   print(paste(oCollection$collection, "removed."))
@@ -511,9 +545,9 @@ remove.lookup <- function(oCollection){
     }
   }else if(lookupType %in% c("edges")){
     
-    matched.record = which(oCollection$collection == collections[[1]]$edges | oCollection$collection == collections[[1]]$patientWeights | oCollection$collection == collections[[1]]$genesWeights)
+    matched.record = which(oCollection$collection == collections$edges | oCollection$collection == collections$patientWeights | oCollection$collection == collections$genesWeights)
     if(length(matched.record>0))
-      collections <- collections[[1]][-matched.record,]
+      collections <- collections[-matched.record,]
   #  lookup.doc[[lookupType]] = collections
   }
       ### TO DO:

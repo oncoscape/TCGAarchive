@@ -13,7 +13,7 @@
 		"process": "v4p0",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "followUp",
+		"type": "followup",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/esca/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_follow_up_v4.0_esca.txt"
@@ -22,7 +22,7 @@
 		"process": "v4p0",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "newTumor-followUp",
+		"type": "newtumor-followup",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/esca/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file":"nationwidechildrens.org_clinical_follow_up_v4.0_nte_esca.txt"
@@ -31,7 +31,7 @@
 		"process": "clinical",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "newTumor",
+		"type": "newtumor",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/esca/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_nte_esca.txt"
@@ -40,7 +40,7 @@
 		"process": "v4p0",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "otherMalignancy",
+		"type": "othermalignancy",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/esca/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_omf_v4.0_esca.txt"
@@ -78,7 +78,7 @@
 		"process": "v4p4",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "followUp",
+		"type": "followup",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/kich/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_follow_up_v4.4_kich.txt"
@@ -87,7 +87,7 @@
 		"process": "v4p4",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "newTumor-followUp",
+		"type": "newtumor-followup",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/kich/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file":"nationwidechildrens.org_clinical_follow_up_v4.4_nte_kich.txt"
@@ -96,7 +96,7 @@
 		"process": "clinical",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "newTumor",
+		"type": "newtumor",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/kich/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_nte_kich.txt"
@@ -105,7 +105,7 @@
 		"process": "v4p0",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "otherMalignancy",
+		"type": "othermalignancy",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/kich/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_omf_v4.0_kich.txt"
@@ -142,7 +142,7 @@
 		"process": "v1p0",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "followUp",
+		"type": "followup",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/kirc/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_follow_up_v1.0_kirc.txt"
@@ -151,7 +151,7 @@
 		"process": "clinical",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "newTumor",
+		"type": "newtumor",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/kirc/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_nte_kirc.txt"
@@ -160,7 +160,7 @@
 		"process": "v4p0",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "otherMalignancy",
+		"type": "othermalignancy",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/kirc/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_omf_v4.0_kirc.txt"
@@ -197,7 +197,7 @@
 		"process": "v1p0",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "followUp",
+		"type": "followup",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/kirp/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_follow_up_v1.0_kirp.txt"
@@ -206,7 +206,7 @@
 		"process": "clinical",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "newTumor",
+		"type": "newtumor",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/kirp/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_nte_kirp.txt"
@@ -215,7 +215,7 @@
 		"process": "v4p0",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "otherMalignancy",
+		"type": "othermalignancy",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/kirp/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_omf_v4.0_kirp.txt"
@@ -252,7 +252,7 @@
 		"process": "v4p0",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "followUp",
+		"type": "followup",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/lihc/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_follow_up_v4.0_lihc.txt"
@@ -261,7 +261,7 @@
 		"process": "v4p0",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "newTumor-followUp",
+		"type": "newtumor-followup",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/lihc/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file":"nationwidechildrens.org_clinical_follow_up_v4.0_nte_lihc.txt"
@@ -270,7 +270,7 @@
 		"process": "clinical",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "newTumor",
+		"type": "newtumor",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/lihc/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_nte_lihc.txt"
@@ -279,7 +279,7 @@
 		"process": "v4p0",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "otherMalignancy",
+		"type": "othermalignancy",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/lihc/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_omf_v4.0_lihc.txt"
@@ -316,7 +316,7 @@
 		"process": "v2p0",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "followUp",
+		"type": "followup",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/skcm/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_follow_up_v2.0_skcm.txt"
@@ -325,7 +325,7 @@
 		"process": "clinical",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "newTumor",
+		"type": "newtumor",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/skcm/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_nte_skcm.txt"
@@ -334,7 +334,7 @@
 		"process": "v4p0",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "otherMalignancy",
+		"type": "othermalignancy",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/skcm/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_omf_v4.0_skcm.txt"
@@ -371,7 +371,7 @@
 		"process": "v1p0",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "followUp",
+		"type": "followup",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/stad/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_follow_up_v1.0_stad.txt"
@@ -380,7 +380,7 @@
 		"process": "clinical",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "newTumor",
+		"type": "newtumor",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/stad/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_nte_stad.txt"
@@ -389,7 +389,7 @@
 		"process": "v4p0",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "otherMalignancy",
+		"type": "othermalignancy",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/stad/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_omf_v4.0_stad.txt"
@@ -426,7 +426,7 @@
 		"process": "v2p0",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "followUp",
+		"type": "followup",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/thca/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_follow_up_v2.0_thca.txt"
@@ -435,7 +435,7 @@
 		"process": "v4p0",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "newTumor-followUp",
+		"type": "newtumor-followup",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/thca/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file":"nationwidechildrens.org_clinical_follow_up_v4.0_nte_thca.txt"
@@ -444,7 +444,7 @@
 		"process": "v4p0",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "followUp",
+		"type": "followup",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/thca/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_follow_up_v4.0_thca.txt"
@@ -453,7 +453,7 @@
 		"process": "clinical",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "newTumor",
+		"type": "newtumor",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/thca/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_nte_thca.txt"
@@ -462,7 +462,7 @@
 		"process": "v4p0",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "otherMalignancy",
+		"type": "othermalignancy",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/thca/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_omf_v4.0_thca.txt"
@@ -499,7 +499,7 @@
 		"process": "v1p7",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "followUp",
+		"type": "followup",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/ucec/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_follow_up_v1.7_ucec.txt"
@@ -509,7 +509,7 @@
 		"process": "v2p0",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "followUp",
+		"type": "followup",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/ucec/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_follow_up_v2.0_ucec.txt"
@@ -518,7 +518,7 @@
 		"process": "v4p0",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "newTumor-followUp",
+		"type": "newtumor-followup",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/ucec/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file":"nationwidechildrens.org_clinical_follow_up_v4.0_nte_ucec.txt"
@@ -527,7 +527,7 @@
 		"process": "clinical",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "newTumor",
+		"type": "newtumor",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/ucec/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_nte_ucec.txt"
@@ -536,7 +536,7 @@
 		"process": "v4p0",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "otherMalignancy",
+		"type": "othermalignancy",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/ucec/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_omf_v4.0_ucec.txt"
@@ -573,7 +573,7 @@
 		"process": "v4p0",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "followUp",
+		"type": "followup",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/acc/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_follow_up_v4.0_acc.txt"
@@ -582,7 +582,7 @@
 		"process": "v4p0",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "newTumor-followUp",
+		"type": "newtumor-followup",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/acc/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file":"nationwidechildrens.org_clinical_follow_up_v4.0_nte_acc.txt"
@@ -591,7 +591,7 @@
 		"process": "clinical",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "newTumor",
+		"type": "newtumor",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/acc/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_nte_acc.txt"
@@ -600,7 +600,7 @@
 		"process": "v4p0",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "otherMalignancy",
+		"type": "othermalignancy",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/acc/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_omf_v4.0_acc.txt"
@@ -637,7 +637,7 @@
 		"process": "v2p0",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "followUp",
+		"type": "followup",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/cesc/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_follow_up_v2.0_cesc.txt"
@@ -646,7 +646,7 @@
 		"process": "v4p0",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "followUp",
+		"type": "followup",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/cesc/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_follow_up_v4.0_cesc.txt"
@@ -655,7 +655,7 @@
 		"process": "v4p0",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "newTumor-followUp",
+		"type": "newtumor-followup",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/cesc/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file":"nationwidechildrens.org_clinical_follow_up_v4.0_nte_cesc.txt"
@@ -664,7 +664,7 @@
 		"process": "clinical",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "newTumor",
+		"type": "newtumor",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/cesc/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_nte_cesc.txt"
@@ -673,7 +673,7 @@
 		"process": "v4p0",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "otherMalignancy",
+		"type": "othermalignancy",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/cesc/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_omf_v4.0_cesc.txt"
@@ -710,7 +710,7 @@
 		"process": "v4p0",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "followUp",
+		"type": "followup",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/chol/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_follow_up_v4.0_chol.txt"
@@ -719,7 +719,7 @@
 		"process": "v4p0",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "newTumor-followUp",
+		"type": "newtumor-followup",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/chol/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file":"nationwidechildrens.org_clinical_follow_up_v4.0_nte_chol.txt"
@@ -728,7 +728,7 @@
 		"process": "clinical",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "newTumor",
+		"type": "newtumor",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/chol/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_nte_chol.txt"
@@ -737,7 +737,7 @@
 		"process": "v4p0",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "otherMalignancy",
+		"type": "othermalignancy",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/chol/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_omf_v4.0_chol.txt"
@@ -774,7 +774,7 @@
 		"process": "v4p4",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "followUp",
+		"type": "followup",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/dlbc/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_follow_up_v4.4_dlbc.txt"
@@ -783,7 +783,7 @@
 		"process": "v4p4",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "newTumor-followUp",
+		"type": "newtumor-followup",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/dlbc/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file":"nationwidechildrens.org_clinical_follow_up_v4.4_nte_dlbc.txt"
@@ -792,7 +792,7 @@
 		"process": "clinical",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "newTumor",
+		"type": "newtumor",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/dlbc/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_nte_dlbc.txt"
@@ -829,7 +829,7 @@
 		"process": "v1p0",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "followUp",
+		"type": "followup",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/read/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_follow_up_v1.0_read.txt"
@@ -838,7 +838,7 @@
 		"process": "v1p0",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "newTumor-followUp",
+		"type": "newtumor-followup",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/read/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file":"nationwidechildrens.org_clinical_follow_up_v1.0_nte_read.txt"
@@ -847,7 +847,7 @@
 		"process": "clinical",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "newTumor",
+		"type": "newtumor",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/read/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_nte_read.txt"
@@ -856,7 +856,7 @@
 		"process": "v4p0",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "otherMalignancy",
+		"type": "othermalignancy",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/read/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_omf_v4.0_read.txt"
@@ -893,7 +893,7 @@
 		"process": "v4p0",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "followUp",
+		"type": "followup",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/ucs/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_follow_up_v4.0_ucs.txt"
@@ -902,7 +902,7 @@
 		"process": "v4p0",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "newTumor-followUp",
+		"type": "newtumor-followup",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/ucs/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file":"nationwidechildrens.org_clinical_follow_up_v4.0_nte_ucs.txt"
@@ -911,7 +911,7 @@
 		"process": "clinical",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "newTumor",
+		"type": "newtumor",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/ucs/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_nte_ucs.txt"
@@ -920,7 +920,7 @@
 		"process": "v4p0",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "otherMalignancy",
+		"type": "othermalignancy",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/ucs/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_omf_v4.0_ucs.txt"
@@ -957,7 +957,7 @@
 		"process": "v4p0",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "followUp",
+		"type": "followup",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/uvm/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_follow_up_v4.0_uvm.txt"
@@ -966,7 +966,7 @@
 		"process": "v4p0",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "newTumor-followUp",
+		"type": "newtumor-followup",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/uvm/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file":"nationwidechildrens.org_clinical_follow_up_v4.0_nte_uvm.txt"
@@ -975,7 +975,7 @@
 		"process": "clinical",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "newTumor",
+		"type": "newtumor",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/uvm/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_nte_uvm.txt"
@@ -984,7 +984,7 @@
 		"process": "v4p0",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "otherMalignancy",
+		"type": "othermalignancy",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/uvm/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_omf_v4.0_uvm.txt"
@@ -1021,7 +1021,7 @@
 		"process": "v4p0",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "followUp",
+		"type": "followup",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/thym/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_follow_up_v4.0_thym.txt"
@@ -1030,7 +1030,7 @@
 		"process": "v4p0",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "newTumor-followUp",
+		"type": "newtumor-followup",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/thym/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file":"nationwidechildrens.org_clinical_follow_up_v4.0_nte_thym.txt"
@@ -1039,7 +1039,7 @@
 		"process": "clinical",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "newTumor",
+		"type": "newtumor",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/thym/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_nte_thym.txt"
@@ -1048,7 +1048,7 @@
 		"process": "v4p0",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "otherMalignancy",
+		"type": "othermalignancy",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/thym/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_omf_v4.0_thym.txt"
@@ -1085,7 +1085,7 @@
 		"process": "v4p0",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "followUp",
+		"type": "followup",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/tgct/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_follow_up_v4.0_tgct.txt"
@@ -1094,7 +1094,7 @@
 		"process": "v4p0",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "newTumor-followUp",
+		"type": "newtumor-followup",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/tgct/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file":"nationwidechildrens.org_clinical_follow_up_v4.0_nte_tgct.txt"
@@ -1103,7 +1103,7 @@
 		"process": "clinical",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "newTumor",
+		"type": "newtumor",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/tgct/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_nte_tgct.txt"
@@ -1112,7 +1112,7 @@
 		"process": "v4p0",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "otherMalignancy",
+		"type": "othermalignancy",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/tgct/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_omf_v4.0_tgct.txt"
@@ -1149,7 +1149,7 @@
 		"process": "v4p0",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "followUp",
+		"type": "followup",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/pcpg/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_follow_up_v4.0_pcpg.txt"
@@ -1158,7 +1158,7 @@
 		"process": "v4p0",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "newTumor-followUp",
+		"type": "newtumor-followup",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/pcpg/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file":"nationwidechildrens.org_clinical_follow_up_v4.0_nte_pcpg.txt"
@@ -1167,7 +1167,7 @@
 		"process": "clinical",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "newTumor",
+		"type": "newtumor",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/pcpg/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_nte_pcpg.txt"
@@ -1176,7 +1176,7 @@
 		"process": "v4p0",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "otherMalignancy",
+		"type": "othermalignancy",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/pcpg/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_omf_v4.0_pcpg.txt"
@@ -1213,7 +1213,7 @@
 		"process": "v1p0",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "followUp",
+		"type": "followup",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/ov/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_follow_up_v1.0_ov.txt"
@@ -1222,7 +1222,7 @@
 		"process": "v1p0",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "newTumor-followUp",
+		"type": "newtumor-followup",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/ov/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file":"nationwidechildrens.org_clinical_follow_up_v1.0_nte_ov.txt"
@@ -1231,7 +1231,7 @@
 		"process": "clinical",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "newTumor",
+		"type": "newtumor",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/ov/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_nte_ov.txt"
@@ -1240,7 +1240,7 @@
 		"process": "v4p0",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "otherMalignancy",
+		"type": "othermalignancy",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/ov/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_omf_v4.0_ov.txt"
@@ -1277,7 +1277,7 @@
 		"process": "v4p0",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "followUp",
+		"type": "followup",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/meso/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_follow_up_v4.0_meso.txt"
@@ -1286,7 +1286,7 @@
 		"process": "v4p0",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "newTumor-followUp",
+		"type": "newtumor-followup",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/meso/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file":"nationwidechildrens.org_clinical_follow_up_v4.0_nte_meso.txt"
@@ -1295,7 +1295,7 @@
 		"process": "clinical",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "newTumor",
+		"type": "newtumor",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/meso/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_nte_meso.txt"
@@ -1304,7 +1304,7 @@
 		"process": "v4p0",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "otherMalignancy",
+		"type": "othermalignancy",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/meso/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_omf_v4.0_meso.txt"
@@ -1425,7 +1425,7 @@
 		"process": "v1p0",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "followUp",
+		"type": "followup",
 		"directory": "../data/clinical/",
 		"file": "clinical_follow_up_v1.0_brain.txt"
 	},
@@ -1443,7 +1443,7 @@
 		"process": "clinical",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "newTumor",
+		"type": "newtumor",
 		"directory": "../data/clinical/",
 		"file": "clinical_nte_brain.txt"
 	},
@@ -1452,7 +1452,7 @@
 		"process": "v4p0",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "otherMalignancy",
+		"type": "othermalignancy",
 		"directory": "../data/clinical/",
 		"file": "clinical_omf_brain.txt"
 	},
@@ -1496,7 +1496,7 @@
 		"process": "v1p0",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "followUp",
+		"type": "followup",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/coad/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_follow_up_v1.0_coad.txt"
@@ -1505,7 +1505,7 @@
 		"process": "clinical",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "newTumor",
+		"type": "newtumor",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/coad/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_nte_coad.txt"
@@ -1514,7 +1514,7 @@
 		"process": "v1p0",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "newTumor-followUp",
+		"type": "newtumor-followup",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/coad/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file":"nationwidechildrens.org_clinical_follow_up_v1.0_nte_coad.txt"
@@ -1523,7 +1523,7 @@
 		"process": "v4p0",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "otherMalignancy",
+		"type": "othermalignancy",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/coad/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_omf_v4.0_coad.txt"
@@ -1559,7 +1559,7 @@
 		"process": "v1p0",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "followUp",
+		"type": "followup",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/gbm/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_follow_up_v1.0_gbm.txt"
@@ -1568,7 +1568,7 @@
 		"process": "clinical",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "newTumor",
+		"type": "newtumor",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/gbm/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_nte_gbm.txt"
@@ -1577,7 +1577,7 @@
 		"process": "v1p0",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "newTumor-followUp",
+		"type": "newtumor-followup",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/gbm/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_follow_up_v1.0_nte_gbm.txt"
@@ -1586,7 +1586,7 @@
 		"process": "v4p0",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "otherMalignancy",
+		"type": "othermalignancy",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/gbm/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_omf_v4.0_gbm.txt"
@@ -1621,7 +1621,7 @@
 		"process": "v1p0",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "followUp",
+		"type": "followup",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/hnsc/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_follow_up_v1.0_hnsc.txt"
@@ -1630,7 +1630,7 @@
 		"process": "v4p8",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "followUp",
+		"type": "followup",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/hnsc/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_follow_up_v4.8_hnsc.txt" 
@@ -1639,7 +1639,7 @@
 		"process": "clinical",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "newTumor",
+		"type": "newtumor",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/hnsc/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_nte_hnsc.txt"
@@ -1648,7 +1648,7 @@
 		"process": "v4p8",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "newTumor-followUp",
+		"type": "newtumor-followup",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/hnsc/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_follow_up_v4.8_nte_hnsc.txt"
@@ -1657,7 +1657,7 @@
 		"process": "v4p0",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "otherMalignancy",
+		"type": "othermalignancy",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/hnsc/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_omf_v4.0_hnsc.txt"
@@ -1693,7 +1693,7 @@
 		"process": "v1p0",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "followUp",
+		"type": "followup",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/lgg/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_follow_up_v1.0_lgg.txt"
@@ -1702,7 +1702,7 @@
 		"process": "clinical",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "newTumor",
+		"type": "newtumor",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/lgg/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_nte_lgg.txt"
@@ -1711,7 +1711,7 @@
 		"process": "v4p0",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "otherMalignancy",
+		"type": "othermalignancy",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/lgg/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_omf_v4.0_lgg.txt"
@@ -1747,7 +1747,7 @@
 		"process": "v1p0",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "followUp",
+		"type": "followup",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/luad/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_follow_up_v1.0_luad.txt"
@@ -1756,7 +1756,7 @@
 		"process": "clinical",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "newTumor",
+		"type": "newtumor",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/luad/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_nte_luad.txt"
@@ -1765,7 +1765,7 @@
 		"process": "v4p0",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "otherMalignancy",
+		"type": "othermalignancy",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/luad/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_omf_v4.0_luad.txt"
@@ -1801,7 +1801,7 @@
 		"process": "v1p0",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "followUp",
+		"type": "followup",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/lusc/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_follow_up_v1.0_lusc.txt"
@@ -1810,7 +1810,7 @@
 		"process": "clinical",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "newTumor",
+		"type": "newtumor",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/lusc/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_nte_lusc.txt"
@@ -1819,7 +1819,7 @@
 		"process": "v4p0",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "otherMalignancy",
+		"type": "othermalignancy",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/lusc/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_omf_v4.0_lusc.txt"
@@ -1855,7 +1855,7 @@
 		"process": "v1p0",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "followUp",
+		"type": "followup",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/prad/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_follow_up_v1.0_prad.txt"
@@ -1864,7 +1864,7 @@
 		"process": "clinical",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "newTumor",
+		"type": "newtumor",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/prad/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_nte_prad.txt"
@@ -1873,7 +1873,7 @@
 		"process": "v4p0",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "otherMalignancy",
+		"type": "othermalignancy",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/prad/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_omf_v4.0_prad.txt"
@@ -1909,7 +1909,7 @@
 		"process": "v1p0",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "followUp",
+		"type": "followup",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/read/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_follow_up_v1.0_read.txt"
@@ -1918,7 +1918,7 @@
 		"process": "clinical",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "newTumor",
+		"type": "newtumor",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/read/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_nte_read.txt"
@@ -1927,7 +1927,7 @@
 		"process": "v1p0",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "newTumor-followUp",
+		"type": "newtumor-followup",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/read/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_follow_up_v1.0_nte_read.txt"
@@ -1936,7 +1936,7 @@
 		"process": "v4p0",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "otherMalignancy",
+		"type": "othermalignancy",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/read/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_omf_v4.0_read.txt"
@@ -1972,7 +1972,7 @@
 		"process": "v4p0",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "followUp",
+		"type": "followup",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/sarc/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_follow_up_v4.0_sarc.txt"
@@ -1981,7 +1981,7 @@
 		"process": "clinical",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "newTumor",
+		"type": "newtumor",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/sarc/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_nte_sarc.txt"
@@ -1990,7 +1990,7 @@
 		"process": "v4p0",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "newTumor-followUp",
+		"type": "newtumor-followup",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/sarc/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_follow_up_v4.0_nte_sarc.txt"
@@ -1999,7 +1999,7 @@
 		"process": "v4p0",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "otherMalignancy",
+		"type": "othermalignancy",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/sarc/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_omf_v4.0_sarc.txt"
@@ -2044,7 +2044,7 @@
 		"process": "v2p0",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "followUp",
+		"type": "followup",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/blca/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_follow_up_v2.0_blca.txt"
@@ -2053,7 +2053,7 @@
 		"process": "v4p0",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "followUp",
+		"type": "followup",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/blca/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_follow_up_v4.0_blca.txt" 
@@ -2062,7 +2062,7 @@
 		"process": "clinical",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "newTumor",
+		"type": "newtumor",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/blca/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_nte_blca.txt"
@@ -2071,7 +2071,7 @@
 		"process": "v4p0",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "newTumor-followUp",
+		"type": "newtumor-followup",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/blca/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_follow_up_v4.0_nte_blca.txt"
@@ -2080,7 +2080,7 @@
 		"process": "v4p0",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "otherMalignancy",
+		"type": "othermalignancy",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/blca/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_omf_v4.0_blca.txt"
@@ -2116,7 +2116,7 @@
 		"process": "v4p4",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "followUp",
+		"type": "followup",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/paad/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_follow_up_v4.4_paad.txt"
@@ -2125,7 +2125,7 @@
 		"process": "clinical",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "newTumor",
+		"type": "newtumor",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/paad/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_nte_paad.txt"
@@ -2134,7 +2134,7 @@
 		"process": "v4p4",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "newTumor-followUp",
+		"type": "newtumor-followup",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/paad/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_follow_up_v4.4_nte_paad.txt"
@@ -2143,7 +2143,7 @@
 		"process": "v4p0",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "otherMalignancy",
+		"type": "othermalignancy",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/paad/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_omf_v4.0_paad.txt"
@@ -2183,7 +2183,7 @@
 		"process": "v1p5",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "followUp",
+		"type": "followup",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/brca/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_follow_up_v1.5_brca.txt"
@@ -2193,7 +2193,7 @@
 		"process": "v2p1",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "followUp",
+		"type": "followup",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/brca/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_follow_up_v2.1_brca.txt"
@@ -2203,7 +2203,7 @@
 		"process": "v4p0",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "followUp",
+		"type": "followup",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/brca/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_follow_up_v4.0_brca.txt"
@@ -2213,7 +2213,7 @@
 		"process": "clinical",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "newTumor",
+		"type": "newtumor",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/brca/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_nte_brca.txt"
@@ -2223,7 +2223,7 @@
 		"process": "v4p0",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "newTumor-followUp",
+		"type": "newtumor-followup",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/brca/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_follow_up_v4.0_nte_brca.txt"
@@ -2233,7 +2233,7 @@
 		"process": "v4p0",
 		"source": "tcga",
 		"date": "2015-02-24",
-		"type": "otherMalignancy",
+		"type": "othermalignancy",
 		"url": "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/brca/bcr/biotab/clin/",
 		"directory": "../data/clinical/",
 		"file": "nationwidechildrens.org_clinical_omf_v4.0_brca.txt"

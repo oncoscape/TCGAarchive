@@ -260,6 +260,8 @@ os.data.load.clinical <- function(oCollection, inputFile, checkEnumerations=FALS
     }
   }
   
+  stopifnot(length(columns) == length(unique(columns)))# {print(paste("Duplicated column names in:", oCollection))}
+  
   # Table :: Read Table From URL
   mappedTable<-read.delim(inputFile,
                           header = FALSE, 
@@ -315,9 +317,8 @@ os.data.batch <- function(manifest, ...){
   datasets <- fromJSON(manifest)
   resultObj <- list()
   
-  # Loop for each file to load
-  for (i in 1:nrow(datasets)){
-
+  #for (i in 1:nrow(datasets)){ # Loop for each file to load
+  process_dataType <- function(i){
     sourceObj <- datasets[i,]
     stopifnot(all(c("dataset","source", "type","process") %in% names(sourceObj)))
     cat(sourceObj$dataset,sourceObj$source, sourceObj$type,"\n")
@@ -331,20 +332,34 @@ os.data.batch <- function(manifest, ...){
     
     dataType <- sourceObj$type
     process <- list(type=sourceObj$process, scale=NA)
+    if("tree" %in% names(sourceObj)) process$tree = sourceObj$tree
+    if("barplot" %in% names(sourceObj)) process$barplot = sourceObj$barplot
+    
     oCollection <- create.oCollection(dataset=sourceObj$dataset, dataType=sourceObj$type,
                                       source=sourceObj$source,processName=sourceObj$process,
                                       parent = sourceObj$parent, process = process)
     
     prev.run <- collection.exists(oCollection$collection)
-    if(prev.run) next;
+    if(prev.run) return(FALSE);
     
     if(dataType %in% names(lookupList))
       do.call(lookupList[[dataType]][["data.load"]], list(oCollection, inputFile))
     else
          print(paste("WARNING: data type not recognized for loading:", dataType))
 
-  }  # dataset
+    return(TRUE);
+  }  # process_dataType
   
+  import_commands <- c("os.data.load.molecular", "os.data.load.clinical")
+  
+  import_worker <- function() {
+    bindToEnv(objNames=c(mongo_commands, import_commands, 'datasets'))
+    function(i) {process_dataType(i) }
+  }
+
+  # Loop for each dataset/source type, get mut &/or cnv edges
+  #batch_result <- parLapply(cluster_cores,1:nrow(datasets), import_worker())
+  batch_result <- lapply(1:nrow(datasets), function(i){process_dataType(i)})  
 }
 
 #----------------------------------------------------------------------------------------------------
@@ -440,25 +455,79 @@ os.batch.map.samples <- function(){
       insert.collection.separate(paste(dataset$disease,dataset$source,"sample_map", sep="_"), list(ptMap))
     }
     
-    
   }
-     
+}
+#----------------------------------------------------------------------------------------------------
+barplot.set.value <- function(plots, values){
+  
+  return(plots)
+}
+#----------------------------------------------------------------------------------------------------
+tree.set.size <- function(node, values) {
+  
+  if(is.null(node)) return(node)
+  
+  if(node$name %in% names(values))
+    node$size = ifelse(is.na(values[[node$name]]), 0 , as.numeric(values[[node$name]]))
+  
+  if(length(node$children)>0){
+   node$children= lapply(node$children, tree.set.size, values=values)
+  }
+  return(node)
+}
+#----------------------------------------------------------------------------------------------------
+os.create.biomarker.tree <- function(oCollection, inputFile){
+  
+    Tree <- fromJSON(oCollection$process$tree, simplifyVector = F)
+    Barplots <- fromJSON(oCollection$process$barplot, simplifyVector = F)
+    
+    mtx<- read.delim(inputFile, header=T) 
+    mtx$patient_ID <- gsub("\\.", "-", mtx$patient_ID); 
+    if(!all(grepl("\\-\\d\\d$",mtx$patient_ID))){
+      mtx$patient_ID <- paste(mtx$patient_ID, "01", sep="-")
+    }
 
+      ### Create biomarker tree (sunburst) with flow % values from table
+      classifier = "tissuetype"
+      patient_IDs <- unique(mtx$patient_ID)
+      
+      # for each patient (new document) {patient_ID:"", barcharts:[], <classifier>}
+      result = lapply(patient_IDs, function(id){
+           # for each classifier instance (new record) <classifier>: {name:"", groups:#, values:[]})
+          graphs = apply(mtx[mtx$patient_ID == id,],1 , function(pt.data){
+            lapply(Barplots,barplot.set.value,pt.data)
+          })
+          # for each classifier instance (new record) <classifier>: {name:"", size:#, children:[]})
+          tree = apply(mtx[mtx$patient_ID == id,],1 , function(pt.data){
+            #   create new immune tree - name by tissue type
+            #   assign size values for each biomarker name (DNE: null, NA: 0)
+              tree.set.size(Tree[[1]], pt.data)
+          })
+          names(tree) = mtx[mtx$patient_ID == id,classifier]
+          return(tree)
+      } )
+      names(result) <- patient_IDs
+      
+      insert.collection(oCollection, result)
 }
 
-
 # Run Block  -------------------------------------------------------
+
+#num_cores <- 1
+num_cores <- detectCores() - 1
+cluster_cores <- makeCluster(num_cores, type="FORK")
 
 ## must first initialize server (through shell >mongod)
 mongo <- connect.to.mongo()
 
 commands <- c("categories", "clinical", "molecular", "scale", "lookup", "sample")
 #commands <- c("categories")
-commands <- c("molecular")
+#commands <- c("molecular")
 #commands <- c("scale")
 #commands <- "clinical"
 #commands <- "lookup"
 #commands <- "sample"
+commands <- "sunburst"
 
 args = commandArgs(trailingOnly=TRUE)
 if(length(args) != 0 )
@@ -492,7 +561,7 @@ if("lookup" %in% commands){
 	con$insert(toJSON(render_pathways, auto_unbox = T))
 	rm(con)
 	
-#	ImmuneTree <- fromJSON("../data/categories/biomarkerTree.json", simplifyVector = F)
+#	ImmuneTree <- fromJSON("../data/categories/biomarker.tree.json", simplifyVector = F)
 #	insert.collection.separate("biomarker_immune_tree", list(ImmuneTree))
 }
 
@@ -500,5 +569,10 @@ if("sample" %in% commands){
   # create/update sample-patient mapping table
   os.batch.map.samples()
 }
+if("sunburst" %in% commands){
+  os.data.batch("../manifests/os.uw.immune.manifest.json")
+  
+}
 
+stopCluster(cluster_cores)
 close.mongo()
