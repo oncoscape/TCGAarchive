@@ -531,8 +531,8 @@
     "methylation":{
         "properties":{
             "gene": {"type": "string"},
-            "min": {"type": ["number", "null"], "minimum": 0, "maximum": 1}, 
-            "max": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
+            "min": {"type": ["number", "null"], "minimum": -1, "maximum": 1}, 
+            "max": {"type": ["number", "null"], "minimum": -1, "maximum": 1},
            "patients": {
                         "type": "object",
                         "patternProperties": {
