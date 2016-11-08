@@ -65,6 +65,7 @@ dataset_map <- list(
   ov=list(name="Ovarian", img= "DSovary.png", beta=TRUE, source="TCGA") ,
   meso=list(name="Mesothelioma", img= "DSdemo.png", beta=TRUE, source="TCGA")
     )
+
 lookupList = list(
   cnv=list(type="molecular",
            data.load = "os.data.load.molecular",
@@ -302,12 +303,12 @@ insert.prep <- function(oCollection){
 }
 #---------------------------------------------------------
 insert.lookup.sourceTypeCollection <- function(oCollection){
-    lookupType = lookupList[[oCollection$dataType]]$type
-    add.collection <- list(source=oCollection$source, type=oCollection$dataType, collection=oCollection$collection)
-    new.collection = list(); 
-    new.collection[[lookupType]] = add.collection
-    push.collection = list("$push"=new.collection)
-
+  lookupType = lookupList[[oCollection$dataType]]$type
+  add.collection <- list(source=oCollection$source, type=oCollection$dataType, collection=oCollection$collection)
+  new.collection = list(); 
+  new.collection[[lookupType]] = add.collection
+  push.collection = list("$push"=new.collection)
+  
   return(push.collection)
 } 
 #---------------------------------------------------------
@@ -373,18 +374,25 @@ insert.lookup <- function(oCollection){
       print(paste("WARNING: data type not recognized:", dataType, sep=" "))
   }
 }
-
 #---------------------------------------------------------
 insert.document.geneset = function(con, result){
-  insert.pass <- sapply(rownames(result), function(genesetName){
+  #  insert.pass <- sapply(rownames(result), function(genesetName){
+  #    status = con$insert(
+  #      toJSON( list( name=genesetName, genes=result[genesetName,])
+  #              , auto_unbox=T, na="null")); 
+  #    status$nInserted;
+  #  })
+  #  return (c(n.pass= sum(unlist(insert.pass)), n.records = nrow(result) ) )
+  #}
+  insert.pass <- apply(result,1, function(row){
     status = con$insert(
-      toJSON( list( name=genesetName, genes=result[genesetName,])
-              , auto_unbox=T, na="null")); 
+      toJSON( list(name=row[["name"]],genes=row[["genes"]])
+              , auto_unbox=T)); 
     status$nInserted;
   })
+  
   return (c(n.pass= sum(unlist(insert.pass)), n.records = nrow(result) ) )
 }
-
 #---------------------------------------------------------
 insert.document.molecular = function(con, result){
   insert.pass <- sapply(rownames(result$data), function(geneName){
@@ -418,25 +426,6 @@ insert.document.annotation = function(con, result){
   return (c(n.pass= sum(unlist(insert.pass)), n.records = nrow(result) ) )
 }
 #---------------------------------------------------------
-insert.prep <- function(oCollection){
-  #dataset, dataType,source, processName, parent, process
-  
-  prev.run <- collection.exists(oCollection$collection)
-  if(prev.run){ return(FALSE) }
-  
-  return(TRUE)
-}
-#---------------------------------------------------------
-insert.lookup.sourceTypeCollection <- function(oCollection){
-    lookupType = lookupList[[oCollection$dataType]]$type
-    add.collection <- list(source=oCollection$source, type=oCollection$dataType, collection=oCollection$collection)
-    new.collection = list(); 
-    new.collection[[lookupType]] = add.collection
-    push.collection = list("$push"=new.collection)
-
-  return(push.collection)
-} 
-#---------------------------------------------------------
 insert.document.list = function(con, result){
   insert.pass <- sapply(result, function(el){
     status = con$insert(
@@ -458,19 +447,6 @@ insert.document.row = function(con, result){
   
   return (c(n.pass= sum(unlist(insert.pass)), n.records = nrow(result) ) )
 }
-
-#---------------------------------------------------------
-insert.document.geneset = function(con, result){
-  insert.pass <- apply(result,1, function(row){
-    status = con$insert(
-      toJSON( list(name=row[["name"]],genes=row[["genes"]])
-              , auto_unbox=T)); 
-    status$nInserted;
-  })
-
-  return (c(n.pass= sum(unlist(insert.pass)), n.records = nrow(result) ) )
-}
-
 #---------------------------------------------------------
 insert.collection <- function(oCollection, result){
   
@@ -540,8 +516,10 @@ remove.lookup <- function(oCollection){
   if(lookupType %in% c("molecular", "calculated", "location", "annotation", "category")){
     matched.record = which(collections$collection == oCollection$collection)
     if(length(matched.record)>0){
-      collections[[matched.record]]$collection = NULL 
-      lookup.doc[[lookupType]] = collections[[1]]
+      collections <- collections[-matched.record,]
+      
+#      collections[[matched.record]]$collection = NULL 
+#      lookup.doc[[lookupType]] = collections[[1]]
     }
   }else if(lookupType %in% c("edges")){
     
@@ -557,7 +535,6 @@ remove.lookup <- function(oCollection){
   
   mongo.lookup$update(query, update=toJSON(update, auto_unbox = T))
 }
-
 #---------------------------------------------------------
 insert.collection.separate<- function(name, indiv.collection){
 
@@ -577,7 +554,6 @@ insert.collection.separate<- function(name, indiv.collection){
   rm(con)
  
 }
-
 #---------------------------------------------------------
 convert.to.mtx <- function(molecular.df, format=""){
 #  mtx <- apply(molecular.df,1, function(geneRow){ 
@@ -593,7 +569,6 @@ convert.to.mtx <- function(molecular.df, format=""){
 #  rownames(mtx) <- names(molecular.df[1, "patients"])
   return(mtx)  
 }
-
 #---------------------------------------------------------
 mapProcess <- function(process){
   os.dataset.enumerations     <- fromJSON("../manifests/os.dataset.enumerations.json" )
@@ -607,8 +582,7 @@ mapProcess <- function(process){
 }
 #---------------------------------------------------------
 # Aggregate unmapped column names and classes into a single list  
-appendList <- function (x, val) 
-{
+appendList <- function (x, val) {
     if(!is.list(x) && !is.list(val)) return(x)
     xnames <- names(x)
     for (v in names(val)) {
@@ -667,7 +641,6 @@ scaleGenesToChromosomes <- function(genePos, chrCoordinates, scaleFactor=1000){
   return(genePos_xy)	
   
 }
-
 #--------------------------------------------------------------#
 save.batch.genesets.scaled.pos <- function(scaleFactor=100000){
   
@@ -692,7 +665,6 @@ save.batch.genesets.scaled.pos <- function(scaleFactor=100000){
   oCollection <- create.oCollection(geneObj$dataset, dataType="genesets", source=geneObj$source, processName=processName,parent=parent, process=process)
   insert.collection(oCollection, result) 
 }
-
 #--------------------------------------------------------------#
 save.batch.cluster.scaled.pos <- function(scaleFactor=100000){
   

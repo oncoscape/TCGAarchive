@@ -93,9 +93,9 @@ os.save.pca <- function(scaleFactor=NA){
   
   datatypeName= "cluster"
   if(is.na(scaleFactor)){
-    pca_colls <- mongo.manifest$find( query=paste('{"dataType":"pcaScores", "process.scale":null}', sep=""))
+    pca_colls <- mongo.manifest$find( query=paste('{"dataType":"pcascores", "process.scale":null}', sep=""))
   } else{
-    pca_colls <- mongo.manifest$find( query=paste('{"dataType":"pcaScores", "process.scale":',as.integer(scaleFactor),'}', sep=""))
+    pca_colls <- mongo.manifest$find( query=paste('{"dataType":"pcascores", "process.scale":',as.integer(scaleFactor),'}', sep=""))
   }
   
   for(i in 1:nrow(pca_colls)){
