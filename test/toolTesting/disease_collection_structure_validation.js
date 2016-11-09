@@ -10,34 +10,24 @@
 
 */
 
-var jsonfile = require("jsonfile-promised");
-var u = require("underscore");
-var test = {
+const jsonfile = require("jsonfile-promised");
+const u = require("underscore");
+const helper = require("../testingHelper.js");
+const Ajv = require('ajv');
+const ajv = new Ajv({allErrors: true});
+const mongoose = require("mongoose");
+const schemas = require("../schemas.json");
+const test = {
   "pca" : require("./moduleTesting/test_pca.js"),
   "spreadsheet" : require("./moduleTesting/test_Spreadsheet.js"),
   "timelines" : require("./moduleTesting/test_Timelines.js"),
   "clusters" : require("./moduleTesting/test_Clusters.js"),
   "heatmap" : require("./moduleTesting/test_Heatmap.js"),
   "sunburst" : require("./moduleTesting/test_Sunburst.js")
-}
-
-var Ajv = require('ajv');
-var ajv = new Ajv({allErrors: true});
-const schemas = require("../schemas.json");
+};
 const ptList = require("./ptList.json");
 const ajvMsg = require("../datasourceTesting/ajv_tcga_v2_10182016.json");
-var collection;
-var all_collections = [];
-const mongoose = require("mongoose");
-var lookupByDisease = [];
-var lookupByTool = [];
-var disease_arr = [];
-var render_pca_diseases;
-var render_chr;
-var render_chr_arr = [];
-var render_pt;
-var render_pt_arr = [];
-var diseaseCollectionSchema = {
+const diseaseCollectionSchema = {
     "properties": {
         "disease": {"type": "string"}, 
         "source" : {"type": "string", "default": "TCGA"}, 
@@ -104,54 +94,23 @@ var diseaseCollectionSchema = {
     "additionalProperties": true
 
 };
+var all_collections = [];
+var lookupByDisease = [];
+var lookupByTool = [];
+var disease_arr = [];
+var render_pca_diseases;
+var render_chr;
+var render_chr_arr = [];
+var render_pt;
+var render_pt_arr = [];
+var connection = mongoose.connection;
+var j = 0;
+var report_arr = [];
+var elem = {};
+var diseases = [];
+var tools = [];
+var diseaseCollectionStructuralStatus = [];
 
-
-Array.prototype.findCollectionsByDisease = function(d){
-  var arr = [];
-  for(var i = 0; i < this.length; i++) {
-    if(this[i].disease === d){
-      arr.push(this[i]);
-    } 
-  }
-  return arr;
-};
-
-Array.prototype.unique = function() {
-  var arr = [];
-  for(var i = 0; i < this.length; i++) {
-      if(arr.indexOf(this[i]) === -1) {
-          arr.push(this[i]);
-      }
-  }
-  return arr; 
-};
-
-Array.prototype.findScoreByDiseaseByType = function(t, d) {
-  var passedRateArray = [];
-  this.forEach(function(a){
-    if(a.type==t && a.disease==d) 
-      passedRateArray.push(a.passedRate);
-  });
-  return passedRateArray;
-};
-
-Array.prototype.findScoreByType = function(t) {
-  var passedRateArray = [];
-  this.forEach(function(a){
-    if(a.type==t) 
-      passedRateArray.push(a.passedRate);
-  });
-  return passedRateArray;
-};
-
-Array.prototype.findScoreByDiseaseByType = function(t, d) {
-  var passedRateArray = [];
-  this.forEach(function(a){
-    if(a.type==t && a.disease==d) 
-      passedRateArray.push(a.passedRate);
-  });
-  return passedRateArray;
-};
 
 mongoose.connect(
     'mongodb://oncoscape-dev-db1.sttrcancer.io:27017,oncoscape-dev-db2.sttrcancer.io:27017,oncoscape-dev-db3.sttrcancer.io:27017/tcga?authSource=admin', {
@@ -169,13 +128,7 @@ mongoose.connect(
         pass: 'i1f4d9botHD4xnZ'
 });
 
-var connection = mongoose.connection;
-var j = 0;
-var report_arr = [];
-var elem = {};
-var diseases = [];
-var tools = [];
-var diseaseCollectionStructuralStatus = [];
+
 connection.once('open', function(){
 
     // Testing the disease collection structure using tcga:brain as a gold standard

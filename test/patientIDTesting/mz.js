@@ -1,8 +1,9 @@
 const mongoose = require('mongoose');
 const fs = require("fs");
 const _ = require("underscore");
-const input = require("../datasourceTesting/ajv_tcga_v2_10262016.json");
-var asyncLoop = require('node-async-loop');
+const helper = require("../testingHelper.js");
+const input = require("../datasourceTesting/ajv_tcga_v2_11072016.json");
+const asyncLoop = require('node-async-loop');
 // Connect To Database
 var mongo = function(mongoose){
   return new Promise(function(resolve, reject) {

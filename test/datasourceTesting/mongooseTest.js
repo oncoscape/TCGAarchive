@@ -10,52 +10,23 @@ Purposes
 */
 console.time();
 const mongoose = require("mongoose");
-var jsonfile = require("jsonfile-promised");
-var Ajv = require('ajv');
+const jsonfile = require("jsonfile-promised");
+const helper = require("../testingHelper.js");
+const schemas = require("../schemas.json");
+const Ajv = require('ajv');
 var ajv = new Ajv({allErrors: true});
-var asyncLoop = require('node-async-loop');
-var ajvMsg = [];
-var collections = [];
-var schemas = {};
+const asyncLoop = require('node-async-loop');
+var collections = require("../manifest_arr.json");
 var table_name;
-var dataType, dataType_length;
 var msg_type = {};
+var ajvMsg = [];
 var passed_elem;
 var error_elem = [];
 var elem = {};
-var connection = mongoose.connection;
 var col_count = 0;
-
-
-//jsonfile.readFile("../collection_counts_10262016.json").then(function(res){collections = res;});
-var collections = require("../manifest_arr.json");
-var schemas = require("../schemas.json");
 var dataType = Object.keys(schemas);
 var dataType_length = dataType.length;
-// jsonfile.readFile("../schemas.json").then(function(res){
-//   schemas = res;
-//   dataType = Object.keys(schemas);
-//   dataType_length = dataType.length;
-// });
-
-Array.prototype.findCollectionsByType = function(v){
-  var arr = [];
-  if('type' in this[0]){
-    for(var i = 0; i < this.length; i++) {
-      if(this[i].type === v){
-        arr.push(this[i].collection);
-      } 
-    }
-  }else if('dataType' in this[0]){
-    for(var i = 0; i < this.length; i++) {
-      if(this[i].dataType === v){
-        arr.push(this[i].collection);
-      } 
-    }
-  }
-  
-  return arr;
-};
+var connection = mongoose.connection;
 
 mongoose.connect(
     'mongodb://oncoscape-dev-db1.sttrcancer.io:27017,oncoscape-dev-db2.sttrcancer.io:27017,oncoscape-dev-db3.sttrcancer.io:27017/tcga?authSource=admin', {
@@ -145,6 +116,6 @@ connection.once('open', function(){
         console.timeEnd();
     });
 
-});//4863997ms
+});//6379529ms
 
 

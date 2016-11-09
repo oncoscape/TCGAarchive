@@ -1,8 +1,9 @@
-var comongo = require('co-mongodb');
-var co = require('co');
-var u = require('underscore');
-var jsonfile = require("jsonfile-promised");
-var ajvMsg = require("../datasourceTesting/ajv_tcga_v2_11022016.json");
+const comongo = require('co-mongodb');
+const co = require('co');
+const u = require('underscore');
+const jsonfile = require("jsonfile-promised");
+const helper = require("../testingHelper.js");
+var ajvMsg = require("../datasourceTesting/ajv_tcga_v2_11072016.json");
 var patientID_status = require("../patientIDTesting/IDstatus_errors_brief.json");
 var gene_status = require("../geneSymbols/geneIDstatus_errors_brief.json");
 var diseaseCollectionStructureStatus = require("../toolTesting/diseaseCollectionStructuralStatus.json");
@@ -38,71 +39,8 @@ const pcaScoreTypeMapping = {
     'rna-U133': "rna-u133", 
     'rna-HiSeq': "rna-hiseq"
   };
-var clinicalTypes = ["patient","drug","newTumor","otherMalignancy","radiation","followUp","newTumor-followUp"];
+const clinicalTypes = ["patient","drug","newTumor","otherMalignancy","radiation","followUp","newTumor-followUp"];
 var clinical_input = ajvMsg.filter(function(m){return (clinicalTypes.indexOf(m.type) > -1);});
-
-Array.prototype.containPartialString = function(regex){
-   var arr = [];
-   for(var i = 0; i< this.length; i++){
-     if(this[i].match(regex) != null ){
-      arr = arr.concat(this[i]);
-     }
-   }
-   return arr;
-};
-
-Array.prototype.arraysCompareV2 = function(ref) {
-    var elem = {};
-    elem.overlapCount = 0;
-    elem.itemsNotInRef = [];
-    elem.refItemsNotInSelf = [];
-    for(var i = 0; i < this.length; i++) {
-        if(ref.indexOf(this[i]) > -1){
-          elem.overlapCount++;
-        }else{
-          elem.itemsNotInRef.push(this[i]);
-        }
-    }
-    for(var j = 0; j < ref.length; j++){
-        if(this.indexOf(ref[j]) == -1){
-          elem.refItemsNotInSelf.push(ref[j]);
-        }
-    }
-    return elem;
-};
-
-Array.prototype.unique = function() {
-    var arr = [];
-    for(var i = 0; i < this.length; i++) {
-        if(arr.indexOf(this[i]) === -1) {
-            arr.push(this[i]);
-        }
-    }
-    return arr; 
-};
-
-var format = {
-  h1: function(text) { console.log(); console.log('# '+text); },
-  h2: function(text) { console.log(); console.log('## '+text); },
-  h3: function(text) { console.log(); console.log('### '+text); },
-  h4: function(text) { console.log(); console.log('#### '+text); },
-  textbold: function(text) { console.log(); console.log(); console.log('**'+ text+'**'); },
-  textlist: function(text){ console.log(); console.log('- '+ text);  },
-  textsublist: function(text){ console.log('  * '+ text);  },
-  text: function(text){ console.log(); console.log(text);  },
-  url: function(text) {console.log(); console.log('`' + text + '`'); console.log();},
-  codeStart: function() { console.log(); console.log('```'); },
-  codeComment: function(text) {console.log(); console.log('> ' + text); console.log(); },
-  codeStop: function() {console.log('```');  console.log(); },
-  code: function(text) { console.log('"'+ text + '"'); },
-  jsonfy: function(text) { console.log('{' + text + '}');},
-  codeRStart: function(text) {  console.log(); console.log("```r");},
-  codeMongoStart: function(text) {  console.log(); console.log("```shell"); },
-  codeJSStart: function(text) {  console.log(); console.log("```javascript"); },
-  codePyStart: function(text) {  console.log(); console.log("```python"); },
-  codeJSONStart: function(text) {  console.log(); console.log("```json"); },
-  table: function(text){ console.log(text);  }
-};
 
 var checkClinicalFields = function(db, collection, type, disease){
   return new Promise(function(resolve, reject){
@@ -206,21 +144,21 @@ co(function *() {
   existing_manifest = existing_collection_names.containPartialString(/manifest+/g);
   existing_collection_names = u.difference(existing_collection_names, existing_sample_maps.concat(existing_renders,existing_lookups,existing_manifest, ["system.js"]));
 
-  format.h1("Part I: Checking existing collections against lookup_oncoscape_datasources and manifest files");
-  format.h3("The number of the collections in database tcga is: ");
-  format.text(existing_collection_names.length);
-  format.h3("The number listed in lookup_oncoscape_datasources is: "); 
-  format.text(lookup_listed_collections.length);
-  format.h3("The number listed in manifest is: ");
-  format.text(manifest_listed_collections.length);
-  format.h3("Compare the existing collections against lookup_listed_collections: ");
-  format.codeStart();
-  format.text(existing_collection_names.arraysCompareV2(lookup_listed_collections));
-  format.codeStop();
-  format.h3("Compare the existing collections against manifest_listed_collections: ");
-  format.codeStart();
-  format.text(existing_collection_names.arraysCompareV2(manifest_listed_collections));
-  format.codeStop();
+  helper.format.h1("Part I: Checking existing collections against lookup_oncoscape_datasources and manifest files");
+  helper.format.h3("The number of the collections in database tcga is: ");
+  helper.format.text(existing_collection_names.length);
+  helper.format.h3("The number listed in lookup_oncoscape_datasources is: "); 
+  helper.format.text(lookup_listed_collections.length);
+  helper.format.h3("The number listed in manifest is: ");
+  helper.format.text(manifest_listed_collections.length);
+  helper.format.h3("Compare the existing collections against lookup_listed_collections: ");
+  helper.format.codeStart();
+  helper.format.text(existing_collection_names.arraysCompareV2(lookup_listed_collections));
+  helper.format.codeStop();
+  helper.format.h3("Compare the existing collections against manifest_listed_collections: ");
+  helper.format.codeStart();
+  helper.format.text(existing_collection_names.arraysCompareV2(manifest_listed_collections));
+  helper.format.codeStop();
   
 
   /*** survey the collections that exist in the tcga database
@@ -228,8 +166,8 @@ co(function *() {
                                    listed in render_patient
         
    ***/
-  format.h1("Part II: Checking rendering collections");
-  format.h3("render_pca compare to existing pcascores");
+  helper.format.h1("Part II: Checking rendering collections");
+  helper.format.h3("render_pca compare to existing pcascores");
   collection = yield comongo.db.collection(db, 'render_pca');
   render_pca = yield collection.find({},{'disease':true, 'source':true, 'type':true, 'geneset':true}).toArray();
   
@@ -243,20 +181,20 @@ co(function *() {
   var pcascores_postfix = []; 
   existing_pcascores.forEach(function(e){pcascores_postfix.push(e.split("-")[e.split("-").length-1]);});
   pcascores_postfix = pcascores_postfix.unique();
-  format.text("Mapping from render_pca type to the pcascores name postfix:");
-  format.codeStart();
-  format.text(pcaScoreTypeMapping);
-  format.codeStop();
-  format.text("From the pcaScores collection names, the existing types lists below: ");
-  format.codeStart();
-  format.text(pcascores_postfix);
-  format.codeStop();
+  helper.format.text("Mapping from render_pca type to the pcascores name postfix:");
+  helper.format.codeStart();
+  helper.format.text(pcaScoreTypeMapping);
+  helper.format.codeStop();
+  helper.format.text("From the pcaScores collection names, the existing types lists below: ");
+  helper.format.codeStart();
+  helper.format.text(pcascores_postfix);
+  helper.format.codeStop();
   // //render_pca_missing_collections.length: 264
   // var render_pca_missed_types = render_pca_missing_collections.map(function(r){return r.type;});
-  // format.text("Are there any types that render_pca doesn't include? :");
-  // format.codeStart();
-  // format.text(render_pca_missed_types.unique());
-  // format.codeStop();
+  // helper.format.text("Are there any types that render_pca doesn't include? :");
+  // helper.format.codeStart();
+  // helper.format.text(render_pca_missed_types.unique());
+  // helper.format.codeStop();
   // // [ 'import',
   // 'gistic2thd',
   // 'mutation',
@@ -274,17 +212,17 @@ co(function *() {
   rendering_pca_potential_collections = u.difference(rendering_pca_potential_collections, rendering_pca_potential_removal);
 
 
-  format.h3("Compare the existing collections against render_pca: ");
-  format.codeStart();
-  format.text(existing_pcascores.arraysCompareV2(rendering_pca_potential_collections));
-  format.codeStop();
-  // format.h3("Compare render_pca against the existing collections: ");
-  // format.codeStart();
-  // format.text(rendering_pca_potential_collections.arraysCompare(existing_pcascores));
-  // format.codeStop();
+  helper.format.h3("Compare the existing collections against render_pca: ");
+  helper.format.codeStart();
+  helper.format.text(existing_pcascores.arraysCompareV2(rendering_pca_potential_collections));
+  helper.format.codeStop();
+  // helper.format.h3("Compare render_pca against the existing collections: ");
+  // helper.format.codeStart();
+  // helper.format.text(rendering_pca_potential_collections.arraysCompare(existing_pcascores));
+  // helper.format.codeStop();
 
   
-  format.h2("render_patient compare to existing mds");
+  helper.format.h2("render_patient compare to existing mds");
   collection = yield comongo.db.collection(db, 'render_patient');
   render_patient = yield collection.find({type:"cluster"}, {'dataset':true, 'type':true, 'name':true, 'source':true}).toArray();
   var existing_mds = [];
@@ -308,31 +246,31 @@ co(function *() {
     }
   });
 
-  format.h3("Compare the existing collections against render_patient: ");
-  format.codeStart();
-  format.text(existing_mds.arraysCompareV2(rendering_pt_potential_collections));
-  format.codeStop();
-  // format.h3("Compare render_patient against the existing collections: ");
-  // format.codeStart();
-  // format.text(rendering_pt_potential_collections.arraysCompare(existing_mds));
-  // format.codeComment("In render_patient, there are documents with 'cluster' as type, yet 'pca-' as name prefix.");
-  // format.text(render_patient_weird_ex);
-  // format.codeStop();
+  helper.format.h3("Compare the existing collections against render_patient: ");
+  helper.format.codeStart();
+  helper.format.text(existing_mds.arraysCompareV2(rendering_pt_potential_collections));
+  helper.format.codeStop();
+  // helper.format.h3("Compare render_patient against the existing collections: ");
+  // helper.format.codeStart();
+  // helper.format.text(rendering_pt_potential_collections.arraysCompare(existing_mds));
+  // helper.format.codeComment("In render_patient, there are documents with 'cluster' as type, yet 'pca-' as name prefix.");
+  // helper.format.text(render_patient_weird_ex);
+  // helper.format.codeStop();
 
 
   // report the collection erros from ajv_tcga_v2.json 
   
-  format.h1("Part III: Data Structural Errors - Run the DB against schemas.json, below lists the error message: ");
-  format.codeStart();
+  helper.format.h1("Part III: Data Structural Errors - Run the DB against schemas.json, below lists the error message: ");
+  helper.format.codeStart();
   ajvMsg.forEach(function(a){
     if(a!=null && a.passedRate < 1){
-      format.text(a);
+      helper.format.text(a);
     }
   });
-  format.codeStop();
+  helper.format.codeStop();
 
   // report disease collection structural status against brain in lookup_oncoscape_datasources
-  format.h1("Part IV: Check diseae collection structural status against brain in lookup_oncoscape_datasources");
+  helper.format.h1("Part IV: Check diseae collection structural status against brain in lookup_oncoscape_datasources");
   var diseaseCollection = diseaseCollectionStructureStatus.filter(function(d){
                                               return (d.collectionStructural.length>0&&d.disease !='hg19'); }).map(function(m){
                                               var elem = {};
@@ -343,46 +281,46 @@ co(function *() {
                                               });
                                               return elem;})
 
-  format.codeStart();
-  format.text(diseaseCollection);
-  format.codeStop();
+  helper.format.codeStart();
+  helper.format.text(diseaseCollection);
+  helper.format.codeStop();
 
-  format.h1("Part V: Check if there are any duplicated fields in Clinical Collections:");
-  format.codeStart();
-  format.text(duplicatedFields);
-  format.codeStop();  
+  helper.format.h1("Part V: Check if there are any duplicated fields in Clinical Collections:");
+  helper.format.codeStart();
+  helper.format.text(duplicatedFields);
+  helper.format.codeStop();  
 
   // report the earlier version patient ID checking
-  format.h1("Part VI: Checked the patient IDs against disease patient collection IDs:");
+  helper.format.h1("Part VI: Checked the patient IDs against disease patient collection IDs:");
   
-  format.h3("The aggregated result grouped by Disease types and Data Types");
+  helper.format.h3("The aggregated result grouped by Disease types and Data Types");
   var diseasesWithPIDErros = u.uniq(patientID_status.map(function(m){return m.disease;}));
-  format.codeComment("Below lists the disease types, whose patient IDs in some if not all collections are NOT included in the clinical patient IDs.");
-  format.codeStart();
-  format.text(diseasesWithPIDErros);
+  helper.format.codeComment("Below lists the disease types, whose patient IDs in some if not all collections are NOT included in the clinical patient IDs.");
+  helper.format.codeStart();
+  helper.format.text(diseasesWithPIDErros);
   // [ 'lgg','brca','brain','lusc','hnsc','kirp','luad','gbm','thca','read',
   //   'thym','sarc','pcpg','kirc','coad','ov','paad','cesc','chol','esca',
   //   'tgct','blca','ucec','kich','stad','dlbc','lihc','prad','acc','laml',
   //   'coadread','skcm','lung' ]
-  format.codeComment("Below lists the disease types, whose patient IDs in all collections are included in the clinical patient IDs.");
+  helper.format.codeComment("Below lists the disease types, whose patient IDs in all collections are included in the clinical patient IDs.");
   var totalDiseases = [ 'brain','lusc','hnsc','coadread','brca','gbm','lgg','luad','lung','prad','esca','dlbc','ucs','blca','coad','thca','acc','lihc','paad','ov','skcm','chol','kirc','read','kirp','meso','uvm','cesc','ucec','pcpg','thym','sarc','stad','tgct','kich','laml'];
-  format.text(u.difference(totalDiseases, diseasesWithPIDErros));
+  helper.format.text(u.difference(totalDiseases, diseasesWithPIDErros));
   // { overlapCount: 0,
   //   itemsNotInRef: [],
   //   refItemsNotInSelf: [ 'uvm', 'meso', 'ucs' ],
   //   countInRef: NaN }
-  format.codeStop();
+  helper.format.codeStop();
 
 
   var typesWithPIDErros =  u.uniq(patientID_status.map(function(m){return m.type;}));
-  format.codeComment("Below lists the data types, whose patient IDs in some if not all collections are NOT included in the clinical patient IDs.");
-  format.codeStart();
-  format.text(typesWithPIDErros);
+  helper.format.codeComment("Below lists the data types, whose patient IDs in some if not all collections are NOT included in the clinical patient IDs.");
+  helper.format.codeStart();
+  helper.format.text(typesWithPIDErros);
   // [ 'cnv','protein','events','mut','mds','mut01','edges','otherMalignancy',
   //   'pcaScores','methylation','rna','color','ptDegree' ]
-  format.codeComment("Below lists the data types, whose patient IDs in some if not all collections are NOT included in the clinical patient IDs.");
+  helper.format.codeComment("Below lists the data types, whose patient IDs in some if not all collections are NOT included in the clinical patient IDs.");
   var totalTypes =[ 'color','events','drug','newTumor','radiation','otherMalignancy','followUp','newTumor-followUp','pcascores','mds','edges','ptDegree' ];
-  format.text(u.difference(totalTypes, typesWithPIDErros));
+  helper.format.text(u.difference(totalTypes, typesWithPIDErros));
   // { overlapCount: 0,
   //   itemsNotInRef: [],
   //   refItemsNotInSelf: 
@@ -393,37 +331,37 @@ co(function *() {
   //      'followUp',
   //      'newTumor-followUp' ],
   //   countInRef: NaN }
-  format.codeStop();
-  format.text("Detailed aggregated report lists here (sorted by subfield IDstatus.itemsNotInRefLength):");
-  format.codeStart();
-  patientID_status.forEach(function(s){format.text(s);});
-  format.codeStop();
+  helper.format.codeStop();
+  helper.format.text("Detailed aggregated report lists here (sorted by subfield IDstatus.itemsNotInRefLength):");
+  helper.format.codeStart();
+  patientID_status.forEach(function(s){helper.format.text(s);});
+  helper.format.codeStop();
   
-  format.h1("Part VII: Checked the gene symbols against HGNC gene symbols: ");
+  helper.format.h1("Part VII: Checked the gene symbols against HGNC gene symbols: ");
 
-  format.h3("The aggregated result grouped by Disease types and Data Types");
+  helper.format.h3("The aggregated result grouped by Disease types and Data Types");
   var diseasesWithGeneIDErrors = u.uniq(gene_status.map(function(m){return m.disease;}));
-  format.codeComment("Below lists the disease types, whose gene symbols in some if not all collections are NOT included in the HGNC gene symbols");
-  format.codeStart();
-  format.text(diseasesWithGeneIDErrors);
-  format.codeComment("Below lists the disease types, whose gene symbols in all collections are included in the HGNC gene symbols");
+  helper.format.codeComment("Below lists the disease types, whose gene symbols in some if not all collections are NOT included in the HGNC gene symbols");
+  helper.format.codeStart();
+  helper.format.text(diseasesWithGeneIDErrors);
+  helper.format.codeComment("Below lists the disease types, whose gene symbols in all collections are included in the HGNC gene symbols");
   var totalDiseases = [ 'brain','lusc','hnsc','coadread','brca','gbm','lgg','luad','lung','prad','esca','dlbc','ucs','blca','coad','thca','acc','lihc','paad','ov','skcm','chol','kirc','read','kirp','meso','uvm','cesc','ucec','pcpg','thym','sarc','stad','tgct','kich','laml'];
-  format.text(u.difference(totalDiseases, diseasesWithGeneIDErrors));
-  format.codeStop();
+  helper.format.text(u.difference(totalDiseases, diseasesWithGeneIDErrors));
+  helper.format.codeStop();
   var typesWithGeneIDErros =  u.uniq(gene_status.map(function(m){return m.type;}));
-  format.codeComment("Below lists the data types, whose gene symbols in some if not all collections are NOT included in the HGNC gene symbols");
-  format.codeStart();
-  format.text(typesWithGeneIDErros);
+  helper.format.codeComment("Below lists the data types, whose gene symbols in some if not all collections are NOT included in the HGNC gene symbols");
+  helper.format.codeStart();
+  helper.format.text(typesWithGeneIDErros);
   // [ 'cnv','protein','events','mut','mds','mut01','edges','otherMalignancy',
   //   'pcaScores','methylation','rna','color','ptDegree' ]
-  format.codeComment("Below lists the data types, whose gene symbols in some if not all collections are included in the HGNC gene symbols");
+  helper.format.codeComment("Below lists the data types, whose gene symbols in some if not all collections are included in the HGNC gene symbols");
   var totalTypes =['mut','mut01','methylation','rna','protein','cnv','facs','genesets','annotation','genedegree','edges','genes','pcaloadings' ];   
-  format.text(u.difference(totalTypes, typesWithGeneIDErros));
-  format.codeStop();
-  format.text("Detailed aggregated report lists here (sorted by subfield geneIDstatus.itemsNotInRefLength):");
-  format.codeStart();
-  gene_status.forEach(function(s){format.text(s);});
-  format.codeStop();
+  helper.format.text(u.difference(totalTypes, typesWithGeneIDErros));
+  helper.format.codeStop();
+  helper.format.text("Detailed aggregated report lists here (sorted by subfield geneIDstatus.itemsNotInRefLength):");
+  helper.format.codeStart();
+  gene_status.forEach(function(s){helper.format.text(s);});
+  helper.format.codeStop();
   
 
   yield comongo.db.close(db);

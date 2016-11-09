@@ -7,8 +7,9 @@
             - incorperate the datasource quality data into tool validation
 
 */
-var jsonfile = require("jsonfile");
-var u = require("underscore");
+const jsonfile = require("jsonfile");
+const u = require("underscore");
+const helper = require("../testingHelper.js");
 var test = {
   "pca" : require(".././moduleTesting/test_pca.js"),
   "spreadsheet" : require(".././moduleTesting/test_Spreadsheet.js"),

@@ -1,19 +1,12 @@
-var jsonfile = require("jsonfile-promised");
-var u = require("underscore");
-var collection;
+const jsonfile = require("jsonfile-promised");
+const u = require("underscore");
+const helper = require("../testingHelper.js");
 const mongoose = require("mongoose");
 var lookupByDisease = [];
 var disease_arr = [];
 var ptList = {};
-Array.prototype.unique = function() {
-  var arr = [];
-  for(var i = 0; i < this.length; i++) {
-      if(arr.indexOf(this[i]) === -1) {
-          arr.push(this[i]);
-      }
-  }
-  return arr; 
-};
+var connection = mongoose.connection;
+var diseases = [];
 
 mongoose.connect(
     'mongodb://oncoscape-dev-db1.sttrcancer.io:27017,oncoscape-dev-db2.sttrcancer.io:27017,oncoscape-dev-db3.sttrcancer.io:27017/tcga?authSource=admin', {
@@ -31,8 +24,6 @@ mongoose.connect(
         pass: 'i1f4d9botHD4xnZ'
     });
 
-var connection = mongoose.connection;
-var diseases = [];
 
 connection.once('open', function(){
 

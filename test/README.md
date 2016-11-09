@@ -216,7 +216,7 @@ var diseaseCollectionSchema = {
 cd test/datasourceTesting
 
 - node generate_manifestArr.js //*save manifest array as a json object* time: instantly
-- node mongooseTest.js //*save ajvMsg as a json object* time: ~1.5h
+- node mongooseTest.js //*save ajvMsg as a json object* time: 6379529ms = 106min
 - node mongooseTest2.js //*save ajvMsg_v2 as a json object* time: instantly
 
 ## Pateint IDs Testing Pipeline:

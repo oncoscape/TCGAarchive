@@ -6,44 +6,9 @@
             - calculate the passed percentage at collection level
 */
 
-var jsonfile = require("jsonfile-promised");
+const jsonfile = require("jsonfile-promised");
+const helper = require("../testingHelper.js");
 var ajvMsg, ajvMsg_v2;
-
-Array.prototype.contains = function(v) {
-    for(var i = 0; i < this.length; i++) {
-        if(this[i] === v) return true;
-    }
-    return false;
-};
-
-Array.prototype.unique = function() {
-        var arr = [];
-        for(var i = 0; i < this.length; i++) {
-            if(arr.indexOf(this[i]) === -1) {
-                arr.push(this[i]);
-            }
-        }
-        return arr; 
-    };
-
-Object.prototype.nestedUniqueCount = function(){
-    var errorCount = {};
-    var ar = [];
-    var str;
-    this['errors'].forEach(function(a){
-        a.errorType.forEach(function(e){
-          str = e.schemaPath + " [message: "+ e.message + "]; Number of Violation: ";  
-          if(ar.contains(str)){
-            errorCount[str]++;
-          }else{
-            ar.push(str);
-            errorCount[str]=1;
-          }
-        });
-    });
-    //return ar.unique();
-    return errorCount;
-};
 
 jsonfile.readFile("ajv_tcga_11072016.json").then(function(obj){
     ajvMsg = obj;
@@ -57,7 +22,7 @@ jsonfile.readFile("ajv_tcga_11072016.json").then(function(obj){
             elem.passedCounts = a.passedCounts;
             elem.totalCounts = a.totalCounts;
             elem.passedRate = a.passedCounts/a.totalCounts;
-            elem.errorMessage = a.nestedUniqueCount();
+            elem.errorMessage = helper.nestedUniqueCount(a);
         }
         
         //elem.errorMessage = a.errors.tableV2(a.nestedUnique());

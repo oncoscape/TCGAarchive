@@ -1,38 +1,9 @@
-var u = require("underscore");
-var fs = require("fs");
-var jsonfile = require("jsonfile-promised");
+const u = require("underscore");
+const fs = require("fs");
+const jsonfile = require("jsonfile-promised");
+const helper = require("../testingHelper.js");
 var output = require("./output.json");
 var ptList = require("./ptList.json");
-
-Array.prototype.arraysCompareV2 = function(ref) {
-    var elem = {};
-    elem.overlapCount = 0;
-    elem.itemsNotInRef = [];
-    elem.refItemsNotInSelf = [];
-    for(var i = 0; i < this.length; i++) {
-        if(ref.indexOf(this[i]) > -1){
-          elem.overlapCount++;
-        }else{
-          elem.itemsNotInRef.push(this[i]);
-        }
-    }
-    for(var j = 0; j < ref.length; j++){
-        if(this.indexOf(ref[j]) == -1){
-          elem.refItemsNotInSelf.push(ref[j]);
-        }
-    }
-    return elem;
-};
-
-Array.prototype.unique = function() {
-    var arr = [];
-    for(var i = 0; i < this.length; i++) {
-        if(arr.indexOf(this[i]) === -1) {
-            arr.push(this[i]);
-        }
-    }
-    return arr; 
-};
 
 // Create FileStream
 var filestream = function(fs){

@@ -1,10 +1,10 @@
-var mongoose = require("mongoose");
+const u = require("underscore"); mongoose = require("mongoose");
 const u = require("underscore");
 const jsonfile = require("jsonfile-promised");
 const input = require("../datasourceTesting/ajv_tcga_v2_10262016.json");
-var asyncLoop = require('node-async-loop');
+const u = require("underscore"); asyncLoop = require('node-async-loop');
 var db;
-var clinicalTypes = ["patient","drug","newTumor","otherMalignancy","radiation","followUp","newTumor-followUp"];
+const u = require("underscore"); clinicalTypes = ["patient","drug","newTumor","otherMalignancy","radiation","followUp","newTumor-followUp"];
 var clinical_input = input.filter(function(m){return (clinicalTypes.indexOf(m.type) > -1);});
 var output = [];
 var duplicatedFieldsByType = [];
@@ -38,25 +38,6 @@ var promiseFactory = function(db, collection, type, disease){
                   function(){ for (var key in this) { emit(key, null); } },
                   function(key, value) { return null }, 
                   { out: {inline:1} }).then(function(r){ elem.IDs = r.map(function(v){ return v._id; });resolve(elem); });
-    //var cursor = db.collection(collection).find();
-    // cursor.each(function(err, item){
-    //     if(item != null){
-    //       //console.log(count++);
-    //       var dup =[];
-    //       var dupObj = u.countBy(Object.keys(item));
-    //       //console.log(dupObj);
-    //       Object.keys(dupObj).forEach(function(el){
-    //         //console.log(el);
-    //         if(dupObj[el] > 1) dup.push(el);});
-    //       // console.log(dup);
-    //       //.filter(function(m){return m>1;});
-    //       //if(dup.length > 0){
-    //         elem.fieldDuplicates = elem.fieldDuplicates.concat(dup);
-    //       //}
-    //     }else{
-    //      resolve(elem);
-    //     }
-    //   });
   });
 }  
 

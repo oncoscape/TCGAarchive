@@ -1,9 +1,9 @@
 console.time();
-var mongoose = require("mongoose");
+const mongoose = require("mongoose");
 const fs = require("fs");
 const _ = require("underscore");
 const input = require("../datasourceTesting/ajv_tcga_v2_10262016.json");
-var asyncLoop = require('node-async-loop');
+const asyncLoop = require('node-async-loop');
 var diseases;
 
 var mongo = function(mongoose){
