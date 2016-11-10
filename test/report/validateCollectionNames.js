@@ -1,10 +1,6 @@
 /* 
-This is the code to generate collection_counts.json
-requires: co-mongodb
-Purposes
-        - for each collection, collect collection name, count, fields of the first record and type
-        - should report the existence of collections and the discrepancy against manifest/lookup_oncoscape_datasource
-Runtime: 142997ms        
+  This is the code to validate Collection names to meet all alphanumeric, dash and underscore
+  requires: co-mongodb     
 */
 console.time();
 var jsonfile = require("jsonfile");
