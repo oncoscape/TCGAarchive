@@ -24,7 +24,6 @@ output.forEach(function(o){
 		elem.type = o.type;
 		elem.IDstatus = {};
 		if('IDs' in o){
-			elem.IDstatus
 			elem.IDstatus = o.IDs.arraysCompareV2(ptList[o.disease]);
 		}
 		console.log(JSON.stringify(elem, null, 4));
