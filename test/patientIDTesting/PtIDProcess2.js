@@ -19,7 +19,7 @@ for(var i=0; i<IDErrors_brief.length;i++){
 	elem.type = m.type;
 	el.overlapCount = m.IDstatus.overlapCount;
 	el.itemsNotInRefLength = m.IDstatus.itemsNotInRef.length;
-	el.itemsNotInRef = m.IDstatus.itemsNotInRef.splice(0, 5);
+	//el.itemsNotInRef = m.IDstatus.itemsNotInRef.splice(0, 5); the longest is 7, do not need to only print the first five
 	elem.IDstatus = el;
 	IDErrors_briefv2.push(elem);
 }
