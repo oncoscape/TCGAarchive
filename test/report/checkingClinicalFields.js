@@ -1,13 +1,13 @@
-const u = require("underscore"); mongoose = require("mongoose");
-const u = require("underscore");
+const u = require("underscore"); 
+const mongoose = require("mongoose");
 const jsonfile = require("jsonfile-promised");
 const input = require("../datasourceTesting/ajv_tcga_v2_10262016.json");
-const u = require("underscore"); asyncLoop = require('node-async-loop');
-var db;
-const u = require("underscore"); clinicalTypes = ["patient","drug","newTumor","otherMalignancy","radiation","followUp","newTumor-followUp"];
+const asyncLoop = require('node-async-loop');
+const clinicalTypes = ["patient","drug","newTumor","otherMalignancy","radiation","followUp","newTumor-followUp"];
 var clinical_input = input.filter(function(m){return (clinicalTypes.indexOf(m.type) > -1);});
 var output = [];
 var duplicatedFieldsByType = [];
+var db;
 
 var mongo = function(mongoose){
   return new Promise(function(resolve, reject) {
