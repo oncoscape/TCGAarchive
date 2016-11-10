@@ -10,11 +10,12 @@
 var jsonfile = require("jsonfile");
 var comongo = require('co-mongodb');
 var co = require('co');
+const u = require("underscore");
 const helper = require("../testingHelper.js");
 var elem = [];
 var db, collection, collections, collection_names;
-var collection_counts = [];
 var lookup_table;
+var genesets;
 
 var onerror = function(e){
     console.log(e);
@@ -28,21 +29,29 @@ co(function *() {
 
   collection = yield comongo.db.collection(db, 'lookup_oncoscape_datasources');
   lookup_table = yield collection.find({}).toArray();
-  lookup_table.forEach(function(d){
-    keyFields.push(Object.keys(d));
-  });
- 
-  lookup_listed_collections = lookup_listed_collections.unique();
-  var lookup_matched = lookup_listed_collections.map(function(c){return c.match(collectionNameRegex)[0];});
-  var lookup_compare_result = lookup_listed_collections.includesArray(lookup_matched);
-  console.log("*****lookup table collection naming validation:");
-  console.log(lookup_compare_result.includes.length);
-  console.log("not matched examples: ", lookup_compare_result.notIncluded.splice(0,5));
+  collection = yield comongo.db.collection(db, 'hg19_genesets_hgnc_import');
+  genesets = yield collection.distinct('name');
   
-  collections = yield comongo.db.collections(db);
-  collection_names = collections.map(function(c){return c['s']['name'];});
-  var collection_matched = collection_names.map(function(c){return c.match(collectionNameRegex)[0];});
-  var collection_compare_result = collection_names.includesArray(collection_matched);
+  var molComboForCalculated = function(lookupItem){
+    // by data sources
+    var result = [];
+    // var datasources = lookupItem.molecular.map(function(m){return m.source;}).unique();
+    var molGrpBySource = u.groupBy(lookupItem.molecular, "source");
+
+    Object.keys(molGrpBySource).forEach(function(k){
+      if(molGrpBySource.broad.map(function(m){return m.type;}).includesArray(['mut01','cnv']).includes.length==2){
+        //can calculate MDS
+       var str = lookupItem.disease + "_mds_" + k + "_mds-"   ;
+      }
+    });
+  }
+ lookup_table.forEach(function(l){
+   var molecularCombinations = molComboForCalculated(l);
+   var currentCalculatedCollections = l.calculated.map(function(m){return m.collection;});
+   console.log(molecularCombinations.arraysCompareV2(currentCalculatedCollections));
+ });
+//   collections = yield comongo.db.collections(db);
+//   collection_names = collections.map(function(c){return c['s']['name'];});
   
   
   

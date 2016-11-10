@@ -2,7 +2,7 @@
 const jsonfile = require('jsonfile');
 const helper = require("../testingHelper.js");
 const u = require("underscore");
-var IDReporting = require('./output2.json');
+var IDReporting = require('./output2_coreIDs.json');
 var IDErrors = IDReporting.filter(function(m){
 	return ('itemsNotInRef' in m.IDstatus) && (m.IDstatus.itemsNotInRef.length > 0 || m.IDstatus.refItemsNotInSelf.length>0);
 });
