@@ -21,6 +21,16 @@ var onerror = function(e){
     console.log(e);
 };
 
+function cartesianProductOf() {
+  return u.reduce(arguments, function(a, b) {
+      return u.flatten(u.map(a, function(x) {
+          return u.map(b, function(y) {
+              return x.concat([y]);
+          });
+      }), true);
+  }, [ [] ]);
+};
+
 co(function *() {
 
   db = yield comongo.client.connect('mongodb://oncoscapeRead:i1f4d9botHD4xnZ'+
@@ -40,29 +50,49 @@ co(function *() {
     var molGrpBySource = u.groupBy(lookupItem.molecular, "source");
 
     Object.keys(molGrpBySource).forEach(function(k){
-      console.log(k);
+      //console.log(k);
       if(molGrpBySource[k].map(function(m){return m.type;}).includesArray(['mut01','cnv']).includes.length==2){
         //can calculate MDS  
        mds_sub_arrays = genesetsStrings.map(function(g){ return lookupItem.disease + "_mds_" + k + "_mds-" + g + "-cnv-mut01-" + k;});
        //console.log(mds_sub_arrays);
        result = result.concat(mds_sub_arrays);
       }
-      
+      //pcaloading and pcascore
+      //console.log(cartesianProductOf([1, 2, 3], ['a', 'b']));
+      var molCom = molGrpBySource[k].map(function(m){
+        var str = m.collection.split("_");
+        var res;
+        if(m.type == "rna" || m.type == "methylation"){
+          res = str[1]+"-"+str[3];
+        }else if(m.type == 'mut'){
+          res = "mut01";
+        }else{
+          res = m.type;
+        }
+        return res;
+      });
 
-    });
+      var cartesianProd = cartesianProductOf(genesetsStrings, molCom);
+
+      cartesianProd.forEach(function(c){
+        var str1 = lookupItem.disease + "_pcascores_" + k.toLowerCase() + "_prcomp-" + c[0] + "-" + c[1];
+        var str1Scale = str1 + "-1e+05";
+        var str2 = lookupItem.disease + "_pcaloadings_" + k.toLowerCase() + "_prcomp-" + c[0] + "-" + c[1];
+        var str2Scale = str1 + "-1e+05";
+        result = result.concat([str1, str1Scale, str2, str2Scale]);
+      });
+
+      });
     return result;
   }
  lookup_table.forEach(function(l){
-   var molecularCombinations = molComboForCalculated(l);
-   console.log(molecularCombinations);
-  //  var currentCalculatedCollections = l.calculated.map(function(m){return m.collection;});
-  //  console.log(molecularCombinations.arraysCompareV2(currentCalculatedCollections));
+   if('molecular' in l && 'calculated' in l){
+      var molecularCombinations = molComboForCalculated(l);
+      var currentCalculatedCollections = l.calculated.map(function(m){return m.collection;});
+      console.log("*******", l.disease);
+      console.log(molecularCombinations.arraysCompareV2(currentCalculatedCollections));
+   }
  });
-//   collections = yield comongo.db.collections(db);
-//   collection_names = collections.map(function(c){return c['s']['name'];});
-  
-  
-  
   yield comongo.db.close(db);
 }).catch(onerror);
 
