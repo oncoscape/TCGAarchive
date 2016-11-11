@@ -218,7 +218,64 @@ os.data.load.clinical.events <- function(oCollection, inputFile){
 }
 
 #---------------------------------------------------------
+get.tcga.col.class <- function(columns){
+  os.tcga.classes <- names(os.tcga.column.enumerations)
+  column_type <- rep("character", length(columns))
+  
+  for(class.type in os.tcga.classes){
+    for(colName in names(os.tcga.column.enumerations[[class.type]])){
+      values <-os.tcga.column.enumerations[[class.type]][[colName]]
+      matching.values <- which(columns %in% values)
+      columns[matching.values ] <- colName
+      column_type[ matching.values] <- class.type
+    }
+  }
+  
+  return(list(col=columns, class=column_type))
+}
+
+#---------------------------------------------------------
 os.data.load.clinical <- function(oCollection, inputFile, checkEnumerations=FALSE, checkClassType = "character"){
+
+
+    # Columns :: Create List From Url
+  header <- readLines(inputFile, n=3)
+  primary <- unlist(strsplit(header[1],'\t'));
+  secondary <- unlist(strsplit(header[2],'\t'));
+  cde_ids <- unlist(strsplit(header[3],'\t'));
+  cde_ids <- gsub("CDE_ID:", "", cde_ids)
+  enum.mapping = get.tcga.col.class(primary)
+  
+  con.cde <- mongo("lookup_cde_tcga_enums", db=db, url=host)
+  
+  n.pass = sapply(1:length(cde_ids), function(i){
+    if(cde_ids[i]=="")return(FALSE)
+    query = toJSON(list("cdeid"=cde_ids[i]), auto_unbox=T)
+    cde.doc = con.cde$find(query)
+    
+    if(length(cde.doc)==0){
+      #query found nothing - cde not stored yet
+      cde.doc <- list("cdeid" = cde_ids[i], "primary"=c(primary[i]), "secondary"=c(secondary[i]))
+      cde.doc$enum = enum.mapping$col[[i]]
+      cde.doc$type = enum.mapping$class[[i]]
+      status = con.cde$insert(toJSON(cde.doc, auto_unbox = T), db=db, url=host)
+      status$nInserted
+    }else {
+      cde.doc <- as.list(cde.doc)
+      cde.doc[["primary"]] = unique(c(cde.doc[["primary"]],primary[i] ))
+      cde.doc[["secondary"]] = unique(c(cde.doc[["secondary"]],secondary[i] ))
+      cde.doc[["enum"]] = unique(c(cde.doc[["enum"]],enum.mapping$col[[i]] ))
+      cde.doc[["type"]] = unique(c(cde.doc[["type"]],enum.mapping$class[[i]] ))
+      update = list("$set"=cde.doc)
+      status =con.cde$update(query,toJSON(update, auto_unbox = T))
+      status
+    }
+    
+  })
+  
+}
+#---------------------------------------------------------
+os.data.load.clinical.orig <- function(oCollection, inputFile, checkEnumerations=FALSE, checkClassType = "character"){
   
   # Columns :: Create List From Url
   header <- readLines(inputFile, n=3)
@@ -260,7 +317,11 @@ os.data.load.clinical <- function(oCollection, inputFile, checkEnumerations=FALS
     }
   }
   
-  stopifnot(length(columns) == length(unique(columns)))# {print(paste("Duplicated column names in:", oCollection))}
+  if(length(columns) != length(unique(columns))){
+    print(paste("Duplicated column names in:", oCollection$collection, collapse = " "))
+    print(columns[duplicated(columns)])
+    stop();
+    }
   
   # Table :: Read Table From URL
   mappedTable<-read.delim(inputFile,
@@ -340,7 +401,7 @@ os.data.batch <- function(manifest, ...){
                                       parent = sourceObj$parent, process = process)
     
     prev.run <- collection.exists(oCollection$collection)
-    if(prev.run) return(FALSE);
+ #   if(prev.run) return(FALSE);
     
     if(dataType %in% names(lookupList))
       do.call(lookupList[[dataType]][["data.load"]], list(oCollection, inputFile))
@@ -524,10 +585,10 @@ commands <- c("categories", "clinical", "molecular", "scale", "lookup", "sample"
 #commands <- c("categories")
 #commands <- c("molecular")
 #commands <- c("scale")
-#commands <- "clinical"
+commands <- "clinical"
 #commands <- "lookup"
 #commands <- "sample"
-commands <- "sunburst"
+#commands <- "sunburst"
 
 args = commandArgs(trailingOnly=TRUE)
 if(length(args) != 0 )

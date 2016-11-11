@@ -168,19 +168,19 @@ lookupList = list(
                data.load = "os.data.load.clinical",
                insert.lookup = "insert.lookup.clinical",
                insert.document = "insert.document.row" ),
-  followUp=list(type="clinical",
+  followup=list(type="clinical",
                 data.load = "os.data.load.clinical",
                 insert.lookup = "insert.lookup.clinical",
                 insert.document = "insert.document.row" ),
-  newTumor=list(type="clinical",
+  newtumor=list(type="clinical",
                data.load = "os.data.load.clinical",
                insert.lookup = "insert.lookup.clinical",
               insert.document = "insert.document.row" ),
- `newTumor-followUp`=list(type="clinical",
+ `newtumor-followup`=list(type="clinical",
                data.load = "os.data.load.clinical",
               insert.lookup = "insert.lookup.clinical",
               insert.document = "insert.document.row" ),
-  otherMalignancy=list(type="clinical",
+  othermalignancy=list(type="clinical",
                data.load = "os.data.load.clinical",
                 insert.lookup = "insert.lookup.clinical",
                 insert.document = "insert.document.row" )
@@ -315,13 +315,13 @@ insert.lookup.sourceTypeCollection <- function(oCollection){
 insert.lookup.clinical <- function(oCollection){
   
   clinical.field = mongo.lookup$find(query=paste('{"disease":"',oCollection$dataset, '"}', sep=""), fields= paste('{"clinical.', oCollection$dataType, '":1}', sep=""))
-  if(nchar(clinical.field[,2]) > 0 & oCollection$processName != "merged"){
-    existingCollection <- mongo.manifest$find(query=paste('{"collection":"',clinical.field[,2],'"}',sep=""), fields='{}')
-    newCollection      <- mongo.manifest$find(query=paste('{"collection":"',oCollection$collection,'"}',sep=""), fields='{}')
+#  if(nchar(clinical.field[,2]) > 0 & oCollection$processName != "merged"){
+#    existingCollection <- mongo.manifest$find(query=paste('{"collection":"',clinical.field[,2],'"}',sep=""), fields='{}')
+#    newCollection      <- mongo.manifest$find(query=paste('{"collection":"',oCollection$collection,'"}',sep=""), fields='{}')
     
-    oCollection <- merge.collections(newCollection, existingCollection)
+#    oCollection <- merge.collections(newCollection, existingCollection)
     
-  }
+#  }
   
     add.collection <- list()
     add.collection[paste("clinical",oCollection$dataType, sep=".")] <- oCollection$collection
@@ -528,9 +528,14 @@ remove.lookup <- function(oCollection){
       collections <- collections[-matched.record,]
   #  lookup.doc[[lookupType]] = collections
   }
-      ### TO DO:
-  #else if(dataType %in% c("patient", "drug", "radiation", "followUp-v1p0","followUp-v1p5","followUp-v2p0", "followUp-v2p1", "followUp-v4p0","followUp-v4p4","followUp-v4p8", "newTumor", "newTumor-followUp-v1p0", "newTumor-followUp-v4p0","newTumor-followUp-v4p4","newTumor-followUp-v4p8", "otherMalignancy-v4p0", "events")){
-  #}else if{}
+  else if(lookupType %in% c("clinical")){
+    collections <- lookup.doc[,-1]
+    match.record = match(oCollection$dataType , tolower(names(collections)))
+    if(!is.na(match.record))
+      collections[[match.record]] = NULL
+    collections <- as.list(collections)
+  }
+  
   update = list(); update[["$set"]][[lookupType]] = collections
   
   mongo.lookup$update(query, update=toJSON(update, auto_unbox = T))
