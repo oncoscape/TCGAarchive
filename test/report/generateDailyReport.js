@@ -8,6 +8,8 @@ var patientID_status = require("../patientIDTesting/IDstatus_errors_brief.json")
 var gene_status = require("../geneSymbols/geneIDstatus_errors_brief.json");
 var diseaseCollectionStructureStatus = require("../toolTesting/diseaseCollectionStructuralStatus.json");
 var duplicatedFields = require("./duplicatedFields.json");
+var collectionSize = require("./CollectionSize.json");
+var validateCalculatedFromMolecular = require("./validateCalculatedFromMolecular.json");
 var db, collections, existing_collection_names, manifest;
 var manifest_arr = [];
 var lookup_table = [];
@@ -257,10 +259,23 @@ co(function *() {
   // helper.format.text(render_patient_weird_ex);
   // helper.format.codeStop();
 
+  // report the size of the molecular collections with the count lower than 1000
+  helper.format.h1("Part III: Report the size of the molecular collections with the count lower than 1000");
+  helper.format.codeStart();
+  collectionSize.forEach(function(a){
+    helper.format.text(a);
+  });
+  helper.format.codeStop();
+  // report the discrepancy between calculated and calculated category in lookup_oncoscape_datasources
+  helper.format.h1("Part IV: report the discrepancy between calculated and calculated category in lookup_oncoscape_datasources");
+  helper.format.codeStart();
+  validateCalculatedFromMolecular.forEach(function(a){
+    helper.format.text(a);
+  });
+  helper.format.codeStop();
 
   // report the collection erros from ajv_tcga_v2.json 
-  
-  helper.format.h1("Part III: Data Structural Errors - Run the DB against schemas.json, below lists the error message: ");
+  helper.format.h1("Part V: Data Structural Errors - Run the DB against schemas.json, below lists the error message: ");
   helper.format.codeStart();
   ajvMsg.forEach(function(a){
     if(a!=null && a.passedRate < 1){
@@ -268,9 +283,9 @@ co(function *() {
     }
   });
   helper.format.codeStop();
-
+  
   // report disease collection structural status against brain in lookup_oncoscape_datasources
-  helper.format.h1("Part IV: Check diseae collection structural status against brain in lookup_oncoscape_datasources");
+  helper.format.h1("Part VI: Check diseae collection structural status against brain in lookup_oncoscape_datasources");
   var diseaseCollection = diseaseCollectionStructureStatus.filter(function(d){
                                               return (d.collectionStructural.length>0&&d.disease !='hg19'); }).map(function(m){
                                               var elem = {};
@@ -279,19 +294,18 @@ co(function *() {
                                               m.collectionStructural.forEach(function(n){
                                                 elem.errors.push(n.schemaPath+'['+n.message + ']');
                                               });
-                                              return elem;})
-
+                                              return elem;});
   helper.format.codeStart();
   helper.format.text(diseaseCollection);
   helper.format.codeStop();
 
-  helper.format.h1("Part V: Check if there are any duplicated fields in Clinical Collections:");
+  helper.format.h1("Part VII: Check if there are any duplicated fields in Clinical Collections:");
   helper.format.codeStart();
   helper.format.text(duplicatedFields);
   helper.format.codeStop();  
 
   // report the earlier version patient ID checking
-  helper.format.h1("Part VI: Checked the patient IDs against disease patient collection IDs:");
+  helper.format.h1("Part VIII: Checked the patient IDs against disease patient collection IDs:");
   
   helper.format.h3("The aggregated result grouped by Disease types and Data Types");
   var diseasesWithPIDErros = u.uniq(patientID_status.map(function(m){return m.disease;}));
@@ -358,10 +372,10 @@ co(function *() {
   var totalTypes =['mut','mut01','methylation','rna','protein','cnv','facs','genesets','annotation','genedegree','edges','genes','pcaloadings' ];   
   helper.format.text(u.difference(totalTypes, typesWithGeneIDErros));
   helper.format.codeStop();
-  helper.format.text("Detailed aggregated report lists here (sorted by subfield geneIDstatus.itemsNotInRefLength):");
-  helper.format.codeStart();
-  gene_status.forEach(function(s){helper.format.text(s);});
-  helper.format.codeStop();
+  // helper.format.text("Detailed aggregated report lists here (sorted by subfield geneIDstatus.itemsNotInRefLength):");
+  // helper.format.codeStart();
+  // gene_status.forEach(function(s){helper.format.text(s);});
+  // helper.format.codeStop();
   
 
   yield comongo.db.close(db);
