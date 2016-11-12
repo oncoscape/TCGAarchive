@@ -5,6 +5,16 @@ Array.prototype.contains = function(v) {
     return false;
 };
 
+Array.prototype.containPartialString = function(regex){
+   var arr = [];
+   for(var i = 0; i< this.length; i++){
+     if(this[i].match(regex) != null ){
+      arr = arr.concat(this[i]);
+     }
+   }
+   return arr;
+};
+
 Array.prototype.arraysCompare = function(ref) {
     var elem = {};
     elem.countInRef = 0;
@@ -16,6 +26,61 @@ Array.prototype.arraysCompare = function(ref) {
           elem.itemsNotInRef.push(this[i]);
         }
     }
+    return elem;
+};
+
+Object.prototype.nestedUniqueCount = function(){
+    var errorCount = {};
+    var ar = [];
+    var str;
+    this['errors'].forEach(function(a){
+        a.errorType.forEach(function(e){
+          str = e.schemaPath + " [message: "+ e.message + "]; Number of Violation: ";  
+          if(ar.contains(str)){
+            errorCount[str]++;
+          }else{
+            ar.push(str);
+            errorCount[str]=1;
+          }
+        });
+    });
+    //return ar.unique();
+    return errorCount;
+};
+
+Array.prototype.arraysCompareV2 = function(ref) {
+    var elem = {};
+    elem.overlapCount = 0;
+    elem.itemsNotInRef = [];
+    elem.refItemsNotInSelf = [];
+    for(var i = 0; i < this.length; i++) {
+        if(ref.indexOf(this[i]) > -1){
+          elem.overlapCount++;
+        }else{
+          elem.itemsNotInRef.push(this[i]);
+        }
+    }
+    for(var j = 0; j < ref.length; j++){
+        if(this.indexOf(ref[j]) == -1){
+          elem.refItemsNotInSelf.push(ref[j]);
+        }
+    }
+    return elem;
+};
+
+Array.prototype.includesArray = function(arr){
+    var elem = {};
+    var includes = [];
+    var notIncludes = [];
+    for(var i=0; i<this.length; i++){
+        if(arr.indexOf(this[i]) > -1){
+            includes.push(this[i]);
+        }else{
+            notIncludes.push(this[i]);
+        }
+    }
+    elem.includes = includes;
+    elem.notIncluded = notIncluded;
     return elem;
 };
 
@@ -61,11 +126,20 @@ Array.prototype.findScoreByDiseaseByType = function(t, d) {
 
 Array.prototype.findCollectionsByType = function(v){
   var arr = [];
-  for(var i = 0; i < this.length; i++) {
-    if(this[i].type === v){
-      arr.push(this[i].collection);
-    } 
+  if('type' in this[0]){
+    for(var i = 0; i < this.length; i++) {
+      if(this[i].type === v){
+        arr.push(this[i].collection);
+      } 
+    }
+  }else if('dataType' in this[0]){
+    for(var i = 0; i < this.length; i++) {
+      if(this[i].dataType === v){
+        arr.push(this[i].collection);
+      } 
+    }
   }
+  
   return arr;
 };
 
@@ -76,6 +150,15 @@ Array.prototype.findObjsByType = function(v){
       arr.push(this[i]);
     } 
   }
+  return arr;
+};
+
+Array.prototype.findObjByDiseaseByType = function(t, d) {
+  var arr = [];
+  this.forEach(function(a){
+    if(a.type==t && a.disease==d) 
+      arr.push(a);
+  });
   return arr;
 };
 
