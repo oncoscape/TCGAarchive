@@ -17,6 +17,8 @@ var db, collection, collections, collection_names;
 var lookup_table;
 var genesets, genesetsStrings;
 var mds_sub_arrays;
+var elem = {};
+var final_result = [];
 var onerror = function(e){
     console.log(e);
 };
@@ -85,14 +87,17 @@ co(function *() {
       });
     return result;
   }
- lookup_table.forEach(function(l){
+ final_result = lookup_table.map(function(l){
+   elem = {};
+   elem.disease = l.disease;
    if('molecular' in l && 'calculated' in l){
       var molecularCombinations = molComboForCalculated(l);
       var currentCalculatedCollections = l.calculated.map(function(m){return m.collection;});
-      console.log("*******", l.disease);
-      console.log(molecularCombinations.arraysCompareV2(currentCalculatedCollections));
+      elem.possibleMolecularCombination = {};
+      elem.possibleMolecularCombination = molecularCombinations.arraysCompareV2(currentCalculatedCollections);
    }
+    return elem;
  });
+ jsonfile.writeFile("validateCalculatedFromMolecular.json", final_result, {spaces:4}, function(err){ console.error(err);});
   yield comongo.db.close(db);
 }).catch(onerror);
-
