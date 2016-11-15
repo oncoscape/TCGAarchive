@@ -1,9 +1,9 @@
 /* 
   Checking Minmum/Maximum values of each collection or     
 */
-
-var jsonfile = require("jsonfile");
+console.time();
 const mongoose = require('mongoose');
+const fs = require("fs");
 const u = require("underscore");
 const helper = require("../testingHelper.js");
 const manifest = require("../manifest_arr.json");
@@ -35,7 +35,7 @@ var mongo = function(mongoose){
 // Create FileStream
 var filestream = function(fs){
   return new Promise(function(resolve, reject){
-  var stream = fs.createWriteStream("./output.json",{  
+  var stream = fs.createWriteStream("./CheckingMinMaxValues.json",{  
         flags: 'w',
         defaultEncoding: 'utf8'
       });
@@ -51,7 +51,7 @@ var promiseFactory = function(db, collection, type, disease){
         elem.collection = collection;
         elem.type = type;
         elem.disease = disease;
-        elem.MinMax = {};
+        elem.MinMax = [];
         type = type.trim().toUpperCase();
         switch(type){
             case "MUT":
@@ -64,31 +64,40 @@ var promiseFactory = function(db, collection, type, disease){
                 console.log(collection);
                 var minMax = {};
                 db.collection(collection).find().toArray().then(function(res){
-                    elem.MinMax = res.map(function(gene){
-                        minMax.gene = gene.gene;
-                        minMax.minRecorded = gene.min;
-                        minMax.maxRecorded = gene.max;
-                        minMax.min = u.min(u.values(gene.patients));
-                        minMax.max = u.max(u.values(gene.patients));
-                    });
-                    return elem;
-                }).then(function(){resolve(elem);});
+                    var r = [];
+                    res.forEach(function(gene){
+                            var range = u.values(gene.patients).map(function(v){return v.toUpperCase();}).sort();
+                            var max = u.last(range);
+                            var min = u.first(range);
+                            if(min!=gene.min.toUpperCase() || max!=gene.max.toUpperCase()){
+                                minMax.gene = gene.gene;
+                                minMax.minRecorded = gene.min.toUpperCase();
+                                minMax.maxRecorded = gene.max.toUpperCase();
+                                minMax.min = min;
+                                minMax.max = max;
+                                console.log(minMax);
+                                r.push(minMax);
+                            }
+                        });
+                    console.log(r.length);
+                    elem.MinMax = r;
+                    resolve(elem);
+                });
                break;
             case "PTDEGREE":
             case "GENEDEGREE":
                 console.log(collection);
                 var minMax = {};
                 db.collection(collection).find().toArray().then(function(res){
-                    r = res;
-                    //console.log(r);
-                    return r = r.map(function(p){return u.values(u.omit(p,'_id'));});
+                    var r;
+                    return r = res.map(function(p){return u.values(u.omit(p,'_id'));});
                 }).then(function(){
                     values = u.flatten(r);
                     return values;
                 }).then(function(){
                     minMax.min = u.min(values);
                     minMax.max = u.max(values);
-                    elem.MinMax = minMax;
+                    elem.MinMax.push(minMax);
                     console.log(elem);
                     resolve(elem);
                 });
@@ -104,11 +113,17 @@ Promise.all([mongo(mongoose),filestream(fs)]).then(function(response){
     var db = response[0];
     var file = response[1];
     var index = 0;
+    file.write("[");
     asyncLoop(manifest, function(d, next){ 
        promiseFactory(db, d.collection, d.dataType, d.dataset).then(function(res){
           console.log(index++);
           //console.dir(res);
           file.write(JSON.stringify(res, null, 4));
+          if(index != manifest.length){
+            file.write(",");
+          }else{
+              file.write("]");
+          }
           next();
         });
     }, function (err)
