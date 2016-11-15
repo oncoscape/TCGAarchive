@@ -70,9 +70,9 @@ var promiseFactory = function(db, collection, type, disease){
                         minMax.maxRecorded = gene.max;
                         minMax.min = u.min(u.values(gene.patients));
                         minMax.max = u.max(u.values(gene.patients));
-                        return minMax;
-                    }).then(function(){resolve(elem);});
-                });
+                    });
+                    return elem;
+                }).then(function(){resolve(elem);});
                break;
             case "PTDEGREE":
             case "GENEDEGREE":
@@ -107,6 +107,7 @@ Promise.all([mongo(mongoose),filestream(fs)]).then(function(response){
     asyncLoop(manifest, function(d, next){ 
        promiseFactory(db, d.collection, d.dataType, d.dataset).then(function(res){
           console.log(index++);
+          //console.dir(res);
           file.write(JSON.stringify(res, null, 4));
           next();
         });
