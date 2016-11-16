@@ -6,7 +6,7 @@ var comongo = require('co-mongodb');
 var co = require('co');
 var helper = require("../testingHelper.js");
 var db, collection, collections;
-var zgene;
+var zgenes;
 
 var onerror = function(e){
     console.log(e);
@@ -18,9 +18,10 @@ co(function *() {
     '@oncoscape-dev-db1.sttrcancer.io:27017,oncoscape-dev-db2.sttrcancer.io:27017,'+
     'oncoscape-dev-db3.sttrcancer.io:27017/pancan12?authSource=admin&replicaSet=rs0');
 
-  collection = yield comongo.db.collection(db, "z-gene");
-  zgene = yield collection.find().toArray();
-  console.log(zgene[0]);
+  collection = yield comongo.db.collection(db, "z-genes");
+  zgenes = yield collection.find().toArray();
+  console.log(zgenes[0]);
+  jsonfile.writeFile("zgenes.json", zgenes, {spaces: 4}, function(err){ console.error(err);});  
   yield comongo.db.close(db);
 }).catch(onerror);
 
