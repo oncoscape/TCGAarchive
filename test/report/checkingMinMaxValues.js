@@ -51,7 +51,6 @@ var promiseFactory = function(db, collection, type, disease){
         elem.collection = collection;
         elem.type = type;
         elem.disease = disease;
-        elem.MinMax = [];
         type = type.trim().toUpperCase();
         switch(type){
             case "MUT":
@@ -62,22 +61,40 @@ var promiseFactory = function(db, collection, type, disease){
             case "CNV":
             case "PSI":  
                 console.log(collection);
+                elem.MinMax = [];
                 var minMax = {};
                 db.collection(collection).find().toArray().then(function(res){
                     var r = [];
                     res.forEach(function(gene){
-                            var range = u.values(gene.patients).map(function(v){return v.toUpperCase();}).sort();
-                            var max = u.last(range);
-                            var min = u.first(range);
-                            if(min!=gene.min.toUpperCase() || max!=gene.max.toUpperCase()){
-                                minMax.gene = gene.gene;
-                                minMax.minRecorded = gene.min.toUpperCase();
-                                minMax.maxRecorded = gene.max.toUpperCase();
-                                minMax.min = min;
-                                minMax.max = max;
-                                console.log(minMax);
-                                r.push(minMax);
+                            var range, max, min;
+                            if(typeof(gene.max) == 'string'){
+                                range = u.values(gene.patients).map(function(v){return v.toUpperCase();}).sort();
+                                max = u.last(range);
+                                min = u.first(range);
+                                if(min!=gene.min.toUpperCase() || max!=gene.max.toUpperCase()){
+                                    minMax.gene = gene.gene;
+                                    minMax.minRecorded = gene.min.toUpperCase();
+                                    minMax.maxRecorded = gene.max.toUpperCase();
+                                    minMax.min = min;
+                                    minMax.max = max;
+                                    console.log(minMax);
+                                    r.push(minMax);
+                                }
+                            }else{
+                                range = u.values(gene.patients).sort();
+                                max = u.last(range);
+                                min = u.first(range);
+                                if(min!=gene.min || max!=gene.max){
+                                    minMax.gene = gene.gene;
+                                    minMax.minRecorded = gene.min;
+                                    minMax.maxRecorded = gene.max;
+                                    minMax.min = min;
+                                    minMax.max = max;
+                                    console.log(minMax);
+                                    r.push(minMax);
+                                }
                             }
+                            
                         });
                     console.log(r.length);
                     elem.MinMax = r;
@@ -87,6 +104,7 @@ var promiseFactory = function(db, collection, type, disease){
             case "PTDEGREE":
             case "GENEDEGREE":
                 console.log(collection);
+                elem.MinMax = [];
                 var minMax = {};
                 db.collection(collection).find().toArray().then(function(res){
                     var r;
@@ -117,7 +135,7 @@ Promise.all([mongo(mongoose),filestream(fs)]).then(function(response){
     asyncLoop(manifest, function(d, next){ 
        promiseFactory(db, d.collection, d.dataType, d.dataset).then(function(res){
           console.log(index++);
-          //console.dir(res);
+          console.dir(res);
           file.write(JSON.stringify(res, null, 4));
           if(index != manifest.length){
             file.write(",");
