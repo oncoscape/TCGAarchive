@@ -840,8 +840,6 @@
                 "patternProperties": {
                    "^[A-Z]+[A-Z0-9]+": { "type": "number" }
                 },
-                // "maxProperties": 2,
-                // "minProperties": 2,
                 "required": ["_id"],
                 "additionalProperties": true
               }
