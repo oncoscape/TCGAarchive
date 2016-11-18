@@ -1,0 +1,59 @@
+[{
+    "collection": "brain_color_tcga_import",
+    "type": "color",
+    "disease": "brain"
+},{
+    "collection": "brca_color_tcga_import",
+    "type": "color",
+    "disease": "brca"
+},{
+    "collection": "esca_mut_broad_mutsig2",
+    "type": "mut",
+    "disease": "esca",
+    "MinMax": []
+},{
+    "collection": "esca_mut01_broad_mutsig2",
+    "type": "mut01",
+    "disease": "esca",
+    "MinMax": []
+},{
+    "collection": "gbm_mut_broad_mutsig2",
+    "type": "mut",
+    "disease": "gbm",
+    "MinMax": []
+},{
+    "collection": "gbm_mut01_broad_mutsig2",
+    "type": "mut01",
+    "disease": "gbm",
+    "MinMax": [
+        {
+            "min": null,
+            "max": null
+        }
+    ]
+},{
+    "collection": "brain_mut_broad_mutsig2",
+    "type": "mut",
+    "disease": "brain",
+    "MinMax": [
+        {
+            "min": null,
+            "max": null
+        }
+    ]
+},{
+    "collection": "brain_mut01_broad_mutsig2",
+    "type": "mut01",
+    "disease": "brain",
+    "MinMax": []
+},{
+    "collection": "hnsc_mut_broad_mutsig2",
+    "type": "mut",
+    "disease": "hnsc",
+    "MinMax": []
+},{
+    "collection": "hnsc_mut01_broad_mutsig2",
+    "type": "mut01",
+    "disease": "hnsc",
+    "MinMax": []
+},
