@@ -1,9 +1,11 @@
 console.time();
 const mongoose = require("mongoose");
 const fs = require("fs");
+const jsonfile = require("jsonfile-promised");
 const _ = require("underscore");
-const input = require("../datasourceTesting/ajv_tcga_v2_10262016.json");
+const input = require("../datasourceTesting/ajv_tcga_v2_11172016.json");
 const asyncLoop = require('node-async-loop');
+var lookup_oncoscape_genes = [];
 var diseases;
 
 var mongo = function(mongoose){
@@ -114,13 +116,22 @@ Promise.all([mongo(mongoose),filestream(fs)]).then(function(response){
     var db = response[0];
     var file = response[1];
     var index = 0;
+    lookup_oncoscape_genes = db.collection("lookup_oncoscape_genes").find().toArray().then(function(res){
+      jsonfile.writeFile("lookup_oncoscape_genes.json", res, {spaces: 4}); 
+    });
     console.log(index);
+    file.write("[");
     asyncLoop(input, function(d, next){ 
       console.log(d);
+      console.log(index++);
       if('collection' in d){
         promiseFactory(db, d.collection, d.type, d.disease).then(function(res){
-          console.log(index++);
           file.write(JSON.stringify(res, null, 4));
+          if(index != input.length){
+            file.write(",");
+          }else{
+            file.write("]");
+          }
           next();
         });
       }else{

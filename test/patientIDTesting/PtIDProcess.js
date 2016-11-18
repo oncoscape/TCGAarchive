@@ -24,8 +24,8 @@ output.forEach(function(o){
 		elem.type = o.type;
 		elem.IDstatus = {};
 		if('IDs' in o){
-			var coreIDs = o.IDs.map(function(id){return id.substr(0, 11);});
-			var diseaseCoreIDs = ptList[o.disease].map(function(id){return id.substr(0, 11);});
+			var coreIDs = o.IDs.map(function(id){return id.substr(0, 12);});
+			var diseaseCoreIDs = ptList[o.disease].map(function(id){return id.substr(0, 12);});
 			elem.IDstatus = coreIDs.arraysCompareV2(diseaseCoreIDs);
 		}
 		console.log(JSON.stringify(elem, null, 4));

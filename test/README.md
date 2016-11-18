@@ -216,16 +216,16 @@ var diseaseCollectionSchema = {
 cd test/datasourceTesting
 
 - node generate_manifestArr.js //*save manifest array as a json object* time: instantly
-- node mongooseTest.js //*save ajvMsg as a json object* time: 6379529ms = 106min
-- node mongooseTest2.js //*save ajvMsg_v2 as a json object* time: instantly
+- node mongooseTest.js //*save ajvMsg_[date].json as a json object* time: 6379529ms = 106min
+- node mongooseTest2.js //*save ajvMsg_v2_[date].json as a json object* time: instantly
 
 ## Pateint IDs Testing Pipeline:
 
 cd test/patientIDTesting
 
-- node mz.js //*save as output.json* each document records the patient IDs. This code will generate output.json. Need to manually replace "}{" with "},{" and add "[" and "]". 
-- node mz_process.js //this is to test against clinical patient IDs *save as output2.json* The out put needs to add "," and "[]"
-- node mz_process2.js //*sort and save as IDErrors_briefv2.json*
+- node PtIDCollecting.js //*save as output.json* 
+- node PtIDProcess.js > output2.json //this is to test against clinical patient IDs *save as output2.json*
+- node PtIDProcess2.js //*sort and save as IDErrors_briefv2.json*
 
 
 ## Gene Symbols Testing Pipeline:
@@ -234,8 +234,8 @@ So far, this pipeline is running on top of ajvMsg from datasourceTesting pipelin
 
 cd test/geneSymbols
 
-- node geneSymbols_checking.js //*output to json-like file as output.json* time: 15min
-- node geneSymbols_resultProcess.js //*output to json-like file as output2.json* time: instantly
+- node geneSymbols_checking.js //*output to json-like file as output.json* time: 466644ms
+- node geneSymbols_resultProcess.js > output2.json //*output to json-like file as output2.json* time: instantly
 - note geneSymbols_resultProcess2.js //*geneIDstatus_errors_brief.json* time: 6min
 
 ## Miscellaneous

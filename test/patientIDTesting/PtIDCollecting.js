@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const fs = require("fs");
 const _ = require("underscore");
 const helper = require("../testingHelper.js");
-const input = require("../datasourceTesting/ajv_tcga_v2_11072016.json");
+const input = require("../datasourceTesting/ajv_tcga_v2_11172016.json");
 const asyncLoop = require('node-async-loop');
 // Connect To Database
 var mongo = function(mongoose){
@@ -132,13 +132,18 @@ Promise.all([mongo(mongoose),filestream(fs)]).then(function(response){
     var file = response[1];
     var index = 0;
     console.log(index);
+    file.write("[");
     asyncLoop(input, function(d, next){ 
       console.log(d);
+      console.log(index++);
       if('collection' in d){
         promiseFactory(db, d.collection, d.type, d.disease).then(function(res){
-          console.log(index++);
-          //console.log(JSON.stringify(res, null, 4));
           file.write(JSON.stringify(res, null, 4));
+          if(index != input.length){
+            file.write(",");
+          }else{
+            file.write("]");
+          }
           next();
         });
       }else{

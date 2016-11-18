@@ -12,6 +12,7 @@ var comongo = require('co-mongodb');
 var co = require('co');
 const u = require("underscore");
 const helper = require("../testingHelper.js");
+const manifest = require("../manifest_arr.json");
 var elem = [];
 var db, collection, collections, collection_names;
 var lookup_table;
