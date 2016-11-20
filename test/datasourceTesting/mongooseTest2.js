@@ -10,7 +10,7 @@ const jsonfile = require("jsonfile-promised");
 const helper = require("../testingHelper.js");
 var ajvMsg, ajvMsg_v2;
 
-jsonfile.readFile("ajv_tcga_11072016.json").then(function(obj){
+jsonfile.readFile("ajv_tcga_11172016.json").then(function(obj){
     ajvMsg = obj;
 }).then(function(){
     ajvMsg_v2 = ajvMsg.map(function(a){
