@@ -169,8 +169,8 @@ co(function *() {
   helper.format.h4("lookup table collection naming validation:");
   helper.format.h5("Number of Collections with permitted names");
   helper.format.text(lookup_compare_result.includes.length);
-  helper.format.codeStart();
   helper.format.text("List the first five examples that have unallowed symbols in the collection name: ");
+  helper.format.codeStart();
   lookup_compare_result.notIncluded.splice(0,5).forEach(function(l){
     helper.format.text(l);
   });
@@ -180,8 +180,8 @@ co(function *() {
   helper.format.h4("manifest collection naming validation:");
   helper.format.h5("Number of Collections with permitted names");
   helper.format.text(manifest_compare_result.includes.length);
-  helper.format.codeStart();
   helper.format.text("List the first five examples that have unallowed symbols in the collection name: "); 
+  helper.format.codeStart();
   manifest_compare_result.notIncluded.splice(0,5).forEach(function(l){
     helper.format.text(l);
   });
@@ -191,8 +191,8 @@ co(function *() {
   helper.format.h4("Current database collection naming validation:");
   helper.format.h5("Number of Collections with permitted names");
   helper.format.text(collection_compare_result.includes.length);
-  helper.format.codeStart();
   helper.format.text("List the first five examples that have unallowed symbols in the collection name: ");
+  helper.format.codeStart();
   collection_compare_result.notIncluded.splice(0,5).forEach(function(l){
     helper.format.text(l);
   });

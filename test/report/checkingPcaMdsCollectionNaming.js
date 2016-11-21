@@ -12,10 +12,10 @@ var comongo = require('co-mongodb');
 var co = require('co');
 const u = require("underscore");
 const helper = require("../testingHelper.js");
-const manifest = require("../manifest_arr.json");
 var elem = [];
 var db, collection, collections, collection_names;
 var lookup_table;
+var manifest;
 var genesets, genesetsStrings;
 var mds_sub_arrays;
 var elem = {};
@@ -42,10 +42,13 @@ co(function *() {
 
   collection = yield comongo.db.collection(db, 'lookup_oncoscape_datasources');
   lookup_table = yield collection.find({}).toArray();
+  collection = yield comongo.db.collection(db, 'manifest');
+  manifest = yield collection.find({}).toArray();
   collection = yield comongo.db.collection(db, 'hg19_genesets_hgnc_import');
   genesets = yield collection.distinct('name');
   genesetsStrings = yield genesets.map(function(g){ return g.toLowerCase().replace(/\s/g, '');});
 
+  var ExcludedCollections = manifest.filter(function(m){return ('dne' in m);}).map(function(f){return f.collection;});
   var molComboForCalculated = function(lookupItem){
     // by data sources
     var result = [];
@@ -94,8 +97,11 @@ co(function *() {
    if('molecular' in l && 'calculated' in l){
       var molecularCombinations = molComboForCalculated(l);
       var currentCalculatedCollections = l.calculated.map(function(m){return m.collection;});
-      elem.possibleMolecularCombination = {};
-      elem.possibleMolecularCombination = molecularCombinations.arraysCompareV2(currentCalculatedCollections);
+      //elem.possibleMolecularCombination = {};
+      var evaluation = molecularCombinations.arraysCompareV2(currentCalculatedCollections);
+      evaluation.NotCalculated = evaluation.itemsNotInRef.includesArray(ExcludedCollections).includes;
+      evaluation.itemsNotInRef = u.difference(evaluation.itemsNotInRef,evaluation.NotCalculated);
+      elem.possibleMolecularCombination = evaluation;
    }
     return elem;
  });
