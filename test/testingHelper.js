@@ -194,6 +194,7 @@ exports.format = {
   h2: function(text) { console.log(); console.log('## '+text); },
   h3: function(text) { console.log(); console.log('### '+text); },
   h4: function(text) { console.log(); console.log('#### '+text); },
+  h5: function(text) { console.log(); console.log('##### '+text); },
   textbold: function(text) { console.log(); console.log(); console.log('**'+ text+'**'); },
   textlist: function(text){ console.log(); console.log('- '+ text);  },
   textsublist: function(text){ console.log('  * '+ text);  },

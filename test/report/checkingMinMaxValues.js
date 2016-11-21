@@ -47,7 +47,6 @@ var filestream = function(fs){
 var promiseFactory = function(db, collection, type, disease){
     return new Promise(function(resolve, reject){
         var elem = {};
-        var arr = [];
         elem.collection = collection;
         elem.type = type;
         elem.disease = disease;
@@ -61,7 +60,7 @@ var promiseFactory = function(db, collection, type, disease){
             case "CNV":
             case "PSI":  
                 var minMax = {};
-                arr = [];
+                var arr = [];
                 var cursor = db.collection(collection).find();
                 var count=0;
                 cursor.each(function(err, gene){
@@ -107,7 +106,6 @@ var promiseFactory = function(db, collection, type, disease){
 
             case "PTDEGREE":
             case "GENEDEGREE":
-                arr = [];
                 var minMax = {};
                 db.collection(collection).find().toArray().then(function(res){
                     var r = u.flatten(res.map(function(p){return u.values(u.omit(p,'_id'));}));
@@ -117,8 +115,7 @@ var promiseFactory = function(db, collection, type, disease){
                     minMax = {};
                     minMax.min = u.min(values);
                     minMax.max = u.max(values);
-                    arr.push(minMax);
-                    elem.MinMax = arr;
+                    elem.MinMax = minMax;
                     resolve(elem);
                 });
                 break;
@@ -138,7 +135,6 @@ Promise.all([mongo(mongoose),filestream(fs)]).then(function(response){
        console.log(d.collection);  
        promiseFactory(db, d.collection, d.dataType, d.dataset).then(function(res){
           console.log(index++);
-          //console.dir(res);
           file.write(JSON.stringify(res, null, 4));
           if(index != manifest.length){
             file.write(",");

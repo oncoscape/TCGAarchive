@@ -10,6 +10,7 @@ var diseaseCollectionStructureStatus = require("../toolTesting/diseaseCollection
 var duplicatedFields = require("./duplicatedFields.json");
 var collectionSize = require("./CollectionSize.json");
 var validateCalculatedFromMolecular = require("./validateCalculatedFromMolecular.json");
+var collectionNameRegex = /[A-Za-z0-9_-]+/g;
 var db, collections, existing_collection_names, manifest;
 var manifest_arr = [];
 var lookup_table = [];
@@ -162,7 +163,40 @@ co(function *() {
   helper.format.text(existing_collection_names.arraysCompareV2(manifest_listed_collections));
   helper.format.codeStop();
   
-
+  helper.format.h2("Eveluation of Collection names: only alphanumeric, dash and underscore are permitted");
+  var lookup_matched = lookup_listed_collections.map(function(c){return c.match(collectionNameRegex)[0];});
+  var lookup_compare_result = lookup_listed_collections.includesArray(lookup_matched);
+  helper.format.h4("lookup table collection naming validation:");
+  helper.format.codeStart();
+  helper.format.h5("Number of Collections with permitted names");
+  helper.format.text(lookup_compare_result.includes.length);
+  helper.format.text("List the first five examples that have unallowed symbols in the collection name: ");
+  lookup_compare_result.notIncluded.splice(0,5).forEach(function(l){
+    helper.format.text(l);
+  });
+  helper.format.codeStop();
+  var manifest_matched = manifest_listed_collections.map(function(c){return c.match(collectionNameRegex)[0];});
+  var manifest_compare_result = manifest_listed_collections.includesArray(manifest_matched);
+  helper.format.h4("manifest collection naming validation:");
+  helper.format.codeStart();
+  helper.format.h5("Number of Collections with permitted names");
+  helper.format.text(manifest_compare_result.includes.length);
+  helper.format.text("List the first five examples that have unallowed symbols in the collection name: "); 
+  manifest_compare_result.notIncluded.splice(0,5).forEach(function(l){
+    helper.format.text(l);
+  });
+  helper.format.codeStop();
+  var collection_matched = existing_collection_names.map(function(c){return c.match(collectionNameRegex)[0];});
+  var collection_compare_result = existing_collection_names.includesArray(collection_matched);
+  helper.format.h4("Current database collection naming validation:");
+  helper.format.codeStart();
+  helper.format.h5("Number of Collections with permitted names");
+  helper.format.text(collection_compare_result.includes.length);
+  helper.format.text("List the first five examples that have unallowed symbols in the collection name: ");
+  collection_compare_result.notIncluded.splice(0,5).forEach(function(l){
+    helper.format.text(l);
+  });
+  helper.format.codeStop();
   /*** survey the collections that exist in the tcga database
                                    listed in render_pca
                                    listed in render_patient
@@ -262,9 +296,13 @@ co(function *() {
   // report the size of the molecular collections with the count lower than 1000
   helper.format.h1("Part III: Report the size of the molecular collections with the count lower than 1000");
   helper.format.codeStart();
-  collectionSize.forEach(function(a){
-    helper.format.text(a);
-  });
+  if(collectionSize.filter(function(m){return m.type!='protein';}).length !=0){
+    collectionSize.forEach(function(a){
+      helper.format.text(a);
+    });
+  }else{
+    helper.format.text("No Molecular Collection has significantly lower counts.");
+  }
   helper.format.codeStop();
   // report the discrepancy between calculated and calculated category in lookup_oncoscape_datasources
   helper.format.h1("Part IV: report the discrepancy between calculated and calculated category in lookup_oncoscape_datasources");
