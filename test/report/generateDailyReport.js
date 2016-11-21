@@ -167,9 +167,9 @@ co(function *() {
   var lookup_matched = lookup_listed_collections.map(function(c){return c.match(collectionNameRegex)[0];});
   var lookup_compare_result = lookup_listed_collections.includesArray(lookup_matched);
   helper.format.h4("lookup table collection naming validation:");
-  helper.format.codeStart();
   helper.format.h5("Number of Collections with permitted names");
   helper.format.text(lookup_compare_result.includes.length);
+  helper.format.codeStart();
   helper.format.text("List the first five examples that have unallowed symbols in the collection name: ");
   lookup_compare_result.notIncluded.splice(0,5).forEach(function(l){
     helper.format.text(l);
@@ -178,9 +178,9 @@ co(function *() {
   var manifest_matched = manifest_listed_collections.map(function(c){return c.match(collectionNameRegex)[0];});
   var manifest_compare_result = manifest_listed_collections.includesArray(manifest_matched);
   helper.format.h4("manifest collection naming validation:");
-  helper.format.codeStart();
   helper.format.h5("Number of Collections with permitted names");
   helper.format.text(manifest_compare_result.includes.length);
+  helper.format.codeStart();
   helper.format.text("List the first five examples that have unallowed symbols in the collection name: "); 
   manifest_compare_result.notIncluded.splice(0,5).forEach(function(l){
     helper.format.text(l);
@@ -189,9 +189,9 @@ co(function *() {
   var collection_matched = existing_collection_names.map(function(c){return c.match(collectionNameRegex)[0];});
   var collection_compare_result = existing_collection_names.includesArray(collection_matched);
   helper.format.h4("Current database collection naming validation:");
-  helper.format.codeStart();
   helper.format.h5("Number of Collections with permitted names");
   helper.format.text(collection_compare_result.includes.length);
+  helper.format.codeStart();
   helper.format.text("List the first five examples that have unallowed symbols in the collection name: ");
   collection_compare_result.notIncluded.splice(0,5).forEach(function(l){
     helper.format.text(l);
