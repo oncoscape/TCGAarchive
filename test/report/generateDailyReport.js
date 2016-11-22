@@ -5,7 +5,7 @@ const jsonfile = require("jsonfile-promised");
 const helper = require("../testingHelper.js");
 var ajvMsg = require("../datasourceTesting/ajv_tcga_v2_11172016.json");
 var patientID_status = require("../patientIDTesting/IDstatus_errors_brief.json");
-var gene_status = require("../geneSymbols/geneIDstatus_errors_brief.json");
+var gene_status = require("../geneSymbols/output3.json");
 var diseaseCollectionStructureStatus = require("../toolTesting/diseaseCollectionStructuralStatus.json");
 var duplicatedFields = require("./duplicatedFields.json");
 var collectionSize = require("./CollectionSize.json");
@@ -410,10 +410,10 @@ co(function *() {
   var totalTypes =['mut','mut01','methylation','rna','protein','cnv','facs','genesets','annotation','genedegree','edges','genes','pcaloadings' ];   
   helper.format.text(u.difference(totalTypes, typesWithGeneIDErros));
   helper.format.codeStop();
-  // helper.format.text("Detailed aggregated report lists here (sorted by subfield geneIDstatus.itemsNotInRefLength):");
-  // helper.format.codeStart();
-  // gene_status.forEach(function(s){helper.format.text(s);});
-  // helper.format.codeStop();
+  helper.format.text("First five collections with the most gene symbols that are not included in HGNC gene symbol list:");
+  helper.format.codeStart();
+  gene_status.splice(0, 5).forEach(function(s){helper.format.text(s);});
+  helper.format.codeStop();
   
 
   yield comongo.db.close(db);

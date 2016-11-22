@@ -65,7 +65,7 @@ co(function *() {
       }
       //pcaloading and pcascore
       //console.log(cartesianProductOf([1, 2, 3], ['a', 'b']));
-      var molCom = molGrpBySource[k].map(function(m){
+      var molCom = molGrpBySource[k].filter(function(m){return (m.type != 'mut01' && m.type != 'psi');}).map(function(m){
         var str = m.collection.split("_");
         var res;
         if(m.type == "rna" || m.type == "methylation"){
