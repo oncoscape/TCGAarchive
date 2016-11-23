@@ -48,6 +48,7 @@ mongoose.connect(
 connection.once('open', function(){
     var db = connection.db; 
     asyncLoop(dataType, function(t, next){  
+      //t = 'events';
       console.log("Within datatype: ", t);
       var categoried_collections = collections.findCollectionsByType(t); 
       var categoried_collection_length = categoried_collections.length; 
