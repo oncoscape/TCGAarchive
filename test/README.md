@@ -255,8 +255,9 @@ cd test/report
 
 cd test/toolTesting
 - node interactive mode *disease_collection_structure_validation.js* // *output saved as diseaseCollectionStructuralStatus.json & report_arr.json*
-- 
-
+- tool_test.js // reconstruct lookup table to include tool slot
+  1. Timeline is determined if the events table exists in the clinical
+  2. 
 
 
 

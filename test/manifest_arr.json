@@ -68677,123 +68677,6 @@
     "collection": "meso_radiation_tcga_clinical"
   },
   {
-    "_id": "582e3a2c61f0f9027371d3d4",
-    "dataset": "brain",
-    "dataType": "events",
-    "date": "2016-11-17",
-    "source": "tcga",
-    "process": {
-      "type": "clinical",
-      "scale": null
-    },
-    "processName": "clinical",
-    "collection": "brain_events_tcga_clinical"
-  },
-  {
-    "_id": "582e3a3061f0f9027371d3d6",
-    "dataset": "brca",
-    "dataType": "events",
-    "date": "2016-11-17",
-    "source": "tcga",
-    "process": {
-      "type": "clinical",
-      "scale": null
-    },
-    "processName": "clinical",
-    "collection": "brca_events_tcga_clinical"
-  },
-  {
-    "_id": "582e3a3461f0f9027371d3d8",
-    "dataset": "coadread",
-    "dataType": "events",
-    "date": "2016-11-17",
-    "source": "tcga",
-    "process": {
-      "type": "clinical",
-      "scale": null
-    },
-    "processName": "clinical",
-    "collection": "coadread_events_tcga_clinical"
-  },
-  {
-    "_id": "582e3a3761f0f9027371d3da",
-    "dataset": "gbm",
-    "dataType": "events",
-    "date": "2016-11-17",
-    "source": "tcga",
-    "process": {
-      "type": "clinical",
-      "scale": null
-    },
-    "processName": "clinical",
-    "collection": "gbm_events_tcga_clinical"
-  },
-  {
-    "_id": "582e3a3961f0f9027371d3dc",
-    "dataset": "hnsc",
-    "dataType": "events",
-    "date": "2016-11-17",
-    "source": "tcga",
-    "process": {
-      "type": "clinical",
-      "scale": null
-    },
-    "processName": "clinical",
-    "collection": "hnsc_events_tcga_clinical"
-  },
-  {
-    "_id": "582e3a3c61f0f9027371d3de",
-    "dataset": "lgg",
-    "dataType": "events",
-    "date": "2016-11-17",
-    "source": "tcga",
-    "process": {
-      "type": "clinical",
-      "scale": null
-    },
-    "processName": "clinical",
-    "collection": "lgg_events_tcga_clinical"
-  },
-  {
-    "_id": "582e3a4061f0f9027371d3e0",
-    "dataset": "luad",
-    "dataType": "events",
-    "date": "2016-11-17",
-    "source": "tcga",
-    "process": {
-      "type": "clinical",
-      "scale": null
-    },
-    "processName": "clinical",
-    "collection": "luad_events_tcga_clinical"
-  },
-  {
-    "_id": "582e3a4661f0f9027371d3e2",
-    "dataset": "lung",
-    "dataType": "events",
-    "date": "2016-11-17",
-    "source": "tcga",
-    "process": {
-      "type": "clinical",
-      "scale": null
-    },
-    "processName": "clinical",
-    "collection": "lung_events_tcga_clinical"
-  },
-  {
-    "_id": "582e3a4961f0f9027371d3e4",
-    "dataset": "lusc",
-    "dataType": "events",
-    "date": "2016-11-17",
-    "source": "tcga",
-    "process": {
-      "type": "clinical",
-      "scale": null
-    },
-    "processName": "clinical",
-    "collection": "lusc_events_tcga_clinical"
-  },
-  {
     "_id": "582e3a4f61f0f9027371d5b0",
     "dataset": "coad",
     "dataType": "patient",
@@ -81411,20 +81294,6 @@
     ]
   },
   {
-    "_id": "582f85f661f0f902737233c8",
-    "dataset": "brain",
-    "dataType": "events",
-    "date": "2016-11-17",
-    "source": "tcga",
-    "process": [
-      {
-        "type": "clinical"
-      }
-    ],
-    "processName": "clinical",
-    "collection": "brain_events_tcga_clinical"
-  },
-  {
     "_id": "582f85f661f0f902737235cc",
     "dataset": "brain",
     "dataType": "patient",
@@ -81507,5 +81376,122 @@
     ],
     "processName": "v4p0",
     "collection": "brain_othermalignancy_tcga_v4p0"
+  },
+  {
+    "_id": "5834caa161f0f92656673da8",
+    "dataset": "brain",
+    "dataType": "events",
+    "date": "2016-11-22",
+    "source": "tcga",
+    "process": {
+      "type": "clinical",
+      "scale": null
+    },
+    "processName": "clinical",
+    "collection": "brain_events_tcga_clinical"
+  },
+  {
+    "_id": "5834cba661f0f92656673daa",
+    "dataset": "brca",
+    "dataType": "events",
+    "date": "2016-11-22",
+    "source": "tcga",
+    "process": {
+      "type": "clinical",
+      "scale": null
+    },
+    "processName": "clinical",
+    "collection": "brca_events_tcga_clinical"
+  },
+  {
+    "_id": "5834cba961f0f92656673dac",
+    "dataset": "coadread",
+    "dataType": "events",
+    "date": "2016-11-22",
+    "source": "tcga",
+    "process": {
+      "type": "clinical",
+      "scale": null
+    },
+    "processName": "clinical",
+    "collection": "coadread_events_tcga_clinical"
+  },
+  {
+    "_id": "5834cbb161f0f92656673dae",
+    "dataset": "gbm",
+    "dataType": "events",
+    "date": "2016-11-22",
+    "source": "tcga",
+    "process": {
+      "type": "clinical",
+      "scale": null
+    },
+    "processName": "clinical",
+    "collection": "gbm_events_tcga_clinical"
+  },
+  {
+    "_id": "5834cbb361f0f92656673db0",
+    "dataset": "hnsc",
+    "dataType": "events",
+    "date": "2016-11-22",
+    "source": "tcga",
+    "process": {
+      "type": "clinical",
+      "scale": null
+    },
+    "processName": "clinical",
+    "collection": "hnsc_events_tcga_clinical"
+  },
+  {
+    "_id": "5834cbb661f0f92656673db2",
+    "dataset": "lgg",
+    "dataType": "events",
+    "date": "2016-11-22",
+    "source": "tcga",
+    "process": {
+      "type": "clinical",
+      "scale": null
+    },
+    "processName": "clinical",
+    "collection": "lgg_events_tcga_clinical"
+  },
+  {
+    "_id": "5834cbb961f0f92656673db4",
+    "dataset": "luad",
+    "dataType": "events",
+    "date": "2016-11-22",
+    "source": "tcga",
+    "process": {
+      "type": "clinical",
+      "scale": null
+    },
+    "processName": "clinical",
+    "collection": "luad_events_tcga_clinical"
+  },
+  {
+    "_id": "5834cbbf61f0f92656673db6",
+    "dataset": "lung",
+    "dataType": "events",
+    "date": "2016-11-22",
+    "source": "tcga",
+    "process": {
+      "type": "clinical",
+      "scale": null
+    },
+    "processName": "clinical",
+    "collection": "lung_events_tcga_clinical"
+  },
+  {
+    "_id": "5834cbc361f0f92656673db8",
+    "dataset": "lusc",
+    "dataType": "events",
+    "date": "2016-11-22",
+    "source": "tcga",
+    "process": {
+      "type": "clinical",
+      "scale": null
+    },
+    "processName": "clinical",
+    "collection": "lusc_events_tcga_clinical"
   }
 ]

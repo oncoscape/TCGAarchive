@@ -25,8 +25,8 @@ const test = {
   "heatmap" : require("./moduleTesting/test_Heatmap.js"),
   "sunburst" : require("./moduleTesting/test_Sunburst.js")
 };
-const ptList = require("./ptList.json");
-const ajvMsg = require("../datasourceTesting/ajv_tcga_v2_10182016.json");
+//const ptList = require("./ptList.json");
+const ajvMsg = require("../datasourceTesting/ajv_tcga_v2_11172016.json");
 const diseaseCollectionSchema = {
     "properties": {
         "disease": {"type": "string"}, 

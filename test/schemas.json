@@ -68,6 +68,8 @@
                                                              "items": {
                                                                   "properties": {
                                                                       "name": {"type": "string"}, 
+                                                                      "start": {"type":["date", null]},
+                                                                      "end": {"type": ["date", null]}, 
                                                                       "data": {"type": "object"}    
                                                                   },
                                                                   "required": ["name", "start", "end", "data"]

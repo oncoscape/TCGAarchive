@@ -39,7 +39,7 @@ co(function *() {
 
   manifest = yield comongo.db.collection(db, "manifest");
   manifest_arr = yield manifest.find({}).toArray();
-  lookup = yield comongo.db.collection(db, "lookup_oncoscape_datasource");
+  lookup = yield comongo.db.collection(db, "lookup_oncoscape_datasources");
   lookup_arr = yield lookup.find({}).toArray();
   
   // collections = yield comongo.db.collections(db);
