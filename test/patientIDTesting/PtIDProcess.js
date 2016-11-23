@@ -1,5 +1,4 @@
 const u = require("underscore");
-const jsonfile = require("jsonfile-promised");
 const helper = require("../testingHelper.js");
 const output = require("./output.json");
 const ptList = require("./ptList.json");

@@ -132,7 +132,8 @@ co(function *() {
   manifest = yield comongo.db.collection(db, "manifest");
   manifest_arr = yield manifest.find({}).toArray();
   manifest_listed_collections = manifest_arr.map(function(m){ return (m.collection);}).unique();
-
+  var manifest_excludes = manifest_arr.filter(function(m){return "dne" in m;}).map(function(m){return m.collection;});
+  manifest_listed_collections = u.difference(manifest_listed_collections, manifest_excludes);
   collections = yield comongo.db.collections(db);
   existing_collection_names = collections.map(function(c){
     return c['s']['name'];
