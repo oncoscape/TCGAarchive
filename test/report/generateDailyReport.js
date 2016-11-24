@@ -23,15 +23,18 @@ var usedFields = ['annotation','location','category','molecular','clinical','cal
 const pcaScoreTypeMapping = {
     'cnv-gistic': "cnv", 
     'cnv-gistic2thd':"cnv",
-    'import':"mut01",
+    '-import':"mut01",
     'methylation-HM27': "methylation-hm27", 
     'methylation-HM450': "methylation-hm450", 
-    'mut-mut': "mut01",
+    'mut-mutation': "mut01",
+    '-mut01-mutationBroadGene': "mut01",
     'mut01-mutSig2': "mut01",
     'mut01-mutation': "mut01", 
     'mut01-mutationBroadGene': "mut01", 
     'mut01-mutationBcmGene': "mut01", 
-    'mut01-wxs': "mut01", 
+    'mut01-wxs': "mut01",
+    'mut01-ucsc': "mut01",
+    'mut01-broadcurated': "mut01", 
     'mut01-mutationCuratedWustlGene': "mut01",
     'protein-RPPA': "protein",
     'protein-RPPA-zscore': "protein",
@@ -170,34 +173,48 @@ co(function *() {
   helper.format.h4("lookup table collection naming validation:");
   helper.format.h5("Number of Collections with permitted names");
   helper.format.text(lookup_compare_result.includes.length);
-  helper.format.text("List the first five examples that have unallowed symbols in the collection name: ");
-  helper.format.codeStart();
-  lookup_compare_result.notIncluded.splice(0,5).forEach(function(l){
-    helper.format.text(l);
-  });
-  helper.format.codeStop();
+  if(lookup_compare_result.notIncluded.length == 0){
+    helper.format.text("All the collection names passed the criteria.");
+  }else{
+    helper.format.text("List the first five examples that have unallowed symbols in the collection name: ");
+    helper.format.codeStart();
+    lookup_compare_result.notIncluded.splice(0,5).forEach(function(l){
+      helper.format.text(l);
+    });
+    helper.format.codeStop();
+  }
   var manifest_matched = manifest_listed_collections.map(function(c){return c.match(collectionNameRegex)[0];});
   var manifest_compare_result = manifest_listed_collections.includesArray(manifest_matched);
   helper.format.h4("manifest collection naming validation:");
   helper.format.h5("Number of Collections with permitted names");
   helper.format.text(manifest_compare_result.includes.length);
-  helper.format.text("List the first five examples that have unallowed symbols in the collection name: "); 
-  helper.format.codeStart();
-  manifest_compare_result.notIncluded.splice(0,5).forEach(function(l){
-    helper.format.text(l);
-  });
-  helper.format.codeStop();
+  if(manifest_compare_result.notIncluded.length == 0){
+    helper.format.text("All the collection names passed the criteria.");
+  }else{
+    helper.format.text("List the first five examples that have unallowed symbols in the collection name: "); 
+    helper.format.codeStart();
+    manifest_compare_result.notIncluded.splice(0,5).forEach(function(l){
+      helper.format.text(l);
+    });
+    helper.format.codeStop();
+  }
+  
   var collection_matched = existing_collection_names.map(function(c){return c.match(collectionNameRegex)[0];});
   var collection_compare_result = existing_collection_names.includesArray(collection_matched);
   helper.format.h4("Current database collection naming validation:");
   helper.format.h5("Number of Collections with permitted names");
   helper.format.text(collection_compare_result.includes.length);
-  helper.format.text("List the first five examples that have unallowed symbols in the collection name: ");
-  helper.format.codeStart();
-  collection_compare_result.notIncluded.splice(0,5).forEach(function(l){
-    helper.format.text(l);
-  });
-  helper.format.codeStop();
+  if(collection_compare_result.notIncluded.length == 0){
+    helper.format.text("All the collection names passed the criteria.");
+  }else{
+    helper.format.text("List the first five examples that have unallowed symbols in the collection name: ");
+    helper.format.codeStart();
+    collection_compare_result.notIncluded.splice(0,5).forEach(function(l){
+      helper.format.text(l);
+    });
+    helper.format.codeStop();
+  }
+  
   /*** survey the collections that exist in the tcga database
                                    listed in render_pca
                                    listed in render_patient
@@ -210,7 +227,7 @@ co(function *() {
   
   var existing_pcascores = [];
   var rendering_pca_potential_collections = [];
-  existing_collection_names.forEach(function(e){if(e.includes('pcascores') && (!e.includes("-1e+05"))) existing_pcascores.push(e);});
+  existing_collection_names.forEach(function(e){if(e.includes('pcascores') && (!e.includes("-1e+05") && (!e.includes("-1e05")))) existing_pcascores.push(e);});
   var existing_pca_removal = existing_pcascores.containPartialString(/[A-Za-z0-9_-]+-mut01/g);
   existing_pcascores = u.difference(existing_pcascores, existing_pca_removal);
 
@@ -241,23 +258,20 @@ co(function *() {
 
 
   render_pca.forEach(function(r){
-    var str = r.disease + "_pcascores_" + r.source + "_prcomp-"+ r.geneset.replace(/ /g, "") + "-" + pcaScoreTypeMapping[r.type] ;
+    var str = r.disease + "_pcascores_" + r.source + "_prcomp-"+ r.geneset.replace(/ /g, "") + "-" + pcaScoreTypeMapping[r.type];
+    if(typeof(pcaScoreTypeMapping[r.type]) == 'undefined'){
+      console.log("******", r.type);
+    }
     str = str.toLowerCase();
     rendering_pca_potential_collections.push(str);  
   });
   var rendering_pca_potential_removal = rendering_pca_potential_collections.containPartialString(/[A-Za-z0-9_-]+-mut01/g);
   rendering_pca_potential_collections = u.difference(rendering_pca_potential_collections, rendering_pca_potential_removal);
 
-
   helper.format.h3("Compare the existing collections against render_pca: ");
   helper.format.codeStart();
   helper.format.text(existing_pcascores.arraysCompareV2(rendering_pca_potential_collections));
   helper.format.codeStop();
-  // helper.format.h3("Compare render_pca against the existing collections: ");
-  // helper.format.codeStart();
-  // helper.format.text(rendering_pca_potential_collections.arraysCompare(existing_pcascores));
-  // helper.format.codeStop();
-
   
   helper.format.h2("render_patient compare to existing mds");
   collection = yield comongo.db.collection(db, 'render_patient');
@@ -268,7 +282,7 @@ co(function *() {
   //   "ucsc-pnas": "ucsc",
   //   "ucsc": "ucsc"
   // };
-  existing_collection_names.forEach(function(e){if(e.includes('mds') && (!e.includes("-1e+05"))) existing_mds.push(e);});
+  existing_collection_names.forEach(function(e){if(e.includes('mds') && (!e.includes("-1e+05")) && (!e.includes("-1e05"))) existing_mds.push(e);});
   render_patient.forEach(function(r){
     if(r.name.includes("mds")){
       var str;
@@ -295,7 +309,7 @@ co(function *() {
   // helper.format.codeStop();
 
   // report the size of the molecular collections with the count lower than 1000
-  helper.format.h1("Part III: Report the size of the molecular collections with the count lower than 1000");
+  helper.format.h1("Part III: Molecular collections size lower than 1000");
   helper.format.codeStart();
   if(collectionSize.filter(function(m){return m.type!='protein';}).length !=0){
     collectionSize.forEach(function(a){
@@ -306,7 +320,7 @@ co(function *() {
   }
   helper.format.codeStop();
   // report the discrepancy between calculated and calculated category in lookup_oncoscape_datasources
-  helper.format.h1("Part IV: report the discrepancy between calculated and calculated category in lookup_oncoscape_datasources");
+  helper.format.h1("Part IV: The combination from Molecular Collections and genesets compared to the Calculated Collections in lookup_oncoscape_datasources");
   helper.format.codeStart();
   validateCalculatedFromMolecular.forEach(function(a){
     helper.format.text(a);

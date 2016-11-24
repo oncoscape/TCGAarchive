@@ -29,6 +29,7 @@ mongo(mongoose).then(function(response){
     var collection = db.collection("lookup_oncoscape_datasources").find();
     lookupByDisease = collection.toArray();
     lookupByDisease.then(function(obj){
+        
         return new Promise(function(resolve, reject){
             obj.forEach(function(d){
                 var ptIDs = [];
@@ -43,10 +44,7 @@ mongo(mongoose).then(function(response){
               });
             resolve(ptList);
         });
-    }).then(function(){
-        console.log("test1");
-        
-        console.log("test2");
-        jsonfile.writeFile('ptList.json', ptList, {spaces:4});
     });
+}).then(function(){
+    jsonfile.writeFile('ptList.json', ptList, {spaces:4});
 });
