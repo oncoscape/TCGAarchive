@@ -1,1 +1,994 @@
-[]
+[
+    {
+        "disease": "brca",
+        "Spreadsheet": "❌",
+        "MP": {
+            "edges": "✔️😃"
+        },
+        "PCA": "✔️😃",
+        "Clusters": "✔️😃",
+        "Pathways": "✔️😃",
+        "Timelines": "✔️😃",
+        "Heatmap": "❌",
+        "Sunburst": "❌"
+    },
+    {
+        "disease": "esca",
+        "Spreadsheet": "❌",
+        "MP": {
+            "edges": "✔️😃"
+        },
+        "PCA": "✔️😃",
+        "Clusters": "✔️😃",
+        "Pathways": "✔️😃",
+        "Timelines": "❌",
+        "Heatmap": "❌",
+        "Sunburst": "❌"
+    },
+    {
+        "disease": "gbm",
+        "Spreadsheet": "❌",
+        "MP": {
+            "edges": "✔️😃"
+        },
+        "PCA": "✔️😃",
+        "Clusters": "✔️😃",
+        "Pathways": "✔️😃",
+        "Timelines": "✔️😃",
+        "Heatmap": "❌",
+        "Sunburst": "❌"
+    },
+    {
+        "disease": "hnsc",
+        "Spreadsheet": "❌",
+        "MP": {
+            "edges": "✔️😃"
+        },
+        "PCA": "✔️😃",
+        "Clusters": "✔️😃",
+        "Pathways": "✔️😃",
+        "Timelines": "✔️😃",
+        "Heatmap": "❌",
+        "Sunburst": "❌"
+    },
+    {
+        "disease": "kich",
+        "Spreadsheet": "❌",
+        "MP": {
+            "edges": "✔️😃"
+        },
+        "PCA": "✔️😃",
+        "Clusters": "❌",
+        "Pathways": "✔️😃",
+        "Timelines": "❌",
+        "Heatmap": "❌",
+        "Sunburst": "❌"
+    },
+    {
+        "disease": "kirc",
+        "Spreadsheet": "❌",
+        "MP": {
+            "edges": "✔️😃"
+        },
+        "PCA": "❌",
+        "Clusters": "❌",
+        "Pathways": "✔️😃",
+        "Timelines": "❌",
+        "Heatmap": "❌",
+        "Sunburst": "❌"
+    },
+    {
+        "disease": "kirp",
+        "Spreadsheet": "❌",
+        "MP": {
+            "edges": "✔️😃"
+        },
+        "PCA": "✔️😃",
+        "Clusters": "❌",
+        "Pathways": "✔️😃",
+        "Timelines": "❌",
+        "Heatmap": "❌",
+        "Sunburst": "❌"
+    },
+    {
+        "disease": "lgg",
+        "Spreadsheet": "❌",
+        "MP": {
+            "edges": "✔️😃"
+        },
+        "PCA": "✔️😃",
+        "Clusters": "✔️😃",
+        "Pathways": "✔️😃",
+        "Timelines": "✔️😃",
+        "Heatmap": "❌",
+        "Sunburst": "❌"
+    },
+    {
+        "disease": "lihc",
+        "Spreadsheet": "❌",
+        "MP": {
+            "edges": "✔️😃"
+        },
+        "PCA": "✔️😃",
+        "Clusters": "❌",
+        "Pathways": "✔️😃",
+        "Timelines": "❌",
+        "Heatmap": "❌",
+        "Sunburst": "❌"
+    },
+    {
+        "disease": "luad",
+        "Spreadsheet": "❌",
+        "MP": {
+            "edges": "✔️😃"
+        },
+        "PCA": "✔️😃",
+        "Clusters": "✔️😃",
+        "Pathways": "✔️😃",
+        "Timelines": "✔️😃",
+        "Heatmap": "❌",
+        "Sunburst": "❌"
+    },
+    {
+        "disease": "lusc",
+        "Spreadsheet": "❌",
+        "MP": {
+            "edges": "✔️😃"
+        },
+        "PCA": "✔️😃",
+        "Clusters": "✔️😃",
+        "Pathways": "✔️😃",
+        "Timelines": "✔️😃",
+        "Heatmap": "❌",
+        "Sunburst": "❌"
+    },
+    {
+        "disease": "sarc",
+        "Spreadsheet": "❌",
+        "MP": {
+            "edges": "✔️😃"
+        },
+        "PCA": "✔️😃",
+        "Clusters": "✔️😃",
+        "Pathways": "✔️😃",
+        "Timelines": "❌",
+        "Heatmap": "❌",
+        "Sunburst": "❌"
+    },
+    {
+        "disease": "paad",
+        "Spreadsheet": "❌",
+        "MP": {
+            "edges": "✔️😃"
+        },
+        "PCA": "✔️😃",
+        "Clusters": "✔️😃",
+        "Pathways": "✔️😃",
+        "Timelines": "❌",
+        "Heatmap": "❌",
+        "Sunburst": "❌"
+    },
+    {
+        "disease": "prad",
+        "Spreadsheet": "❌",
+        "MP": {
+            "edges": "✔️😃"
+        },
+        "PCA": "✔️😃",
+        "Clusters": "✔️😃",
+        "Pathways": "✔️😃",
+        "Timelines": "❌",
+        "Heatmap": "❌",
+        "Sunburst": "❌"
+    },
+    {
+        "disease": "skcm",
+        "Spreadsheet": "❌",
+        "MP": {
+            "edges": "✔️😃"
+        },
+        "PCA": "✔️😃",
+        "Clusters": "❌",
+        "Pathways": "✔️😃",
+        "Timelines": "❌",
+        "Heatmap": "❌",
+        "Sunburst": "❌"
+    },
+    {
+        "disease": "stad",
+        "Spreadsheet": "❌",
+        "MP": {
+            "edges": "✔️😃"
+        },
+        "PCA": "✔️😃",
+        "Clusters": "❌",
+        "Pathways": "✔️😃",
+        "Timelines": "❌",
+        "Heatmap": "❌",
+        "Sunburst": "❌"
+    },
+    {
+        "disease": "thca",
+        "Spreadsheet": "❌",
+        "MP": {
+            "edges": "✔️😃"
+        },
+        "PCA": "✔️😃",
+        "Clusters": "❌",
+        "Pathways": "✔️😃",
+        "Timelines": "❌",
+        "Heatmap": "❌",
+        "Sunburst": "❌"
+    },
+    {
+        "disease": "ucec",
+        "Spreadsheet": "❌",
+        "MP": {
+            "edges": "✔️😃"
+        },
+        "PCA": "✔️😃",
+        "Clusters": "❌",
+        "Pathways": "✔️😃",
+        "Timelines": "❌",
+        "Heatmap": "❌",
+        "Sunburst": "❌"
+    },
+    {
+        "disease": "acc",
+        "Spreadsheet": "❌",
+        "MP": {
+            "edges": "✔️😃"
+        },
+        "PCA": "✔️😃",
+        "Clusters": "✔️😃",
+        "Pathways": "✔️😃",
+        "Timelines": "❌",
+        "Heatmap": "❌",
+        "Sunburst": "❌"
+    },
+    {
+        "disease": "blca",
+        "Spreadsheet": "❌",
+        "MP": {
+            "edges": "✔️😃"
+        },
+        "PCA": "✔️😃",
+        "Clusters": "✔️😃",
+        "Pathways": "✔️😃",
+        "Timelines": "❌",
+        "Heatmap": "❌",
+        "Sunburst": "❌"
+    },
+    {
+        "disease": "cesc",
+        "Spreadsheet": "❌",
+        "MP": {
+            "edges": "✔️😃"
+        },
+        "PCA": "✔️😃",
+        "Clusters": "✔️😃",
+        "Pathways": "✔️😃",
+        "Timelines": "❌",
+        "Heatmap": "❌",
+        "Sunburst": "❌"
+    },
+    {
+        "disease": "chol",
+        "Spreadsheet": "❌",
+        "MP": {
+            "edges": "✔️😃"
+        },
+        "PCA": "✔️😃",
+        "Clusters": "✔️😃",
+        "Pathways": "✔️😃",
+        "Timelines": "❌",
+        "Heatmap": "❌",
+        "Sunburst": "❌"
+    },
+    {
+        "disease": "dlbc",
+        "Spreadsheet": "❌",
+        "MP": {
+            "edges": "✔️😃"
+        },
+        "PCA": "✔️😃",
+        "Clusters": "✔️😃",
+        "Pathways": "✔️😃",
+        "Timelines": "❌",
+        "Heatmap": "❌",
+        "Sunburst": "❌"
+    },
+    {
+        "disease": "coadread",
+        "Spreadsheet": "❌",
+        "MP": {
+            "edges": "✔️😃"
+        },
+        "PCA": "✔️😃",
+        "Clusters": "✔️😃",
+        "Pathways": "✔️😃",
+        "Timelines": "✔️😃",
+        "Heatmap": "❌",
+        "Sunburst": "❌"
+    },
+    {
+        "disease": "lung",
+        "Spreadsheet": "❌",
+        "MP": {
+            "edges": "✔️😃"
+        },
+        "PCA": "✔️😃",
+        "Clusters": "✔️😃",
+        "Pathways": "✔️😃",
+        "Timelines": "✔️😃",
+        "Heatmap": "❌",
+        "Sunburst": "❌"
+    },
+    {
+        "disease": "coad",
+        "Spreadsheet": "❌",
+        "MP": {
+            "edges": "❌"
+        },
+        "PCA": "❌",
+        "Clusters": "❌",
+        "Pathways": "✔️😃",
+        "Timelines": "❌",
+        "Heatmap": "❌",
+        "Sunburst": "❌"
+    },
+    {
+        "disease": "hg19",
+        "Spreadsheet": "❌",
+        "MP": {
+            "edges": "❌"
+        },
+        "PCA": "❌",
+        "Clusters": "❌",
+        "Pathways": "✔️😃",
+        "Timelines": "❌",
+        "Heatmap": "❌",
+        "Sunburst": "❌"
+    },
+    {
+        "disease": "laml",
+        "Spreadsheet": "❌",
+        "MP": {
+            "edges": "✔️😃"
+        },
+        "PCA": "✔️😃",
+        "Clusters": "✔️😃",
+        "Pathways": "✔️😃",
+        "Timelines": "❌",
+        "Heatmap": "❌",
+        "Sunburst": "❌"
+    },
+    {
+        "disease": "read",
+        "Spreadsheet": "❌",
+        "MP": {
+            "edges": "❌"
+        },
+        "PCA": "❌",
+        "Clusters": "❌",
+        "Pathways": "✔️😃",
+        "Timelines": "❌",
+        "Heatmap": "❌",
+        "Sunburst": "❌"
+    },
+    {
+        "disease": "ucs",
+        "Spreadsheet": "❌",
+        "MP": {
+            "edges": "❌"
+        },
+        "PCA": "✔️😃",
+        "Clusters": "❌",
+        "Pathways": "✔️😃",
+        "Timelines": "❌",
+        "Heatmap": "❌",
+        "Sunburst": "❌"
+    },
+    {
+        "disease": "uvm",
+        "Spreadsheet": "❌",
+        "MP": {
+            "edges": "❌"
+        },
+        "PCA": "✔️😃",
+        "Clusters": "❌",
+        "Pathways": "✔️😃",
+        "Timelines": "❌",
+        "Heatmap": "❌",
+        "Sunburst": "❌"
+    },
+    {
+        "disease": "thym",
+        "Spreadsheet": "❌",
+        "MP": {
+            "edges": "❌"
+        },
+        "PCA": "✔️😃",
+        "Clusters": "❌",
+        "Pathways": "✔️😃",
+        "Timelines": "❌",
+        "Heatmap": "❌",
+        "Sunburst": "❌"
+    },
+    {
+        "disease": "tgct",
+        "Spreadsheet": "❌",
+        "MP": {
+            "edges": "❌"
+        },
+        "PCA": "✔️😃",
+        "Clusters": "❌",
+        "Pathways": "✔️😃",
+        "Timelines": "❌",
+        "Heatmap": "❌",
+        "Sunburst": "❌"
+    },
+    {
+        "disease": "pcpg",
+        "Spreadsheet": "❌",
+        "MP": {
+            "edges": "❌"
+        },
+        "PCA": "✔️😃",
+        "Clusters": "❌",
+        "Pathways": "✔️😃",
+        "Timelines": "❌",
+        "Heatmap": "❌",
+        "Sunburst": "❌"
+    },
+    {
+        "disease": "ov",
+        "Spreadsheet": "❌",
+        "MP": {
+            "edges": "❌"
+        },
+        "PCA": "✔️😃",
+        "Clusters": "❌",
+        "Pathways": "✔️😃",
+        "Timelines": "❌",
+        "Heatmap": "❌",
+        "Sunburst": "❌"
+    },
+    {
+        "disease": "meso",
+        "Spreadsheet": "❌",
+        "MP": {
+            "edges": "❌"
+        },
+        "PCA": "✔️😃",
+        "Clusters": "❌",
+        "Pathways": "✔️😃",
+        "Timelines": "❌",
+        "Heatmap": "❌",
+        "Sunburst": "❌"
+    },
+    {
+        "disease": [
+            "uwlung"
+        ],
+        "Spreadsheet": "❌",
+        "MP": {
+            "edges": "❌"
+        },
+        "PCA": "❌",
+        "Clusters": "❌",
+        "Pathways": "✔️😃",
+        "Timelines": "❌",
+        "Heatmap": "❌",
+        "Sunburst": "❌"
+    },
+    {
+        "disease": "brain",
+        "Spreadsheet": "❌",
+        "MP": {
+            "edges": "✔️😃"
+        },
+        "PCA": "✔️😃",
+        "Clusters": "✔️😃",
+        "Pathways": "✔️😃",
+        "Timelines": "✔️😃",
+        "Heatmap": "❌",
+        "Sunburst": "❌"
+    },
+    {
+        "disease": "brca",
+        "Spreadsheet": "❌",
+        "MP": {
+            "edges": "✔️😃"
+        },
+        "PCA": "✔️😃",
+        "Clusters": "✔️😃",
+        "Pathways": "✔️😃",
+        "Timelines": "✔️😃",
+        "Heatmap": "❌",
+        "Sunburst": "❌"
+    },
+    {
+        "disease": "esca",
+        "Spreadsheet": "❌",
+        "MP": {
+            "edges": "✔️😃"
+        },
+        "PCA": "✔️😃",
+        "Clusters": "✔️😃",
+        "Pathways": "✔️😃",
+        "Timelines": "❌",
+        "Heatmap": "❌",
+        "Sunburst": "❌"
+    },
+    {
+        "disease": "gbm",
+        "Spreadsheet": "❌",
+        "MP": {
+            "edges": "✔️😃"
+        },
+        "PCA": "✔️😃",
+        "Clusters": "✔️😃",
+        "Pathways": "✔️😃",
+        "Timelines": "✔️😃",
+        "Heatmap": "❌",
+        "Sunburst": "❌"
+    },
+    {
+        "disease": "hnsc",
+        "Spreadsheet": "❌",
+        "MP": {
+            "edges": "✔️😃"
+        },
+        "PCA": "✔️😃",
+        "Clusters": "✔️😃",
+        "Pathways": "✔️😃",
+        "Timelines": "✔️😃",
+        "Heatmap": "❌",
+        "Sunburst": "❌"
+    },
+    {
+        "disease": "kich",
+        "Spreadsheet": "❌",
+        "MP": {
+            "edges": "✔️😃"
+        },
+        "PCA": "✔️😃",
+        "Clusters": "❌",
+        "Pathways": "✔️😃",
+        "Timelines": "❌",
+        "Heatmap": "❌",
+        "Sunburst": "❌"
+    },
+    {
+        "disease": "kirc",
+        "Spreadsheet": "❌",
+        "MP": {
+            "edges": "✔️😃"
+        },
+        "PCA": "❌",
+        "Clusters": "❌",
+        "Pathways": "✔️😃",
+        "Timelines": "❌",
+        "Heatmap": "❌",
+        "Sunburst": "❌"
+    },
+    {
+        "disease": "kirp",
+        "Spreadsheet": "❌",
+        "MP": {
+            "edges": "✔️😃"
+        },
+        "PCA": "✔️😃",
+        "Clusters": "❌",
+        "Pathways": "✔️😃",
+        "Timelines": "❌",
+        "Heatmap": "❌",
+        "Sunburst": "❌"
+    },
+    {
+        "disease": "lgg",
+        "Spreadsheet": "❌",
+        "MP": {
+            "edges": "✔️😃"
+        },
+        "PCA": "✔️😃",
+        "Clusters": "✔️😃",
+        "Pathways": "✔️😃",
+        "Timelines": "✔️😃",
+        "Heatmap": "❌",
+        "Sunburst": "❌"
+    },
+    {
+        "disease": "lihc",
+        "Spreadsheet": "❌",
+        "MP": {
+            "edges": "✔️😃"
+        },
+        "PCA": "✔️😃",
+        "Clusters": "❌",
+        "Pathways": "✔️😃",
+        "Timelines": "❌",
+        "Heatmap": "❌",
+        "Sunburst": "❌"
+    },
+    {
+        "disease": "luad",
+        "Spreadsheet": "❌",
+        "MP": {
+            "edges": "✔️😃"
+        },
+        "PCA": "✔️😃",
+        "Clusters": "✔️😃",
+        "Pathways": "✔️😃",
+        "Timelines": "✔️😃",
+        "Heatmap": "❌",
+        "Sunburst": "❌"
+    },
+    {
+        "disease": "lusc",
+        "Spreadsheet": "❌",
+        "MP": {
+            "edges": "✔️😃"
+        },
+        "PCA": "✔️😃",
+        "Clusters": "✔️😃",
+        "Pathways": "✔️😃",
+        "Timelines": "✔️😃",
+        "Heatmap": "❌",
+        "Sunburst": "❌"
+    },
+    {
+        "disease": "sarc",
+        "Spreadsheet": "❌",
+        "MP": {
+            "edges": "✔️😃"
+        },
+        "PCA": "✔️😃",
+        "Clusters": "✔️😃",
+        "Pathways": "✔️😃",
+        "Timelines": "❌",
+        "Heatmap": "❌",
+        "Sunburst": "❌"
+    },
+    {
+        "disease": "paad",
+        "Spreadsheet": "❌",
+        "MP": {
+            "edges": "✔️😃"
+        },
+        "PCA": "✔️😃",
+        "Clusters": "✔️😃",
+        "Pathways": "✔️😃",
+        "Timelines": "❌",
+        "Heatmap": "❌",
+        "Sunburst": "❌"
+    },
+    {
+        "disease": "prad",
+        "Spreadsheet": "❌",
+        "MP": {
+            "edges": "✔️😃"
+        },
+        "PCA": "✔️😃",
+        "Clusters": "✔️😃",
+        "Pathways": "✔️😃",
+        "Timelines": "❌",
+        "Heatmap": "❌",
+        "Sunburst": "❌"
+    },
+    {
+        "disease": "skcm",
+        "Spreadsheet": "❌",
+        "MP": {
+            "edges": "✔️😃"
+        },
+        "PCA": "✔️😃",
+        "Clusters": "❌",
+        "Pathways": "✔️😃",
+        "Timelines": "❌",
+        "Heatmap": "❌",
+        "Sunburst": "❌"
+    },
+    {
+        "disease": "stad",
+        "Spreadsheet": "❌",
+        "MP": {
+            "edges": "✔️😃"
+        },
+        "PCA": "✔️😃",
+        "Clusters": "❌",
+        "Pathways": "✔️😃",
+        "Timelines": "❌",
+        "Heatmap": "❌",
+        "Sunburst": "❌"
+    },
+    {
+        "disease": "thca",
+        "Spreadsheet": "❌",
+        "MP": {
+            "edges": "✔️😃"
+        },
+        "PCA": "✔️😃",
+        "Clusters": "❌",
+        "Pathways": "✔️😃",
+        "Timelines": "❌",
+        "Heatmap": "❌",
+        "Sunburst": "❌"
+    },
+    {
+        "disease": "ucec",
+        "Spreadsheet": "❌",
+        "MP": {
+            "edges": "✔️😃"
+        },
+        "PCA": "✔️😃",
+        "Clusters": "❌",
+        "Pathways": "✔️😃",
+        "Timelines": "❌",
+        "Heatmap": "❌",
+        "Sunburst": "❌"
+    },
+    {
+        "disease": "acc",
+        "Spreadsheet": "❌",
+        "MP": {
+            "edges": "✔️😃"
+        },
+        "PCA": "✔️😃",
+        "Clusters": "✔️😃",
+        "Pathways": "✔️😃",
+        "Timelines": "❌",
+        "Heatmap": "❌",
+        "Sunburst": "❌"
+    },
+    {
+        "disease": "blca",
+        "Spreadsheet": "❌",
+        "MP": {
+            "edges": "✔️😃"
+        },
+        "PCA": "✔️😃",
+        "Clusters": "✔️😃",
+        "Pathways": "✔️😃",
+        "Timelines": "❌",
+        "Heatmap": "❌",
+        "Sunburst": "❌"
+    },
+    {
+        "disease": "cesc",
+        "Spreadsheet": "❌",
+        "MP": {
+            "edges": "✔️😃"
+        },
+        "PCA": "✔️😃",
+        "Clusters": "✔️😃",
+        "Pathways": "✔️😃",
+        "Timelines": "❌",
+        "Heatmap": "❌",
+        "Sunburst": "❌"
+    },
+    {
+        "disease": "chol",
+        "Spreadsheet": "❌",
+        "MP": {
+            "edges": "✔️😃"
+        },
+        "PCA": "✔️😃",
+        "Clusters": "✔️😃",
+        "Pathways": "✔️😃",
+        "Timelines": "❌",
+        "Heatmap": "❌",
+        "Sunburst": "❌"
+    },
+    {
+        "disease": "dlbc",
+        "Spreadsheet": "❌",
+        "MP": {
+            "edges": "✔️😃"
+        },
+        "PCA": "✔️😃",
+        "Clusters": "✔️😃",
+        "Pathways": "✔️😃",
+        "Timelines": "❌",
+        "Heatmap": "❌",
+        "Sunburst": "❌"
+    },
+    {
+        "disease": "coadread",
+        "Spreadsheet": "❌",
+        "MP": {
+            "edges": "✔️😃"
+        },
+        "PCA": "✔️😃",
+        "Clusters": "✔️😃",
+        "Pathways": "✔️😃",
+        "Timelines": "✔️😃",
+        "Heatmap": "❌",
+        "Sunburst": "❌"
+    },
+    {
+        "disease": "lung",
+        "Spreadsheet": "❌",
+        "MP": {
+            "edges": "✔️😃"
+        },
+        "PCA": "✔️😃",
+        "Clusters": "✔️😃",
+        "Pathways": "✔️😃",
+        "Timelines": "✔️😃",
+        "Heatmap": "❌",
+        "Sunburst": "❌"
+    },
+    {
+        "disease": "coad",
+        "Spreadsheet": "❌",
+        "MP": {
+            "edges": "❌"
+        },
+        "PCA": "❌",
+        "Clusters": "❌",
+        "Pathways": "✔️😃",
+        "Timelines": "❌",
+        "Heatmap": "❌",
+        "Sunburst": "❌"
+    },
+    {
+        "disease": "hg19",
+        "Spreadsheet": "❌",
+        "MP": {
+            "edges": "❌"
+        },
+        "PCA": "❌",
+        "Clusters": "❌",
+        "Pathways": "✔️😃",
+        "Timelines": "❌",
+        "Heatmap": "❌",
+        "Sunburst": "❌"
+    },
+    {
+        "disease": "laml",
+        "Spreadsheet": "❌",
+        "MP": {
+            "edges": "✔️😃"
+        },
+        "PCA": "✔️😃",
+        "Clusters": "✔️😃",
+        "Pathways": "✔️😃",
+        "Timelines": "❌",
+        "Heatmap": "❌",
+        "Sunburst": "❌"
+    },
+    {
+        "disease": "read",
+        "Spreadsheet": "❌",
+        "MP": {
+            "edges": "❌"
+        },
+        "PCA": "❌",
+        "Clusters": "❌",
+        "Pathways": "✔️😃",
+        "Timelines": "❌",
+        "Heatmap": "❌",
+        "Sunburst": "❌"
+    },
+    {
+        "disease": "ucs",
+        "Spreadsheet": "❌",
+        "MP": {
+            "edges": "❌"
+        },
+        "PCA": "✔️😃",
+        "Clusters": "❌",
+        "Pathways": "✔️😃",
+        "Timelines": "❌",
+        "Heatmap": "❌",
+        "Sunburst": "❌"
+    },
+    {
+        "disease": "uvm",
+        "Spreadsheet": "❌",
+        "MP": {
+            "edges": "❌"
+        },
+        "PCA": "✔️😃",
+        "Clusters": "❌",
+        "Pathways": "✔️😃",
+        "Timelines": "❌",
+        "Heatmap": "❌",
+        "Sunburst": "❌"
+    },
+    {
+        "disease": "thym",
+        "Spreadsheet": "❌",
+        "MP": {
+            "edges": "❌"
+        },
+        "PCA": "✔️😃",
+        "Clusters": "❌",
+        "Pathways": "✔️😃",
+        "Timelines": "❌",
+        "Heatmap": "❌",
+        "Sunburst": "❌"
+    },
+    {
+        "disease": "tgct",
+        "Spreadsheet": "❌",
+        "MP": {
+            "edges": "❌"
+        },
+        "PCA": "✔️😃",
+        "Clusters": "❌",
+        "Pathways": "✔️😃",
+        "Timelines": "❌",
+        "Heatmap": "❌",
+        "Sunburst": "❌"
+    },
+    {
+        "disease": "pcpg",
+        "Spreadsheet": "❌",
+        "MP": {
+            "edges": "❌"
+        },
+        "PCA": "✔️😃",
+        "Clusters": "❌",
+        "Pathways": "✔️😃",
+        "Timelines": "❌",
+        "Heatmap": "❌",
+        "Sunburst": "❌"
+    },
+    {
+        "disease": "ov",
+        "Spreadsheet": "❌",
+        "MP": {
+            "edges": "❌"
+        },
+        "PCA": "✔️😃",
+        "Clusters": "❌",
+        "Pathways": "✔️😃",
+        "Timelines": "❌",
+        "Heatmap": "❌",
+        "Sunburst": "❌"
+    },
+    {
+        "disease": "meso",
+        "Spreadsheet": "❌",
+        "MP": {
+            "edges": "❌"
+        },
+        "PCA": "✔️😃",
+        "Clusters": "❌",
+        "Pathways": "✔️😃",
+        "Timelines": "❌",
+        "Heatmap": "❌",
+        "Sunburst": "❌"
+    },
+    {
+        "disease": [
+            "uwlung"
+        ],
+        "Spreadsheet": "❌",
+        "MP": {
+            "edges": "❌"
+        },
+        "PCA": "❌",
+        "Clusters": "❌",
+        "Pathways": "✔️😃",
+        "Timelines": "❌",
+        "Heatmap": "❌",
+        "Sunburst": "❌"
+    },
+    {
+        "disease": "brain",
+        "Spreadsheet": "❌",
+        "MP": {
+            "edges": "✔️😃"
+        },
+        "PCA": "✔️😃",
+        "Clusters": "✔️😃",
+        "Pathways": "✔️😃",
+        "Timelines": "✔️😃",
+        "Heatmap": "❌",
+        "Sunburst": "❌"
+    }
+]

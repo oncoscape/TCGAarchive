@@ -48,6 +48,7 @@ mongoose.connect(
 connection.once('open', function(){
     var db = connection.db; 
     asyncLoop(dataType, function(t, next){  
+      //t = 'events';
       console.log("Within datatype: ", t);
       var categoried_collections = collections.findCollectionsByType(t); 
       var categoried_collection_length = categoried_collections.length; 
@@ -111,7 +112,7 @@ connection.once('open', function(){
             console.error('Error: ' + err.message);
             return;
         }
-        jsonfile.writeFile("ajv_tcga_11172016.json", ajvMsg, {spaces: 4}); 
+        jsonfile.writeFile("ajv_tcga_11212016.json", ajvMsg, {spaces: 4}); 
         console.log('Finished!');
         console.timeEnd();
     });

@@ -10,37 +10,58 @@
     "collection": "esca_mut_broad_mutsig2",
     "type": "mut",
     "disease": "esca",
-    "MinMax": []
+    "MinMax": [
+        {
+            "gene": "HIST1H2AB",
+            "minRecorded": "",
+            "maxRecorded": "P.E122K",
+            "min": "",
+            "max": "P.E122FS"
+        },
+        {
+            "gene": "CCDC150",
+            "minRecorded": "",
+            "maxRecorded": "P.Q280K",
+            "min": "",
+            "max": "P.Q280FS"
+        },
+        {
+            "gene": "DCLRE1A",
+            "minRecorded": "",
+            "maxRecorded": "P.K636M",
+            "min": "",
+            "max": "P.K636FS"
+        }
+    ]
 },{
     "collection": "esca_mut01_broad_mutsig2",
     "type": "mut01",
     "disease": "esca",
-    "MinMax": []
+    "MinMax": {
+        "min": 0,
+        "max": 1
+    }
 },{
     "collection": "gbm_mut_broad_mutsig2",
     "type": "mut",
     "disease": "gbm",
-    "MinMax": []
+    "MinMax": {
+        "min": "",
+        "max": "p.YS163fs"
+    }
 },{
     "collection": "gbm_mut01_broad_mutsig2",
     "type": "mut01",
     "disease": "gbm",
-    "MinMax": [
-        {
-            "min": null,
-            "max": null
-        }
-    ]
+    "MinMax": []
 },{
     "collection": "brain_mut_broad_mutsig2",
     "type": "mut",
     "disease": "brain",
-    "MinMax": [
-        {
-            "min": null,
-            "max": null
-        }
-    ]
+    "MinMax": {
+        "min": "",
+        "max": "p.YY361fs"
+    }
 },{
     "collection": "brain_mut01_broad_mutsig2",
     "type": "mut01",
@@ -50,10 +71,497 @@
     "collection": "hnsc_mut_broad_mutsig2",
     "type": "mut",
     "disease": "hnsc",
-    "MinMax": []
+    "MinMax": [
+        {
+            "gene": "HNRNPD",
+            "minRecorded": "",
+            "maxRecorded": "P.F117L",
+            "min": "",
+            "max": "P.F117FS"
+        },
+        {
+            "gene": "PTRH2",
+            "minRecorded": "",
+            "maxRecorded": "P.A89V",
+            "min": "",
+            "max": "P.A89FS"
+        },
+        {
+            "gene": "DBR1",
+            "minRecorded": "",
+            "maxRecorded": "P.P55S",
+            "min": "",
+            "max": "P.P55FS"
+        }
+    ]
 },{
     "collection": "hnsc_mut01_broad_mutsig2",
     "type": "mut01",
     "disease": "hnsc",
     "MinMax": []
+},{
+    "collection": "kich_mut_broad_mutsig2",
+    "type": "mut",
+    "disease": "kich",
+    "MinMax": {
+        "min": "",
+        "max": "p.YLL180fs"
+    }
+},{
+    "collection": "kich_mut01_broad_mutsig2",
+    "type": "mut01",
+    "disease": "kich",
+    "MinMax": []
+},{
+    "collection": "kirc_mut_broad_mutsig2",
+    "type": "mut",
+    "disease": "kirc",
+    "MinMax": [
+        {
+            "gene": "GABBR1",
+            "minRecorded": "",
+            "maxRecorded": "P.L783M",
+            "min": "",
+            "max": "P.L783DEL"
+        },
+        {
+            "gene": "SLC9A5",
+            "minRecorded": "",
+            "maxRecorded": "P.R408W",
+            "min": "",
+            "max": "P.R408FS"
+        },
+        {
+            "gene": "PLA2G4F",
+            "minRecorded": "",
+            "maxRecorded": "P.A565G",
+            "min": "",
+            "max": "P.A565FS"
+        },
+        {
+            "gene": "RSPRY1",
+            "minRecorded": "",
+            "maxRecorded": "P.M489T",
+            "min": "",
+            "max": "P.M489FS"
+        }
+    ]
+},{
+    "collection": "kirc_mut01_broad_mutsig2",
+    "type": "mut01",
+    "disease": "kirc",
+    "MinMax": []
+},{
+    "collection": "kirp_mut_broad_mutsig2",
+    "type": "mut",
+    "disease": "kirp",
+    "MinMax": {
+        "min": "",
+        "max": "p.YW14fs"
+    }
+},{
+    "collection": "kirp_mut01_broad_mutsig2",
+    "type": "mut01",
+    "disease": "kirp",
+    "MinMax": []
+},{
+    "collection": "lgg_mut_broad_mutsig2",
+    "type": "mut",
+    "disease": "lgg",
+    "MinMax": [
+        {
+            "gene": "NCOA5",
+            "minRecorded": "",
+            "maxRecorded": "P.L436I;P.R335C",
+            "min": "",
+            "max": "P.L436DEL"
+        }
+    ]
+},{
+    "collection": "lgg_mut01_broad_mutsig2",
+    "type": "mut01",
+    "disease": "lgg",
+    "MinMax": []
+},{
+    "collection": "lihc_mut_broad_mutsig2",
+    "type": "mut",
+    "disease": "lihc",
+    "MinMax": {
+        "min": "",
+        "max": "p.YVGNAD275del"
+    }
+},{
+    "collection": "lihc_mut01_broad_mutsig2",
+    "type": "mut01",
+    "disease": "lihc",
+    "MinMax": []
+},{
+    "collection": "luad_mut_broad_mutsig2",
+    "type": "mut",
+    "disease": "luad",
+    "MinMax": [
+        {
+            "gene": "TGIF2LX",
+            "minRecorded": "",
+            "maxRecorded": "P.W100L",
+            "min": "",
+            "max": "P.W100FS"
+        },
+        {
+            "gene": "OR2M5",
+            "minRecorded": "",
+            "maxRecorded": "P.T7N",
+            "min": "",
+            "max": "P.T7FS"
+        },
+        {
+            "gene": "CLEC18B",
+            "minRecorded": "",
+            "maxRecorded": "P.P184S",
+            "min": "",
+            "max": "P.P184FS"
+        }
+    ]
+},{
+    "collection": "luad_mut01_broad_mutsig2",
+    "type": "mut01",
+    "disease": "luad",
+    "MinMax": {
+        "min": 0,
+        "max": 1
+    }
+},{
+    "collection": "lusc_mut_broad_mutsig2",
+    "type": "mut",
+    "disease": "lusc",
+    "MinMax": {
+        "min": "",
+        "max": "p.YN1056fs"
+    }
+},{
+    "collection": "lusc_mut01_broad_mutsig2",
+    "type": "mut01",
+    "disease": "lusc",
+    "MinMax": {
+        "min": 0,
+        "max": 1
+    }
+},{
+    "collection": "sarc_mut_broad_mutsig2",
+    "type": "mut",
+    "disease": "sarc",
+    "MinMax": {
+        "min": "",
+        "max": "p.YV185fs"
+    }
+},{
+    "collection": "sarc_mut01_broad_mutsig2",
+    "type": "mut01",
+    "disease": "sarc",
+    "MinMax": []
+},{
+    "collection": "paad_mut_broad_mutsig2",
+    "type": "mut",
+    "disease": "paad",
+    "MinMax": [
+        {
+            "gene": "BCL3",
+            "minRecorded": "",
+            "maxRecorded": "P.P408H",
+            "min": "",
+            "max": "P.P408FS"
+        },
+        {
+            "gene": "REPS1",
+            "minRecorded": "",
+            "maxRecorded": "P.K141R",
+            "min": "",
+            "max": "P.K141FS"
+        },
+        {
+            "gene": "GSK3A",
+            "minRecorded": "",
+            "maxRecorded": "P.R207H",
+            "min": "",
+            "max": "P.R207FS"
+        },
+        {
+            "gene": "CANT1",
+            "minRecorded": "",
+            "maxRecorded": "P.K131R",
+            "min": "",
+            "max": "P.K131FS"
+        },
+        {
+            "gene": "KIAA0020",
+            "minRecorded": "",
+            "maxRecorded": "P.K63R",
+            "min": "",
+            "max": "P.K63FS"
+        }
+    ]
+},{
+    "collection": "paad_mut01_broad_mutsig2",
+    "type": "mut01",
+    "disease": "paad",
+    "MinMax": []
+},{
+    "collection": "prad_mut_broad_mutsig2",
+    "type": "mut",
+    "disease": "prad",
+    "MinMax": [
+        {
+            "gene": "AGA",
+            "minRecorded": "",
+            "maxRecorded": "P.N336K",
+            "min": "",
+            "max": "P.N336FS"
+        },
+        {
+            "gene": "TCF7L2",
+            "minRecorded": "",
+            "maxRecorded": "P.D541N",
+            "min": "",
+            "max": "P.D541FS"
+        }
+    ]
+},{
+    "collection": "prad_mut01_broad_mutsig2",
+    "type": "mut01",
+    "disease": "prad",
+    "MinMax": []
+},{
+    "collection": "skcm_mut_broad_mutsig2",
+    "type": "mut",
+    "disease": "skcm",
+    "MinMax": {
+        "min": "",
+        "max": "p.YV127fs"
+    }
+},{
+    "collection": "skcm_mut01_broad_mutsig2",
+    "type": "mut01",
+    "disease": "skcm",
+    "MinMax": []
+},{
+    "collection": "stad_mut_broad_mutsig2",
+    "type": "mut",
+    "disease": "stad",
+    "MinMax": [
+        {
+            "gene": "KLHDC3",
+            "minRecorded": "",
+            "maxRecorded": "P.P231Q",
+            "min": "",
+            "max": "P.P231FS"
+        },
+        {
+            "gene": "PANX2",
+            "minRecorded": "",
+            "maxRecorded": "P.V648M",
+            "min": "",
+            "max": "P.V648FS"
+        },
+        {
+            "gene": "FAM21C",
+            "minRecorded": "",
+            "maxRecorded": "P.P344H",
+            "min": "",
+            "max": "P.P344FS"
+        },
+        {
+            "gene": "COMP",
+            "minRecorded": "",
+            "maxRecorded": "P.V321I",
+            "min": "",
+            "max": "P.V321FS"
+        },
+        {
+            "gene": "MTMR8",
+            "minRecorded": "",
+            "maxRecorded": "P.S210P",
+            "min": "",
+            "max": "P.S210FS"
+        },
+        {
+            "gene": "GPR37",
+            "minRecorded": "",
+            "maxRecorded": "P.Y181N",
+            "min": "",
+            "max": "P.Y181FS"
+        },
+        {
+            "gene": "RHPN2",
+            "minRecorded": "",
+            "maxRecorded": "P.T453M",
+            "min": "",
+            "max": "P.T453FS"
+        },
+        {
+            "gene": "IARS2",
+            "minRecorded": "",
+            "maxRecorded": "P.Y228H;P.H840R",
+            "min": "",
+            "max": "P.Y228FS"
+        },
+        {
+            "gene": "C1QA",
+            "minRecorded": "",
+            "maxRecorded": "P.R42W",
+            "min": "",
+            "max": "P.R42FS"
+        },
+        {
+            "gene": "TMEM187",
+            "minRecorded": "",
+            "maxRecorded": "P.L143P",
+            "min": "",
+            "max": "P.L143FS"
+        }
+    ]
+},{
+    "collection": "stad_mut01_broad_mutsig2",
+    "type": "mut01",
+    "disease": "stad",
+    "MinMax": {
+        "min": 0,
+        "max": 1
+    }
+},{
+    "collection": "thca_mut_broad_mutsig2",
+    "type": "mut",
+    "disease": "thca",
+    "MinMax": [
+        {
+            "gene": "TEX15",
+            "minRecorded": "",
+            "maxRecorded": "P.K2387R",
+            "min": "",
+            "max": "P.K2387FS"
+        },
+        {
+            "gene": "PPIL6",
+            "minRecorded": "",
+            "maxRecorded": "P.R77G",
+            "min": "",
+            "max": "P.R77FS"
+        }
+    ]
+},{
+    "collection": "thca_mut01_broad_mutsig2",
+    "type": "mut01",
+    "disease": "thca",
+    "MinMax": []
+},{
+    "collection": "ucec_mut_broad_mutsig2",
+    "type": "mut",
+    "disease": "ucec",
+    "MinMax": {
+        "min": "",
+        "max": "p.YS70fs"
+    }
+},{
+    "collection": "ucec_mut01_broad_mutsig2",
+    "type": "mut01",
+    "disease": "ucec",
+    "MinMax": {
+        "min": 0,
+        "max": 1
+    }
+},{
+    "collection": "acc_mut_broad_mutsig2",
+    "type": "mut",
+    "disease": "acc",
+    "MinMax": []
+},{
+    "collection": "acc_mut01_broad_mutsig2",
+    "type": "mut01",
+    "disease": "acc",
+    "MinMax": []
+},{
+    "collection": "blca_mut_broad_mutsig2",
+    "type": "mut",
+    "disease": "blca",
+    "MinMax": {
+        "min": "",
+        "max": "p.YYS691fs"
+    }
+},{
+    "collection": "blca_mut01_broad_mutsig2",
+    "type": "mut01",
+    "disease": "blca",
+    "MinMax": []
+},{
+    "collection": "brca_mut_broad_mutsig2",
+    "type": "mut",
+    "disease": "brca",
+    "MinMax": {
+        "min": "",
+        "max": "p.YVDL85fs"
+    }
+},{
+    "collection": "brca_mut01_broad_mutsig2",
+    "type": "mut01",
+    "disease": "brca",
+    "MinMax": []
+},{
+    "collection": "cesc_mut_broad_mutsig2",
+    "type": "mut",
+    "disease": "cesc",
+    "MinMax": [
+        {
+            "gene": "TP73",
+            "minRecorded": "",
+            "maxRecorded": "P.V191M",
+            "min": "",
+            "max": "P.V191DEL"
+        }
+    ]
+},{
+    "collection": "cesc_mut01_broad_mutsig2",
+    "type": "mut01",
+    "disease": "cesc",
+    "MinMax": []
+},{
+    "collection": "chol_mut_broad_mutsig2",
+    "type": "mut",
+    "disease": "chol",
+    "MinMax": []
+},{
+    "collection": "chol_mut01_broad_mutsig2",
+    "type": "mut01",
+    "disease": "chol",
+    "MinMax": {
+        "min": 0,
+        "max": 1
+    }
+},{
+    "collection": "dlbc_mut_broad_mutsig2",
+    "type": "mut",
+    "disease": "dlbc",
+    "MinMax": {
+        "min": "",
+        "max": "p.YT219fs"
+    }
+},{
+    "collection": "dlbc_mut01_broad_mutsig2",
+    "type": "mut01",
+    "disease": "dlbc",
+    "MinMax": []
+},{
+    "collection": "hg19_genesets_hgnc_import",
+    "type": "genesets",
+    "disease": "hg19"
+},{
+    "collection": "brca_psi_bradleylab_miso",
+    "type": "psi",
+    "disease": "brca",
+    "MinMax": {
+        "min": 0,
+        "max": 1.01
+    }
+},{
+    "collection": "lung_facs_demo_flow",
+    "type": "facs",
+    "disease": "lung"
 },

@@ -14,6 +14,7 @@ var elem = [];
 var db, collection, collections;
 var collection_counts = [];
 var manifest, manifest_arr;
+var lookup, lookup_arr;
 
 var onerror = function(e){
     console.log(e);
@@ -38,6 +39,9 @@ co(function *() {
 
   manifest = yield comongo.db.collection(db, "manifest");
   manifest_arr = yield manifest.find({}).toArray();
+  lookup = yield comongo.db.collection(db, "lookup_oncoscape_datasources");
+  lookup_arr = yield lookup.find({}).toArray();
+  
   // collections = yield comongo.db.collections(db);
   
   // for(var i=0;i<collections.length;i++){
@@ -61,6 +65,7 @@ co(function *() {
   // }
   //jsonfile.writeFile("../collection_counts_10262016.json", collection_counts, {spaces: 2}, function(err){ console.error(err);});  
   jsonfile.writeFile("../manifest_arr.json", manifest_arr, {spaces: 2}, function(err){ console.error(err);});  
+  jsonfile.writeFile("../lookup_arr.json", lookup_arr, {spaces: 2}, function(err){ console.error(err);});  
   /*** Test Item 4: PCA & MDS calculated with each geneset
    ***/
   console.timeEnd();

@@ -2,7 +2,7 @@
 const jsonfile = require('jsonfile');
 const helper = require("../testingHelper.js");
 const u = require("underscore");
-var IDReporting = require('./output2_coreIDs.json');
+var IDReporting = require('./output2.json');
 var IDErrors = IDReporting.filter(function(m){
 	return ('itemsNotInRef' in m.IDstatus) && (m.IDstatus.itemsNotInRef.length > 0 || m.IDstatus.refItemsNotInSelf.length>0);
 });
@@ -19,7 +19,7 @@ for(var i=0; i<IDErrors_brief.length;i++){
 	elem.type = m.type;
 	el.overlapCount = m.IDstatus.overlapCount;
 	el.itemsNotInRefLength = m.IDstatus.itemsNotInRef.length;
-	//el.itemsNotInRef = m.IDstatus.itemsNotInRef.splice(0, 5); the longest is 7, do not need to only print the first five
+	el.itemsNotInRef = m.IDstatus.itemsNotInRef;//.splice(0, 5); the longest is 7, do not need to only print the first five
 	elem.IDstatus = el;
 	IDErrors_briefv2.push(elem);
 }

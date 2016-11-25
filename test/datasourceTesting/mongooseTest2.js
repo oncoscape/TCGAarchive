@@ -29,6 +29,6 @@ jsonfile.readFile("ajv_tcga_11172016.json").then(function(obj){
         return elem;
     });
 }).then(function(){
-    jsonfile.writeFile('ajv_tcga_v2_11072016.json', ajvMsg_v2, {spaces:4});
+    jsonfile.writeFile('ajv_tcga_v2_11212016.json', ajvMsg_v2, {spaces:4});
 });
 

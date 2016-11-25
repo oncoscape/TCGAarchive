@@ -6,24 +6,12 @@ const mongoose = require('mongoose');
 const fs = require("fs");
 const u = require("underscore");
 const helper = require("../testingHelper.js");
-var memwatch = require('memwatch-next');
-var hd = new memwatch.HeapDiff();
-memwatch.on('leak', function(info) { 
-    /*Log memory leak info, runs when memory leak is detected */
-    console.log(info);
- });
-memwatch.on('stats', function(stats) { 
-    /*Log memory stats, runs when V8 does Garbage Collection*/ 
-    console.log(stats);
- });
-
 const manifest = require("../manifest_arr.json");
 var db, collection;
 var elem = {};
 var final_result = [];
 var ptdegree;
 var col;
-var values;
 var r;
 const asyncLoop = require('node-async-loop');
 // Connect To Database
@@ -59,7 +47,6 @@ var filestream = function(fs){
 var promiseFactory = function(db, collection, type, disease){
     return new Promise(function(resolve, reject){
         var elem = {};
-        var arr = [];
         elem.collection = collection;
         elem.type = type;
         elem.disease = disease;
@@ -73,17 +60,19 @@ var promiseFactory = function(db, collection, type, disease){
             case "CNV":
             case "PSI":  
                 var minMax = {};
-                arr = [];
+                var arr = [];
                 var cursor = db.collection(collection).find();
                 var count=0;
                 cursor.each(function(err, gene){
                     if(gene != null){
                         var range, max, min;
                         if(typeof(gene.max) == 'string'){
-                            range = u.values(gene.patients).map(function(v){return v.toUpperCase();}).sort();
-                            max = u.last(range);
-                            min = u.first(range);
+                            // range = u.values(gene.patients).map(function(v){return v.toUpperCase();}).sort();
+                            range = u.values(gene.patients).sort();
+                            max = u.last(range).toUpperCase();
+                            min = u.first(range).toUpperCase();
                             if(min!=gene.min.toUpperCase() || max!=gene.max.toUpperCase()){
+                                minMax = {};
                                 minMax.gene = gene.gene;
                                 minMax.minRecorded = gene.min.toUpperCase();
                                 minMax.maxRecorded = gene.max.toUpperCase();
@@ -98,6 +87,7 @@ var promiseFactory = function(db, collection, type, disease){
                             min = u.first(range);
                             if(min!=gene.min || max!=gene.max){
                                 console.log(count++);
+                                minMax = {};
                                 minMax.gene = gene.gene;
                                 minMax.minRecorded = gene.min;
                                 minMax.maxRecorded = gene.max;
@@ -116,19 +106,16 @@ var promiseFactory = function(db, collection, type, disease){
 
             case "PTDEGREE":
             case "GENEDEGREE":
-                arr = [];
                 var minMax = {};
                 db.collection(collection).find().toArray().then(function(res){
-                    var r;
-                    return r = res.map(function(p){return u.values(u.omit(p,'_id'));});
-                }).then(function(){
-                    values = u.flatten(r);
-                    return values;
-                }).then(function(){
+                    var r = u.flatten(res.map(function(p){return u.values(u.omit(p,'_id'));}));
+                    return r; 
+                }).then(function(r){
+                    var values = u.flatten(r).sort();
+                    minMax = {};
                     minMax.min = u.min(values);
                     minMax.max = u.max(values);
-                    arr.push(minMax);
-                    elem.MinMax = arr;
+                    elem.MinMax = minMax;
                     resolve(elem);
                 });
                 break;
@@ -148,7 +135,6 @@ Promise.all([mongo(mongoose),filestream(fs)]).then(function(response){
        console.log(d.collection);  
        promiseFactory(db, d.collection, d.dataType, d.dataset).then(function(res){
           console.log(index++);
-          //console.dir(res);
           file.write(JSON.stringify(res, null, 4));
           if(index != manifest.length){
             file.write(",");
