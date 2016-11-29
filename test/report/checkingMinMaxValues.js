@@ -45,13 +45,13 @@ var filestream = function(fs){
   });
 };
 
-var promiseFactory = function(db, collection, type, disease){
+var IN = 1;
+var promiseFactory = function(db, d, file){
+    
     return new Promise(function(resolve, reject){
-        var elem = {};
-        elem.collection = collection;
-        elem.type = type;
-        elem.disease = disease;
-        var ind = 0;
+        var collection = d.collection;
+        var type = d.dataType;
+        var disease = d.disease;
         type = type.trim().toUpperCase();
         switch(type){
             case "MUT":
@@ -61,15 +61,16 @@ var promiseFactory = function(db, collection, type, disease){
             case "PROTEIN":
             case "CNV":
             case "PSI": 
+                console.log("test", IN++);
+                var ind = 0;
                 console.log(collection);
                 db.collection(collection).find().each(function(err, doc){
-                    //console.log(Object.keys(doc.patients).length);
                     if(doc != null){
                         var u = doc.patients;
-                        var max = "";
-                        var min = "";
                         var keys = Object.keys(u);
                         var doc_length = keys.length;
+                        var max = u[keys[0]];
+                        var min = u[keys[0]];        
                         for(var i = 0; i<doc_length; i++){
                             if(typeof(u[keys[i]]) == "string"){
                                 if(u[keys[i]].toUpperCase()>max){
@@ -87,35 +88,21 @@ var promiseFactory = function(db, collection, type, disease){
                                 }
                             }  
                         }
-                        //console.log(ind++);
-                        // if(max != doc.max || min != doc.min) {
-                        //     console.log(collection);
-                        //     console.log("recorded max is:", doc.max);
-                        //     console.log("calculated max is:", max);
-                        //     console.log("recorded min is:", doc.min);
-                        //     console.log("calculated min is:", min);
-                        // }    
+                        if(max != doc.max || min != doc.min) {
+                            console.log(ind++);
+                            var elem =  {};
+                            elem.collection = collection;
+                            elem.recordedMax = doc.max;
+                            elem.calculatedMax = max;
+                            elem.recordedMin = doc.min;
+                            elem.calculatedMin = min;
+                            file.write(JSON.stringify(elem, null, 4));
+                            file.write(",");
+                        }   
+                    }else{
+                        resolve();
                     }
-                    });            
-                resolve(elem);
-                break;
-            // case "PTDEGREE":
-            // case "GENEDEGREE":
-            //     var minMax = {};
-            //     db.collection(collection).find().toArray().then(function(res){
-            //         var r = u.flatten(res.map(function(p){return u.values(u.omit(p,'_id'));}));
-            //         return r; 
-            //     }).then(function(r){
-            //         var values = u.flatten(r).sort();
-            //         minMax = {};
-            //         minMax.min = u.min(values);
-            //         minMax.max = u.max(values);
-            //         elem.MinMax = minMax;
-            //         resolve(elem);
-            //     });
-            //     break;
-            default:
-                resolve(elem);
+                }); 
                 break;
             }
         });
@@ -126,25 +113,25 @@ Promise.all([mongo(mongoose),filestream(fs)]).then(function(response){
     var file = response[1];
     var index = 0;
     file.write("[");
-    asyncLoop(manifest, function(d, next){
-       //console.log(d.collection);  
-       promiseFactory(db, d.collection, d.dataType, d.dataset).then(function(res){
-        //   console.log(index++);
-        //   file.write(JSON.stringify(res, null, 4));
-        //   if(index != manifest.length){
-        //     file.write(",");
-        //   }else{
-        //       file.write("]");
-        //   }
-          next();
-        });
-    }, function (err)
-    {
+    var manifest_molecular = manifest.filter(function(m){
+        return m.dataType == "mut" || m.dataType == "methylation" || m.dataType == "rna" || m.dataType == "protein" || m.dataType == "cnv" || m.dataType == "psi";
+    });
+    asyncLoop(manifest_molecular, function(d, next){ 
+        promiseFactory(db, d, file).then(function (err){
+                if (err)
+                {
+                    console.log(err);
+                    return;
+                }
+                next();
+            });
+        }, function (err){
         if (err)
         {
             console.error('Error: ' + err.message);
             return;
         }
+        file.write("]");
         console.log('Finished!');
         console.timeEnd(); // 
     });

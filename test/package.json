@@ -51,6 +51,7 @@
     "co-mongo": "0.0.2",
     "co-mongodb": "^0.1.0",
     "devtool": "^2.3.0",
+    "devtools": "0.0.0",
     "filehandler": "0.0.0",
     "fs": "0.0.2",
     "graceful-fs": "^4.1.5",
