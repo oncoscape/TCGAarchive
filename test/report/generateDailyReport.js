@@ -157,7 +157,7 @@ co(function *() {
   helper.format.h1("Part I: Checking existing collections against lookup_oncoscape_datasources and manifest files");
   helper.format.h3("The number of the collections in database tcga is: ");
   helper.format.text(existing_collection_names_all.length);
-  helper.format.h5("After remove render collections, manifest, lookup collections, the true Data Collection Length is: ");
+  helper.format.h5("After remove render collections, manifest, lookup collections, and mapping collections the true Data Collection Length is: ");
   helper.format.text(existing_collection_names.length);
   helper.format.h3("The number listed in lookup_oncoscape_datasources is: "); 
   helper.format.text(lookup_listed_collections.length);
