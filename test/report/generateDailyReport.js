@@ -324,7 +324,11 @@ co(function *() {
   helper.format.codeStop();
   // report the discrepancy between calculated and calculated category in lookup_oncoscape_datasources
   helper.format.h1("Part IV: The combination from Molecular Collections and genesets compared to the Calculated Collections in lookup_oncoscape_datasources");
+  helper.format.text("/* Checking PCA/MDS Collections */");
+  helper.format.text("MDS, mutation and copy number, all of them are genesets, check the names, look at each gene-set, from the same sources (mut, copy)");
+  helper.format.text("PCA, for RNA, methylation, protein, CNV, for those molecular types, with each genesetsNo PCA mutation combo");
   helper.format.codeStart();
+  helper.format.codeComment("Reference is the Existing Calculated Collections.");
   validateCalculatedFromMolecular.forEach(function(a){
     helper.format.text(a);
   });
@@ -407,16 +411,27 @@ co(function *() {
   //   countInRef: NaN }
   helper.format.codeStop();
   helper.format.text("Detailed aggregated report lists here (sorted by subfield IDstatus.itemsNotInRefLength):");
-  // helper.format.codeStart();
-  // patientID_status.forEach(function(s){helper.format.text(s);});
-  // helper.format.codeStop();
+  var ptIDSum = Object.keys(u.groupBy(patientID_status, 'disease')).map(function(d){
+    return patientID_status.filter(function(p){
+      return p.disease == d;
+    }).map(function(m){
+      m.itemsNotInRef = m.IDstatus.itemsNotInRef;
+      return u.omit(m,'type','IDstatus', 'itemsNotInRefLen');
+    });
+  }).map(function(p){
+    var elem = {};
+    elem.disease = p[0].disease;
+    elem.ptIDNotInPatientTable = p.map(function(m){
+      return m.itemsNotInRef;
+    }).reduce(function(a,b){ 
+    return a = a.concat(b).unique();});
+    return elem;
+  });
   helper.format.codeStart();
+  ptIDSum.forEach(function(s){helper.format.text(s);});
   helper.format.codeStop();
-
-
-
-  helper.format.h1("Part VIII: Checked the gene symbols against HGNC gene symbols: ");
-
+  
+  helper.format.h1("Part IX: Checked the gene symbols against HGNC gene symbols: ");
   helper.format.h3("The aggregated result grouped by Disease types and Data Types");
   var diseasesWithGeneIDErrors = u.uniq(gene_status.map(function(m){return m.disease;}));
   helper.format.codeComment("Below lists the disease types, whose gene symbols in some if not all collections are NOT included in the HGNC gene symbols");
@@ -441,7 +456,7 @@ co(function *() {
   gene_status.splice(0, 5).forEach(function(s){helper.format.text(s);});
   helper.format.codeStop();
   
-  helper.format.h1("Part IX: Min/Max Values Checking in Molecular Collections: ");
+  helper.format.h1("Part X: Min/Max Values Checking in Molecular Collections: ");
   var errorMinMaxColls = molecularMinMaxChecking.map(function(m){return m.collection;}).unique();
   var mutColls = errorMinMaxColls.containPartialString(/_mut_/);
   var shorterMolMinMaxErrors = molecularMinMaxChecking.filter(function(m){return !mutColls.contains(m.collection);})
@@ -458,7 +473,7 @@ co(function *() {
   errorReported.forEach(function(s){helper.format.text(s);});
   helper.format.codeStop();
 
-  helper.format.h1("Part X: X axis range checking for render_patient(>4000 listed below):");
+  helper.format.h1("Part XI: X axis range checking for render_patient(>4000 listed below):");
   helper.format.codeStart();
   x_range.filter(function(m){return m.range>4000;}).forEach(function(s){helper.format.text(s);});
   helper.format.codeStop();

@@ -50,6 +50,13 @@ co(function *() {
   genesetsStrings = yield genesets.map(function(g){ return g.toLowerCase().replace(/\s/g, '');});
 
   var ExcludedCollections = manifest.filter(function(m){return ('dne' in m);}).map(function(f){return f.collection;});
+  var ExcludedCollectionsScaled = ExcludedCollections.map(function(cn){
+      return cn + "-1e05";
+  });
+  var ExcludedCollectionsPcaloadings = ExcludedCollections.map(function(cn){
+      return cn.replace("pcascores", "pcaloadings");
+  });
+  ExcludedCollections = ExcludedCollections.concat(ExcludedCollectionsScaled, ExcludedCollectionsPcaloadings);
   var molComboForCalculated = function(lookupItem){
     // by data sources
     var result = [];
@@ -66,13 +73,11 @@ co(function *() {
       }
       //pcaloading and pcascore
       //console.log(cartesianProductOf([1, 2, 3], ['a', 'b']));
-      var molCom = molGrpBySource[k].filter(function(m){return (m.type != 'mut01' && m.type != 'psi');}).map(function(m){
+      var molCom = molGrpBySource[k].filter(function(m){return (m.type != 'mut01' && m.type != 'mut' && m.type != 'psi');}).map(function(m){
         var str = m.collection.split("_");
         var res;
         if(m.type == "rna" || m.type == "methylation"){
           res = str[1]+"-"+str[3];
-        }else if(m.type == 'mut'){
-          res = "mut01";
         }else{
           res = m.type;
         }
@@ -83,9 +88,9 @@ co(function *() {
 
       cartesianProd.forEach(function(c){
         var str1 = lookupItem.disease + "_pcascores_" + k.toLowerCase() + "_prcomp-" + c[0] + "-" + c[1];
-        var str1Scale = str1 + "-1e+05";
+        var str1Scale = str1 + "-1e05";
         var str2 = lookupItem.disease + "_pcaloadings_" + k.toLowerCase() + "_prcomp-" + c[0] + "-" + c[1];
-        var str2Scale = str1 + "-1e+05";
+        var str2Scale = str1 + "-1e05";
         result = result.concat([str1, str1Scale, str2, str2Scale]);
       });
 
@@ -99,7 +104,8 @@ co(function *() {
    if('molecular' in l && 'calculated' in l){
       var molecularCombinations = molComboForCalculated(l);
       var currentCalculatedCollections = l.calculated.map(function(m){return m.collection;});
-      //elem.possibleMolecularCombination = {};
+      var currentCalculatedMutColls = currentCalculatedCollections.containPartialString(/-mut01/);
+      currentCalculatedCollections = u.difference(currentCalculatedCollections, currentCalculatedMutColls);
       var evaluation = molecularCombinations.arraysCompareV2(currentCalculatedCollections);
       evaluation.NotCalculated = evaluation.itemsNotInRef.includesArray(ExcludedCollections).includes;
       evaluation.itemsNotInRef = u.difference(evaluation.itemsNotInRef,evaluation.NotCalculated);
