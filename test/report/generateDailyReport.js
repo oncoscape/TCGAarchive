@@ -326,7 +326,7 @@ co(function *() {
   helper.format.h1("Part IV: The combination from Molecular Collections and genesets compared to the Calculated Collections in lookup_oncoscape_datasources");
   helper.format.text("/* Checking PCA/MDS Collections */");
   helper.format.text("MDS, mutation and copy number, all of them are genesets, check the names, look at each gene-set, from the same sources (mut, copy)");
-  helper.format.text("PCA, for RNA, methylation, protein, CNV, for those molecular types, with each genesetsNo PCA mutation combo");
+  helper.format.text("PCA, for RNA, methylation, protein, CNV, for those molecular types, with each genesets. No PCA mutation combo");
   helper.format.codeStart();
   helper.format.codeComment("Reference is the Existing Calculated Collections.");
   validateCalculatedFromMolecular.forEach(function(a){
