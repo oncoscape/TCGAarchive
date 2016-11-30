@@ -173,7 +173,7 @@ co(function *() {
   helper.format.h2("Eveluation of Collection names: only alphanumeric, dash and underscore are permitted");
   var lookup_matched = lookup_listed_collections.map(function(c){return c.match(collectionNameRegex)[0];});
   var lookup_compare_result = lookup_listed_collections.includesArray(lookup_matched);
-  helper.format.h4("lookup table collection naming validation:");
+  helper.format.h3("lookup table collection naming validation:");
   helper.format.h5("Number of Collections with permitted names");
   helper.format.text(lookup_compare_result.includes.length);
   if(lookup_compare_result.notIncluded.length == 0){
@@ -188,7 +188,7 @@ co(function *() {
   }
   var manifest_matched = manifest_listed_collections.map(function(c){return c.match(collectionNameRegex)[0];});
   var manifest_compare_result = manifest_listed_collections.includesArray(manifest_matched);
-  helper.format.h4("manifest collection naming validation:");
+  helper.format.h3("manifest collection naming validation:");
   helper.format.h5("Number of Collections with permitted names");
   helper.format.text(manifest_compare_result.includes.length);
   if(manifest_compare_result.notIncluded.length == 0){
@@ -204,7 +204,7 @@ co(function *() {
   
   var collection_matched = existing_collection_names.map(function(c){return c.match(collectionNameRegex)[0];});
   var collection_compare_result = existing_collection_names.includesArray(collection_matched);
-  helper.format.h4("Current database collection naming validation:");
+  helper.format.h3("Current database collection naming validation:");
   helper.format.h5("Number of Collections with permitted names");
   helper.format.text(collection_compare_result.includes.length);
   if(collection_compare_result.notIncluded.length == 0){
