@@ -49,7 +49,7 @@ co(function *() {
     console.log("******* current index is: ", i);
     
   }
-  jsonfile.writeFile("../collection_counts.json", collection_counts, {spaces: 2}, function(err){ console.error(err);});  
+  jsonfile.writeFile("/Users/zhangj4/Desktop/canaantt_git/TCGAarchive/test/collection_counts.json", collection_counts, {spaces: 2}, function(err){ console.error(err);});  
   //jsonfile.writeFile("../manifest_arr.json", manifest_arr, {spaces: 2}, function(err){ console.error(err);});  
   console.timeEnd(); //52550ms
   yield comongo.db.close(db);

@@ -3,7 +3,7 @@ const co = require('co');
 const u = require('underscore');
 const jsonfile = require("jsonfile-promised");
 const helper = require("../testingHelper.js");
-var ajvMsg = require("../datasourceTesting/ajv_tcga_v2_11172016.json");
+var ajvMsg = require("../datasourceTesting/ajv_tcga_v2_11212016.json");
 var patientID_status = require("../patientIDTesting/IDstatus_errors_brief.json");
 var gene_status = require("../geneSymbols/output3.json");
 var diseaseCollectionStructureStatus = require("../toolTesting/diseaseCollectionStructuralStatus.json");
@@ -20,6 +20,8 @@ var keyFields = [];
 var render_pca = [];
 var render_patient = [];
 var usedFields = ['annotation','location','category','molecular','clinical','calculated','edges'];
+var lookup_toolTesting = require("../toolTesting/lookup.json");
+var molecularMinMaxChecking = require("./CheckingMinMaxValues.json");
 const pcaScoreTypeMapping = {
     'cnv-gistic': "cnv", 
     'cnv-gistic2thd':"cnv",
@@ -351,6 +353,10 @@ co(function *() {
   helper.format.codeStart();
   helper.format.text(diseaseCollection);
   helper.format.codeStop();
+  helper.format.h2("Five Tool Testing Results:");
+  helper.format.codeStart();
+  helper.format.text(lookup_toolTesting);
+  helper.format.codeStop();
 
   helper.format.h1("Part VII: Check if there are any duplicated fields in Clinical Collections:");
   helper.format.codeStart();
@@ -404,7 +410,7 @@ co(function *() {
   patientID_status.forEach(function(s){helper.format.text(s);});
   helper.format.codeStop();
   
-  helper.format.h1("Part VII: Checked the gene symbols against HGNC gene symbols: ");
+  helper.format.h1("Part VIII: Checked the gene symbols against HGNC gene symbols: ");
 
   helper.format.h3("The aggregated result grouped by Disease types and Data Types");
   var diseasesWithGeneIDErrors = u.uniq(gene_status.map(function(m){return m.disease;}));
@@ -430,6 +436,22 @@ co(function *() {
   gene_status.splice(0, 5).forEach(function(s){helper.format.text(s);});
   helper.format.codeStop();
   
+  helper.format.h1("Part VIIII: Min/Max Values Checking in Molecular Collections: ");
+  var errorMinMaxColls = molecularMinMaxChecking.map(function(m){return m.collection;}).unique();
+  var mutColls = errorMinMaxColls.containPartialString(/_mut_/);
+  var shorterMolMinMaxErrors = molecularMinMaxChecking.filter(function(m){return !mutColls.contains(m.collection);})
+  var usedColls = shorterMolMinMaxErrors.map(function(m){return m.collection;}).unique();
+  var errorReported = usedColls.map(function(m){
+    var elem = {};
+    elem.collection = m;
+    var collectionErrors = shorterMolMinMaxErrors.filter(function(n){return n.collection == m;});
+    elem.rangeErrorLength = collectionErrors.length;
+    elem.errorExamples = collectionErrors.splice(0, 5);
+    return elem;
+  });
+  helper.format.codeStart();
+  errorReported.forEach(function(s){helper.format.text(s);});
+  helper.format.codeStop();
 
   yield comongo.db.close(db);
 }).catch(onerror);

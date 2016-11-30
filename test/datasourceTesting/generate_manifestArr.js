@@ -15,6 +15,8 @@ var db, collection, collections;
 var collection_counts = [];
 var manifest, manifest_arr;
 var lookup, lookup_arr;
+var render_patient;
+var render_pca;
 
 var onerror = function(e){
     console.log(e);
@@ -37,10 +39,14 @@ co(function *() {
     '@oncoscape-dev-db1.sttrcancer.io:27017,oncoscape-dev-db2.sttrcancer.io:27017,'+
     'oncoscape-dev-db3.sttrcancer.io:27017/tcga?authSource=admin&replicaSet=rs0');
 
-  manifest = yield comongo.db.collection(db, "manifest");
-  manifest_arr = yield manifest.find({}).toArray();
-  lookup = yield comongo.db.collection(db, "lookup_oncoscape_datasources");
-  lookup_arr = yield lookup.find({}).toArray();
+  collection = yield comongo.db.collection(db, "manifest");
+  manifest_arr = yield collection.find({}).toArray();
+  collection = yield comongo.db.collection(db, "lookup_oncoscape_datasources");
+  lookup_arr = yield collection.find({}).toArray();
+  collection = yield comongo.db.collection(db, "render_pca");
+  render_pca = yield collection.find({}).toArray();
+  collection = yield comongo.db.collection(db, "render_patient");
+  render_patient = yield collection.find({}).toArray();
   
   // collections = yield comongo.db.collections(db);
   
@@ -64,8 +70,10 @@ co(function *() {
     
   // }
   //jsonfile.writeFile("../collection_counts_10262016.json", collection_counts, {spaces: 2}, function(err){ console.error(err);});  
-  jsonfile.writeFile("../manifest_arr.json", manifest_arr, {spaces: 2}, function(err){ console.error(err);});  
-  jsonfile.writeFile("../lookup_arr.json", lookup_arr, {spaces: 2}, function(err){ console.error(err);});  
+  jsonfile.writeFile("/Users/zhangj4/Desktop/canaantt_git/TCGAarchive/test/manifest_arr.json", manifest_arr, {spaces: 2}, function(err){ console.error(err);});  
+  jsonfile.writeFile("/Users/zhangj4/Desktop/canaantt_git/TCGAarchive/test/lookup_arr.json", lookup_arr, {spaces: 2}, function(err){ console.error(err);});  
+  jsonfile.writeFile("/Users/zhangj4/Desktop/canaantt_git/TCGAarchive/test/render_pca.json", render_pca, {spaces: 2}, function(err){ console.error(err);});  
+  jsonfile.writeFile("/Users/zhangj4/Desktop/canaantt_git/TCGAarchive/test/render_patient.json", render_patient, {spaces: 2}, function(err){ console.error(err);});  
   /*** Test Item 4: PCA & MDS calculated with each geneset
    ***/
   console.timeEnd();
