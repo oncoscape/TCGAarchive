@@ -453,7 +453,7 @@ co(function *() {
   helper.format.codeStop();
   helper.format.text("First five collections with the most gene symbols that are not included in HGNC gene symbol list:");
   helper.format.codeStart();
-  gene_status.splice(0, 5).forEach(function(s){helper.format.text(s);});
+  gene_status.filter(function(m){return m.type!="methylation" && m.type!="psi"}).splice(0, 5).forEach(function(s){helper.format.text(s);});
   helper.format.codeStop();
   
   helper.format.h1("Part X: Min/Max Values Checking in Molecular Collections: ");
