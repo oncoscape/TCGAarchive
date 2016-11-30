@@ -141,21 +141,23 @@ co(function *() {
   var manifest_excludes = manifest_arr.filter(function(m){return "dne" in m;}).map(function(m){return m.collection;});
   manifest_listed_collections = u.difference(manifest_listed_collections, manifest_excludes);
   collections = yield comongo.db.collections(db);
-  existing_collection_names = collections.map(function(c){
+  var existing_collection_names_all = collections.map(function(c){
     return c['s']['name'];
   }); //getting the names of all collections
 
   /* Need to clean up the existing_collection_names
 
    */
-  existing_sample_maps = existing_collection_names.containPartialString(/[A-Za-z0-9_-]+_sample_map/g);
-  existing_renders = existing_collection_names.containPartialString(/render_+/g);
-  existing_lookups = existing_collection_names.containPartialString(/lookup_+/g);
-  existing_manifest = existing_collection_names.containPartialString(/manifest+/g);
-  existing_collection_names = u.difference(existing_collection_names, existing_sample_maps.concat(existing_renders,existing_lookups,existing_manifest, ["system.js"]));
+  existing_sample_maps = existing_collection_names_all.containPartialString(/[A-Za-z0-9_-]+_sample_map/g);
+  existing_renders = existing_collection_names_all.containPartialString(/render_+/g);
+  existing_lookups = existing_collection_names_all.containPartialString(/lookup_+/g);
+  existing_manifest = existing_collection_names_all.containPartialString(/manifest+/g);
+  existing_collection_names = u.difference(existing_collection_names_all, existing_sample_maps.concat(existing_renders,existing_lookups,existing_manifest, ["system.js"]));
 
   helper.format.h1("Part I: Checking existing collections against lookup_oncoscape_datasources and manifest files");
   helper.format.h3("The number of the collections in database tcga is: ");
+  helper.format.text(existing_collection_names_all.length);
+  helper.format.h5("After remove render collections, manifest, lookup collections, the true Data Collection Length is: ");
   helper.format.text(existing_collection_names.length);
   helper.format.h3("The number listed in lookup_oncoscape_datasources is: "); 
   helper.format.text(lookup_listed_collections.length);
