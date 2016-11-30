@@ -107,7 +107,7 @@ co(function *() {
       var currentCalculatedMutColls = currentCalculatedCollections.containPartialString(/-mut01/);
       currentCalculatedCollections = u.difference(currentCalculatedCollections, currentCalculatedMutColls);
       var evaluation = molecularCombinations.arraysCompareV2(currentCalculatedCollections);
-      evaluation.NotCalculated = evaluation.itemsNotInRef.includesArray(ExcludedCollections).includes;
+      //evaluation.NotCalculated = evaluation.itemsNotInRef.includesArray(ExcludedCollections).includes;
       evaluation.itemsNotInRef = u.difference(evaluation.itemsNotInRef,evaluation.NotCalculated);
       elem.possibleMolecularCombination = evaluation;
    }

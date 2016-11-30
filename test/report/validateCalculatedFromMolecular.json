@@ -79,8 +79,7 @@
                 "brca_pcascores_ucsc_prcomp-allgenes-cnv",
                 "brca_pcaloadings_ucsc_prcomp-allgenes-cnv",
                 "brca_pcascores_ucsc_prcomp-allgenes-cnv-1e05"
-            ],
-            "NotCalculated": []
+            ]
         }
     },
     {
@@ -94,20 +93,7 @@
                 "esca_mds_ucsc_mds-oncovogel274-cnv-mut01-ucsc",
                 "esca_mds_ucsc_mds-oncoplex-cnv-mut01-ucsc",
                 "esca_mds_ucsc_mds-osccchen131probes-cnv-mut01-ucsc",
-                "esca_mds_ucsc_mds-osccchen9genes-cnv-mut01-ucsc"
-            ],
-            "refItemsNotInSelf": [
-                "esca_pcascores_ucsc_prcomp-allgenes-cnv",
-                "esca_pcaloadings_ucsc_prcomp-allgenes-cnv",
-                "esca_pcascores_ucsc_prcomp-allgenes-cnv-1e05",
-                "esca_pcascores_ucsc_prcomp-allgenes-rna-hiseq",
-                "esca_pcaloadings_ucsc_prcomp-allgenes-rna-hiseq",
-                "esca_pcascores_ucsc_prcomp-allgenes-rna-hiseq-1e05",
-                "esca_pcascores_ucsc_prcomp-allgenes-protein",
-                "esca_pcaloadings_ucsc_prcomp-allgenes-protein",
-                "esca_pcascores_ucsc_prcomp-allgenes-protein-1e05"
-            ],
-            "NotCalculated": [
+                "esca_mds_ucsc_mds-osccchen9genes-cnv-mut01-ucsc",
                 "esca_pcascores_ucsc_prcomp-tcgagbmclassifiers-protein",
                 "esca_pcascores_ucsc_prcomp-tcgagbmclassifiers-protein-1e05",
                 "esca_pcaloadings_ucsc_prcomp-tcgagbmclassifiers-protein",
@@ -129,6 +115,17 @@
                 "esca_pcascores_ucsc_prcomp-osccchen9genes-protein",
                 "esca_pcascores_ucsc_prcomp-osccchen9genes-protein-1e05",
                 "esca_pcaloadings_ucsc_prcomp-osccchen9genes-protein"
+            ],
+            "refItemsNotInSelf": [
+                "esca_pcascores_ucsc_prcomp-allgenes-cnv",
+                "esca_pcaloadings_ucsc_prcomp-allgenes-cnv",
+                "esca_pcascores_ucsc_prcomp-allgenes-cnv-1e05",
+                "esca_pcascores_ucsc_prcomp-allgenes-rna-hiseq",
+                "esca_pcaloadings_ucsc_prcomp-allgenes-rna-hiseq",
+                "esca_pcascores_ucsc_prcomp-allgenes-rna-hiseq-1e05",
+                "esca_pcascores_ucsc_prcomp-allgenes-protein",
+                "esca_pcaloadings_ucsc_prcomp-allgenes-protein",
+                "esca_pcascores_ucsc_prcomp-allgenes-protein-1e05"
             ]
         }
     },
@@ -144,24 +141,45 @@
                 "gbm_mds_ucsc_mds-oncoplex-cnv-mut01-ucsc",
                 "gbm_mds_ucsc_mds-osccchen131probes-cnv-mut01-ucsc",
                 "gbm_mds_ucsc_mds-osccchen9genes-cnv-mut01-ucsc",
+                "gbm_pcascores_ucsc_prcomp-tcgagbmclassifiers-protein",
+                "gbm_pcascores_ucsc_prcomp-tcgagbmclassifiers-protein-1e05",
+                "gbm_pcaloadings_ucsc_prcomp-tcgagbmclassifiers-protein",
                 "gbm_pcascores_ucsc_prcomp-tcgagbmclassifiers-rna-hiseq",
                 "gbm_pcascores_ucsc_prcomp-tcgagbmclassifiers-rna-hiseq-1e05",
                 "gbm_pcaloadings_ucsc_prcomp-tcgagbmclassifiers-rna-hiseq",
+                "gbm_pcascores_ucsc_prcomp-markergenes545-protein",
+                "gbm_pcascores_ucsc_prcomp-markergenes545-protein-1e05",
+                "gbm_pcaloadings_ucsc_prcomp-markergenes545-protein",
                 "gbm_pcascores_ucsc_prcomp-markergenes545-rna-hiseq",
                 "gbm_pcascores_ucsc_prcomp-markergenes545-rna-hiseq-1e05",
                 "gbm_pcaloadings_ucsc_prcomp-markergenes545-rna-hiseq",
+                "gbm_pcascores_ucsc_prcomp-tcgapancanmutated-protein",
+                "gbm_pcascores_ucsc_prcomp-tcgapancanmutated-protein-1e05",
+                "gbm_pcaloadings_ucsc_prcomp-tcgapancanmutated-protein",
                 "gbm_pcascores_ucsc_prcomp-tcgapancanmutated-rna-hiseq",
                 "gbm_pcascores_ucsc_prcomp-tcgapancanmutated-rna-hiseq-1e05",
                 "gbm_pcaloadings_ucsc_prcomp-tcgapancanmutated-rna-hiseq",
+                "gbm_pcascores_ucsc_prcomp-oncovogel274-protein",
+                "gbm_pcascores_ucsc_prcomp-oncovogel274-protein-1e05",
+                "gbm_pcaloadings_ucsc_prcomp-oncovogel274-protein",
                 "gbm_pcascores_ucsc_prcomp-oncovogel274-rna-hiseq",
                 "gbm_pcascores_ucsc_prcomp-oncovogel274-rna-hiseq-1e05",
                 "gbm_pcaloadings_ucsc_prcomp-oncovogel274-rna-hiseq",
+                "gbm_pcascores_ucsc_prcomp-oncoplex-protein",
+                "gbm_pcascores_ucsc_prcomp-oncoplex-protein-1e05",
+                "gbm_pcaloadings_ucsc_prcomp-oncoplex-protein",
                 "gbm_pcascores_ucsc_prcomp-oncoplex-rna-hiseq",
                 "gbm_pcascores_ucsc_prcomp-oncoplex-rna-hiseq-1e05",
                 "gbm_pcaloadings_ucsc_prcomp-oncoplex-rna-hiseq",
+                "gbm_pcascores_ucsc_prcomp-osccchen131probes-protein",
+                "gbm_pcascores_ucsc_prcomp-osccchen131probes-protein-1e05",
+                "gbm_pcaloadings_ucsc_prcomp-osccchen131probes-protein",
                 "gbm_pcascores_ucsc_prcomp-osccchen131probes-rna-hiseq",
                 "gbm_pcascores_ucsc_prcomp-osccchen131probes-rna-hiseq-1e05",
                 "gbm_pcaloadings_ucsc_prcomp-osccchen131probes-rna-hiseq",
+                "gbm_pcascores_ucsc_prcomp-osccchen9genes-protein",
+                "gbm_pcascores_ucsc_prcomp-osccchen9genes-protein-1e05",
+                "gbm_pcaloadings_ucsc_prcomp-osccchen9genes-protein",
                 "gbm_pcascores_ucsc_prcomp-osccchen9genes-rna-hiseq",
                 "gbm_pcascores_ucsc_prcomp-osccchen9genes-rna-hiseq-1e05",
                 "gbm_pcaloadings_ucsc_prcomp-osccchen9genes-rna-hiseq"
@@ -170,29 +188,6 @@
                 "gbm_pcascores_ucsc_prcomp-allgenes-cnv",
                 "gbm_pcaloadings_ucsc_prcomp-allgenes-cnv",
                 "gbm_pcascores_ucsc_prcomp-allgenes-cnv-1e05"
-            ],
-            "NotCalculated": [
-                "gbm_pcascores_ucsc_prcomp-tcgagbmclassifiers-protein",
-                "gbm_pcascores_ucsc_prcomp-tcgagbmclassifiers-protein-1e05",
-                "gbm_pcaloadings_ucsc_prcomp-tcgagbmclassifiers-protein",
-                "gbm_pcascores_ucsc_prcomp-markergenes545-protein",
-                "gbm_pcascores_ucsc_prcomp-markergenes545-protein-1e05",
-                "gbm_pcaloadings_ucsc_prcomp-markergenes545-protein",
-                "gbm_pcascores_ucsc_prcomp-tcgapancanmutated-protein",
-                "gbm_pcascores_ucsc_prcomp-tcgapancanmutated-protein-1e05",
-                "gbm_pcaloadings_ucsc_prcomp-tcgapancanmutated-protein",
-                "gbm_pcascores_ucsc_prcomp-oncovogel274-protein",
-                "gbm_pcascores_ucsc_prcomp-oncovogel274-protein-1e05",
-                "gbm_pcaloadings_ucsc_prcomp-oncovogel274-protein",
-                "gbm_pcascores_ucsc_prcomp-oncoplex-protein",
-                "gbm_pcascores_ucsc_prcomp-oncoplex-protein-1e05",
-                "gbm_pcaloadings_ucsc_prcomp-oncoplex-protein",
-                "gbm_pcascores_ucsc_prcomp-osccchen131probes-protein",
-                "gbm_pcascores_ucsc_prcomp-osccchen131probes-protein-1e05",
-                "gbm_pcaloadings_ucsc_prcomp-osccchen131probes-protein",
-                "gbm_pcascores_ucsc_prcomp-osccchen9genes-protein",
-                "gbm_pcascores_ucsc_prcomp-osccchen9genes-protein-1e05",
-                "gbm_pcaloadings_ucsc_prcomp-osccchen9genes-protein"
             ]
         }
     },
@@ -208,24 +203,45 @@
                 "hnsc_mds_ucsc_mds-oncoplex-cnv-mut01-ucsc",
                 "hnsc_mds_ucsc_mds-osccchen131probes-cnv-mut01-ucsc",
                 "hnsc_mds_ucsc_mds-osccchen9genes-cnv-mut01-ucsc",
+                "hnsc_pcascores_ucsc_prcomp-tcgagbmclassifiers-protein",
+                "hnsc_pcascores_ucsc_prcomp-tcgagbmclassifiers-protein-1e05",
+                "hnsc_pcaloadings_ucsc_prcomp-tcgagbmclassifiers-protein",
                 "hnsc_pcascores_ucsc_prcomp-tcgagbmclassifiers-rna-hiseq",
                 "hnsc_pcascores_ucsc_prcomp-tcgagbmclassifiers-rna-hiseq-1e05",
                 "hnsc_pcaloadings_ucsc_prcomp-tcgagbmclassifiers-rna-hiseq",
+                "hnsc_pcascores_ucsc_prcomp-markergenes545-protein",
+                "hnsc_pcascores_ucsc_prcomp-markergenes545-protein-1e05",
+                "hnsc_pcaloadings_ucsc_prcomp-markergenes545-protein",
                 "hnsc_pcascores_ucsc_prcomp-markergenes545-rna-hiseq",
                 "hnsc_pcascores_ucsc_prcomp-markergenes545-rna-hiseq-1e05",
                 "hnsc_pcaloadings_ucsc_prcomp-markergenes545-rna-hiseq",
+                "hnsc_pcascores_ucsc_prcomp-tcgapancanmutated-protein",
+                "hnsc_pcascores_ucsc_prcomp-tcgapancanmutated-protein-1e05",
+                "hnsc_pcaloadings_ucsc_prcomp-tcgapancanmutated-protein",
                 "hnsc_pcascores_ucsc_prcomp-tcgapancanmutated-rna-hiseq",
                 "hnsc_pcascores_ucsc_prcomp-tcgapancanmutated-rna-hiseq-1e05",
                 "hnsc_pcaloadings_ucsc_prcomp-tcgapancanmutated-rna-hiseq",
+                "hnsc_pcascores_ucsc_prcomp-oncovogel274-protein",
+                "hnsc_pcascores_ucsc_prcomp-oncovogel274-protein-1e05",
+                "hnsc_pcaloadings_ucsc_prcomp-oncovogel274-protein",
                 "hnsc_pcascores_ucsc_prcomp-oncovogel274-rna-hiseq",
                 "hnsc_pcascores_ucsc_prcomp-oncovogel274-rna-hiseq-1e05",
                 "hnsc_pcaloadings_ucsc_prcomp-oncovogel274-rna-hiseq",
+                "hnsc_pcascores_ucsc_prcomp-oncoplex-protein",
+                "hnsc_pcascores_ucsc_prcomp-oncoplex-protein-1e05",
+                "hnsc_pcaloadings_ucsc_prcomp-oncoplex-protein",
                 "hnsc_pcascores_ucsc_prcomp-oncoplex-rna-hiseq",
                 "hnsc_pcascores_ucsc_prcomp-oncoplex-rna-hiseq-1e05",
                 "hnsc_pcaloadings_ucsc_prcomp-oncoplex-rna-hiseq",
+                "hnsc_pcascores_ucsc_prcomp-osccchen131probes-protein",
+                "hnsc_pcascores_ucsc_prcomp-osccchen131probes-protein-1e05",
+                "hnsc_pcaloadings_ucsc_prcomp-osccchen131probes-protein",
                 "hnsc_pcascores_ucsc_prcomp-osccchen131probes-rna-hiseq",
                 "hnsc_pcascores_ucsc_prcomp-osccchen131probes-rna-hiseq-1e05",
                 "hnsc_pcaloadings_ucsc_prcomp-osccchen131probes-rna-hiseq",
+                "hnsc_pcascores_ucsc_prcomp-osccchen9genes-protein",
+                "hnsc_pcascores_ucsc_prcomp-osccchen9genes-protein-1e05",
+                "hnsc_pcaloadings_ucsc_prcomp-osccchen9genes-protein",
                 "hnsc_pcascores_ucsc_prcomp-osccchen9genes-rna-hiseq",
                 "hnsc_pcascores_ucsc_prcomp-osccchen9genes-rna-hiseq-1e05",
                 "hnsc_pcaloadings_ucsc_prcomp-osccchen9genes-rna-hiseq"
@@ -234,29 +250,6 @@
                 "hnsc_pcascores_ucsc_prcomp-allgenes-cnv",
                 "hnsc_pcaloadings_ucsc_prcomp-allgenes-cnv",
                 "hnsc_pcascores_ucsc_prcomp-allgenes-cnv-1e05"
-            ],
-            "NotCalculated": [
-                "hnsc_pcascores_ucsc_prcomp-tcgagbmclassifiers-protein",
-                "hnsc_pcascores_ucsc_prcomp-tcgagbmclassifiers-protein-1e05",
-                "hnsc_pcaloadings_ucsc_prcomp-tcgagbmclassifiers-protein",
-                "hnsc_pcascores_ucsc_prcomp-markergenes545-protein",
-                "hnsc_pcascores_ucsc_prcomp-markergenes545-protein-1e05",
-                "hnsc_pcaloadings_ucsc_prcomp-markergenes545-protein",
-                "hnsc_pcascores_ucsc_prcomp-tcgapancanmutated-protein",
-                "hnsc_pcascores_ucsc_prcomp-tcgapancanmutated-protein-1e05",
-                "hnsc_pcaloadings_ucsc_prcomp-tcgapancanmutated-protein",
-                "hnsc_pcascores_ucsc_prcomp-oncovogel274-protein",
-                "hnsc_pcascores_ucsc_prcomp-oncovogel274-protein-1e05",
-                "hnsc_pcaloadings_ucsc_prcomp-oncovogel274-protein",
-                "hnsc_pcascores_ucsc_prcomp-oncoplex-protein",
-                "hnsc_pcascores_ucsc_prcomp-oncoplex-protein-1e05",
-                "hnsc_pcaloadings_ucsc_prcomp-oncoplex-protein",
-                "hnsc_pcascores_ucsc_prcomp-osccchen131probes-protein",
-                "hnsc_pcascores_ucsc_prcomp-osccchen131probes-protein-1e05",
-                "hnsc_pcaloadings_ucsc_prcomp-osccchen131probes-protein",
-                "hnsc_pcascores_ucsc_prcomp-osccchen9genes-protein",
-                "hnsc_pcascores_ucsc_prcomp-osccchen9genes-protein-1e05",
-                "hnsc_pcaloadings_ucsc_prcomp-osccchen9genes-protein"
             ]
         }
     },
@@ -264,16 +257,7 @@
         "disease": "kich",
         "possibleMolecularCombination": {
             "overlapCount": 21,
-            "itemsNotInRef": [],
-            "refItemsNotInSelf": [
-                "kich_pcascores_ucsc_prcomp-allgenes-rna-hiseq",
-                "kich_pcaloadings_ucsc_prcomp-allgenes-rna-hiseq",
-                "kich_pcascores_ucsc_prcomp-allgenes-rna-hiseq-1e05",
-                "kich_pcascores_ucsc_prcomp-allgenes-protein",
-                "kich_pcaloadings_ucsc_prcomp-allgenes-protein",
-                "kich_pcascores_ucsc_prcomp-allgenes-protein-1e05"
-            ],
-            "NotCalculated": [
+            "itemsNotInRef": [
                 "kich_pcascores_ucsc_prcomp-tcgagbmclassifiers-protein",
                 "kich_pcascores_ucsc_prcomp-tcgagbmclassifiers-protein-1e05",
                 "kich_pcaloadings_ucsc_prcomp-tcgagbmclassifiers-protein",
@@ -295,6 +279,14 @@
                 "kich_pcascores_ucsc_prcomp-osccchen9genes-protein",
                 "kich_pcascores_ucsc_prcomp-osccchen9genes-protein-1e05",
                 "kich_pcaloadings_ucsc_prcomp-osccchen9genes-protein"
+            ],
+            "refItemsNotInSelf": [
+                "kich_pcascores_ucsc_prcomp-allgenes-rna-hiseq",
+                "kich_pcaloadings_ucsc_prcomp-allgenes-rna-hiseq",
+                "kich_pcascores_ucsc_prcomp-allgenes-rna-hiseq-1e05",
+                "kich_pcascores_ucsc_prcomp-allgenes-protein",
+                "kich_pcaloadings_ucsc_prcomp-allgenes-protein",
+                "kich_pcascores_ucsc_prcomp-allgenes-protein-1e05"
             ]
         }
     },
@@ -303,21 +295,14 @@
         "possibleMolecularCombination": {
             "overlapCount": 0,
             "itemsNotInRef": [],
-            "refItemsNotInSelf": [],
-            "NotCalculated": []
+            "refItemsNotInSelf": []
         }
     },
     {
         "disease": "kirp",
         "possibleMolecularCombination": {
             "overlapCount": 21,
-            "itemsNotInRef": [],
-            "refItemsNotInSelf": [
-                "kirp_pcascores_ucsc_prcomp-allgenes-rna-hiseq",
-                "kirp_pcaloadings_ucsc_prcomp-allgenes-rna-hiseq",
-                "kirp_pcascores_ucsc_prcomp-allgenes-rna-hiseq-1e05"
-            ],
-            "NotCalculated": [
+            "itemsNotInRef": [
                 "kirp_pcascores_ucsc_prcomp-tcgagbmclassifiers-protein",
                 "kirp_pcascores_ucsc_prcomp-tcgagbmclassifiers-protein-1e05",
                 "kirp_pcaloadings_ucsc_prcomp-tcgagbmclassifiers-protein",
@@ -339,6 +324,11 @@
                 "kirp_pcascores_ucsc_prcomp-osccchen9genes-protein",
                 "kirp_pcascores_ucsc_prcomp-osccchen9genes-protein-1e05",
                 "kirp_pcaloadings_ucsc_prcomp-osccchen9genes-protein"
+            ],
+            "refItemsNotInSelf": [
+                "kirp_pcascores_ucsc_prcomp-allgenes-rna-hiseq",
+                "kirp_pcaloadings_ucsc_prcomp-allgenes-rna-hiseq",
+                "kirp_pcascores_ucsc_prcomp-allgenes-rna-hiseq-1e05"
             ]
         }
     },
@@ -354,53 +344,51 @@
                 "lgg_mds_ucsc_mds-oncoplex-cnv-mut01-ucsc",
                 "lgg_mds_ucsc_mds-osccchen131probes-cnv-mut01-ucsc",
                 "lgg_mds_ucsc_mds-osccchen9genes-cnv-mut01-ucsc",
+                "lgg_pcascores_ucsc_prcomp-tcgagbmclassifiers-protein",
+                "lgg_pcascores_ucsc_prcomp-tcgagbmclassifiers-protein-1e05",
+                "lgg_pcaloadings_ucsc_prcomp-tcgagbmclassifiers-protein",
                 "lgg_pcascores_ucsc_prcomp-tcgagbmclassifiers-rna-hiseq",
                 "lgg_pcascores_ucsc_prcomp-tcgagbmclassifiers-rna-hiseq-1e05",
                 "lgg_pcaloadings_ucsc_prcomp-tcgagbmclassifiers-rna-hiseq",
+                "lgg_pcascores_ucsc_prcomp-markergenes545-protein",
+                "lgg_pcascores_ucsc_prcomp-markergenes545-protein-1e05",
+                "lgg_pcaloadings_ucsc_prcomp-markergenes545-protein",
                 "lgg_pcascores_ucsc_prcomp-markergenes545-rna-hiseq",
                 "lgg_pcascores_ucsc_prcomp-markergenes545-rna-hiseq-1e05",
                 "lgg_pcaloadings_ucsc_prcomp-markergenes545-rna-hiseq",
+                "lgg_pcascores_ucsc_prcomp-tcgapancanmutated-protein",
+                "lgg_pcascores_ucsc_prcomp-tcgapancanmutated-protein-1e05",
+                "lgg_pcaloadings_ucsc_prcomp-tcgapancanmutated-protein",
                 "lgg_pcascores_ucsc_prcomp-tcgapancanmutated-rna-hiseq",
                 "lgg_pcascores_ucsc_prcomp-tcgapancanmutated-rna-hiseq-1e05",
                 "lgg_pcaloadings_ucsc_prcomp-tcgapancanmutated-rna-hiseq",
+                "lgg_pcascores_ucsc_prcomp-oncovogel274-protein",
+                "lgg_pcascores_ucsc_prcomp-oncovogel274-protein-1e05",
+                "lgg_pcaloadings_ucsc_prcomp-oncovogel274-protein",
                 "lgg_pcascores_ucsc_prcomp-oncovogel274-rna-hiseq",
                 "lgg_pcascores_ucsc_prcomp-oncovogel274-rna-hiseq-1e05",
                 "lgg_pcaloadings_ucsc_prcomp-oncovogel274-rna-hiseq",
+                "lgg_pcascores_ucsc_prcomp-oncoplex-protein",
+                "lgg_pcascores_ucsc_prcomp-oncoplex-protein-1e05",
+                "lgg_pcaloadings_ucsc_prcomp-oncoplex-protein",
                 "lgg_pcascores_ucsc_prcomp-oncoplex-rna-hiseq",
                 "lgg_pcascores_ucsc_prcomp-oncoplex-rna-hiseq-1e05",
                 "lgg_pcaloadings_ucsc_prcomp-oncoplex-rna-hiseq",
+                "lgg_pcascores_ucsc_prcomp-osccchen131probes-protein",
+                "lgg_pcascores_ucsc_prcomp-osccchen131probes-protein-1e05",
+                "lgg_pcaloadings_ucsc_prcomp-osccchen131probes-protein",
                 "lgg_pcascores_ucsc_prcomp-osccchen131probes-rna-hiseq",
                 "lgg_pcascores_ucsc_prcomp-osccchen131probes-rna-hiseq-1e05",
                 "lgg_pcaloadings_ucsc_prcomp-osccchen131probes-rna-hiseq",
+                "lgg_pcascores_ucsc_prcomp-osccchen9genes-protein",
+                "lgg_pcascores_ucsc_prcomp-osccchen9genes-protein-1e05",
+                "lgg_pcaloadings_ucsc_prcomp-osccchen9genes-protein",
                 "lgg_pcascores_ucsc_prcomp-osccchen9genes-rna-hiseq",
                 "lgg_pcascores_ucsc_prcomp-osccchen9genes-rna-hiseq-1e05",
                 "lgg_pcaloadings_ucsc_prcomp-osccchen9genes-rna-hiseq"
             ],
             "refItemsNotInSelf": [
                 "lgg_pcascores_ucsc_prcomp-allgenes-cnv"
-            ],
-            "NotCalculated": [
-                "lgg_pcascores_ucsc_prcomp-tcgagbmclassifiers-protein",
-                "lgg_pcascores_ucsc_prcomp-tcgagbmclassifiers-protein-1e05",
-                "lgg_pcaloadings_ucsc_prcomp-tcgagbmclassifiers-protein",
-                "lgg_pcascores_ucsc_prcomp-markergenes545-protein",
-                "lgg_pcascores_ucsc_prcomp-markergenes545-protein-1e05",
-                "lgg_pcaloadings_ucsc_prcomp-markergenes545-protein",
-                "lgg_pcascores_ucsc_prcomp-tcgapancanmutated-protein",
-                "lgg_pcascores_ucsc_prcomp-tcgapancanmutated-protein-1e05",
-                "lgg_pcaloadings_ucsc_prcomp-tcgapancanmutated-protein",
-                "lgg_pcascores_ucsc_prcomp-oncovogel274-protein",
-                "lgg_pcascores_ucsc_prcomp-oncovogel274-protein-1e05",
-                "lgg_pcaloadings_ucsc_prcomp-oncovogel274-protein",
-                "lgg_pcascores_ucsc_prcomp-oncoplex-protein",
-                "lgg_pcascores_ucsc_prcomp-oncoplex-protein-1e05",
-                "lgg_pcaloadings_ucsc_prcomp-oncoplex-protein",
-                "lgg_pcascores_ucsc_prcomp-osccchen131probes-protein",
-                "lgg_pcascores_ucsc_prcomp-osccchen131probes-protein-1e05",
-                "lgg_pcaloadings_ucsc_prcomp-osccchen131probes-protein",
-                "lgg_pcascores_ucsc_prcomp-osccchen9genes-protein",
-                "lgg_pcascores_ucsc_prcomp-osccchen9genes-protein-1e05",
-                "lgg_pcaloadings_ucsc_prcomp-osccchen9genes-protein"
             ]
         }
     },
@@ -408,16 +396,7 @@
         "disease": "lihc",
         "possibleMolecularCombination": {
             "overlapCount": 21,
-            "itemsNotInRef": [],
-            "refItemsNotInSelf": [
-                "lihc_pcascores_ucsc_prcomp-allgenes-rna-hiseq",
-                "lihc_pcaloadings_ucsc_prcomp-allgenes-rna-hiseq",
-                "lihc_pcascores_ucsc_prcomp-allgenes-rna-hiseq-1e05",
-                "lihc_pcascores_ucsc_prcomp-allgenes-protein",
-                "lihc_pcaloadings_ucsc_prcomp-allgenes-protein",
-                "lihc_pcascores_ucsc_prcomp-allgenes-protein-1e05"
-            ],
-            "NotCalculated": [
+            "itemsNotInRef": [
                 "lihc_pcascores_ucsc_prcomp-tcgagbmclassifiers-protein",
                 "lihc_pcascores_ucsc_prcomp-tcgagbmclassifiers-protein-1e05",
                 "lihc_pcaloadings_ucsc_prcomp-tcgagbmclassifiers-protein",
@@ -439,6 +418,14 @@
                 "lihc_pcascores_ucsc_prcomp-osccchen9genes-protein",
                 "lihc_pcascores_ucsc_prcomp-osccchen9genes-protein-1e05",
                 "lihc_pcaloadings_ucsc_prcomp-osccchen9genes-protein"
+            ],
+            "refItemsNotInSelf": [
+                "lihc_pcascores_ucsc_prcomp-allgenes-rna-hiseq",
+                "lihc_pcaloadings_ucsc_prcomp-allgenes-rna-hiseq",
+                "lihc_pcascores_ucsc_prcomp-allgenes-rna-hiseq-1e05",
+                "lihc_pcascores_ucsc_prcomp-allgenes-protein",
+                "lihc_pcaloadings_ucsc_prcomp-allgenes-protein",
+                "lihc_pcascores_ucsc_prcomp-allgenes-protein-1e05"
             ]
         }
     },
@@ -453,17 +440,7 @@
                 "luad_mds_ucsc_mds-oncovogel274-cnv-mut01-ucsc",
                 "luad_mds_ucsc_mds-oncoplex-cnv-mut01-ucsc",
                 "luad_mds_ucsc_mds-osccchen131probes-cnv-mut01-ucsc",
-                "luad_mds_ucsc_mds-osccchen9genes-cnv-mut01-ucsc"
-            ],
-            "refItemsNotInSelf": [
-                "luad_pcascores_ucsc_prcomp-allgenes-rna-hiseq",
-                "luad_pcaloadings_ucsc_prcomp-allgenes-rna-hiseq",
-                "luad_pcascores_ucsc_prcomp-allgenes-rna-hiseq-1e05",
-                "luad_pcascores_ucsc_prcomp-allgenes-cnv",
-                "luad_pcaloadings_ucsc_prcomp-allgenes-cnv",
-                "luad_pcascores_ucsc_prcomp-allgenes-cnv-1e05"
-            ],
-            "NotCalculated": [
+                "luad_mds_ucsc_mds-osccchen9genes-cnv-mut01-ucsc",
                 "luad_pcascores_ucsc_prcomp-tcgagbmclassifiers-protein",
                 "luad_pcascores_ucsc_prcomp-tcgagbmclassifiers-protein-1e05",
                 "luad_pcaloadings_ucsc_prcomp-tcgagbmclassifiers-protein",
@@ -485,6 +462,14 @@
                 "luad_pcascores_ucsc_prcomp-osccchen9genes-protein",
                 "luad_pcascores_ucsc_prcomp-osccchen9genes-protein-1e05",
                 "luad_pcaloadings_ucsc_prcomp-osccchen9genes-protein"
+            ],
+            "refItemsNotInSelf": [
+                "luad_pcascores_ucsc_prcomp-allgenes-rna-hiseq",
+                "luad_pcaloadings_ucsc_prcomp-allgenes-rna-hiseq",
+                "luad_pcascores_ucsc_prcomp-allgenes-rna-hiseq-1e05",
+                "luad_pcascores_ucsc_prcomp-allgenes-cnv",
+                "luad_pcaloadings_ucsc_prcomp-allgenes-cnv",
+                "luad_pcascores_ucsc_prcomp-allgenes-cnv-1e05"
             ]
         }
     },
@@ -499,17 +484,7 @@
                 "lusc_mds_ucsc_mds-oncovogel274-cnv-mut01-ucsc",
                 "lusc_mds_ucsc_mds-oncoplex-cnv-mut01-ucsc",
                 "lusc_mds_ucsc_mds-osccchen131probes-cnv-mut01-ucsc",
-                "lusc_mds_ucsc_mds-osccchen9genes-cnv-mut01-ucsc"
-            ],
-            "refItemsNotInSelf": [
-                "lusc_pcascores_ucsc_prcomp-allgenes-cnv",
-                "lusc_pcaloadings_ucsc_prcomp-allgenes-cnv",
-                "lusc_pcascores_ucsc_prcomp-allgenes-cnv-1e05",
-                "lusc_pcascores_ucsc_prcomp-allgenes-rna-hiseq",
-                "lusc_pcaloadings_ucsc_prcomp-allgenes-rna-hiseq",
-                "lusc_pcascores_ucsc_prcomp-allgenes-rna-hiseq-1e05"
-            ],
-            "NotCalculated": [
+                "lusc_mds_ucsc_mds-osccchen9genes-cnv-mut01-ucsc",
                 "lusc_pcascores_ucsc_prcomp-tcgagbmclassifiers-protein",
                 "lusc_pcascores_ucsc_prcomp-tcgagbmclassifiers-protein-1e05",
                 "lusc_pcaloadings_ucsc_prcomp-tcgagbmclassifiers-protein",
@@ -531,6 +506,14 @@
                 "lusc_pcascores_ucsc_prcomp-osccchen9genes-protein",
                 "lusc_pcascores_ucsc_prcomp-osccchen9genes-protein-1e05",
                 "lusc_pcaloadings_ucsc_prcomp-osccchen9genes-protein"
+            ],
+            "refItemsNotInSelf": [
+                "lusc_pcascores_ucsc_prcomp-allgenes-cnv",
+                "lusc_pcaloadings_ucsc_prcomp-allgenes-cnv",
+                "lusc_pcascores_ucsc_prcomp-allgenes-cnv-1e05",
+                "lusc_pcascores_ucsc_prcomp-allgenes-rna-hiseq",
+                "lusc_pcaloadings_ucsc_prcomp-allgenes-rna-hiseq",
+                "lusc_pcascores_ucsc_prcomp-allgenes-rna-hiseq-1e05"
             ]
         }
     },
@@ -546,24 +529,45 @@
                 "sarc_mds_ucsc_mds-oncoplex-cnv-mut01-ucsc",
                 "sarc_mds_ucsc_mds-osccchen131probes-cnv-mut01-ucsc",
                 "sarc_mds_ucsc_mds-osccchen9genes-cnv-mut01-ucsc",
+                "sarc_pcascores_ucsc_prcomp-tcgagbmclassifiers-protein",
+                "sarc_pcascores_ucsc_prcomp-tcgagbmclassifiers-protein-1e05",
+                "sarc_pcaloadings_ucsc_prcomp-tcgagbmclassifiers-protein",
                 "sarc_pcascores_ucsc_prcomp-tcgagbmclassifiers-methylation-hm450",
                 "sarc_pcascores_ucsc_prcomp-tcgagbmclassifiers-methylation-hm450-1e05",
                 "sarc_pcaloadings_ucsc_prcomp-tcgagbmclassifiers-methylation-hm450",
+                "sarc_pcascores_ucsc_prcomp-markergenes545-protein",
+                "sarc_pcascores_ucsc_prcomp-markergenes545-protein-1e05",
+                "sarc_pcaloadings_ucsc_prcomp-markergenes545-protein",
                 "sarc_pcascores_ucsc_prcomp-markergenes545-methylation-hm450",
                 "sarc_pcascores_ucsc_prcomp-markergenes545-methylation-hm450-1e05",
                 "sarc_pcaloadings_ucsc_prcomp-markergenes545-methylation-hm450",
+                "sarc_pcascores_ucsc_prcomp-tcgapancanmutated-protein",
+                "sarc_pcascores_ucsc_prcomp-tcgapancanmutated-protein-1e05",
+                "sarc_pcaloadings_ucsc_prcomp-tcgapancanmutated-protein",
                 "sarc_pcascores_ucsc_prcomp-tcgapancanmutated-methylation-hm450",
                 "sarc_pcascores_ucsc_prcomp-tcgapancanmutated-methylation-hm450-1e05",
                 "sarc_pcaloadings_ucsc_prcomp-tcgapancanmutated-methylation-hm450",
+                "sarc_pcascores_ucsc_prcomp-oncovogel274-protein",
+                "sarc_pcascores_ucsc_prcomp-oncovogel274-protein-1e05",
+                "sarc_pcaloadings_ucsc_prcomp-oncovogel274-protein",
                 "sarc_pcascores_ucsc_prcomp-oncovogel274-methylation-hm450",
                 "sarc_pcascores_ucsc_prcomp-oncovogel274-methylation-hm450-1e05",
                 "sarc_pcaloadings_ucsc_prcomp-oncovogel274-methylation-hm450",
+                "sarc_pcascores_ucsc_prcomp-oncoplex-protein",
+                "sarc_pcascores_ucsc_prcomp-oncoplex-protein-1e05",
+                "sarc_pcaloadings_ucsc_prcomp-oncoplex-protein",
                 "sarc_pcascores_ucsc_prcomp-oncoplex-methylation-hm450",
                 "sarc_pcascores_ucsc_prcomp-oncoplex-methylation-hm450-1e05",
                 "sarc_pcaloadings_ucsc_prcomp-oncoplex-methylation-hm450",
+                "sarc_pcascores_ucsc_prcomp-osccchen131probes-protein",
+                "sarc_pcascores_ucsc_prcomp-osccchen131probes-protein-1e05",
+                "sarc_pcaloadings_ucsc_prcomp-osccchen131probes-protein",
                 "sarc_pcascores_ucsc_prcomp-osccchen131probes-methylation-hm450",
                 "sarc_pcascores_ucsc_prcomp-osccchen131probes-methylation-hm450-1e05",
                 "sarc_pcaloadings_ucsc_prcomp-osccchen131probes-methylation-hm450",
+                "sarc_pcascores_ucsc_prcomp-osccchen9genes-protein",
+                "sarc_pcascores_ucsc_prcomp-osccchen9genes-protein-1e05",
+                "sarc_pcaloadings_ucsc_prcomp-osccchen9genes-protein",
                 "sarc_pcascores_ucsc_prcomp-osccchen9genes-methylation-hm450",
                 "sarc_pcascores_ucsc_prcomp-osccchen9genes-methylation-hm450-1e05",
                 "sarc_pcaloadings_ucsc_prcomp-osccchen9genes-methylation-hm450"
@@ -578,29 +582,6 @@
                 "sarc_pcascores_ucsc_prcomp-allgenes-protein",
                 "sarc_pcaloadings_ucsc_prcomp-allgenes-protein",
                 "sarc_pcascores_ucsc_prcomp-allgenes-protein-1e05"
-            ],
-            "NotCalculated": [
-                "sarc_pcascores_ucsc_prcomp-tcgagbmclassifiers-protein",
-                "sarc_pcascores_ucsc_prcomp-tcgagbmclassifiers-protein-1e05",
-                "sarc_pcaloadings_ucsc_prcomp-tcgagbmclassifiers-protein",
-                "sarc_pcascores_ucsc_prcomp-markergenes545-protein",
-                "sarc_pcascores_ucsc_prcomp-markergenes545-protein-1e05",
-                "sarc_pcaloadings_ucsc_prcomp-markergenes545-protein",
-                "sarc_pcascores_ucsc_prcomp-tcgapancanmutated-protein",
-                "sarc_pcascores_ucsc_prcomp-tcgapancanmutated-protein-1e05",
-                "sarc_pcaloadings_ucsc_prcomp-tcgapancanmutated-protein",
-                "sarc_pcascores_ucsc_prcomp-oncovogel274-protein",
-                "sarc_pcascores_ucsc_prcomp-oncovogel274-protein-1e05",
-                "sarc_pcaloadings_ucsc_prcomp-oncovogel274-protein",
-                "sarc_pcascores_ucsc_prcomp-oncoplex-protein",
-                "sarc_pcascores_ucsc_prcomp-oncoplex-protein-1e05",
-                "sarc_pcaloadings_ucsc_prcomp-oncoplex-protein",
-                "sarc_pcascores_ucsc_prcomp-osccchen131probes-protein",
-                "sarc_pcascores_ucsc_prcomp-osccchen131probes-protein-1e05",
-                "sarc_pcaloadings_ucsc_prcomp-osccchen131probes-protein",
-                "sarc_pcascores_ucsc_prcomp-osccchen9genes-protein",
-                "sarc_pcascores_ucsc_prcomp-osccchen9genes-protein-1e05",
-                "sarc_pcaloadings_ucsc_prcomp-osccchen9genes-protein"
             ]
         }
     },
@@ -615,17 +596,7 @@
                 "paad_mds_ucsc_mds-oncovogel274-cnv-mut01-ucsc",
                 "paad_mds_ucsc_mds-oncoplex-cnv-mut01-ucsc",
                 "paad_mds_ucsc_mds-osccchen131probes-cnv-mut01-ucsc",
-                "paad_mds_ucsc_mds-osccchen9genes-cnv-mut01-ucsc"
-            ],
-            "refItemsNotInSelf": [
-                "paad_pcascores_ucsc_prcomp-allgenes-cnv",
-                "paad_pcaloadings_ucsc_prcomp-allgenes-cnv",
-                "paad_pcascores_ucsc_prcomp-allgenes-cnv-1e05",
-                "paad_pcascores_ucsc_prcomp-allgenes-rna-hiseq",
-                "paad_pcaloadings_ucsc_prcomp-allgenes-rna-hiseq",
-                "paad_pcascores_ucsc_prcomp-allgenes-rna-hiseq-1e05"
-            ],
-            "NotCalculated": [
+                "paad_mds_ucsc_mds-osccchen9genes-cnv-mut01-ucsc",
                 "paad_pcascores_ucsc_prcomp-tcgagbmclassifiers-protein",
                 "paad_pcascores_ucsc_prcomp-tcgagbmclassifiers-protein-1e05",
                 "paad_pcaloadings_ucsc_prcomp-tcgagbmclassifiers-protein",
@@ -647,6 +618,14 @@
                 "paad_pcascores_ucsc_prcomp-osccchen9genes-protein",
                 "paad_pcascores_ucsc_prcomp-osccchen9genes-protein-1e05",
                 "paad_pcaloadings_ucsc_prcomp-osccchen9genes-protein"
+            ],
+            "refItemsNotInSelf": [
+                "paad_pcascores_ucsc_prcomp-allgenes-cnv",
+                "paad_pcaloadings_ucsc_prcomp-allgenes-cnv",
+                "paad_pcascores_ucsc_prcomp-allgenes-cnv-1e05",
+                "paad_pcascores_ucsc_prcomp-allgenes-rna-hiseq",
+                "paad_pcaloadings_ucsc_prcomp-allgenes-rna-hiseq",
+                "paad_pcascores_ucsc_prcomp-allgenes-rna-hiseq-1e05"
             ]
         }
     },
@@ -661,17 +640,7 @@
                 "prad_mds_ucsc_mds-oncovogel274-cnv-mut01-ucsc",
                 "prad_mds_ucsc_mds-oncoplex-cnv-mut01-ucsc",
                 "prad_mds_ucsc_mds-osccchen131probes-cnv-mut01-ucsc",
-                "prad_mds_ucsc_mds-osccchen9genes-cnv-mut01-ucsc"
-            ],
-            "refItemsNotInSelf": [
-                "prad_pcascores_ucsc_prcomp-allgenes-cnv",
-                "prad_pcaloadings_ucsc_prcomp-allgenes-cnv",
-                "prad_pcascores_ucsc_prcomp-allgenes-cnv-1e05",
-                "prad_pcascores_ucsc_prcomp-allgenes-rna-hiseq",
-                "prad_pcaloadings_ucsc_prcomp-allgenes-rna-hiseq",
-                "prad_pcascores_ucsc_prcomp-allgenes-rna-hiseq-1e05"
-            ],
-            "NotCalculated": [
+                "prad_mds_ucsc_mds-osccchen9genes-cnv-mut01-ucsc",
                 "prad_pcascores_ucsc_prcomp-tcgagbmclassifiers-protein",
                 "prad_pcascores_ucsc_prcomp-tcgagbmclassifiers-protein-1e05",
                 "prad_pcaloadings_ucsc_prcomp-tcgagbmclassifiers-protein",
@@ -693,6 +662,14 @@
                 "prad_pcascores_ucsc_prcomp-osccchen9genes-protein",
                 "prad_pcascores_ucsc_prcomp-osccchen9genes-protein-1e05",
                 "prad_pcaloadings_ucsc_prcomp-osccchen9genes-protein"
+            ],
+            "refItemsNotInSelf": [
+                "prad_pcascores_ucsc_prcomp-allgenes-cnv",
+                "prad_pcaloadings_ucsc_prcomp-allgenes-cnv",
+                "prad_pcascores_ucsc_prcomp-allgenes-cnv-1e05",
+                "prad_pcascores_ucsc_prcomp-allgenes-rna-hiseq",
+                "prad_pcaloadings_ucsc_prcomp-allgenes-rna-hiseq",
+                "prad_pcascores_ucsc_prcomp-allgenes-rna-hiseq-1e05"
             ]
         }
     },
@@ -700,13 +677,7 @@
         "disease": "skcm",
         "possibleMolecularCombination": {
             "overlapCount": 21,
-            "itemsNotInRef": [],
-            "refItemsNotInSelf": [
-                "skcm_pcascores_ucsc_prcomp-allgenes-rna-hiseq",
-                "skcm_pcaloadings_ucsc_prcomp-allgenes-rna-hiseq",
-                "skcm_pcascores_ucsc_prcomp-allgenes-rna-hiseq-1e05"
-            ],
-            "NotCalculated": [
+            "itemsNotInRef": [
                 "skcm_pcascores_ucsc_prcomp-tcgagbmclassifiers-protein",
                 "skcm_pcascores_ucsc_prcomp-tcgagbmclassifiers-protein-1e05",
                 "skcm_pcaloadings_ucsc_prcomp-tcgagbmclassifiers-protein",
@@ -728,6 +699,11 @@
                 "skcm_pcascores_ucsc_prcomp-osccchen9genes-protein",
                 "skcm_pcascores_ucsc_prcomp-osccchen9genes-protein-1e05",
                 "skcm_pcaloadings_ucsc_prcomp-osccchen9genes-protein"
+            ],
+            "refItemsNotInSelf": [
+                "skcm_pcascores_ucsc_prcomp-allgenes-rna-hiseq",
+                "skcm_pcaloadings_ucsc_prcomp-allgenes-rna-hiseq",
+                "skcm_pcascores_ucsc_prcomp-allgenes-rna-hiseq-1e05"
             ]
         }
     },
@@ -742,14 +718,7 @@
                 "stad_mds_ucsc_mds-oncovogel274-cnv-mut01-ucsc",
                 "stad_mds_ucsc_mds-oncoplex-cnv-mut01-ucsc",
                 "stad_mds_ucsc_mds-osccchen131probes-cnv-mut01-ucsc",
-                "stad_mds_ucsc_mds-osccchen9genes-cnv-mut01-ucsc"
-            ],
-            "refItemsNotInSelf": [
-                "stad_pcascores_ucsc_prcomp-allgenes-rna-hiseq",
-                "stad_pcaloadings_ucsc_prcomp-allgenes-rna-hiseq",
-                "stad_pcascores_ucsc_prcomp-allgenes-rna-hiseq-1e05"
-            ],
-            "NotCalculated": [
+                "stad_mds_ucsc_mds-osccchen9genes-cnv-mut01-ucsc",
                 "stad_pcascores_ucsc_prcomp-tcgagbmclassifiers-protein",
                 "stad_pcascores_ucsc_prcomp-tcgagbmclassifiers-protein-1e05",
                 "stad_pcaloadings_ucsc_prcomp-tcgagbmclassifiers-protein",
@@ -771,6 +740,11 @@
                 "stad_pcascores_ucsc_prcomp-osccchen9genes-protein",
                 "stad_pcascores_ucsc_prcomp-osccchen9genes-protein-1e05",
                 "stad_pcaloadings_ucsc_prcomp-osccchen9genes-protein"
+            ],
+            "refItemsNotInSelf": [
+                "stad_pcascores_ucsc_prcomp-allgenes-rna-hiseq",
+                "stad_pcaloadings_ucsc_prcomp-allgenes-rna-hiseq",
+                "stad_pcascores_ucsc_prcomp-allgenes-rna-hiseq-1e05"
             ]
         }
     },
@@ -778,16 +752,7 @@
         "disease": "thca",
         "possibleMolecularCombination": {
             "overlapCount": 21,
-            "itemsNotInRef": [],
-            "refItemsNotInSelf": [
-                "thca_pcascores_ucsc_prcomp-allgenes-rna-hiseq",
-                "thca_pcaloadings_ucsc_prcomp-allgenes-rna-hiseq",
-                "thca_pcascores_ucsc_prcomp-allgenes-rna-hiseq-1e05",
-                "thca_pcascores_ucsc_prcomp-allgenes-protein",
-                "thca_pcaloadings_ucsc_prcomp-allgenes-protein",
-                "thca_pcascores_ucsc_prcomp-allgenes-protein-1e05"
-            ],
-            "NotCalculated": [
+            "itemsNotInRef": [
                 "thca_pcascores_ucsc_prcomp-tcgagbmclassifiers-protein",
                 "thca_pcascores_ucsc_prcomp-tcgagbmclassifiers-protein-1e05",
                 "thca_pcaloadings_ucsc_prcomp-tcgagbmclassifiers-protein",
@@ -809,6 +774,14 @@
                 "thca_pcascores_ucsc_prcomp-osccchen9genes-protein",
                 "thca_pcascores_ucsc_prcomp-osccchen9genes-protein-1e05",
                 "thca_pcaloadings_ucsc_prcomp-osccchen9genes-protein"
+            ],
+            "refItemsNotInSelf": [
+                "thca_pcascores_ucsc_prcomp-allgenes-rna-hiseq",
+                "thca_pcaloadings_ucsc_prcomp-allgenes-rna-hiseq",
+                "thca_pcascores_ucsc_prcomp-allgenes-rna-hiseq-1e05",
+                "thca_pcascores_ucsc_prcomp-allgenes-protein",
+                "thca_pcaloadings_ucsc_prcomp-allgenes-protein",
+                "thca_pcascores_ucsc_prcomp-allgenes-protein-1e05"
             ]
         }
     },
@@ -816,13 +789,7 @@
         "disease": "ucec",
         "possibleMolecularCombination": {
             "overlapCount": 21,
-            "itemsNotInRef": [],
-            "refItemsNotInSelf": [
-                "ucec_pcascores_ucsc_prcomp-allgenes-rna-hiseq",
-                "ucec_pcaloadings_ucsc_prcomp-allgenes-rna-hiseq",
-                "ucec_pcascores_ucsc_prcomp-allgenes-rna-hiseq-1e05"
-            ],
-            "NotCalculated": [
+            "itemsNotInRef": [
                 "ucec_pcascores_ucsc_prcomp-tcgagbmclassifiers-protein",
                 "ucec_pcascores_ucsc_prcomp-tcgagbmclassifiers-protein-1e05",
                 "ucec_pcaloadings_ucsc_prcomp-tcgagbmclassifiers-protein",
@@ -844,6 +811,11 @@
                 "ucec_pcascores_ucsc_prcomp-osccchen9genes-protein",
                 "ucec_pcascores_ucsc_prcomp-osccchen9genes-protein-1e05",
                 "ucec_pcaloadings_ucsc_prcomp-osccchen9genes-protein"
+            ],
+            "refItemsNotInSelf": [
+                "ucec_pcascores_ucsc_prcomp-allgenes-rna-hiseq",
+                "ucec_pcaloadings_ucsc_prcomp-allgenes-rna-hiseq",
+                "ucec_pcascores_ucsc_prcomp-allgenes-rna-hiseq-1e05"
             ]
         }
     },
@@ -858,20 +830,7 @@
                 "acc_mds_ucsc_mds-oncovogel274-cnv-mut01-ucsc",
                 "acc_mds_ucsc_mds-oncoplex-cnv-mut01-ucsc",
                 "acc_mds_ucsc_mds-osccchen131probes-cnv-mut01-ucsc",
-                "acc_mds_ucsc_mds-osccchen9genes-cnv-mut01-ucsc"
-            ],
-            "refItemsNotInSelf": [
-                "acc_pcascores_ucsc_prcomp-allgenes-cnv",
-                "acc_pcaloadings_ucsc_prcomp-allgenes-cnv",
-                "acc_pcascores_ucsc_prcomp-allgenes-cnv-1e05",
-                "acc_pcascores_ucsc_prcomp-allgenes-rna-hiseq",
-                "acc_pcaloadings_ucsc_prcomp-allgenes-rna-hiseq",
-                "acc_pcascores_ucsc_prcomp-allgenes-rna-hiseq-1e05",
-                "acc_pcascores_ucsc_prcomp-allgenes-protein",
-                "acc_pcaloadings_ucsc_prcomp-allgenes-protein",
-                "acc_pcascores_ucsc_prcomp-allgenes-protein-1e05"
-            ],
-            "NotCalculated": [
+                "acc_mds_ucsc_mds-osccchen9genes-cnv-mut01-ucsc",
                 "acc_pcascores_ucsc_prcomp-tcgagbmclassifiers-protein",
                 "acc_pcascores_ucsc_prcomp-tcgagbmclassifiers-protein-1e05",
                 "acc_pcaloadings_ucsc_prcomp-tcgagbmclassifiers-protein",
@@ -893,6 +852,17 @@
                 "acc_pcascores_ucsc_prcomp-osccchen9genes-protein",
                 "acc_pcascores_ucsc_prcomp-osccchen9genes-protein-1e05",
                 "acc_pcaloadings_ucsc_prcomp-osccchen9genes-protein"
+            ],
+            "refItemsNotInSelf": [
+                "acc_pcascores_ucsc_prcomp-allgenes-cnv",
+                "acc_pcaloadings_ucsc_prcomp-allgenes-cnv",
+                "acc_pcascores_ucsc_prcomp-allgenes-cnv-1e05",
+                "acc_pcascores_ucsc_prcomp-allgenes-rna-hiseq",
+                "acc_pcaloadings_ucsc_prcomp-allgenes-rna-hiseq",
+                "acc_pcascores_ucsc_prcomp-allgenes-rna-hiseq-1e05",
+                "acc_pcascores_ucsc_prcomp-allgenes-protein",
+                "acc_pcaloadings_ucsc_prcomp-allgenes-protein",
+                "acc_pcascores_ucsc_prcomp-allgenes-protein-1e05"
             ]
         }
     },
@@ -907,17 +877,7 @@
                 "blca_mds_ucsc_mds-oncovogel274-cnv-mut01-ucsc",
                 "blca_mds_ucsc_mds-oncoplex-cnv-mut01-ucsc",
                 "blca_mds_ucsc_mds-osccchen131probes-cnv-mut01-ucsc",
-                "blca_mds_ucsc_mds-osccchen9genes-cnv-mut01-ucsc"
-            ],
-            "refItemsNotInSelf": [
-                "blca_pcascores_ucsc_prcomp-allgenes-cnv",
-                "blca_pcaloadings_ucsc_prcomp-allgenes-cnv",
-                "blca_pcascores_ucsc_prcomp-allgenes-cnv-1e05",
-                "blca_pcascores_ucsc_prcomp-allgenes-rna-hiseq",
-                "blca_pcaloadings_ucsc_prcomp-allgenes-rna-hiseq",
-                "blca_pcascores_ucsc_prcomp-allgenes-rna-hiseq-1e05"
-            ],
-            "NotCalculated": [
+                "blca_mds_ucsc_mds-osccchen9genes-cnv-mut01-ucsc",
                 "blca_pcascores_ucsc_prcomp-tcgagbmclassifiers-protein",
                 "blca_pcascores_ucsc_prcomp-tcgagbmclassifiers-protein-1e05",
                 "blca_pcaloadings_ucsc_prcomp-tcgagbmclassifiers-protein",
@@ -939,6 +899,14 @@
                 "blca_pcascores_ucsc_prcomp-osccchen9genes-protein",
                 "blca_pcascores_ucsc_prcomp-osccchen9genes-protein-1e05",
                 "blca_pcaloadings_ucsc_prcomp-osccchen9genes-protein"
+            ],
+            "refItemsNotInSelf": [
+                "blca_pcascores_ucsc_prcomp-allgenes-cnv",
+                "blca_pcaloadings_ucsc_prcomp-allgenes-cnv",
+                "blca_pcascores_ucsc_prcomp-allgenes-cnv-1e05",
+                "blca_pcascores_ucsc_prcomp-allgenes-rna-hiseq",
+                "blca_pcaloadings_ucsc_prcomp-allgenes-rna-hiseq",
+                "blca_pcascores_ucsc_prcomp-allgenes-rna-hiseq-1e05"
             ]
         }
     },
@@ -953,20 +921,7 @@
                 "cesc_mds_ucsc_mds-oncovogel274-cnv-mut01-ucsc",
                 "cesc_mds_ucsc_mds-oncoplex-cnv-mut01-ucsc",
                 "cesc_mds_ucsc_mds-osccchen131probes-cnv-mut01-ucsc",
-                "cesc_mds_ucsc_mds-osccchen9genes-cnv-mut01-ucsc"
-            ],
-            "refItemsNotInSelf": [
-                "cesc_pcascores_ucsc_prcomp-allgenes-cnv",
-                "cesc_pcaloadings_ucsc_prcomp-allgenes-cnv",
-                "cesc_pcascores_ucsc_prcomp-allgenes-cnv-1e05",
-                "cesc_pcascores_ucsc_prcomp-allgenes-rna-hiseq",
-                "cesc_pcaloadings_ucsc_prcomp-allgenes-rna-hiseq",
-                "cesc_pcascores_ucsc_prcomp-allgenes-rna-hiseq-1e05",
-                "cesc_pcascores_ucsc_prcomp-allgenes-protein",
-                "cesc_pcaloadings_ucsc_prcomp-allgenes-protein",
-                "cesc_pcascores_ucsc_prcomp-allgenes-protein-1e05"
-            ],
-            "NotCalculated": [
+                "cesc_mds_ucsc_mds-osccchen9genes-cnv-mut01-ucsc",
                 "cesc_pcascores_ucsc_prcomp-tcgagbmclassifiers-protein",
                 "cesc_pcascores_ucsc_prcomp-tcgagbmclassifiers-protein-1e05",
                 "cesc_pcaloadings_ucsc_prcomp-tcgagbmclassifiers-protein",
@@ -988,6 +943,17 @@
                 "cesc_pcascores_ucsc_prcomp-osccchen9genes-protein",
                 "cesc_pcascores_ucsc_prcomp-osccchen9genes-protein-1e05",
                 "cesc_pcaloadings_ucsc_prcomp-osccchen9genes-protein"
+            ],
+            "refItemsNotInSelf": [
+                "cesc_pcascores_ucsc_prcomp-allgenes-cnv",
+                "cesc_pcaloadings_ucsc_prcomp-allgenes-cnv",
+                "cesc_pcascores_ucsc_prcomp-allgenes-cnv-1e05",
+                "cesc_pcascores_ucsc_prcomp-allgenes-rna-hiseq",
+                "cesc_pcaloadings_ucsc_prcomp-allgenes-rna-hiseq",
+                "cesc_pcascores_ucsc_prcomp-allgenes-rna-hiseq-1e05",
+                "cesc_pcascores_ucsc_prcomp-allgenes-protein",
+                "cesc_pcaloadings_ucsc_prcomp-allgenes-protein",
+                "cesc_pcascores_ucsc_prcomp-allgenes-protein-1e05"
             ]
         }
     },
@@ -1002,20 +968,7 @@
                 "chol_mds_ucsc_mds-oncovogel274-cnv-mut01-ucsc",
                 "chol_mds_ucsc_mds-oncoplex-cnv-mut01-ucsc",
                 "chol_mds_ucsc_mds-osccchen131probes-cnv-mut01-ucsc",
-                "chol_mds_ucsc_mds-osccchen9genes-cnv-mut01-ucsc"
-            ],
-            "refItemsNotInSelf": [
-                "chol_pcascores_ucsc_prcomp-allgenes-cnv",
-                "chol_pcaloadings_ucsc_prcomp-allgenes-cnv",
-                "chol_pcascores_ucsc_prcomp-allgenes-cnv-1e05",
-                "chol_pcascores_ucsc_prcomp-allgenes-rna-hiseq",
-                "chol_pcaloadings_ucsc_prcomp-allgenes-rna-hiseq",
-                "chol_pcascores_ucsc_prcomp-allgenes-rna-hiseq-1e05",
-                "chol_pcascores_ucsc_prcomp-allgenes-protein",
-                "chol_pcaloadings_ucsc_prcomp-allgenes-protein",
-                "chol_pcascores_ucsc_prcomp-allgenes-protein-1e05"
-            ],
-            "NotCalculated": [
+                "chol_mds_ucsc_mds-osccchen9genes-cnv-mut01-ucsc",
                 "chol_pcascores_ucsc_prcomp-tcgagbmclassifiers-protein",
                 "chol_pcascores_ucsc_prcomp-tcgagbmclassifiers-protein-1e05",
                 "chol_pcaloadings_ucsc_prcomp-tcgagbmclassifiers-protein",
@@ -1037,6 +990,17 @@
                 "chol_pcascores_ucsc_prcomp-osccchen9genes-protein",
                 "chol_pcascores_ucsc_prcomp-osccchen9genes-protein-1e05",
                 "chol_pcaloadings_ucsc_prcomp-osccchen9genes-protein"
+            ],
+            "refItemsNotInSelf": [
+                "chol_pcascores_ucsc_prcomp-allgenes-cnv",
+                "chol_pcaloadings_ucsc_prcomp-allgenes-cnv",
+                "chol_pcascores_ucsc_prcomp-allgenes-cnv-1e05",
+                "chol_pcascores_ucsc_prcomp-allgenes-rna-hiseq",
+                "chol_pcaloadings_ucsc_prcomp-allgenes-rna-hiseq",
+                "chol_pcascores_ucsc_prcomp-allgenes-rna-hiseq-1e05",
+                "chol_pcascores_ucsc_prcomp-allgenes-protein",
+                "chol_pcaloadings_ucsc_prcomp-allgenes-protein",
+                "chol_pcascores_ucsc_prcomp-allgenes-protein-1e05"
             ]
         }
     },
@@ -1051,20 +1015,7 @@
                 "dlbc_mds_ucsc_mds-oncovogel274-cnv-mut01-ucsc",
                 "dlbc_mds_ucsc_mds-oncoplex-cnv-mut01-ucsc",
                 "dlbc_mds_ucsc_mds-osccchen131probes-cnv-mut01-ucsc",
-                "dlbc_mds_ucsc_mds-osccchen9genes-cnv-mut01-ucsc"
-            ],
-            "refItemsNotInSelf": [
-                "dlbc_pcascores_ucsc_prcomp-allgenes-cnv",
-                "dlbc_pcaloadings_ucsc_prcomp-allgenes-cnv",
-                "dlbc_pcascores_ucsc_prcomp-allgenes-cnv-1e05",
-                "dlbc_pcascores_ucsc_prcomp-allgenes-rna-hiseq",
-                "dlbc_pcaloadings_ucsc_prcomp-allgenes-rna-hiseq",
-                "dlbc_pcascores_ucsc_prcomp-allgenes-rna-hiseq-1e05",
-                "dlbc_pcascores_ucsc_prcomp-allgenes-protein",
-                "dlbc_pcaloadings_ucsc_prcomp-allgenes-protein",
-                "dlbc_pcascores_ucsc_prcomp-allgenes-protein-1e05"
-            ],
-            "NotCalculated": [
+                "dlbc_mds_ucsc_mds-osccchen9genes-cnv-mut01-ucsc",
                 "dlbc_pcascores_ucsc_prcomp-tcgagbmclassifiers-protein",
                 "dlbc_pcascores_ucsc_prcomp-tcgagbmclassifiers-protein-1e05",
                 "dlbc_pcaloadings_ucsc_prcomp-tcgagbmclassifiers-protein",
@@ -1086,6 +1037,17 @@
                 "dlbc_pcascores_ucsc_prcomp-osccchen9genes-protein",
                 "dlbc_pcascores_ucsc_prcomp-osccchen9genes-protein-1e05",
                 "dlbc_pcaloadings_ucsc_prcomp-osccchen9genes-protein"
+            ],
+            "refItemsNotInSelf": [
+                "dlbc_pcascores_ucsc_prcomp-allgenes-cnv",
+                "dlbc_pcaloadings_ucsc_prcomp-allgenes-cnv",
+                "dlbc_pcascores_ucsc_prcomp-allgenes-cnv-1e05",
+                "dlbc_pcascores_ucsc_prcomp-allgenes-rna-hiseq",
+                "dlbc_pcaloadings_ucsc_prcomp-allgenes-rna-hiseq",
+                "dlbc_pcascores_ucsc_prcomp-allgenes-rna-hiseq-1e05",
+                "dlbc_pcascores_ucsc_prcomp-allgenes-protein",
+                "dlbc_pcaloadings_ucsc_prcomp-allgenes-protein",
+                "dlbc_pcascores_ucsc_prcomp-allgenes-protein-1e05"
             ]
         }
     },
@@ -1127,8 +1089,7 @@
                 "coadread_pcascores_ucsc_prcomp-allgenes-cnv",
                 "coadread_pcaloadings_ucsc_prcomp-allgenes-cnv",
                 "coadread_pcascores_ucsc_prcomp-allgenes-cnv-1e05"
-            ],
-            "NotCalculated": []
+            ]
         }
     },
     {
@@ -1172,8 +1133,7 @@
                 "lung_pcascores_ucsc_prcomp-allgenes-rna-hiseq",
                 "lung_pcaloadings_ucsc_prcomp-allgenes-rna-hiseq",
                 "lung_pcascores_ucsc_prcomp-allgenes-rna-hiseq-1e05"
-            ],
-            "NotCalculated": []
+            ]
         }
     },
     {
@@ -1202,8 +1162,7 @@
                 "laml_pcascores_ucsc_prcomp-allgenes-rna-hiseq",
                 "laml_pcaloadings_ucsc_prcomp-allgenes-rna-hiseq",
                 "laml_pcascores_ucsc_prcomp-allgenes-rna-hiseq-1e05"
-            ],
-            "NotCalculated": []
+            ]
         }
     },
     {
@@ -1213,16 +1172,7 @@
         "disease": "ucs",
         "possibleMolecularCombination": {
             "overlapCount": 21,
-            "itemsNotInRef": [],
-            "refItemsNotInSelf": [
-                "ucs_pcascores_ucsc_prcomp-allgenes-rna-hiseq",
-                "ucs_pcaloadings_ucsc_prcomp-allgenes-rna-hiseq",
-                "ucs_pcascores_ucsc_prcomp-allgenes-rna-hiseq-1e05",
-                "ucs_pcascores_ucsc_prcomp-allgenes-protein",
-                "ucs_pcaloadings_ucsc_prcomp-allgenes-protein",
-                "ucs_pcascores_ucsc_prcomp-allgenes-protein-1e05"
-            ],
-            "NotCalculated": [
+            "itemsNotInRef": [
                 "ucs_pcascores_ucsc_prcomp-tcgagbmclassifiers-protein",
                 "ucs_pcascores_ucsc_prcomp-tcgagbmclassifiers-protein-1e05",
                 "ucs_pcaloadings_ucsc_prcomp-tcgagbmclassifiers-protein",
@@ -1244,6 +1194,14 @@
                 "ucs_pcascores_ucsc_prcomp-osccchen9genes-protein",
                 "ucs_pcascores_ucsc_prcomp-osccchen9genes-protein-1e05",
                 "ucs_pcaloadings_ucsc_prcomp-osccchen9genes-protein"
+            ],
+            "refItemsNotInSelf": [
+                "ucs_pcascores_ucsc_prcomp-allgenes-rna-hiseq",
+                "ucs_pcaloadings_ucsc_prcomp-allgenes-rna-hiseq",
+                "ucs_pcascores_ucsc_prcomp-allgenes-rna-hiseq-1e05",
+                "ucs_pcascores_ucsc_prcomp-allgenes-protein",
+                "ucs_pcaloadings_ucsc_prcomp-allgenes-protein",
+                "ucs_pcascores_ucsc_prcomp-allgenes-protein-1e05"
             ]
         }
     },
@@ -1251,16 +1209,7 @@
         "disease": "uvm",
         "possibleMolecularCombination": {
             "overlapCount": 21,
-            "itemsNotInRef": [],
-            "refItemsNotInSelf": [
-                "uvm_pcascores_ucsc_prcomp-allgenes-rna-hiseq",
-                "uvm_pcaloadings_ucsc_prcomp-allgenes-rna-hiseq",
-                "uvm_pcascores_ucsc_prcomp-allgenes-rna-hiseq-1e05",
-                "uvm_pcascores_ucsc_prcomp-allgenes-protein",
-                "uvm_pcaloadings_ucsc_prcomp-allgenes-protein",
-                "uvm_pcascores_ucsc_prcomp-allgenes-protein-1e05"
-            ],
-            "NotCalculated": [
+            "itemsNotInRef": [
                 "uvm_pcascores_ucsc_prcomp-tcgagbmclassifiers-protein",
                 "uvm_pcascores_ucsc_prcomp-tcgagbmclassifiers-protein-1e05",
                 "uvm_pcaloadings_ucsc_prcomp-tcgagbmclassifiers-protein",
@@ -1282,6 +1231,14 @@
                 "uvm_pcascores_ucsc_prcomp-osccchen9genes-protein",
                 "uvm_pcascores_ucsc_prcomp-osccchen9genes-protein-1e05",
                 "uvm_pcaloadings_ucsc_prcomp-osccchen9genes-protein"
+            ],
+            "refItemsNotInSelf": [
+                "uvm_pcascores_ucsc_prcomp-allgenes-rna-hiseq",
+                "uvm_pcaloadings_ucsc_prcomp-allgenes-rna-hiseq",
+                "uvm_pcascores_ucsc_prcomp-allgenes-rna-hiseq-1e05",
+                "uvm_pcascores_ucsc_prcomp-allgenes-protein",
+                "uvm_pcaloadings_ucsc_prcomp-allgenes-protein",
+                "uvm_pcascores_ucsc_prcomp-allgenes-protein-1e05"
             ]
         }
     },
@@ -1289,16 +1246,7 @@
         "disease": "thym",
         "possibleMolecularCombination": {
             "overlapCount": 21,
-            "itemsNotInRef": [],
-            "refItemsNotInSelf": [
-                "thym_pcascores_ucsc_prcomp-allgenes-rna-hiseq",
-                "thym_pcaloadings_ucsc_prcomp-allgenes-rna-hiseq",
-                "thym_pcascores_ucsc_prcomp-allgenes-rna-hiseq-1e05",
-                "thym_pcascores_ucsc_prcomp-allgenes-protein",
-                "thym_pcaloadings_ucsc_prcomp-allgenes-protein",
-                "thym_pcascores_ucsc_prcomp-allgenes-protein-1e05"
-            ],
-            "NotCalculated": [
+            "itemsNotInRef": [
                 "thym_pcascores_ucsc_prcomp-tcgagbmclassifiers-protein",
                 "thym_pcascores_ucsc_prcomp-tcgagbmclassifiers-protein-1e05",
                 "thym_pcaloadings_ucsc_prcomp-tcgagbmclassifiers-protein",
@@ -1320,6 +1268,14 @@
                 "thym_pcascores_ucsc_prcomp-osccchen9genes-protein",
                 "thym_pcascores_ucsc_prcomp-osccchen9genes-protein-1e05",
                 "thym_pcaloadings_ucsc_prcomp-osccchen9genes-protein"
+            ],
+            "refItemsNotInSelf": [
+                "thym_pcascores_ucsc_prcomp-allgenes-rna-hiseq",
+                "thym_pcaloadings_ucsc_prcomp-allgenes-rna-hiseq",
+                "thym_pcascores_ucsc_prcomp-allgenes-rna-hiseq-1e05",
+                "thym_pcascores_ucsc_prcomp-allgenes-protein",
+                "thym_pcaloadings_ucsc_prcomp-allgenes-protein",
+                "thym_pcascores_ucsc_prcomp-allgenes-protein-1e05"
             ]
         }
     },
@@ -1327,16 +1283,7 @@
         "disease": "tgct",
         "possibleMolecularCombination": {
             "overlapCount": 21,
-            "itemsNotInRef": [],
-            "refItemsNotInSelf": [
-                "tgct_pcascores_ucsc_prcomp-allgenes-rna-hiseq",
-                "tgct_pcaloadings_ucsc_prcomp-allgenes-rna-hiseq",
-                "tgct_pcascores_ucsc_prcomp-allgenes-rna-hiseq-1e05",
-                "tgct_pcascores_ucsc_prcomp-allgenes-protein",
-                "tgct_pcaloadings_ucsc_prcomp-allgenes-protein",
-                "tgct_pcascores_ucsc_prcomp-allgenes-protein-1e05"
-            ],
-            "NotCalculated": [
+            "itemsNotInRef": [
                 "tgct_pcascores_ucsc_prcomp-tcgagbmclassifiers-protein",
                 "tgct_pcascores_ucsc_prcomp-tcgagbmclassifiers-protein-1e05",
                 "tgct_pcaloadings_ucsc_prcomp-tcgagbmclassifiers-protein",
@@ -1358,6 +1305,14 @@
                 "tgct_pcascores_ucsc_prcomp-osccchen9genes-protein",
                 "tgct_pcascores_ucsc_prcomp-osccchen9genes-protein-1e05",
                 "tgct_pcaloadings_ucsc_prcomp-osccchen9genes-protein"
+            ],
+            "refItemsNotInSelf": [
+                "tgct_pcascores_ucsc_prcomp-allgenes-rna-hiseq",
+                "tgct_pcaloadings_ucsc_prcomp-allgenes-rna-hiseq",
+                "tgct_pcascores_ucsc_prcomp-allgenes-rna-hiseq-1e05",
+                "tgct_pcascores_ucsc_prcomp-allgenes-protein",
+                "tgct_pcaloadings_ucsc_prcomp-allgenes-protein",
+                "tgct_pcascores_ucsc_prcomp-allgenes-protein-1e05"
             ]
         }
     },
@@ -1365,16 +1320,7 @@
         "disease": "pcpg",
         "possibleMolecularCombination": {
             "overlapCount": 21,
-            "itemsNotInRef": [],
-            "refItemsNotInSelf": [
-                "pcpg_pcascores_ucsc_prcomp-allgenes-rna-hiseq",
-                "pcpg_pcaloadings_ucsc_prcomp-allgenes-rna-hiseq",
-                "pcpg_pcascores_ucsc_prcomp-allgenes-rna-hiseq-1e05",
-                "pcpg_pcascores_ucsc_prcomp-allgenes-protein",
-                "pcpg_pcaloadings_ucsc_prcomp-allgenes-protein",
-                "pcpg_pcascores_ucsc_prcomp-allgenes-protein-1e05"
-            ],
-            "NotCalculated": [
+            "itemsNotInRef": [
                 "pcpg_pcascores_ucsc_prcomp-tcgagbmclassifiers-protein",
                 "pcpg_pcascores_ucsc_prcomp-tcgagbmclassifiers-protein-1e05",
                 "pcpg_pcaloadings_ucsc_prcomp-tcgagbmclassifiers-protein",
@@ -1396,6 +1342,14 @@
                 "pcpg_pcascores_ucsc_prcomp-osccchen9genes-protein",
                 "pcpg_pcascores_ucsc_prcomp-osccchen9genes-protein-1e05",
                 "pcpg_pcaloadings_ucsc_prcomp-osccchen9genes-protein"
+            ],
+            "refItemsNotInSelf": [
+                "pcpg_pcascores_ucsc_prcomp-allgenes-rna-hiseq",
+                "pcpg_pcaloadings_ucsc_prcomp-allgenes-rna-hiseq",
+                "pcpg_pcascores_ucsc_prcomp-allgenes-rna-hiseq-1e05",
+                "pcpg_pcascores_ucsc_prcomp-allgenes-protein",
+                "pcpg_pcaloadings_ucsc_prcomp-allgenes-protein",
+                "pcpg_pcascores_ucsc_prcomp-allgenes-protein-1e05"
             ]
         }
     },
@@ -1403,13 +1357,7 @@
         "disease": "ov",
         "possibleMolecularCombination": {
             "overlapCount": 21,
-            "itemsNotInRef": [],
-            "refItemsNotInSelf": [
-                "ov_pcascores_ucsc_prcomp-allgenes-rna-hiseq",
-                "ov_pcaloadings_ucsc_prcomp-allgenes-rna-hiseq",
-                "ov_pcascores_ucsc_prcomp-allgenes-rna-hiseq-1e05"
-            ],
-            "NotCalculated": [
+            "itemsNotInRef": [
                 "ov_pcascores_ucsc_prcomp-tcgagbmclassifiers-protein",
                 "ov_pcascores_ucsc_prcomp-tcgagbmclassifiers-protein-1e05",
                 "ov_pcaloadings_ucsc_prcomp-tcgagbmclassifiers-protein",
@@ -1431,6 +1379,11 @@
                 "ov_pcascores_ucsc_prcomp-osccchen9genes-protein",
                 "ov_pcascores_ucsc_prcomp-osccchen9genes-protein-1e05",
                 "ov_pcaloadings_ucsc_prcomp-osccchen9genes-protein"
+            ],
+            "refItemsNotInSelf": [
+                "ov_pcascores_ucsc_prcomp-allgenes-rna-hiseq",
+                "ov_pcaloadings_ucsc_prcomp-allgenes-rna-hiseq",
+                "ov_pcascores_ucsc_prcomp-allgenes-rna-hiseq-1e05"
             ]
         }
     },
@@ -1438,16 +1391,7 @@
         "disease": "meso",
         "possibleMolecularCombination": {
             "overlapCount": 21,
-            "itemsNotInRef": [],
-            "refItemsNotInSelf": [
-                "meso_pcascores_ucsc_prcomp-allgenes-rna-hiseq",
-                "meso_pcaloadings_ucsc_prcomp-allgenes-rna-hiseq",
-                "meso_pcascores_ucsc_prcomp-allgenes-rna-hiseq-1e05",
-                "meso_pcascores_ucsc_prcomp-allgenes-protein",
-                "meso_pcaloadings_ucsc_prcomp-allgenes-protein",
-                "meso_pcascores_ucsc_prcomp-allgenes-protein-1e05"
-            ],
-            "NotCalculated": [
+            "itemsNotInRef": [
                 "meso_pcascores_ucsc_prcomp-tcgagbmclassifiers-protein",
                 "meso_pcascores_ucsc_prcomp-tcgagbmclassifiers-protein-1e05",
                 "meso_pcaloadings_ucsc_prcomp-tcgagbmclassifiers-protein",
@@ -1469,6 +1413,14 @@
                 "meso_pcascores_ucsc_prcomp-osccchen9genes-protein",
                 "meso_pcascores_ucsc_prcomp-osccchen9genes-protein-1e05",
                 "meso_pcaloadings_ucsc_prcomp-osccchen9genes-protein"
+            ],
+            "refItemsNotInSelf": [
+                "meso_pcascores_ucsc_prcomp-allgenes-rna-hiseq",
+                "meso_pcaloadings_ucsc_prcomp-allgenes-rna-hiseq",
+                "meso_pcascores_ucsc_prcomp-allgenes-rna-hiseq-1e05",
+                "meso_pcascores_ucsc_prcomp-allgenes-protein",
+                "meso_pcaloadings_ucsc_prcomp-allgenes-protein",
+                "meso_pcascores_ucsc_prcomp-allgenes-protein-1e05"
             ]
         }
     },
@@ -1504,8 +1456,7 @@
                 "brain_pcascores_ucsc_prcomp-allgenes-cnv",
                 "brain_pcaloadings_ucsc_prcomp-allgenes-cnv",
                 "brain_pcascores_ucsc_prcomp-allgenes-cnv-1e05"
-            ],
-            "NotCalculated": []
+            ]
         }
     }
 ]

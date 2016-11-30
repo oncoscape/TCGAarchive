@@ -327,6 +327,11 @@ co(function *() {
   helper.format.text("/* Checking PCA/MDS Collections */");
   helper.format.text("MDS, mutation and copy number, all of them are genesets, check the names, look at each gene-set, from the same sources (mut, copy)");
   helper.format.text("PCA, for RNA, methylation, protein, CNV, for those molecular types, with each genesets. No PCA mutation combo");
+  helper.format.codeComment("Removed 'dne' flagged collection along with their scaled collection and their corresponding pcaloadings collections(example below):");
+  helper.format.codeComment("'gbm_pcascores_ucsc_prcomp-tcgagbmclassifiers-protein'");
+  helper.format.codeComment("'gbm_pcascores_ucsc_prcomp-tcgagbmclassifiers-protein-1e05'");
+  helper.format.codeComment("'gbm_pcaloadings_ucsc_prcomp-tcgagbmclassifiers-protein'");
+
   helper.format.codeStart();
   helper.format.codeComment("Reference is the Existing Calculated Collections.");
   validateCalculatedFromMolecular.forEach(function(a){
