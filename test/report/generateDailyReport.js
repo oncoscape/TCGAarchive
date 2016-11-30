@@ -22,6 +22,7 @@ var render_patient = [];
 var usedFields = ['annotation','location','category','molecular','clinical','calculated','edges'];
 var lookup_toolTesting = require("../toolTesting/lookup.json");
 var molecularMinMaxChecking = require("./CheckingMinMaxValues.json");
+var x_range = require("./x_range.json");
 const pcaScoreTypeMapping = {
     'cnv-gistic': "cnv", 
     'cnv-gistic2thd':"cnv",
@@ -340,20 +341,20 @@ co(function *() {
   helper.format.codeStop();
   
   // report disease collection structural status against brain in lookup_oncoscape_datasources
-  helper.format.h1("Part VI: Check diseae collection structural status against brain in lookup_oncoscape_datasources");
-  var diseaseCollection = diseaseCollectionStructureStatus.filter(function(d){
-                                              return (d.collectionStructural.length>0&&d.disease !='hg19'); }).map(function(m){
-                                              var elem = {};
-                                              elem.disease = m.disease;
-                                              elem.errors = [];
-                                              m.collectionStructural.forEach(function(n){
-                                                elem.errors.push(n.schemaPath+'['+n.message + ']');
-                                              });
-                                              return elem;});
-  helper.format.codeStart();
-  helper.format.text(diseaseCollection);
-  helper.format.codeStop();
-  helper.format.h2("Five Tool Testing Results:");
+  // helper.format.h1("Part VI: Check disease collection structural status against brain in lookup_oncoscape_datasources");
+  // var diseaseCollection = diseaseCollectionStructureStatus.filter(function(d){
+  //                                             return (d.collectionStructural.length>0&&d.disease !='hg19'); }).map(function(m){
+  //                                             var elem = {};
+  //                                             elem.disease = m.disease;
+  //                                             elem.errors = [];
+  //                                             m.collectionStructural.forEach(function(n){
+  //                                               elem.errors.push(n.schemaPath+'['+n.message + ']');
+  //                                             });
+  //                                             return elem;});
+  // helper.format.codeStart();
+  // helper.format.text(diseaseCollection);
+  // helper.format.codeStop();
+  helper.format.h1("Part VI: Five Tools Testing Results:");
   helper.format.codeStart();
   helper.format.text(lookup_toolTesting);
   helper.format.codeStop();
@@ -406,10 +407,14 @@ co(function *() {
   //   countInRef: NaN }
   helper.format.codeStop();
   helper.format.text("Detailed aggregated report lists here (sorted by subfield IDstatus.itemsNotInRefLength):");
+  // helper.format.codeStart();
+  // patientID_status.forEach(function(s){helper.format.text(s);});
+  // helper.format.codeStop();
   helper.format.codeStart();
-  patientID_status.forEach(function(s){helper.format.text(s);});
   helper.format.codeStop();
-  
+
+
+
   helper.format.h1("Part VIII: Checked the gene symbols against HGNC gene symbols: ");
 
   helper.format.h3("The aggregated result grouped by Disease types and Data Types");
@@ -436,7 +441,7 @@ co(function *() {
   gene_status.splice(0, 5).forEach(function(s){helper.format.text(s);});
   helper.format.codeStop();
   
-  helper.format.h1("Part VIIII: Min/Max Values Checking in Molecular Collections: ");
+  helper.format.h1("Part IX: Min/Max Values Checking in Molecular Collections: ");
   var errorMinMaxColls = molecularMinMaxChecking.map(function(m){return m.collection;}).unique();
   var mutColls = errorMinMaxColls.containPartialString(/_mut_/);
   var shorterMolMinMaxErrors = molecularMinMaxChecking.filter(function(m){return !mutColls.contains(m.collection);})
@@ -452,6 +457,12 @@ co(function *() {
   helper.format.codeStart();
   errorReported.forEach(function(s){helper.format.text(s);});
   helper.format.codeStop();
+
+  helper.format.h1("Part X: X axis range checking for render_patient(>4000 listed below):");
+  helper.format.codeStart();
+  x_range.filter(function(m){return m.range>4000;}).forEach(function(s){helper.format.text(s);});
+  helper.format.codeStop();
+
 
   yield comongo.db.close(db);
 }).catch(onerror);

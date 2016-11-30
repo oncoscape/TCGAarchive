@@ -5,6 +5,7 @@
 // check the names, 
 // look at each gene-set, from the same sources (mut, copy)
 // PCA, for RNA, methylation, protein, CNV, for those molecular types, with each genesets
+// No PCA mutation combo
 
 
 var jsonfile = require("jsonfile");
@@ -90,7 +91,8 @@ co(function *() {
 
       });
     return result;
-  }
+  };
+  
  final_result = lookup_table.map(function(l){
    elem = {};
    elem.disease = l.disease;
