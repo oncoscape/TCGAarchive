@@ -5,11 +5,9 @@
             - re-organize the error messages 
             - calculate the passed percentage at collection level
 */
-
 const jsonfile = require("jsonfile-promised");
-const helper = require("../testingHelper.js");
+const helper = require("/Users/zhangj4/Desktop/canaantt_git/TCGAarchive/test/testingHelper.js");
 var ajvMsg, ajvMsg_v2;
-
 jsonfile.readFile("ajv_tcga_11212016.json").then(function(obj){
     ajvMsg = obj;
 }).then(function(){
