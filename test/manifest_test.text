@@ -1,0 +1,42 @@
+/* Description : A manifest file documenting the integration of data api testing with data import, cluster and preparation for tools
+ * Date : 12-01-2016
+ * root : https://github.com/oncoscape/TCGAarchive/tree/api/
+ */
+STEP I 
+AFTER import raw data, run data structure test
+tests:
+- potential duplicated fields 										[script]/test/report/checkingClinicalFields.js
+- validate all the data collection against data structural schema   [script]/test/datasourceTesting/mongooseTest.js
+																	[script]/test/datasourceTesting/mongooseTest2.js
+
+Decision: 
+The result is a json file. For each Data collection, there is a corresponding document, which is a summary of the data structual quality according the schemas.json.
+To gerenerate a binary result, we could use criteria like:
+passedCounts > 5 && passedRate > 0.5 (50%)
+
+
+
+STEP II
+AFTER cluster is run (pca, mds, edges, ptDegrees, geneDegrees), below lists the tests:
+- collection-level testings
+	- validate name convention		[script]/test/report/validateCollectionNames.js
+  	- pca/mds combination			[script]/test/report/checkingPcaMdsCollectionNaming.js
+  	- size 							[script]/test/report/collectionSizeValidation.js
+
+- data-level testing
+	- patient IDs 			[script]/test/patientIDTesting/PtIDCollecting.js
+							[script]/test/patientIDTesting/PtIDProcess.js
+							[script]/test/patientIDTesting/PtIDProcess2.js
+	- gene symbols  		[script]/test/geneSymbols/geneSymbols_checking.js
+							[script]/test/geneSymbols/geneSymbols_resultProcess.js
+							[script]/test/geneSymbols/geneSymbols_resultProcess2.js
+	- min/max 				[script]/test/report/checkingMinMaxValues.js 
+							[script]/test/report/processingMinMaxErrors.js
+	- x-coordinate range 	[script]/test/report/renderPateintXRange.js
+
+
+
+STEP III
+BEFORE injecting data to Oncoscape tools, check availability
+[script]/test/toolTesting/tool_test.js
+ 
