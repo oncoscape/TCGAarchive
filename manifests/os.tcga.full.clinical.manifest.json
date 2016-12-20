@@ -1410,60 +1410,6 @@
 		"type": "events",
 		"directory": "../data/cBio/lusc/",
 		"file": "history.RData"
-	},
-	{
-		"dataset": "brain",
-		"process": "clinical",
-		"source": "tcga",
-		"date": "2015-02-24",
-		"type": "patient",
-		"directory": "../data/clinical/",
-		"file": "clinical_patient_brain_wStudy.txt"
-	},
-	{
-		"dataset": "brain",
-		"process": "v1p0",
-		"source": "tcga",
-		"date": "2015-02-24",
-		"type": "followup",
-		"directory": "../data/clinical/",
-		"file": "clinical_follow_up_v1.0_brain.txt"
-	},
-	{
-		"dataset": "brain",
-		"process": "clinical",
-		"source": "tcga",
-		"date": "2015-02-24",
-		"type": "drug",
-		"directory": "../data/clinical/",
-		"file": "clinical_drug_brain.txt"
-	},
-	{
-		"dataset": "brain",
-		"process": "clinical",
-		"source": "tcga",
-		"date": "2015-02-24",
-		"type": "newtumor",
-		"directory": "../data/clinical/",
-		"file": "clinical_nte_brain.txt"
-	},
-	{
-		"dataset": "brain",
-		"process": "v4p0",
-		"source": "tcga",
-		"date": "2015-02-24",
-		"type": "othermalignancy",
-		"directory": "../data/clinical/",
-		"file": "clinical_omf_brain.txt"
-	},
-	{
-		"dataset": "brain",
-		"process": "clinical",
-		"source": "tcga",
-		"date": "2015-02-24",
-		"type": "radiation",
-		"directory": "../data/clinical/",
-		"file": "clinical_radiation_brain.txt"
 	},{
 		"dataset": "coad",
 		"process": "clinical",

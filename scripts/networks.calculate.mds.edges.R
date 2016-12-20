@@ -1,4 +1,4 @@
-rm(list = ls(all = TRUE))
+#rm(list = ls(all = TRUE))
 options(stringsAsFactors = FALSE)
 
 printf = function (...) print (noquote (sprintf (...)))
@@ -194,7 +194,9 @@ save.pca<- function(oCollection, genesetName=NA, scaleFactor=NA){
 	  mtx <- mtx[, intersect(colnames(mtx), genes), drop=F]
 	}
 	if(any(dim(mtx)<3)){
-	  print("WARNING: mtx does not match gene/patient set.")
+	  reason <- "WARNING: mtx does not match gene/patient set."
+	  print(reason)
+	  insert.collection.dne(oCollection.pca, reason )
 	  return();
 	}
 	
@@ -206,8 +208,11 @@ save.pca<- function(oCollection, genesetName=NA, scaleFactor=NA){
 		   printf("removing %d columns", length(removers))
 		   mtx <- mtx[, -removers]
 	} 
-	if(any(dim(mtx)<3)){  print("WARNING: mtx is singular.  PCA not computed")
-	  return();
+	if(any(dim(mtx)<3)){  
+	  reason = "WARNING: mtx is singular.  PCA not computed"
+	  print(reason)
+	  insert.collection.dne(oCollection.pca, reason )
+	  return()
 	}
 	  
 	## ----- Calculate PCA
@@ -215,10 +220,12 @@ save.pca<- function(oCollection, genesetName=NA, scaleFactor=NA){
 		   prcomp(na.omit(mtx),center=T,scale=T),
 		   error=function(error.message){
 			 print("ERROR: PRCOMP!"); print(error.message)
+		   insert.collection.dne(oCollection.pca, as.character(error.message ))
 			 return(NA); })
    
-	   if(all(is.na(PCs)))	   return();
-	
+	   if(all(is.na(PCs))){
+	     return()
+	   }
 	   scores <- PCs$x
 	   colnames(scores) <- NULL
 	   importance <- summary(PCs)$importance   
@@ -312,8 +319,10 @@ save.mds.innerProduct <- function(oCollection.1, oCollection.2, geneset=NA, scal
     ## ----- MDS on All Combinations of CNV and MUT Tables ------
 
   if(oCollection.1$source != oCollection.2$source){
-    print("currently not computing mds based on different sources")
+   reason = "currently not computing mds based on different sources"
+    print(reason)
     return()
+    
   }
   
   cat("-calculating mds\n")
@@ -371,8 +380,10 @@ save.mds.innerProduct <- function(oCollection.1, oCollection.2, geneset=NA, scal
 											 #expects rows as genes and cols as samples
 			
 			if(any(dim(sample_similarity)==0)){
-			  print("WARNING: mtx does not match gene/pt set.  Less than 3 observations.")
-			  return();
+			  reason = "WARNING: mtx does not match gene/pt set.  Less than 3 observations."
+			  print(reason)
+			  insert.collection.dne(oCollection.mds, reason )
+			  return()
 			}
 			
 			sample_similarity[, "x"] <- -1 * sample_similarity[, "x"]
@@ -386,13 +397,13 @@ save.mds.innerProduct <- function(oCollection.1, oCollection.2, geneset=NA, scal
 		  mds.list<- lapply(rownames(sample_similarity), function(name) list(x=sample_similarity[name,"x"], y=sample_similarity[name, "y"]))
 		  names(mds.list) <- rownames(sample_similarity)
 
-		  result <- list(type="cluster", dataset=oCollection.1$dataset, name=outputName, scale=NA, data=mds.list)
+		  result <- list(type="cluster", dataset=oCollection.1$dataset, name=outputName, scale=NA,source=oCollection.1$source, type=process$input, geneset=genesetName, data=mds.list)
 			insert.collection(oCollection.mds, list(result) )
 
 			if(!is.na(scaleFactor)){
 			  chrDim <- get.chromosome.dimensions(scaleFactor) 
 			  mds.list <- scaleSamplesToChromosomes(sample_similarity, chrDim, dim.names=c("x", "y"))
-			  result <- list(type="cluster", dataset=oCollection.1$dataset, name=outputName, scale=scaleFactor, data=mds.list)
+			  result <- list(type="cluster", dataset=oCollection.1$dataset, name=outputName, scale=scaleFactor,source=oCollection.1$source, type=process$input, geneset=genesetName, data=mds.list)
 			  insert.collection(oCollection.mds.scaled, list(result) )
 			}			
 }
@@ -620,8 +631,8 @@ if("cluster" %in% commands){
 if("edges" %in% commands){
   # map edges for all patients between CNV/Mut and Geneset tables
   molecular_manifest <- mongo.manifest$find(
-    query='{ "dataType":{"$in":["cnv","mut01"]}}')
-#                                query='{ "dataType":{"$in":["cnv","mut01"]}, "source":"ucsc", "dataset":"lung"}')
+#    query='{ "dataType":{"$in":["cnv","mut01"]}}')
+                                query='{ "dataType":{"$in":["cnv","mut01"]}, "source":"ucsc"}')
   
   run.batch.network_edges(molecular_manifest)
 }

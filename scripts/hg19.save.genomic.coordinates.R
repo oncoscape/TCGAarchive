@@ -1,6 +1,6 @@
 
 # Configuration -----------------------------------------------------------
-rm(list = ls(all = TRUE))
+#rm(list = ls(all = TRUE))
 options(stringsAsFactors = FALSE)
 
 source("common.R")
@@ -23,7 +23,8 @@ getEntrezSymbolMap <- function(){
 	
 	return(as.list(symbolMap[mapped_genes]) )
 	
-}#----------------------------------------------------------------------------------------------------
+}
+#----------------------------------------------------------------------------------------------------
 getGenePositions_Entrez <- function(){
 
 	genePos <- org.Hs.egCHRLOC

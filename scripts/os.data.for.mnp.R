@@ -3,7 +3,7 @@
 ###
 
 # Library Imports ---------------------------------------------------------
-rm(list = ls(all = TRUE))
+#rm(list = ls(all = TRUE))
 options(stringsAsFactors = FALSE)
 
 source("common.R")
@@ -85,6 +85,10 @@ os.copy.chromosome.layout <- function(scaleFactor=100000){
   
   for(i in 1:nrow(geneset_coll)){
     document <- geneset_coll[i,]
+    remove <- sapply(document$data, function(genecol){
+        any(is.na(genecol))
+    })
+    document$data <- document$data[-which(remove)]
     insert.collection.separate("render_chromosome", list(document))
   }
 }
@@ -93,9 +97,9 @@ os.save.pca <- function(scaleFactor=NA){
   
   datatypeName= "cluster"
   if(is.na(scaleFactor)){
-    pca_colls <- mongo.manifest$find( query=paste('{"dataType":"pcascores", "process.scale":null}', sep=""))
+    pca_colls <- mongo.manifest$find( query=paste('{"dataType":"pcascores", "process.scale":null, "dne":{"$exists": false}}', sep=""))
   } else{
-    pca_colls <- mongo.manifest$find( query=paste('{"dataType":"pcascores", "process.scale":',as.integer(scaleFactor),'}', sep=""))
+    pca_colls <- mongo.manifest$find( query=paste('{"dataType":"pcascores", "process.scale":',as.integer(scaleFactor),', "dne":{"$exists": false}}', sep=""))
   }
   
   for(i in 1:nrow(pca_colls)){
@@ -109,7 +113,8 @@ os.save.pca <- function(scaleFactor=NA){
 ##----------------------------
 commands <- c("patient", "pca", "chromosome")
 #commands <- c("pca", "chromosome")
-commands <- c("patient", "pca")
+#commands <- c("patient", "pca")
+commands <- "patient"
 
 connect.to.mongo()
 scaleFactor = 100000
@@ -120,8 +125,6 @@ if("patient" %in% commands){
   mds_colls <- mongo.manifest$find( query=paste('{"dataType":"mds", "process.scale":',as.integer(scaleFactor),'}', sep=""))
   os.save.ptLayouts(mds_colls, scaleFactor=scaleFactor) 
   
-  pca_colls <- mongo.manifest$find( query=paste('{"dataType":"pcaScores", "process.scale":',as.integer(scaleFactor),'}', sep=""))
-  os.save.pca.ptLayouts(pca_colls, scaleFactor=scaleFactor) 
   pca_colls <- mongo.manifest$find( query=paste('{"dataType":"pcascores", "process.scale":',as.integer(scaleFactor),'}', sep=""))
   os.save.pca.ptLayouts(pca_colls, scaleFactor=scaleFactor) 
   

@@ -1,0 +1,81 @@
+[	{
+		"dataset": "brain",
+		"process": "clinical",
+		"source": "tcga",
+		"date": "2015-02-24",
+		"type": "events",
+		"directory": "../data/cBio/brain/",
+		"file": "history.RData"
+	},	{
+		"dataset": "brca",
+		"process": "clinical",
+		"source": "tcga",
+		"date": "2015-02-24",
+		"type": "events",
+		"directory": "../data/cBio/brca/",
+		"file": "history.RData"
+	},
+	{
+		"dataset": "coadread",
+		"process": "clinical",
+		"source": "tcga",
+		"date": "2015-02-24",
+		"type": "events",
+		"directory": "../data/cBio/coadread/",
+		"file": "history.RData"
+	},
+	{
+		"dataset": "gbm",
+		"process": "clinical",
+		"source": "tcga",
+		"date": "2015-02-24",
+		"type": "events",
+		"directory": "../data/cBio/gbm/",
+		"file": "history.RData"
+	},
+	{
+		"dataset": "hnsc",
+		"process": "clinical",
+		"source": "tcga",
+		"date": "2015-02-24",
+		"type": "events",
+		"directory": "../data/cBio/hnsc/",
+		"file": "history.RData"
+	},
+	{
+		"dataset": "lgg",
+		"process": "clinical",
+		"source": "tcga",
+		"date": "2015-02-24",
+		"type": "events",
+		"directory": "../data/cBio/lgg/",
+		"file": "history.RData"
+	},
+	{
+		"dataset": "luad",
+		"process": "clinical",
+		"source": "tcga",
+		"date": "2015-02-24",
+		"type": "events",
+		"directory": "../data/cBio/luad/",
+		"file": "history.RData"
+	},
+	{
+		"dataset": "lung",
+		"process": "clinical",
+		"source": "tcga",
+		"date": "2015-02-24",
+		"type": "events",
+		"directory": "../data/cBio/lung/",
+		"file": "history.RData"
+	},
+	{
+		"dataset": "lusc",
+		"process": "clinical",
+		"source": "tcga",
+		"date": "2015-02-24",
+		"type": "events",
+		"directory": "../data/cBio/lusc/",
+		"file": "history.RData"
+	}
+]

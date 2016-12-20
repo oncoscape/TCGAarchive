@@ -19,7 +19,7 @@ location = "dev"
 
 if(location == "dev"){
 	user="oncoscape"
-	password = Sys.getenv("dev_oncoscape_pw")
+#	password = Sys.getenv("dev_oncoscape_pw")
 	host<- paste("mongodb://",user,":",password,"@oncoscape-dev-db1.sttrcancer.io:27017,oncoscape-dev-db2.sttrcancer.io:27017,oncoscape-dev-db3.sttrcancer.io:27017",sep="")
 	#host<- paste("mongodb://",user,":",password,"@oncoscape-dev-db1.sttrcancer.io:27017,oncoscape-dev-db2.sttrcancer.io:27017,oncoscape-dev-db3.sttrcancer.io:27017","?socketTimeoutMS=36000000", sep="")
 	  #?socketTimeoutMS=36000000 still fails, just waits longer
@@ -27,6 +27,8 @@ if(location == "dev"){
 
 dataset_map <- list(
   hg19=list(name="hg19", img= "", beta="", source=""),
+  pancan=list(name="Pan-Cancer", img= "DSdemo.png", beta=TRUE, source="TCGA"),
+  fppp =list(name="Formalin Fixed Paraffin", img="DSdemo.png", beta=TRUE, source="TCGA"),
   brca=list(name="Breast", img= "DSbreast.png", beta=FALSE, source="TCGA"),
   brain=list(name="Brain", img= "DSbrain.png", beta=FALSE, source="TCGA"),
   gbm=list(name="Glioblastoma", img= "DSbrain.png", beta=TRUE, source="TCGA"),
@@ -183,7 +185,12 @@ lookupList = list(
   othermalignancy=list(type="clinical",
                data.load = "os.data.load.clinical",
                 insert.lookup = "insert.lookup.clinical",
-                insert.document = "insert.document.row" )
+                insert.document = "insert.document.row" ),
+ samplemap=list(type="clinical",
+                      data.load = "os.data.load.clinical",
+                      insert.lookup = "insert.lookup.clinical",
+                      insert.document = "insert.document.list" )
+ 
   )
 
 
@@ -200,8 +207,8 @@ connect.to.mongo <- function(){
 ## mongolite requires all insertions to be of type data.frame
 close.mongo <- function(){
 
-	rm(mongo.manifest)
-	rm(mongo.lookup)
+#	rm(mongo.manifest)
+#	rm(mongo.lookup)
 }
 #---------------------------------------------------------
 ### For any mutation file, create and save an indicator mut01 file
@@ -269,13 +276,16 @@ collection.create.name <- function( oCollection){
   
   collection.uniqueName <- paste(oCollection$dataset, oCollection$dataType, sourceName, oCollection$processName, sep="_")
   collection.uniqueName <- gsub("\\s+", "", tolower(collection.uniqueName))
+  collection.uniqueName <- gsub("\\+", "", collection.uniqueName)
   
   return(collection.uniqueName)
 }
 #---------------------------------------------------------
-merge.collections <- function(oCollection1, oCollection2){
+merge.collections <- function(oCollection1, oCollection2, oCollection = NA){
   
-  oCollection  <- update.oCollection(oCollection1, parent=c(oCollection1$`_id`, oCollection2$`_id`), processName="merged")
+  if(is.na(oCollection))
+    oCollection  <- update.oCollection(oCollection1, parent=c(oCollection1$`_id`, oCollection2$`_id`), processName="merged")
+
   con1 <- mongo(oCollection1$collection, db=db, url=host)
   con2 <- mongo(oCollection2$collection, db=db, url=host)
   con  <- mongo(oCollection$collection,  db=db, url=host)
@@ -299,6 +309,14 @@ insert.prep <- function(oCollection){
   prev.run <- collection.exists(oCollection$collection)
   if(prev.run){ return(FALSE) }
   
+  con = mongo.manifest$find(toJSON(list(collection=oCollection$collection, dne=list("$exists"=TRUE)), auto_unbox = T))
+  count <- length(con)
+  
+  if(count != 0){
+    print(paste(oCollection$collection, " does not exist: ",con$dne, sep=""))
+    return(FALSE)
+  }  
+  
   return(TRUE)
 }
 #---------------------------------------------------------
@@ -315,11 +333,17 @@ insert.lookup.sourceTypeCollection <- function(oCollection){
 insert.lookup.clinical <- function(oCollection){
   
   clinical.field = mongo.lookup$find(query=paste('{"disease":"',oCollection$dataset, '"}', sep=""), fields= paste('{"clinical.', oCollection$dataType, '":1}', sep=""))
-#  if(nchar(clinical.field[,2]) > 0 & oCollection$processName != "merged"){
+  
+  #clinField =paste(clinical, oCollection$dataType, sep=".");  
+  #query = list(disease=oCollection$dataset); query[['$exists']][[clinField]]=TRUE;
+  #clinical.field = mongo.lookup$find(query=toJSON(query, auto_unbox = T), fields= paste('{"clinical.', oCollection$dataType, '":1}', sep=""))
+  
+#  if(ncol(clinical.field) >0 & nchar(clinical.field[,2]) > 0 ){
 #    existingCollection <- mongo.manifest$find(query=paste('{"collection":"',clinical.field[,2],'"}',sep=""), fields='{}')
 #    newCollection      <- mongo.manifest$find(query=paste('{"collection":"',oCollection$collection,'"}',sep=""), fields='{}')
     
-#    oCollection <- merge.collections(newCollection, existingCollection)
+#    mergeCollection <- update.oCollection(existingCollection, parent=c(existingCollection$`_id`, newCollection$`_id`), processName="merged")
+#    oCollection <- merge.collections(newCollection, existingCollection, mergeCollection)
     
 #  }
   
@@ -363,7 +387,7 @@ insert.lookup <- function(oCollection){
   
   dataType = oCollection$dataType
   if(dataType %in% names(lookupList)){
-    if(dataType %in% c("ptDegree", "geneDegree")){
+    if(dataType %in% c("ptdegree", "genedegree")){
       print(paste(dataType, "lookup info processed with edge creation", sep=" "))
     }else{
       oLookup = do.call(lookupList[[dataType]][["insert.lookup"]],list(oCollection))
@@ -448,6 +472,14 @@ insert.document.row = function(con, result){
   return (c(n.pass= sum(unlist(insert.pass)), n.records = nrow(result) ) )
 }
 #---------------------------------------------------------
+insert.collection.dne <- function(oCollection, reason){
+
+  if(class(oCollection) != "list") oCollection <- as.list(oCollection)
+  oCollection$dne = reason
+  
+  mongo.manifest$insert( toJSON(oCollection, auto_unbox=T))
+}
+#---------------------------------------------------------
 insert.collection <- function(oCollection, result){
   
     if(class(oCollection) != "list") oCollection <- as.list(oCollection)
@@ -490,6 +522,22 @@ insert.collection <- function(oCollection, result){
     save.mut01.from.mut(new.oCollection, result)
   }
   
+}
+#---------------------------------------------------------
+create.oCollection.from.name <- function(collection){
+  
+  elements = unlist(strsplit(collection, "_"))
+  oCollection = create.oCollection(dataset=elements[1], dataType=elements[2], source=elements[3], processName=elements[4], parent=NA, process=NA)
+  return(oCollection)
+}
+#---------------------------------------------------------
+remove.collections.by.name <- function(to.remove){
+  sapply(to.remove, function(collection){
+    oCollection <- create.oCollection.from.name(collection)
+    remove.collection(oCollection)
+  
+  })
+
 }
 #---------------------------------------------------------
 remove.collection <- function(oCollection){

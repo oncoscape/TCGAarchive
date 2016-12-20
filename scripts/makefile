@@ -44,11 +44,15 @@ cluster:
 
 #----- Create Tool Specific Views
 
-tools: MnP
+tools: MnP colors
 
 MnP:
 	Rscript os.data.for.mnp.R
-		# hobo MDS
+		# hobo MDS & PCA
+
+colors:
+	node color.options.js
+
 #----- Import into MongoDB
 
 setupMongo:
