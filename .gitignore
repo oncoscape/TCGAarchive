@@ -1,7 +1,9 @@
 # Large Data Archive & Output
 data/
+scripts/import_ucsc/venv
 
 .Rhistory
+scripts/.Rhistory
 scripts/slurm-*
 
 # slate
