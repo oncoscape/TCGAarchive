@@ -1,0 +1,4106 @@
+[
+    {
+        "disease": "luad",
+        "type": "color",
+        "ptIDClinicalCounts": 522,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "brca",
+        "type": "color",
+        "ptIDClinicalCounts": 1097,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "ucs",
+        "type": "edges",
+        "ptIDClinicalCounts": 57,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "ucs",
+        "type": "mds",
+        "ptIDClinicalCounts": 57,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "brca",
+        "type": "patient",
+        "ptIDClinicalCounts": 1097,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "brca",
+        "type": "drug",
+        "ptIDClinicalCounts": 1097,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "brca",
+        "type": "newTumor",
+        "ptIDClinicalCounts": 1097,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "brca",
+        "type": "radiation",
+        "ptIDClinicalCounts": 1097,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "brca",
+        "type": "otherMalignancy",
+        "ptIDClinicalCounts": 1097,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "brca",
+        "type": "followUp",
+        "ptIDClinicalCounts": 1097,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "brca",
+        "type": "newTumor-followUp",
+        "ptIDClinicalCounts": 1097,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "ucs",
+        "type": "pcaScores",
+        "ptIDClinicalCounts": 57,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "ucs",
+        "type": "cnv",
+        "ptIDClinicalCounts": 57,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "ucs",
+        "type": "protein",
+        "ptIDClinicalCounts": 57,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "ucs",
+        "type": "rna",
+        "ptIDClinicalCounts": 57,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "ucs",
+        "type": "methylation",
+        "ptIDClinicalCounts": 57,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "brca",
+        "type": "mds",
+        "ptIDClinicalCounts": 1097,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "ucs",
+        "type": "newTumor-followUp",
+        "ptIDClinicalCounts": 57,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "ucs",
+        "type": "followUp",
+        "ptIDClinicalCounts": 57,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "ucs",
+        "type": "otherMalignancy",
+        "ptIDClinicalCounts": 57,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "ucs",
+        "type": "radiation",
+        "ptIDClinicalCounts": 57,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "ucs",
+        "type": "newTumor",
+        "ptIDClinicalCounts": 57,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "ucs",
+        "type": "drug",
+        "ptIDClinicalCounts": 57,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "brain",
+        "type": "patient",
+        "ptIDClinicalCounts": 1111,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "brain",
+        "type": "drug",
+        "ptIDClinicalCounts": 1111,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "brain",
+        "type": "newTumor",
+        "ptIDClinicalCounts": 1111,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "brain",
+        "type": "radiation",
+        "ptIDClinicalCounts": 1111,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "brain",
+        "type": "otherMalignancy",
+        "ptIDClinicalCounts": 1111,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "brain",
+        "type": "followUp",
+        "ptIDClinicalCounts": 1111,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "brain",
+        "type": "newTumor-followUp",
+        "ptIDClinicalCounts": 1111,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "ucs",
+        "type": "patient",
+        "ptIDClinicalCounts": 57,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "ucs",
+        "type": "events",
+        "ptIDClinicalCounts": 57,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "ucs",
+        "type": "mut01",
+        "ptIDClinicalCounts": 57,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "ucs",
+        "type": "mut",
+        "ptIDClinicalCounts": 57,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "ucs",
+        "type": "color",
+        "ptIDClinicalCounts": 57,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "meso",
+        "type": "ptDegree",
+        "ptIDClinicalCounts": 87,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "meso",
+        "type": "edges",
+        "ptIDClinicalCounts": 87,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "meso",
+        "type": "mds",
+        "ptIDClinicalCounts": 87,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "skcm",
+        "type": "color",
+        "ptIDClinicalCounts": 470,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "meso",
+        "type": "pcaScores",
+        "ptIDClinicalCounts": 87,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "meso",
+        "type": "cnv",
+        "ptIDClinicalCounts": 87,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "skcm",
+        "type": "events",
+        "ptIDClinicalCounts": 470,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "skcm",
+        "type": "patient",
+        "ptIDClinicalCounts": 470,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "skcm",
+        "type": "drug",
+        "ptIDClinicalCounts": 470,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "skcm",
+        "type": "newTumor",
+        "ptIDClinicalCounts": 470,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "skcm",
+        "type": "radiation",
+        "ptIDClinicalCounts": 470,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "skcm",
+        "type": "otherMalignancy",
+        "ptIDClinicalCounts": 470,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "skcm",
+        "type": "followUp",
+        "ptIDClinicalCounts": 470,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "skcm",
+        "type": "newTumor-followUp",
+        "ptIDClinicalCounts": 470,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "skcm",
+        "type": "methylation",
+        "ptIDClinicalCounts": 470,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "meso",
+        "type": "protein",
+        "ptIDClinicalCounts": 87,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "meso",
+        "type": "rna",
+        "ptIDClinicalCounts": 87,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "skcm",
+        "type": "cnv",
+        "ptIDClinicalCounts": 470,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "meso",
+        "type": "methylation",
+        "ptIDClinicalCounts": 87,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "skcm",
+        "type": "mds",
+        "ptIDClinicalCounts": 470,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "meso",
+        "type": "newTumor-followUp",
+        "ptIDClinicalCounts": 87,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "skcm",
+        "type": "ptDegree",
+        "ptIDClinicalCounts": 470,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "prad",
+        "type": "color",
+        "ptIDClinicalCounts": 500,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "prad",
+        "type": "mut",
+        "ptIDClinicalCounts": 500,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "prad",
+        "type": "mut01",
+        "ptIDClinicalCounts": 500,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "prad",
+        "type": "events",
+        "ptIDClinicalCounts": 500,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "prad",
+        "type": "patient",
+        "ptIDClinicalCounts": 500,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "prad",
+        "type": "drug",
+        "ptIDClinicalCounts": 500,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "prad",
+        "type": "newTumor",
+        "ptIDClinicalCounts": 500,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "prad",
+        "type": "radiation",
+        "ptIDClinicalCounts": 500,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "prad",
+        "type": "otherMalignancy",
+        "ptIDClinicalCounts": 500,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "prad",
+        "type": "followUp",
+        "ptIDClinicalCounts": 500,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "prad",
+        "type": "newTumor-followUp",
+        "ptIDClinicalCounts": 500,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "prad",
+        "type": "methylation",
+        "ptIDClinicalCounts": 500,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "meso",
+        "type": "followUp",
+        "ptIDClinicalCounts": 87,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "prad",
+        "type": "protein",
+        "ptIDClinicalCounts": 500,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "prad",
+        "type": "cnv",
+        "ptIDClinicalCounts": 500,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "meso",
+        "type": "otherMalignancy",
+        "ptIDClinicalCounts": 87,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "prad",
+        "type": "mds",
+        "ptIDClinicalCounts": 500,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "prad",
+        "type": "edges",
+        "ptIDClinicalCounts": 500,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "meso",
+        "type": "radiation",
+        "ptIDClinicalCounts": 87,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "chol",
+        "type": "color",
+        "ptIDClinicalCounts": 45,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "chol",
+        "type": "mut",
+        "ptIDClinicalCounts": 45,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "chol",
+        "type": "mut01",
+        "ptIDClinicalCounts": 45,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "chol",
+        "type": "events",
+        "ptIDClinicalCounts": 45,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "chol",
+        "type": "patient",
+        "ptIDClinicalCounts": 45,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "chol",
+        "type": "drug",
+        "ptIDClinicalCounts": 45,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "chol",
+        "type": "newTumor",
+        "ptIDClinicalCounts": 45,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "chol",
+        "type": "radiation",
+        "ptIDClinicalCounts": 45,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "chol",
+        "type": "otherMalignancy",
+        "ptIDClinicalCounts": 45,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "chol",
+        "type": "followUp",
+        "ptIDClinicalCounts": 45,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "chol",
+        "type": "newTumor-followUp",
+        "ptIDClinicalCounts": 45,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "chol",
+        "type": "methylation",
+        "ptIDClinicalCounts": 45,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "meso",
+        "type": "newTumor",
+        "ptIDClinicalCounts": 87,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "chol",
+        "type": "protein",
+        "ptIDClinicalCounts": 45,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "chol",
+        "type": "cnv",
+        "ptIDClinicalCounts": 45,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "meso",
+        "type": "drug",
+        "ptIDClinicalCounts": 87,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "chol",
+        "type": "mds",
+        "ptIDClinicalCounts": 45,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "chol",
+        "type": "edges",
+        "ptIDClinicalCounts": 45,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "meso",
+        "type": "patient",
+        "ptIDClinicalCounts": 87,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "coadread",
+        "type": "color",
+        "ptIDClinicalCounts": 0,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "meso",
+        "type": "events",
+        "ptIDClinicalCounts": 87,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "meso",
+        "type": "mut01",
+        "ptIDClinicalCounts": 87,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "meso",
+        "type": "mut",
+        "ptIDClinicalCounts": 87,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "coadread",
+        "type": "patient",
+        "ptIDClinicalCounts": 0,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "coadread",
+        "type": "drug",
+        "ptIDClinicalCounts": 0,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "coadread",
+        "type": "newTumor",
+        "ptIDClinicalCounts": 0,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "coadread",
+        "type": "radiation",
+        "ptIDClinicalCounts": 0,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "coadread",
+        "type": "otherMalignancy",
+        "ptIDClinicalCounts": 0,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "coadread",
+        "type": "followUp",
+        "ptIDClinicalCounts": 0,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "coadread",
+        "type": "newTumor-followUp",
+        "ptIDClinicalCounts": 0,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "meso",
+        "type": "color",
+        "ptIDClinicalCounts": 87,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "tgct",
+        "type": "ptDegree",
+        "ptIDClinicalCounts": 134,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "tgct",
+        "type": "edges",
+        "ptIDClinicalCounts": 134,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "tgct",
+        "type": "mds",
+        "ptIDClinicalCounts": 134,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "tgct",
+        "type": "cnv",
+        "ptIDClinicalCounts": 134,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "tgct",
+        "type": "methylation",
+        "ptIDClinicalCounts": 134,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "tgct",
+        "type": "newTumor-followUp",
+        "ptIDClinicalCounts": 134,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "coadread",
+        "type": "ptDegree",
+        "ptIDClinicalCounts": 0,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "lung",
+        "type": "color",
+        "ptIDClinicalCounts": 0,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "tgct",
+        "type": "followUp",
+        "ptIDClinicalCounts": 134,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "tgct",
+        "type": "otherMalignancy",
+        "ptIDClinicalCounts": 134,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "tgct",
+        "type": "radiation",
+        "ptIDClinicalCounts": 134,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "lung",
+        "type": "patient",
+        "ptIDClinicalCounts": 0,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "lung",
+        "type": "drug",
+        "ptIDClinicalCounts": 0,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "lung",
+        "type": "newTumor",
+        "ptIDClinicalCounts": 0,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "lung",
+        "type": "radiation",
+        "ptIDClinicalCounts": 0,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "lung",
+        "type": "otherMalignancy",
+        "ptIDClinicalCounts": 0,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "lung",
+        "type": "followUp",
+        "ptIDClinicalCounts": 0,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "lung",
+        "type": "newTumor-followUp",
+        "ptIDClinicalCounts": 0,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "tgct",
+        "type": "newTumor",
+        "ptIDClinicalCounts": 134,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "tgct",
+        "type": "drug",
+        "ptIDClinicalCounts": 134,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "tgct",
+        "type": "patient",
+        "ptIDClinicalCounts": 134,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "tgct",
+        "type": "events",
+        "ptIDClinicalCounts": 134,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "tgct",
+        "type": "mut01",
+        "ptIDClinicalCounts": 134,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "tgct",
+        "type": "mut",
+        "ptIDClinicalCounts": 134,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "tgct",
+        "type": "color",
+        "ptIDClinicalCounts": 134,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "lung",
+        "type": "ptDegree",
+        "ptIDClinicalCounts": 0,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "sarc",
+        "type": "color",
+        "ptIDClinicalCounts": 261,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "sarc",
+        "type": "mut",
+        "ptIDClinicalCounts": 261,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "sarc",
+        "type": "mut01",
+        "ptIDClinicalCounts": 261,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "sarc",
+        "type": "events",
+        "ptIDClinicalCounts": 261,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "sarc",
+        "type": "patient",
+        "ptIDClinicalCounts": 261,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "sarc",
+        "type": "drug",
+        "ptIDClinicalCounts": 261,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "sarc",
+        "type": "newTumor",
+        "ptIDClinicalCounts": 261,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "sarc",
+        "type": "radiation",
+        "ptIDClinicalCounts": 261,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "sarc",
+        "type": "otherMalignancy",
+        "ptIDClinicalCounts": 261,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "sarc",
+        "type": "followUp",
+        "ptIDClinicalCounts": 261,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "sarc",
+        "type": "newTumor-followUp",
+        "ptIDClinicalCounts": 261,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "sarc",
+        "type": "methylation",
+        "ptIDClinicalCounts": 261,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "coad",
+        "type": "ptDegree",
+        "ptIDClinicalCounts": 459,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "coad",
+        "type": "edges",
+        "ptIDClinicalCounts": 459,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "sarc",
+        "type": "cnv",
+        "ptIDClinicalCounts": 261,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "coad",
+        "type": "mds",
+        "ptIDClinicalCounts": 459,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "sarc",
+        "type": "mds",
+        "ptIDClinicalCounts": 261,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "sarc",
+        "type": "edges",
+        "ptIDClinicalCounts": 261,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "coad",
+        "type": "pcaScores",
+        "ptIDClinicalCounts": 459,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "paad",
+        "type": "color",
+        "ptIDClinicalCounts": 185,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "paad",
+        "type": "mut",
+        "ptIDClinicalCounts": 185,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "paad",
+        "type": "mut01",
+        "ptIDClinicalCounts": 185,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "paad",
+        "type": "events",
+        "ptIDClinicalCounts": 185,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "paad",
+        "type": "patient",
+        "ptIDClinicalCounts": 185,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "paad",
+        "type": "drug",
+        "ptIDClinicalCounts": 185,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "paad",
+        "type": "newTumor",
+        "ptIDClinicalCounts": 185,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "paad",
+        "type": "radiation",
+        "ptIDClinicalCounts": 185,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "paad",
+        "type": "otherMalignancy",
+        "ptIDClinicalCounts": 185,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "paad",
+        "type": "followUp",
+        "ptIDClinicalCounts": 185,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "paad",
+        "type": "newTumor-followUp",
+        "ptIDClinicalCounts": 185,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "paad",
+        "type": "methylation",
+        "ptIDClinicalCounts": 185,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "coad",
+        "type": "cnv",
+        "ptIDClinicalCounts": 459,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "paad",
+        "type": "protein",
+        "ptIDClinicalCounts": 185,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "paad",
+        "type": "cnv",
+        "ptIDClinicalCounts": 185,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "coad",
+        "type": "rna",
+        "ptIDClinicalCounts": 459,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "paad",
+        "type": "mds",
+        "ptIDClinicalCounts": 185,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "paad",
+        "type": "edges",
+        "ptIDClinicalCounts": 185,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "coad",
+        "type": "methylation",
+        "ptIDClinicalCounts": 459,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "dlbc",
+        "type": "color",
+        "ptIDClinicalCounts": 48,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "dlbc",
+        "type": "mut",
+        "ptIDClinicalCounts": 48,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "dlbc",
+        "type": "mut01",
+        "ptIDClinicalCounts": 48,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "dlbc",
+        "type": "events",
+        "ptIDClinicalCounts": 48,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "dlbc",
+        "type": "patient",
+        "ptIDClinicalCounts": 48,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "dlbc",
+        "type": "drug",
+        "ptIDClinicalCounts": 48,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "dlbc",
+        "type": "newTumor",
+        "ptIDClinicalCounts": 48,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "dlbc",
+        "type": "radiation",
+        "ptIDClinicalCounts": 48,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "dlbc",
+        "type": "otherMalignancy",
+        "ptIDClinicalCounts": 48,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "dlbc",
+        "type": "followUp",
+        "ptIDClinicalCounts": 48,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "dlbc",
+        "type": "newTumor-followUp",
+        "ptIDClinicalCounts": 48,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "dlbc",
+        "type": "methylation",
+        "ptIDClinicalCounts": 48,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "dlbc",
+        "type": "rna",
+        "ptIDClinicalCounts": 48,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "dlbc",
+        "type": "protein",
+        "ptIDClinicalCounts": 48,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "dlbc",
+        "type": "cnv",
+        "ptIDClinicalCounts": 48,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "dlbc",
+        "type": "pcaScores",
+        "ptIDClinicalCounts": 48,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "dlbc",
+        "type": "mds",
+        "ptIDClinicalCounts": 48,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "dlbc",
+        "type": "edges",
+        "ptIDClinicalCounts": 48,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "coad",
+        "type": "newTumor-followUp",
+        "ptIDClinicalCounts": 459,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "kirc",
+        "type": "color",
+        "ptIDClinicalCounts": 537,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "kirc",
+        "type": "mut",
+        "ptIDClinicalCounts": 537,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "kirc",
+        "type": "mut01",
+        "ptIDClinicalCounts": 537,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "kirc",
+        "type": "events",
+        "ptIDClinicalCounts": 537,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "kirc",
+        "type": "patient",
+        "ptIDClinicalCounts": 537,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "kirc",
+        "type": "drug",
+        "ptIDClinicalCounts": 537,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "kirc",
+        "type": "newTumor",
+        "ptIDClinicalCounts": 537,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "kirc",
+        "type": "radiation",
+        "ptIDClinicalCounts": 537,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "coad",
+        "type": "followUp",
+        "ptIDClinicalCounts": 459,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "kirc",
+        "type": "followUp",
+        "ptIDClinicalCounts": 537,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "kirc",
+        "type": "newTumor-followUp",
+        "ptIDClinicalCounts": 537,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "kirc",
+        "type": "methylation",
+        "ptIDClinicalCounts": 537,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "kirc",
+        "type": "rna",
+        "ptIDClinicalCounts": 537,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "kirc",
+        "type": "protein",
+        "ptIDClinicalCounts": 537,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "kirc",
+        "type": "cnv",
+        "ptIDClinicalCounts": 537,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "kirc",
+        "type": "pcaScores",
+        "ptIDClinicalCounts": 537,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "kirc",
+        "type": "mds",
+        "ptIDClinicalCounts": 537,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "kirc",
+        "type": "edges",
+        "ptIDClinicalCounts": 537,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "coad",
+        "type": "otherMalignancy",
+        "ptIDClinicalCounts": 459,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "lgg",
+        "type": "color",
+        "ptIDClinicalCounts": 515,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "coad",
+        "type": "radiation",
+        "ptIDClinicalCounts": 459,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "coad",
+        "type": "newTumor",
+        "ptIDClinicalCounts": 459,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "coad",
+        "type": "drug",
+        "ptIDClinicalCounts": 459,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "lgg",
+        "type": "patient",
+        "ptIDClinicalCounts": 515,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "lgg",
+        "type": "drug",
+        "ptIDClinicalCounts": 515,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "lgg",
+        "type": "newTumor",
+        "ptIDClinicalCounts": 515,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "lgg",
+        "type": "radiation",
+        "ptIDClinicalCounts": 515,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "lgg",
+        "type": "otherMalignancy",
+        "ptIDClinicalCounts": 515,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "lgg",
+        "type": "followUp",
+        "ptIDClinicalCounts": 515,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "lgg",
+        "type": "newTumor-followUp",
+        "ptIDClinicalCounts": 515,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "lgg",
+        "type": "methylation",
+        "ptIDClinicalCounts": 515,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "lgg",
+        "type": "rna",
+        "ptIDClinicalCounts": 515,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "coad",
+        "type": "patient",
+        "ptIDClinicalCounts": 459,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "coad",
+        "type": "events",
+        "ptIDClinicalCounts": 459,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "coad",
+        "type": "mut01",
+        "ptIDClinicalCounts": 459,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "coad",
+        "type": "mut",
+        "ptIDClinicalCounts": 459,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "coad",
+        "type": "color",
+        "ptIDClinicalCounts": 459,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "ov",
+        "type": "ptDegree",
+        "ptIDClinicalCounts": 587,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "lusc",
+        "type": "color",
+        "ptIDClinicalCounts": 504,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "lusc",
+        "type": "mut",
+        "ptIDClinicalCounts": 504,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "lusc",
+        "type": "mut01",
+        "ptIDClinicalCounts": 504,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "ov",
+        "type": "edges",
+        "ptIDClinicalCounts": 587,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "lusc",
+        "type": "patient",
+        "ptIDClinicalCounts": 504,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "lusc",
+        "type": "drug",
+        "ptIDClinicalCounts": 504,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "lusc",
+        "type": "newTumor",
+        "ptIDClinicalCounts": 504,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "lusc",
+        "type": "radiation",
+        "ptIDClinicalCounts": 504,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "lusc",
+        "type": "otherMalignancy",
+        "ptIDClinicalCounts": 504,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "lusc",
+        "type": "followUp",
+        "ptIDClinicalCounts": 504,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "lusc",
+        "type": "newTumor-followUp",
+        "ptIDClinicalCounts": 504,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "lusc",
+        "type": "methylation",
+        "ptIDClinicalCounts": 504,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "ov",
+        "type": "mds",
+        "ptIDClinicalCounts": 587,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "lusc",
+        "type": "protein",
+        "ptIDClinicalCounts": 504,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "lusc",
+        "type": "cnv",
+        "ptIDClinicalCounts": 504,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "ov",
+        "type": "cnv",
+        "ptIDClinicalCounts": 587,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "lusc",
+        "type": "mds",
+        "ptIDClinicalCounts": 504,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "lusc",
+        "type": "edges",
+        "ptIDClinicalCounts": 504,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "ov",
+        "type": "methylation",
+        "ptIDClinicalCounts": 587,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "hnsc",
+        "type": "color",
+        "ptIDClinicalCounts": 528,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "hnsc",
+        "type": "mut",
+        "ptIDClinicalCounts": 528,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "ov",
+        "type": "newTumor-followUp",
+        "ptIDClinicalCounts": 587,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "ov",
+        "type": "followUp",
+        "ptIDClinicalCounts": 587,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "hnsc",
+        "type": "patient",
+        "ptIDClinicalCounts": 528,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "hnsc",
+        "type": "drug",
+        "ptIDClinicalCounts": 528,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "hnsc",
+        "type": "newTumor",
+        "ptIDClinicalCounts": 528,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "hnsc",
+        "type": "radiation",
+        "ptIDClinicalCounts": 528,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "hnsc",
+        "type": "otherMalignancy",
+        "ptIDClinicalCounts": 528,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "hnsc",
+        "type": "followUp",
+        "ptIDClinicalCounts": 528,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "hnsc",
+        "type": "newTumor-followUp",
+        "ptIDClinicalCounts": 528,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "ov",
+        "type": "otherMalignancy",
+        "ptIDClinicalCounts": 587,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "hnsc",
+        "type": "rna",
+        "ptIDClinicalCounts": 528,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "hnsc",
+        "type": "protein",
+        "ptIDClinicalCounts": 528,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "hnsc",
+        "type": "cnv",
+        "ptIDClinicalCounts": 528,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "ov",
+        "type": "radiation",
+        "ptIDClinicalCounts": 587,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "hnsc",
+        "type": "mds",
+        "ptIDClinicalCounts": 528,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "ov",
+        "type": "newTumor",
+        "ptIDClinicalCounts": 587,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "ov",
+        "type": "drug",
+        "ptIDClinicalCounts": 587,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "cesc",
+        "type": "color",
+        "ptIDClinicalCounts": 307,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "cesc",
+        "type": "mut",
+        "ptIDClinicalCounts": 307,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "cesc",
+        "type": "mut01",
+        "ptIDClinicalCounts": 307,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "cesc",
+        "type": "events",
+        "ptIDClinicalCounts": 307,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "cesc",
+        "type": "patient",
+        "ptIDClinicalCounts": 307,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "cesc",
+        "type": "drug",
+        "ptIDClinicalCounts": 307,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "cesc",
+        "type": "newTumor",
+        "ptIDClinicalCounts": 307,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "cesc",
+        "type": "radiation",
+        "ptIDClinicalCounts": 307,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "cesc",
+        "type": "otherMalignancy",
+        "ptIDClinicalCounts": 307,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "cesc",
+        "type": "followUp",
+        "ptIDClinicalCounts": 307,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "cesc",
+        "type": "newTumor-followUp",
+        "ptIDClinicalCounts": 307,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "cesc",
+        "type": "methylation",
+        "ptIDClinicalCounts": 307,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "ov",
+        "type": "patient",
+        "ptIDClinicalCounts": 587,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "cesc",
+        "type": "protein",
+        "ptIDClinicalCounts": 307,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "cesc",
+        "type": "cnv",
+        "ptIDClinicalCounts": 307,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "ov",
+        "type": "events",
+        "ptIDClinicalCounts": 587,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "cesc",
+        "type": "mds",
+        "ptIDClinicalCounts": 307,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "cesc",
+        "type": "edges",
+        "ptIDClinicalCounts": 307,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "ov",
+        "type": "mut01",
+        "ptIDClinicalCounts": 587,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "lihc",
+        "type": "color",
+        "ptIDClinicalCounts": 377,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "lihc",
+        "type": "mut",
+        "ptIDClinicalCounts": 377,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "lihc",
+        "type": "mut01",
+        "ptIDClinicalCounts": 377,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "lihc",
+        "type": "events",
+        "ptIDClinicalCounts": 377,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "lihc",
+        "type": "patient",
+        "ptIDClinicalCounts": 377,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "lihc",
+        "type": "drug",
+        "ptIDClinicalCounts": 377,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "lihc",
+        "type": "newTumor",
+        "ptIDClinicalCounts": 377,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "lihc",
+        "type": "radiation",
+        "ptIDClinicalCounts": 377,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "lihc",
+        "type": "otherMalignancy",
+        "ptIDClinicalCounts": 377,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "lihc",
+        "type": "followUp",
+        "ptIDClinicalCounts": 377,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "lihc",
+        "type": "newTumor-followUp",
+        "ptIDClinicalCounts": 377,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "lihc",
+        "type": "methylation",
+        "ptIDClinicalCounts": 377,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "ov",
+        "type": "mut",
+        "ptIDClinicalCounts": 587,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "lihc",
+        "type": "protein",
+        "ptIDClinicalCounts": 377,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "lihc",
+        "type": "cnv",
+        "ptIDClinicalCounts": 377,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "ov",
+        "type": "color",
+        "ptIDClinicalCounts": 587,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "lihc",
+        "type": "mds",
+        "ptIDClinicalCounts": 377,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "lihc",
+        "type": "edges",
+        "ptIDClinicalCounts": 377,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "pcpg",
+        "type": "ptDegree",
+        "ptIDClinicalCounts": 179,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "kirp",
+        "type": "color",
+        "ptIDClinicalCounts": 291,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "kirp",
+        "type": "mut",
+        "ptIDClinicalCounts": 291,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "kirp",
+        "type": "mut01",
+        "ptIDClinicalCounts": 291,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "kirp",
+        "type": "events",
+        "ptIDClinicalCounts": 291,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "kirp",
+        "type": "patient",
+        "ptIDClinicalCounts": 291,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "kirp",
+        "type": "drug",
+        "ptIDClinicalCounts": 291,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "kirp",
+        "type": "newTumor",
+        "ptIDClinicalCounts": 291,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "kirp",
+        "type": "radiation",
+        "ptIDClinicalCounts": 291,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "kirp",
+        "type": "otherMalignancy",
+        "ptIDClinicalCounts": 291,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "kirp",
+        "type": "followUp",
+        "ptIDClinicalCounts": 291,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "kirp",
+        "type": "newTumor-followUp",
+        "ptIDClinicalCounts": 291,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "kirp",
+        "type": "methylation",
+        "ptIDClinicalCounts": 291,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "pcpg",
+        "type": "edges",
+        "ptIDClinicalCounts": 179,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "pcpg",
+        "type": "mds",
+        "ptIDClinicalCounts": 179,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "kirp",
+        "type": "cnv",
+        "ptIDClinicalCounts": 291,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "pcpg",
+        "type": "cnv",
+        "ptIDClinicalCounts": 179,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "kirp",
+        "type": "mds",
+        "ptIDClinicalCounts": 291,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "kirp",
+        "type": "edges",
+        "ptIDClinicalCounts": 291,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "pcpg",
+        "type": "methylation",
+        "ptIDClinicalCounts": 179,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "ucec",
+        "type": "color",
+        "ptIDClinicalCounts": 548,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "ucec",
+        "type": "mut",
+        "ptIDClinicalCounts": 548,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "ucec",
+        "type": "mut01",
+        "ptIDClinicalCounts": 548,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "ucec",
+        "type": "events",
+        "ptIDClinicalCounts": 548,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "ucec",
+        "type": "patient",
+        "ptIDClinicalCounts": 548,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "ucec",
+        "type": "drug",
+        "ptIDClinicalCounts": 548,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "ucec",
+        "type": "newTumor",
+        "ptIDClinicalCounts": 548,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "ucec",
+        "type": "radiation",
+        "ptIDClinicalCounts": 548,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "ucec",
+        "type": "otherMalignancy",
+        "ptIDClinicalCounts": 548,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "ucec",
+        "type": "followUp",
+        "ptIDClinicalCounts": 548,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "ucec",
+        "type": "newTumor-followUp",
+        "ptIDClinicalCounts": 548,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "ucec",
+        "type": "methylation",
+        "ptIDClinicalCounts": 548,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "pcpg",
+        "type": "newTumor-followUp",
+        "ptIDClinicalCounts": 179,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "ucec",
+        "type": "protein",
+        "ptIDClinicalCounts": 548,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "ucec",
+        "type": "cnv",
+        "ptIDClinicalCounts": 548,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "pcpg",
+        "type": "followUp",
+        "ptIDClinicalCounts": 179,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "ucec",
+        "type": "mds",
+        "ptIDClinicalCounts": 548,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "ucec",
+        "type": "edges",
+        "ptIDClinicalCounts": 548,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "pcpg",
+        "type": "otherMalignancy",
+        "ptIDClinicalCounts": 179,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "pcpg",
+        "type": "radiation",
+        "ptIDClinicalCounts": 179,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "pcpg",
+        "type": "newTumor",
+        "ptIDClinicalCounts": 179,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "pcpg",
+        "type": "drug",
+        "ptIDClinicalCounts": 179,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "pcpg",
+        "type": "patient",
+        "ptIDClinicalCounts": 179,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "luad",
+        "type": "patient",
+        "ptIDClinicalCounts": 522,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "luad",
+        "type": "drug",
+        "ptIDClinicalCounts": 522,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "luad",
+        "type": "newTumor",
+        "ptIDClinicalCounts": 522,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "luad",
+        "type": "radiation",
+        "ptIDClinicalCounts": 522,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "pcpg",
+        "type": "events",
+        "ptIDClinicalCounts": 179,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "luad",
+        "type": "followUp",
+        "ptIDClinicalCounts": 522,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "luad",
+        "type": "newTumor-followUp",
+        "ptIDClinicalCounts": 522,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "pcpg",
+        "type": "mut01",
+        "ptIDClinicalCounts": 179,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "pcpg",
+        "type": "mut",
+        "ptIDClinicalCounts": 179,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "luad",
+        "type": "protein",
+        "ptIDClinicalCounts": 522,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "luad",
+        "type": "cnv",
+        "ptIDClinicalCounts": 522,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "pcpg",
+        "type": "color",
+        "ptIDClinicalCounts": 179,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "luad",
+        "type": "mds",
+        "ptIDClinicalCounts": 522,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "thym",
+        "type": "ptDegree",
+        "ptIDClinicalCounts": 124,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "thym",
+        "type": "edges",
+        "ptIDClinicalCounts": 124,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "esca",
+        "type": "color",
+        "ptIDClinicalCounts": 185,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "esca",
+        "type": "mut",
+        "ptIDClinicalCounts": 185,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "esca",
+        "type": "mut01",
+        "ptIDClinicalCounts": 185,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "esca",
+        "type": "events",
+        "ptIDClinicalCounts": 185,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "esca",
+        "type": "patient",
+        "ptIDClinicalCounts": 185,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "esca",
+        "type": "drug",
+        "ptIDClinicalCounts": 185,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "esca",
+        "type": "newTumor",
+        "ptIDClinicalCounts": 185,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "esca",
+        "type": "radiation",
+        "ptIDClinicalCounts": 185,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "esca",
+        "type": "otherMalignancy",
+        "ptIDClinicalCounts": 185,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "esca",
+        "type": "followUp",
+        "ptIDClinicalCounts": 185,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "esca",
+        "type": "newTumor-followUp",
+        "ptIDClinicalCounts": 185,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "esca",
+        "type": "methylation",
+        "ptIDClinicalCounts": 185,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "thym",
+        "type": "mds",
+        "ptIDClinicalCounts": 124,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "esca",
+        "type": "protein",
+        "ptIDClinicalCounts": 185,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "esca",
+        "type": "cnv",
+        "ptIDClinicalCounts": 185,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "thym",
+        "type": "cnv",
+        "ptIDClinicalCounts": 124,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "esca",
+        "type": "mds",
+        "ptIDClinicalCounts": 185,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "esca",
+        "type": "edges",
+        "ptIDClinicalCounts": 185,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "thym",
+        "type": "protein",
+        "ptIDClinicalCounts": 124,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "stad",
+        "type": "color",
+        "ptIDClinicalCounts": 443,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "stad",
+        "type": "mut",
+        "ptIDClinicalCounts": 443,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "stad",
+        "type": "mut01",
+        "ptIDClinicalCounts": 443,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "stad",
+        "type": "events",
+        "ptIDClinicalCounts": 443,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "stad",
+        "type": "patient",
+        "ptIDClinicalCounts": 443,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "stad",
+        "type": "drug",
+        "ptIDClinicalCounts": 443,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "stad",
+        "type": "newTumor",
+        "ptIDClinicalCounts": 443,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "stad",
+        "type": "radiation",
+        "ptIDClinicalCounts": 443,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "stad",
+        "type": "otherMalignancy",
+        "ptIDClinicalCounts": 443,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "stad",
+        "type": "followUp",
+        "ptIDClinicalCounts": 443,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "stad",
+        "type": "newTumor-followUp",
+        "ptIDClinicalCounts": 443,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "stad",
+        "type": "methylation",
+        "ptIDClinicalCounts": 443,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "thym",
+        "type": "methylation",
+        "ptIDClinicalCounts": 124,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "stad",
+        "type": "protein",
+        "ptIDClinicalCounts": 443,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "stad",
+        "type": "cnv",
+        "ptIDClinicalCounts": 443,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "thym",
+        "type": "newTumor-followUp",
+        "ptIDClinicalCounts": 124,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "stad",
+        "type": "mds",
+        "ptIDClinicalCounts": 443,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "stad",
+        "type": "edges",
+        "ptIDClinicalCounts": 443,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "thym",
+        "type": "followUp",
+        "ptIDClinicalCounts": 124,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "thca",
+        "type": "color",
+        "ptIDClinicalCounts": 507,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "thca",
+        "type": "mut",
+        "ptIDClinicalCounts": 507,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "thca",
+        "type": "mut01",
+        "ptIDClinicalCounts": 507,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "thca",
+        "type": "events",
+        "ptIDClinicalCounts": 507,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "thca",
+        "type": "patient",
+        "ptIDClinicalCounts": 507,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "thca",
+        "type": "drug",
+        "ptIDClinicalCounts": 507,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "thca",
+        "type": "newTumor",
+        "ptIDClinicalCounts": 507,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "thca",
+        "type": "radiation",
+        "ptIDClinicalCounts": 507,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "thca",
+        "type": "otherMalignancy",
+        "ptIDClinicalCounts": 507,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "thca",
+        "type": "followUp",
+        "ptIDClinicalCounts": 507,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "thca",
+        "type": "newTumor-followUp",
+        "ptIDClinicalCounts": 507,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "thca",
+        "type": "methylation",
+        "ptIDClinicalCounts": 507,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "thym",
+        "type": "otherMalignancy",
+        "ptIDClinicalCounts": 124,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "thym",
+        "type": "radiation",
+        "ptIDClinicalCounts": 124,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "thca",
+        "type": "cnv",
+        "ptIDClinicalCounts": 507,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "thym",
+        "type": "newTumor",
+        "ptIDClinicalCounts": 124,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "thca",
+        "type": "mds",
+        "ptIDClinicalCounts": 507,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "thca",
+        "type": "edges",
+        "ptIDClinicalCounts": 507,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "thym",
+        "type": "drug",
+        "ptIDClinicalCounts": 124,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "blca",
+        "type": "color",
+        "ptIDClinicalCounts": 412,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "blca",
+        "type": "mut",
+        "ptIDClinicalCounts": 412,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "blca",
+        "type": "mut01",
+        "ptIDClinicalCounts": 412,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "blca",
+        "type": "events",
+        "ptIDClinicalCounts": 412,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "blca",
+        "type": "patient",
+        "ptIDClinicalCounts": 412,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "blca",
+        "type": "drug",
+        "ptIDClinicalCounts": 412,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "blca",
+        "type": "newTumor",
+        "ptIDClinicalCounts": 412,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "blca",
+        "type": "radiation",
+        "ptIDClinicalCounts": 412,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "blca",
+        "type": "otherMalignancy",
+        "ptIDClinicalCounts": 412,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "blca",
+        "type": "followUp",
+        "ptIDClinicalCounts": 412,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "blca",
+        "type": "newTumor-followUp",
+        "ptIDClinicalCounts": 412,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "blca",
+        "type": "methylation",
+        "ptIDClinicalCounts": 412,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "thym",
+        "type": "patient",
+        "ptIDClinicalCounts": 124,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "blca",
+        "type": "protein",
+        "ptIDClinicalCounts": 412,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "blca",
+        "type": "cnv",
+        "ptIDClinicalCounts": 412,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "thym",
+        "type": "events",
+        "ptIDClinicalCounts": 124,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "blca",
+        "type": "mds",
+        "ptIDClinicalCounts": 412,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "blca",
+        "type": "edges",
+        "ptIDClinicalCounts": 412,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "thym",
+        "type": "mut01",
+        "ptIDClinicalCounts": 124,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "gbm",
+        "type": "color",
+        "ptIDClinicalCounts": 596,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "thym",
+        "type": "mut",
+        "ptIDClinicalCounts": 124,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "thym",
+        "type": "color",
+        "ptIDClinicalCounts": 124,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "read",
+        "type": "ptDegree",
+        "ptIDClinicalCounts": 170,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "gbm",
+        "type": "patient",
+        "ptIDClinicalCounts": 596,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "gbm",
+        "type": "drug",
+        "ptIDClinicalCounts": 596,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "gbm",
+        "type": "newTumor",
+        "ptIDClinicalCounts": 596,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "gbm",
+        "type": "radiation",
+        "ptIDClinicalCounts": 596,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "gbm",
+        "type": "otherMalignancy",
+        "ptIDClinicalCounts": 596,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "gbm",
+        "type": "followUp",
+        "ptIDClinicalCounts": 596,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "gbm",
+        "type": "newTumor-followUp",
+        "ptIDClinicalCounts": 596,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "gbm",
+        "type": "methylation",
+        "ptIDClinicalCounts": 596,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "gbm",
+        "type": "rna",
+        "ptIDClinicalCounts": 596,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "read",
+        "type": "edges",
+        "ptIDClinicalCounts": 170,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "read",
+        "type": "mds",
+        "ptIDClinicalCounts": 170,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "read",
+        "type": "pcaScores",
+        "ptIDClinicalCounts": 170,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "read",
+        "type": "cnv",
+        "ptIDClinicalCounts": 170,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "read",
+        "type": "rna",
+        "ptIDClinicalCounts": 170,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "read",
+        "type": "methylation",
+        "ptIDClinicalCounts": 170,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "kich",
+        "type": "color",
+        "ptIDClinicalCounts": 113,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "kich",
+        "type": "mut",
+        "ptIDClinicalCounts": 113,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "kich",
+        "type": "mut01",
+        "ptIDClinicalCounts": 113,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "kich",
+        "type": "events",
+        "ptIDClinicalCounts": 113,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "kich",
+        "type": "patient",
+        "ptIDClinicalCounts": 113,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "kich",
+        "type": "drug",
+        "ptIDClinicalCounts": 113,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "kich",
+        "type": "newTumor",
+        "ptIDClinicalCounts": 113,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "kich",
+        "type": "radiation",
+        "ptIDClinicalCounts": 113,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "kich",
+        "type": "otherMalignancy",
+        "ptIDClinicalCounts": 113,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "kich",
+        "type": "followUp",
+        "ptIDClinicalCounts": 113,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "kich",
+        "type": "newTumor-followUp",
+        "ptIDClinicalCounts": 113,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "kich",
+        "type": "methylation",
+        "ptIDClinicalCounts": 113,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "read",
+        "type": "newTumor-followUp",
+        "ptIDClinicalCounts": 170,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "kich",
+        "type": "protein",
+        "ptIDClinicalCounts": 113,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "kich",
+        "type": "cnv",
+        "ptIDClinicalCounts": 113,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "read",
+        "type": "followUp",
+        "ptIDClinicalCounts": 170,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "kich",
+        "type": "mds",
+        "ptIDClinicalCounts": 113,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "kich",
+        "type": "edges",
+        "ptIDClinicalCounts": 113,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "read",
+        "type": "otherMalignancy",
+        "ptIDClinicalCounts": 170,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "acc",
+        "type": "color",
+        "ptIDClinicalCounts": 92,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "acc",
+        "type": "mut",
+        "ptIDClinicalCounts": 92,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "acc",
+        "type": "mut01",
+        "ptIDClinicalCounts": 92,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "acc",
+        "type": "events",
+        "ptIDClinicalCounts": 92,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "acc",
+        "type": "patient",
+        "ptIDClinicalCounts": 92,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "acc",
+        "type": "drug",
+        "ptIDClinicalCounts": 92,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "acc",
+        "type": "newTumor",
+        "ptIDClinicalCounts": 92,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "acc",
+        "type": "radiation",
+        "ptIDClinicalCounts": 92,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "acc",
+        "type": "otherMalignancy",
+        "ptIDClinicalCounts": 92,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "acc",
+        "type": "followUp",
+        "ptIDClinicalCounts": 92,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "acc",
+        "type": "newTumor-followUp",
+        "ptIDClinicalCounts": 92,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "acc",
+        "type": "methylation",
+        "ptIDClinicalCounts": 92,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "acc",
+        "type": "rna",
+        "ptIDClinicalCounts": 92,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "acc",
+        "type": "protein",
+        "ptIDClinicalCounts": 92,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "acc",
+        "type": "cnv",
+        "ptIDClinicalCounts": 92,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "acc",
+        "type": "pcaScores",
+        "ptIDClinicalCounts": 92,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "acc",
+        "type": "mds",
+        "ptIDClinicalCounts": 92,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "acc",
+        "type": "edges",
+        "ptIDClinicalCounts": 92,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "read",
+        "type": "radiation",
+        "ptIDClinicalCounts": 170,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "laml",
+        "type": "color",
+        "ptIDClinicalCounts": 200,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "laml",
+        "type": "mut",
+        "ptIDClinicalCounts": 200,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "read",
+        "type": "newTumor",
+        "ptIDClinicalCounts": 170,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "laml",
+        "type": "events",
+        "ptIDClinicalCounts": 200,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "laml",
+        "type": "patient",
+        "ptIDClinicalCounts": 200,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "laml",
+        "type": "drug",
+        "ptIDClinicalCounts": 200,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "laml",
+        "type": "newTumor",
+        "ptIDClinicalCounts": 200,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "laml",
+        "type": "radiation",
+        "ptIDClinicalCounts": 200,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "laml",
+        "type": "otherMalignancy",
+        "ptIDClinicalCounts": 200,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "laml",
+        "type": "followUp",
+        "ptIDClinicalCounts": 200,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "laml",
+        "type": "newTumor-followUp",
+        "ptIDClinicalCounts": 200,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "laml",
+        "type": "methylation",
+        "ptIDClinicalCounts": 200,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "read",
+        "type": "drug",
+        "ptIDClinicalCounts": 170,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "laml",
+        "type": "protein",
+        "ptIDClinicalCounts": 200,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "read",
+        "type": "patient",
+        "ptIDClinicalCounts": 170,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "read",
+        "type": "events",
+        "ptIDClinicalCounts": 170,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "read",
+        "type": "mut01",
+        "ptIDClinicalCounts": 170,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "read",
+        "type": "mut",
+        "ptIDClinicalCounts": 170,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "laml",
+        "type": "ptDegree",
+        "ptIDClinicalCounts": 200,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "uvm",
+        "type": "color",
+        "ptIDClinicalCounts": 80,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "uvm",
+        "type": "mut",
+        "ptIDClinicalCounts": 80,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "uvm",
+        "type": "mut01",
+        "ptIDClinicalCounts": 80,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "uvm",
+        "type": "events",
+        "ptIDClinicalCounts": 80,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "uvm",
+        "type": "patient",
+        "ptIDClinicalCounts": 80,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "uvm",
+        "type": "drug",
+        "ptIDClinicalCounts": 80,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "uvm",
+        "type": "newTumor",
+        "ptIDClinicalCounts": 80,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "uvm",
+        "type": "radiation",
+        "ptIDClinicalCounts": 80,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "uvm",
+        "type": "otherMalignancy",
+        "ptIDClinicalCounts": 80,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "uvm",
+        "type": "followUp",
+        "ptIDClinicalCounts": 80,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "uvm",
+        "type": "newTumor-followUp",
+        "ptIDClinicalCounts": 80,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "uvm",
+        "type": "methylation",
+        "ptIDClinicalCounts": 80,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "uvm",
+        "type": "rna",
+        "ptIDClinicalCounts": 80,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "uvm",
+        "type": "protein",
+        "ptIDClinicalCounts": 80,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "uvm",
+        "type": "cnv",
+        "ptIDClinicalCounts": 80,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "uvm",
+        "type": "pcaScores",
+        "ptIDClinicalCounts": 80,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "uvm",
+        "type": "mds",
+        "ptIDClinicalCounts": 80,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "uvm",
+        "type": "edges",
+        "ptIDClinicalCounts": 80,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "uvm",
+        "type": "ptDegree",
+        "ptIDClinicalCounts": 80,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "read",
+        "type": "color",
+        "ptIDClinicalCounts": 170,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "ucs",
+        "type": "ptDegree",
+        "ptIDClinicalCounts": 57,
+        "IDnotInPtCounts": 0
+    },
+    {
+        "disease": "hnsc",
+        "type": "edges",
+        "ptIDClinicalCounts": 528,
+        "IDnotInPtCounts": 1
+    },
+    {
+        "disease": "hnsc",
+        "type": "events",
+        "ptIDClinicalCounts": 528,
+        "IDnotInPtCounts": 1
+    },
+    {
+        "disease": "hnsc",
+        "type": "mut01",
+        "ptIDClinicalCounts": 528,
+        "IDnotInPtCounts": 1
+    },
+    {
+        "disease": "brca",
+        "type": "protein",
+        "ptIDClinicalCounts": 1097,
+        "IDnotInPtCounts": 1
+    },
+    {
+        "disease": "brca",
+        "type": "cnv",
+        "ptIDClinicalCounts": 1097,
+        "IDnotInPtCounts": 1
+    },
+    {
+        "disease": "kirp",
+        "type": "protein",
+        "ptIDClinicalCounts": 291,
+        "IDnotInPtCounts": 1
+    },
+    {
+        "disease": "lusc",
+        "type": "events",
+        "ptIDClinicalCounts": 504,
+        "IDnotInPtCounts": 1
+    },
+    {
+        "disease": "lgg",
+        "type": "mds",
+        "ptIDClinicalCounts": 515,
+        "IDnotInPtCounts": 1
+    },
+    {
+        "disease": "brain",
+        "type": "events",
+        "ptIDClinicalCounts": 1111,
+        "IDnotInPtCounts": 1
+    },
+    {
+        "disease": "lgg",
+        "type": "cnv",
+        "ptIDClinicalCounts": 515,
+        "IDnotInPtCounts": 1
+    },
+    {
+        "disease": "lgg",
+        "type": "events",
+        "ptIDClinicalCounts": 515,
+        "IDnotInPtCounts": 1
+    },
+    {
+        "disease": "luad",
+        "type": "events",
+        "ptIDClinicalCounts": 522,
+        "IDnotInPtCounts": 1
+    },
+    {
+        "disease": "luad",
+        "type": "otherMalignancy",
+        "ptIDClinicalCounts": 522,
+        "IDnotInPtCounts": 1
+    },
+    {
+        "disease": "lgg",
+        "type": "mut",
+        "ptIDClinicalCounts": 515,
+        "IDnotInPtCounts": 1
+    },
+    {
+        "disease": "gbm",
+        "type": "protein",
+        "ptIDClinicalCounts": 596,
+        "IDnotInPtCounts": 1
+    },
+    {
+        "disease": "gbm",
+        "type": "events",
+        "ptIDClinicalCounts": 596,
+        "IDnotInPtCounts": 1
+    },
+    {
+        "disease": "brca",
+        "type": "events",
+        "ptIDClinicalCounts": 1097,
+        "IDnotInPtCounts": 2
+    },
+    {
+        "disease": "hnsc",
+        "type": "methylation",
+        "ptIDClinicalCounts": 528,
+        "IDnotInPtCounts": 2
+    },
+    {
+        "disease": "read",
+        "type": "protein",
+        "ptIDClinicalCounts": 170,
+        "IDnotInPtCounts": 2
+    },
+    {
+        "disease": "thca",
+        "type": "protein",
+        "ptIDClinicalCounts": 507,
+        "IDnotInPtCounts": 2
+    },
+    {
+        "disease": "brain",
+        "type": "rna",
+        "ptIDClinicalCounts": 1111,
+        "IDnotInPtCounts": 2
+    },
+    {
+        "disease": "thym",
+        "type": "rna",
+        "ptIDClinicalCounts": 124,
+        "IDnotInPtCounts": 2
+    },
+    {
+        "disease": "thym",
+        "type": "pcaScores",
+        "ptIDClinicalCounts": 124,
+        "IDnotInPtCounts": 2
+    },
+    {
+        "disease": "hnsc",
+        "type": "pcaScores",
+        "ptIDClinicalCounts": 528,
+        "IDnotInPtCounts": 2
+    },
+    {
+        "disease": "gbm",
+        "type": "mut",
+        "ptIDClinicalCounts": 596,
+        "IDnotInPtCounts": 3
+    },
+    {
+        "disease": "sarc",
+        "type": "protein",
+        "ptIDClinicalCounts": 261,
+        "IDnotInPtCounts": 3
+    },
+    {
+        "disease": "pcpg",
+        "type": "protein",
+        "ptIDClinicalCounts": 179,
+        "IDnotInPtCounts": 3
+    },
+    {
+        "disease": "brain",
+        "type": "protein",
+        "ptIDClinicalCounts": 1111,
+        "IDnotInPtCounts": 3
+    },
+    {
+        "disease": "kirc",
+        "type": "otherMalignancy",
+        "ptIDClinicalCounts": 537,
+        "IDnotInPtCounts": 3
+    },
+    {
+        "disease": "gbm",
+        "type": "mds",
+        "ptIDClinicalCounts": 596,
+        "IDnotInPtCounts": 3
+    },
+    {
+        "disease": "coad",
+        "type": "protein",
+        "ptIDClinicalCounts": 459,
+        "IDnotInPtCounts": 4
+    },
+    {
+        "disease": "ov",
+        "type": "rna",
+        "ptIDClinicalCounts": 587,
+        "IDnotInPtCounts": 4
+    },
+    {
+        "disease": "gbm",
+        "type": "cnv",
+        "ptIDClinicalCounts": 596,
+        "IDnotInPtCounts": 4
+    },
+    {
+        "disease": "ov",
+        "type": "pcaScores",
+        "ptIDClinicalCounts": 587,
+        "IDnotInPtCounts": 4
+    },
+    {
+        "disease": "brca",
+        "type": "mut01",
+        "ptIDClinicalCounts": 1097,
+        "IDnotInPtCounts": 5
+    },
+    {
+        "disease": "paad",
+        "type": "pcaScores",
+        "ptIDClinicalCounts": 185,
+        "IDnotInPtCounts": 5
+    },
+    {
+        "disease": "paad",
+        "type": "rna",
+        "ptIDClinicalCounts": 185,
+        "IDnotInPtCounts": 5
+    },
+    {
+        "disease": "brain",
+        "type": "mds",
+        "ptIDClinicalCounts": 1111,
+        "IDnotInPtCounts": 5
+    },
+    {
+        "disease": "brain",
+        "type": "color",
+        "ptIDClinicalCounts": 1111,
+        "IDnotInPtCounts": 5
+    },
+    {
+        "disease": "brain",
+        "type": "mut",
+        "ptIDClinicalCounts": 1111,
+        "IDnotInPtCounts": 5
+    },
+    {
+        "disease": "brca",
+        "type": "mut",
+        "ptIDClinicalCounts": 1097,
+        "IDnotInPtCounts": 5
+    },
+    {
+        "disease": "cesc",
+        "type": "rna",
+        "ptIDClinicalCounts": 307,
+        "IDnotInPtCounts": 6
+    },
+    {
+        "disease": "cesc",
+        "type": "pcaScores",
+        "ptIDClinicalCounts": 307,
+        "IDnotInPtCounts": 6
+    },
+    {
+        "disease": "sarc",
+        "type": "pcaScores",
+        "ptIDClinicalCounts": 261,
+        "IDnotInPtCounts": 6
+    },
+    {
+        "disease": "brca",
+        "type": "edges",
+        "ptIDClinicalCounts": 1097,
+        "IDnotInPtCounts": 6
+    },
+    {
+        "disease": "sarc",
+        "type": "rna",
+        "ptIDClinicalCounts": 261,
+        "IDnotInPtCounts": 6
+    },
+    {
+        "disease": "lgg",
+        "type": "protein",
+        "ptIDClinicalCounts": 515,
+        "IDnotInPtCounts": 7
+    },
+    {
+        "disease": "brain",
+        "type": "cnv",
+        "ptIDClinicalCounts": 1111,
+        "IDnotInPtCounts": 7
+    },
+    {
+        "disease": "pcpg",
+        "type": "rna",
+        "ptIDClinicalCounts": 179,
+        "IDnotInPtCounts": 8
+    },
+    {
+        "disease": "brca",
+        "type": "methylation",
+        "ptIDClinicalCounts": 1097,
+        "IDnotInPtCounts": 8
+    },
+    {
+        "disease": "pcpg",
+        "type": "pcaScores",
+        "ptIDClinicalCounts": 179,
+        "IDnotInPtCounts": 8
+    },
+    {
+        "disease": "chol",
+        "type": "pcaScores",
+        "ptIDClinicalCounts": 45,
+        "IDnotInPtCounts": 9
+    },
+    {
+        "disease": "chol",
+        "type": "rna",
+        "ptIDClinicalCounts": 45,
+        "IDnotInPtCounts": 9
+    },
+    {
+        "disease": "gbm",
+        "type": "mut01",
+        "ptIDClinicalCounts": 596,
+        "IDnotInPtCounts": 11
+    },
+    {
+        "disease": "ov",
+        "type": "protein",
+        "ptIDClinicalCounts": 587,
+        "IDnotInPtCounts": 12
+    },
+    {
+        "disease": "gbm",
+        "type": "edges",
+        "ptIDClinicalCounts": 596,
+        "IDnotInPtCounts": 12
+    },
+    {
+        "disease": "esca",
+        "type": "rna",
+        "ptIDClinicalCounts": 185,
+        "IDnotInPtCounts": 12
+    },
+    {
+        "disease": "esca",
+        "type": "pcaScores",
+        "ptIDClinicalCounts": 185,
+        "IDnotInPtCounts": 12
+    },
+    {
+        "disease": "gbm",
+        "type": "pcaScores",
+        "ptIDClinicalCounts": 596,
+        "IDnotInPtCounts": 12
+    },
+    {
+        "disease": "lgg",
+        "type": "mut01",
+        "ptIDClinicalCounts": 515,
+        "IDnotInPtCounts": 15
+    },
+    {
+        "disease": "lgg",
+        "type": "pcaScores",
+        "ptIDClinicalCounts": 515,
+        "IDnotInPtCounts": 15
+    },
+    {
+        "disease": "lgg",
+        "type": "edges",
+        "ptIDClinicalCounts": 515,
+        "IDnotInPtCounts": 15
+    },
+    {
+        "disease": "tgct",
+        "type": "protein",
+        "ptIDClinicalCounts": 134,
+        "IDnotInPtCounts": 18
+    },
+    {
+        "disease": "blca",
+        "type": "rna",
+        "ptIDClinicalCounts": 412,
+        "IDnotInPtCounts": 19
+    },
+    {
+        "disease": "blca",
+        "type": "pcaScores",
+        "ptIDClinicalCounts": 412,
+        "IDnotInPtCounts": 19
+    },
+    {
+        "disease": "brain",
+        "type": "methylation",
+        "ptIDClinicalCounts": 1111,
+        "IDnotInPtCounts": 20
+    },
+    {
+        "disease": "tgct",
+        "type": "pcaScores",
+        "ptIDClinicalCounts": 134,
+        "IDnotInPtCounts": 22
+    },
+    {
+        "disease": "tgct",
+        "type": "rna",
+        "ptIDClinicalCounts": 134,
+        "IDnotInPtCounts": 22
+    },
+    {
+        "disease": "kich",
+        "type": "rna",
+        "ptIDClinicalCounts": 113,
+        "IDnotInPtCounts": 25
+    },
+    {
+        "disease": "kich",
+        "type": "pcaScores",
+        "ptIDClinicalCounts": 113,
+        "IDnotInPtCounts": 25
+    },
+    {
+        "disease": "ucec",
+        "type": "rna",
+        "ptIDClinicalCounts": 548,
+        "IDnotInPtCounts": 25
+    },
+    {
+        "disease": "ucec",
+        "type": "pcaScores",
+        "ptIDClinicalCounts": 548,
+        "IDnotInPtCounts": 25
+    },
+    {
+        "disease": "brain",
+        "type": "mut01",
+        "ptIDClinicalCounts": 1111,
+        "IDnotInPtCounts": 26
+    },
+    {
+        "disease": "brain",
+        "type": "pcaScores",
+        "ptIDClinicalCounts": 1111,
+        "IDnotInPtCounts": 28
+    },
+    {
+        "disease": "brain",
+        "type": "edges",
+        "ptIDClinicalCounts": 1111,
+        "IDnotInPtCounts": 28
+    },
+    {
+        "disease": "kirp",
+        "type": "rna",
+        "ptIDClinicalCounts": 291,
+        "IDnotInPtCounts": 33
+    },
+    {
+        "disease": "kirp",
+        "type": "pcaScores",
+        "ptIDClinicalCounts": 291,
+        "IDnotInPtCounts": 33
+    },
+    {
+        "disease": "stad",
+        "type": "pcaScores",
+        "ptIDClinicalCounts": 443,
+        "IDnotInPtCounts": 35
+    },
+    {
+        "disease": "stad",
+        "type": "rna",
+        "ptIDClinicalCounts": 443,
+        "IDnotInPtCounts": 35
+    },
+    {
+        "disease": "chol",
+        "type": "ptDegree",
+        "ptIDClinicalCounts": 45,
+        "IDnotInPtCounts": 36
+    },
+    {
+        "disease": "dlbc",
+        "type": "ptDegree",
+        "ptIDClinicalCounts": 48,
+        "IDnotInPtCounts": 48
+    },
+    {
+        "disease": "lihc",
+        "type": "rna",
+        "ptIDClinicalCounts": 377,
+        "IDnotInPtCounts": 52
+    },
+    {
+        "disease": "lusc",
+        "type": "rna",
+        "ptIDClinicalCounts": 504,
+        "IDnotInPtCounts": 52
+    },
+    {
+        "disease": "lusc",
+        "type": "pcaScores",
+        "ptIDClinicalCounts": 504,
+        "IDnotInPtCounts": 52
+    },
+    {
+        "disease": "lihc",
+        "type": "pcaScores",
+        "ptIDClinicalCounts": 377,
+        "IDnotInPtCounts": 52
+    },
+    {
+        "disease": "prad",
+        "type": "pcaScores",
+        "ptIDClinicalCounts": 500,
+        "IDnotInPtCounts": 53
+    },
+    {
+        "disease": "prad",
+        "type": "rna",
+        "ptIDClinicalCounts": 500,
+        "IDnotInPtCounts": 53
+    },
+    {
+        "disease": "luad",
+        "type": "edges",
+        "ptIDClinicalCounts": 522,
+        "IDnotInPtCounts": 58
+    },
+    {
+        "disease": "luad",
+        "type": "mut",
+        "ptIDClinicalCounts": 522,
+        "IDnotInPtCounts": 59
+    },
+    {
+        "disease": "luad",
+        "type": "mut01",
+        "ptIDClinicalCounts": 522,
+        "IDnotInPtCounts": 60
+    },
+    {
+        "disease": "luad",
+        "type": "rna",
+        "ptIDClinicalCounts": 522,
+        "IDnotInPtCounts": 61
+    },
+    {
+        "disease": "luad",
+        "type": "methylation",
+        "ptIDClinicalCounts": 522,
+        "IDnotInPtCounts": 63
+    },
+    {
+        "disease": "kich",
+        "type": "ptDegree",
+        "ptIDClinicalCounts": 113,
+        "IDnotInPtCounts": 66
+    },
+    {
+        "disease": "thca",
+        "type": "rna",
+        "ptIDClinicalCounts": 507,
+        "IDnotInPtCounts": 67
+    },
+    {
+        "disease": "thca",
+        "type": "pcaScores",
+        "ptIDClinicalCounts": 507,
+        "IDnotInPtCounts": 67
+    },
+    {
+        "disease": "acc",
+        "type": "ptDegree",
+        "ptIDClinicalCounts": 92,
+        "IDnotInPtCounts": 92
+    },
+    {
+        "disease": "luad",
+        "type": "pcaScores",
+        "ptIDClinicalCounts": 522,
+        "IDnotInPtCounts": 124
+    },
+    {
+        "disease": "laml",
+        "type": "rna",
+        "ptIDClinicalCounts": 200,
+        "IDnotInPtCounts": 173
+    },
+    {
+        "disease": "paad",
+        "type": "ptDegree",
+        "ptIDClinicalCounts": 185,
+        "IDnotInPtCounts": 185
+    },
+    {
+        "disease": "esca",
+        "type": "ptDegree",
+        "ptIDClinicalCounts": 185,
+        "IDnotInPtCounts": 185
+    },
+    {
+        "disease": "laml",
+        "type": "mds",
+        "ptIDClinicalCounts": 200,
+        "IDnotInPtCounts": 187
+    },
+    {
+        "disease": "laml",
+        "type": "cnv",
+        "ptIDClinicalCounts": 200,
+        "IDnotInPtCounts": 191
+    },
+    {
+        "disease": "laml",
+        "type": "mut01",
+        "ptIDClinicalCounts": 200,
+        "IDnotInPtCounts": 196
+    },
+    {
+        "disease": "laml",
+        "type": "edges",
+        "ptIDClinicalCounts": 200,
+        "IDnotInPtCounts": 197
+    },
+    {
+        "disease": "laml",
+        "type": "pcaScores",
+        "ptIDClinicalCounts": 200,
+        "IDnotInPtCounts": 200
+    },
+    {
+        "disease": "coadread",
+        "type": "mds",
+        "ptIDClinicalCounts": 0,
+        "IDnotInPtCounts": 220
+    },
+    {
+        "disease": "coadread",
+        "type": "mut",
+        "ptIDClinicalCounts": 0,
+        "IDnotInPtCounts": 223
+    },
+    {
+        "disease": "coadread",
+        "type": "mut01",
+        "ptIDClinicalCounts": 0,
+        "IDnotInPtCounts": 224
+    },
+    {
+        "disease": "ucec",
+        "type": "ptDegree",
+        "ptIDClinicalCounts": 548,
+        "IDnotInPtCounts": 247
+    },
+    {
+        "disease": "skcm",
+        "type": "protein",
+        "ptIDClinicalCounts": 470,
+        "IDnotInPtCounts": 254
+    },
+    {
+        "disease": "sarc",
+        "type": "ptDegree",
+        "ptIDClinicalCounts": 261,
+        "IDnotInPtCounts": 260
+    },
+    {
+        "disease": "kirp",
+        "type": "ptDegree",
+        "ptIDClinicalCounts": 291,
+        "IDnotInPtCounts": 275
+    },
+    {
+        "disease": "skcm",
+        "type": "edges",
+        "ptIDClinicalCounts": 470,
+        "IDnotInPtCounts": 290
+    },
+    {
+        "disease": "skcm",
+        "type": "mut01",
+        "ptIDClinicalCounts": 470,
+        "IDnotInPtCounts": 290
+    },
+    {
+        "disease": "skcm",
+        "type": "mut",
+        "ptIDClinicalCounts": 470,
+        "IDnotInPtCounts": 290
+    },
+    {
+        "disease": "cesc",
+        "type": "ptDegree",
+        "ptIDClinicalCounts": 307,
+        "IDnotInPtCounts": 298
+    },
+    {
+        "disease": "lung",
+        "type": "mds",
+        "ptIDClinicalCounts": 0,
+        "IDnotInPtCounts": 350
+    },
+    {
+        "disease": "lihc",
+        "type": "ptDegree",
+        "ptIDClinicalCounts": 377,
+        "IDnotInPtCounts": 367
+    },
+    {
+        "disease": "skcm",
+        "type": "pcaScores",
+        "ptIDClinicalCounts": 470,
+        "IDnotInPtCounts": 370
+    },
+    {
+        "disease": "skcm",
+        "type": "rna",
+        "ptIDClinicalCounts": 470,
+        "IDnotInPtCounts": 370
+    },
+    {
+        "disease": "lung",
+        "type": "protein",
+        "ptIDClinicalCounts": 0,
+        "IDnotInPtCounts": 376
+    },
+    {
+        "disease": "stad",
+        "type": "ptDegree",
+        "ptIDClinicalCounts": 443,
+        "IDnotInPtCounts": 393
+    },
+    {
+        "disease": "lung",
+        "type": "mut",
+        "ptIDClinicalCounts": 0,
+        "IDnotInPtCounts": 407
+    },
+    {
+        "disease": "lung",
+        "type": "mut01",
+        "ptIDClinicalCounts": 0,
+        "IDnotInPtCounts": 408
+    },
+    {
+        "disease": "blca",
+        "type": "ptDegree",
+        "ptIDClinicalCounts": 412,
+        "IDnotInPtCounts": 411
+    },
+    {
+        "disease": "kirc",
+        "type": "ptDegree",
+        "ptIDClinicalCounts": 537,
+        "IDnotInPtCounts": 442
+    },
+    {
+        "disease": "coadread",
+        "type": "protein",
+        "ptIDClinicalCounts": 0,
+        "IDnotInPtCounts": 461
+    },
+    {
+        "disease": "thca",
+        "type": "ptDegree",
+        "ptIDClinicalCounts": 507,
+        "IDnotInPtCounts": 463
+    },
+    {
+        "disease": "prad",
+        "type": "ptDegree",
+        "ptIDClinicalCounts": 500,
+        "IDnotInPtCounts": 493
+    },
+    {
+        "disease": "lusc",
+        "type": "ptDegree",
+        "ptIDClinicalCounts": 504,
+        "IDnotInPtCounts": 495
+    },
+    {
+        "disease": "brca",
+        "type": "rna",
+        "ptIDClinicalCounts": 1097,
+        "IDnotInPtCounts": 497
+    },
+    {
+        "disease": "brca",
+        "type": "pcaScores",
+        "ptIDClinicalCounts": 1097,
+        "IDnotInPtCounts": 498
+    },
+    {
+        "disease": "lgg",
+        "type": "ptDegree",
+        "ptIDClinicalCounts": 515,
+        "IDnotInPtCounts": 511
+    },
+    {
+        "disease": "luad",
+        "type": "ptDegree",
+        "ptIDClinicalCounts": 522,
+        "IDnotInPtCounts": 518
+    },
+    {
+        "disease": "hnsc",
+        "type": "ptDegree",
+        "ptIDClinicalCounts": 528,
+        "IDnotInPtCounts": 528
+    },
+    {
+        "disease": "gbm",
+        "type": "ptDegree",
+        "ptIDClinicalCounts": 596,
+        "IDnotInPtCounts": 582
+    },
+    {
+        "disease": "coadread",
+        "type": "rna",
+        "ptIDClinicalCounts": 0,
+        "IDnotInPtCounts": 584
+    },
+    {
+        "disease": "coadread",
+        "type": "methylation",
+        "ptIDClinicalCounts": 0,
+        "IDnotInPtCounts": 612
+    },
+    {
+        "disease": "coadread",
+        "type": "edges",
+        "ptIDClinicalCounts": 0,
+        "IDnotInPtCounts": 613
+    },
+    {
+        "disease": "coadread",
+        "type": "cnv",
+        "ptIDClinicalCounts": 0,
+        "IDnotInPtCounts": 615
+    },
+    {
+        "disease": "coadread",
+        "type": "events",
+        "ptIDClinicalCounts": 0,
+        "IDnotInPtCounts": 626
+    },
+    {
+        "disease": "coadread",
+        "type": "pcaScores",
+        "ptIDClinicalCounts": 0,
+        "IDnotInPtCounts": 631
+    },
+    {
+        "disease": "lung",
+        "type": "cnv",
+        "ptIDClinicalCounts": 0,
+        "IDnotInPtCounts": 1016
+    },
+    {
+        "disease": "lung",
+        "type": "events",
+        "ptIDClinicalCounts": 0,
+        "IDnotInPtCounts": 1016
+    },
+    {
+        "disease": "lung",
+        "type": "methylation",
+        "ptIDClinicalCounts": 0,
+        "IDnotInPtCounts": 1063
+    },
+    {
+        "disease": "lung",
+        "type": "edges",
+        "ptIDClinicalCounts": 0,
+        "IDnotInPtCounts": 1063
+    },
+    {
+        "disease": "brca",
+        "type": "ptDegree",
+        "ptIDClinicalCounts": 1097,
+        "IDnotInPtCounts": 1090
+    },
+    {
+        "disease": "brain",
+        "type": "ptDegree",
+        "ptIDClinicalCounts": 1111,
+        "IDnotInPtCounts": 1099
+    },
+    {
+        "disease": "lung",
+        "type": "rna",
+        "ptIDClinicalCounts": 0,
+        "IDnotInPtCounts": 1132
+    },
+    {
+        "disease": "lung",
+        "type": "pcaScores",
+        "ptIDClinicalCounts": 0,
+        "IDnotInPtCounts": 1200
+    }
+]

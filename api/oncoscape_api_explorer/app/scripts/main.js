@@ -54,33 +54,33 @@ $(document).ready(function(){
 		return(result);
 		
 	};
-  // Get Reference To All Important UI Elements
-  var elements = (function($){
-    return{
-      diseaseBtn: $('.diseaseBtn'),
-      diseases: $('#diseaseDropDown'),
-      operations: $('#sampleBtn'),
-      query: $('#txtQuery'),
-      submit: $('#btnSubmit'),
-      results: $('#divResults'),
-      resultCollpase: $('#resCollpase'),
-      userInput:{
-          collection: $('#collectionInput'),
-          count: $('#btnCount'),
-          //countVal: $("#countVal"),
-          query: $('#criInput'),
-          fields: $('#fieldsInput'),
-          limit: $('#limitInput'),
-          skip: $('#skipInput'),
-          filter: $('#filterInput'),
-          submit: $('#cusSubmit'),
-          advanceInput:{
-                  addRow: $('#add_row'),
-                  delRow: $('#delete_row')
-                 }
-          }
-    }
-  })($);
+	// Get Reference To All Important UI Elements
+	var elements = (function($){
+		return{
+		  diseaseBtn: $('.diseaseBtn'),
+		  diseases: $('#diseaseDropDown'),
+		  operations: $('#sampleBtn'),
+		  query: $('#txtQuery'),
+		  submit: $('#btnSubmit'),
+		  results: $('#divResults'),
+		  resultCollpase: $('#resCollpase'),
+		  userInput:{
+		      collection: $('#collectionInput'),
+		      count: $('#btnCount'),
+		      //countVal: $("#countVal"),
+		      query: $('#criInput'),
+		      fields: $('#fieldsInput'),
+		      limit: $('#limitInput'),
+		      skip: $('#skipInput'),
+		      filter: $('#filterInput'),
+		      submit: $('#cusSubmit'),
+		      advanceInput:{
+		              addRow: $('#add_row'),
+		              delRow: $('#delete_row')
+		             }
+		      }
+		}
+	})($);
   
 
 	function getObjects(obj, key, val) {
@@ -165,7 +165,7 @@ $(document).ready(function(){
 				elements.diseaseBtn.text(str);
         		elements.userInput.collection.val(str);
         		clearUserQueryPanel();
-				var url = 'http://dev.oncoscape.sttrcancer.io/api/' + elements.diseaseBtn.val() + '/?q=';
+				var url = 'http://dev.oncoscape.sttrcancer.io/api/' + elements.diseaseBtn.val() + '/?q=&apikey=password';
 				elements.query.text(url);
 				$.get(url, function( data ) {
 					elements.results.jsonViewer(data, {collapsed:false});
@@ -195,7 +195,7 @@ $(document).ready(function(){
 	
 
 	var fillDiseaseDropdown = (function(){
-		var url = 'http://dev.oncoscape.sttrcancer.io/api/lookup_oncoscape_datasources/?q='; 
+		var url = 'http://dev.oncoscape.sttrcancer.io/api/lookup_oncoscape_datasources/?q=&apikey=password'; 
 		service(url, populateDiseases);
 
 	})();
@@ -287,8 +287,8 @@ $(document).ready(function(){
 		}else{
 			constructedURL = constructedURL + collection + '/?q=';
 		}
-		elements.query.text(constructedURL + string);
-		constructedURL = constructedURL + encodeURIComponent(string);
+		elements.query.text(constructedURL + string + '&apikey=password');
+		constructedURL = constructedURL + encodeURIComponent(string) + '&apikey=password';
 
 		return constructedURL;
 	}
