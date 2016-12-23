@@ -1,0 +1,1355 @@
+[
+    {
+        "disease": "brca",
+        "collectionStructural": [
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "newTumor"
+                },
+                "message": "should have required property 'newTumor'"
+            },
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "otherMalignancy"
+                },
+                "message": "should have required property 'otherMalignancy'"
+            }
+        ]
+    },
+    {
+        "disease": "esca",
+        "collectionStructural": [
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "events"
+                },
+                "message": "should have required property 'events'"
+            },
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "drug"
+                },
+                "message": "should have required property 'drug'"
+            },
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "newTumor"
+                },
+                "message": "should have required property 'newTumor'"
+            },
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "otherMalignancy"
+                },
+                "message": "should have required property 'otherMalignancy'"
+            }
+        ]
+    },
+    {
+        "disease": "gbm",
+        "collectionStructural": [
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "newTumor"
+                },
+                "message": "should have required property 'newTumor'"
+            },
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "otherMalignancy"
+                },
+                "message": "should have required property 'otherMalignancy'"
+            }
+        ]
+    },
+    {
+        "disease": "hnsc",
+        "collectionStructural": [
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "newTumor"
+                },
+                "message": "should have required property 'newTumor'"
+            },
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "otherMalignancy"
+                },
+                "message": "should have required property 'otherMalignancy'"
+            }
+        ]
+    },
+    {
+        "disease": "kich",
+        "collectionStructural": [
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "events"
+                },
+                "message": "should have required property 'events'"
+            },
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "newTumor"
+                },
+                "message": "should have required property 'newTumor'"
+            },
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "otherMalignancy"
+                },
+                "message": "should have required property 'otherMalignancy'"
+            }
+        ]
+    },
+    {
+        "disease": "kirc",
+        "collectionStructural": [
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "events"
+                },
+                "message": "should have required property 'events'"
+            },
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "newTumor"
+                },
+                "message": "should have required property 'newTumor'"
+            },
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "otherMalignancy"
+                },
+                "message": "should have required property 'otherMalignancy'"
+            }
+        ]
+    },
+    {
+        "disease": "kirp",
+        "collectionStructural": [
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "events"
+                },
+                "message": "should have required property 'events'"
+            },
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "newTumor"
+                },
+                "message": "should have required property 'newTumor'"
+            },
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "otherMalignancy"
+                },
+                "message": "should have required property 'otherMalignancy'"
+            }
+        ]
+    },
+    {
+        "disease": "lgg",
+        "collectionStructural": [
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "newTumor"
+                },
+                "message": "should have required property 'newTumor'"
+            },
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "otherMalignancy"
+                },
+                "message": "should have required property 'otherMalignancy'"
+            }
+        ]
+    },
+    {
+        "disease": "lihc",
+        "collectionStructural": [
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "events"
+                },
+                "message": "should have required property 'events'"
+            },
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "newTumor"
+                },
+                "message": "should have required property 'newTumor'"
+            },
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "otherMalignancy"
+                },
+                "message": "should have required property 'otherMalignancy'"
+            }
+        ]
+    },
+    {
+        "disease": "luad",
+        "collectionStructural": [
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "newTumor"
+                },
+                "message": "should have required property 'newTumor'"
+            },
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "otherMalignancy"
+                },
+                "message": "should have required property 'otherMalignancy'"
+            }
+        ]
+    },
+    {
+        "disease": "lusc",
+        "collectionStructural": [
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "newTumor"
+                },
+                "message": "should have required property 'newTumor'"
+            },
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "otherMalignancy"
+                },
+                "message": "should have required property 'otherMalignancy'"
+            }
+        ]
+    },
+    {
+        "disease": "sarc",
+        "collectionStructural": [
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "events"
+                },
+                "message": "should have required property 'events'"
+            },
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "newTumor"
+                },
+                "message": "should have required property 'newTumor'"
+            },
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "otherMalignancy"
+                },
+                "message": "should have required property 'otherMalignancy'"
+            }
+        ]
+    },
+    {
+        "disease": "paad",
+        "collectionStructural": [
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "events"
+                },
+                "message": "should have required property 'events'"
+            },
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "newTumor"
+                },
+                "message": "should have required property 'newTumor'"
+            },
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "otherMalignancy"
+                },
+                "message": "should have required property 'otherMalignancy'"
+            }
+        ]
+    },
+    {
+        "disease": "prad",
+        "collectionStructural": [
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "events"
+                },
+                "message": "should have required property 'events'"
+            },
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "newTumor"
+                },
+                "message": "should have required property 'newTumor'"
+            },
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "otherMalignancy"
+                },
+                "message": "should have required property 'otherMalignancy'"
+            }
+        ]
+    },
+    {
+        "disease": "skcm",
+        "collectionStructural": [
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "events"
+                },
+                "message": "should have required property 'events'"
+            },
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "newTumor"
+                },
+                "message": "should have required property 'newTumor'"
+            },
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "otherMalignancy"
+                },
+                "message": "should have required property 'otherMalignancy'"
+            }
+        ]
+    },
+    {
+        "disease": "stad",
+        "collectionStructural": [
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "events"
+                },
+                "message": "should have required property 'events'"
+            },
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "newTumor"
+                },
+                "message": "should have required property 'newTumor'"
+            },
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "otherMalignancy"
+                },
+                "message": "should have required property 'otherMalignancy'"
+            }
+        ]
+    },
+    {
+        "disease": "thca",
+        "collectionStructural": [
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "events"
+                },
+                "message": "should have required property 'events'"
+            },
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "newTumor"
+                },
+                "message": "should have required property 'newTumor'"
+            },
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "otherMalignancy"
+                },
+                "message": "should have required property 'otherMalignancy'"
+            }
+        ]
+    },
+    {
+        "disease": "ucec",
+        "collectionStructural": [
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "events"
+                },
+                "message": "should have required property 'events'"
+            },
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "newTumor"
+                },
+                "message": "should have required property 'newTumor'"
+            },
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "otherMalignancy"
+                },
+                "message": "should have required property 'otherMalignancy'"
+            }
+        ]
+    },
+    {
+        "disease": "acc",
+        "collectionStructural": [
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "events"
+                },
+                "message": "should have required property 'events'"
+            },
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "newTumor"
+                },
+                "message": "should have required property 'newTumor'"
+            },
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "otherMalignancy"
+                },
+                "message": "should have required property 'otherMalignancy'"
+            }
+        ]
+    },
+    {
+        "disease": "blca",
+        "collectionStructural": [
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "events"
+                },
+                "message": "should have required property 'events'"
+            },
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "newTumor"
+                },
+                "message": "should have required property 'newTumor'"
+            },
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "otherMalignancy"
+                },
+                "message": "should have required property 'otherMalignancy'"
+            }
+        ]
+    },
+    {
+        "disease": "cesc",
+        "collectionStructural": [
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "events"
+                },
+                "message": "should have required property 'events'"
+            },
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "newTumor"
+                },
+                "message": "should have required property 'newTumor'"
+            },
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "otherMalignancy"
+                },
+                "message": "should have required property 'otherMalignancy'"
+            }
+        ]
+    },
+    {
+        "disease": "chol",
+        "collectionStructural": [
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "events"
+                },
+                "message": "should have required property 'events'"
+            },
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "newTumor"
+                },
+                "message": "should have required property 'newTumor'"
+            },
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "otherMalignancy"
+                },
+                "message": "should have required property 'otherMalignancy'"
+            }
+        ]
+    },
+    {
+        "disease": "dlbc",
+        "collectionStructural": [
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "events"
+                },
+                "message": "should have required property 'events'"
+            },
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "newTumor"
+                },
+                "message": "should have required property 'newTumor'"
+            },
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "otherMalignancy"
+                },
+                "message": "should have required property 'otherMalignancy'"
+            }
+        ]
+    },
+    {
+        "disease": "coadread",
+        "collectionStructural": [
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "patient"
+                },
+                "message": "should have required property 'patient'"
+            },
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "drug"
+                },
+                "message": "should have required property 'drug'"
+            },
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "radiation"
+                },
+                "message": "should have required property 'radiation'"
+            },
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "newTumor"
+                },
+                "message": "should have required property 'newTumor'"
+            },
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "otherMalignancy"
+                },
+                "message": "should have required property 'otherMalignancy'"
+            }
+        ]
+    },
+    {
+        "disease": "lung",
+        "collectionStructural": [
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "patient"
+                },
+                "message": "should have required property 'patient'"
+            },
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "drug"
+                },
+                "message": "should have required property 'drug'"
+            },
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "radiation"
+                },
+                "message": "should have required property 'radiation'"
+            },
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "newTumor"
+                },
+                "message": "should have required property 'newTumor'"
+            },
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "otherMalignancy"
+                },
+                "message": "should have required property 'otherMalignancy'"
+            }
+        ]
+    },
+    {
+        "disease": "coad",
+        "collectionStructural": [
+            {
+                "keyword": "required",
+                "dataPath": "",
+                "schemaPath": "#/required",
+                "params": {
+                    "missingProperty": "calculated"
+                },
+                "message": "should have required property 'calculated'"
+            },
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "events"
+                },
+                "message": "should have required property 'events'"
+            },
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "newTumor"
+                },
+                "message": "should have required property 'newTumor'"
+            },
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "otherMalignancy"
+                },
+                "message": "should have required property 'otherMalignancy'"
+            },
+            {
+                "keyword": "required",
+                "dataPath": "",
+                "schemaPath": "#/required",
+                "params": {
+                    "missingProperty": "edges"
+                },
+                "message": "should have required property 'edges'"
+            }
+        ]
+    },
+    {
+        "disease": "hg19",
+        "collectionStructural": [
+            {
+                "keyword": "required",
+                "dataPath": "",
+                "schemaPath": "#/required",
+                "params": {
+                    "missingProperty": "molecular"
+                },
+                "message": "should have required property 'molecular'"
+            },
+            {
+                "keyword": "required",
+                "dataPath": "",
+                "schemaPath": "#/required",
+                "params": {
+                    "missingProperty": "calculated"
+                },
+                "message": "should have required property 'calculated'"
+            },
+            {
+                "keyword": "required",
+                "dataPath": "",
+                "schemaPath": "#/required",
+                "params": {
+                    "missingProperty": "clinical"
+                },
+                "message": "should have required property 'clinical'"
+            },
+            {
+                "keyword": "required",
+                "dataPath": "",
+                "schemaPath": "#/required",
+                "params": {
+                    "missingProperty": "edges"
+                },
+                "message": "should have required property 'edges'"
+            }
+        ]
+    },
+    {
+        "disease": "laml",
+        "collectionStructural": [
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "events"
+                },
+                "message": "should have required property 'events'"
+            },
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "drug"
+                },
+                "message": "should have required property 'drug'"
+            },
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "radiation"
+                },
+                "message": "should have required property 'radiation'"
+            },
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "newTumor"
+                },
+                "message": "should have required property 'newTumor'"
+            },
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "otherMalignancy"
+                },
+                "message": "should have required property 'otherMalignancy'"
+            }
+        ]
+    },
+    {
+        "disease": "read",
+        "collectionStructural": [
+            {
+                "keyword": "required",
+                "dataPath": "",
+                "schemaPath": "#/required",
+                "params": {
+                    "missingProperty": "calculated"
+                },
+                "message": "should have required property 'calculated'"
+            },
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "events"
+                },
+                "message": "should have required property 'events'"
+            },
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "newTumor"
+                },
+                "message": "should have required property 'newTumor'"
+            },
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "otherMalignancy"
+                },
+                "message": "should have required property 'otherMalignancy'"
+            },
+            {
+                "keyword": "required",
+                "dataPath": "",
+                "schemaPath": "#/required",
+                "params": {
+                    "missingProperty": "edges"
+                },
+                "message": "should have required property 'edges'"
+            }
+        ]
+    },
+    {
+        "disease": "ucs",
+        "collectionStructural": [
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "events"
+                },
+                "message": "should have required property 'events'"
+            },
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "newTumor"
+                },
+                "message": "should have required property 'newTumor'"
+            },
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "otherMalignancy"
+                },
+                "message": "should have required property 'otherMalignancy'"
+            },
+            {
+                "keyword": "required",
+                "dataPath": "",
+                "schemaPath": "#/required",
+                "params": {
+                    "missingProperty": "edges"
+                },
+                "message": "should have required property 'edges'"
+            }
+        ]
+    },
+    {
+        "disease": "uvm",
+        "collectionStructural": [
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "events"
+                },
+                "message": "should have required property 'events'"
+            },
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "newTumor"
+                },
+                "message": "should have required property 'newTumor'"
+            },
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "otherMalignancy"
+                },
+                "message": "should have required property 'otherMalignancy'"
+            },
+            {
+                "keyword": "required",
+                "dataPath": "",
+                "schemaPath": "#/required",
+                "params": {
+                    "missingProperty": "edges"
+                },
+                "message": "should have required property 'edges'"
+            }
+        ]
+    },
+    {
+        "disease": "thym",
+        "collectionStructural": [
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "events"
+                },
+                "message": "should have required property 'events'"
+            },
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "newTumor"
+                },
+                "message": "should have required property 'newTumor'"
+            },
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "otherMalignancy"
+                },
+                "message": "should have required property 'otherMalignancy'"
+            },
+            {
+                "keyword": "required",
+                "dataPath": "",
+                "schemaPath": "#/required",
+                "params": {
+                    "missingProperty": "edges"
+                },
+                "message": "should have required property 'edges'"
+            }
+        ]
+    },
+    {
+        "disease": "tgct",
+        "collectionStructural": [
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "events"
+                },
+                "message": "should have required property 'events'"
+            },
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "newTumor"
+                },
+                "message": "should have required property 'newTumor'"
+            },
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "otherMalignancy"
+                },
+                "message": "should have required property 'otherMalignancy'"
+            },
+            {
+                "keyword": "required",
+                "dataPath": "",
+                "schemaPath": "#/required",
+                "params": {
+                    "missingProperty": "edges"
+                },
+                "message": "should have required property 'edges'"
+            }
+        ]
+    },
+    {
+        "disease": "pcpg",
+        "collectionStructural": [
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "events"
+                },
+                "message": "should have required property 'events'"
+            },
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "newTumor"
+                },
+                "message": "should have required property 'newTumor'"
+            },
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "otherMalignancy"
+                },
+                "message": "should have required property 'otherMalignancy'"
+            },
+            {
+                "keyword": "required",
+                "dataPath": "",
+                "schemaPath": "#/required",
+                "params": {
+                    "missingProperty": "edges"
+                },
+                "message": "should have required property 'edges'"
+            }
+        ]
+    },
+    {
+        "disease": "ov",
+        "collectionStructural": [
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "events"
+                },
+                "message": "should have required property 'events'"
+            },
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "newTumor"
+                },
+                "message": "should have required property 'newTumor'"
+            },
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "otherMalignancy"
+                },
+                "message": "should have required property 'otherMalignancy'"
+            },
+            {
+                "keyword": "required",
+                "dataPath": "",
+                "schemaPath": "#/required",
+                "params": {
+                    "missingProperty": "edges"
+                },
+                "message": "should have required property 'edges'"
+            }
+        ]
+    },
+    {
+        "disease": "meso",
+        "collectionStructural": [
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "events"
+                },
+                "message": "should have required property 'events'"
+            },
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "newTumor"
+                },
+                "message": "should have required property 'newTumor'"
+            },
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "otherMalignancy"
+                },
+                "message": "should have required property 'otherMalignancy'"
+            },
+            {
+                "keyword": "required",
+                "dataPath": "",
+                "schemaPath": "#/required",
+                "params": {
+                    "missingProperty": "edges"
+                },
+                "message": "should have required property 'edges'"
+            }
+        ]
+    },
+    {
+        "disease": [
+            "uwlung"
+        ],
+        "collectionStructural": [
+            {
+                "keyword": "required",
+                "dataPath": "",
+                "schemaPath": "#/required",
+                "params": {
+                    "missingProperty": "name"
+                },
+                "message": "should have required property 'name'"
+            },
+            {
+                "keyword": "type",
+                "dataPath": ".disease",
+                "schemaPath": "#/properties/disease/type",
+                "params": {
+                    "type": "string"
+                },
+                "message": "should be string"
+            },
+            {
+                "keyword": "type",
+                "dataPath": ".source",
+                "schemaPath": "#/properties/source/type",
+                "params": {
+                    "type": "string"
+                },
+                "message": "should be string"
+            },
+            {
+                "keyword": "required",
+                "dataPath": "",
+                "schemaPath": "#/required",
+                "params": {
+                    "missingProperty": "calculated"
+                },
+                "message": "should have required property 'calculated'"
+            },
+            {
+                "keyword": "required",
+                "dataPath": "",
+                "schemaPath": "#/required",
+                "params": {
+                    "missingProperty": "clinical"
+                },
+                "message": "should have required property 'clinical'"
+            },
+            {
+                "keyword": "required",
+                "dataPath": "",
+                "schemaPath": "#/required",
+                "params": {
+                    "missingProperty": "edges"
+                },
+                "message": "should have required property 'edges'"
+            }
+        ]
+    },
+    {
+        "disease": "brain",
+        "collectionStructural": [
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "newTumor"
+                },
+                "message": "should have required property 'newTumor'"
+            },
+            {
+                "keyword": "required",
+                "dataPath": ".clinical",
+                "schemaPath": "#/properties/clinical/required",
+                "params": {
+                    "missingProperty": "otherMalignancy"
+                },
+                "message": "should have required property 'otherMalignancy'"
+            }
+        ]
+    }
+]
