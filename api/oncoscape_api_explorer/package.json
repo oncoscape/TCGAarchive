@@ -43,8 +43,11 @@
     }
   },
   "dependencies": {
-    "ajv": "^4.3.0",
+    "ajv": "^4.7.5",
     "assert": "^1.4.1",
+    "async": "^2.0.1",
+    "async-foreach": "^0.1.3",
+    "bfj": "^2.1.0",
     "bluebird": "^3.4.1",
     "bson": "^0.5.2",
     "co": "^4.6.0",
@@ -52,12 +55,16 @@
     "co-mongodb": "^0.1.0",
     "fs": "0.0.2",
     "graceful-fs": "^4.1.5",
+    "gulp": "^3.9.1",
     "gulp-htmlparser": "0.0.4",
     "jsonfile": "^2.4.0",
+    "mongo-stream": "^0.1.0",
     "mongodb": "^2.2.5",
-    "mongoose": "^4.6.3",
+    "mongoose": "^4.6.1",
     "mpromise": "^0.5.5",
     "node-async-loop": "^1.2.2",
-    "readdir-scoped-modules": "^1.0.2"
+    "promise": "^7.1.1",
+    "readdir-scoped-modules": "^1.0.2",
+    "underscore": "^1.8.3"
   }
 }

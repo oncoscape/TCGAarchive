@@ -1,0 +1,21 @@
+*****lookup table collection naming validation:
+3858
+not matched examples:  [ 'brca_pcascores_broad_prcomp-allgenes-mut01-1e+05',
+  'brca_pcascores_broad_prcomp-tcgagbmclassifiers-mut01-1e+05',
+  'brca_pcascores_broad_prcomp-markergenes545-mut01-1e+05',
+  'brca_pcascores_broad_prcomp-tcgapancanmutated-mut01-1e+05',
+  'brca_pcascores_broad_prcomp-oncovogel274-mut01-1e+05' ]
+*****manifest collection naming validation:
+3998
+not matched examples:  [ 'hg19_chromosome_orghs_1e+05',
+  'hg19_genes_orghs_1e+05',
+  'esca_pcascores_broad_prcomp-allgenes-mut01-1e+05',
+  'esca_pcascores_broad_prcomp-tcgagbmclassifiers-mut01-1e+05',
+  'esca_pcascores_broad_prcomp-markergenes545-mut01-1e+05' ]
+*****Current database collection naming validation:
+3906
+not matched examples:  [ 'hnsc_pcascores_cbio_prcomp-oncovogel274-cnv-1e+05',
+  'luad_pcascores_cbio_prcomp-tcgapancanmutated-mut01-1e+05',
+  'lusc_pcascores_cbio_prcomp-osccchen131probes-mut01-1e+05',
+  'hnsc_pcascores_cbio_prcomp-oncoplex-mut01-1e+05',
+  'ucs_pcascores_ucsc_prcomp-tcgagbmclassifiers-rna-hiseq-1e+05' ]

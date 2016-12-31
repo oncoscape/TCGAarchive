@@ -1,0 +1,6434 @@
+[
+  {
+    "collection": "sarc_methylation_ucsc_hm450",
+    "disease": "sarc",
+    "type": "methylation",
+    "geneID_hugos": 0,
+    "geneID_symbols": 0,
+    "geneID_notIncludes": 485577
+  },
+  {
+    "collection": "hg19_annotation_bradleylab_exonjunctions",
+    "disease": "hg19",
+    "type": "annotation",
+    "geneID_hugos": 15867,
+    "geneID_symbols": 16962,
+    "geneID_notIncludes": 2944
+  },
+  {
+    "collection": "luad_mut01_ucsc_mutationbroadgene",
+    "disease": "luad",
+    "type": "mut01",
+    "geneID_hugos": 34730,
+    "geneID_symbols": 40464,
+    "geneID_notIncludes": 2530
+  },
+  {
+    "collection": "hg19_genes_orghs_1e+05",
+    "disease": "hg19",
+    "type": "genes",
+    "geneID_hugos": 24403,
+    "geneID_symbols": 25248,
+    "geneID_notIncludes": 1718
+  },
+  {
+    "collection": "hg19_genes_orghs_position-min-abs-start",
+    "disease": "hg19",
+    "type": "genes",
+    "geneID_hugos": 24403,
+    "geneID_symbols": 25248,
+    "geneID_notIncludes": 1718
+  },
+  {
+    "collection": "brain_cnv_ucsc-pnas_gistic",
+    "disease": "brain",
+    "type": "cnv",
+    "geneID_hugos": 20464,
+    "geneID_symbols": 23303,
+    "geneID_notIncludes": 1468
+  },
+  {
+    "collection": "laml_cnv_ucsc_gistic2thd",
+    "disease": "laml",
+    "type": "cnv",
+    "geneID_hugos": 22800,
+    "geneID_symbols": 24052,
+    "geneID_notIncludes": 1309
+  },
+  {
+    "collection": "esca_cnv_ucsc_gistic2thd",
+    "disease": "esca",
+    "type": "cnv",
+    "geneID_hugos": 22800,
+    "geneID_symbols": 24052,
+    "geneID_notIncludes": 1309
+  },
+  {
+    "collection": "dlbc_cnv_ucsc_gistic2thd",
+    "disease": "dlbc",
+    "type": "cnv",
+    "geneID_hugos": 22800,
+    "geneID_symbols": 24052,
+    "geneID_notIncludes": 1309
+  },
+  {
+    "collection": "chol_cnv_ucsc_gistic2thd",
+    "disease": "chol",
+    "type": "cnv",
+    "geneID_hugos": 22800,
+    "geneID_symbols": 24052,
+    "geneID_notIncludes": 1309
+  },
+  {
+    "collection": "cesc_cnv_ucsc_gistic2thd",
+    "disease": "cesc",
+    "type": "cnv",
+    "geneID_hugos": 22800,
+    "geneID_symbols": 24052,
+    "geneID_notIncludes": 1309
+  },
+  {
+    "collection": "blca_cnv_ucsc_gistic2thd",
+    "disease": "blca",
+    "type": "cnv",
+    "geneID_hugos": 22800,
+    "geneID_symbols": 24052,
+    "geneID_notIncludes": 1309
+  },
+  {
+    "collection": "acc_cnv_ucsc_gistic2thd",
+    "disease": "acc",
+    "type": "cnv",
+    "geneID_hugos": 22800,
+    "geneID_symbols": 24052,
+    "geneID_notIncludes": 1309
+  },
+  {
+    "collection": "paad_cnv_ucsc_gistic2thd",
+    "disease": "paad",
+    "type": "cnv",
+    "geneID_hugos": 22800,
+    "geneID_symbols": 24052,
+    "geneID_notIncludes": 1309
+  },
+  {
+    "collection": "prad_cnv_ucsc_gistic2thd",
+    "disease": "prad",
+    "type": "cnv",
+    "geneID_hugos": 22800,
+    "geneID_symbols": 24052,
+    "geneID_notIncludes": 1309
+  },
+  {
+    "collection": "lusc_cnv_ucsc_gistic2thd",
+    "disease": "lusc",
+    "type": "cnv",
+    "geneID_hugos": 22800,
+    "geneID_symbols": 24052,
+    "geneID_notIncludes": 1309
+  },
+  {
+    "collection": "luad_cnv_ucsc_gistic2thd",
+    "disease": "luad",
+    "type": "cnv",
+    "geneID_hugos": 22800,
+    "geneID_symbols": 24052,
+    "geneID_notIncludes": 1309
+  },
+  {
+    "collection": "lgg_cnv_ucsc_gistic2thd",
+    "disease": "lgg",
+    "type": "cnv",
+    "geneID_hugos": 22800,
+    "geneID_symbols": 24052,
+    "geneID_notIncludes": 1309
+  },
+  {
+    "collection": "hnsc_cnv_ucsc_gistic2thd",
+    "disease": "hnsc",
+    "type": "cnv",
+    "geneID_hugos": 22800,
+    "geneID_symbols": 24052,
+    "geneID_notIncludes": 1309
+  },
+  {
+    "collection": "gbm_cnv_ucsc_gistic2thd",
+    "disease": "gbm",
+    "type": "cnv",
+    "geneID_hugos": 22800,
+    "geneID_symbols": 24052,
+    "geneID_notIncludes": 1309
+  },
+  {
+    "collection": "coadread_cnv_ucsc_gistic2thd",
+    "disease": "coadread",
+    "type": "cnv",
+    "geneID_hugos": 22800,
+    "geneID_symbols": 24052,
+    "geneID_notIncludes": 1309
+  },
+  {
+    "collection": "brca_cnv_ucsc_gistic2thd",
+    "disease": "brca",
+    "type": "cnv",
+    "geneID_hugos": 22800,
+    "geneID_symbols": 24052,
+    "geneID_notIncludes": 1309
+  },
+  {
+    "collection": "brain_cnv_ucsc_gistic",
+    "disease": "brain",
+    "type": "cnv",
+    "geneID_hugos": 22800,
+    "geneID_symbols": 24052,
+    "geneID_notIncludes": 1309
+  },
+  {
+    "collection": "sarc_cnv_ucsc_gistic2thd",
+    "disease": "sarc",
+    "type": "cnv",
+    "geneID_hugos": 22800,
+    "geneID_symbols": 24052,
+    "geneID_notIncludes": 1309
+  },
+  {
+    "collection": "lung_cnv_ucsc_gistic2thd",
+    "disease": "lung",
+    "type": "cnv",
+    "geneID_hugos": 22800,
+    "geneID_symbols": 24052,
+    "geneID_notIncludes": 1309
+  },
+  {
+    "collection": "skcm_mut01_ucsc_broad",
+    "disease": "skcm",
+    "type": "mut01",
+    "geneID_hugos": 34698,
+    "geneID_symbols": 40425,
+    "geneID_notIncludes": 869
+  },
+  {
+    "collection": "sarc_mut01_ucsc_broad",
+    "disease": "sarc",
+    "type": "mut01",
+    "geneID_hugos": 34689,
+    "geneID_symbols": 40415,
+    "geneID_notIncludes": 811
+  },
+  {
+    "collection": "esca_mut01_ucsc_broad",
+    "disease": "esca",
+    "type": "mut01",
+    "geneID_hugos": 34688,
+    "geneID_symbols": 40420,
+    "geneID_notIncludes": 809
+  },
+  {
+    "collection": "tgct_rna_ucsc_hiseq",
+    "disease": "tgct",
+    "type": "rna",
+    "geneID_hugos": 18041,
+    "geneID_symbols": 20465,
+    "geneID_notIncludes": 659
+  },
+  {
+    "collection": "thym_rna_ucsc_hiseq",
+    "disease": "thym",
+    "type": "rna",
+    "geneID_hugos": 18041,
+    "geneID_symbols": 20465,
+    "geneID_notIncludes": 659
+  },
+  {
+    "collection": "uvm_rna_ucsc_hiseq",
+    "disease": "uvm",
+    "type": "rna",
+    "geneID_hugos": 18041,
+    "geneID_symbols": 20465,
+    "geneID_notIncludes": 659
+  },
+  {
+    "collection": "ucs_rna_ucsc_hiseq",
+    "disease": "ucs",
+    "type": "rna",
+    "geneID_hugos": 18041,
+    "geneID_symbols": 20465,
+    "geneID_notIncludes": 659
+  },
+  {
+    "collection": "meso_rna_ucsc_hiseq",
+    "disease": "meso",
+    "type": "rna",
+    "geneID_hugos": 18041,
+    "geneID_symbols": 20465,
+    "geneID_notIncludes": 659
+  },
+  {
+    "collection": "ucec_rna_ucsc_hiseq",
+    "disease": "ucec",
+    "type": "rna",
+    "geneID_hugos": 18041,
+    "geneID_symbols": 20465,
+    "geneID_notIncludes": 659
+  },
+  {
+    "collection": "thca_rna_ucsc_hiseq",
+    "disease": "thca",
+    "type": "rna",
+    "geneID_hugos": 18041,
+    "geneID_symbols": 20465,
+    "geneID_notIncludes": 659
+  },
+  {
+    "collection": "skcm_rna_ucsc_hiseq",
+    "disease": "skcm",
+    "type": "rna",
+    "geneID_hugos": 18041,
+    "geneID_symbols": 20465,
+    "geneID_notIncludes": 659
+  },
+  {
+    "collection": "lihc_rna_ucsc_hiseq",
+    "disease": "lihc",
+    "type": "rna",
+    "geneID_hugos": 18041,
+    "geneID_symbols": 20465,
+    "geneID_notIncludes": 659
+  },
+  {
+    "collection": "kirp_rna_ucsc_hiseq",
+    "disease": "kirp",
+    "type": "rna",
+    "geneID_hugos": 18041,
+    "geneID_symbols": 20465,
+    "geneID_notIncludes": 659
+  },
+  {
+    "collection": "kich_rna_ucsc_hiseq",
+    "disease": "kich",
+    "type": "rna",
+    "geneID_hugos": 18041,
+    "geneID_symbols": 20465,
+    "geneID_notIncludes": 659
+  },
+  {
+    "collection": "stad_rna_ucsc_hiseq",
+    "disease": "stad",
+    "type": "rna",
+    "geneID_hugos": 18041,
+    "geneID_symbols": 20465,
+    "geneID_notIncludes": 659
+  },
+  {
+    "collection": "sarc_rna_ucsc_hiseq",
+    "disease": "sarc",
+    "type": "rna",
+    "geneID_hugos": 18041,
+    "geneID_symbols": 20465,
+    "geneID_notIncludes": 659
+  },
+  {
+    "collection": "laml_rna_ucsc_hiseq",
+    "disease": "laml",
+    "type": "rna",
+    "geneID_hugos": 18041,
+    "geneID_symbols": 20465,
+    "geneID_notIncludes": 659
+  },
+  {
+    "collection": "esca_rna_ucsc_hiseq",
+    "disease": "esca",
+    "type": "rna",
+    "geneID_hugos": 18041,
+    "geneID_symbols": 20465,
+    "geneID_notIncludes": 659
+  },
+  {
+    "collection": "dlbc_rna_ucsc_hiseq",
+    "disease": "dlbc",
+    "type": "rna",
+    "geneID_hugos": 18041,
+    "geneID_symbols": 20465,
+    "geneID_notIncludes": 659
+  },
+  {
+    "collection": "chol_rna_ucsc_hiseq",
+    "disease": "chol",
+    "type": "rna",
+    "geneID_hugos": 18041,
+    "geneID_symbols": 20465,
+    "geneID_notIncludes": 659
+  },
+  {
+    "collection": "gbm_rna_ucsc_hiseq",
+    "disease": "gbm",
+    "type": "rna",
+    "geneID_hugos": 18041,
+    "geneID_symbols": 20465,
+    "geneID_notIncludes": 659
+  },
+  {
+    "collection": "coad_rna_ucsc_hiseq",
+    "disease": "coad",
+    "type": "rna",
+    "geneID_hugos": 18041,
+    "geneID_symbols": 20465,
+    "geneID_notIncludes": 659
+  },
+  {
+    "collection": "coadread_rna_ucsc_hiseq",
+    "disease": "coadread",
+    "type": "rna",
+    "geneID_hugos": 18041,
+    "geneID_symbols": 20465,
+    "geneID_notIncludes": 659
+  },
+  {
+    "collection": "cesc_rna_ucsc_hiseq",
+    "disease": "cesc",
+    "type": "rna",
+    "geneID_hugos": 18041,
+    "geneID_symbols": 20465,
+    "geneID_notIncludes": 659
+  },
+  {
+    "collection": "brca_rna_ucsc_hiseq",
+    "disease": "brca",
+    "type": "rna",
+    "geneID_hugos": 18041,
+    "geneID_symbols": 20465,
+    "geneID_notIncludes": 659
+  },
+  {
+    "collection": "blca_rna_ucsc_hiseq",
+    "disease": "blca",
+    "type": "rna",
+    "geneID_hugos": 18041,
+    "geneID_symbols": 20465,
+    "geneID_notIncludes": 659
+  },
+  {
+    "collection": "paad_rna_ucsc_hiseq",
+    "disease": "paad",
+    "type": "rna",
+    "geneID_hugos": 18041,
+    "geneID_symbols": 20465,
+    "geneID_notIncludes": 659
+  },
+  {
+    "collection": "prad_rna_ucsc_hiseq",
+    "disease": "prad",
+    "type": "rna",
+    "geneID_hugos": 18041,
+    "geneID_symbols": 20465,
+    "geneID_notIncludes": 659
+  },
+  {
+    "collection": "lung_rna_ucsc_hiseq",
+    "disease": "lung",
+    "type": "rna",
+    "geneID_hugos": 18041,
+    "geneID_symbols": 20465,
+    "geneID_notIncludes": 659
+  },
+  {
+    "collection": "lusc_rna_ucsc_hiseq",
+    "disease": "lusc",
+    "type": "rna",
+    "geneID_hugos": 18041,
+    "geneID_symbols": 20465,
+    "geneID_notIncludes": 659
+  },
+  {
+    "collection": "luad_rna_ucsc_hiseq",
+    "disease": "luad",
+    "type": "rna",
+    "geneID_hugos": 18041,
+    "geneID_symbols": 20465,
+    "geneID_notIncludes": 659
+  },
+  {
+    "collection": "acc_rna_ucsc_hiseq",
+    "disease": "acc",
+    "type": "rna",
+    "geneID_hugos": 18041,
+    "geneID_symbols": 20465,
+    "geneID_notIncludes": 659
+  },
+  {
+    "collection": "acc_rna_ucsc_hiseq",
+    "disease": "acc",
+    "type": "rna",
+    "geneID_hugos": 18041,
+    "geneID_symbols": 20465,
+    "geneID_notIncludes": 659
+  },
+  {
+    "collection": "ov_rna_ucsc_hiseq",
+    "disease": "ov",
+    "type": "rna",
+    "geneID_hugos": 18041,
+    "geneID_symbols": 20465,
+    "geneID_notIncludes": 659
+  },
+  {
+    "collection": "lgg_rna_ucsc_hiseq",
+    "disease": "lgg",
+    "type": "rna",
+    "geneID_hugos": 18041,
+    "geneID_symbols": 20465,
+    "geneID_notIncludes": 659
+  },
+  {
+    "collection": "pcpg_rna_ucsc_hiseq",
+    "disease": "pcpg",
+    "type": "rna",
+    "geneID_hugos": 18041,
+    "geneID_symbols": 20465,
+    "geneID_notIncludes": 659
+  },
+  {
+    "collection": "hnsc_rna_ucsc_hiseq",
+    "disease": "hnsc",
+    "type": "rna",
+    "geneID_hugos": 18041,
+    "geneID_symbols": 20465,
+    "geneID_notIncludes": 659
+  },
+  {
+    "collection": "read_rna_ucsc_hiseq",
+    "disease": "read",
+    "type": "rna",
+    "geneID_hugos": 18041,
+    "geneID_symbols": 20465,
+    "geneID_notIncludes": 659
+  },
+  {
+    "collection": "meso_mut01_ucsc_broad",
+    "disease": "meso",
+    "type": "mut01",
+    "geneID_hugos": 34633,
+    "geneID_symbols": 40341,
+    "geneID_notIncludes": 619
+  },
+  {
+    "collection": "hnsc_mut01_ucsc_mutationbroadgene",
+    "disease": "hnsc",
+    "type": "mut01",
+    "geneID_hugos": 34681,
+    "geneID_symbols": 40406,
+    "geneID_notIncludes": 514
+  },
+  {
+    "collection": "thym_mut01_ucsc_broad",
+    "disease": "thym",
+    "type": "mut01",
+    "geneID_hugos": 34644,
+    "geneID_symbols": 40354,
+    "geneID_notIncludes": 488
+  },
+  {
+    "collection": "paad_mut01_ucsc_mutationbroadgene",
+    "disease": "paad",
+    "type": "mut01",
+    "geneID_hugos": 34668,
+    "geneID_symbols": 40385,
+    "geneID_notIncludes": 467
+  },
+  {
+    "collection": "brain_mut01_ucsc_import",
+    "disease": "brain",
+    "type": "mut01",
+    "geneID_hugos": 34697,
+    "geneID_symbols": 40423,
+    "geneID_notIncludes": 437
+  },
+  {
+    "collection": "lgg_mut01_ucsc_mutationbroadgene",
+    "disease": "lgg",
+    "type": "mut01",
+    "geneID_hugos": 34697,
+    "geneID_symbols": 40423,
+    "geneID_notIncludes": 437
+  },
+  {
+    "collection": "blca_mut01_ucsc_mutationbroadgene",
+    "disease": "blca",
+    "type": "mut01",
+    "geneID_hugos": 34676,
+    "geneID_symbols": 40402,
+    "geneID_notIncludes": 400
+  },
+  {
+    "collection": "ucs_mut01_ucsc_broad",
+    "disease": "ucs",
+    "type": "mut01",
+    "geneID_hugos": 34633,
+    "geneID_symbols": 40345,
+    "geneID_notIncludes": 371
+  },
+  {
+    "collection": "thca_mut01_ucsc_broad",
+    "disease": "thca",
+    "type": "mut01",
+    "geneID_hugos": 34638,
+    "geneID_symbols": 40349,
+    "geneID_notIncludes": 367
+  },
+  {
+    "collection": "prad_mut01_ucsc_mutationbroadgene",
+    "disease": "prad",
+    "type": "mut01",
+    "geneID_hugos": 34673,
+    "geneID_symbols": 40382,
+    "geneID_notIncludes": 329
+  },
+  {
+    "collection": "acc_mut01_ucsc_broadcurated",
+    "disease": "acc",
+    "type": "mut01",
+    "geneID_hugos": 34632,
+    "geneID_symbols": 40339,
+    "geneID_notIncludes": 314
+  },
+  {
+    "collection": "skcm_protein_ucsc_rppa",
+    "disease": "skcm",
+    "type": "protein",
+    "geneID_hugos": 0,
+    "geneID_symbols": 0,
+    "geneID_notIncludes": 282
+  },
+  {
+    "collection": "ov_protein_ucsc_rppa",
+    "disease": "ov",
+    "type": "protein",
+    "geneID_hugos": 0,
+    "geneID_symbols": 0,
+    "geneID_notIncludes": 281
+  },
+  {
+    "collection": "brca_protein_ucsc_rppa",
+    "disease": "brca",
+    "type": "protein",
+    "geneID_hugos": 0,
+    "geneID_symbols": 0,
+    "geneID_notIncludes": 281
+  },
+  {
+    "collection": "luad_protein_ucsc_rppa",
+    "disease": "luad",
+    "type": "protein",
+    "geneID_hugos": 0,
+    "geneID_symbols": 0,
+    "geneID_notIncludes": 276
+  },
+  {
+    "collection": "lusc_protein_ucsc_rppa",
+    "disease": "lusc",
+    "type": "protein",
+    "geneID_hugos": 0,
+    "geneID_symbols": 0,
+    "geneID_notIncludes": 276
+  },
+  {
+    "collection": "read_protein_ucsc_rppa",
+    "disease": "read",
+    "type": "protein",
+    "geneID_hugos": 0,
+    "geneID_symbols": 0,
+    "geneID_notIncludes": 275
+  },
+  {
+    "collection": "hnsc_protein_ucsc_rppa",
+    "disease": "hnsc",
+    "type": "protein",
+    "geneID_hugos": 0,
+    "geneID_symbols": 0,
+    "geneID_notIncludes": 274
+  },
+  {
+    "collection": "gbm_protein_ucsc_rppa",
+    "disease": "gbm",
+    "type": "protein",
+    "geneID_hugos": 0,
+    "geneID_symbols": 0,
+    "geneID_notIncludes": 274
+  },
+  {
+    "collection": "coad_protein_ucsc_rppa",
+    "disease": "coad",
+    "type": "protein",
+    "geneID_hugos": 0,
+    "geneID_symbols": 0,
+    "geneID_notIncludes": 262
+  },
+  {
+    "collection": "coad_protein_ucsc_rppa",
+    "disease": "coad",
+    "type": "protein",
+    "geneID_hugos": 0,
+    "geneID_symbols": 0,
+    "geneID_notIncludes": 262
+  },
+  {
+    "collection": "thca_protein_ucsc_rppa",
+    "disease": "thca",
+    "type": "protein",
+    "geneID_hugos": 0,
+    "geneID_symbols": 0,
+    "geneID_notIncludes": 260
+  },
+  {
+    "collection": "blca_protein_ucsc_rppa",
+    "disease": "blca",
+    "type": "protein",
+    "geneID_hugos": 0,
+    "geneID_symbols": 0,
+    "geneID_notIncludes": 245
+  },
+  {
+    "collection": "ucec_protein_ucsc_rppa",
+    "disease": "ucec",
+    "type": "protein",
+    "geneID_hugos": 0,
+    "geneID_symbols": 0,
+    "geneID_notIncludes": 245
+  },
+  {
+    "collection": "tgct_mut01_ucsc_broad",
+    "disease": "tgct",
+    "type": "mut01",
+    "geneID_hugos": 34630,
+    "geneID_symbols": 40335,
+    "geneID_notIncludes": 241
+  },
+  {
+    "collection": "paad_protein_ucsc_rppa",
+    "disease": "paad",
+    "type": "protein",
+    "geneID_hugos": 0,
+    "geneID_symbols": 0,
+    "geneID_notIncludes": 229
+  },
+  {
+    "collection": "lgg_protein_ucsc_rppa",
+    "disease": "lgg",
+    "type": "protein",
+    "geneID_hugos": 0,
+    "geneID_symbols": 0,
+    "geneID_notIncludes": 228
+  },
+  {
+    "collection": "stad_protein_ucsc_rppa",
+    "disease": "stad",
+    "type": "protein",
+    "geneID_hugos": 0,
+    "geneID_symbols": 0,
+    "geneID_notIncludes": 227
+  },
+  {
+    "collection": "prad_protein_ucsc_rppa",
+    "disease": "prad",
+    "type": "protein",
+    "geneID_hugos": 0,
+    "geneID_symbols": 0,
+    "geneID_notIncludes": 227
+  },
+  {
+    "collection": "chol_mut01_ucsc_broad",
+    "disease": "chol",
+    "type": "mut01",
+    "geneID_hugos": 34624,
+    "geneID_symbols": 40333,
+    "geneID_notIncludes": 227
+  },
+  {
+    "collection": "kirp_protein_ucsc_rppa",
+    "disease": "kirp",
+    "type": "protein",
+    "geneID_hugos": 0,
+    "geneID_symbols": 0,
+    "geneID_notIncludes": 224
+  },
+  {
+    "collection": "acc_protein_ucsc_rppa",
+    "disease": "acc",
+    "type": "protein",
+    "geneID_hugos": 0,
+    "geneID_symbols": 0,
+    "geneID_notIncludes": 220
+  },
+  {
+    "collection": "uvm_protein_ucsc_rppa",
+    "disease": "uvm",
+    "type": "protein",
+    "geneID_hugos": 0,
+    "geneID_symbols": 0,
+    "geneID_notIncludes": 219
+  },
+  {
+    "collection": "kich_protein_ucsc_rppa",
+    "disease": "kich",
+    "type": "protein",
+    "geneID_hugos": 0,
+    "geneID_symbols": 0,
+    "geneID_notIncludes": 219
+  },
+  {
+    "collection": "ucs_protein_ucsc_rppa",
+    "disease": "ucs",
+    "type": "protein",
+    "geneID_hugos": 0,
+    "geneID_symbols": 0,
+    "geneID_notIncludes": 219
+  },
+  {
+    "collection": "cesc_protein_ucsc_rppa",
+    "disease": "cesc",
+    "type": "protein",
+    "geneID_hugos": 0,
+    "geneID_symbols": 0,
+    "geneID_notIncludes": 219
+  },
+  {
+    "collection": "sarc_protein_ucsc_rppa",
+    "disease": "sarc",
+    "type": "protein",
+    "geneID_hugos": 0,
+    "geneID_symbols": 0,
+    "geneID_notIncludes": 219
+  },
+  {
+    "collection": "lihc_protein_ucsc_rppa",
+    "disease": "lihc",
+    "type": "protein",
+    "geneID_hugos": 0,
+    "geneID_symbols": 0,
+    "geneID_notIncludes": 219
+  },
+  {
+    "collection": "meso_protein_ucsc_rppa",
+    "disease": "meso",
+    "type": "protein",
+    "geneID_hugos": 0,
+    "geneID_symbols": 0,
+    "geneID_notIncludes": 219
+  },
+  {
+    "collection": "pcpg_protein_ucsc_rppa",
+    "disease": "pcpg",
+    "type": "protein",
+    "geneID_hugos": 0,
+    "geneID_symbols": 0,
+    "geneID_notIncludes": 219
+  },
+  {
+    "collection": "esca_protein_ucsc_rppa",
+    "disease": "esca",
+    "type": "protein",
+    "geneID_hugos": 0,
+    "geneID_symbols": 0,
+    "geneID_notIncludes": 219
+  },
+  {
+    "collection": "dlbc_protein_ucsc_rppa",
+    "disease": "dlbc",
+    "type": "protein",
+    "geneID_hugos": 0,
+    "geneID_symbols": 0,
+    "geneID_notIncludes": 218
+  },
+  {
+    "collection": "thym_protein_ucsc_rppa",
+    "disease": "thym",
+    "type": "protein",
+    "geneID_hugos": 0,
+    "geneID_symbols": 0,
+    "geneID_notIncludes": 218
+  },
+  {
+    "collection": "chol_protein_ucsc_rppa",
+    "disease": "chol",
+    "type": "protein",
+    "geneID_hugos": 0,
+    "geneID_symbols": 0,
+    "geneID_notIncludes": 218
+  },
+  {
+    "collection": "tgct_protein_ucsc_rppa",
+    "disease": "tgct",
+    "type": "protein",
+    "geneID_hugos": 0,
+    "geneID_symbols": 0,
+    "geneID_notIncludes": 218
+  },
+  {
+    "collection": "lusc_mut01_ucsc_mutationbroadgene",
+    "disease": "lusc",
+    "type": "mut01",
+    "geneID_hugos": 34614,
+    "geneID_symbols": 41036,
+    "geneID_notIncludes": 165
+  },
+  {
+    "collection": "kirp_mut01_ucsc_broadcurated",
+    "disease": "kirp",
+    "type": "mut01",
+    "geneID_hugos": 34614,
+    "geneID_symbols": 40473,
+    "geneID_notIncludes": 160
+  },
+  {
+    "collection": "pcpg_mut01_ucsc_broad",
+    "disease": "pcpg",
+    "type": "mut01",
+    "geneID_hugos": 34628,
+    "geneID_symbols": 40332,
+    "geneID_notIncludes": 154
+  },
+  {
+    "collection": "brca_mut01_ucsc_mutationcuratedwustlgene",
+    "disease": "brca",
+    "type": "mut01",
+    "geneID_hugos": 34610,
+    "geneID_symbols": 40589,
+    "geneID_notIncludes": 140
+  },
+  {
+    "collection": "cesc_mut01_ucsc_ucsc",
+    "disease": "cesc",
+    "type": "mut01",
+    "geneID_hugos": 34610,
+    "geneID_symbols": 40479,
+    "geneID_notIncludes": 126
+  },
+  {
+    "collection": "gbm_mut01_ucsc_mutationbroadgene",
+    "disease": "gbm",
+    "type": "mut01",
+    "geneID_hugos": 34615,
+    "geneID_symbols": 40750,
+    "geneID_notIncludes": 96
+  },
+  {
+    "collection": "kich_mut01_ucsc_broad",
+    "disease": "kich",
+    "type": "mut01",
+    "geneID_hugos": 34607,
+    "geneID_symbols": 40366,
+    "geneID_notIncludes": 67
+  },
+  {
+    "collection": "lung_facs_demo_flow",
+    "disease": "lung",
+    "type": "facs",
+    "geneID_hugos": 1,
+    "geneID_symbols": 3,
+    "geneID_notIncludes": 61
+  },
+  {
+    "collection": "stad_mut01_ucsc_mutationbcmgene",
+    "disease": "stad",
+    "type": "mut01",
+    "geneID_hugos": 34630,
+    "geneID_symbols": 40381,
+    "geneID_notIncludes": 60
+  },
+  {
+    "collection": "lihc_mut01_ucsc_bcm",
+    "disease": "lihc",
+    "type": "mut01",
+    "geneID_hugos": 34616,
+    "geneID_symbols": 40360,
+    "geneID_notIncludes": 59
+  },
+  {
+    "collection": "stad_mut01_ucsc_broadcurated",
+    "disease": "stad",
+    "type": "mut01",
+    "geneID_hugos": 34609,
+    "geneID_symbols": 41098,
+    "geneID_notIncludes": 56
+  },
+  {
+    "collection": "uvm_mut01_ucsc_broadcurated",
+    "disease": "uvm",
+    "type": "mut01",
+    "geneID_hugos": 34615,
+    "geneID_symbols": 40314,
+    "geneID_notIncludes": 54
+  },
+  {
+    "collection": "kirc_mut01_ucsc_pancanaws",
+    "disease": "kirc",
+    "type": "mut01",
+    "geneID_hugos": 34608,
+    "geneID_symbols": 40471,
+    "geneID_notIncludes": 49
+  },
+  {
+    "collection": "lung_mut01_ucsc_mutation",
+    "disease": "lung",
+    "type": "mut01",
+    "geneID_hugos": 34609,
+    "geneID_symbols": 40541,
+    "geneID_notIncludes": 48
+  },
+  {
+    "collection": "ucec_mut01_ucsc_pancanaws",
+    "disease": "ucec",
+    "type": "mut01",
+    "geneID_hugos": 34609,
+    "geneID_symbols": 40558,
+    "geneID_notIncludes": 47
+  },
+  {
+    "collection": "coadread_mut01_ucsc_mutation",
+    "disease": "coadread",
+    "type": "mut01",
+    "geneID_hugos": 34608,
+    "geneID_symbols": 40501,
+    "geneID_notIncludes": 41
+  },
+  {
+    "collection": "dlbc_mut01_ucsc_bcm",
+    "disease": "dlbc",
+    "type": "mut01",
+    "geneID_hugos": 34611,
+    "geneID_symbols": 40343,
+    "geneID_notIncludes": 37
+  },
+  {
+    "collection": "ov_mut01_ucsc_pancanaws",
+    "disease": "ov",
+    "type": "mut01",
+    "geneID_hugos": 34608,
+    "geneID_symbols": 40428,
+    "geneID_notIncludes": 37
+  },
+  {
+    "collection": "brain_mut01_ucsc-pnas_import",
+    "disease": "brain",
+    "type": "mut01",
+    "geneID_hugos": 34608,
+    "geneID_symbols": 40309,
+    "geneID_notIncludes": 34
+  },
+  {
+    "collection": "laml_mut01_ucsc_mutation",
+    "disease": "laml",
+    "type": "mut01",
+    "geneID_hugos": 34607,
+    "geneID_symbols": 40324,
+    "geneID_notIncludes": 32
+  },
+  {
+    "collection": "hg19_genesets_orghs_1e+05",
+    "disease": "hg19",
+    "type": "genesets",
+    "geneID_hugos": 1486,
+    "geneID_symbols": 1639,
+    "geneID_notIncludes": 16
+  },
+  {
+    "collection": "hg19_genesets_hgnc_import",
+    "disease": "hg19",
+    "type": "genesets",
+    "geneID_hugos": 1486,
+    "geneID_symbols": 1639,
+    "geneID_notIncludes": 16
+  },
+  {
+    "collection": "luad_mut01_broad_mutsig2",
+    "disease": "luad",
+    "type": "mut01",
+    "geneID_hugos": 15370,
+    "geneID_symbols": 16109,
+    "geneID_notIncludes": 5
+  },
+  {
+    "collection": "blca_mut_broad_mutsig2",
+    "disease": "blca",
+    "type": "mut",
+    "geneID_hugos": 15096,
+    "geneID_symbols": 15825,
+    "geneID_notIncludes": 5
+  },
+  {
+    "collection": "blca_mut01_broad_mutsig2",
+    "disease": "blca",
+    "type": "mut01",
+    "geneID_hugos": 15096,
+    "geneID_symbols": 15825,
+    "geneID_notIncludes": 5
+  },
+  {
+    "collection": "skcm_mut01_broad_mutsig2",
+    "disease": "skcm",
+    "type": "mut01",
+    "geneID_hugos": 15169,
+    "geneID_symbols": 15911,
+    "geneID_notIncludes": 5
+  },
+  {
+    "collection": "stad_mut01_broad_mutsig2",
+    "disease": "stad",
+    "type": "mut01",
+    "geneID_hugos": 15677,
+    "geneID_symbols": 16429,
+    "geneID_notIncludes": 5
+  },
+  {
+    "collection": "skcm_mut_broad_mutsig2",
+    "disease": "skcm",
+    "type": "mut",
+    "geneID_hugos": 15169,
+    "geneID_symbols": 15911,
+    "geneID_notIncludes": 5
+  },
+  {
+    "collection": "luad_mut_broad_mutsig2",
+    "disease": "luad",
+    "type": "mut",
+    "geneID_hugos": 15370,
+    "geneID_symbols": 16109,
+    "geneID_notIncludes": 5
+  },
+  {
+    "collection": "stad_mut_broad_mutsig2",
+    "disease": "stad",
+    "type": "mut",
+    "geneID_hugos": 15677,
+    "geneID_symbols": 16429,
+    "geneID_notIncludes": 5
+  },
+  {
+    "collection": "brca_mut_broad_mutsig2",
+    "disease": "brca",
+    "type": "mut",
+    "geneID_hugos": 13212,
+    "geneID_symbols": 13842,
+    "geneID_notIncludes": 4
+  },
+  {
+    "collection": "lihc_mut_broad_mutsig2",
+    "disease": "lihc",
+    "type": "mut",
+    "geneID_hugos": 12475,
+    "geneID_symbols": 13083,
+    "geneID_notIncludes": 4
+  },
+  {
+    "collection": "lgg_mut01_broad_mutsig2",
+    "disease": "lgg",
+    "type": "mut01",
+    "geneID_hugos": 11052,
+    "geneID_symbols": 11594,
+    "geneID_notIncludes": 4
+  },
+  {
+    "collection": "lihc_mut01_broad_mutsig2",
+    "disease": "lihc",
+    "type": "mut01",
+    "geneID_hugos": 12475,
+    "geneID_symbols": 13083,
+    "geneID_notIncludes": 4
+  },
+  {
+    "collection": "esca_mut_broad_mutsig2",
+    "disease": "esca",
+    "type": "mut",
+    "geneID_hugos": 11962,
+    "geneID_symbols": 12510,
+    "geneID_notIncludes": 4
+  },
+  {
+    "collection": "brca_mut01_broad_mutsig2",
+    "disease": "brca",
+    "type": "mut01",
+    "geneID_hugos": 13212,
+    "geneID_symbols": 13842,
+    "geneID_notIncludes": 4
+  },
+  {
+    "collection": "brain_mut_broad_mutsig2",
+    "disease": "brain",
+    "type": "mut",
+    "geneID_hugos": 12667,
+    "geneID_symbols": 13290,
+    "geneID_notIncludes": 4
+  },
+  {
+    "collection": "hnsc_mut_broad_mutsig2",
+    "disease": "hnsc",
+    "type": "mut",
+    "geneID_hugos": 14369,
+    "geneID_symbols": 15068,
+    "geneID_notIncludes": 4
+  },
+  {
+    "collection": "esca_mut01_broad_mutsig2",
+    "disease": "esca",
+    "type": "mut01",
+    "geneID_hugos": 11962,
+    "geneID_symbols": 12510,
+    "geneID_notIncludes": 4
+  },
+  {
+    "collection": "lgg_mut_broad_mutsig2",
+    "disease": "lgg",
+    "type": "mut",
+    "geneID_hugos": 11052,
+    "geneID_symbols": 11594,
+    "geneID_notIncludes": 4
+  },
+  {
+    "collection": "brain_mut01_broad_mutsig2",
+    "disease": "brain",
+    "type": "mut01",
+    "geneID_hugos": 12667,
+    "geneID_symbols": 13290,
+    "geneID_notIncludes": 4
+  },
+  {
+    "collection": "hnsc_mut01_broad_mutsig2",
+    "disease": "hnsc",
+    "type": "mut01",
+    "geneID_hugos": 14369,
+    "geneID_symbols": 15068,
+    "geneID_notIncludes": 4
+  },
+  {
+    "collection": "brain_edges_ucsc-pnas_tcgagbmclassifiers-mut01-cnv",
+    "disease": "brain",
+    "type": "edges",
+    "geneID_hugos": 756,
+    "geneID_symbols": 808,
+    "geneID_notIncludes": 3
+  },
+  {
+    "collection": "ucec_mut01_broad_mutsig2",
+    "disease": "ucec",
+    "type": "mut01",
+    "geneID_hugos": 15008,
+    "geneID_symbols": 15712,
+    "geneID_notIncludes": 3
+  },
+  {
+    "collection": "prad_mut01_broad_mutsig2",
+    "disease": "prad",
+    "type": "mut01",
+    "geneID_hugos": 10137,
+    "geneID_symbols": 10618,
+    "geneID_notIncludes": 3
+  },
+  {
+    "collection": "paad_mut01_broad_mutsig2",
+    "disease": "paad",
+    "type": "mut01",
+    "geneID_hugos": 11198,
+    "geneID_symbols": 11745,
+    "geneID_notIncludes": 3
+  },
+  {
+    "collection": "cesc_mut01_broad_mutsig2",
+    "disease": "cesc",
+    "type": "mut01",
+    "geneID_hugos": 10847,
+    "geneID_symbols": 11375,
+    "geneID_notIncludes": 3
+  },
+  {
+    "collection": "cesc_mut_broad_mutsig2",
+    "disease": "cesc",
+    "type": "mut",
+    "geneID_hugos": 10847,
+    "geneID_symbols": 11375,
+    "geneID_notIncludes": 3
+  },
+  {
+    "collection": "ucec_mut_broad_mutsig2",
+    "disease": "ucec",
+    "type": "mut",
+    "geneID_hugos": 15008,
+    "geneID_symbols": 15712,
+    "geneID_notIncludes": 3
+  },
+  {
+    "collection": "prad_mut_broad_mutsig2",
+    "disease": "prad",
+    "type": "mut",
+    "geneID_hugos": 10137,
+    "geneID_symbols": 10618,
+    "geneID_notIncludes": 3
+  },
+  {
+    "collection": "paad_mut_broad_mutsig2",
+    "disease": "paad",
+    "type": "mut",
+    "geneID_hugos": 11198,
+    "geneID_symbols": 11745,
+    "geneID_notIncludes": 3
+  },
+  {
+    "collection": "kirc_mut01_broad_mutsig2",
+    "disease": "kirc",
+    "type": "mut01",
+    "geneID_hugos": 10223,
+    "geneID_symbols": 10719,
+    "geneID_notIncludes": 2
+  },
+  {
+    "collection": "dlbc_mut01_broad_mutsig2",
+    "disease": "dlbc",
+    "type": "mut01",
+    "geneID_hugos": 5825,
+    "geneID_symbols": 6117,
+    "geneID_notIncludes": 2
+  },
+  {
+    "collection": "thca_mut01_broad_mutsig2",
+    "disease": "thca",
+    "type": "mut01",
+    "geneID_hugos": 4751,
+    "geneID_symbols": 4973,
+    "geneID_notIncludes": 2
+  },
+  {
+    "collection": "sarc_mut01_broad_mutsig2",
+    "disease": "sarc",
+    "type": "mut01",
+    "geneID_hugos": 6596,
+    "geneID_symbols": 6917,
+    "geneID_notIncludes": 2
+  },
+  {
+    "collection": "thca_mut_broad_mutsig2",
+    "disease": "thca",
+    "type": "mut",
+    "geneID_hugos": 4751,
+    "geneID_symbols": 4973,
+    "geneID_notIncludes": 2
+  },
+  {
+    "collection": "lusc_mut01_broad_mutsig2",
+    "disease": "lusc",
+    "type": "mut01",
+    "geneID_hugos": 12314,
+    "geneID_symbols": 12925,
+    "geneID_notIncludes": 2
+  },
+  {
+    "collection": "kirp_mut01_broad_mutsig2",
+    "disease": "kirp",
+    "type": "mut01",
+    "geneID_hugos": 7610,
+    "geneID_symbols": 7989,
+    "geneID_notIncludes": 2
+  },
+  {
+    "collection": "sarc_mut_broad_mutsig2",
+    "disease": "sarc",
+    "type": "mut",
+    "geneID_hugos": 6596,
+    "geneID_symbols": 6917,
+    "geneID_notIncludes": 2
+  },
+  {
+    "collection": "lusc_mut_broad_mutsig2",
+    "disease": "lusc",
+    "type": "mut",
+    "geneID_hugos": 12314,
+    "geneID_symbols": 12925,
+    "geneID_notIncludes": 2
+  },
+  {
+    "collection": "kirp_mut_broad_mutsig2",
+    "disease": "kirp",
+    "type": "mut",
+    "geneID_hugos": 7610,
+    "geneID_symbols": 7989,
+    "geneID_notIncludes": 2
+  },
+  {
+    "collection": "kirc_mut_broad_mutsig2",
+    "disease": "kirc",
+    "type": "mut",
+    "geneID_hugos": 10223,
+    "geneID_symbols": 10719,
+    "geneID_notIncludes": 2
+  },
+  {
+    "collection": "dlbc_mut_broad_mutsig2",
+    "disease": "dlbc",
+    "type": "mut",
+    "geneID_hugos": 5825,
+    "geneID_symbols": 6117,
+    "geneID_notIncludes": 2
+  },
+  {
+    "collection": "acc_mut_broad_mutsig2",
+    "disease": "acc",
+    "type": "mut",
+    "geneID_hugos": 6167,
+    "geneID_symbols": 6466,
+    "geneID_notIncludes": 1
+  },
+  {
+    "collection": "gbm_mut01_broad_mutsig2",
+    "disease": "gbm",
+    "type": "mut01",
+    "geneID_hugos": 7317,
+    "geneID_symbols": 7660,
+    "geneID_notIncludes": 1
+  },
+  {
+    "collection": "lusc_genedegree_ucsc_markergenes545-mut01-cnv",
+    "disease": "lusc",
+    "type": "genedegree",
+    "geneID_hugos": 535,
+    "geneID_symbols": 560,
+    "geneID_notIncludes": 1
+  },
+  {
+    "collection": "chol_mut_broad_mutsig2",
+    "disease": "chol",
+    "type": "mut",
+    "geneID_hugos": 3163,
+    "geneID_symbols": 3326,
+    "geneID_notIncludes": 1
+  },
+  {
+    "collection": "brain_edges_broad_tcgagbmclassifiers-mut01",
+    "disease": "brain",
+    "type": "edges",
+    "geneID_hugos": 599,
+    "geneID_symbols": 629,
+    "geneID_notIncludes": 1
+  },
+  {
+    "collection": "blca_edges_broad_tcgagbmclassifiers-mut01",
+    "disease": "blca",
+    "type": "edges",
+    "geneID_hugos": 704,
+    "geneID_symbols": 740,
+    "geneID_notIncludes": 1
+  },
+  {
+    "collection": "hnsc_edges_broad_tcgagbmclassifiers-mut01",
+    "disease": "hnsc",
+    "type": "edges",
+    "geneID_hugos": 659,
+    "geneID_symbols": 694,
+    "geneID_notIncludes": 1
+  },
+  {
+    "collection": "kirc_edges_broad_tcgagbmclassifiers-mut01",
+    "disease": "kirc",
+    "type": "edges",
+    "geneID_hugos": 471,
+    "geneID_symbols": 501,
+    "geneID_notIncludes": 1
+  },
+  {
+    "collection": "kirp_edges_broad_tcgagbmclassifiers-mut01",
+    "disease": "kirp",
+    "type": "edges",
+    "geneID_hugos": 370,
+    "geneID_symbols": 390,
+    "geneID_notIncludes": 1
+  },
+  {
+    "collection": "cesc_edges_broad_tcgagbmclassifiers-mut01",
+    "disease": "cesc",
+    "type": "edges",
+    "geneID_hugos": 533,
+    "geneID_symbols": 562,
+    "geneID_notIncludes": 1
+  },
+  {
+    "collection": "chol_edges_broad_tcgagbmclassifiers-mut01",
+    "disease": "chol",
+    "type": "edges",
+    "geneID_hugos": 160,
+    "geneID_symbols": 167,
+    "geneID_notIncludes": 1
+  },
+  {
+    "collection": "lgg_edges_broad_tcgagbmclassifiers-mut01",
+    "disease": "lgg",
+    "type": "edges",
+    "geneID_hugos": 532,
+    "geneID_symbols": 559,
+    "geneID_notIncludes": 1
+  },
+  {
+    "collection": "chol_mut01_broad_mutsig2",
+    "disease": "chol",
+    "type": "mut01",
+    "geneID_hugos": 3163,
+    "geneID_symbols": 3326,
+    "geneID_notIncludes": 1
+  },
+  {
+    "collection": "luad_edges_broad_tcgagbmclassifiers-mut01",
+    "disease": "luad",
+    "type": "edges",
+    "geneID_hugos": 706,
+    "geneID_symbols": 743,
+    "geneID_notIncludes": 1
+  },
+  {
+    "collection": "lusc_edges_broad_tcgagbmclassifiers-mut01",
+    "disease": "lusc",
+    "type": "edges",
+    "geneID_hugos": 576,
+    "geneID_symbols": 604,
+    "geneID_notIncludes": 1
+  },
+  {
+    "collection": "paad_edges_broad_tcgagbmclassifiers-mut01",
+    "disease": "paad",
+    "type": "edges",
+    "geneID_hugos": 551,
+    "geneID_symbols": 582,
+    "geneID_notIncludes": 1
+  },
+  {
+    "collection": "prad_edges_broad_tcgagbmclassifiers-mut01",
+    "disease": "prad",
+    "type": "edges",
+    "geneID_hugos": 480,
+    "geneID_symbols": 503,
+    "geneID_notIncludes": 1
+  },
+  {
+    "collection": "skcm_edges_broad_tcgagbmclassifiers-mut01",
+    "disease": "skcm",
+    "type": "edges",
+    "geneID_hugos": 695,
+    "geneID_symbols": 732,
+    "geneID_notIncludes": 1
+  },
+  {
+    "collection": "stad_edges_broad_tcgagbmclassifiers-mut01",
+    "disease": "stad",
+    "type": "edges",
+    "geneID_hugos": 728,
+    "geneID_symbols": 766,
+    "geneID_notIncludes": 1
+  },
+  {
+    "collection": "acc_mut01_broad_mutsig2",
+    "disease": "acc",
+    "type": "mut01",
+    "geneID_hugos": 6167,
+    "geneID_symbols": 6466,
+    "geneID_notIncludes": 1
+  },
+  {
+    "collection": "brain_edges_ucsc-pnas_markergenes545-mut01-cnv",
+    "disease": "brain",
+    "type": "edges",
+    "geneID_hugos": 531,
+    "geneID_symbols": 556,
+    "geneID_notIncludes": 1
+  },
+  {
+    "collection": "stad_edges_ucsc_markergenes545-mut01",
+    "disease": "stad",
+    "type": "edges",
+    "geneID_hugos": 497,
+    "geneID_symbols": 518,
+    "geneID_notIncludes": 1
+  },
+  {
+    "collection": "gbm_mut_broad_mutsig2",
+    "disease": "gbm",
+    "type": "mut",
+    "geneID_hugos": 7317,
+    "geneID_symbols": 7660,
+    "geneID_notIncludes": 1
+  },
+  {
+    "collection": "gbm_edges_ucsc_markergenes545-mut01-cnv",
+    "disease": "gbm",
+    "type": "edges",
+    "geneID_hugos": 534,
+    "geneID_symbols": 558,
+    "geneID_notIncludes": 1
+  },
+  {
+    "collection": "lusc_edges_ucsc_tcgagbmclassifiers-mut01-cnv",
+    "disease": "lusc",
+    "type": "edges",
+    "geneID_hugos": 756,
+    "geneID_symbols": 811,
+    "geneID_notIncludes": 1
+  },
+  {
+    "collection": "lusc_edges_ucsc_markergenes545-mut01-cnv",
+    "disease": "lusc",
+    "type": "edges",
+    "geneID_hugos": 535,
+    "geneID_symbols": 560,
+    "geneID_notIncludes": 1
+  },
+  {
+    "collection": "brain_genedegree_broad_tcgagbmclassifiers-mut01",
+    "disease": "brain",
+    "type": "genedegree",
+    "geneID_hugos": 599,
+    "geneID_symbols": 629,
+    "geneID_notIncludes": 1
+  },
+  {
+    "collection": "blca_genedegree_broad_tcgagbmclassifiers-mut01",
+    "disease": "blca",
+    "type": "genedegree",
+    "geneID_hugos": 704,
+    "geneID_symbols": 740,
+    "geneID_notIncludes": 1
+  },
+  {
+    "collection": "hnsc_genedegree_broad_tcgagbmclassifiers-mut01",
+    "disease": "hnsc",
+    "type": "genedegree",
+    "geneID_hugos": 659,
+    "geneID_symbols": 694,
+    "geneID_notIncludes": 1
+  },
+  {
+    "collection": "kirc_genedegree_broad_tcgagbmclassifiers-mut01",
+    "disease": "kirc",
+    "type": "genedegree",
+    "geneID_hugos": 471,
+    "geneID_symbols": 501,
+    "geneID_notIncludes": 1
+  },
+  {
+    "collection": "kirp_genedegree_broad_tcgagbmclassifiers-mut01",
+    "disease": "kirp",
+    "type": "genedegree",
+    "geneID_hugos": 370,
+    "geneID_symbols": 390,
+    "geneID_notIncludes": 1
+  },
+  {
+    "collection": "cesc_genedegree_broad_tcgagbmclassifiers-mut01",
+    "disease": "cesc",
+    "type": "genedegree",
+    "geneID_hugos": 533,
+    "geneID_symbols": 562,
+    "geneID_notIncludes": 1
+  },
+  {
+    "collection": "chol_genedegree_broad_tcgagbmclassifiers-mut01",
+    "disease": "chol",
+    "type": "genedegree",
+    "geneID_hugos": 160,
+    "geneID_symbols": 167,
+    "geneID_notIncludes": 1
+  },
+  {
+    "collection": "lgg_genedegree_broad_tcgagbmclassifiers-mut01",
+    "disease": "lgg",
+    "type": "genedegree",
+    "geneID_hugos": 532,
+    "geneID_symbols": 559,
+    "geneID_notIncludes": 1
+  },
+  {
+    "collection": "lihc_genedegree_broad_tcgagbmclassifiers-mut01",
+    "disease": "lihc",
+    "type": "genedegree",
+    "geneID_hugos": 600,
+    "geneID_symbols": 631,
+    "geneID_notIncludes": 1
+  },
+  {
+    "collection": "luad_genedegree_broad_tcgagbmclassifiers-mut01",
+    "disease": "luad",
+    "type": "genedegree",
+    "geneID_hugos": 706,
+    "geneID_symbols": 743,
+    "geneID_notIncludes": 1
+  },
+  {
+    "collection": "lusc_genedegree_broad_tcgagbmclassifiers-mut01",
+    "disease": "lusc",
+    "type": "genedegree",
+    "geneID_hugos": 576,
+    "geneID_symbols": 604,
+    "geneID_notIncludes": 1
+  },
+  {
+    "collection": "paad_genedegree_broad_tcgagbmclassifiers-mut01",
+    "disease": "paad",
+    "type": "genedegree",
+    "geneID_hugos": 551,
+    "geneID_symbols": 582,
+    "geneID_notIncludes": 1
+  },
+  {
+    "collection": "prad_genedegree_broad_tcgagbmclassifiers-mut01",
+    "disease": "prad",
+    "type": "genedegree",
+    "geneID_hugos": 480,
+    "geneID_symbols": 503,
+    "geneID_notIncludes": 1
+  },
+  {
+    "collection": "skcm_genedegree_broad_tcgagbmclassifiers-mut01",
+    "disease": "skcm",
+    "type": "genedegree",
+    "geneID_hugos": 695,
+    "geneID_symbols": 732,
+    "geneID_notIncludes": 1
+  },
+  {
+    "collection": "stad_genedegree_broad_tcgagbmclassifiers-mut01",
+    "disease": "stad",
+    "type": "genedegree",
+    "geneID_hugos": 728,
+    "geneID_symbols": 766,
+    "geneID_notIncludes": 1
+  },
+  {
+    "collection": "brain_genedegree_ucsc-pnas_markergenes545-mut01-cnv",
+    "disease": "brain",
+    "type": "genedegree",
+    "geneID_hugos": 531,
+    "geneID_symbols": 556,
+    "geneID_notIncludes": 1
+  },
+  {
+    "collection": "stad_genedegree_ucsc_markergenes545-mut01",
+    "disease": "stad",
+    "type": "genedegree",
+    "geneID_hugos": 497,
+    "geneID_symbols": 518,
+    "geneID_notIncludes": 1
+  },
+  {
+    "collection": "gbm_genedegree_ucsc_markergenes545-mut01-cnv",
+    "disease": "gbm",
+    "type": "genedegree",
+    "geneID_hugos": 534,
+    "geneID_symbols": 558,
+    "geneID_notIncludes": 1
+  },
+  {
+    "collection": "lusc_genedegree_ucsc_tcgagbmclassifiers-mut01-cnv",
+    "disease": "lusc",
+    "type": "genedegree",
+    "geneID_hugos": 756,
+    "geneID_symbols": 811,
+    "geneID_notIncludes": 1
+  },
+  {
+    "collection": "lihc_edges_broad_tcgagbmclassifiers-mut01",
+    "disease": "lihc",
+    "type": "edges",
+    "geneID_hugos": 600,
+    "geneID_symbols": 631,
+    "geneID_notIncludes": 1
+  },
+  {
+    "collection": "gbm_edges_broad_osccchen131probes-mut01",
+    "disease": "gbm",
+    "type": "edges",
+    "geneID_hugos": 58,
+    "geneID_symbols": 59,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "gbm_edges_broad_osccchen9genes-mut01",
+    "disease": "gbm",
+    "type": "edges",
+    "geneID_hugos": 5,
+    "geneID_symbols": 5,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "brain_edges_broad_markergenes545-mut01",
+    "disease": "brain",
+    "type": "edges",
+    "geneID_hugos": 439,
+    "geneID_symbols": 459,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "brain_edges_broad_tcgapancanmutated-mut01",
+    "disease": "brain",
+    "type": "edges",
+    "geneID_hugos": 54,
+    "geneID_symbols": 55,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "brain_edges_broad_oncovogel274-mut01",
+    "disease": "brain",
+    "type": "edges",
+    "geneID_hugos": 243,
+    "geneID_symbols": 253,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "brain_edges_broad_oncoplex-mut01",
+    "disease": "brain",
+    "type": "edges",
+    "geneID_hugos": 231,
+    "geneID_symbols": 242,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "brain_edges_broad_osccchen131probes-mut01",
+    "disease": "brain",
+    "type": "edges",
+    "geneID_hugos": 83,
+    "geneID_symbols": 86,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "brain_edges_broad_osccchen9genes-mut01",
+    "disease": "brain",
+    "type": "edges",
+    "geneID_hugos": 7,
+    "geneID_symbols": 7,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "hnsc_edges_broad_markergenes545-mut01",
+    "disease": "hnsc",
+    "type": "edges",
+    "geneID_hugos": 461,
+    "geneID_symbols": 481,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "hnsc_edges_broad_tcgapancanmutated-mut01",
+    "disease": "hnsc",
+    "type": "edges",
+    "geneID_hugos": 57,
+    "geneID_symbols": 60,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "hnsc_edges_broad_oncovogel274-mut01",
+    "disease": "hnsc",
+    "type": "edges",
+    "geneID_hugos": 255,
+    "geneID_symbols": 267,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "hnsc_edges_broad_oncoplex-mut01",
+    "disease": "hnsc",
+    "type": "edges",
+    "geneID_hugos": 244,
+    "geneID_symbols": 258,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "acc_edges_broad_markergenes545-mut01",
+    "disease": "acc",
+    "type": "edges",
+    "geneID_hugos": 232,
+    "geneID_symbols": 242,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "acc_edges_broad_tcgapancanmutated-mut01",
+    "disease": "acc",
+    "type": "edges",
+    "geneID_hugos": 33,
+    "geneID_symbols": 36,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "acc_edges_broad_oncovogel274-mut01",
+    "disease": "acc",
+    "type": "edges",
+    "geneID_hugos": 119,
+    "geneID_symbols": 126,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "acc_edges_broad_oncoplex-mut01",
+    "disease": "acc",
+    "type": "edges",
+    "geneID_hugos": 118,
+    "geneID_symbols": 125,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "acc_edges_broad_osccchen131probes-mut01",
+    "disease": "acc",
+    "type": "edges",
+    "geneID_hugos": 49,
+    "geneID_symbols": 51,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "acc_edges_broad_osccchen9genes-mut01",
+    "disease": "acc",
+    "type": "edges",
+    "geneID_hugos": 5,
+    "geneID_symbols": 5,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "hnsc_edges_broad_osccchen131probes-mut01",
+    "disease": "hnsc",
+    "type": "edges",
+    "geneID_hugos": 95,
+    "geneID_symbols": 98,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "hnsc_edges_broad_osccchen9genes-mut01",
+    "disease": "hnsc",
+    "type": "edges",
+    "geneID_hugos": 8,
+    "geneID_symbols": 8,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "chol_edges_ucsc_markergenes545-cnv",
+    "disease": "chol",
+    "type": "edges",
+    "geneID_hugos": 532,
+    "geneID_symbols": 556,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "kich_edges_broad_markergenes545-mut01",
+    "disease": "kich",
+    "type": "edges",
+    "geneID_hugos": 128,
+    "geneID_symbols": 133,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "kich_edges_broad_tcgapancanmutated-mut01",
+    "disease": "kich",
+    "type": "edges",
+    "geneID_hugos": 19,
+    "geneID_symbols": 19,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "kich_edges_broad_oncovogel274-mut01",
+    "disease": "kich",
+    "type": "edges",
+    "geneID_hugos": 74,
+    "geneID_symbols": 79,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "kich_edges_broad_oncoplex-mut01",
+    "disease": "kich",
+    "type": "edges",
+    "geneID_hugos": 70,
+    "geneID_symbols": 75,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "chol_edges_ucsc_tcgapancanmutated-cnv",
+    "disease": "chol",
+    "type": "edges",
+    "geneID_hugos": 59,
+    "geneID_symbols": 62,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "kich_edges_broad_osccchen131probes-mut01",
+    "disease": "kich",
+    "type": "edges",
+    "geneID_hugos": 24,
+    "geneID_symbols": 25,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "kich_edges_broad_osccchen9genes-mut01",
+    "disease": "kich",
+    "type": "edges",
+    "geneID_hugos": 4,
+    "geneID_symbols": 4,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "blca_edges_broad_markergenes545-mut01",
+    "disease": "blca",
+    "type": "edges",
+    "geneID_hugos": 480,
+    "geneID_symbols": 500,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "kirc_edges_broad_markergenes545-mut01",
+    "disease": "kirc",
+    "type": "edges",
+    "geneID_hugos": 369,
+    "geneID_symbols": 383,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "chol_edges_ucsc_oncovogel274-cnv",
+    "disease": "chol",
+    "type": "edges",
+    "geneID_hugos": 267,
+    "geneID_symbols": 279,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "blca_edges_broad_tcgapancanmutated-mut01",
+    "disease": "blca",
+    "type": "edges",
+    "geneID_hugos": 60,
+    "geneID_symbols": 63,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "kirc_edges_broad_tcgapancanmutated-mut01",
+    "disease": "kirc",
+    "type": "edges",
+    "geneID_hugos": 51,
+    "geneID_symbols": 54,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "chol_edges_ucsc_oncoplex-cnv",
+    "disease": "chol",
+    "type": "edges",
+    "geneID_hugos": 256,
+    "geneID_symbols": 270,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "kirc_edges_broad_oncovogel274-mut01",
+    "disease": "kirc",
+    "type": "edges",
+    "geneID_hugos": 199,
+    "geneID_symbols": 211,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "blca_edges_broad_oncovogel274-mut01",
+    "disease": "blca",
+    "type": "edges",
+    "geneID_hugos": 255,
+    "geneID_symbols": 267,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "chol_edges_ucsc_osccchen131probes-cnv",
+    "disease": "chol",
+    "type": "edges",
+    "geneID_hugos": 100,
+    "geneID_symbols": 103,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "chol_edges_ucsc_osccchen9genes-cnv",
+    "disease": "chol",
+    "type": "edges",
+    "geneID_hugos": 8,
+    "geneID_symbols": 8,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "kirc_edges_broad_oncoplex-mut01",
+    "disease": "kirc",
+    "type": "edges",
+    "geneID_hugos": 189,
+    "geneID_symbols": 202,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "kirc_edges_broad_osccchen131probes-mut01",
+    "disease": "kirc",
+    "type": "edges",
+    "geneID_hugos": 70,
+    "geneID_symbols": 73,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "blca_edges_broad_oncoplex-mut01",
+    "disease": "blca",
+    "type": "edges",
+    "geneID_hugos": 246,
+    "geneID_symbols": 260,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "kirc_edges_broad_osccchen9genes-mut01",
+    "disease": "kirc",
+    "type": "edges",
+    "geneID_hugos": 7,
+    "geneID_symbols": 7,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "dlbc_edges_ucsc_markergenes545-cnv",
+    "disease": "dlbc",
+    "type": "edges",
+    "geneID_hugos": 532,
+    "geneID_symbols": 556,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "kirp_edges_broad_markergenes545-mut01",
+    "disease": "kirp",
+    "type": "edges",
+    "geneID_hugos": 293,
+    "geneID_symbols": 305,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "blca_edges_broad_osccchen131probes-mut01",
+    "disease": "blca",
+    "type": "edges",
+    "geneID_hugos": 92,
+    "geneID_symbols": 95,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "dlbc_edges_ucsc_tcgapancanmutated-cnv",
+    "disease": "dlbc",
+    "type": "edges",
+    "geneID_hugos": 59,
+    "geneID_symbols": 62,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "kirp_edges_broad_oncovogel274-mut01",
+    "disease": "kirp",
+    "type": "edges",
+    "geneID_hugos": 173,
+    "geneID_symbols": 182,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "blca_edges_broad_osccchen9genes-mut01",
+    "disease": "blca",
+    "type": "edges",
+    "geneID_hugos": 8,
+    "geneID_symbols": 8,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "kirp_edges_broad_oncoplex-mut01",
+    "disease": "kirp",
+    "type": "edges",
+    "geneID_hugos": 165,
+    "geneID_symbols": 175,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "dlbc_edges_ucsc_oncovogel274-cnv",
+    "disease": "dlbc",
+    "type": "edges",
+    "geneID_hugos": 267,
+    "geneID_symbols": 279,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "kirp_edges_broad_osccchen131probes-mut01",
+    "disease": "kirp",
+    "type": "edges",
+    "geneID_hugos": 53,
+    "geneID_symbols": 54,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "kirp_edges_broad_osccchen9genes-mut01",
+    "disease": "kirp",
+    "type": "edges",
+    "geneID_hugos": 6,
+    "geneID_symbols": 6,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "dlbc_edges_ucsc_oncoplex-cnv",
+    "disease": "dlbc",
+    "type": "edges",
+    "geneID_hugos": 256,
+    "geneID_symbols": 270,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "dlbc_edges_ucsc_osccchen131probes-cnv",
+    "disease": "dlbc",
+    "type": "edges",
+    "geneID_hugos": 100,
+    "geneID_symbols": 103,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "dlbc_edges_ucsc_osccchen9genes-cnv",
+    "disease": "dlbc",
+    "type": "edges",
+    "geneID_hugos": 8,
+    "geneID_symbols": 8,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "lgg_edges_broad_markergenes545-mut01",
+    "disease": "lgg",
+    "type": "edges",
+    "geneID_hugos": 410,
+    "geneID_symbols": 429,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "brca_edges_broad_markergenes545-mut01",
+    "disease": "brca",
+    "type": "edges",
+    "geneID_hugos": 442,
+    "geneID_symbols": 462,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "lgg_edges_broad_tcgapancanmutated-mut01",
+    "disease": "lgg",
+    "type": "edges",
+    "geneID_hugos": 53,
+    "geneID_symbols": 54,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "lgg_edges_broad_oncovogel274-mut01",
+    "disease": "lgg",
+    "type": "edges",
+    "geneID_hugos": 224,
+    "geneID_symbols": 233,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "brca_edges_broad_tcgapancanmutated-mut01",
+    "disease": "brca",
+    "type": "edges",
+    "geneID_hugos": 59,
+    "geneID_symbols": 62,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "lgg_edges_broad_oncoplex-mut01",
+    "disease": "lgg",
+    "type": "edges",
+    "geneID_hugos": 214,
+    "geneID_symbols": 224,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "lgg_edges_broad_osccchen131probes-mut01",
+    "disease": "lgg",
+    "type": "edges",
+    "geneID_hugos": 74,
+    "geneID_symbols": 76,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "lgg_edges_broad_osccchen9genes-mut01",
+    "disease": "lgg",
+    "type": "edges",
+    "geneID_hugos": 7,
+    "geneID_symbols": 7,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "brca_edges_broad_oncovogel274-mut01",
+    "disease": "brca",
+    "type": "edges",
+    "geneID_hugos": 250,
+    "geneID_symbols": 262,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "lihc_edges_broad_markergenes545-mut01",
+    "disease": "lihc",
+    "type": "edges",
+    "geneID_hugos": 437,
+    "geneID_symbols": 452,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "lihc_edges_broad_tcgapancanmutated-mut01",
+    "disease": "lihc",
+    "type": "edges",
+    "geneID_hugos": 57,
+    "geneID_symbols": 60,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "lihc_edges_broad_oncovogel274-mut01",
+    "disease": "lihc",
+    "type": "edges",
+    "geneID_hugos": 236,
+    "geneID_symbols": 247,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "brca_edges_broad_oncoplex-mut01",
+    "disease": "brca",
+    "type": "edges",
+    "geneID_hugos": 241,
+    "geneID_symbols": 254,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "lihc_edges_broad_oncoplex-mut01",
+    "disease": "lihc",
+    "type": "edges",
+    "geneID_hugos": 224,
+    "geneID_symbols": 236,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "lihc_edges_broad_osccchen131probes-mut01",
+    "disease": "lihc",
+    "type": "edges",
+    "geneID_hugos": 75,
+    "geneID_symbols": 78,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "lihc_edges_broad_osccchen9genes-mut01",
+    "disease": "lihc",
+    "type": "edges",
+    "geneID_hugos": 8,
+    "geneID_symbols": 8,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "brca_edges_broad_osccchen131probes-mut01",
+    "disease": "brca",
+    "type": "edges",
+    "geneID_hugos": 82,
+    "geneID_symbols": 85,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "esca_edges_ucsc_markergenes545-cnv",
+    "disease": "esca",
+    "type": "edges",
+    "geneID_hugos": 532,
+    "geneID_symbols": 556,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "luad_edges_broad_markergenes545-mut01",
+    "disease": "luad",
+    "type": "edges",
+    "geneID_hugos": 490,
+    "geneID_symbols": 511,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "brca_edges_broad_osccchen9genes-mut01",
+    "disease": "brca",
+    "type": "edges",
+    "geneID_hugos": 8,
+    "geneID_symbols": 8,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "cesc_edges_broad_markergenes545-mut01",
+    "disease": "cesc",
+    "type": "edges",
+    "geneID_hugos": 379,
+    "geneID_symbols": 394,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "cesc_edges_broad_tcgapancanmutated-mut01",
+    "disease": "cesc",
+    "type": "edges",
+    "geneID_hugos": 55,
+    "geneID_symbols": 58,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "luad_edges_broad_tcgapancanmutated-mut01",
+    "disease": "luad",
+    "type": "edges",
+    "geneID_hugos": 60,
+    "geneID_symbols": 63,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "cesc_edges_broad_oncovogel274-mut01",
+    "disease": "cesc",
+    "type": "edges",
+    "geneID_hugos": 212,
+    "geneID_symbols": 223,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "esca_edges_ucsc_tcgapancanmutated-cnv",
+    "disease": "esca",
+    "type": "edges",
+    "geneID_hugos": 59,
+    "geneID_symbols": 62,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "cesc_edges_broad_oncoplex-mut01",
+    "disease": "cesc",
+    "type": "edges",
+    "geneID_hugos": 208,
+    "geneID_symbols": 220,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "cesc_edges_broad_osccchen131probes-mut01",
+    "disease": "cesc",
+    "type": "edges",
+    "geneID_hugos": 64,
+    "geneID_symbols": 66,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "cesc_edges_broad_osccchen9genes-mut01",
+    "disease": "cesc",
+    "type": "edges",
+    "geneID_hugos": 8,
+    "geneID_symbols": 8,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "chol_edges_broad_markergenes545-mut01",
+    "disease": "chol",
+    "type": "edges",
+    "geneID_hugos": 150,
+    "geneID_symbols": 156,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "chol_edges_broad_tcgapancanmutated-mut01",
+    "disease": "chol",
+    "type": "edges",
+    "geneID_hugos": 38,
+    "geneID_symbols": 41,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "chol_edges_broad_oncovogel274-mut01",
+    "disease": "chol",
+    "type": "edges",
+    "geneID_hugos": 92,
+    "geneID_symbols": 98,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "chol_edges_broad_oncoplex-mut01",
+    "disease": "chol",
+    "type": "edges",
+    "geneID_hugos": 88,
+    "geneID_symbols": 94,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "chol_edges_broad_osccchen131probes-mut01",
+    "disease": "chol",
+    "type": "edges",
+    "geneID_hugos": 17,
+    "geneID_symbols": 18,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "chol_edges_broad_osccchen9genes-mut01",
+    "disease": "chol",
+    "type": "edges",
+    "geneID_hugos": 5,
+    "geneID_symbols": 5,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "dlbc_edges_broad_markergenes545-mut01",
+    "disease": "dlbc",
+    "type": "edges",
+    "geneID_hugos": 229,
+    "geneID_symbols": 239,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "dlbc_edges_broad_tcgapancanmutated-mut01",
+    "disease": "dlbc",
+    "type": "edges",
+    "geneID_hugos": 39,
+    "geneID_symbols": 40,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "luad_edges_broad_oncovogel274-mut01",
+    "disease": "luad",
+    "type": "edges",
+    "geneID_hugos": 261,
+    "geneID_symbols": 273,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "dlbc_edges_broad_oncovogel274-mut01",
+    "disease": "dlbc",
+    "type": "edges",
+    "geneID_hugos": 138,
+    "geneID_symbols": 145,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "dlbc_edges_broad_oncoplex-mut01",
+    "disease": "dlbc",
+    "type": "edges",
+    "geneID_hugos": 130,
+    "geneID_symbols": 137,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "dlbc_edges_broad_osccchen131probes-mut01",
+    "disease": "dlbc",
+    "type": "edges",
+    "geneID_hugos": 44,
+    "geneID_symbols": 45,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "dlbc_edges_broad_osccchen9genes-mut01",
+    "disease": "dlbc",
+    "type": "edges",
+    "geneID_hugos": 5,
+    "geneID_symbols": 5,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "luad_edges_broad_oncoplex-mut01",
+    "disease": "luad",
+    "type": "edges",
+    "geneID_hugos": 250,
+    "geneID_symbols": 263,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "luad_edges_broad_osccchen131probes-mut01",
+    "disease": "luad",
+    "type": "edges",
+    "geneID_hugos": 93,
+    "geneID_symbols": 96,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "luad_edges_broad_osccchen9genes-mut01",
+    "disease": "luad",
+    "type": "edges",
+    "geneID_hugos": 8,
+    "geneID_symbols": 8,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "esca_edges_ucsc_oncovogel274-cnv",
+    "disease": "esca",
+    "type": "edges",
+    "geneID_hugos": 267,
+    "geneID_symbols": 279,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "lusc_edges_broad_markergenes545-mut01",
+    "disease": "lusc",
+    "type": "edges",
+    "geneID_hugos": 422,
+    "geneID_symbols": 438,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "lusc_edges_broad_tcgapancanmutated-mut01",
+    "disease": "lusc",
+    "type": "edges",
+    "geneID_hugos": 56,
+    "geneID_symbols": 59,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "lusc_edges_broad_oncovogel274-mut01",
+    "disease": "lusc",
+    "type": "edges",
+    "geneID_hugos": 227,
+    "geneID_symbols": 239,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "lusc_edges_broad_oncoplex-mut01",
+    "disease": "lusc",
+    "type": "edges",
+    "geneID_hugos": 217,
+    "geneID_symbols": 231,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "lusc_edges_broad_osccchen131probes-mut01",
+    "disease": "lusc",
+    "type": "edges",
+    "geneID_hugos": 77,
+    "geneID_symbols": 80,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "lusc_edges_broad_osccchen9genes-mut01",
+    "disease": "lusc",
+    "type": "edges",
+    "geneID_hugos": 8,
+    "geneID_symbols": 8,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "sarc_edges_broad_markergenes545-mut01",
+    "disease": "sarc",
+    "type": "edges",
+    "geneID_hugos": 239,
+    "geneID_symbols": 251,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "sarc_edges_broad_tcgapancanmutated-mut01",
+    "disease": "sarc",
+    "type": "edges",
+    "geneID_hugos": 34,
+    "geneID_symbols": 34,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "sarc_edges_broad_oncovogel274-mut01",
+    "disease": "sarc",
+    "type": "edges",
+    "geneID_hugos": 145,
+    "geneID_symbols": 149,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "sarc_edges_broad_oncoplex-mut01",
+    "disease": "sarc",
+    "type": "edges",
+    "geneID_hugos": 138,
+    "geneID_symbols": 143,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "sarc_edges_broad_osccchen131probes-mut01",
+    "disease": "sarc",
+    "type": "edges",
+    "geneID_hugos": 42,
+    "geneID_symbols": 44,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "sarc_edges_broad_osccchen9genes-mut01",
+    "disease": "sarc",
+    "type": "edges",
+    "geneID_hugos": 6,
+    "geneID_symbols": 6,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "paad_edges_broad_markergenes545-mut01",
+    "disease": "paad",
+    "type": "edges",
+    "geneID_hugos": 374,
+    "geneID_symbols": 389,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "paad_edges_broad_tcgapancanmutated-mut01",
+    "disease": "paad",
+    "type": "edges",
+    "geneID_hugos": 53,
+    "geneID_symbols": 56,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "paad_edges_broad_oncovogel274-mut01",
+    "disease": "paad",
+    "type": "edges",
+    "geneID_hugos": 214,
+    "geneID_symbols": 225,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "paad_edges_broad_oncoplex-mut01",
+    "disease": "paad",
+    "type": "edges",
+    "geneID_hugos": 208,
+    "geneID_symbols": 219,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "paad_edges_broad_osccchen131probes-mut01",
+    "disease": "paad",
+    "type": "edges",
+    "geneID_hugos": 75,
+    "geneID_symbols": 77,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "esca_edges_ucsc_oncoplex-cnv",
+    "disease": "esca",
+    "type": "edges",
+    "geneID_hugos": 256,
+    "geneID_symbols": 270,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "paad_edges_broad_osccchen9genes-mut01",
+    "disease": "paad",
+    "type": "edges",
+    "geneID_hugos": 7,
+    "geneID_symbols": 7,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "prad_edges_broad_markergenes545-mut01",
+    "disease": "prad",
+    "type": "edges",
+    "geneID_hugos": 374,
+    "geneID_symbols": 392,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "prad_edges_broad_tcgapancanmutated-mut01",
+    "disease": "prad",
+    "type": "edges",
+    "geneID_hugos": 49,
+    "geneID_symbols": 50,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "esca_edges_ucsc_osccchen131probes-cnv",
+    "disease": "esca",
+    "type": "edges",
+    "geneID_hugos": 100,
+    "geneID_symbols": 103,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "prad_edges_broad_oncovogel274-mut01",
+    "disease": "prad",
+    "type": "edges",
+    "geneID_hugos": 204,
+    "geneID_symbols": 211,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "esca_edges_ucsc_osccchen9genes-cnv",
+    "disease": "esca",
+    "type": "edges",
+    "geneID_hugos": 8,
+    "geneID_symbols": 8,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "prad_edges_broad_oncoplex-mut01",
+    "disease": "prad",
+    "type": "edges",
+    "geneID_hugos": 198,
+    "geneID_symbols": 206,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "prad_edges_broad_osccchen131probes-mut01",
+    "disease": "prad",
+    "type": "edges",
+    "geneID_hugos": 63,
+    "geneID_symbols": 66,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "prad_edges_broad_osccchen9genes-mut01",
+    "disease": "prad",
+    "type": "edges",
+    "geneID_hugos": 6,
+    "geneID_symbols": 6,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "laml_edges_ucsc_markergenes545-mut01-cnv",
+    "disease": "laml",
+    "type": "edges",
+    "geneID_hugos": 532,
+    "geneID_symbols": 556,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "skcm_edges_broad_markergenes545-mut01",
+    "disease": "skcm",
+    "type": "edges",
+    "geneID_hugos": 492,
+    "geneID_symbols": 513,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "skcm_edges_broad_tcgapancanmutated-mut01",
+    "disease": "skcm",
+    "type": "edges",
+    "geneID_hugos": 59,
+    "geneID_symbols": 62,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "laml_edges_ucsc_tcgapancanmutated-mut01-cnv",
+    "disease": "laml",
+    "type": "edges",
+    "geneID_hugos": 59,
+    "geneID_symbols": 65,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "skcm_edges_broad_oncovogel274-mut01",
+    "disease": "skcm",
+    "type": "edges",
+    "geneID_hugos": 260,
+    "geneID_symbols": 272,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "laml_edges_ucsc_oncovogel274-mut01-cnv",
+    "disease": "laml",
+    "type": "edges",
+    "geneID_hugos": 267,
+    "geneID_symbols": 282,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "skcm_edges_broad_oncoplex-mut01",
+    "disease": "skcm",
+    "type": "edges",
+    "geneID_hugos": 248,
+    "geneID_symbols": 262,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "laml_edges_ucsc_oncoplex-mut01-cnv",
+    "disease": "laml",
+    "type": "edges",
+    "geneID_hugos": 256,
+    "geneID_symbols": 270,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "skcm_edges_broad_osccchen131probes-mut01",
+    "disease": "skcm",
+    "type": "edges",
+    "geneID_hugos": 95,
+    "geneID_symbols": 97,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "skcm_edges_broad_osccchen9genes-mut01",
+    "disease": "skcm",
+    "type": "edges",
+    "geneID_hugos": 8,
+    "geneID_symbols": 8,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "laml_edges_ucsc_osccchen131probes-mut01-cnv",
+    "disease": "laml",
+    "type": "edges",
+    "geneID_hugos": 100,
+    "geneID_symbols": 103,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "laml_edges_ucsc_osccchen9genes-mut01-cnv",
+    "disease": "laml",
+    "type": "edges",
+    "geneID_hugos": 8,
+    "geneID_symbols": 8,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "stad_edges_broad_markergenes545-mut01",
+    "disease": "stad",
+    "type": "edges",
+    "geneID_hugos": 493,
+    "geneID_symbols": 512,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "stad_edges_broad_tcgapancanmutated-mut01",
+    "disease": "stad",
+    "type": "edges",
+    "geneID_hugos": 60,
+    "geneID_symbols": 63,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "stad_edges_broad_oncovogel274-mut01",
+    "disease": "stad",
+    "type": "edges",
+    "geneID_hugos": 263,
+    "geneID_symbols": 275,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "stad_edges_broad_oncoplex-mut01",
+    "disease": "stad",
+    "type": "edges",
+    "geneID_hugos": 253,
+    "geneID_symbols": 267,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "stad_edges_broad_osccchen131probes-mut01",
+    "disease": "stad",
+    "type": "edges",
+    "geneID_hugos": 95,
+    "geneID_symbols": 98,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "stad_edges_broad_osccchen9genes-mut01",
+    "disease": "stad",
+    "type": "edges",
+    "geneID_hugos": 8,
+    "geneID_symbols": 8,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "thca_edges_broad_markergenes545-mut01",
+    "disease": "thca",
+    "type": "edges",
+    "geneID_hugos": 197,
+    "geneID_symbols": 205,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "thca_edges_broad_tcgapancanmutated-mut01",
+    "disease": "thca",
+    "type": "edges",
+    "geneID_hugos": 37,
+    "geneID_symbols": 37,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "thca_edges_broad_oncovogel274-mut01",
+    "disease": "thca",
+    "type": "edges",
+    "geneID_hugos": 119,
+    "geneID_symbols": 121,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "thca_edges_broad_oncoplex-mut01",
+    "disease": "thca",
+    "type": "edges",
+    "geneID_hugos": 117,
+    "geneID_symbols": 119,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "thca_edges_broad_osccchen131probes-mut01",
+    "disease": "thca",
+    "type": "edges",
+    "geneID_hugos": 35,
+    "geneID_symbols": 35,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "thca_edges_broad_osccchen9genes-mut01",
+    "disease": "thca",
+    "type": "edges",
+    "geneID_hugos": 5,
+    "geneID_symbols": 5,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "ucec_edges_broad_markergenes545-mut01",
+    "disease": "ucec",
+    "type": "edges",
+    "geneID_hugos": 485,
+    "geneID_symbols": 505,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "ucec_edges_broad_tcgapancanmutated-mut01",
+    "disease": "ucec",
+    "type": "edges",
+    "geneID_hugos": 60,
+    "geneID_symbols": 63,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "ucec_edges_broad_oncovogel274-mut01",
+    "disease": "ucec",
+    "type": "edges",
+    "geneID_hugos": 259,
+    "geneID_symbols": 271,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "ucec_edges_broad_oncoplex-mut01",
+    "disease": "ucec",
+    "type": "edges",
+    "geneID_hugos": 251,
+    "geneID_symbols": 265,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "ucec_edges_broad_osccchen131probes-mut01",
+    "disease": "ucec",
+    "type": "edges",
+    "geneID_hugos": 96,
+    "geneID_symbols": 99,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "ucec_edges_broad_osccchen9genes-mut01",
+    "disease": "ucec",
+    "type": "edges",
+    "geneID_hugos": 8,
+    "geneID_symbols": 8,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "acc_edges_broad_tcgagbmclassifiers-mut01",
+    "disease": "acc",
+    "type": "edges",
+    "geneID_hugos": 310,
+    "geneID_symbols": 328,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "brain_edges_ucsc-pnas_tcgapancanmutated-mut01-cnv",
+    "disease": "brain",
+    "type": "edges",
+    "geneID_hugos": 60,
+    "geneID_symbols": 66,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "brain_edges_ucsc-pnas_oncovogel274-mut01-cnv",
+    "disease": "brain",
+    "type": "edges",
+    "geneID_hugos": 269,
+    "geneID_symbols": 286,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "lung_edges_ucsc_markergenes545-mut01-cnv",
+    "disease": "lung",
+    "type": "edges",
+    "geneID_hugos": 534,
+    "geneID_symbols": 559,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "brain_edges_ucsc-pnas_oncoplex-mut01-cnv",
+    "disease": "brain",
+    "type": "edges",
+    "geneID_hugos": 258,
+    "geneID_symbols": 273,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "lung_edges_ucsc_tcgapancanmutated-mut01-cnv",
+    "disease": "lung",
+    "type": "edges",
+    "geneID_hugos": 60,
+    "geneID_symbols": 66,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "brain_edges_ucsc-pnas_osccchen131probes-mut01-cnv",
+    "disease": "brain",
+    "type": "edges",
+    "geneID_hugos": 100,
+    "geneID_symbols": 103,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "brain_edges_ucsc-pnas_osccchen9genes-mut01-cnv",
+    "disease": "brain",
+    "type": "edges",
+    "geneID_hugos": 8,
+    "geneID_symbols": 8,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "lung_edges_ucsc_oncovogel274-mut01-cnv",
+    "disease": "lung",
+    "type": "edges",
+    "geneID_hugos": 269,
+    "geneID_symbols": 286,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "coadread_edges_ucsc_tcgagbmclassifiers-mut01-cnv",
+    "disease": "coadread",
+    "type": "edges",
+    "geneID_hugos": 756,
+    "geneID_symbols": 803,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "lung_edges_ucsc_oncoplex-mut01-cnv",
+    "disease": "lung",
+    "type": "edges",
+    "geneID_hugos": 258,
+    "geneID_symbols": 273,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "coadread_edges_ucsc_markergenes545-mut01-cnv",
+    "disease": "coadread",
+    "type": "edges",
+    "geneID_hugos": 533,
+    "geneID_symbols": 558,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "coadread_edges_ucsc_tcgapancanmutated-mut01-cnv",
+    "disease": "coadread",
+    "type": "edges",
+    "geneID_hugos": 60,
+    "geneID_symbols": 66,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "lung_edges_ucsc_osccchen131probes-mut01-cnv",
+    "disease": "lung",
+    "type": "edges",
+    "geneID_hugos": 100,
+    "geneID_symbols": 103,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "lung_edges_ucsc_osccchen9genes-mut01-cnv",
+    "disease": "lung",
+    "type": "edges",
+    "geneID_hugos": 8,
+    "geneID_symbols": 8,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "coadread_edges_ucsc_oncovogel274-mut01-cnv",
+    "disease": "coadread",
+    "type": "edges",
+    "geneID_hugos": 267,
+    "geneID_symbols": 284,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "coadread_edges_ucsc_oncoplex-mut01-cnv",
+    "disease": "coadread",
+    "type": "edges",
+    "geneID_hugos": 256,
+    "geneID_symbols": 271,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "sarc_edges_ucsc_tcgagbmclassifiers-cnv",
+    "disease": "sarc",
+    "type": "edges",
+    "geneID_hugos": 754,
+    "geneID_symbols": 796,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "coadread_edges_ucsc_osccchen131probes-mut01-cnv",
+    "disease": "coadread",
+    "type": "edges",
+    "geneID_hugos": 100,
+    "geneID_symbols": 103,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "coadread_edges_ucsc_osccchen9genes-mut01-cnv",
+    "disease": "coadread",
+    "type": "edges",
+    "geneID_hugos": 8,
+    "geneID_symbols": 8,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "sarc_edges_ucsc_markergenes545-cnv",
+    "disease": "sarc",
+    "type": "edges",
+    "geneID_hugos": 532,
+    "geneID_symbols": 556,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "sarc_edges_ucsc_tcgapancanmutated-cnv",
+    "disease": "sarc",
+    "type": "edges",
+    "geneID_hugos": 59,
+    "geneID_symbols": 62,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "sarc_edges_ucsc_oncovogel274-cnv",
+    "disease": "sarc",
+    "type": "edges",
+    "geneID_hugos": 267,
+    "geneID_symbols": 279,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "sarc_edges_ucsc_oncoplex-cnv",
+    "disease": "sarc",
+    "type": "edges",
+    "geneID_hugos": 256,
+    "geneID_symbols": 270,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "sarc_edges_ucsc_osccchen131probes-cnv",
+    "disease": "sarc",
+    "type": "edges",
+    "geneID_hugos": 100,
+    "geneID_symbols": 103,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "sarc_edges_ucsc_osccchen9genes-cnv",
+    "disease": "sarc",
+    "type": "edges",
+    "geneID_hugos": 8,
+    "geneID_symbols": 8,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "stad_edges_ucsc_tcgagbmclassifiers-mut01",
+    "disease": "stad",
+    "type": "edges",
+    "geneID_hugos": 705,
+    "geneID_symbols": 744,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "dlbc_edges_broad_tcgagbmclassifiers-mut01",
+    "disease": "dlbc",
+    "type": "edges",
+    "geneID_hugos": 293,
+    "geneID_symbols": 313,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "kich_mut_broad_mutsig2",
+    "disease": "kich",
+    "type": "mut",
+    "geneID_hugos": 3283,
+    "geneID_symbols": 3424,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "stad_edges_ucsc_tcgapancanmutated-mut01",
+    "disease": "stad",
+    "type": "edges",
+    "geneID_hugos": 60,
+    "geneID_symbols": 66,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "stad_edges_ucsc_oncovogel274-mut01",
+    "disease": "stad",
+    "type": "edges",
+    "geneID_hugos": 258,
+    "geneID_symbols": 275,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "stad_edges_ucsc_oncoplex-mut01",
+    "disease": "stad",
+    "type": "edges",
+    "geneID_hugos": 250,
+    "geneID_symbols": 265,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "stad_edges_ucsc_osccchen131probes-mut01",
+    "disease": "stad",
+    "type": "edges",
+    "geneID_hugos": 91,
+    "geneID_symbols": 94,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "stad_edges_ucsc_osccchen9genes-mut01",
+    "disease": "stad",
+    "type": "edges",
+    "geneID_hugos": 8,
+    "geneID_symbols": 8,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "chol_edges_ucsc_tcgagbmclassifiers-cnv",
+    "disease": "chol",
+    "type": "edges",
+    "geneID_hugos": 754,
+    "geneID_symbols": 796,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "gbm_edges_ucsc_tcgapancanmutated-mut01-cnv",
+    "disease": "gbm",
+    "type": "edges",
+    "geneID_hugos": 59,
+    "geneID_symbols": 65,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "gbm_edges_ucsc_oncovogel274-mut01-cnv",
+    "disease": "gbm",
+    "type": "edges",
+    "geneID_hugos": 267,
+    "geneID_symbols": 283,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "gbm_edges_ucsc_oncoplex-mut01-cnv",
+    "disease": "gbm",
+    "type": "edges",
+    "geneID_hugos": 256,
+    "geneID_symbols": 270,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "gbm_edges_ucsc_osccchen131probes-mut01-cnv",
+    "disease": "gbm",
+    "type": "edges",
+    "geneID_hugos": 100,
+    "geneID_symbols": 103,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "brain_edges_ucsc_tcgagbmclassifiers-mut01-cnv",
+    "disease": "brain",
+    "type": "edges",
+    "geneID_hugos": 756,
+    "geneID_symbols": 799,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "gbm_edges_ucsc_osccchen9genes-mut01-cnv",
+    "disease": "gbm",
+    "type": "edges",
+    "geneID_hugos": 8,
+    "geneID_symbols": 8,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "hnsc_edges_ucsc_tcgagbmclassifiers-mut01-cnv",
+    "disease": "hnsc",
+    "type": "edges",
+    "geneID_hugos": 756,
+    "geneID_symbols": 798,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "brain_edges_ucsc_markergenes545-mut01-cnv",
+    "disease": "brain",
+    "type": "edges",
+    "geneID_hugos": 535,
+    "geneID_symbols": 559,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "brain_edges_ucsc_tcgapancanmutated-mut01-cnv",
+    "disease": "brain",
+    "type": "edges",
+    "geneID_hugos": 60,
+    "geneID_symbols": 66,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "hnsc_edges_ucsc_markergenes545-mut01-cnv",
+    "disease": "hnsc",
+    "type": "edges",
+    "geneID_hugos": 534,
+    "geneID_symbols": 558,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "hnsc_edges_ucsc_tcgapancanmutated-mut01-cnv",
+    "disease": "hnsc",
+    "type": "edges",
+    "geneID_hugos": 60,
+    "geneID_symbols": 63,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "brain_edges_ucsc_oncovogel274-mut01-cnv",
+    "disease": "brain",
+    "type": "edges",
+    "geneID_hugos": 269,
+    "geneID_symbols": 285,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "hnsc_edges_ucsc_oncovogel274-mut01-cnv",
+    "disease": "hnsc",
+    "type": "edges",
+    "geneID_hugos": 269,
+    "geneID_symbols": 281,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "brain_edges_ucsc_oncoplex-mut01-cnv",
+    "disease": "brain",
+    "type": "edges",
+    "geneID_hugos": 258,
+    "geneID_symbols": 272,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "hnsc_edges_ucsc_oncoplex-mut01-cnv",
+    "disease": "hnsc",
+    "type": "edges",
+    "geneID_hugos": 258,
+    "geneID_symbols": 272,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "hnsc_edges_ucsc_osccchen131probes-mut01-cnv",
+    "disease": "hnsc",
+    "type": "edges",
+    "geneID_hugos": 100,
+    "geneID_symbols": 103,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "brain_edges_ucsc_osccchen131probes-mut01-cnv",
+    "disease": "brain",
+    "type": "edges",
+    "geneID_hugos": 100,
+    "geneID_symbols": 103,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "hnsc_edges_ucsc_osccchen9genes-mut01-cnv",
+    "disease": "hnsc",
+    "type": "edges",
+    "geneID_hugos": 8,
+    "geneID_symbols": 8,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "brain_edges_ucsc_osccchen9genes-mut01-cnv",
+    "disease": "brain",
+    "type": "edges",
+    "geneID_hugos": 8,
+    "geneID_symbols": 8,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "lgg_edges_ucsc_tcgagbmclassifiers-mut01-cnv",
+    "disease": "lgg",
+    "type": "edges",
+    "geneID_hugos": 756,
+    "geneID_symbols": 798,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "lgg_edges_ucsc_markergenes545-mut01-cnv",
+    "disease": "lgg",
+    "type": "edges",
+    "geneID_hugos": 534,
+    "geneID_symbols": 558,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "lgg_edges_ucsc_tcgapancanmutated-mut01-cnv",
+    "disease": "lgg",
+    "type": "edges",
+    "geneID_hugos": 60,
+    "geneID_symbols": 63,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "lgg_edges_ucsc_oncovogel274-mut01-cnv",
+    "disease": "lgg",
+    "type": "edges",
+    "geneID_hugos": 269,
+    "geneID_symbols": 281,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "lgg_edges_ucsc_oncoplex-mut01-cnv",
+    "disease": "lgg",
+    "type": "edges",
+    "geneID_hugos": 258,
+    "geneID_symbols": 272,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "lgg_edges_ucsc_osccchen131probes-mut01-cnv",
+    "disease": "lgg",
+    "type": "edges",
+    "geneID_hugos": 100,
+    "geneID_symbols": 103,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "lgg_edges_ucsc_osccchen9genes-mut01-cnv",
+    "disease": "lgg",
+    "type": "edges",
+    "geneID_hugos": 8,
+    "geneID_symbols": 8,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "luad_edges_ucsc_tcgagbmclassifiers-mut01-cnv",
+    "disease": "luad",
+    "type": "edges",
+    "geneID_hugos": 756,
+    "geneID_symbols": 798,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "luad_edges_ucsc_markergenes545-mut01-cnv",
+    "disease": "luad",
+    "type": "edges",
+    "geneID_hugos": 534,
+    "geneID_symbols": 558,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "luad_edges_ucsc_tcgapancanmutated-mut01-cnv",
+    "disease": "luad",
+    "type": "edges",
+    "geneID_hugos": 60,
+    "geneID_symbols": 63,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "luad_edges_ucsc_oncovogel274-mut01-cnv",
+    "disease": "luad",
+    "type": "edges",
+    "geneID_hugos": 269,
+    "geneID_symbols": 281,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "luad_edges_ucsc_oncoplex-mut01-cnv",
+    "disease": "luad",
+    "type": "edges",
+    "geneID_hugos": 258,
+    "geneID_symbols": 272,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "luad_edges_ucsc_osccchen131probes-mut01-cnv",
+    "disease": "luad",
+    "type": "edges",
+    "geneID_hugos": 100,
+    "geneID_symbols": 103,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "luad_edges_ucsc_osccchen9genes-mut01-cnv",
+    "disease": "luad",
+    "type": "edges",
+    "geneID_hugos": 8,
+    "geneID_symbols": 8,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "brain_genedegree_ucsc-pnas_tcgagbmclassifiers-mut01-cnv",
+    "disease": "brain",
+    "type": "genedegree",
+    "geneID_hugos": 285,
+    "geneID_symbols": 305,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "kich_edges_broad_tcgagbmclassifiers-mut01",
+    "disease": "kich",
+    "type": "edges",
+    "geneID_hugos": 173,
+    "geneID_symbols": 181,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "lusc_edges_ucsc_tcgapancanmutated-mut01-cnv",
+    "disease": "lusc",
+    "type": "edges",
+    "geneID_hugos": 60,
+    "geneID_symbols": 66,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "lusc_edges_ucsc_oncovogel274-mut01-cnv",
+    "disease": "lusc",
+    "type": "edges",
+    "geneID_hugos": 269,
+    "geneID_symbols": 286,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "lusc_edges_ucsc_oncoplex-mut01-cnv",
+    "disease": "lusc",
+    "type": "edges",
+    "geneID_hugos": 258,
+    "geneID_symbols": 273,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "lusc_edges_ucsc_osccchen131probes-mut01-cnv",
+    "disease": "lusc",
+    "type": "edges",
+    "geneID_hugos": 100,
+    "geneID_symbols": 103,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "lusc_edges_ucsc_osccchen9genes-mut01-cnv",
+    "disease": "lusc",
+    "type": "edges",
+    "geneID_hugos": 8,
+    "geneID_symbols": 8,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "prad_edges_ucsc_tcgagbmclassifiers-mut01-cnv",
+    "disease": "prad",
+    "type": "edges",
+    "geneID_hugos": 755,
+    "geneID_symbols": 797,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "prad_edges_ucsc_markergenes545-mut01-cnv",
+    "disease": "prad",
+    "type": "edges",
+    "geneID_hugos": 533,
+    "geneID_symbols": 557,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "prad_edges_ucsc_tcgapancanmutated-mut01-cnv",
+    "disease": "prad",
+    "type": "edges",
+    "geneID_hugos": 60,
+    "geneID_symbols": 63,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "prad_edges_ucsc_oncovogel274-mut01-cnv",
+    "disease": "prad",
+    "type": "edges",
+    "geneID_hugos": 267,
+    "geneID_symbols": 279,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "prad_edges_ucsc_oncoplex-mut01-cnv",
+    "disease": "prad",
+    "type": "edges",
+    "geneID_hugos": 256,
+    "geneID_symbols": 270,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "prad_edges_ucsc_osccchen131probes-mut01-cnv",
+    "disease": "prad",
+    "type": "edges",
+    "geneID_hugos": 100,
+    "geneID_symbols": 103,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "prad_edges_ucsc_osccchen9genes-mut01-cnv",
+    "disease": "prad",
+    "type": "edges",
+    "geneID_hugos": 8,
+    "geneID_symbols": 8,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "paad_edges_ucsc_tcgagbmclassifiers-mut01-cnv",
+    "disease": "paad",
+    "type": "edges",
+    "geneID_hugos": 755,
+    "geneID_symbols": 797,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "paad_edges_ucsc_markergenes545-mut01-cnv",
+    "disease": "paad",
+    "type": "edges",
+    "geneID_hugos": 534,
+    "geneID_symbols": 558,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "paad_edges_ucsc_tcgapancanmutated-mut01-cnv",
+    "disease": "paad",
+    "type": "edges",
+    "geneID_hugos": 60,
+    "geneID_symbols": 63,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "paad_edges_ucsc_oncovogel274-mut01-cnv",
+    "disease": "paad",
+    "type": "edges",
+    "geneID_hugos": 268,
+    "geneID_symbols": 280,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "paad_edges_ucsc_oncoplex-mut01-cnv",
+    "disease": "paad",
+    "type": "edges",
+    "geneID_hugos": 257,
+    "geneID_symbols": 271,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "paad_edges_ucsc_osccchen131probes-mut01-cnv",
+    "disease": "paad",
+    "type": "edges",
+    "geneID_hugos": 100,
+    "geneID_symbols": 103,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "paad_edges_ucsc_osccchen9genes-mut01-cnv",
+    "disease": "paad",
+    "type": "edges",
+    "geneID_hugos": 8,
+    "geneID_symbols": 8,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "acc_edges_ucsc_tcgagbmclassifiers-cnv",
+    "disease": "acc",
+    "type": "edges",
+    "geneID_hugos": 754,
+    "geneID_symbols": 796,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "acc_edges_ucsc_markergenes545-cnv",
+    "disease": "acc",
+    "type": "edges",
+    "geneID_hugos": 532,
+    "geneID_symbols": 556,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "acc_edges_ucsc_tcgapancanmutated-cnv",
+    "disease": "acc",
+    "type": "edges",
+    "geneID_hugos": 59,
+    "geneID_symbols": 62,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "acc_edges_ucsc_oncovogel274-cnv",
+    "disease": "acc",
+    "type": "edges",
+    "geneID_hugos": 267,
+    "geneID_symbols": 279,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "acc_edges_ucsc_oncoplex-cnv",
+    "disease": "acc",
+    "type": "edges",
+    "geneID_hugos": 256,
+    "geneID_symbols": 270,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "acc_edges_ucsc_osccchen131probes-cnv",
+    "disease": "acc",
+    "type": "edges",
+    "geneID_hugos": 100,
+    "geneID_symbols": 103,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "acc_edges_ucsc_osccchen9genes-cnv",
+    "disease": "acc",
+    "type": "edges",
+    "geneID_hugos": 8,
+    "geneID_symbols": 8,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "blca_edges_ucsc_tcgagbmclassifiers-mut01-cnv",
+    "disease": "blca",
+    "type": "edges",
+    "geneID_hugos": 756,
+    "geneID_symbols": 798,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "blca_edges_ucsc_markergenes545-mut01-cnv",
+    "disease": "blca",
+    "type": "edges",
+    "geneID_hugos": 533,
+    "geneID_symbols": 557,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "blca_edges_ucsc_tcgapancanmutated-mut01-cnv",
+    "disease": "blca",
+    "type": "edges",
+    "geneID_hugos": 60,
+    "geneID_symbols": 63,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "blca_edges_ucsc_oncovogel274-mut01-cnv",
+    "disease": "blca",
+    "type": "edges",
+    "geneID_hugos": 269,
+    "geneID_symbols": 281,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "brca_edges_ucsc_tcgagbmclassifiers-mut01-cnv",
+    "disease": "brca",
+    "type": "edges",
+    "geneID_hugos": 755,
+    "geneID_symbols": 802,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "blca_edges_ucsc_oncoplex-mut01-cnv",
+    "disease": "blca",
+    "type": "edges",
+    "geneID_hugos": 258,
+    "geneID_symbols": 272,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "blca_edges_ucsc_osccchen131probes-mut01-cnv",
+    "disease": "blca",
+    "type": "edges",
+    "geneID_hugos": 100,
+    "geneID_symbols": 103,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "blca_edges_ucsc_osccchen9genes-mut01-cnv",
+    "disease": "blca",
+    "type": "edges",
+    "geneID_hugos": 8,
+    "geneID_symbols": 8,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "cesc_edges_ucsc_tcgagbmclassifiers-cnv",
+    "disease": "cesc",
+    "type": "edges",
+    "geneID_hugos": 754,
+    "geneID_symbols": 796,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "cesc_edges_ucsc_markergenes545-cnv",
+    "disease": "cesc",
+    "type": "edges",
+    "geneID_hugos": 532,
+    "geneID_symbols": 556,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "cesc_edges_ucsc_tcgapancanmutated-cnv",
+    "disease": "cesc",
+    "type": "edges",
+    "geneID_hugos": 59,
+    "geneID_symbols": 62,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "cesc_edges_ucsc_oncovogel274-cnv",
+    "disease": "cesc",
+    "type": "edges",
+    "geneID_hugos": 267,
+    "geneID_symbols": 279,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "cesc_edges_ucsc_oncoplex-cnv",
+    "disease": "cesc",
+    "type": "edges",
+    "geneID_hugos": 256,
+    "geneID_symbols": 270,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "cesc_edges_ucsc_osccchen131probes-cnv",
+    "disease": "cesc",
+    "type": "edges",
+    "geneID_hugos": 100,
+    "geneID_symbols": 103,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "cesc_edges_ucsc_osccchen9genes-cnv",
+    "disease": "cesc",
+    "type": "edges",
+    "geneID_hugos": 8,
+    "geneID_symbols": 8,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "brca_edges_ucsc_markergenes545-mut01-cnv",
+    "disease": "brca",
+    "type": "edges",
+    "geneID_hugos": 534,
+    "geneID_symbols": 558,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "brca_edges_ucsc_tcgapancanmutated-mut01-cnv",
+    "disease": "brca",
+    "type": "edges",
+    "geneID_hugos": 60,
+    "geneID_symbols": 66,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "brca_edges_ucsc_oncovogel274-mut01-cnv",
+    "disease": "brca",
+    "type": "edges",
+    "geneID_hugos": 268,
+    "geneID_symbols": 285,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "brca_edges_ucsc_oncoplex-mut01-cnv",
+    "disease": "brca",
+    "type": "edges",
+    "geneID_hugos": 257,
+    "geneID_symbols": 272,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "brca_edges_ucsc_osccchen131probes-mut01-cnv",
+    "disease": "brca",
+    "type": "edges",
+    "geneID_hugos": 100,
+    "geneID_symbols": 103,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "brca_edges_ucsc_osccchen9genes-mut01-cnv",
+    "disease": "brca",
+    "type": "edges",
+    "geneID_hugos": 8,
+    "geneID_symbols": 8,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "esca_genedegree_broad_tcgagbmclassifiers-mut01",
+    "disease": "esca",
+    "type": "genedegree",
+    "geneID_hugos": 579,
+    "geneID_symbols": 612,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "gbm_genedegree_broad_tcgagbmclassifiers-mut01",
+    "disease": "gbm",
+    "type": "genedegree",
+    "geneID_hugos": 340,
+    "geneID_symbols": 358,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "sarc_edges_broad_tcgagbmclassifiers-mut01",
+    "disease": "sarc",
+    "type": "edges",
+    "geneID_hugos": 321,
+    "geneID_symbols": 335,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "acc_genedegree_broad_tcgagbmclassifiers-mut01",
+    "disease": "acc",
+    "type": "genedegree",
+    "geneID_hugos": 310,
+    "geneID_symbols": 328,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "brca_edges_broad_tcgagbmclassifiers-mut01",
+    "disease": "brca",
+    "type": "edges",
+    "geneID_hugos": 632,
+    "geneID_symbols": 669,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "chol_genedegree_ucsc_tcgagbmclassifiers-cnv",
+    "disease": "chol",
+    "type": "genedegree",
+    "geneID_hugos": 754,
+    "geneID_symbols": 796,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "esca_edges_broad_tcgagbmclassifiers-mut01",
+    "disease": "esca",
+    "type": "edges",
+    "geneID_hugos": 579,
+    "geneID_symbols": 612,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "kich_genedegree_broad_tcgagbmclassifiers-mut01",
+    "disease": "kich",
+    "type": "genedegree",
+    "geneID_hugos": 173,
+    "geneID_symbols": 181,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "dlbc_edges_ucsc_tcgagbmclassifiers-cnv",
+    "disease": "dlbc",
+    "type": "edges",
+    "geneID_hugos": 754,
+    "geneID_symbols": 796,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "brca_genedegree_broad_tcgagbmclassifiers-mut01",
+    "disease": "brca",
+    "type": "genedegree",
+    "geneID_hugos": 632,
+    "geneID_symbols": 669,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "dlbc_genedegree_ucsc_tcgagbmclassifiers-cnv",
+    "disease": "dlbc",
+    "type": "genedegree",
+    "geneID_hugos": 754,
+    "geneID_symbols": 796,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "gbm_edges_broad_tcgagbmclassifiers-mut01",
+    "disease": "gbm",
+    "type": "edges",
+    "geneID_hugos": 340,
+    "geneID_symbols": 358,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "thca_edges_broad_tcgagbmclassifiers-mut01",
+    "disease": "thca",
+    "type": "edges",
+    "geneID_hugos": 261,
+    "geneID_symbols": 277,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "ucec_edges_broad_tcgagbmclassifiers-mut01",
+    "disease": "ucec",
+    "type": "edges",
+    "geneID_hugos": 716,
+    "geneID_symbols": 755,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "dlbc_genedegree_broad_tcgagbmclassifiers-mut01",
+    "disease": "dlbc",
+    "type": "genedegree",
+    "geneID_hugos": 293,
+    "geneID_symbols": 313,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "esca_edges_ucsc_tcgagbmclassifiers-cnv",
+    "disease": "esca",
+    "type": "edges",
+    "geneID_hugos": 754,
+    "geneID_symbols": 796,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "laml_edges_ucsc_tcgagbmclassifiers-mut01-cnv",
+    "disease": "laml",
+    "type": "edges",
+    "geneID_hugos": 754,
+    "geneID_symbols": 796,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "kich_mut01_broad_mutsig2",
+    "disease": "kich",
+    "type": "mut01",
+    "geneID_hugos": 3283,
+    "geneID_symbols": 3424,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "esca_edges_broad_markergenes545-mut01",
+    "disease": "esca",
+    "type": "edges",
+    "geneID_hugos": 402,
+    "geneID_symbols": 417,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "sarc_genedegree_broad_tcgagbmclassifiers-mut01",
+    "disease": "sarc",
+    "type": "genedegree",
+    "geneID_hugos": 321,
+    "geneID_symbols": 335,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "esca_edges_broad_tcgapancanmutated-mut01",
+    "disease": "esca",
+    "type": "edges",
+    "geneID_hugos": 54,
+    "geneID_symbols": 55,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "esca_edges_broad_oncovogel274-mut01",
+    "disease": "esca",
+    "type": "edges",
+    "geneID_hugos": 233,
+    "geneID_symbols": 243,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "esca_edges_broad_oncoplex-mut01",
+    "disease": "esca",
+    "type": "edges",
+    "geneID_hugos": 223,
+    "geneID_symbols": 235,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "esca_edges_broad_osccchen131probes-mut01",
+    "disease": "esca",
+    "type": "edges",
+    "geneID_hugos": 73,
+    "geneID_symbols": 76,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "thca_genedegree_broad_tcgagbmclassifiers-mut01",
+    "disease": "thca",
+    "type": "genedegree",
+    "geneID_hugos": 261,
+    "geneID_symbols": 277,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "ucec_genedegree_broad_tcgagbmclassifiers-mut01",
+    "disease": "ucec",
+    "type": "genedegree",
+    "geneID_hugos": 716,
+    "geneID_symbols": 755,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "esca_genedegree_ucsc_tcgagbmclassifiers-cnv",
+    "disease": "esca",
+    "type": "genedegree",
+    "geneID_hugos": 754,
+    "geneID_symbols": 796,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "laml_genedegree_ucsc_tcgagbmclassifiers-mut01-cnv",
+    "disease": "laml",
+    "type": "genedegree",
+    "geneID_hugos": 754,
+    "geneID_symbols": 796,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "esca_genedegree_broad_markergenes545-mut01",
+    "disease": "esca",
+    "type": "genedegree",
+    "geneID_hugos": 402,
+    "geneID_symbols": 417,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "esca_genedegree_broad_tcgapancanmutated-mut01",
+    "disease": "esca",
+    "type": "genedegree",
+    "geneID_hugos": 54,
+    "geneID_symbols": 55,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "esca_genedegree_broad_oncovogel274-mut01",
+    "disease": "esca",
+    "type": "genedegree",
+    "geneID_hugos": 233,
+    "geneID_symbols": 243,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "esca_genedegree_broad_oncoplex-mut01",
+    "disease": "esca",
+    "type": "genedegree",
+    "geneID_hugos": 223,
+    "geneID_symbols": 235,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "esca_genedegree_broad_osccchen131probes-mut01",
+    "disease": "esca",
+    "type": "genedegree",
+    "geneID_hugos": 73,
+    "geneID_symbols": 76,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "esca_genedegree_broad_osccchen9genes-mut01",
+    "disease": "esca",
+    "type": "genedegree",
+    "geneID_hugos": 8,
+    "geneID_symbols": 8,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "gbm_genedegree_broad_markergenes545-mut01",
+    "disease": "gbm",
+    "type": "genedegree",
+    "geneID_hugos": 303,
+    "geneID_symbols": 320,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "gbm_genedegree_broad_tcgapancanmutated-mut01",
+    "disease": "gbm",
+    "type": "genedegree",
+    "geneID_hugos": 38,
+    "geneID_symbols": 38,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "gbm_genedegree_broad_oncovogel274-mut01",
+    "disease": "gbm",
+    "type": "genedegree",
+    "geneID_hugos": 171,
+    "geneID_symbols": 176,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "gbm_genedegree_broad_oncoplex-mut01",
+    "disease": "gbm",
+    "type": "genedegree",
+    "geneID_hugos": 164,
+    "geneID_symbols": 169,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "gbm_genedegree_broad_osccchen131probes-mut01",
+    "disease": "gbm",
+    "type": "genedegree",
+    "geneID_hugos": 58,
+    "geneID_symbols": 59,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "gbm_genedegree_broad_osccchen9genes-mut01",
+    "disease": "gbm",
+    "type": "genedegree",
+    "geneID_hugos": 5,
+    "geneID_symbols": 5,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "brain_genedegree_broad_markergenes545-mut01",
+    "disease": "brain",
+    "type": "genedegree",
+    "geneID_hugos": 439,
+    "geneID_symbols": 459,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "brain_genedegree_broad_tcgapancanmutated-mut01",
+    "disease": "brain",
+    "type": "genedegree",
+    "geneID_hugos": 54,
+    "geneID_symbols": 55,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "brain_genedegree_broad_oncovogel274-mut01",
+    "disease": "brain",
+    "type": "genedegree",
+    "geneID_hugos": 243,
+    "geneID_symbols": 253,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "brain_genedegree_broad_oncoplex-mut01",
+    "disease": "brain",
+    "type": "genedegree",
+    "geneID_hugos": 231,
+    "geneID_symbols": 242,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "brain_genedegree_broad_osccchen131probes-mut01",
+    "disease": "brain",
+    "type": "genedegree",
+    "geneID_hugos": 83,
+    "geneID_symbols": 86,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "brain_genedegree_broad_osccchen9genes-mut01",
+    "disease": "brain",
+    "type": "genedegree",
+    "geneID_hugos": 7,
+    "geneID_symbols": 7,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "hnsc_genedegree_broad_markergenes545-mut01",
+    "disease": "hnsc",
+    "type": "genedegree",
+    "geneID_hugos": 461,
+    "geneID_symbols": 481,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "hnsc_genedegree_broad_tcgapancanmutated-mut01",
+    "disease": "hnsc",
+    "type": "genedegree",
+    "geneID_hugos": 57,
+    "geneID_symbols": 60,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "hnsc_genedegree_broad_oncovogel274-mut01",
+    "disease": "hnsc",
+    "type": "genedegree",
+    "geneID_hugos": 255,
+    "geneID_symbols": 267,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "hnsc_genedegree_broad_oncoplex-mut01",
+    "disease": "hnsc",
+    "type": "genedegree",
+    "geneID_hugos": 244,
+    "geneID_symbols": 258,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "acc_genedegree_broad_markergenes545-mut01",
+    "disease": "acc",
+    "type": "genedegree",
+    "geneID_hugos": 232,
+    "geneID_symbols": 242,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "acc_genedegree_broad_tcgapancanmutated-mut01",
+    "disease": "acc",
+    "type": "genedegree",
+    "geneID_hugos": 33,
+    "geneID_symbols": 36,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "acc_genedegree_broad_oncovogel274-mut01",
+    "disease": "acc",
+    "type": "genedegree",
+    "geneID_hugos": 119,
+    "geneID_symbols": 126,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "acc_genedegree_broad_oncoplex-mut01",
+    "disease": "acc",
+    "type": "genedegree",
+    "geneID_hugos": 118,
+    "geneID_symbols": 125,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "acc_genedegree_broad_osccchen131probes-mut01",
+    "disease": "acc",
+    "type": "genedegree",
+    "geneID_hugos": 49,
+    "geneID_symbols": 51,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "acc_genedegree_broad_osccchen9genes-mut01",
+    "disease": "acc",
+    "type": "genedegree",
+    "geneID_hugos": 5,
+    "geneID_symbols": 5,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "hnsc_genedegree_broad_osccchen131probes-mut01",
+    "disease": "hnsc",
+    "type": "genedegree",
+    "geneID_hugos": 95,
+    "geneID_symbols": 98,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "hnsc_genedegree_broad_osccchen9genes-mut01",
+    "disease": "hnsc",
+    "type": "genedegree",
+    "geneID_hugos": 8,
+    "geneID_symbols": 8,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "chol_genedegree_ucsc_markergenes545-cnv",
+    "disease": "chol",
+    "type": "genedegree",
+    "geneID_hugos": 532,
+    "geneID_symbols": 556,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "kich_genedegree_broad_markergenes545-mut01",
+    "disease": "kich",
+    "type": "genedegree",
+    "geneID_hugos": 128,
+    "geneID_symbols": 133,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "kich_genedegree_broad_tcgapancanmutated-mut01",
+    "disease": "kich",
+    "type": "genedegree",
+    "geneID_hugos": 19,
+    "geneID_symbols": 19,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "kich_genedegree_broad_oncovogel274-mut01",
+    "disease": "kich",
+    "type": "genedegree",
+    "geneID_hugos": 74,
+    "geneID_symbols": 79,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "kich_genedegree_broad_oncoplex-mut01",
+    "disease": "kich",
+    "type": "genedegree",
+    "geneID_hugos": 70,
+    "geneID_symbols": 75,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "kich_genedegree_broad_osccchen131probes-mut01",
+    "disease": "kich",
+    "type": "genedegree",
+    "geneID_hugos": 24,
+    "geneID_symbols": 25,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "chol_genedegree_ucsc_tcgapancanmutated-cnv",
+    "disease": "chol",
+    "type": "genedegree",
+    "geneID_hugos": 59,
+    "geneID_symbols": 62,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "kich_genedegree_broad_osccchen9genes-mut01",
+    "disease": "kich",
+    "type": "genedegree",
+    "geneID_hugos": 4,
+    "geneID_symbols": 4,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "blca_genedegree_broad_markergenes545-mut01",
+    "disease": "blca",
+    "type": "genedegree",
+    "geneID_hugos": 480,
+    "geneID_symbols": 500,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "kirc_genedegree_broad_markergenes545-mut01",
+    "disease": "kirc",
+    "type": "genedegree",
+    "geneID_hugos": 369,
+    "geneID_symbols": 383,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "chol_genedegree_ucsc_oncovogel274-cnv",
+    "disease": "chol",
+    "type": "genedegree",
+    "geneID_hugos": 267,
+    "geneID_symbols": 279,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "blca_genedegree_broad_tcgapancanmutated-mut01",
+    "disease": "blca",
+    "type": "genedegree",
+    "geneID_hugos": 60,
+    "geneID_symbols": 63,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "kirc_genedegree_broad_tcgapancanmutated-mut01",
+    "disease": "kirc",
+    "type": "genedegree",
+    "geneID_hugos": 51,
+    "geneID_symbols": 54,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "chol_genedegree_ucsc_oncoplex-cnv",
+    "disease": "chol",
+    "type": "genedegree",
+    "geneID_hugos": 256,
+    "geneID_symbols": 270,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "kirc_genedegree_broad_oncovogel274-mut01",
+    "disease": "kirc",
+    "type": "genedegree",
+    "geneID_hugos": 199,
+    "geneID_symbols": 211,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "blca_genedegree_broad_oncovogel274-mut01",
+    "disease": "blca",
+    "type": "genedegree",
+    "geneID_hugos": 255,
+    "geneID_symbols": 267,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "chol_genedegree_ucsc_osccchen131probes-cnv",
+    "disease": "chol",
+    "type": "genedegree",
+    "geneID_hugos": 100,
+    "geneID_symbols": 103,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "chol_genedegree_ucsc_osccchen9genes-cnv",
+    "disease": "chol",
+    "type": "genedegree",
+    "geneID_hugos": 8,
+    "geneID_symbols": 8,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "kirc_genedegree_broad_oncoplex-mut01",
+    "disease": "kirc",
+    "type": "genedegree",
+    "geneID_hugos": 189,
+    "geneID_symbols": 202,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "kirc_genedegree_broad_osccchen131probes-mut01",
+    "disease": "kirc",
+    "type": "genedegree",
+    "geneID_hugos": 70,
+    "geneID_symbols": 73,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "blca_genedegree_broad_oncoplex-mut01",
+    "disease": "blca",
+    "type": "genedegree",
+    "geneID_hugos": 246,
+    "geneID_symbols": 260,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "kirc_genedegree_broad_osccchen9genes-mut01",
+    "disease": "kirc",
+    "type": "genedegree",
+    "geneID_hugos": 7,
+    "geneID_symbols": 7,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "dlbc_genedegree_ucsc_markergenes545-cnv",
+    "disease": "dlbc",
+    "type": "genedegree",
+    "geneID_hugos": 532,
+    "geneID_symbols": 556,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "kirp_genedegree_broad_markergenes545-mut01",
+    "disease": "kirp",
+    "type": "genedegree",
+    "geneID_hugos": 293,
+    "geneID_symbols": 305,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "dlbc_genedegree_ucsc_tcgapancanmutated-cnv",
+    "disease": "dlbc",
+    "type": "genedegree",
+    "geneID_hugos": 59,
+    "geneID_symbols": 62,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "blca_genedegree_broad_osccchen131probes-mut01",
+    "disease": "blca",
+    "type": "genedegree",
+    "geneID_hugos": 92,
+    "geneID_symbols": 95,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "kirp_genedegree_broad_oncovogel274-mut01",
+    "disease": "kirp",
+    "type": "genedegree",
+    "geneID_hugos": 173,
+    "geneID_symbols": 182,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "blca_genedegree_broad_osccchen9genes-mut01",
+    "disease": "blca",
+    "type": "genedegree",
+    "geneID_hugos": 8,
+    "geneID_symbols": 8,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "kirp_genedegree_broad_oncoplex-mut01",
+    "disease": "kirp",
+    "type": "genedegree",
+    "geneID_hugos": 165,
+    "geneID_symbols": 175,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "dlbc_genedegree_ucsc_oncovogel274-cnv",
+    "disease": "dlbc",
+    "type": "genedegree",
+    "geneID_hugos": 267,
+    "geneID_symbols": 279,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "kirp_genedegree_broad_osccchen131probes-mut01",
+    "disease": "kirp",
+    "type": "genedegree",
+    "geneID_hugos": 53,
+    "geneID_symbols": 54,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "kirp_genedegree_broad_osccchen9genes-mut01",
+    "disease": "kirp",
+    "type": "genedegree",
+    "geneID_hugos": 6,
+    "geneID_symbols": 6,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "dlbc_genedegree_ucsc_oncoplex-cnv",
+    "disease": "dlbc",
+    "type": "genedegree",
+    "geneID_hugos": 256,
+    "geneID_symbols": 270,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "dlbc_genedegree_ucsc_osccchen131probes-cnv",
+    "disease": "dlbc",
+    "type": "genedegree",
+    "geneID_hugos": 100,
+    "geneID_symbols": 103,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "dlbc_genedegree_ucsc_osccchen9genes-cnv",
+    "disease": "dlbc",
+    "type": "genedegree",
+    "geneID_hugos": 8,
+    "geneID_symbols": 8,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "lgg_genedegree_broad_markergenes545-mut01",
+    "disease": "lgg",
+    "type": "genedegree",
+    "geneID_hugos": 410,
+    "geneID_symbols": 429,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "lgg_genedegree_broad_tcgapancanmutated-mut01",
+    "disease": "lgg",
+    "type": "genedegree",
+    "geneID_hugos": 53,
+    "geneID_symbols": 54,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "brca_genedegree_broad_markergenes545-mut01",
+    "disease": "brca",
+    "type": "genedegree",
+    "geneID_hugos": 442,
+    "geneID_symbols": 462,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "lgg_genedegree_broad_oncovogel274-mut01",
+    "disease": "lgg",
+    "type": "genedegree",
+    "geneID_hugos": 224,
+    "geneID_symbols": 233,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "brca_genedegree_broad_tcgapancanmutated-mut01",
+    "disease": "brca",
+    "type": "genedegree",
+    "geneID_hugos": 59,
+    "geneID_symbols": 62,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "lgg_genedegree_broad_oncoplex-mut01",
+    "disease": "lgg",
+    "type": "genedegree",
+    "geneID_hugos": 214,
+    "geneID_symbols": 224,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "lgg_genedegree_broad_osccchen131probes-mut01",
+    "disease": "lgg",
+    "type": "genedegree",
+    "geneID_hugos": 74,
+    "geneID_symbols": 76,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "lgg_genedegree_broad_osccchen9genes-mut01",
+    "disease": "lgg",
+    "type": "genedegree",
+    "geneID_hugos": 7,
+    "geneID_symbols": 7,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "brca_genedegree_broad_oncovogel274-mut01",
+    "disease": "brca",
+    "type": "genedegree",
+    "geneID_hugos": 250,
+    "geneID_symbols": 262,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "lihc_genedegree_broad_markergenes545-mut01",
+    "disease": "lihc",
+    "type": "genedegree",
+    "geneID_hugos": 437,
+    "geneID_symbols": 452,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "lihc_genedegree_broad_tcgapancanmutated-mut01",
+    "disease": "lihc",
+    "type": "genedegree",
+    "geneID_hugos": 57,
+    "geneID_symbols": 60,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "lihc_genedegree_broad_oncovogel274-mut01",
+    "disease": "lihc",
+    "type": "genedegree",
+    "geneID_hugos": 236,
+    "geneID_symbols": 247,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "brca_genedegree_broad_oncoplex-mut01",
+    "disease": "brca",
+    "type": "genedegree",
+    "geneID_hugos": 241,
+    "geneID_symbols": 254,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "lihc_genedegree_broad_oncoplex-mut01",
+    "disease": "lihc",
+    "type": "genedegree",
+    "geneID_hugos": 224,
+    "geneID_symbols": 236,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "lihc_genedegree_broad_osccchen131probes-mut01",
+    "disease": "lihc",
+    "type": "genedegree",
+    "geneID_hugos": 75,
+    "geneID_symbols": 78,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "lihc_genedegree_broad_osccchen9genes-mut01",
+    "disease": "lihc",
+    "type": "genedegree",
+    "geneID_hugos": 8,
+    "geneID_symbols": 8,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "brca_genedegree_broad_osccchen131probes-mut01",
+    "disease": "brca",
+    "type": "genedegree",
+    "geneID_hugos": 82,
+    "geneID_symbols": 85,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "esca_genedegree_ucsc_markergenes545-cnv",
+    "disease": "esca",
+    "type": "genedegree",
+    "geneID_hugos": 532,
+    "geneID_symbols": 556,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "brca_genedegree_broad_osccchen9genes-mut01",
+    "disease": "brca",
+    "type": "genedegree",
+    "geneID_hugos": 8,
+    "geneID_symbols": 8,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "luad_genedegree_broad_markergenes545-mut01",
+    "disease": "luad",
+    "type": "genedegree",
+    "geneID_hugos": 490,
+    "geneID_symbols": 511,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "cesc_genedegree_broad_markergenes545-mut01",
+    "disease": "cesc",
+    "type": "genedegree",
+    "geneID_hugos": 379,
+    "geneID_symbols": 394,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "cesc_genedegree_broad_tcgapancanmutated-mut01",
+    "disease": "cesc",
+    "type": "genedegree",
+    "geneID_hugos": 55,
+    "geneID_symbols": 58,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "luad_genedegree_broad_tcgapancanmutated-mut01",
+    "disease": "luad",
+    "type": "genedegree",
+    "geneID_hugos": 60,
+    "geneID_symbols": 63,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "cesc_genedegree_broad_oncovogel274-mut01",
+    "disease": "cesc",
+    "type": "genedegree",
+    "geneID_hugos": 212,
+    "geneID_symbols": 223,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "esca_genedegree_ucsc_tcgapancanmutated-cnv",
+    "disease": "esca",
+    "type": "genedegree",
+    "geneID_hugos": 59,
+    "geneID_symbols": 62,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "cesc_genedegree_broad_oncoplex-mut01",
+    "disease": "cesc",
+    "type": "genedegree",
+    "geneID_hugos": 208,
+    "geneID_symbols": 220,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "cesc_genedegree_broad_osccchen131probes-mut01",
+    "disease": "cesc",
+    "type": "genedegree",
+    "geneID_hugos": 64,
+    "geneID_symbols": 66,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "cesc_genedegree_broad_osccchen9genes-mut01",
+    "disease": "cesc",
+    "type": "genedegree",
+    "geneID_hugos": 8,
+    "geneID_symbols": 8,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "chol_genedegree_broad_markergenes545-mut01",
+    "disease": "chol",
+    "type": "genedegree",
+    "geneID_hugos": 150,
+    "geneID_symbols": 156,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "chol_genedegree_broad_tcgapancanmutated-mut01",
+    "disease": "chol",
+    "type": "genedegree",
+    "geneID_hugos": 38,
+    "geneID_symbols": 41,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "chol_genedegree_broad_oncovogel274-mut01",
+    "disease": "chol",
+    "type": "genedegree",
+    "geneID_hugos": 92,
+    "geneID_symbols": 98,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "chol_genedegree_broad_oncoplex-mut01",
+    "disease": "chol",
+    "type": "genedegree",
+    "geneID_hugos": 88,
+    "geneID_symbols": 94,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "chol_genedegree_broad_osccchen131probes-mut01",
+    "disease": "chol",
+    "type": "genedegree",
+    "geneID_hugos": 17,
+    "geneID_symbols": 18,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "chol_genedegree_broad_osccchen9genes-mut01",
+    "disease": "chol",
+    "type": "genedegree",
+    "geneID_hugos": 5,
+    "geneID_symbols": 5,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "dlbc_genedegree_broad_markergenes545-mut01",
+    "disease": "dlbc",
+    "type": "genedegree",
+    "geneID_hugos": 229,
+    "geneID_symbols": 239,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "dlbc_genedegree_broad_tcgapancanmutated-mut01",
+    "disease": "dlbc",
+    "type": "genedegree",
+    "geneID_hugos": 39,
+    "geneID_symbols": 40,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "dlbc_genedegree_broad_oncovogel274-mut01",
+    "disease": "dlbc",
+    "type": "genedegree",
+    "geneID_hugos": 138,
+    "geneID_symbols": 145,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "luad_genedegree_broad_oncovogel274-mut01",
+    "disease": "luad",
+    "type": "genedegree",
+    "geneID_hugos": 261,
+    "geneID_symbols": 273,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "dlbc_genedegree_broad_oncoplex-mut01",
+    "disease": "dlbc",
+    "type": "genedegree",
+    "geneID_hugos": 130,
+    "geneID_symbols": 137,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "dlbc_genedegree_broad_osccchen131probes-mut01",
+    "disease": "dlbc",
+    "type": "genedegree",
+    "geneID_hugos": 44,
+    "geneID_symbols": 45,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "dlbc_genedegree_broad_osccchen9genes-mut01",
+    "disease": "dlbc",
+    "type": "genedegree",
+    "geneID_hugos": 5,
+    "geneID_symbols": 5,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "luad_genedegree_broad_oncoplex-mut01",
+    "disease": "luad",
+    "type": "genedegree",
+    "geneID_hugos": 250,
+    "geneID_symbols": 263,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "luad_genedegree_broad_osccchen131probes-mut01",
+    "disease": "luad",
+    "type": "genedegree",
+    "geneID_hugos": 93,
+    "geneID_symbols": 96,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "luad_genedegree_broad_osccchen9genes-mut01",
+    "disease": "luad",
+    "type": "genedegree",
+    "geneID_hugos": 8,
+    "geneID_symbols": 8,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "esca_genedegree_ucsc_oncovogel274-cnv",
+    "disease": "esca",
+    "type": "genedegree",
+    "geneID_hugos": 267,
+    "geneID_symbols": 279,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "lusc_genedegree_broad_markergenes545-mut01",
+    "disease": "lusc",
+    "type": "genedegree",
+    "geneID_hugos": 422,
+    "geneID_symbols": 438,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "lusc_genedegree_broad_tcgapancanmutated-mut01",
+    "disease": "lusc",
+    "type": "genedegree",
+    "geneID_hugos": 56,
+    "geneID_symbols": 59,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "lusc_genedegree_broad_oncovogel274-mut01",
+    "disease": "lusc",
+    "type": "genedegree",
+    "geneID_hugos": 227,
+    "geneID_symbols": 239,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "lusc_genedegree_broad_oncoplex-mut01",
+    "disease": "lusc",
+    "type": "genedegree",
+    "geneID_hugos": 217,
+    "geneID_symbols": 231,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "lusc_genedegree_broad_osccchen131probes-mut01",
+    "disease": "lusc",
+    "type": "genedegree",
+    "geneID_hugos": 77,
+    "geneID_symbols": 80,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "lusc_genedegree_broad_osccchen9genes-mut01",
+    "disease": "lusc",
+    "type": "genedegree",
+    "geneID_hugos": 8,
+    "geneID_symbols": 8,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "sarc_genedegree_broad_markergenes545-mut01",
+    "disease": "sarc",
+    "type": "genedegree",
+    "geneID_hugos": 239,
+    "geneID_symbols": 251,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "sarc_genedegree_broad_tcgapancanmutated-mut01",
+    "disease": "sarc",
+    "type": "genedegree",
+    "geneID_hugos": 34,
+    "geneID_symbols": 34,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "sarc_genedegree_broad_oncovogel274-mut01",
+    "disease": "sarc",
+    "type": "genedegree",
+    "geneID_hugos": 145,
+    "geneID_symbols": 149,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "sarc_genedegree_broad_oncoplex-mut01",
+    "disease": "sarc",
+    "type": "genedegree",
+    "geneID_hugos": 138,
+    "geneID_symbols": 143,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "sarc_genedegree_broad_osccchen131probes-mut01",
+    "disease": "sarc",
+    "type": "genedegree",
+    "geneID_hugos": 42,
+    "geneID_symbols": 44,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "sarc_genedegree_broad_osccchen9genes-mut01",
+    "disease": "sarc",
+    "type": "genedegree",
+    "geneID_hugos": 6,
+    "geneID_symbols": 6,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "paad_genedegree_broad_markergenes545-mut01",
+    "disease": "paad",
+    "type": "genedegree",
+    "geneID_hugos": 374,
+    "geneID_symbols": 389,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "paad_genedegree_broad_tcgapancanmutated-mut01",
+    "disease": "paad",
+    "type": "genedegree",
+    "geneID_hugos": 53,
+    "geneID_symbols": 56,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "paad_genedegree_broad_oncovogel274-mut01",
+    "disease": "paad",
+    "type": "genedegree",
+    "geneID_hugos": 214,
+    "geneID_symbols": 225,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "paad_genedegree_broad_oncoplex-mut01",
+    "disease": "paad",
+    "type": "genedegree",
+    "geneID_hugos": 208,
+    "geneID_symbols": 219,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "paad_genedegree_broad_osccchen131probes-mut01",
+    "disease": "paad",
+    "type": "genedegree",
+    "geneID_hugos": 75,
+    "geneID_symbols": 77,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "esca_genedegree_ucsc_oncoplex-cnv",
+    "disease": "esca",
+    "type": "genedegree",
+    "geneID_hugos": 256,
+    "geneID_symbols": 270,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "paad_genedegree_broad_osccchen9genes-mut01",
+    "disease": "paad",
+    "type": "genedegree",
+    "geneID_hugos": 7,
+    "geneID_symbols": 7,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "prad_genedegree_broad_markergenes545-mut01",
+    "disease": "prad",
+    "type": "genedegree",
+    "geneID_hugos": 374,
+    "geneID_symbols": 392,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "prad_genedegree_broad_tcgapancanmutated-mut01",
+    "disease": "prad",
+    "type": "genedegree",
+    "geneID_hugos": 49,
+    "geneID_symbols": 50,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "esca_genedegree_ucsc_osccchen131probes-cnv",
+    "disease": "esca",
+    "type": "genedegree",
+    "geneID_hugos": 100,
+    "geneID_symbols": 103,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "prad_genedegree_broad_oncovogel274-mut01",
+    "disease": "prad",
+    "type": "genedegree",
+    "geneID_hugos": 204,
+    "geneID_symbols": 211,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "esca_genedegree_ucsc_osccchen9genes-cnv",
+    "disease": "esca",
+    "type": "genedegree",
+    "geneID_hugos": 8,
+    "geneID_symbols": 8,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "prad_genedegree_broad_oncoplex-mut01",
+    "disease": "prad",
+    "type": "genedegree",
+    "geneID_hugos": 198,
+    "geneID_symbols": 206,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "prad_genedegree_broad_osccchen131probes-mut01",
+    "disease": "prad",
+    "type": "genedegree",
+    "geneID_hugos": 63,
+    "geneID_symbols": 66,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "prad_genedegree_broad_osccchen9genes-mut01",
+    "disease": "prad",
+    "type": "genedegree",
+    "geneID_hugos": 6,
+    "geneID_symbols": 6,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "laml_genedegree_ucsc_markergenes545-mut01-cnv",
+    "disease": "laml",
+    "type": "genedegree",
+    "geneID_hugos": 532,
+    "geneID_symbols": 556,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "skcm_genedegree_broad_markergenes545-mut01",
+    "disease": "skcm",
+    "type": "genedegree",
+    "geneID_hugos": 492,
+    "geneID_symbols": 513,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "skcm_genedegree_broad_tcgapancanmutated-mut01",
+    "disease": "skcm",
+    "type": "genedegree",
+    "geneID_hugos": 59,
+    "geneID_symbols": 62,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "laml_genedegree_ucsc_tcgapancanmutated-mut01-cnv",
+    "disease": "laml",
+    "type": "genedegree",
+    "geneID_hugos": 59,
+    "geneID_symbols": 65,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "skcm_genedegree_broad_oncovogel274-mut01",
+    "disease": "skcm",
+    "type": "genedegree",
+    "geneID_hugos": 260,
+    "geneID_symbols": 272,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "laml_genedegree_ucsc_oncovogel274-mut01-cnv",
+    "disease": "laml",
+    "type": "genedegree",
+    "geneID_hugos": 267,
+    "geneID_symbols": 282,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "skcm_genedegree_broad_oncoplex-mut01",
+    "disease": "skcm",
+    "type": "genedegree",
+    "geneID_hugos": 248,
+    "geneID_symbols": 262,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "laml_genedegree_ucsc_oncoplex-mut01-cnv",
+    "disease": "laml",
+    "type": "genedegree",
+    "geneID_hugos": 256,
+    "geneID_symbols": 270,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "skcm_genedegree_broad_osccchen131probes-mut01",
+    "disease": "skcm",
+    "type": "genedegree",
+    "geneID_hugos": 95,
+    "geneID_symbols": 97,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "skcm_genedegree_broad_osccchen9genes-mut01",
+    "disease": "skcm",
+    "type": "genedegree",
+    "geneID_hugos": 8,
+    "geneID_symbols": 8,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "laml_genedegree_ucsc_osccchen131probes-mut01-cnv",
+    "disease": "laml",
+    "type": "genedegree",
+    "geneID_hugos": 100,
+    "geneID_symbols": 103,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "laml_genedegree_ucsc_osccchen9genes-mut01-cnv",
+    "disease": "laml",
+    "type": "genedegree",
+    "geneID_hugos": 8,
+    "geneID_symbols": 8,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "stad_genedegree_broad_markergenes545-mut01",
+    "disease": "stad",
+    "type": "genedegree",
+    "geneID_hugos": 493,
+    "geneID_symbols": 512,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "stad_genedegree_broad_tcgapancanmutated-mut01",
+    "disease": "stad",
+    "type": "genedegree",
+    "geneID_hugos": 60,
+    "geneID_symbols": 63,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "stad_genedegree_broad_oncovogel274-mut01",
+    "disease": "stad",
+    "type": "genedegree",
+    "geneID_hugos": 263,
+    "geneID_symbols": 275,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "stad_genedegree_broad_oncoplex-mut01",
+    "disease": "stad",
+    "type": "genedegree",
+    "geneID_hugos": 253,
+    "geneID_symbols": 267,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "stad_genedegree_broad_osccchen131probes-mut01",
+    "disease": "stad",
+    "type": "genedegree",
+    "geneID_hugos": 95,
+    "geneID_symbols": 98,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "stad_genedegree_broad_osccchen9genes-mut01",
+    "disease": "stad",
+    "type": "genedegree",
+    "geneID_hugos": 8,
+    "geneID_symbols": 8,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "thca_genedegree_broad_markergenes545-mut01",
+    "disease": "thca",
+    "type": "genedegree",
+    "geneID_hugos": 197,
+    "geneID_symbols": 205,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "thca_genedegree_broad_tcgapancanmutated-mut01",
+    "disease": "thca",
+    "type": "genedegree",
+    "geneID_hugos": 37,
+    "geneID_symbols": 37,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "thca_genedegree_broad_oncovogel274-mut01",
+    "disease": "thca",
+    "type": "genedegree",
+    "geneID_hugos": 119,
+    "geneID_symbols": 121,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "thca_genedegree_broad_oncoplex-mut01",
+    "disease": "thca",
+    "type": "genedegree",
+    "geneID_hugos": 117,
+    "geneID_symbols": 119,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "thca_genedegree_broad_osccchen131probes-mut01",
+    "disease": "thca",
+    "type": "genedegree",
+    "geneID_hugos": 35,
+    "geneID_symbols": 35,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "thca_genedegree_broad_osccchen9genes-mut01",
+    "disease": "thca",
+    "type": "genedegree",
+    "geneID_hugos": 5,
+    "geneID_symbols": 5,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "ucec_genedegree_broad_markergenes545-mut01",
+    "disease": "ucec",
+    "type": "genedegree",
+    "geneID_hugos": 485,
+    "geneID_symbols": 505,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "ucec_genedegree_broad_tcgapancanmutated-mut01",
+    "disease": "ucec",
+    "type": "genedegree",
+    "geneID_hugos": 60,
+    "geneID_symbols": 63,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "ucec_genedegree_broad_oncovogel274-mut01",
+    "disease": "ucec",
+    "type": "genedegree",
+    "geneID_hugos": 259,
+    "geneID_symbols": 271,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "ucec_genedegree_broad_oncoplex-mut01",
+    "disease": "ucec",
+    "type": "genedegree",
+    "geneID_hugos": 251,
+    "geneID_symbols": 265,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "ucec_genedegree_broad_osccchen131probes-mut01",
+    "disease": "ucec",
+    "type": "genedegree",
+    "geneID_hugos": 96,
+    "geneID_symbols": 99,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "ucec_genedegree_broad_osccchen9genes-mut01",
+    "disease": "ucec",
+    "type": "genedegree",
+    "geneID_hugos": 8,
+    "geneID_symbols": 8,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "esca_edges_broad_osccchen9genes-mut01",
+    "disease": "esca",
+    "type": "edges",
+    "geneID_hugos": 8,
+    "geneID_symbols": 8,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "brain_genedegree_ucsc-pnas_tcgapancanmutated-mut01-cnv",
+    "disease": "brain",
+    "type": "genedegree",
+    "geneID_hugos": 60,
+    "geneID_symbols": 66,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "brain_genedegree_ucsc-pnas_oncovogel274-mut01-cnv",
+    "disease": "brain",
+    "type": "genedegree",
+    "geneID_hugos": 269,
+    "geneID_symbols": 286,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "lung_genedegree_ucsc_markergenes545-mut01-cnv",
+    "disease": "lung",
+    "type": "genedegree",
+    "geneID_hugos": 534,
+    "geneID_symbols": 559,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "brain_genedegree_ucsc-pnas_oncoplex-mut01-cnv",
+    "disease": "brain",
+    "type": "genedegree",
+    "geneID_hugos": 258,
+    "geneID_symbols": 273,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "lung_genedegree_ucsc_tcgapancanmutated-mut01-cnv",
+    "disease": "lung",
+    "type": "genedegree",
+    "geneID_hugos": 60,
+    "geneID_symbols": 66,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "brain_genedegree_ucsc-pnas_osccchen131probes-mut01-cnv",
+    "disease": "brain",
+    "type": "genedegree",
+    "geneID_hugos": 100,
+    "geneID_symbols": 103,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "brain_genedegree_ucsc-pnas_osccchen9genes-mut01-cnv",
+    "disease": "brain",
+    "type": "genedegree",
+    "geneID_hugos": 8,
+    "geneID_symbols": 8,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "lung_genedegree_ucsc_oncovogel274-mut01-cnv",
+    "disease": "lung",
+    "type": "genedegree",
+    "geneID_hugos": 269,
+    "geneID_symbols": 286,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "coadread_genedegree_ucsc_tcgagbmclassifiers-mut01-cnv",
+    "disease": "coadread",
+    "type": "genedegree",
+    "geneID_hugos": 756,
+    "geneID_symbols": 803,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "lung_genedegree_ucsc_oncoplex-mut01-cnv",
+    "disease": "lung",
+    "type": "genedegree",
+    "geneID_hugos": 258,
+    "geneID_symbols": 273,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "coadread_genedegree_ucsc_markergenes545-mut01-cnv",
+    "disease": "coadread",
+    "type": "genedegree",
+    "geneID_hugos": 533,
+    "geneID_symbols": 558,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "coadread_genedegree_ucsc_tcgapancanmutated-mut01-cnv",
+    "disease": "coadread",
+    "type": "genedegree",
+    "geneID_hugos": 60,
+    "geneID_symbols": 66,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "lung_genedegree_ucsc_osccchen131probes-mut01-cnv",
+    "disease": "lung",
+    "type": "genedegree",
+    "geneID_hugos": 100,
+    "geneID_symbols": 103,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "lung_genedegree_ucsc_osccchen9genes-mut01-cnv",
+    "disease": "lung",
+    "type": "genedegree",
+    "geneID_hugos": 8,
+    "geneID_symbols": 8,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "coadread_genedegree_ucsc_oncovogel274-mut01-cnv",
+    "disease": "coadread",
+    "type": "genedegree",
+    "geneID_hugos": 267,
+    "geneID_symbols": 284,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "coadread_genedegree_ucsc_oncoplex-mut01-cnv",
+    "disease": "coadread",
+    "type": "genedegree",
+    "geneID_hugos": 256,
+    "geneID_symbols": 271,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "sarc_genedegree_ucsc_tcgagbmclassifiers-cnv",
+    "disease": "sarc",
+    "type": "genedegree",
+    "geneID_hugos": 754,
+    "geneID_symbols": 796,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "coadread_genedegree_ucsc_osccchen131probes-mut01-cnv",
+    "disease": "coadread",
+    "type": "genedegree",
+    "geneID_hugos": 100,
+    "geneID_symbols": 103,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "coadread_genedegree_ucsc_osccchen9genes-mut01-cnv",
+    "disease": "coadread",
+    "type": "genedegree",
+    "geneID_hugos": 8,
+    "geneID_symbols": 8,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "sarc_genedegree_ucsc_markergenes545-cnv",
+    "disease": "sarc",
+    "type": "genedegree",
+    "geneID_hugos": 532,
+    "geneID_symbols": 556,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "sarc_genedegree_ucsc_tcgapancanmutated-cnv",
+    "disease": "sarc",
+    "type": "genedegree",
+    "geneID_hugos": 59,
+    "geneID_symbols": 62,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "sarc_genedegree_ucsc_oncovogel274-cnv",
+    "disease": "sarc",
+    "type": "genedegree",
+    "geneID_hugos": 267,
+    "geneID_symbols": 279,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "sarc_genedegree_ucsc_oncoplex-cnv",
+    "disease": "sarc",
+    "type": "genedegree",
+    "geneID_hugos": 256,
+    "geneID_symbols": 270,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "sarc_genedegree_ucsc_osccchen131probes-cnv",
+    "disease": "sarc",
+    "type": "genedegree",
+    "geneID_hugos": 100,
+    "geneID_symbols": 103,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "sarc_genedegree_ucsc_osccchen9genes-cnv",
+    "disease": "sarc",
+    "type": "genedegree",
+    "geneID_hugos": 8,
+    "geneID_symbols": 8,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "stad_genedegree_ucsc_tcgagbmclassifiers-mut01",
+    "disease": "stad",
+    "type": "genedegree",
+    "geneID_hugos": 705,
+    "geneID_symbols": 744,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "gbm_edges_broad_markergenes545-mut01",
+    "disease": "gbm",
+    "type": "edges",
+    "geneID_hugos": 303,
+    "geneID_symbols": 320,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "gbm_genedegree_ucsc_tcgagbmclassifiers-mut01-cnv",
+    "disease": "gbm",
+    "type": "genedegree",
+    "geneID_hugos": 755,
+    "geneID_symbols": 805,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "stad_genedegree_ucsc_tcgapancanmutated-mut01",
+    "disease": "stad",
+    "type": "genedegree",
+    "geneID_hugos": 60,
+    "geneID_symbols": 66,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "stad_genedegree_ucsc_oncovogel274-mut01",
+    "disease": "stad",
+    "type": "genedegree",
+    "geneID_hugos": 258,
+    "geneID_symbols": 275,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "stad_genedegree_ucsc_oncoplex-mut01",
+    "disease": "stad",
+    "type": "genedegree",
+    "geneID_hugos": 250,
+    "geneID_symbols": 265,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "stad_genedegree_ucsc_osccchen131probes-mut01",
+    "disease": "stad",
+    "type": "genedegree",
+    "geneID_hugos": 91,
+    "geneID_symbols": 94,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "stad_genedegree_ucsc_osccchen9genes-mut01",
+    "disease": "stad",
+    "type": "genedegree",
+    "geneID_hugos": 8,
+    "geneID_symbols": 8,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "gbm_edges_broad_tcgapancanmutated-mut01",
+    "disease": "gbm",
+    "type": "edges",
+    "geneID_hugos": 38,
+    "geneID_symbols": 38,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "gbm_genedegree_ucsc_tcgapancanmutated-mut01-cnv",
+    "disease": "gbm",
+    "type": "genedegree",
+    "geneID_hugos": 59,
+    "geneID_symbols": 65,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "gbm_genedegree_ucsc_oncovogel274-mut01-cnv",
+    "disease": "gbm",
+    "type": "genedegree",
+    "geneID_hugos": 267,
+    "geneID_symbols": 283,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "gbm_genedegree_ucsc_oncoplex-mut01-cnv",
+    "disease": "gbm",
+    "type": "genedegree",
+    "geneID_hugos": 256,
+    "geneID_symbols": 270,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "gbm_genedegree_ucsc_osccchen131probes-mut01-cnv",
+    "disease": "gbm",
+    "type": "genedegree",
+    "geneID_hugos": 100,
+    "geneID_symbols": 103,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "brain_genedegree_ucsc_tcgagbmclassifiers-mut01-cnv",
+    "disease": "brain",
+    "type": "genedegree",
+    "geneID_hugos": 756,
+    "geneID_symbols": 799,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "gbm_genedegree_ucsc_osccchen9genes-mut01-cnv",
+    "disease": "gbm",
+    "type": "genedegree",
+    "geneID_hugos": 8,
+    "geneID_symbols": 8,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "hnsc_genedegree_ucsc_tcgagbmclassifiers-mut01-cnv",
+    "disease": "hnsc",
+    "type": "genedegree",
+    "geneID_hugos": 756,
+    "geneID_symbols": 798,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "brain_genedegree_ucsc_markergenes545-mut01-cnv",
+    "disease": "brain",
+    "type": "genedegree",
+    "geneID_hugos": 535,
+    "geneID_symbols": 559,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "brain_genedegree_ucsc_tcgapancanmutated-mut01-cnv",
+    "disease": "brain",
+    "type": "genedegree",
+    "geneID_hugos": 60,
+    "geneID_symbols": 66,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "hnsc_genedegree_ucsc_markergenes545-mut01-cnv",
+    "disease": "hnsc",
+    "type": "genedegree",
+    "geneID_hugos": 534,
+    "geneID_symbols": 558,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "hnsc_genedegree_ucsc_tcgapancanmutated-mut01-cnv",
+    "disease": "hnsc",
+    "type": "genedegree",
+    "geneID_hugos": 60,
+    "geneID_symbols": 63,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "brain_genedegree_ucsc_oncovogel274-mut01-cnv",
+    "disease": "brain",
+    "type": "genedegree",
+    "geneID_hugos": 269,
+    "geneID_symbols": 285,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "hnsc_genedegree_ucsc_oncovogel274-mut01-cnv",
+    "disease": "hnsc",
+    "type": "genedegree",
+    "geneID_hugos": 269,
+    "geneID_symbols": 281,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "brain_genedegree_ucsc_oncoplex-mut01-cnv",
+    "disease": "brain",
+    "type": "genedegree",
+    "geneID_hugos": 258,
+    "geneID_symbols": 272,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "hnsc_genedegree_ucsc_oncoplex-mut01-cnv",
+    "disease": "hnsc",
+    "type": "genedegree",
+    "geneID_hugos": 258,
+    "geneID_symbols": 272,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "hnsc_genedegree_ucsc_osccchen131probes-mut01-cnv",
+    "disease": "hnsc",
+    "type": "genedegree",
+    "geneID_hugos": 100,
+    "geneID_symbols": 103,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "brain_genedegree_ucsc_osccchen131probes-mut01-cnv",
+    "disease": "brain",
+    "type": "genedegree",
+    "geneID_hugos": 100,
+    "geneID_symbols": 103,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "hnsc_genedegree_ucsc_osccchen9genes-mut01-cnv",
+    "disease": "hnsc",
+    "type": "genedegree",
+    "geneID_hugos": 8,
+    "geneID_symbols": 8,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "brain_genedegree_ucsc_osccchen9genes-mut01-cnv",
+    "disease": "brain",
+    "type": "genedegree",
+    "geneID_hugos": 8,
+    "geneID_symbols": 8,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "lgg_genedegree_ucsc_tcgagbmclassifiers-mut01-cnv",
+    "disease": "lgg",
+    "type": "genedegree",
+    "geneID_hugos": 756,
+    "geneID_symbols": 798,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "lgg_genedegree_ucsc_markergenes545-mut01-cnv",
+    "disease": "lgg",
+    "type": "genedegree",
+    "geneID_hugos": 534,
+    "geneID_symbols": 558,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "lgg_genedegree_ucsc_tcgapancanmutated-mut01-cnv",
+    "disease": "lgg",
+    "type": "genedegree",
+    "geneID_hugos": 60,
+    "geneID_symbols": 63,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "lgg_genedegree_ucsc_oncovogel274-mut01-cnv",
+    "disease": "lgg",
+    "type": "genedegree",
+    "geneID_hugos": 269,
+    "geneID_symbols": 281,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "lgg_genedegree_ucsc_oncoplex-mut01-cnv",
+    "disease": "lgg",
+    "type": "genedegree",
+    "geneID_hugos": 258,
+    "geneID_symbols": 272,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "lgg_genedegree_ucsc_osccchen131probes-mut01-cnv",
+    "disease": "lgg",
+    "type": "genedegree",
+    "geneID_hugos": 100,
+    "geneID_symbols": 103,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "lgg_genedegree_ucsc_osccchen9genes-mut01-cnv",
+    "disease": "lgg",
+    "type": "genedegree",
+    "geneID_hugos": 8,
+    "geneID_symbols": 8,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "luad_genedegree_ucsc_tcgagbmclassifiers-mut01-cnv",
+    "disease": "luad",
+    "type": "genedegree",
+    "geneID_hugos": 756,
+    "geneID_symbols": 798,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "luad_genedegree_ucsc_markergenes545-mut01-cnv",
+    "disease": "luad",
+    "type": "genedegree",
+    "geneID_hugos": 534,
+    "geneID_symbols": 558,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "luad_genedegree_ucsc_tcgapancanmutated-mut01-cnv",
+    "disease": "luad",
+    "type": "genedegree",
+    "geneID_hugos": 60,
+    "geneID_symbols": 63,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "luad_genedegree_ucsc_oncovogel274-mut01-cnv",
+    "disease": "luad",
+    "type": "genedegree",
+    "geneID_hugos": 269,
+    "geneID_symbols": 281,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "luad_genedegree_ucsc_oncoplex-mut01-cnv",
+    "disease": "luad",
+    "type": "genedegree",
+    "geneID_hugos": 258,
+    "geneID_symbols": 272,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "luad_genedegree_ucsc_osccchen131probes-mut01-cnv",
+    "disease": "luad",
+    "type": "genedegree",
+    "geneID_hugos": 100,
+    "geneID_symbols": 103,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "luad_genedegree_ucsc_osccchen9genes-mut01-cnv",
+    "disease": "luad",
+    "type": "genedegree",
+    "geneID_hugos": 8,
+    "geneID_symbols": 8,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "gbm_edges_broad_oncovogel274-mut01",
+    "disease": "gbm",
+    "type": "edges",
+    "geneID_hugos": 171,
+    "geneID_symbols": 176,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "gbm_edges_broad_oncoplex-mut01",
+    "disease": "gbm",
+    "type": "edges",
+    "geneID_hugos": 164,
+    "geneID_symbols": 169,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "lusc_genedegree_ucsc_tcgapancanmutated-mut01-cnv",
+    "disease": "lusc",
+    "type": "genedegree",
+    "geneID_hugos": 60,
+    "geneID_symbols": 66,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "lusc_genedegree_ucsc_oncovogel274-mut01-cnv",
+    "disease": "lusc",
+    "type": "genedegree",
+    "geneID_hugos": 269,
+    "geneID_symbols": 286,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "lusc_genedegree_ucsc_oncoplex-mut01-cnv",
+    "disease": "lusc",
+    "type": "genedegree",
+    "geneID_hugos": 258,
+    "geneID_symbols": 273,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "lusc_genedegree_ucsc_osccchen131probes-mut01-cnv",
+    "disease": "lusc",
+    "type": "genedegree",
+    "geneID_hugos": 100,
+    "geneID_symbols": 103,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "lusc_genedegree_ucsc_osccchen9genes-mut01-cnv",
+    "disease": "lusc",
+    "type": "genedegree",
+    "geneID_hugos": 8,
+    "geneID_symbols": 8,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "prad_genedegree_ucsc_tcgagbmclassifiers-mut01-cnv",
+    "disease": "prad",
+    "type": "genedegree",
+    "geneID_hugos": 755,
+    "geneID_symbols": 797,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "prad_genedegree_ucsc_markergenes545-mut01-cnv",
+    "disease": "prad",
+    "type": "genedegree",
+    "geneID_hugos": 533,
+    "geneID_symbols": 557,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "prad_genedegree_ucsc_tcgapancanmutated-mut01-cnv",
+    "disease": "prad",
+    "type": "genedegree",
+    "geneID_hugos": 60,
+    "geneID_symbols": 63,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "prad_genedegree_ucsc_oncovogel274-mut01-cnv",
+    "disease": "prad",
+    "type": "genedegree",
+    "geneID_hugos": 267,
+    "geneID_symbols": 279,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "prad_genedegree_ucsc_oncoplex-mut01-cnv",
+    "disease": "prad",
+    "type": "genedegree",
+    "geneID_hugos": 256,
+    "geneID_symbols": 270,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "prad_genedegree_ucsc_osccchen131probes-mut01-cnv",
+    "disease": "prad",
+    "type": "genedegree",
+    "geneID_hugos": 100,
+    "geneID_symbols": 103,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "prad_genedegree_ucsc_osccchen9genes-mut01-cnv",
+    "disease": "prad",
+    "type": "genedegree",
+    "geneID_hugos": 8,
+    "geneID_symbols": 8,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "paad_genedegree_ucsc_tcgagbmclassifiers-mut01-cnv",
+    "disease": "paad",
+    "type": "genedegree",
+    "geneID_hugos": 755,
+    "geneID_symbols": 797,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "paad_genedegree_ucsc_markergenes545-mut01-cnv",
+    "disease": "paad",
+    "type": "genedegree",
+    "geneID_hugos": 534,
+    "geneID_symbols": 558,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "paad_genedegree_ucsc_tcgapancanmutated-mut01-cnv",
+    "disease": "paad",
+    "type": "genedegree",
+    "geneID_hugos": 60,
+    "geneID_symbols": 63,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "paad_genedegree_ucsc_oncovogel274-mut01-cnv",
+    "disease": "paad",
+    "type": "genedegree",
+    "geneID_hugos": 268,
+    "geneID_symbols": 280,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "paad_genedegree_ucsc_oncoplex-mut01-cnv",
+    "disease": "paad",
+    "type": "genedegree",
+    "geneID_hugos": 257,
+    "geneID_symbols": 271,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "paad_genedegree_ucsc_osccchen131probes-mut01-cnv",
+    "disease": "paad",
+    "type": "genedegree",
+    "geneID_hugos": 100,
+    "geneID_symbols": 103,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "paad_genedegree_ucsc_osccchen9genes-mut01-cnv",
+    "disease": "paad",
+    "type": "genedegree",
+    "geneID_hugos": 8,
+    "geneID_symbols": 8,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "acc_genedegree_ucsc_tcgagbmclassifiers-cnv",
+    "disease": "acc",
+    "type": "genedegree",
+    "geneID_hugos": 754,
+    "geneID_symbols": 796,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "acc_genedegree_ucsc_markergenes545-cnv",
+    "disease": "acc",
+    "type": "genedegree",
+    "geneID_hugos": 532,
+    "geneID_symbols": 556,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "acc_genedegree_ucsc_tcgapancanmutated-cnv",
+    "disease": "acc",
+    "type": "genedegree",
+    "geneID_hugos": 59,
+    "geneID_symbols": 62,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "acc_genedegree_ucsc_oncovogel274-cnv",
+    "disease": "acc",
+    "type": "genedegree",
+    "geneID_hugos": 267,
+    "geneID_symbols": 279,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "acc_genedegree_ucsc_oncoplex-cnv",
+    "disease": "acc",
+    "type": "genedegree",
+    "geneID_hugos": 256,
+    "geneID_symbols": 270,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "acc_genedegree_ucsc_osccchen131probes-cnv",
+    "disease": "acc",
+    "type": "genedegree",
+    "geneID_hugos": 100,
+    "geneID_symbols": 103,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "acc_genedegree_ucsc_osccchen9genes-cnv",
+    "disease": "acc",
+    "type": "genedegree",
+    "geneID_hugos": 8,
+    "geneID_symbols": 8,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "blca_genedegree_ucsc_tcgagbmclassifiers-mut01-cnv",
+    "disease": "blca",
+    "type": "genedegree",
+    "geneID_hugos": 756,
+    "geneID_symbols": 798,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "blca_genedegree_ucsc_markergenes545-mut01-cnv",
+    "disease": "blca",
+    "type": "genedegree",
+    "geneID_hugos": 533,
+    "geneID_symbols": 557,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "blca_genedegree_ucsc_tcgapancanmutated-mut01-cnv",
+    "disease": "blca",
+    "type": "genedegree",
+    "geneID_hugos": 60,
+    "geneID_symbols": 63,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "blca_genedegree_ucsc_oncovogel274-mut01-cnv",
+    "disease": "blca",
+    "type": "genedegree",
+    "geneID_hugos": 269,
+    "geneID_symbols": 281,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "brca_genedegree_ucsc_tcgagbmclassifiers-mut01-cnv",
+    "disease": "brca",
+    "type": "genedegree",
+    "geneID_hugos": 755,
+    "geneID_symbols": 802,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "blca_genedegree_ucsc_oncoplex-mut01-cnv",
+    "disease": "blca",
+    "type": "genedegree",
+    "geneID_hugos": 258,
+    "geneID_symbols": 272,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "blca_genedegree_ucsc_osccchen131probes-mut01-cnv",
+    "disease": "blca",
+    "type": "genedegree",
+    "geneID_hugos": 100,
+    "geneID_symbols": 103,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "blca_genedegree_ucsc_osccchen9genes-mut01-cnv",
+    "disease": "blca",
+    "type": "genedegree",
+    "geneID_hugos": 8,
+    "geneID_symbols": 8,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "cesc_genedegree_ucsc_tcgagbmclassifiers-cnv",
+    "disease": "cesc",
+    "type": "genedegree",
+    "geneID_hugos": 754,
+    "geneID_symbols": 796,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "cesc_genedegree_ucsc_markergenes545-cnv",
+    "disease": "cesc",
+    "type": "genedegree",
+    "geneID_hugos": 532,
+    "geneID_symbols": 556,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "cesc_genedegree_ucsc_tcgapancanmutated-cnv",
+    "disease": "cesc",
+    "type": "genedegree",
+    "geneID_hugos": 59,
+    "geneID_symbols": 62,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "cesc_genedegree_ucsc_oncovogel274-cnv",
+    "disease": "cesc",
+    "type": "genedegree",
+    "geneID_hugos": 267,
+    "geneID_symbols": 279,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "cesc_genedegree_ucsc_oncoplex-cnv",
+    "disease": "cesc",
+    "type": "genedegree",
+    "geneID_hugos": 256,
+    "geneID_symbols": 270,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "cesc_genedegree_ucsc_osccchen131probes-cnv",
+    "disease": "cesc",
+    "type": "genedegree",
+    "geneID_hugos": 100,
+    "geneID_symbols": 103,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "cesc_genedegree_ucsc_osccchen9genes-cnv",
+    "disease": "cesc",
+    "type": "genedegree",
+    "geneID_hugos": 8,
+    "geneID_symbols": 8,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "brca_genedegree_ucsc_markergenes545-mut01-cnv",
+    "disease": "brca",
+    "type": "genedegree",
+    "geneID_hugos": 534,
+    "geneID_symbols": 558,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "brca_genedegree_ucsc_tcgapancanmutated-mut01-cnv",
+    "disease": "brca",
+    "type": "genedegree",
+    "geneID_hugos": 60,
+    "geneID_symbols": 66,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "brca_genedegree_ucsc_oncovogel274-mut01-cnv",
+    "disease": "brca",
+    "type": "genedegree",
+    "geneID_hugos": 268,
+    "geneID_symbols": 285,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "brca_genedegree_ucsc_oncoplex-mut01-cnv",
+    "disease": "brca",
+    "type": "genedegree",
+    "geneID_hugos": 257,
+    "geneID_symbols": 272,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "brca_genedegree_ucsc_osccchen131probes-mut01-cnv",
+    "disease": "brca",
+    "type": "genedegree",
+    "geneID_hugos": 100,
+    "geneID_symbols": 103,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "brca_genedegree_ucsc_osccchen9genes-mut01-cnv",
+    "disease": "brca",
+    "type": "genedegree",
+    "geneID_hugos": 8,
+    "geneID_symbols": 8,
+    "geneID_notIncludes": 0
+  },
+  {
+    "collection": "gbm_edges_ucsc_tcgagbmclassifiers-mut01-cnv",
+    "disease": "gbm",
+    "type": "edges",
+    "geneID_hugos": 755,
+    "geneID_symbols": 805,
+    "geneID_notIncludes": 0
+  }
+]

@@ -1,0 +1,6 @@
+https://github.com/NCI-GDC/gdcdictionary
+/* How to run yaml file */
+http://ess.khhq.net/wiki/YAML_Tutorial#YAML_Rules
+
+
+https://gdc.cancer.gov/developers/gdc-data-model/gdc-data-model-components

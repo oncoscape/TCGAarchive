@@ -1,0 +1,193 @@
+[
+    {
+        "disease": "esca",
+        "tools_missing": [
+            "timelines"
+        ]
+    },
+    {
+        "disease": "kich",
+        "tools_missing": [
+            "timelines"
+        ]
+    },
+    {
+        "disease": "kirc",
+        "tools_missing": [
+            "timelines",
+            "pca"
+        ]
+    },
+    {
+        "disease": "kirp",
+        "tools_missing": [
+            "timelines"
+        ]
+    },
+    {
+        "disease": "lihc",
+        "tools_missing": [
+            "timelines"
+        ]
+    },
+    {
+        "disease": "sarc",
+        "tools_missing": [
+            "timelines"
+        ]
+    },
+    {
+        "disease": "paad",
+        "tools_missing": [
+            "timelines"
+        ]
+    },
+    {
+        "disease": "prad",
+        "tools_missing": [
+            "timelines"
+        ]
+    },
+    {
+        "disease": "skcm",
+        "tools_missing": [
+            "timelines",
+            "markers"
+        ]
+    },
+    {
+        "disease": "stad",
+        "tools_missing": [
+            "timelines",
+            "markers"
+        ]
+    },
+    {
+        "disease": "thca",
+        "tools_missing": [
+            "timelines",
+            "markers"
+        ]
+    },
+    {
+        "disease": "ucec",
+        "tools_missing": [
+            "timelines",
+            "markers"
+        ]
+    },
+    {
+        "disease": "acc",
+        "tools_missing": [
+            "timelines"
+        ]
+    },
+    {
+        "disease": "blca",
+        "tools_missing": [
+            "timelines"
+        ]
+    },
+    {
+        "disease": "cesc",
+        "tools_missing": [
+            "timelines"
+        ]
+    },
+    {
+        "disease": "chol",
+        "tools_missing": [
+            "timelines"
+        ]
+    },
+    {
+        "disease": "dlbc",
+        "tools_missing": [
+            "timelines"
+        ]
+    },
+    {
+        "disease": "coadread",
+        "tools_missing": [
+            "history"
+        ]
+    },
+    {
+        "disease": "lung",
+        "tools_missing": [
+            "history"
+        ]
+    },
+    {
+        "disease": "coad",
+        "tools_missing": [
+            "timelines",
+            "pca",
+            "markers"
+        ]
+    },
+    {
+        "disease": "laml",
+        "tools_missing": [
+            "timelines",
+            "history"
+        ]
+    },
+    {
+        "disease": "read",
+        "tools_missing": [
+            "timelines",
+            "pca",
+            "markers"
+        ]
+    },
+    {
+        "disease": "ucs",
+        "tools_missing": [
+            "timelines",
+            "markers"
+        ]
+    },
+    {
+        "disease": "uvm",
+        "tools_missing": [
+            "timelines",
+            "markers"
+        ]
+    },
+    {
+        "disease": "thym",
+        "tools_missing": [
+            "timelines",
+            "markers"
+        ]
+    },
+    {
+        "disease": "tgct",
+        "tools_missing": [
+            "timelines",
+            "markers"
+        ]
+    },
+    {
+        "disease": "pcpg",
+        "tools_missing": [
+            "timelines",
+            "markers"
+        ]
+    },
+    {
+        "disease": "ov",
+        "tools_missing": [
+            "timelines",
+            "markers"
+        ]
+    },
+    {
+        "disease": "meso",
+        "tools_missing": [
+            "timelines",
+            "markers"
+        ]
+    }
+]
