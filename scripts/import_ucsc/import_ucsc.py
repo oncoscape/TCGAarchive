@@ -28,8 +28,11 @@ def import_ucsc_molecular():
 	#Find all available UCSC datasets
 	allDatasets = xena.datasets_list (huburl)
 	TCGAdatasets = [dataset for dataset in allDatasets if re.compile("^TCGA").match(dataset)]
+#	Prodsets = "^TCGA/TCGA.HNSC|^TCGA/TCGA.LUNG|^TCGA/TCGA.LUSC|^TCGA/TCGA.GBMLGG|^TCGA/TCGA.PRAD|^TCGA/TCGA.LUAD|^TCGA/TCGA.BRCA|^TCGA/TCGA.LUAD"
+#	Proddata = [dataset for dataset in TCGAdatasets if re.compile(Prodsets).match(dataset)]
 
 	for dataset in TCGAdatasets:
+#	for dataset in Proddata:
 	#	allDatasets = xena.datasets_list_in_cohort(huburl, cohort)
 	#	dataset = allDatasets[1]
 		print dataset
@@ -138,10 +141,9 @@ def import_ucsc_download(dataset, collection, type):
 			identifier = values[0]
 			del values[0]
 			if type =="genomicMatrix":
-				#np.set_printoptions(precision=10, suppress=True)
 				values = np.genfromtxt(np.array(values),dtype=float)
 			#read  each row, save the id and remove the name
-			doc = {"gene": identifier, "min": min(values), "max": max(values), "data": dict(zip(allsamples, values))}
+			doc = {"id": identifier, "min": min(values), "max": max(values), "data": dict(zip(allsamples, values))}
 			db[collection].insert_one(doc)
 		return True
 	
