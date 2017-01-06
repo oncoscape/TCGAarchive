@@ -55,7 +55,6 @@ os.data.load.annotation <- function(oCollection, inputFile){
     insert.collection(oCollection, mtx)
     
 }
-
 # -------------------------------------------------------
 ### Load Function Takes An Import File + Column List & Returns A DataFrame
 os.data.load.molecular <- function(oCollection, inputFile, ...){
@@ -170,7 +169,6 @@ os.data.load.molecular <- function(oCollection, inputFile, ...){
   insert.collection(oCollection, result)
   
 }
-
 #---------------------------------------------------------
 ### Load Function Takes An Import File + Column List & Returns A DataFrame
 os.data.load.clinical.events <- function(oCollection, inputFile, ...){
@@ -215,7 +213,6 @@ os.data.load.clinical.events <- function(oCollection, inputFile, ...){
   else{ print("WARNING: do not know how to translate event list yet")}
   
 }
-
 #---------------------------------------------------------
 get.tcga.col.class <- function(columns){
   os.tcga.classes <- names(os.tcga.column.enumerations)
@@ -232,10 +229,8 @@ get.tcga.col.class <- function(columns){
   
   return(list(col=columns, class=column_type))
 }
-
 #---------------------------------------------------------
 os.data.load.clinical.enum <- function(oCollection, inputFile, checkEnumerations=FALSE, checkClassType = "character"){
-
 
     # Columns :: Create List From Url
   header <- readLines(inputFile, n=3)
@@ -444,7 +439,6 @@ os.data.batch <- function(manifest, ...){
   #batch_result <- parLapply(cluster_cores,1:nrow(datasets), import_worker())
   batch_result <- lapply(1:nrow(datasets), function(i){process_dataType(i)})  
 }
-
 #----------------------------------------------------------------------------------------------------
 get.category.data<- function(name, table, cat.col.name, color.col.name= "color"){
   
@@ -477,7 +471,6 @@ add.category.fromFile <- function(file, name, col.name, dataset, type){
   df$data=categories.list
   return(df)
 }
-
 #----------------------------------------------------------------------------------------------------
 os.data.load.categories <- function(datasets = c("brain")){
   
@@ -518,7 +511,6 @@ map.sample.ids <- function(samples, source, mapping=list()){
   
   return(mapping)
 }
-  
 #----------------------------------------------------------------------------------------------------
 os.batch.map.samples <- function(){
  
@@ -607,64 +599,81 @@ cluster_cores <- makeCluster(num_cores, type="FORK")
 ## must first initialize server (through shell >mongod)
 mongo <- connect.to.mongo()
 
-commands <- c("categories", "clinical", "molecular", "scale", "lookup", "sample")
-#commands <- c("categories")
-#commands <- c("molecular")
-#commands <- c("scale")
-commands <- "clinical"
-#commands <- "lookup"
-#commands <- "sample"
-#commands <- "sunburst"
+commands <- c("clinical", "scale", "lookup", "sample")
+#commands <- c("categories", "clinical", "molecular", "scale", "lookup", "sample")
+## -- molecular data now being pulled from python script import_ucsc.py
+## -- brain categorical data retained here simply for full provenance
+
+commands <- c("clinical", "scale", "lookup")
+commands <- "lookup"
+## TO DO: sample should be run once gene vs chr position collections decided
 
 args = commandArgs(trailingOnly=TRUE)
 if(length(args) != 0 )
   manifest <- args
 
 if("categories" %in% commands) 
-  os.data.load.categories( datasets=c( "brain", "brca"))
+  os.data.load.categories( datasets="brain")
 
+## Import molecular table from downloaded folders
+## Deprecated and replaced by python script for Xena UCSC import
 if("molecular" %in% commands){
   os.data.batch("../manifests/os.ucsc.molecular.manifest.json")
-#  os.data.batch("../manifests/os.full.molecular.manifest.json")
-#  os.data.batch("../manifests/os.firehose.molecular.manifest.json")
 }
+
+# Import all clinical tables from GDC archive
 if("clinical" %in% commands) 
   os.data.batch("../manifests/os.tcga.full.clinical.manifest.json",
-                  checkEnumerations = FALSE,
+                checkEnumerations = FALSE,
                 checkClassType = "character")
                 #                checkClassType = "os.class.tcgaCharacter")
 
-if("scale" %in% commands){
-  save.batch.genesets.scaled.pos(scaleFactor=100000)
-}
-
+# create initial collections for lookup and render documents 
 if("lookup" %in% commands){
 	lookup_tools <- fromJSON("../manifests/os.lookup_tools.json", simplifyVector = F)
 	con <- mongo("lookup_oncoscape_tools", db=db, url=host)
-	con$insert(toJSON(lookup_tools, auto_unbox = T))
+	if(con$count() ==0)
+	  lapply(lookup_tools, function(doc){con$insert(toJSON(doc, auto_unbox = T))})
 	rm(con)
 	
 	render_pathways <- fromJSON("../manifests/render_pathways.json", simplifyVector = F)
 	con <- mongo("render_pathways", db=db, url=host)
-	con$insert(toJSON(render_pathways, auto_unbox = T))
+	if(con$count() ==0)
+	  lapply(render_pathways, function(doc){con$insert(toJSON(doc, auto_unbox = T))})
 	rm(con)
 	
-	lookup_genesets <- fromJSON("../data/categories/lookup_genesets_hgnc_hg19.json", simplifyVector = F)
+	lookup_genesets <- fromJSON("../manifests/lookup_genesets_hgnc_hg19.json", simplifyVector = F)
 	con <- mongo("lookup_genesets", db=db, url=host)
-	con$insert(toJSON(lookup_genesets, auto_unbox = T))
+	if(con$count() ==0)
+	  lapply(lookup_genesets, function(doc){con$insert(toJSON(doc, auto_unbox = T))})
+	rm(con)
+
+	lookup_dataType <- fromJSON("../manifests/dataType_class.json", simplifyVector = F)
+	con <- mongo("lookup_dataTypes", db=db, url=host)
+	if(con$count() ==0)
+	  lapply(lookup_dataType, function(doc){con$insert(toJSON(doc, auto_unbox = T))})
 	rm(con)
 	
 #	ImmuneTree <- fromJSON("../data/categories/biomarker.tree.json", simplifyVector = F)
 #	insert.collection.separate("biomarker_immune_tree", list(ImmuneTree))
 }
 
+# Reads from collection of scaled gene positions and creates separate docs
+# Must be run after lookup in case genesets change: depends on lookup_genesets
+if("scale" %in% commands){
+  save.batch.genesets.scaled.pos(scaleFactor=100000, method="replace")
+}
+
+## Loop through all molecular tables and create doc with key: sampleID, value: patientID
+## for TCGA data, simply removes sample suffix
+## skips if samplemap already exists
 if("sample" %in% commands){
   # create/update sample-patient mapping table
   os.batch.map.samples()
 }
+
 if("sunburst" %in% commands){
   os.data.batch("../manifests/os.uw.immune.manifest.json")
-  
 }
 
 stopCluster(cluster_cores)

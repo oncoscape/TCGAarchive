@@ -105,18 +105,10 @@ lookupList = list(
             data.load = "os.create.biomarker.tree",
             insert.lookup = "insert.lookup.sourceTypeCollection",
             insert.document = "insert.document.list" ),
-  mds=list(type="calculated",
+  cluster=list(type="calculated",
            data.load = "os.data.load.XXX",
            insert.lookup = "insert.lookup.sourceTypeCollection",
            insert.document = "insert.document.list" ),
-  pcascores=list(type="calculated",
-           data.load = "os.data.load.XXX",
-           insert.lookup = "insert.lookup.sourceTypeCollection",
-           insert.document = "insert.document.list" ),
-  pcaloadings=list(type="calculated",
-            data.load = "os.data.load.XXX",
-            insert.lookup = "insert.lookup.sourceTypeCollection",
-            insert.document = "insert.document.list" ),
   chromosome=list(type="location",
            data.load = "run.scale.chr.genes;saveChromosome_Coordinates",
            insert.lookup = "insert.lookup.sourceTypeCollection",
@@ -220,9 +212,10 @@ save.mut01.from.mut <- function(oCollection, result){
 
   mut.tbl <- apply(mut.tbl, 2, as.numeric)
   rownames(mut.tbl) <- rownames(result)
-  insert.collection(oCollection, result = mut.tbl)
+  insert.collection(oCollection, result = mut.tbl, ...)
 }
 #---------------------------------------------------------
+### return TRUE if collection name exists in db
 collection.exists <- function( collection.name){
 
   con <- mongo(collection.name, db=db, url=host)
@@ -237,13 +230,53 @@ collection.exists <- function( collection.name){
 
 }
 #---------------------------------------------------------
-update.oCollection <- function(oCollection, dataset=NA, dataType=NA,source=NA, processName=NA, parent=NA, process=NA){
+### return TRUE if collection name exists in db
+document.exists <- function( oCollection){
+  
+  con <- mongo(oCollection$collection, db=db, url=host)
+  
+  if(con$count() == 0){
+#   print(paste(oCollection$collection, "collection does not exist"))
+   rm(con)
+   return(FALSE)
+  }  
+  
+  uKeys = oCollection[["process"]][oCollection$uniqueKeys]
+  query = toJSON(uKeys, auto_unbox = T)
+  # find documents that have the key:value pairs of unique fields for the collection type
+  
+  if(con$count(query) == 0){
+    # document does not exist in collection
+    rm(con)
+    names(uKeys) <- paste("process", names(uKeys), sep=".")
+    q = uKeys; 
+    q[["dne"]] = list("$exists"=TRUE); q["dataset"] = oCollection$dataset
+    con = mongo.manifest$find(toJSON(q, auto_unbox = T))
+    count <- length(con)
+    
+    if(count != 0){
+      print(paste(paste(uKeys, collapse=";"), " does not exist: ",con$dne, sep=""))
+      # Collection type processed, but marked as Does Not Exist 
+      #   (eg PCA on singular matrices or geneset does not overlap molecular table)
+      return(TRUE)
+    }  
+    
+    return(FALSE)
+    #document does not exist in collection and not marked as DNE
+  }
+
+  print(paste(paste(uKeys, collapse=";"), "fields matched in collection", oCollection$collection))
+  # at least one doc exists in collection with the specified unique fields
+  return(TRUE)
+}
+#---------------------------------------------------------
+update.oCollection <- function(oCollection, dataset=NA, dataType=NA,source=NA,uniqueKeys=NA, parent=NA, process=NA){
   
   newCollection = as.list(oCollection)
   if(!missing(dataset)) newCollection$dataset = dataset
   if(!missing(dataType)) newCollection$dataType = dataType
   if(!missing(source)) newCollection$source = source
-  if(!missing(processName)) newCollection$processName = processName
+  if(!missing(uniqueKeys)) newCollection$uniqueKeys = uniqueKeys
   if(!missing(process)) newCollection$process = process
   if(!missing(parent)) newCollection$parent = parent
   
@@ -252,7 +285,7 @@ update.oCollection <- function(oCollection, dataset=NA, dataType=NA,source=NA, p
   return(newCollection)
 }
 #---------------------------------------------------------
-create.oCollection <- function(dataset, dataType,source, processName, parent, process){
+create.oCollection <- function(dataset, dataType,source, uniqueKeys, parent, process){
  
   source <- unique(source)
   if(length(source)>1) source <- list(source)
@@ -260,7 +293,7 @@ create.oCollection <- function(dataset, dataType,source, processName, parent, pr
   newCollection <- list(dataset=dataset, dataType=dataType, date=date) 
   newCollection$source <- source
   newCollection$process <- process
-  newCollection$processName <- processName
+  newCollection$uniqueKeys <- uniqueKeys
   newCollection$parent <- parent
 
   newCollection$collection <- collection.create.name(newCollection)
@@ -274,7 +307,9 @@ collection.create.name <- function( oCollection){
   if(length(source)>1) source <- list(source)
   sourceName <- paste(unlist(source), collapse="-")
   
-  collection.uniqueName <- paste(oCollection$dataset, oCollection$dataType, sourceName, oCollection$processName, sep="_")
+#  collection.uniqueName <- paste(oCollection$dataset, oCollection$dataType, sourceName, oCollection$processName, sep="_")
+  collection.class = mongo("lookup_dataTypes", db=db, url=host)$distinct("class", toJSON(list("dataType"=oCollection$dataType), auto_unbox = T))
+  collection.uniqueName <- paste(oCollection$dataset, collection.class, sep="_")
   collection.uniqueName <- gsub("\\s+", "", tolower(collection.uniqueName))
   collection.uniqueName <- gsub("\\+", "", collection.uniqueName)
   
@@ -303,17 +338,27 @@ merge.collections <- function(oCollection1, oCollection2, oCollection = NA){
  
 }
 #---------------------------------------------------------
-insert.prep <- function(oCollection){
-  #dataset, dataType,source, processName, parent, process
+insert.prep <- function(oCollection, method="skip"){
+  #methods: skip, append, replace
+  #collection with name based on: dataset, dataType,source, processName, parent, process
   
   prev.run <- collection.exists(oCollection$collection)
-  if(prev.run){ return(FALSE) }
+  # Skip pre-existing collections
+  if(prev.run & method == "skip"){ return(FALSE) }
+  
+  # Remove Collection from db, lookup, and manifest for replacement
+  if(prev.run & method == "replace"){ 
+    remove.collection(oCollection)
+    return(TRUE) 
+  }
   
   con = mongo.manifest$find(toJSON(list(collection=oCollection$collection, dne=list("$exists"=TRUE)), auto_unbox = T))
   count <- length(con)
   
   if(count != 0){
     print(paste(oCollection$collection, " does not exist: ",con$dne, sep=""))
+    # Skip collections that are marked as Does Not Exist 
+    #   (eg geneset does not overlap molecular table)
     return(FALSE)
   }  
   
@@ -321,8 +366,18 @@ insert.prep <- function(oCollection){
 }
 #---------------------------------------------------------
 insert.lookup.sourceTypeCollection <- function(oCollection){
-  lookupType = lookupList[[oCollection$dataType]]$type
+  
+  dataType<- mongo("lookup_dataTypes", db=db, url=host)$distinct("class", toJSON(list(dataType=oCollection$dataType), auto_unbox = T))
+  lookupType = lookupList[[dataType]]$type
   add.collection <- list(source=oCollection$source, type=oCollection$dataType, collection=oCollection$collection)
+  
+  query = list(disease=oCollection$dataset)
+  query[lookupType]=list("$elemMatch"=add.collection)
+  coll.match <- mongo.lookup$find(toJSON(query, auto_unbox=T))
+  if(length(coll.match)>0){
+    return(NA)
+  }
+    
   new.collection = list(); 
   new.collection[[lookupType]] = add.collection
   push.collection = list("$push"=new.collection)
@@ -385,14 +440,15 @@ insert.lookup <- function(oCollection){
       mongo.lookup$insert(oLookupDoc, db=db, url=host)
   }
   
-  dataType = oCollection$dataType
+  dataType<- mongo("lookup_dataTypes", db=db, url=host)$distinct("class", toJSON(list(dataType=oCollection$dataType), auto_unbox = T))
   if(dataType %in% names(lookupList)){
     if(dataType %in% c("ptdegree", "genedegree")){
       print(paste(dataType, "lookup info processed with edge creation", sep=" "))
     }else{
       oLookup = do.call(lookupList[[dataType]][["insert.lookup"]],list(oCollection))
       ## insert lookup into mongo collection
-      mongo.lookup$update(query, toJSON(oLookup, auto_unbox = T), upsert=T)
+      if(!is.na(oLookup))
+        mongo.lookup$update(query, toJSON(oLookup, auto_unbox = T), upsert=T)
     }
   }else{
       print(paste("WARNING: data type not recognized:", dataType, sep=" "))
@@ -480,14 +536,53 @@ insert.collection.dne <- function(oCollection, reason){
   mongo.manifest$insert( toJSON(oCollection, auto_unbox=T))
 }
 #---------------------------------------------------------
-insert.collection <- function(oCollection, result){
+insert.document <- function(oCollection, result, ...){
+  
+  if(class(oCollection) != "list") oCollection <- as.list(oCollection)
+  ## insert new collection data
+  con <- mongo(oCollection$collection, db=db, url=host)
+  
+  #      doc.pass <- insert.prep(oCollection, ...)
+  #      if(!doc.pass){print("Skipping."); return()}
+  
+  print(paste(oCollection$dataset, oCollection$dataType, oCollection$collection))
+  insert.pass =0; 
+  if(is.list(result)) numRecords=length(result)
+  else numRecords = nrow(result)
+  
+    ## insert each document into collection 
+    insert.status = do.call("insert.document.list", list(con,result))
+    ## add document to manifest collection
+    mongo.manifest$insert( toJSON(oCollection, auto_unbox=T))
+    #add record to lookup
+    insert.lookup(oCollection)
+
+  rm(con)
+  if(insert.status["n.pass"] != insert.status["n.records"]){  
+    print(paste("ERROR: not all documents properly inserted in ", oCollection$collection, insert.status["n.pass"], "of",insert.status["n.records"]))
+    remove.document(oCollection);
+  }
+  ### --- FINISH insert into Mongo    
+  
+  if(oCollection$dataType == "mut"){
+    newID <-  mongo.manifest$find(query=toJSON(oCollection, auto_unbox = T), fields='{"_id":1}')
+    new.oCollection <- oCollection
+    new.oCollection$dataType = "mut01"
+    new.oCollection$parent = newID
+    new.oCollection$collection <- collection.create.name(new.oCollection)
+    save.mut01.from.mut(new.oCollection, result)
+  }
+  
+}
+#---------------------------------------------------------
+insert.collection <- function(oCollection, result, ...){
   
     if(class(oCollection) != "list") oCollection <- as.list(oCollection)
   ## insert new collection data
       con <- mongo(oCollection$collection, db=db, url=host)
 
-      doc.pass <- insert.prep(oCollection)
-      if(!doc.pass){print("Skipping."); return()}
+#      doc.pass <- insert.prep(oCollection, ...)
+#      if(!doc.pass){print("Skipping."); return()}
 
       print(paste(oCollection$dataset, oCollection$dataType, oCollection$collection))
       
@@ -616,8 +711,8 @@ convert.to.mtx <- function(molecular.df, format=""){
 #    val <- unlist(val);
 #    if(format == "as.numeric") val <- as.numeric(val)
 #    val})
-  mtx <- molecular.df$patients
-  rownames(mtx) <- molecular.df$gene
+  mtx <- molecular.df$data
+  rownames(mtx) <- molecular.df$id
 #  colnames(mtx) <- molecular.df$gene
 #  rownames(mtx) <- names(molecular.df[1, "patients"])
   return(mtx)  
@@ -673,16 +768,17 @@ scaleSamplesToChromosomes <- function(mtx, chrDim, dim.names=c("x", "y", "z")){
   mtx <- mtx * scale
   mtx <- round(mtx)
   
-  list.coord <- lapply(rownames(mtx), function(name){
-    vals <- as.list(t(mtx[name,dim.names]));
-    names(vals) = dim.names
-    vals
-  })
-  names(list.coord) <- rownames(mtx)
+  list.coord <- lapply(rownames(mtx), function(name){ list(id=name, d=mtx[name,])})
+#  list.coord <- lapply(rownames(mtx), function(name){
+#    vals <- as.list(t(mtx[name,dim.names]));
+    #names(vals) = dim.names
+#    vals
+#  })
+#  names(list.coord) <- rownames(mtx)
   return(list.coord)
 }
 #--------------------------------------------------------------#
-scaleGenesToChromosomes <- function(genePos, chrCoordinates, scaleFactor=1000){
+scaleGenesToChromosomes <- function(genePos, chrCoordinates, scaleFactor=100000){
   
   genePos_xy <- lapply(genePos, function(gene){
     gene <- unlist(gene)
@@ -695,17 +791,16 @@ scaleGenesToChromosomes <- function(genePos, chrCoordinates, scaleFactor=1000){
   
 }
 #--------------------------------------------------------------#
-save.batch.genesets.scaled.pos <- function(scaleFactor=100000){
+save.batch.genesets.scaled.pos <- function(scaleFactor=100000, ...){
   
   geneObj<- mongo.manifest$find(toJSON( list(dataset="hg19", dataType="genes", process=list(scale=scaleFactor)),auto_unbox = T), '{}')
   genePos_scaled <- as.list(mongo(geneObj$collection, db=db, url=host)$find())
   
-  genesetObj <-  mongo.manifest$find( toJSON( list(dataset="hg19",dataType="genesets"), auto_unbox = T), '{}')
-  genesets <- mongo(genesetObj$collection, db=db,url=host)$find()
+  genesets <- mongo("lookup_genesets", db=db,url=host)$find()
   
   process <- list(scale=scaleFactor); 
   processName <- paste(process, collapse="-")
-  parent <- list(geneObj$`_id`,genesetObj$`_id`)
+  parent <- list(geneObj$`_id`)
   
   result <- apply(genesets, 1, function(geneSet){	
     genes <- unlist(geneSet$genes)
@@ -716,7 +811,7 @@ save.batch.genesets.scaled.pos <- function(scaleFactor=100000){
   }	)
   
   oCollection <- create.oCollection(geneObj$dataset, dataType="genesets", source=geneObj$source, processName=processName,parent=parent, process=process)
-  insert.collection(oCollection, result) 
+  insert.collection(oCollection, result, ...) 
 }
 #--------------------------------------------------------------#
 save.batch.cluster.scaled.pos <- function(scaleFactor=100000){
