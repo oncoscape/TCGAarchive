@@ -1,0 +1,111 @@
+brain
+brain
+brain
+Sample IDs length is:  1126
+Patient IDs length is:  1105
+brca
+Sample IDs length is:  1230
+Patient IDs length is:  1100
+esca
+Sample IDs length is:  198
+Patient IDs length is:  186
+gbm
+Sample IDs length is:  614
+Patient IDs length is:  601
+hnsc
+Sample IDs length is:  575
+Patient IDs length is:  529
+kich
+Sample IDs length is:  92
+Patient IDs length is:  67
+kirc
+Sample IDs length is:  452
+Patient IDs length is:  452
+kirp
+Sample IDs length is:  325
+Patient IDs length is:  292
+lgg
+Sample IDs length is:  531
+Patient IDs length is:  517
+lihc
+Sample IDs length is:  430
+Patient IDs length is:  378
+luad
+Sample IDs length is:  634
+Patient IDs length is:  573
+lusc
+Sample IDs length is:  557
+Patient IDs length is:  506
+sarc
+Sample IDs length is:  272
+Patient IDs length is:  262
+paad
+Sample IDs length is:  191
+Patient IDs length is:  186
+prad
+Sample IDs length is:  552
+Patient IDs length is:  499
+skcm
+Sample IDs length is:  478
+Patient IDs length is:  472
+stad
+Sample IDs length is:  478
+Patient IDs length is:  443
+thca
+Sample IDs length is:  575
+Patient IDs length is:  508
+ucec
+Sample IDs length is:  544
+Patient IDs length is:  530
+acc
+Sample IDs length is:  93
+Patient IDs length is:  93
+blca
+Sample IDs length is:  432
+Patient IDs length is:  413
+cesc
+Sample IDs length is:  314
+Patient IDs length is:  309
+chol
+Sample IDs length is:  46
+Patient IDs length is:  37
+dlbc
+Sample IDs length is:  49
+Patient IDs length is:  49
+coadread
+Sample IDs length is:  678
+Patient IDs length is:  624
+lung
+Sample IDs length is:  1194
+Patient IDs length is:  1082
+coad
+Sample IDs length is:  433
+Patient IDs length is:  395
+laml
+Sample IDs length is:  201
+Patient IDs length is:  201
+read
+Sample IDs length is:  159
+Patient IDs length is:  150
+ucs
+Sample IDs length is:  58
+Patient IDs length is:  58
+uvm
+Sample IDs length is:  81
+Patient IDs length is:  81
+thym
+Sample IDs length is:  127
+Patient IDs length is:  125
+tgct
+Sample IDs length is:  157
+Patient IDs length is:  151
+pcpg
+Sample IDs length is:  188
+Patient IDs length is:  180
+ov
+Sample IDs length is:  549
+Patient IDs length is:  538
+meso
+Sample IDs length is:  88
+Patient IDs length is:  88
+undefined: 2091.136ms

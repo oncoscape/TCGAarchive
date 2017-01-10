@@ -64,6 +64,9 @@
     "monitor-dashboard": "^0.6.7",
     "mpromise": "^0.5.5",
     "node-async-loop": "^1.2.2",
-    "readdir-scoped-modules": "^1.0.2"
+    "ramldt2jsonschema": "0.0.1",
+    "readdir-scoped-modules": "^1.0.2",
+    "underscore": "^1.8.3",
+    "yaml2json": "^1.0.2"
   }
 }

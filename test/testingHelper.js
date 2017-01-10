@@ -126,7 +126,7 @@ Array.prototype.findCollectionsByType = function(v){
     }
   }
   
-  return arr;
+  return arr.unique();
 };
 
 Array.prototype.findObjsByType = function(v){
@@ -168,7 +168,7 @@ exports.nestedUniqueCount = function(obj){
     var str;
     obj['errors'].forEach(function(a){
         a.errorType.forEach(function(e){
-          str = e.schemaPath + " [message: "+ e.message + "]; Number of Violation: ";  
+          str = e.schemaPath + " [message: "+ e.message + "]; Number of Violations: ";  
           if(ar.contains(str)){
             errorCount[str]++;
           }else{

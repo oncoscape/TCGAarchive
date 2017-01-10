@@ -198,7 +198,7 @@
           "required": ["_id", "patient_ID"],
           "additionalProperties": true  
           },
-    "newTumor":{
+    "newtumor":{
           "properties":{
                 "patient_ID" : {
                                 "type": "string",
@@ -449,7 +449,7 @@
             "required": ["_id", "patient_ID"],
             "additionalProperties": true  
             }, 
-    "otherMalignancy":{
+    "othermalignancy":{
           "properties":{
                 "patient_ID" : {
                                 "type": "string",
@@ -476,7 +476,7 @@
             "required": ["_id", "patient_ID"],
             "additionalProperties": true  
             },
-    "followUp":{
+    "followup":{
           "properties":{
                  "patient_ID" : {
                                 "type": "string",
@@ -497,7 +497,7 @@
             "required": ["_id", "patient_ID"],
             "additionalProperties": true  
             },
-    "newTumor-followUp":{
+    "newtumor-followup":{
           "properties":{
                  "patient_ID" : {
                                 "type": "string",
@@ -854,6 +854,169 @@
                 },
                 "required": ["_id"],
                 "additionalProperties": true
-              }
+              },
+    "hugo_sample":{
+                  "properties":{
+                      "gene": {"type": "string"},
+                      "id" : {"type" : "string"},
+                      "min": {"type": ["number", "null"]},
+                      "max": {"type": ["number", "null"]},
+                      "data": {
+                                "type": "object",
+                                "patternProperties": {
+                                   "TCGA-[A-Z0-9]{2}-[A-Z0-9]{4}-[0-9]{2}": { "type": ["number", "null"]}
+                                }
+                            }    
+                      },
+                  "required": ["_id","min","max","data"],
+                  "additionalProperties": true  
+                  },
+    "chr_sample":{
+                  "properties":{
+                      "id": {"type": "string"},
+                      "gene": {"type": "string"},
+                      "min": {"type": ["number", "null"]},
+                      "max": {"type": ["number", "null"]},
+                      "data": {
+                                "type": "object",
+                                "patternProperties": {
+                                   "TCGA-[A-Z0-9]{2}-[A-Z0-9]{4}-[0-9]{2}": { "type": ["number", "null"]}
+                                }
+                            }    
+                      },
+                  "required": ["_id","min","max","data"],
+                  "additionalProperties": true  
+                  },
+    "sample_pos": {
+                   "properties":{
+                     "id":{"type": "string",
+                            "pattern": "TCGA-[A-Z0-9]{2}-[A-Z0-9]{4}-[0-9]{2}"
+                          },
+                     "gene":{"type": "string",
+                            "pattern": "TCGA-[A-Z0-9]{2}-[A-Z0-9]{4}-[0-9]{2}"
+                          },
+                     "min": {"type": ["string", "null"]},
+                     "max": {"type": ["string", "null"]},
+                     "data": {
+                                    "type": "object",
+                                    "properties":{
+                                      "Amino_Acid_Change": {"type": "string"},
+                                      "end": {"type": ["string", "null"]},   
+                                      "reference":{"type": ["string", "null"]}, 
+                                      "DNA_VAF":{"type": ["string", "null"]}, 
+                                      "RNA_VAL":{"type": ["string", "null"]}, 
+                                      "effect" : {"type": ["string", "null"]}, 
+                                      "start" : {"type": ["string", "null"]}, 
+                                      "chr" : {"type": ["string", "null"]}, 
+                                      "alt" : {"type": ["string", "null"]}, 
+                                      "gene" :  {"type": ["string", "null"]}, 
+                                      "value": {"type": ["number", "string", "null"]}
+                                    }, 
+                                    "required": ["start", "end", "chr"]
+                                              
+                                  } 
+                   },
+                   "required":["_id", "max", "min", "data"],
+                   "additionalProperties" : true
+                  }, 
+    "methprobe_sample" : {
+                  "properties":{
+                      "id": {"type": "string"},
+                      "min": {"type": ["number", "null"]}, 
+                      "max": {"type": ["number", "null"]}, 
+                      "data": {
+                                "type": "object",
+                                "patternProperties": {
+                                   "TCGA-[A-Z0-9]{2}-[A-Z0-9]{4}-[0-9]{2}": { "type": ["number", "null"]}
+                                }
+                            }    
+                      },
+                  "required": ["_id","id","min","max","data"],
+                  "additionalProperties": true  
+                  },        
+    "PCA":{
+        "properties":{
+          "disease" : {"type": "string"},
+          "source" : {"type": "string"},
+          "input" : {"type": "string"},
+          "dataType" : {"type": "string",
+                        "default": "PCA"},
+          "geneset" : {"type": "string"},
+          "scale" : {"type": "number"},
+          "loading" : {"type": "string"},
+          "loadings" :{"type": "array",
+                       "items":{
+                           "properties":{
+                               "id": {"type": "string"},
+                               "d":{"type": "array",
+                                    "maxitem": 3,
+                                    "items": { "type": ["number", "null"]}
+                                  }
+                           }
+                       }
+                     },
+          "score": {"type":"string"},
+          "scores": {"type": "array",
+                       "items":{
+                           "properties":{
+                               "id": {"type": "string",
+                                      "pattern": "TCGA-[A-Z0-9]{2}-[A-Z0-9]{4}-[0-9]{2}"
+                                      },
+                               "d":{"type": "array",
+                                    "maxitem": 3,
+                                    "items": { "type": ["number", "null"]}
+                                  }
+                           }
+                       }
+                     },
+          "metadata":{
+             "properties": {
+               "variance": {"type": "array",
+                            "maxitem" : 3,
+                            "items": { "type": ["number", "null"]}
+                          }
+             }
+            }
+          },
+        "required":["disease", "source", "input", "dataType", "scale", "score", "scores", "metadata"],
+        "additionalProperties": true
+        },
+    "MDS":{
+        "properties":{
+          "disease" : {"type": "string"},
+          "source" : {"type": "string"},
+          "input" : {"type": "array",
+                     "maxitem": 2,
+                     "items":{"type":"string"}
+                   },
+          "dataType" : {"type": "string",
+                        "default": "MDS"},
+          "geneset" : {"type": "string"},
+          "scale" : {"type": "number"},
+          "score": {"type":"string"},
+          "scores": {"type": "array",
+                       "items":{
+                           "properties":{
+                               "id": {"type": "string",
+                                      "pattern": "TCGA-[A-Z0-9]{2}-[A-Z0-9]{4}-[0-9]{2}"
+                                      },
+                               "d":{"type": "array",
+                                    "maxitem": 3,
+                                    "items": { "type": ["number", "null"]}
+                                  }
+                           }
+                       }
+                     },
+          "metadata":{
+             "properties": {
+               "eigenvalues": {"type": "array",
+                               "items": { "type": ["number", "null"]}
+                          }
+             }
+            }
+          },
+        "required":["disease", "source", "input", "dataType", "scale", "score", "scores", "metadata"],
+        "additionalProperties": true
+        }
 }
 

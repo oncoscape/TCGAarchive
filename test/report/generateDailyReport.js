@@ -480,9 +480,9 @@ co(function *() {
   errorReported.forEach(function(s){helper.format.text(s);});
   helper.format.codeStop();
 
-  helper.format.h1("Part XI: X axis range checking for render_patient(>4000 listed below):");
+  helper.format.h1("Part XI: X axis range checking for render_patient(>4600 listed below):");
   helper.format.codeStart();
-  x_range.filter(function(m){return m.range>4000;}).forEach(function(s){helper.format.text(s);});
+  x_range.filter(function(m){return m.range>4600;}).forEach(function(s){helper.format.text(s);});
   helper.format.codeStop();
 
 

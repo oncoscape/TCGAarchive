@@ -862,7 +862,7 @@
         "totalCounts": 185,
         "passedRate": 0.9621621621621622,
         "errorMessage": {
-            "#/properties/diagnosis_year/type [message: should be number]; Number of Violation: ": 7
+            "#/properties/diagnosis_year/type [message: should be number]; Number of Violations: ": 7
         }
     },
     {
@@ -891,8 +891,8 @@
         "totalCounts": 291,
         "passedRate": 0.9140893470790378,
         "errorMessage": {
-            "#/properties/days_to_diagnosis/type [message: should be number]; Number of Violation: ": 25,
-            "#/properties/diagnosis_year/type [message: should be number]; Number of Violation: ": 22
+            "#/properties/days_to_diagnosis/type [message: should be number]; Number of Violations: ": 25,
+            "#/properties/diagnosis_year/type [message: should be number]; Number of Violations: ": 22
         }
     },
     {
@@ -903,8 +903,8 @@
         "totalCounts": 377,
         "passedRate": 0,
         "errorMessage": {
-            "#/properties/diagnosis_year/type [message: should be number]; Number of Violation: ": 377,
-            "#/properties/days_to_diagnosis/type [message: should be number]; Number of Violation: ": 1
+            "#/properties/diagnosis_year/type [message: should be number]; Number of Violations: ": 377,
+            "#/properties/days_to_diagnosis/type [message: should be number]; Number of Violations: ": 1
         }
     },
     {
@@ -915,8 +915,8 @@
         "totalCounts": 470,
         "passedRate": 0.9765957446808511,
         "errorMessage": {
-            "#/properties/days_to_diagnosis/type [message: should be number]; Number of Violation: ": 8,
-            "#/properties/diagnosis_year/type [message: should be number]; Number of Violation: ": 3
+            "#/properties/days_to_diagnosis/type [message: should be number]; Number of Violations: ": 8,
+            "#/properties/diagnosis_year/type [message: should be number]; Number of Violations: ": 3
         }
     },
     {
@@ -927,8 +927,8 @@
         "totalCounts": 443,
         "passedRate": 0.9864559819413092,
         "errorMessage": {
-            "#/properties/days_to_diagnosis/type [message: should be number]; Number of Violation: ": 6,
-            "#/properties/diagnosis_year/type [message: should be number]; Number of Violation: ": 1
+            "#/properties/days_to_diagnosis/type [message: should be number]; Number of Violations: ": 6,
+            "#/properties/diagnosis_year/type [message: should be number]; Number of Violations: ": 1
         }
     },
     {
@@ -948,8 +948,8 @@
         "totalCounts": 548,
         "passedRate": 0.9835766423357665,
         "errorMessage": {
-            "#/properties/days_to_diagnosis/type [message: should be number]; Number of Violation: ": 6,
-            "#/properties/diagnosis_year/type [message: should be number]; Number of Violation: ": 8
+            "#/properties/days_to_diagnosis/type [message: should be number]; Number of Violations: ": 6,
+            "#/properties/diagnosis_year/type [message: should be number]; Number of Violations: ": 8
         }
     },
     {
@@ -969,7 +969,7 @@
         "totalCounts": 307,
         "passedRate": 0.993485342019544,
         "errorMessage": {
-            "#/properties/diagnosis_year/type [message: should be number]; Number of Violation: ": 2
+            "#/properties/diagnosis_year/type [message: should be number]; Number of Violations: ": 2
         }
     },
     {
@@ -1025,7 +1025,7 @@
         "totalCounts": 124,
         "passedRate": 0.9919354838709677,
         "errorMessage": {
-            "#/properties/days_to_diagnosis/type [message: should be number]; Number of Violation: ": 1
+            "#/properties/days_to_diagnosis/type [message: should be number]; Number of Violations: ": 1
         }
     },
     {
@@ -1090,7 +1090,7 @@
         "totalCounts": 528,
         "passedRate": 0.9981060606060606,
         "errorMessage": {
-            "#/properties/days_to_diagnosis/type [message: should be number]; Number of Violation: ": 1
+            "#/properties/days_to_diagnosis/type [message: should be number]; Number of Violations: ": 1
         }
     },
     {
@@ -1110,8 +1110,8 @@
         "totalCounts": 522,
         "passedRate": 0.9636015325670498,
         "errorMessage": {
-            "#/properties/days_to_diagnosis/type [message: should be number]; Number of Violation: ": 19,
-            "#/properties/diagnosis_year/type [message: should be number]; Number of Violation: ": 10
+            "#/properties/days_to_diagnosis/type [message: should be number]; Number of Violations: ": 19,
+            "#/properties/diagnosis_year/type [message: should be number]; Number of Violations: ": 10
         }
     },
     {
@@ -1122,8 +1122,8 @@
         "totalCounts": 504,
         "passedRate": 0.9503968253968254,
         "errorMessage": {
-            "#/properties/days_to_diagnosis/type [message: should be number]; Number of Violation: ": 25,
-            "#/properties/diagnosis_year/type [message: should be number]; Number of Violation: ": 17
+            "#/properties/days_to_diagnosis/type [message: should be number]; Number of Violations: ": 25,
+            "#/properties/diagnosis_year/type [message: should be number]; Number of Violations: ": 17
         }
     },
     {
@@ -1134,8 +1134,8 @@
         "totalCounts": 500,
         "passedRate": 0.938,
         "errorMessage": {
-            "#/properties/diagnosis_year/type [message: should be number]; Number of Violation: ": 31,
-            "#/properties/days_to_diagnosis/type [message: should be number]; Number of Violation: ": 31
+            "#/properties/diagnosis_year/type [message: should be number]; Number of Violations: ": 31,
+            "#/properties/days_to_diagnosis/type [message: should be number]; Number of Violations: ": 31
         }
     },
     {
@@ -1146,7 +1146,7 @@
         "totalCounts": 261,
         "passedRate": 0.9846743295019157,
         "errorMessage": {
-            "#/properties/diagnosis_year/type [message: should be number]; Number of Violation: ": 4
+            "#/properties/diagnosis_year/type [message: should be number]; Number of Violations: ": 4
         }
     },
     {
@@ -1166,7 +1166,7 @@
         "totalCounts": 412,
         "passedRate": 0.9563106796116505,
         "errorMessage": {
-            "#/properties/diagnosis_year/type [message: should be number]; Number of Violation: ": 18
+            "#/properties/diagnosis_year/type [message: should be number]; Number of Violations: ": 18
         }
     },
     {
@@ -1177,8 +1177,8 @@
         "totalCounts": 185,
         "passedRate": 0.9945945945945946,
         "errorMessage": {
-            "#/properties/diagnosis_year/type [message: should be number]; Number of Violation: ": 1,
-            "#/properties/days_to_diagnosis/type [message: should be number]; Number of Violation: ": 1
+            "#/properties/diagnosis_year/type [message: should be number]; Number of Violations: ": 1,
+            "#/properties/days_to_diagnosis/type [message: should be number]; Number of Violations: ": 1
         }
     },
     {
@@ -1189,8 +1189,8 @@
         "totalCounts": 1097,
         "passedRate": 0.9972652689152234,
         "errorMessage": {
-            "#/properties/diagnosis_year/type [message: should be number]; Number of Violation: ": 3,
-            "#/properties/days_to_diagnosis/type [message: should be number]; Number of Violation: ": 1
+            "#/properties/diagnosis_year/type [message: should be number]; Number of Violations: ": 3,
+            "#/properties/days_to_diagnosis/type [message: should be number]; Number of Violations: ": 1
         }
     },
     {

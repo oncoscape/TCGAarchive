@@ -41,12 +41,8 @@
     "type": {
       "type": "string"
     },
-    "id": {
-      "$ref": "_definitions.yaml#\/UUID",
-      "systemAlias": "node_id"
-    },
     "state": {
-      "$ref": "_definitions.yaml#\/state"
+      "$ref": "_definitions.json#\/state"
     },
     "gender": {
       "title": "Gender",
@@ -108,16 +104,16 @@
       "description": "The tenth version of the International Classification of Disease (ICD), published by the World Health Organization in 1992. A system of numbered categories for representation of data. CDE: 3226287.\n"
     },
     "cases": {
-      "$ref": "_definitions.yaml#\/to_one"
+      "$ref": "_definitions.json#\/to_one"
     },
     "project_id": {
       "type": "string"
     },
     "created_datetime": {
-      "$ref": "_definitions.yaml#\/datetime"
+      "$ref": "_definitions.json#\/datetime"
     },
     "updated_datetime": {
-      "$ref": "_definitions.yaml#\/datetime"
+      "$ref": "_definitions.json#\/datetime"
     }
   }
 }

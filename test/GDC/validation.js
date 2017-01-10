@@ -24,7 +24,8 @@ var passed_elem;
 var error_elem = [];
 var elem = {};
 var col_count = 0;
-var dataType = Object.keys(schemas);
+//var dataType = Object.keys(schemas);
+var dataType = ['patient', 'drug'];
 var dataType_length = dataType.length;
 var connection = mongoose.connection;
 

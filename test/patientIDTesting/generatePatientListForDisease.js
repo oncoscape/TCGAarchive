@@ -1,50 +1,39 @@
 const jsonfile = require("jsonfile-promised");
 const u = require("underscore");
 const helper = require("../testingHelper.js");
-const mongoose = require("mongoose");
+var comongo = require('co-mongodb');
+var co = require('co');
 var lookupByDisease = [];
 var disease_arr = [];
 var ptList = {};
 var connection = mongoose.connection;
 var diseases = [];
-
-var mongo = function(mongoose){
-  return new Promise(function(resolve, reject) {
-    var connection = mongoose.connect( 
-      'mongodb://oncoscape-dev-db1.sttrcancer.io:27017,oncoscape-dev-db2.sttrcancer.io:27017,oncoscape-dev-db3.sttrcancer.io:27017/tcga?authSource=admin', {
-             db: { native_parser: true },
-             server: { poolSize: 5, reconnectTries: Number.MAX_VALUE,socketOptions: { keepAlive: 3000000, connectTimeoutMS: 300000, socketTimeoutMS: 300000}},
-             replset: { rs_name: 'rs0', socketOptions: { keepAlive: 3000000, connectTimeoutMS: 300000, socketTimeoutMS: 300000}},
-             user: 'oncoscapeRead',
-             pass: 'i1f4d9botHD4xnZ'
-         });
-       mongoose.connection.on('connected', function() {
-        resolve(mongoose.connection.db);
-       });
-  });
+var onerror = function(e){
+    console.log(e);
 };
+co(function *() {
 
-mongo(mongoose).then(function(response){
-    var db = response;
-    var collection = db.collection("lookup_oncoscape_datasources").find();
-    lookupByDisease = collection.toArray();
-    lookupByDisease.then(function(obj){
-        
-        return new Promise(function(resolve, reject){
-            obj.forEach(function(d){
-                var ptIDs = [];
-                if(('clinical' in d)&&('patient' in d['clinical'])){
-                  console.log(d['clinical']['patient']);
-                  var pt = connection.db.collection(d['clinical']['patient']).find({},{'patient_ID':true}).toArray();
-                  pt.then(function(value){
-                    ptIDs = value.map(function(v){return v['patient_ID'];});
-                    ptList[d.disease] = u.uniq(ptIDs);
-                 });
-                }
-              });
-            resolve(ptList);
-        });
-    });
-}).then(function(){
-    jsonfile.writeFile('ptList.json', ptList, {spaces:4});
-});
+  db = yield comongo.client.connect('mongodb://oncoscapeRead:i1f4d9botHD4xnZ'+
+    '@oncoscape-dev-db1.sttrcancer.io:27017,oncoscape-dev-db2.sttrcancer.io:27017,'+
+    'oncoscape-dev-db3.sttrcancer.io:27017/tcga?authSource=admin&replicaSet=rs0');
+
+  collection = yield comongo.db.collection(db, "lookup_oncoscape_datasources");
+  lookup_arr = yield collection.find({}).toArray();
+  
+  lookup_arr.forEach(function(d){
+    var ptIDs = [];
+    if(('clinical' in d)&&('patient' in d['clinical'])){
+      var table = d['clinical']['patient'];
+      console.log(table);
+      collection = yield comongo.db.collection(db, table);
+      var pt = yield collection.find({},{'patient_ID':true}).toArray();
+      ptIDs = pt.map(function(v){return v['patient_ID'];});
+      ptList[d.disease] = u.uniq(ptIDs);
+    }
+  });
+
+  // jsonfile.writeFile("ptList.json", ptList, {spaces: 2}, function(err){ console.error(err);});  
+  yield comongo.db.close(db);
+}).catch(onerror);
+
+

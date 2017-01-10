@@ -6,7 +6,7 @@
             - calculate the passed percentage at collection level
 */
 const jsonfile = require("jsonfile-promised");
-const helper = require("/Users/zhangj4/Desktop/canaantt_git/TCGAarchive/test/testingHelper.js");
+const helper = require("../testingHelper.js");
 var ajvMsg, ajvMsg_v2;
 jsonfile.readFile("ajv_tcga_11212016.json").then(function(obj){
     ajvMsg = obj;
@@ -22,8 +22,6 @@ jsonfile.readFile("ajv_tcga_11212016.json").then(function(obj){
             elem.passedRate = a.passedCounts/a.totalCounts;
             elem.errorMessage = helper.nestedUniqueCount(a);
         }
-        
-        //elem.errorMessage = a.errors.tableV2(a.nestedUnique());
         return elem;
     });
 }).then(function(){

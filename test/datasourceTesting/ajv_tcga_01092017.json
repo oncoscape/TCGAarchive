@@ -1,0 +1,10 @@
+[
+    {
+        "collection": "tcga_pancan_gistic2_ucsc-xena",
+        "type": "gene-level copy number (gistic2)",
+        "disease": "tcga",
+        "passedCounts": 24776,
+        "totalCounts": 24776,
+        "errors": []
+    }
+]

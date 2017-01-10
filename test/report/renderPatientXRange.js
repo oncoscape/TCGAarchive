@@ -14,6 +14,12 @@ var x_range = render_patient_cluster.map(function(r){
 	elem.range = u.last(sorted) - u.first(sorted);
 	return elem;
 });
+var x_outOfRange = x_range.filter(function(m){return m.range > 4600;});
+if(x_outOfRange.length > 0){
+	console.log(x_outOfRange);
+}else{
+	console.log("All cluster x coordinate range is within 4600.");
+}
 
 jsonfile.writeFile("x_range.json", x_range, {spaces:4}, function(err){ console.error(err);});
  
