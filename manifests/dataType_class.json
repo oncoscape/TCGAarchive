@@ -1,0 +1,373 @@
+[{
+	"dataType": "protein expression RPPA",
+	"name": "protein RPPA",
+	"schema": "hugo_sample",
+	"class": "expr",
+	"tools": null
+},{
+	"dataType": "copy number (gistic2)",
+	"name": "copy number (gistic2)",
+	"schema": "hugo_sample",
+	"class": "cnv",
+	"tools": null
+},{
+	"dataType": "exon expression RNAseq (polyA+ IlluminaHiSeq)",
+	"name": "exon RNAseq (polyA+ IlluminaHiSeq)",
+	"schema": "chr_sample",
+	"class": "expr",
+	"tools": null
+},{
+	"dataType": "somatic gene-level non-silent mutation (broad automated)",
+	"name": "somatic non-silent mutation (broad automated)",
+	"schema": "hugo_sample",
+	"class": "mut01",
+	"tools": null
+},{
+	"dataType": "somatic gene-level non-silent mutation (broad curated)",
+	"name": "somatic non-silent mutation (broad curated)",
+	"schema": "hugo_sample",
+	"class": "mut01",
+	"tools": null
+},{
+	"dataType": "somatic mutation SNPs and small INDELs (broad curated)",
+	"name": "somatic SNPs and small INDELs (broad curated)",
+	"schema": "sample_pos",
+	"class": "mut",
+	"tools": null
+},{
+	"dataType": "somatic gene-level non-silent mutation (bcm automated)",
+	"name": "somatic non-silent mutation (bcm automated)",
+	"schema": "hugo_sample",
+	"class": "mut01",
+	"tools": null
+},{
+	"dataType": "DNA Methylation (MethylMix)",
+	"name": "DNA Methylation (MethylMix)",
+	"schema": "hugo_sample",
+	"class": "meth_thd",
+	"tools": null
+},{
+	"dataType": "gene expression RNAseq (ployA+ IlluminaHiSeq pancan normalized)",
+	"name": "RNAseq (polyA+ IlluminaHiSeq pancan normalized)",
+	"schema": "hugo_sample",
+	"class": "expr",
+	"tools": null
+},{
+	"dataType": "DNA methylation (Methylation450k)",
+	"name": "DNA methylation (HM450k)",
+	"schema": "methprobe_sample",
+	"class": "meth",
+	"tools": null
+},{
+	"dataType": "Phenotypes",
+	"name": "Phenotypes",
+	"schema": "",
+	"class": "clin",
+	"tools": null
+},{
+	"dataType": "copy number (delete germline cnv)",
+	"name": "copy number (delete germline)",
+	"schema": "chr_sample",
+	"class": "cnv",
+	"tools": null
+},{
+	"dataType": "copy number segments (delete germline cnv)",
+	"name": "copy number (delete germline)",
+	"schema": "sample_pos",
+	"class": "cnv",
+	"tools": null
+},{
+	"dataType": "gene expression RNAseq (polyA+ IlluminaHiSeq)",
+	"name": "RNAseq (polyA+ IlluminaHiSeq)",
+	"schema": "hugo_sample",
+	"class": "expr",
+	"tools": null
+},{
+	"dataType": "somatic mutation SNPs and small INDELs (ucsc automated)",
+	"name": "somatic SNPs and small INDELs (ucsc automated)",
+	"schema": "sample_pos",
+	"class": "mut",
+	"tools": null
+},{
+	"dataType": "copy number (gistic2_thresholded)",
+	"name": "copy number (gistic2 thresholded)",
+	"schema": "hugo_sample",
+	"class": "cnv_thd",
+	"tools": null
+},{
+	"dataType": "copy number segments",
+	"name": "copy number",
+	"schema": "sample_pos",
+	"class": "cnv",
+	"tools": null
+},{
+	"dataType": "somatic gene-level non-silent mutation (pancan awg)",
+	"name": "somatic non-silent mutation (pancan awg)",
+	"schema": "hugo_sample",
+	"class": "mut01",
+	"tools": null
+},{
+	"dataType": "somatic gene-level non-silent mutation (ucsc automated)",
+	"name": "somatic non-silent mutation (ucsc automated)",
+	"schema": "hugo_sample",
+	"class": "mut01",
+	"tools": null
+},{
+	"dataType": "somatic mutation SNPs and small INDELs (broad automated)",
+	"name": "somatic SNPs and small INDELs (broad automated)",
+	"schema": "sample_pos",
+	"class": "mut",
+	"tools": null
+},{
+	"dataType": "gene expression RNAseq (polyA+ IlluminaHiSeq percentile)",
+	"name": "RNAseq (polyA+ IlluminaHiSeq percentile)",
+	"schema": "hugo_sample",
+	"class": "expr",
+	"tools": null
+},{
+	"dataType": "gene expression (AgilentG4502A_07_3)",
+	"name": "AgilentG4502A_07_3",
+	"schema": "hugo_sample",
+	"class": "expr",
+	"tools": null
+},{
+	"dataType": "miRNA isoform expression (IlluminaHiseq)",
+	"name": "miRNA isoform expression (IlluminaHiseq)",
+	"schema": "chr_sample",
+	"class": "expr",
+	"tools": null
+},{
+	"dataType": "copy number",
+	"name": "copy number",
+	"schema": "chr_sample",
+	"class": "cnv",
+	"tools": null
+},{
+	"dataType": "somatic mutation SNPs and small INDELs (bcm automated)",
+	"name": "somatic SNPs and small INDELs (bcm automated)",
+	"schema": "sample_pos",
+	"class": "mut",
+	"tools": null
+},{
+	"dataType": "somatic gene-level non-silent mutation (bcm curated)",
+	"name": "somatic non-silent mutation (bcm curated)",
+	"schema": "hugo_sample",
+	"class": "mut01",
+	"tools": null
+},{
+	"dataType": "somatic mutation SNPs and small INDELs (bcm curated)",
+	"name": "somatic SNPs and small INDELs (bcm curated)",
+	"schema": "sample_pos",
+	"class": "mut",
+	"tools": null
+},{
+	"dataType": "miRNA isoform expression (IlluminaGA)",
+	"name": "miRNA isoform expression (IlluminaGA)",
+	"schema": "chr_sample",
+	"class": "expr",
+	"tools": null
+},{
+	"dataType": "DNA methylation (Methylation27k)",
+	"name": "DNA methylation (HM27k)",
+	"schema": "methprobe_sample",
+	"class": "meth",
+	"tools": null
+},{
+	"dataType": "protein expression RPPA (RBN)",
+	"name": "protein RPPA (RBN)",
+	"schema": "hugo_sample",
+	"class": "expr",
+	"tools": null
+},{
+	"dataType": "somatic gene-level non-silent mutation (bcgsc automated)",
+	"name": "somatic non-silent mutation (bcgsc automated)",
+	"schema": "hugo_sample",
+	"class": "mut01",
+	"tools": null
+},{
+	"dataType": "somatic mutation SNPs and small INDELs (bcgsc automated)",
+	"name": "somatic SNPs and small INDELs (bcgsc automated)",
+	"schema": "sample_pos",
+	"class": "mut",
+	"tools": null
+},{
+	"dataType": "somatic mutation SNPs and small INDELs (wustl)",
+	"name": "somatic SNPs and small INDELs (wustl)",
+	"schema": "sample_pos",
+	"class": "mut",
+	"tools": null
+},{
+	"dataType": "gene expression RNAseq (polyA+ IlluminaGA)",
+	"name": "RNAseq (polyA+ IlluminaGA)",
+	"schema": "hugo_sample",
+	"class": "expr",
+	"tools": null
+},{
+	"dataType": "exon expression RNAseq (polyA+ IlluminaGA)",
+	"name": "exon RNAseq (polyA+ IlluminaGA)",
+	"schema": "chr_sample",
+	"class": "expr",
+	"tools": null
+},{
+	"dataType": "somatic gene-level non-silent mutation (wustl)",
+	"name": "somatic non-silent mutation (wustl)",
+	"schema": "hugo_sample",
+	"class": "mut01",
+	"tools": null
+},{
+	"dataType": "somatic gene-level non-silent mutation (broad)",
+	"name": "somatic non-silent mutation (broad)",
+	"schema": "hugo_sample",
+	"class": "mut01",
+	"tools": null
+},{
+	"dataType": "gene expression (AffyU133a)",
+	"name": "AffyU133a",
+	"schema": "hugo_sample",
+	"class": "expr",
+	"tools": null
+},{
+	"dataType": "gene expression (AgilentG4502A_07_1)",
+	"name": "AgilentG4502A_07_1",
+	"schema": "hugo_sample",
+	"class": "expr",
+	"tools": null
+},{
+	"dataType": "somatic mutation SNPs and small INDELs (broad)",
+	"name": "somatic SNPs and small INDELs (broad)",
+	"schema": "sample_pos",
+	"class": "mut",
+	"tools": null
+},{
+	"dataType": "gene expression (AgilentG4502A_07_2)",
+	"name": "AgilentG4502A_07_2",
+	"schema": "hugo_sample",
+	"class": "expr",
+	"tools": null
+},{
+	"dataType": "somatic gene-level non-silent mutation (bcm SOLiD)",
+	"name": "somatic non-silent mutation (bcm SOLiD)",
+	"schema": "hugo_sample",
+	"class": "mut01",
+	"tools": null
+},{
+	"dataType": "somatic gene-level non-silent mutation (bcm)",
+	"name": "somatic non-silent mutation (bcm)",
+	"schema": "hugo_sample",
+	"class": "mut01",
+	"tools": null
+},{
+	"dataType": "somatic mutation SNPs and small INDELs (bcm SOLiD)",
+	"name": "somatic SNPs and small INDELs (bcm SOLiD)",
+	"schema": "sample_pos",
+	"class": "mut",
+	"tools": null
+},{
+	"dataType": "somatic mutation SNPs and small INDELs (bcm)",
+	"name": "somatic SNPs and small INDELs (bcm)",
+	"schema": "sample_pos",
+	"class": "mut",
+	"tools": null
+},{
+	"dataType": "gene-level copy number (gistic2)",
+	"name": "copy number (gistic2)",
+	"schema": "hugo_sample",
+	"class": "cnv",
+	"tools": null
+},{
+	"dataType": "Paradigm IPLs (Five3 Genomics)",
+	"name": "Paradigm IPLs (Five3 Genomics)",
+	"schema": "hugo_sample",
+	"class": "paradigm",
+	"tools": null
+},{
+	"dataType": "gene expression",
+	"name": "gene expression",
+	"schema": "hugo_sample",
+	"class": "expr",
+	"tools": null
+},{
+	"dataType": "somatic gene-level non-silent mutation (pancan awg 19 cohorts)",
+	"name": "somatic non-silent mutation (pancan awg 19 cohorts)",
+	"schema": "hugo_sample",
+	"class": "mut01",
+	"tools": null
+},{
+	"dataType": "somatic gene-level non-silent mutation (bcgsc)",
+	"name": "somatic non-silent mutation (bcgsc)",
+	"schema": "hugo_sample",
+	"class": "mut01",
+	"tools": null
+},{
+	"dataType": "somatic mutation SNPs and small INDELs (bcgsc)",
+	"name": "somatic SNPs and small INDELs (bcgsc)",
+	"schema": "sample_pos",
+	"class": "mut",
+	"tools": null
+},{
+	"dataType": "somatic gene-level non-silent mutation (wustl curated)",
+	"name": "somatic non-silent mutation (wustl curated)",
+	"schema": "hugo_sample",
+	"class": "mut01",
+	"tools": null
+},{
+	"dataType": "somatic mutation SNPs and small INDELs (wustl curated)",
+	"name": "somatic SNPs and small INDELs (wustl curated)",
+	"schema": "sample_pos",
+	"class": "mut",
+	"tools": null
+},{
+	"dataType": "PCA",
+	"name": "PCA",
+	"schema": "score_load",
+	"class": "cluster",
+	"tools": ["pca", "markers"]
+},{
+	"dataType": "MDS",
+	"name": "MDS",
+	"schema": "score_load",
+	"class": "cluster",
+	"tools": ["pca", "markers"]
+},{
+	"dataType": "copy number (gistic2)",
+	"name": "copy number (gistic2)",
+	"schema": "hugo_sample",
+	"class": "cnv",
+	"tools": ["pca"]
+},{
+	"dataType": "protein expression RPPA",
+	"name": "protein expression RPPA",
+	"schema": "hugo_sample",
+	"class": "expr",
+	"tools": ["pca"]
+}, {
+	"dataType": "exon expression RNAseq (IlluminaGA BC)" ,
+	"name": "exon expression RNAseq (IlluminaGA BC)" ,
+	"schema": "chr_sample",
+	"class": "expr",
+	"tools": ["pca"]
+},  {
+	"dataType": "exon expression RNAseq (IlluminaHiseq BC)" ,
+	"name": "exon expression RNAseq (IlluminaHiseq BC)" ,
+	"schema": "chr_sample",
+	"class": "expr",
+	"tools": ["pca"]
+},  {
+	"dataType": "exon expression RNAseq (polyA+ IlluminaHiSeq UNC)" ,
+	"name": "exon expression RNAseq (polyA+ IlluminaHiSeq UNC)" ,
+	"schema": "chr_sample",
+	"class": "expr",
+	"tools": ["pca"]
+}, {
+	"dataType": "gene expression RNAseq (polyA+ IlluminaGA BC)" ,
+	"name": "gene expression RNAseq (polyA+ IlluminaGA BC)" ,
+	"schema": "hugo_sample",
+	"class": "expr",
+	"tools": ["pca"]
+}, {
+	"dataType": "gene expression RNAseq (polyA+ IlluminaHiseq BC)" ,
+	"name": "gene expression RNAseq (polyA+ IlluminaHiseq BC)" ,
+	"schema": "hugo_sample",
+	"class": "expr",
+	"tools": ["pca"]
+}]
