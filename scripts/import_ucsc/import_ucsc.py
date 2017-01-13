@@ -5,6 +5,7 @@ import os
 import re
 import numpy as np
 from pymongo import MongoClient
+from multiprocessing import Pool
 
 huburl = "https://genome-cancer.ucsc.edu/proj/public/xena"
 baseurl = "https://tcga.xenahubs.net/download"
@@ -14,32 +15,29 @@ user="oncoscape"
 password = os.environ["dev_oncoscape_pw"]
 host = "mongodb://" + user + ":" + password + "@oncoscape-dev-db1.sttrcancer.io:27017,oncoscape-dev-db2.sttrcancer.io:27017,oncoscape-dev-db3.sttrcancer.io:27017"
 
-mongo = MongoClient(host)
-db = mongo.tcga
-lookup = db.lookup_oncoscape_datasources
-manifest = db.manifest
-
-
 #Find all the cohorts at a huburl
 #allCohorts = xena.all_cohorts(huburl)
 
-def import_ucsc_molecular():
-
-	#Find all available UCSC datasets
-	allDatasets = xena.datasets_list (huburl)
-	TCGAdatasets = [dataset for dataset in allDatasets if re.compile("^TCGA").match(dataset)]
+#Find all available UCSC datasets
+allDatasets = xena.datasets_list (huburl)
+TCGAdatasets = [dataset for dataset in allDatasets if re.compile("^TCGA").match(dataset)]
 #	Prodsets = "^TCGA/TCGA.HNSC|^TCGA/TCGA.LUNG|^TCGA/TCGA.LUSC|^TCGA/TCGA.GBMLGG|^TCGA/TCGA.PRAD|^TCGA/TCGA.LUAD|^TCGA/TCGA.BRCA|^TCGA/TCGA.LUAD"
 #	Proddata = [dataset for dataset in TCGAdatasets if re.compile(Prodsets).match(dataset)]
 
-	for dataset in TCGAdatasets:
-#	for dataset in Proddata:
-	#	allDatasets = xena.datasets_list_in_cohort(huburl, cohort)
-	#	dataset = allDatasets[1]
+
+
+def import_ucsc_molecular(dataset):
+
 		print dataset
+
+		mongo = MongoClient(host)
+		db = mongo.tcga
+		lookup = db.lookup_oncoscape_datasources
+		manifest = db.manifest
 		
 		metadata = dataset_metadata(baseurl, dataset)
-		if len(metadata) == 0: continue
-		if 'cohort' not in metadata: continue
+		if len(metadata) == 0: return
+		if 'cohort' not in metadata: return
 			
 		source = "ucsc xena"
 		collection = metadata['name'] + "_" + source
@@ -48,8 +46,8 @@ def import_ucsc_molecular():
 		process = process_json(metadata)
 
 		
-		prev_run = insert_prep(collection)
-		if(prev_run): continue
+		prev_run = insert_prep(db, manifest, collection)
+		if(prev_run): return
 
 		##### DO NOT USE Python query as it returns different values than download. eg LGG RPPA 209 vs 229 identifiers
 		#allidentifiers = xena.dataset_field(huburl, dataset)
@@ -66,11 +64,16 @@ def import_ucsc_molecular():
 		#success = True
 		######
 
-		success = import_ucsc_download(dataset, collection, metadata['type'])
+		type = metadata['type']
+		if(type != "genomicMatrix"): 
+			print "Currently only storing type = genomicMatrix, not " + type
+			return
+			
+		success = import_ucsc_download(db, dataset, collection, metadata['type'])
 		
 		if not success: 
 			print "------Unable to insert dataset------"
-			continue	
+			return	
 			
 		#insert into manifest
 		#	dataset, dataType, date, source, process, processName, parent, collection
@@ -119,7 +122,7 @@ def process_json(metadata):
 def merge_json(json1, json2):
 	return {key: value for (key, value) in (json1.items() + json2.items())}	
 
-def import_ucsc_download(dataset, collection, type):
+def import_ucsc_download(db, dataset, collection, type):
 	link = baseurl + xena.strip_first_url_dir(dataset) 
 	req = xena.urllib2.Request(link)
 	try:
@@ -154,7 +157,7 @@ def import_ucsc_download(dataset, collection, type):
 		print "Download URLError: " +  str(e.args)
 		return False
 
-def insert_prep(collection):
+def insert_prep(db, manifest, collection):
 
 	if collection in db.collection_names(): 
 		print collection + " already exists in database."
@@ -167,4 +170,10 @@ def insert_prep(collection):
 	return False
 	
 if __name__ == '__main__':
-	import_ucsc_molecular()
+	#	for dataset in TCGAdatasets:
+	#	for dataset in Proddata:
+	#	allDatasets = xena.datasets_list_in_cohort(huburl, cohort)
+	#	dataset = allDatasets[1]
+	pool = Pool(4)
+
+	pool.map(import_ucsc_molecular, TCGAdatasets)

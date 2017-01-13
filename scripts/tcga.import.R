@@ -530,7 +530,7 @@ os.batch.map.samples <- function(){
         ptMap <- map.sample.ids(names(collection$patients), dataset$source, ptMap)
       }
 
-      oCollection <- create.oCollection(dataset=dataset$disease, dataType="samplemap", source=dataset$source, processName="molecular",parent=NA, process=list(type="import"))
+      oCollection <- create.oCollection(dataset=dataset$disease, dataType="samplemap", source=dataset$source, uniqueKeys=c(),parent=NA, process=list(type="import"))
       insert.collection(oCollection, list(ptMap) )
     }
     
@@ -605,12 +605,11 @@ commands <- c("clinical", "scale", "lookup", "sample")
 ## -- brain categorical data retained here simply for full provenance
 
 commands <- c("clinical", "scale", "lookup")
-commands <- "lookup"
 ## TO DO: sample should be run once gene vs chr position collections decided
 
 args = commandArgs(trailingOnly=TRUE)
 if(length(args) != 0 )
-  manifest <- args
+  commands <- args
 
 if("categories" %in% commands) 
   os.data.load.categories( datasets="brain")
@@ -674,6 +673,59 @@ if("sample" %in% commands){
 
 if("sunburst" %in% commands){
   os.data.batch("../manifests/os.uw.immune.manifest.json")
+}
+
+if("merge" %in% commands){
+  datasetName = "brain"
+  combine = c("lgg", "gbm")
+  
+  #grab dataTypes & manifest objects that are acceptable for simple merge
+  con <- mongo("lookup_dataTypes", db=db, url=host)
+  dataTypes_mol = con$distinct("dataType", '{"$and":[{"schema":"hugo_sample"},{"class": {"$in":["cnv_thd", "mut", "mut01"]}}]}')
+  manifest_merge <- mongo.manifest$find( 
+    query=toJSON(list(dataType=list("$in"=dataTypes_mol),dataset=list("$in"=combine)), auto_unbox = T))
+
+  sapply(dataTypes_mol, function(dtype){
+    print(paste("Combining ", dtype))
+    lCollection = subset(manifest_merge, dataType==dtype)
+    if(length(intersect(combine, lCollection$dataset)) == length(combine)){
+      newCollection <- list(dataset = datasetName,
+              collection = gsub(lCollection[1,"dataset"], datasetName, lCollection[1,"collection"]),
+              source = lCollection[1,"source"], dataType=dtype)
+      if(collection.exists(newCollection$collection)){
+        print(paste(newCollection$collection, "already exists. Skipping."))
+      }else{
+        merge.collections(lCollection[1,], lCollection[2,], newCollection) 
+      }
+    }
+    else{
+      cat("Incorrect number of documents: ")
+      print( lCollection[,c("dataset", "dataType")])
+    }
+  })
+  
+  lgg_mut_cur = mongo.manifest$find(toJSON(list(collection="tcga_lgg_mutation_curated_broad_gene_ucsc-xena"), auto_unbox = T))
+  lgg_mut = mongo.manifest$find(toJSON(list(collection="tcga_lgg_mutation_broad_ucsc-xena"), auto_unbox = T))
+  gbm_mut = mongo.manifest$find(toJSON(list(collection="tcga_gbm_mutation_broad_gene_ucsc-xena"), auto_unbox = T))
+  
+  newCollection <- list(dataset = datasetName,
+                        collection = gsub(lgg_mut_cur$dataset, datasetName, lgg_mut_cur$collection),
+                        source = lgg_mut_cur$source, dataType=lgg_mut_cur$dataType)
+  if(collection.exists(newCollection$collection)){
+    print(paste(newCollection$collection, "already exists. Skipping."))
+  }else{
+    merge.collections(lgg_mut_cur, gbm_mut, newCollection) 
+  }
+  newCollection <- list(dataset = datasetName,
+                        collection = gsub(lgg_mut$dataset, datasetName, lgg_mut$collection),
+                        source = lgg_mut$source, dataType=lgg_mut$dataType)
+  if(collection.exists(newCollection$collection)){
+    print(paste(newCollection$collection, "already exists. Skipping."))
+  }else{
+    merge.collections(lgg_mut, gbm_mut, newCollection) 
+  }
+  
+  
 }
 
 stopCluster(cluster_cores)

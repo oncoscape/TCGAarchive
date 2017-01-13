@@ -8,7 +8,7 @@ library(mongolite)
 library(parallel)
 source("bindToEnv.R")
 
-mongo_commands <- c("mongo","mongo.manifest","mongo.lookup", "create.oCollection", "collection.exists","update.oCollection")
+mongo_commands <- c("mongo","mongo.manifest","mongo.lookup", "create.oCollection", "collection.exists","update.oCollection", "insert.document", "insert.document.dne")
 
 date <- as.character(Sys.Date())
 chromosomes <- c(seq(1:22), "X", "Y")
@@ -316,7 +316,7 @@ collection.create.name <- function( oCollection){
   return(collection.uniqueName)
 }
 #---------------------------------------------------------
-merge.collections <- function(oCollection1, oCollection2, oCollection = NA){
+append.collections <- function(oCollection1, oCollection2, oCollection = NA){
   
   if(is.na(oCollection))
     oCollection  <- update.oCollection(oCollection1, parent=c(oCollection1$`_id`, oCollection2$`_id`), processName="merged")
@@ -333,9 +333,34 @@ merge.collections <- function(oCollection1, oCollection2, oCollection = NA){
     con$insert(con1$find())
   }
   
-  ## add document to manifest collection
+  ## add document to manifest & lookup collection
   mongo.manifest$insert( toJSON(oCollection, auto_unbox=T))
- 
+  mongo.lookup$insert(oCollection)
+}
+#---------------------------------------------------------
+merge.collections <- function(oCollection1, oCollection2, oCollection = NA){
+  
+  if(is.na(oCollection))
+    oCollection  <- update.oCollection(oCollection1, parent=c(oCollection1$`_id`, oCollection2$`_id`), processName="merged")
+  
+  con1 <- mongo(oCollection1$collection, db=db, url=host)
+  con2 <- mongo(oCollection2$collection, db=db, url=host)
+  con  <- mongo(oCollection$collection,  db=db, url=host)
+  
+  c1 = con1$find();
+  c2 = con2$find();
+  uIds = unique(c1$id)
+  sapply(uIds, function(uid){
+    d1 = subset(c1, id==uid)
+    d2 = subset(c2, id==uid)
+    d = list(id=uid, min=min(d1$min, d2$min), max=max(d1$max, d2$max), data=c(d1$data, d2$data))
+    con$insert(toJSON(d, auto_unbox = T))
+    })
+  
+  ## add document to manifest & lookup collection
+  mongo.manifest$insert( toJSON(oCollection, auto_unbox=T))
+  mongo.lookup$insert(oCollection)
+  
 }
 #---------------------------------------------------------
 insert.prep <- function(oCollection, method="skip"){
@@ -799,7 +824,7 @@ save.batch.genesets.scaled.pos <- function(scaleFactor=100000, ...){
   genesets <- mongo("lookup_genesets", db=db,url=host)$find()
   
   process <- list(scale=scaleFactor); 
-  processName <- paste(process, collapse="-")
+  uniqueKeys <- c("name", "scale")
   parent <- list(geneObj$`_id`)
   
   result <- apply(genesets, 1, function(geneSet){	
@@ -810,7 +835,7 @@ save.batch.genesets.scaled.pos <- function(scaleFactor=100000, ...){
     list(type="geneset", name=geneSet$name, scale=scaleFactor, data=genesetPos.list)
   }	)
   
-  oCollection <- create.oCollection(geneObj$dataset, dataType="genesets", source=geneObj$source, processName=processName,parent=parent, process=process)
+  oCollection <- create.oCollection(geneObj$dataset, dataType="genesets", source=geneObj$source, uniqueKeys=uniqueKeys,parent=parent, process=process)
   insert.collection(oCollection, result, ...) 
 }
 #--------------------------------------------------------------#
