@@ -8,7 +8,7 @@ library(mongolite)
 library(parallel)
 source("bindToEnv.R")
 
-mongo_commands <- c("mongo","mongo.manifest","mongo.lookup", "create.oCollection", "collection.exists","update.oCollection", "insert.document", "insert.document.dne")
+mongo_commands <- c("mongo","mongo.manifest","mongo.lookup", "create.oCollection", "collection.exists","update.oCollection", "insert.document", "insert.collection.dne")
 
 date <- as.character(Sys.Date())
 chromosomes <- c(seq(1:22), "X", "Y")
@@ -19,7 +19,7 @@ location = "dev"
 
 if(location == "dev"){
 	user="oncoscape"
-#	password = Sys.getenv("dev_oncoscape_pw")
+	password = Sys.getenv("dev_oncoscape_pw")
 	host<- paste("mongodb://",user,":",password,"@oncoscape-dev-db1.sttrcancer.io:27017,oncoscape-dev-db2.sttrcancer.io:27017,oncoscape-dev-db3.sttrcancer.io:27017",sep="")
 	#host<- paste("mongodb://",user,":",password,"@oncoscape-dev-db1.sttrcancer.io:27017,oncoscape-dev-db2.sttrcancer.io:27017,oncoscape-dev-db3.sttrcancer.io:27017","?socketTimeoutMS=36000000", sep="")
 	  #?socketTimeoutMS=36000000 still fails, just waits longer
