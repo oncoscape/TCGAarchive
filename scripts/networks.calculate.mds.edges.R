@@ -375,18 +375,18 @@ run.batch.mds <- function(lCollection.cnv, lCollection.mut01,genesets, scaleFact
       }}
 	} # process_mds
   
-  commands <- c("save.mds.innerProduct")
+  commands <- c("save.mds.innerProduct", "process_mds")
   
   pt.cluster_worker <- function() {
-    bindToEnv(objNames=c(mongo_commands, commands,'genesets'))
+    bindToEnv(objNames=c(mongo_commands, commands))
     function(i) {
       process_mds(i)
     }
   }
   
   # Loop for each dataset/source type, get mut &/or cnv edges
-  #batch_result <- parLapply(cluster_cores,1:nrow(lCollection.cnv), pt.cluster_worker())
-  batch_result <- lapply(1:nrow(lCollection.cnv), function(i){process_mds(i)})  
+  batch_result <- parLapply(cluster_cores,1:nrow(lCollection.cnv), pt.cluster_worker())
+  #batch_result <- lapply(1:nrow(lCollection.cnv), function(i){process_mds(i)})  
   
   
 }
@@ -404,8 +404,17 @@ run.batch.pca <- function(lCollection, genesets, scaleFactor=100000,...){
       save.pca(oCollection, geneset = geneset, scaleFactor=scaleFactor,idType=idType, ...)
     }
   }
+  
+  commands <- c("save.pca", "process_pca")
+  pt.pca_worker <- function() {
+    bindToEnv(objNames=c(mongo_commands, commands))
+    function(i) {
+      process_pca(i)
+    }
+  }
+  
   #batch_result <- lapply(1:nrow(lCollection), function(i){process_pca(i)})  
-  batch_result <- parLapply(cluster_cores,1:nrow(lCollection), process_pca())
+  batch_result <- parLapply(cluster_cores,1:nrow(lCollection), pt.pca_worker())
   rm(con)
   
 }
