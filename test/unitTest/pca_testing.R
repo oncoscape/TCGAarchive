@@ -1,5 +1,5 @@
 source("../scripts/common.R")
- 
+source("../scripts/networks.calculate.mds.edges.R")
 db <- "tcga"
 user="oncoscape"
 password = Sys.getenv("dev_oncoscape_pw")
@@ -21,3 +21,6 @@ acc_cluster_pca = acc_cluster$find(toJSON(list(dataType="PCA"), auto_unbox = T))
 # str(acc_cluster_pca,max.level=1)
 
 ## Obtain raw data 
+# from lgg_cluster document: geneset, dataType, input, source 
+# from manifest: manifest process' geneset, dataType, input, source
+# from lookup_oncoscape_datasources disease molecular array, source, type (input) and locate the collection name
