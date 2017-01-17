@@ -93,19 +93,14 @@ calculateSampleSimilarityMatrix <- function (mut, cn, samples=NA, genes=NA, copy
      return(list(scores=tbl.pos, loadings=res$x, eig= res$eig ))
 }
 #----------------------------------------------------------------------------------------------------
-calculate.pca <- function(collection.name, geneset=NA, scaleFactor=NA){
+calculate.pca <- function(mtx, genes=NA){
  
-  ## ----- Pull data from DB and store as numeric mtx with pts as rows
-  coll <- mongo(collection.name, db=db, url=host)$find()
-  mtx <- convert.to.mtx(coll, format="as.numeric");
-  mtx <- t(mtx); #pca uses pts as rows, genes as cols
-  rm(coll);
- 
-  if(!is.null(geneset) & !all(is.na(geneset)))
-    mtx <- mtx[, intersect(colnames(mtx), unlist(geneset)), drop=F]
+  if(!is.null(genes) & !all(is.na(genes)))
+    mtx <- mtx[, intersect(colnames(mtx), unlist(genes)), drop=F]
   if(any(dim(mtx)<3)){
-    print("WARNING: mtx does not match gene/patient set.")
-    return();
+    reason = "WARNING: mtx does not match gene/patient set."
+    print (reason)
+    return(list(scores=NA, reason=reason));
   }
   ## ----- Subset mtx by invariant columns
   column.sums <- colSums(mtx, na.rm=TRUE)
@@ -115,8 +110,10 @@ calculate.pca <- function(collection.name, geneset=NA, scaleFactor=NA){
     printf("removing %d columns", length(removers))
     mtx <- mtx[, -removers]
   } 
-  if(any(dim(mtx)<3)){  print("WARNING: mtx is singular.  PCA not computed")
-    return();
+  if(any(dim(mtx)<3)){  
+    reason="WARNING: mtx is singular.  PCA not computed"
+    print(reason)
+    return(list(scores=NA, reason=reason));
   }
   
   ## ----- Calculate PCA
@@ -124,38 +121,17 @@ calculate.pca <- function(collection.name, geneset=NA, scaleFactor=NA){
     prcomp(na.omit(mtx),center=T,scale=T),
     error=function(error.message){
       print("ERROR: PRCOMP!"); print(error.message)
-      return(NA); })
-  
-  if(all(is.na(PCs)))	   return();
-  
-  scores <- PCs$x
-  colnames(scores) <- NULL
-  importance <- summary(PCs)$importance   
-  propVar <- round(importance[2,] *100, digits=2)
-  names(propVar) <- NULL
-  
-  ## ----- Store Loadings ------
-  loadings <- PCs$rotation
-  loading.list <- lapply(rownames(loadings), function(name){ loadings[name,1:3]})
-  names(loading.list) <- rownames(loadings)
-  result <- list(pc1=propVar[1], pc2=propVar[2] ,pc3=propVar[3],loadings=loading.list)
-
-  ## ----- Store Scaled Scores ------
-  if(!is.na(scaleFactor)){
-    chrDim <- get.chromosome.dimensions(scaleFactor) 
-    pc3 <- scores[,1:3]; colnames(pc3) <- c("x", "y", "z")
-    scores.list <- scaleSamplesToChromosomes(pc3, chrDim)
-    #names(scores.list) <- rownames(scores)
-    result$scores <- scores.list
-  }else{
-    scores.list <- lapply(rownames(scores), function(name){ scores[name,1:3]})
-    names(scores.list) <- rownames(scores)
-    result$scores <- scores.list
-    
-  }
-  
-  result.json <- toJSON(result, auto_unbox = T)
-  return(result.json)
+      return(list(scores=NA, reason=as.character(error.message))); })
+      
+      if(is.null(PCs) | all(is.na(PCs$x))	)   return(PCs);
+      
+      scores <- PCs$x
+      colnames(scores) <- NULL
+      importance <- summary(PCs)$importance   
+      propVar <- round(importance[2,] *100, digits=2)
+      names(propVar) <- NULL
+      
+      return(list(scores=scores, variance=propVar, loadings=PCs$rotation))
    
 }
 #----------------------------------------------------------------------------------------------------
@@ -194,7 +170,7 @@ save.pca<- function(oCollection, genesetName=NA, scaleFactor=NA,idType=NA, ...){
 	rm(coll);
 
 	## ----- Subset mtx by genes
-
+  genes = NA
 	if(genesetName != "All Genes"){  
 	  genes <- getGeneSet(genesetName)
 	  if(!is.null(genes))
@@ -207,44 +183,19 @@ save.pca<- function(oCollection, genesetName=NA, scaleFactor=NA,idType=NA, ...){
 	  return();
 	}
 	
-	## ----- Subset mtx by invariant columns
-	column.sums <- colSums(mtx, na.rm=TRUE)
-	removers <- as.integer(which(column.sums == 0))
-	removers <- c(removers, which(apply(mtx, 2, var)== 0))
-	if(length(removers) > 0) {
-		   printf("removing %d columns", length(removers))
-		   mtx <- mtx[, -removers]
-	} 
-	if(any(dim(mtx)<3)){  
-	  reason = "WARNING: mtx is singular.  PCA not computed"
-	  print(reason)
-	  insert.collection.dne(oCollection.pca, reason )
-	  return()
+	res = calculate.pca(mtx, genes)
+
+	if(is.na(res$scores)){
+	  insert.collection.dne(oCollection.pca, res$reason )
+	  return();
 	}
-	  
-	## ----- Calculate PCA
-		  PCs <- tryCatch(
-		   prcomp(na.omit(mtx),center=T,scale=T),
-		   error=function(error.message){
-			 print("ERROR: PRCOMP!"); print(error.message)
-		   insert.collection.dne(oCollection.pca, as.character(error.message ))
-			 return(NA); })
-   
-	   if(all(is.na(PCs))){
-	     return()
-	   }
-	   scores <- PCs$x
-	   colnames(scores) <- NULL
-	   importance <- summary(PCs)$importance   
-	   propVar <- round(importance[2,] *100, digits=2)
-	   names(propVar) <- NULL
+	
 
 	   ## ----- Save ----------
 	   # Loadings -------------
-	   loadings <- PCs$rotation
-	   loading.list <- lapply(rownames(loadings), function(name){ list(id=name, d=loadings[name,1:3])})
+	   loading.list <- lapply(rownames(res$loadings), function(name){ list(id=name, d=res$loadings[name,1:3])})
 	   ## Scaled Scores ------
-	   pc3 <- scores[,1:3]; 
+	   pc3 <- res$scores[,1:3]; 
 	   colnames(pc3)<- c("x", "y", "z")
 	   scores.list <- scaleSamplesToChromosomes(pc3, chrDim)
 	   
@@ -258,25 +209,18 @@ save.pca<- function(oCollection, genesetName=NA, scaleFactor=NA,idType=NA, ...){
 	                  loadings=loading.list,
 	                  score="sample",
 	                  scores = scores.list,
-	                  metadata = list(variance=c(propVar[1], propVar[2], propVar[3])))
+	                  metadata = list(variance=c(res$variance[1], res$variance[2], res$variance[3])),
+	   default=FALSE)
 	   insert.document(oCollection.pca, list(result) )
 	   
 
 }
 #----------------------------------------------------------------------------------------------------
-calculate.mds.innerProduct <- function(collection.name.1, collection.name.2, geneset=NA, scaleFactor=NA, regex = NA, threshold = NA){
+calculate.mds.innerProduct <- function(mtx.tbl1, mtx.tbl2, genes=NA, regex = NA, threshold = NA){
   ## ----- MDS on All Combinations of CNV and MUT Tables ------
   
   cat("-calculating mds\n")
-  cat(paste(collection.name.1, " ", collection.name.2,"\n"))
-  ## ----- Configuration ------
-  coll1 <- mongo(collection.name.1, db=db, url=host)$find()
-  coll2 <- mongo(collection.name.2, db=db, url=host)$find()
-  
-  mtx.tbl1 <- convert.to.mtx(coll1, format="as.numeric");
-  mtx.tbl2 <- convert.to.mtx(coll2, format="as.numeric");
-  rm(coll1); rm(coll2);
-  
+
   if(!is.na(regex)){
     tbl1.samples <- grep(regex, colnames(mtx.tbl1),  value=TRUE)
     tbl2.samples <- grep(regex, colnames(mtx.tbl2),  value=TRUE)
@@ -285,37 +229,39 @@ calculate.mds.innerProduct <- function(collection.name.1, collection.name.2, gen
     tbl2.samples <- colnames(mtx.tbl2)
   }
   
-  if(all(is.na(geneset))){
+  if(all(is.na(genes))){
     genes <- intersect(rownames(mtx.tbl1), rownames(mtx.tbl2))
-  }else{ genes = unlist(geneset) }
+  }else{ genes = unlist(genes) }
   
   samples <- unique(tbl1.samples, tbl2.samples)
-  sample_similarity <- calculateSampleSimilarityMatrix(mtx.tbl1, mtx.tbl2,samples=samples, genes=genes)
+  stopifnot(length(samples)>0)
+  
+  res <- calculateSampleSimilarityMatrix(mtx.tbl1, mtx.tbl2,samples=samples, genes=genes)
+  sample_similarity <- res$scores
   #expects rows as genes and cols as samples
   
-  if(any(dim(sample_similarity)==0)){
-    print("WARNING: mtx does not match gene/pt set.  Less than 3 observations.")
-    return();
+  if(is.null(sample_similarity) | any(dim(sample_similarity)==0)){
+    reason = "WARNING: mtx does not match gene/pt set.  Less than 3 observations."
+    print(reason)
+    return(list(scores=NA, reason=reason));
   }
   
-  sample_similarity[, "x"] <- -1 * sample_similarity[, "x"]
-  sample_similarity[, "y"] <- -1 * sample_similarity[, "y"]
+  # flip to match Bolouri, Holland PNAS paper layout
+  sample_similarity[, 1] <- -1 * sample_similarity[, 1]
+  sample_similarity[, 2] <- -1 * sample_similarity[, 2]
+  sample_similarity[, 3] <- -1 * sample_similarity[, 3]
   
   if(!is.na(threshold)){
     outliers <- names(which(sample_similarity[,1]<threshold))
     sample_similarity <- sample_similarity[setdiff(rownames(sample_similarity), outliers), ]
   }
- 
-  if(!is.na(scaleFactor)){
-    chrDim <- get.chromosome.dimensions(scaleFactor) 
-    mds.list <- scaleSamplesToChromosomes(sample_similarity, chrDim, dim.names=c("x", "y"))
-   }else{
-    mds.list<- lapply(rownames(sample_similarity), function(name) list(x=sample_similarity[name,"x"], y=sample_similarity[name, "y"]))
-    names(mds.list) <- rownames(sample_similarity)
-  }		
   
-  result.json <- toJSON(mds.list, auto_unbox = T)
-  return(result.json)
+  result <- list(
+    scores=sample_similarity,
+    eig = res$eig
+  )		  
+  
+  return(result)
 }
 #----------------------------------------------------------------------------------------------------
 save.mds.innerProduct <- function(oCollection.1, oCollection.2, geneset=NA, scaleFactor=NA, ...){
@@ -328,6 +274,7 @@ save.mds.innerProduct <- function(oCollection.1, oCollection.2, geneset=NA, scal
   }
   
   cat("-calculating mds\n")
+  cat(paste(oCollection.1$collection, " ", oCollection.2$collection,"\n"))
   
   ## ----- Configuration ------
   dataType <- "MDS"
@@ -339,9 +286,9 @@ save.mds.innerProduct <- function(oCollection.1, oCollection.2, geneset=NA, scal
   process$input=list( oCollection.1$dataType, oCollection.2$dataType)
   process$scale=scaleFactor
 
-    regex = "-01$"; threshold = NA;
+  regex = "-01$"; threshold = NA;
   if(datasetName == "laml"){        regex = "-03$|-09$";
-  } else if(datasetName == "luad"){ regex = "TCGA-(17)^-\\d{4}-01$" }
+  } else if(datasetName == "luad"){ regex = "TCGA-[^1]" } # ignore samples from TCGA-17-Z###
   
   if(datasetName == "brca" | datasetName == "brain")  threshold = -1e-04
   process$regex=regex; process$threshold=threshold
@@ -363,66 +310,43 @@ save.mds.innerProduct <- function(oCollection.1, oCollection.2, geneset=NA, scal
   	coll1 <- mongo(oCollection.1$collection, db=db, url=host)$find()
   	coll2 <- mongo(oCollection.2$collection, db=db, url=host)$find()
   	
-		mtx.tbl1 <- convert.to.mtx(coll1, format="as.numeric");
-		mtx.tbl2 <- convert.to.mtx(coll2, format="as.numeric");
-		rm(coll1); rm(coll2);
-		
-		tbl1.samples <- grep(regex, colnames(mtx.tbl1),  value=TRUE)
-		tbl2.samples <- grep(regex, colnames(mtx.tbl2),  value=TRUE)
-	
-		genesets <- c(NA, genesets)
-		for(geneset in genesets$name){
-	  	if(is.na(geneset)){
-		       genes <- intersect(rownames(mtx.tbl1), rownames(mtx.tbl2))
-	  	}else{ 
-	  	  process$geneset = geneset
-	  	  genesetName = geneset
-	  	  update.oCollection(oCollection.mds, process=process)
-	  	  genes = getGeneSet(geneset) 
-	  	}
-		
-			samples <- unique(tbl1.samples, tbl2.samples)
-			res <- calculateSampleSimilarityMatrix(mtx.tbl1, mtx.tbl2,samples=samples, genes=genes)
-											 #expects rows as genes and cols as samples
-			sample_similarity <- res$scores
-			
-			if(is.null(sample_similarity) | any(dim(sample_similarity)==0)){
-			  reason = "WARNING: mtx does not match gene/pt set.  Less than 3 observations."
-			  print(reason)
-			  insert.collection.dne(oCollection.mds, reason )
-			  return()
-			}
-			
-			# flip to match Bolouri, Holland PNAS paper layout
-			sample_similarity[, 1] <- -1 * sample_similarity[, 1]
-			sample_similarity[, 2] <- -1 * sample_similarity[, 2]
-			sample_similarity[, 3] <- -1 * sample_similarity[, 3]
-			
-			if(!is.na(threshold)){
-				outliers <- names(which(sample_similarity[,1]<threshold))
-				sample_similarity <- sample_similarity[setdiff(rownames(sample_similarity), outliers), ]
-			}
-
-		  mds.list<- lapply(rownames(sample_similarity), function(name) list(id=name, d=sample_similarity[name,1:3]))
-#		  chrDim <- get.chromosome.dimensions(scaleFactor) 
-		  mds.list <- scaleSamplesToChromosomes(sample_similarity, chrDim=chrDim, dim.names=c("x", "y", "z"))
-		  
-#		  loadings <- res$loadings
-#		  loadings.list<- lapply(rownames(loadings), function(name) list(id=name, d=loadings[name,1:3]))
-		  
-		  result <- list(disease=oCollection.1$dataset,
-		                 source = source, 
-		                 input=process$input, 
-		                 dataType="MDS",
-		                 geneset=genesetName,
-		                 scale=scaleFactor, 
-		                 #loading = "sample",
-		                 #loadings=loadings.list,
-		                 score="sample",
-		                 scores = mds.list,
-		                 metadata = list(eigenvalues=res$eig))
-			insert.document(oCollection.mds, list(result) )
-  }
+  	mtx.tbl1 <- convert.to.mtx(coll1, format="as.numeric");
+  	mtx.tbl2 <- convert.to.mtx(coll2, format="as.numeric");
+  	rm(coll1); rm(coll2);
+  	
+  	chrDim <- get.chromosome.dimensions(scaleFactor) 
+  	
+  	for(geneset in genesetnames){
+  	  genesetnames <- c(NA, genesets$name)
+  	  if(!is.na(geneset)){
+  	    process$geneset = geneset
+  	    genesetName = geneset
+  	    update.oCollection(oCollection.mds, process=process)
+  	    genes = getGeneSet(geneset) 
+  	  }
+  	  
+  	  res = calculate.mds.innerproduct(mtx.tbl1, mtx.tbl2, genes=genes, regex=regex, threshold=threshold)
+  	  if(is.na(res$result)){
+  	    insert.collection.dne(oCollection.mds, res$reason )
+  	  } else{
+  	    
+  	    mds.list<- lapply(rownames(res$scores), function(name) list(id=name, d=res$scores[name,1:3]))
+  	    mds.list <- scaleSamplesToChromosomes(res$scores, chrDim=chrDim, dim.names=c("x", "y", "z"))
+  	    
+  	    result <- list(disease=oCollection.1$dataset,
+  	                   source = source, 
+  	                   input=process$input, 
+  	                   dataType="MDS",
+  	                   geneset=genesetName,
+  	                   scale=scaleFactor, 
+  	                   score="sample",
+  	                   scores = mds.list,
+  	                   metadata = list(eigenvalues=res$eig),
+  	                   default=FALSE)
+  	    insert.document(oCollection.mds, list(result) )
+  	  }
+  	}
+  	
 }
 #----------------------------------------------------------------------------------------------------
 run.batch.mds <- function(lCollection.cnv, lCollection.mut01,genesets, scaleFactor=NA, ...){
@@ -451,37 +375,46 @@ run.batch.mds <- function(lCollection.cnv, lCollection.mut01,genesets, scaleFact
       }}
 	} # process_mds
   
-  commands <- c("save.mds.innerProduct")
+  commands <- c("save.mds.innerProduct", "process_mds")
   
   pt.cluster_worker <- function() {
-    bindToEnv(objNames=c(mongo_commands, commands,'genesets'))
+    bindToEnv(objNames=c(mongo_commands, commands))
     function(i) {
       process_mds(i)
     }
   }
   
   # Loop for each dataset/source type, get mut &/or cnv edges
-  #batch_result <- parLapply(cluster_cores,1:nrow(lCollection.cnv), pt.cluster_worker())
-  batch_result <- lapply(1:nrow(lCollection.cnv), function(i){process_mds(i)})  
+  batch_result <- parLapply(cluster_cores,1:nrow(lCollection.cnv), pt.cluster_worker())
+  #batch_result <- lapply(1:nrow(lCollection.cnv), function(i){process_mds(i)})  
   
   
 }
 #----------------------------------------------------------------------------------------------------
 run.batch.pca <- function(lCollection, genesets, scaleFactor=100000,...){
 
-  con = mongo("lookup_dataTypes", db=db, url=host)
-  
   process_pca <- function(i){
+    con = mongo("lookup_dataTypes", db=db, url=host)
     oCollection <- lCollection[i,]
     schema = con$distinct("schema", toJSON(list(dataType=oCollection$dataType), auto_unbox = T)) 
+    print(paste(oCollection$collection, schema))
     idType = strsplit(schema, "_")[[1]][1]
     save.pca(oCollection, geneset = NA, scaleFactor=scaleFactor, idType=idType , ...)
     for(geneset in genesets$name){
       save.pca(oCollection, geneset = geneset, scaleFactor=scaleFactor,idType=idType, ...)
     }
   }
-  batch_result <- lapply(1:nrow(lCollection), function(i){process_pca(i)})  
   
+  commands <- c("save.pca", "process_pca")
+  pt.pca_worker <- function() {
+    bindToEnv(objNames=c(mongo_commands, commands))
+    function(i) {
+      process_pca(i)
+    }
+  }
+  
+  #batch_result <- lapply(1:nrow(lCollection), function(i){process_pca(i)})  
+  batch_result <- parLapply(cluster_cores,1:nrow(lCollection), pt.pca_worker())
   rm(con)
   
 }
@@ -618,8 +551,8 @@ run.batch.network_edges <- function(lCollection){
 mongo <- connect.to.mongo()
 genesets <-     mongo("lookup_genesets", db=db, url=host)$find("{}")
 scaleFactor = 100000
-num_cores <- detectCores() - 1
-#num_cores <- 1
+#num_cores <- detectCores() - 1
+num_cores <- 4
 cluster_cores <- makeCluster(num_cores, type="FORK")
 
 commands <- c("cluster", "edges")
@@ -635,9 +568,9 @@ if("cluster" %in% commands){
   dataTypes_pca = con$distinct("dataType", '{"$and":[{"schema":"hugo_sample"},{"class": {"$in":["expr", "cnv"]}}]}')
   manifest_pca <- mongo.manifest$find( 
                             query=toJSON(list(dataType=list("$in"=dataTypes_pca)), auto_unbox = T))
-  manifest_pca <- subset(manifest_pca, dataset %in% c("brca", "brain", "luad", "lusc", "prad", "hnsc", "lung", "gbm", "lgg"))
+#  manifest_pca <- subset(manifest_pca, dataset %in% c("brca", "brain", "luad", "lusc", "prad", "hnsc", "lung", "gbm", "lgg"))
   chrDim <- get.chromosome.dimensions(scaleFactor) 
- # run.batch.pca(manifest_pca,genesets, scaleFactor=100000, chrDim=chrDim)
+  run.batch.pca(manifest_pca,genesets, scaleFactor=100000, chrDim=chrDim)
   
   dataTypes_mds.cnv = con$distinct("dataType", '{"$and":[{"schema":"hugo_sample"},{"class":"cnv_thd"}]}')
   dataTypes_mds.mut01 = con$distinct("dataType", '{"$and":[{"schema":"hugo_sample"},{"class":"mut01"}]}')
@@ -655,8 +588,8 @@ if("cluster" %in% commands){
         manifest_mds.mut01 <- mongo.manifest$find( 
           query=toJSON(list(dataType=list("$in"=dataTypes_mds.mut01)), auto_unbox = T))
   }
-  manifest_mds.cnv <- subset(manifest_mds.cnv, dataset %in% c("brca", "brain", "luad", "lusc", "prad", "hnsc", "lung", "gbm"))
-  manifest_mds.mut01 <- subset(manifest_mds.mut01, dataset %in% c("brca", "brain", "luad", "lusc", "prad", "hnsc", "lung", "gbm"))
+#  manifest_mds.cnv <- subset(manifest_mds.cnv, dataset %in% c("brca", "brain", "luad", "lusc", "prad", "hnsc", "lung", "gbm"))
+#  manifest_mds.mut01 <- subset(manifest_mds.mut01, dataset %in% c("brca", "brain", "luad", "lusc", "prad", "hnsc", "lung", "gbm"))
   run.batch.mds(manifest_mds.cnv,manifest_mds.mut01,genesets, scaleFactor=100000, chrDim=chrDim)
   
   rm(con)
