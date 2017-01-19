@@ -8,21 +8,38 @@ mongo <- connect.to.mongo()
 
 con <- mongo("lookup_genesets", db=db, url=host)
 lookup_genesets = con$find()
-f = CFILE("pca/brca_rppa.txt", mode="wb")
-curlPerform(url="https://tcga.xenahubs.net/download/TCGA.BRCA.sampleMap/RPPA_RBN", writedata=f@ref)
+
+f = CFILE("mds/brca_cnvthd.txt", mode="wb")
+curlPerform(url="https://tcga.xenahubs.net/download/TCGA.BRCA.sampleMap/Gistic2_CopyNumber_Gistic2_all_thresholded.by_genes", writedata=f@ref)
 close(f)
 options(stringsAsFactors=FALSE)
-brca_rppa = read.table("pca/brca_rppa.txt", header=TRUE, sep="") 
-rownames(brca_rppa) <- brca_rppa[,1]
-brca_rppa <- brca_rppa[,c(-1)]
-brca_rppa_pca <- calculate.pca(t(brca_rppa), genes=NA)
-pdf(file="pca/brca_rppa_pca.pdf")
-plot(brca_rppa_pca$scores)
-dev.off()
-sc = brca_rppa_pca
-checkEquals(dim(sc$scores), c(747, 131))
-checkEquals(sc$variance[c(1,2)], c(16.31, 8.71))
-l = sc$loading[,c(1:3)]
-h = head(sort(apply(abs(l),1,max),decreasing = T), n=3)
-checkEquals(names(h), c("ASNS", "AKTPS473", "CYCLINB1"))
+brca_cnvthd = read.delim("mds/brca_cnvthd.txt") 
+rownames(brca_cnvthd) <- brca_cnvthd[,1]
+brca_cnvthd <- brca_cnvthd[,c(-1)]
 
+f = CFILE("mds/brca_mut.txt", mode="wb")
+curlPerform(url="https://tcga.xenahubs.net/download/TCGA.BRCA.sampleMap/mutation_curated_wustl_gene", writedata=f@ref)
+close(f)
+brca_mut = read.delim("mds/brca_mut.txt") 
+rownames_brca_mut <- brca_mut[,1]
+brca_mut <- brca_mut[,c(-1)]
+
+brca_mds = calculate.mds.innerProduct(brca_cnvthd, brca_mut, genes=NA, regex = NA, threshold = NA)
+cor(brca_mds$scores[,1], brca_mds$scores[,2]) #  -6.022768e-17
+
+
+con <- mongo("brca_cluster", db=db, url=host)
+brca_cluster_mds_1 <- con$find()
+clusterMds = brca_cluster_mds_1[which(brca_cluster_mds_1$dataType=="MDS")[1],"scores"][[1]]
+V1=c()
+V2=c()
+for(i in 1:nrow(clusterMds)){
+	V1=c(V1,clusterMds[i,2][[1]][1])
+	V2=c(V2,clusterMds[i,2][[1]][2])
+}
+cor(V1, V2) #[1] -8.880102e-05
+cl = data.frame(cV1=V1, cV2=V2)
+cor(brca_mds$scores[,c(1,2)], cl)
+           cV1        cV2
+V1  0.02981795 0.03137283
+V2 -0.01626605 0.00849144
