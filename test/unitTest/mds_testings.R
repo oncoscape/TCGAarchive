@@ -25,21 +25,32 @@ rownames_brca_mut <- brca_mut[,1]
 brca_mut <- brca_mut[,c(-1)]
 
 brca_mds = calculate.mds.innerProduct(brca_cnvthd, brca_mut, genes=NA, regex = NA, threshold = NA)
-cor(brca_mds$scores[,1], brca_mds$scores[,2]) #  -6.022768e-17
+#cor(brca_mds$scores[,1], brca_mds$scores[,2]) #  -6.022768e-17
 
 
 con <- mongo("brca_cluster", db=db, url=host)
 brca_cluster_mds_1 <- con$find()
 clusterMds = brca_cluster_mds_1[which(brca_cluster_mds_1$dataType=="MDS")[1],"scores"][[1]]
+id = clusterMds$id
 V1=c()
 V2=c()
 for(i in 1:nrow(clusterMds)){
 	V1=c(V1,clusterMds[i,2][[1]][1])
 	V2=c(V2,clusterMds[i,2][[1]][2])
 }
-cor(V1, V2) #[1] -8.880102e-05
+#cor(V1, V2) #[1] -8.880102e-05
 cl = data.frame(cV1=V1, cV2=V2)
-cor(brca_mds$scores[,c(1,2)], cl)
-           cV1        cV2
-V1  0.02981795 0.03137283
-V2 -0.01626605 0.00849144
+rownames(cl) <- gsub("-",".",id)
+cl <- cl[order(rownames(cl)),]
+
+brca_mds$scores[,2] = brca_mds$scores[,2]*(-1)
+sc = brca_mds$scores[,c(1,2)]
+sc <- sc[order(rownames(sc)), ]
+cor(sc, cl)
+ 
+             cV1           cV2
+V1  0.9999045157 -0.0005283753
+V2 -0.0005798367 -0.9998107391
+
+
+
