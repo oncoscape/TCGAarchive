@@ -922,6 +922,7 @@
     "methprobe_sample" : {
                   "properties":{
                       "id": {"type": "string"},
+                      "gene": {"type" : "string"}, 
                       "min": {"type": ["number", "null"]}, 
                       "max": {"type": ["number", "null"]}, 
                       "data": {
@@ -931,7 +932,7 @@
                                 }
                             }    
                       },
-                  "required": ["_id","id","min","max","data"],
+                  "required": ["_id","min","max","data"],
                   "additionalProperties": true  
                   },        
     "PCA":{

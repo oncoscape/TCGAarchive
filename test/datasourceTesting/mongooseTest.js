@@ -12,6 +12,7 @@ Purposes
 console.time();
 const mongoose = require("mongoose");
 const jsonfile = require("jsonfile-promised");
+const u = require("underscore");
 const helper = require("../testingHelper.js");
 const dataTypeMapping = require("../lookup_dataTypes.json");
 const schemas = require("../schemas.json");
@@ -27,9 +28,23 @@ var error_elem = [];
 var elem = {};
 var col_count = 0;
 //var dataType = Object.keys(schemas);
-var dataType = collections.map(function(m){return m.dataType;}).unique().splice(68,1);
+//var collections_
+var xena_dataTypes = dataTypeMapping.map(function(m){return m.dataType;});
+var xena_dataTypes_included = dataTypeMapping.filter(function(m){return m.class== 'cnv' || m.class== 'mut01' || m.class == 'cnv_thd' || m.class == 'expr'}).map(function(m){return m.dataType;});
+var xena_dataTypes_excluded = u.difference(xena_dataTypes, xena_dataTypes_included);
+var dataType = u.difference(collections.map(function(m){return m.dataType;}).unique(), xena_dataTypes_excluded);
+var manifest_xena_dataTypes = collections.filter(function(m){return m.source == 'ucsc xena'}).map(function(m){return m.dataType;}).unique();
+var dataTypes_inManifestXena_notInXena = u.difference(manifest_xena_dataTypes, xena_dataTypes);
+var dataType = u.difference(dataType, dataTypes_inManifestXena_notInXena);
 var dataType_length = dataType.length;
 var connection = mongoose.connection;
+
+//01/16/2017 xena dataTypes: mut01, cnv, cnv_thd, expr 
+// var collectionTypes = collections.map(function(m){return m.dataType;}).unique();
+// collections.filter(function(m){return dataType.contains(m.dataType);}).length; // 820
+// collections.map(function(m){return m.dataType;}).unique().length; //80
+// collections.filter(function(m){return u.difference(collectionTypes, dataType).contains(m.dataType);}).length; //1738
+
 
 mongoose.connect(
     'mongodb://oncoscape-dev-db1.sttrcancer.io:27017,oncoscape-dev-db2.sttrcancer.io:27017,oncoscape-dev-db3.sttrcancer.io:27017/tcga?authSource=admin', {
@@ -77,8 +92,9 @@ connection.once('open', function(){
           schema = schemas[tt];
           if(typeof(schemas[tt]) == 'undefined'){
             next();
-          }else{
-            cursor.each(function(err, item){
+          }
+        }
+        cursor.each(function(err, item){
               if(item != null){
                 count++;
                 if("dataType" in item){
@@ -90,7 +106,7 @@ connection.once('open', function(){
                   console.log("&&&NEW ERRORS&&&");
                   console.log(ajv.errors);
                   console.log("***PRINT DOCUMENT***");
-                  console.log(item);
+                  console.log(item['_id']);
                   console.log("**END OF ERROR MSG**");
                   e.errorType = ajv.errors; 
                   error_elem.push(e);
@@ -114,9 +130,6 @@ connection.once('open', function(){
                 }
               }
             });
-          }
-        }
-        
       };
       // Call processNextTable recursively
       if(categoried_collection_length != 0){

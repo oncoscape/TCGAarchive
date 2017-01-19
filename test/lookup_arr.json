@@ -160,6 +160,11 @@
         "source": "ucsc xena",
         "type": "copy number",
         "collection": "tcga_brca_gsnp6raw_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "exon expression RNAseq (polyA+ IlluminaHiSeq)",
+        "collection": "tcga_brca_exp_hiseqv2_exon_ucsc-xena"
       }
     ],
     "clinical": {
@@ -498,6 +503,11 @@
         "source": "ucsc xena",
         "type": "PCA",
         "collection": "brca_cluster"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "MDS",
+        "collection": "brca_cluster"
       }
     ],
     "edges": [
@@ -596,6 +606,91 @@
         "source": "ucsc",
         "type": "mut01",
         "collection": "esca_mut01_ucsc_broad"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "protein expression RPPA",
+        "collection": "tcga_esca_rppa_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "copy number (gistic2)",
+        "collection": "tcga_esca_gistic2_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "exon expression RNAseq (polyA+ IlluminaHiseq)",
+        "collection": "tcga_esca_exp_hiseq_exon_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "gene expression RNAseq (ployA+ IlluminaHiSeq pancan normalized)",
+        "collection": "tcga_esca_exp_hiseqv2_pancan_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "gene expression RNAseq (polyA+ IlluminaHiSeq percentile)",
+        "collection": "tcga_esca_exp_hiseqv2_percentile_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "gene expression RNAseq (polyA+ IlluminaHiSeq)",
+        "collection": "tcga_esca_exp_hiseqv2_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "somatic gene-level non-silent mutation (broad automated)",
+        "collection": "tcga_esca_mutation_broad_gene_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "somatic gene-level non-silent mutation (bcgsc automated)",
+        "collection": "tcga_esca_mutation_bcgsc_gene_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "copy number (gistic2_thresholded)",
+        "collection": "tcga_esca_gistic2thd_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "miRNA isoform expression (IlluminaHiseq)",
+        "collection": "tcga_esca_mirna_hiseq_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "gene expression RNAseq (polyA+ IlluminaHiseq)",
+        "collection": "tcga_esca_exp_hiseq_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "somatic gene-level non-silent mutation (ucsc automated)",
+        "collection": "tcga_esca_mutation_ucsc_maf_gene_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "copy number (delete germline cnv)",
+        "collection": "tcga_esca_gsnp6nocnv_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "copy number",
+        "collection": "tcga_esca_gsnp6raw_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "exon expression RNAseq (polyA+ IlluminaHiSeq)",
+        "collection": "tcga_esca_exp_hiseqv2_exon_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "somatic gene-level non-silent mutation (bcm automated)",
+        "collection": "tcga_esca_mutation_bcm_gene_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "DNA methylation (Methylation450k)",
+        "collection": "tcga_esca_hmethyl450_ucsc-xena"
       }
     ],
     "calculated": [
@@ -1596,6 +1691,11 @@
         "source": "ucsc xena",
         "type": "PCA",
         "collection": "gbm_cluster"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "MDS",
+        "collection": "gbm_cluster"
       }
     ],
     "edges": [
@@ -1860,6 +1960,11 @@
         "source": "ucsc xena",
         "type": "copy number",
         "collection": "tcga_hnsc_gsnp6raw_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "somatic gene-level non-silent mutation (broad automated)",
+        "collection": "tcga_hnsc_mutation_broad_gene_ucsc-xena"
       }
     ],
     "clinical": {
@@ -2347,6 +2452,76 @@
         "source": "ucsc",
         "type": "mut01",
         "collection": "kich_mut01_ucsc_broad"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "protein expression RPPA",
+        "collection": "tcga_kich_rppa_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "copy number (delete germline cnv)",
+        "collection": "tcga_kich_gsnp6nocnv_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "miRNA isoform expression (IlluminaHiseq)",
+        "collection": "tcga_kich_mirna_hiseq_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "copy number (gistic2)",
+        "collection": "tcga_kich_gistic2_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "gene expression RNAseq (polyA+ IlluminaHiSeq)",
+        "collection": "tcga_kich_exp_hiseqv2_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "somatic gene-level non-silent mutation (broad)",
+        "collection": "tcga_kich_mutation_broad_gene_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "somatic gene-level non-silent mutation (bcgsc automated)",
+        "collection": "tcga_kich_mutation_bcgsc_gene_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "copy number",
+        "collection": "tcga_kich_gsnp6raw_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "copy number (gistic2_thresholded)",
+        "collection": "tcga_kich_gistic2thd_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "gene expression RNAseq (polyA+ IlluminaHiSeq percentile)",
+        "collection": "tcga_kich_exp_hiseqv2_percentile_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "somatic gene-level non-silent mutation (bcm automated)",
+        "collection": "tcga_kich_mutation_bcm_gene_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "exon expression RNAseq (polyA+ IlluminaHiSeq)",
+        "collection": "tcga_kich_exp_hiseqv2_exon_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "gene expression RNAseq (ployA+ IlluminaHiSeq pancan normalized)",
+        "collection": "tcga_kich_exp_hiseqv2_pancan_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "DNA methylation (Methylation450k)",
+        "collection": "tcga_kich_hmethyl450_ucsc-xena"
       }
     ],
     "calculated": [
@@ -2584,6 +2759,91 @@
         "source": "ucsc",
         "type": "mut01",
         "collection": "kirc_mut01_ucsc_pancanaws"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "protein expression RPPA",
+        "collection": "tcga_kirc_rppa_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "copy number (gistic2_thresholded)",
+        "collection": "tcga_kirc_gistic2thd_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "copy number (gistic2)",
+        "collection": "tcga_kirc_gistic2_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "DNA methylation (Methylation27k)",
+        "collection": "tcga_kirc_hmethyl27_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "somatic gene-level non-silent mutation (broad automated)",
+        "collection": "tcga_kirc_mutation_broad_gene_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "protein expression RPPA (RBN)",
+        "collection": "tcga_kirc_rppa_rbn_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "gene expression RNAseq (polyA+ IlluminaHiSeq percentile)",
+        "collection": "tcga_kirc_exp_hiseqv2_percentile_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "miRNA isoform expression (IlluminaGA)",
+        "collection": "tcga_kirc_mirna_ga_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "gene expression RNAseq (ployA+ IlluminaHiSeq pancan normalized)",
+        "collection": "tcga_kirc_exp_hiseqv2_pancan_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "somatic gene-level non-silent mutation (pancan awg)",
+        "collection": "tcga_kirc_mutation_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "gene expression (AgilentG4502A_07_3)",
+        "collection": "tcga_kirc_g4502a_07_3_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "copy number (delete germline cnv)",
+        "collection": "tcga_kirc_gsnp6nocnv_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "exon expression RNAseq (polyA+ IlluminaHiSeq)",
+        "collection": "tcga_kirc_exp_hiseqv2_exon_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "DNA methylation (Methylation450k)",
+        "collection": "tcga_kirc_hmethyl450_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "gene expression RNAseq (polyA+ IlluminaHiSeq)",
+        "collection": "tcga_kirc_exp_hiseqv2_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "miRNA isoform expression (IlluminaHiseq)",
+        "collection": "tcga_kirc_mirna_hiseq_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "copy number",
+        "collection": "tcga_kirc_gsnp6raw_ucsc-xena"
       }
     ],
     "clinical": {
@@ -3077,12 +3337,12 @@
       {
         "source": "ucsc xena",
         "type": "somatic gene-level non-silent mutation (broad curated)",
-        "collection": "tcga_lgg_mutation_curated_broad_gene_ucsc xena"
+        "collection": "tcga_lgg_mutation_curated_broad_gene_ucsc-xena"
       },
       {
         "source": "ucsc xena",
         "type": "somatic mutation SNPs and small INDELs (broad curated)",
-        "collection": "tcga_lgg_mutation_curated_broad_ucsc xena"
+        "collection": "tcga_lgg_mutation_curated_broad_ucsc-xena"
       },
       {
         "source": "ucsc xena",
@@ -4639,6 +4899,11 @@
         "source": "ucsc xena",
         "type": "copy number",
         "collection": "tcga_lusc_gsnp6raw_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "exon expression RNAseq (polyA+ IlluminaHiSeq)",
+        "collection": "tcga_lusc_exp_hiseqv2_exon_ucsc-xena"
       }
     ],
     "clinical": {
@@ -5841,6 +6106,91 @@
         "source": "ucsc",
         "type": "protein",
         "collection": "paad_protein_ucsc_rppa"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "copy number (gistic2_thresholded)",
+        "collection": "tcga_paad_gistic2thd_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "copy number (gistic2)",
+        "collection": "tcga_paad_gistic2_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "miRNA isoform expression (IlluminaHiseq)",
+        "collection": "tcga_paad_mirna_hiseq_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "somatic gene-level non-silent mutation (bcm automated)",
+        "collection": "tcga_paad_mutation_bcm_gene_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "somatic gene-level non-silent mutation (ucsc automated)",
+        "collection": "tcga_paad_mutation_ucsc_maf_gene_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "gene expression RNAseq (ployA+ IlluminaHiSeq pancan normalized)",
+        "collection": "tcga_paad_exp_hiseqv2_pancan_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "gene expression RNAseq (polyA+ IlluminaHiSeq percentile)",
+        "collection": "tcga_paad_exp_hiseqv2_percentile_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "somatic gene-level non-silent mutation (pancan awg)",
+        "collection": "tcga_paad_mutation_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "protein expression RPPA",
+        "collection": "tcga_paad_rppa_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "exon expression RNAseq (polyA+ IlluminaHiSeq)",
+        "collection": "tcga_paad_exp_hiseqv2_exon_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "somatic gene-level non-silent mutation (broad automated)",
+        "collection": "tcga_paad_mutation_broad_gene_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "somatic gene-level non-silent mutation (broad curated)",
+        "collection": "tcga_paad_mutation_curated_broad_gene_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "DNA methylation (Methylation450k)",
+        "collection": "tcga_paad_hmethyl450_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "copy number (delete germline cnv)",
+        "collection": "tcga_paad_gsnp6nocnv_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "gene expression RNAseq (polyA+ IlluminaHiSeq)",
+        "collection": "tcga_paad_exp_hiseqv2_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "somatic gene-level non-silent mutation (bcgsc automated)",
+        "collection": "tcga_paad_mutation_bcgsc_gene_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "copy number",
+        "collection": "tcga_paad_gsnp6raw_ucsc-xena"
       }
     ],
     "calculated": [
@@ -6291,7 +6641,6 @@
     "name": "Prostate",
     "img": "DSprostate.png",
     "tools": [
-      "timelines",
       "history",
       "pca",
       "markers",
@@ -7313,6 +7662,96 @@
         "source": "ucsc xena",
         "type": "gene expression RNAseq (ployA+ IlluminaHiSeq pancan normalized)",
         "collection": "tcga_stad_exp_hiseqv2_pancan_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "copy number (delete germline cnv)",
+        "collection": "tcga_stad_gsnp6nocnv_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "copy number segments (delete germline cnv)",
+        "collection": "tcga_stad_gsnp6nocnv_gseg_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "gene expression RNAseq (polyA+ IlluminaHiSeq UNC)",
+        "collection": "tcga_stad_exp_hiseqv2_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "somatic mutation SNPs and small INDELs (ucsc automated)",
+        "collection": "tcga_stad_mutation_ucsc_maf_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "copy number (gistic2_thresholded)",
+        "collection": "tcga_stad_gistic2thd_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "copy number segments",
+        "collection": "tcga_stad_gsnp6raw_gseg_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "somatic gene-level non-silent mutation (pancan awg)",
+        "collection": "tcga_stad_mutation_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "somatic gene-level non-silent mutation (bcgsc automated)",
+        "collection": "tcga_stad_mutation_bcgsc_gene_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "somatic mutation SNPs and small INDELs (bcgsc automated)",
+        "collection": "tcga_stad_mutation_bcgsc_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "somatic gene-level non-silent mutation (ucsc automated)",
+        "collection": "tcga_stad_mutation_ucsc_maf_gene_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "somatic mutation SNPs and small INDELs (broad automated)",
+        "collection": "tcga_stad_mutation_broad_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "DNA methylation (Methylation27k)",
+        "collection": "tcga_stad_hmethyl27_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "gene expression RNAseq (polyA+ IlluminaHiSeq percentile UNC)",
+        "collection": "tcga_stad_exp_hiseqv2_percentile_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "miRNA isoform expression (IlluminaHiseq)",
+        "collection": "tcga_stad_mirna_hiseq_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "copy number",
+        "collection": "tcga_stad_gsnp6raw_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "Phenotypes",
+        "collection": "stad_clinicalmatrix_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "somatic mutation SNPs and small INDELs (bcm automated)",
+        "collection": "tcga_stad_mutation_bcm_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "DNA methylation (Methylation450k)",
+        "collection": "tcga_stad_hmethyl450_ucsc-xena"
       }
     ],
     "calculated": [
@@ -7593,6 +8032,111 @@
         "source": "ucsc",
         "type": "mut01",
         "collection": "thca_mut01_ucsc_broad"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "protein expression RPPA",
+        "collection": "tcga_thca_rppa_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "copy number (gistic2)",
+        "collection": "tcga_thca_gistic2_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "exon expression RNAseq (polyA+ IlluminaHiSeq)",
+        "collection": "tcga_thca_exp_hiseqv2_exon_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "somatic gene-level non-silent mutation (broad automated)",
+        "collection": "tcga_thca_mutation_broad_gene_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "somatic gene-level non-silent mutation (bcm automated)",
+        "collection": "tcga_thca_mutation_bcm_gene_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "gene expression RNAseq (ployA+ IlluminaHiSeq pancan normalized)",
+        "collection": "tcga_thca_exp_hiseqv2_pancan_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "DNA methylation (Methylation450k)",
+        "collection": "tcga_thca_hmethyl450_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "copy number (delete germline cnv)",
+        "collection": "tcga_thca_gsnp6nocnv_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "copy number segments (delete germline cnv)",
+        "collection": "tcga_thca_gsnp6nocnv_gseg_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "gene expression RNAseq (polyA+ IlluminaHiSeq)",
+        "collection": "tcga_thca_exp_hiseqv2_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "Phenotypes",
+        "collection": "thca_clinicalmatrix_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "copy number (gistic2_thresholded)",
+        "collection": "tcga_thca_gistic2thd_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "copy number segments",
+        "collection": "tcga_thca_gsnp6raw_gseg_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "somatic gene-level non-silent mutation (pancan awg)",
+        "collection": "tcga_thca_mutation_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "somatic gene-level non-silent mutation (bcgsc automated)",
+        "collection": "tcga_thca_mutation_bcgsc_gene_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "somatic mutation SNPs and small INDELs (bcgsc automated)",
+        "collection": "tcga_thca_mutation_bcgsc_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "somatic mutation SNPs and small INDELs (broad automated)",
+        "collection": "tcga_thca_mutation_broad_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "gene expression RNAseq (polyA+ IlluminaHiSeq percentile)",
+        "collection": "tcga_thca_exp_hiseqv2_percentile_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "miRNA isoform expression (IlluminaHiseq)",
+        "collection": "tcga_thca_mirna_hiseq_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "copy number",
+        "collection": "tcga_thca_gsnp6raw_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "somatic mutation SNPs and small INDELs (bcm automated)",
+        "collection": "tcga_thca_mutation_bcm_ucsc-xena"
       }
     ],
     "calculated": [
@@ -7840,6 +8384,106 @@
         "source": "ucsc",
         "type": "mut01",
         "collection": "ucec_mut01_ucsc_pancanaws"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "protein expression RPPA",
+        "collection": "tcga_ucec_rppa_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "copy number (gistic2_thresholded)",
+        "collection": "tcga_ucec_gistic2thd_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "copy number (gistic2)",
+        "collection": "tcga_ucec_gistic2_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "DNA methylation (Methylation27k)",
+        "collection": "tcga_ucec_hmethyl27_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "miRNA isoform expression (IlluminaGA)",
+        "collection": "tcga_ucec_mirna_ga_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "somatic gene-level non-silent mutation (pancan awg)",
+        "collection": "tcga_ucec_mutation_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "gene expression RNAseq (polyA+ IlluminaHiSeq percentile)",
+        "collection": "tcga_ucec_exp_hiseqv2_percentile_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "exon expression RNAseq (polyA+ IlluminaHiSeq)",
+        "collection": "tcga_ucec_exp_hiseqv2_exon_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "somatic gene-level non-silent mutation (broad)",
+        "collection": "tcga_ucec_mutation_broad_gene_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "protein expression RPPA (RBN)",
+        "collection": "tcga_ucec_rppa_rbn_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "exon expression RNAseq (polyA+ IlluminaGA)",
+        "collection": "tcga_ucec_exp_gav2_exon_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "gene expression RNAseq (ployA+ IlluminaHiSeq pancan normalized)",
+        "collection": "tcga_ucec_exp_hiseqv2_pancan_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "DNA methylation (Methylation450k)",
+        "collection": "tcga_ucec_hmethyl450_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "gene expression RNAseq (polyA+ IlluminaHiSeq)",
+        "collection": "tcga_ucec_exp_hiseqv2_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "copy number (delete germline cnv)",
+        "collection": "tcga_ucec_gsnp6nocnv_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "gene expression (AgilentG4502A_07_3)",
+        "collection": "tcga_ucec_g4502a_07_3_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "somatic gene-level non-silent mutation (wustl)",
+        "collection": "tcga_ucec_mutation_wustl_gene_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "gene expression RNAseq (polyA+ IlluminaGA)",
+        "collection": "tcga_ucec_exp_gav2_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "miRNA isoform expression (IlluminaHiseq)",
+        "collection": "tcga_ucec_mirna_hiseq_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "copy number",
+        "collection": "tcga_ucec_gsnp6raw_ucsc-xena"
       }
     ],
     "calculated": [
@@ -9409,6 +10053,121 @@
         "source": "ucsc",
         "type": "mut01",
         "collection": "cesc_mut01_ucsc_ucsc"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "protein expression RPPA",
+        "collection": "tcga_cesc_rppa_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "copy number (gistic2)",
+        "collection": "tcga_cesc_gistic2_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "Phenotypes",
+        "collection": "cesc_clinicalmatrix_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "exon expression RNAseq (polyA+ IlluminaHiSeq)",
+        "collection": "tcga_cesc_exp_hiseqv2_exon_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "somatic gene-level non-silent mutation (broad automated)",
+        "collection": "tcga_cesc_mutation_broad_gene_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "gene expression RNAseq (ployA+ IlluminaHiSeq pancan normalized)",
+        "collection": "tcga_cesc_exp_hiseqv2_pancan_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "somatic gene-level non-silent mutation (wustl curated)",
+        "collection": "tcga_cesc_mutation_curated_wustl_gene_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "DNA methylation (Methylation450k)",
+        "collection": "tcga_cesc_hmethyl450_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "copy number (delete germline cnv)",
+        "collection": "tcga_cesc_gsnp6nocnv_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "copy number segments (delete germline cnv)",
+        "collection": "tcga_cesc_gsnp6nocnv_gseg_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "gene expression RNAseq (polyA+ IlluminaHiSeq)",
+        "collection": "tcga_cesc_exp_hiseqv2_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "somatic mutation SNPs and small INDELs (ucsc automated)",
+        "collection": "tcga_cesc_mutation_ucsc_maf_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "somatic mutation SNPs and small INDELs (wustl curated)",
+        "collection": "tcga_cesc_mutation_curated_wustl_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "copy number (gistic2_thresholded)",
+        "collection": "tcga_cesc_gistic2thd_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "copy number segments",
+        "collection": "tcga_cesc_gsnp6raw_gseg_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "somatic gene-level non-silent mutation (pancan awg)",
+        "collection": "tcga_cesc_mutation_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "somatic gene-level non-silent mutation (bcgsc automated)",
+        "collection": "tcga_cesc_mutation_bcgsc_gene_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "somatic mutation SNPs and small INDELs (bcgsc automated)",
+        "collection": "tcga_cesc_mutation_bcgsc_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "somatic gene-level non-silent mutation (ucsc automated)",
+        "collection": "tcga_cesc_mutation_ucsc_maf_gene_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "somatic mutation SNPs and small INDELs (broad automated)",
+        "collection": "tcga_cesc_mutation_broad_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "gene expression RNAseq (polyA+ IlluminaHiSeq percentile)",
+        "collection": "tcga_cesc_exp_hiseqv2_percentile_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "miRNA isoform expression (IlluminaHiseq)",
+        "collection": "tcga_cesc_mirna_hiseq_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "copy number",
+        "collection": "tcga_cesc_gsnp6raw_ucsc-xena"
       }
     ],
     "calculated": [
@@ -10521,6 +11280,66 @@
         "source": "ucsc",
         "type": "mut01",
         "collection": "dlbc_mut01_ucsc_bcm"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "protein expression RPPA",
+        "collection": "tcga_dlbc_rppa_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "gene expression RNAseq (polyA+ IlluminaHiSeq)",
+        "collection": "tcga_dlbc_exp_hiseqv2_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "miRNA isoform expression (IlluminaHiseq)",
+        "collection": "tcga_dlbc_mirna_hiseq_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "copy number (gistic2)",
+        "collection": "tcga_dlbc_gistic2_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "copy number",
+        "collection": "tcga_dlbc_gsnp6raw_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "somatic gene-level non-silent mutation (bcm automated)",
+        "collection": "tcga_dlbc_mutation_bcm_gene_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "copy number (gistic2_thresholded)",
+        "collection": "tcga_dlbc_gistic2thd_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "gene expression RNAseq (ployA+ IlluminaHiSeq pancan normalized)",
+        "collection": "tcga_dlbc_exp_hiseqv2_pancan_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "gene expression RNAseq (polyA+ IlluminaHiSeq percentile)",
+        "collection": "tcga_dlbc_exp_hiseqv2_percentile_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "copy number (delete germline cnv)",
+        "collection": "tcga_dlbc_gsnp6nocnv_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "exon expression RNAseq (polyA+ IlluminaHiSeq)",
+        "collection": "tcga_dlbc_exp_hiseqv2_exon_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "DNA methylation (Methylation450k)",
+        "collection": "tcga_dlbc_hmethyl450_ucsc-xena"
       }
     ],
     "calculated": [
@@ -11951,6 +12770,126 @@
         "source": "ucsc",
         "type": "rna",
         "collection": "coad_rna_ucsc_hiseq"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "protein expression RPPA",
+        "collection": "tcga_coad_rppa_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "copy number (gistic2)",
+        "collection": "tcga_coad_gistic2_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "miRNA isoform expression (IlluminaGA)",
+        "collection": "tcga_coad_mirna_ga_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "exon expression RNAseq (polyA+ IlluminaHiSeq)",
+        "collection": "tcga_coad_exp_hiseqv2_exon_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "protein expression RPPA (RBN)",
+        "collection": "tcga_coad_rppa_rbn_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "somatic gene-level non-silent mutation (bcm SOLiD)",
+        "collection": "tcga_coad_mutation_bcm_solid_gene_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "somatic gene-level non-silent mutation (bcm)",
+        "collection": "tcga_coad_mutation_bcm_gene_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "exon expression RNAseq (polyA+ IlluminaGA)",
+        "collection": "tcga_coad_exp_gav2_exon_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "somatic mutation SNPs and small INDELs (bcm SOLiD)",
+        "collection": "tcga_coad_mutation_bcm_solid_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "gene expression RNAseq (ployA+ IlluminaHiSeq pancan normalized)",
+        "collection": "tcga_coad_exp_hiseqv2_pancan_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "DNA methylation (Methylation450k)",
+        "collection": "tcga_coad_hmethyl450_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "copy number (delete germline cnv)",
+        "collection": "tcga_coad_gsnp6nocnv_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "copy number segments (delete germline cnv)",
+        "collection": "tcga_coad_gsnp6nocnv_gseg_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "gene expression RNAseq (polyA+ IlluminaHiSeq)",
+        "collection": "tcga_coad_exp_hiseqv2_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "copy number (gistic2_thresholded)",
+        "collection": "tcga_coad_gistic2thd_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "copy number segments",
+        "collection": "tcga_coad_gsnp6raw_gseg_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "Phenotypes",
+        "collection": "coad_clinicalmatrix_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "DNA methylation (Methylation27k)",
+        "collection": "tcga_coad_hmethyl27_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "gene expression RNAseq (polyA+ IlluminaHiSeq percentile)",
+        "collection": "tcga_coad_exp_hiseqv2_percentile_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "gene expression (AgilentG4502A_07_3)",
+        "collection": "tcga_coad_g4502a_07_3_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "miRNA isoform expression (IlluminaHiseq)",
+        "collection": "tcga_coad_mirna_hiseq_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "gene expression RNAseq (polyA+ IlluminaGA)",
+        "collection": "tcga_coad_exp_gav2_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "copy number",
+        "collection": "tcga_coad_gsnp6raw_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "somatic mutation SNPs and small INDELs (bcm)",
+        "collection": "tcga_coad_mutation_bcm_ucsc-xena"
       }
     ],
     "calculated": [
@@ -13064,6 +14003,11 @@
         "source": "ucsc",
         "type": "pcascores",
         "collection": "read_pcascores_ucsc_prcomp-osccchen9genes-rna-hiseq-1e05"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "PCA",
+        "collection": "read_cluster"
       }
     ],
     "category": [
@@ -13815,6 +14759,81 @@
         "source": "ucsc",
         "type": "mut01",
         "collection": "thym_mut01_ucsc_broad"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "protein expression RPPA",
+        "collection": "tcga_thym_rppa_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "copy number (delete germline cnv)",
+        "collection": "tcga_thym_gsnp6nocnv_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "gene expression RNAseq (polyA+ IlluminaHiSeq percentile)",
+        "collection": "tcga_thym_exp_hiseqv2_percentile_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "copy number (gistic2)",
+        "collection": "tcga_thym_gistic2_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "gene expression RNAseq (polyA+ IlluminaHiSeq)",
+        "collection": "tcga_thym_exp_hiseqv2_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "somatic gene-level non-silent mutation (bcm automated)",
+        "collection": "tcga_thym_mutation_bcm_gene_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "somatic gene-level non-silent mutation (bcgsc automated)",
+        "collection": "tcga_thym_mutation_bcgsc_gene_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "copy number (gistic2_thresholded)",
+        "collection": "tcga_thym_gistic2thd_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "miRNA isoform expression (IlluminaHiseq)",
+        "collection": "tcga_thym_mirna_hiseq_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "gene expression RNAseq (ployA+ IlluminaHiSeq pancan normalized)",
+        "collection": "tcga_thym_exp_hiseqv2_pancan_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "somatic gene-level non-silent mutation (ucsc automated)",
+        "collection": "tcga_thym_mutation_ucsc_maf_gene_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "exon expression RNAseq (polyA+ IlluminaHiSeq)",
+        "collection": "tcga_thym_exp_hiseqv2_exon_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "somatic gene-level non-silent mutation (broad automated)",
+        "collection": "tcga_thym_mutation_broad_gene_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "DNA methylation (Methylation450k)",
+        "collection": "tcga_thym_hmethyl450_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "copy number",
+        "collection": "tcga_thym_gsnp6raw_ucsc-xena"
       }
     ],
     "clinical": {
@@ -14001,6 +15020,81 @@
         "source": "ucsc",
         "type": "mut01",
         "collection": "tgct_mut01_ucsc_broad"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "protein expression RPPA",
+        "collection": "tcga_tgct_rppa_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "gene expression RNAseq (polyA+ IlluminaHiSeq)",
+        "collection": "tcga_tgct_exp_hiseqv2_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "gene expression RNAseq (polyA+ IlluminaHiSeq percentile)",
+        "collection": "tcga_tgct_exp_hiseqv2_percentile_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "copy number (gistic2)",
+        "collection": "tcga_tgct_gistic2_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "somatic gene-level non-silent mutation (bcm automated)",
+        "collection": "tcga_tgct_mutation_bcm_gene_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "somatic gene-level non-silent mutation (bcgsc automated)",
+        "collection": "tcga_tgct_mutation_bcgsc_gene_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "copy number (gistic2_thresholded)",
+        "collection": "tcga_tgct_gistic2thd_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "gene expression RNAseq (ployA+ IlluminaHiSeq pancan normalized)",
+        "collection": "tcga_tgct_exp_hiseqv2_pancan_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "miRNA isoform expression (IlluminaHiseq)",
+        "collection": "tcga_tgct_mirna_hiseq_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "somatic gene-level non-silent mutation (ucsc automated)",
+        "collection": "tcga_tgct_mutation_ucsc_maf_gene_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "exon expression RNAseq (polyA+ IlluminaHiSeq)",
+        "collection": "tcga_tgct_exp_hiseqv2_exon_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "somatic gene-level non-silent mutation (broad automated)",
+        "collection": "tcga_tgct_mutation_broad_gene_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "DNA methylation (Methylation450k)",
+        "collection": "tcga_tgct_hmethyl450_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "copy number (delete germline cnv)",
+        "collection": "tcga_tgct_gsnp6nocnv_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "copy number",
+        "collection": "tcga_tgct_gsnp6raw_ucsc-xena"
       }
     ],
     "clinical": {
@@ -14187,6 +15281,81 @@
         "source": "ucsc",
         "type": "mut01",
         "collection": "pcpg_mut01_ucsc_broad"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "gene expression RNAseq (polyA+ IlluminaHiSeq percentile)",
+        "collection": "tcga_pcpg_exp_hiseqv2_percentile_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "copy number (gistic2_thresholded)",
+        "collection": "tcga_pcpg_gistic2thd_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "copy number (gistic2)",
+        "collection": "tcga_pcpg_gistic2_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "somatic gene-level non-silent mutation (bcm automated)",
+        "collection": "tcga_pcpg_mutation_bcm_gene_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "protein expression RPPA",
+        "collection": "tcga_pcpg_rppa_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "miRNA isoform expression (IlluminaHiseq)",
+        "collection": "tcga_pcpg_mirna_hiseq_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "gene expression RNAseq (ployA+ IlluminaHiSeq pancan normalized)",
+        "collection": "tcga_pcpg_exp_hiseqv2_pancan_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "somatic gene-level non-silent mutation (bcgsc automated)",
+        "collection": "tcga_pcpg_mutation_bcgsc_gene_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "exon expression RNAseq (polyA+ IlluminaHiSeq)",
+        "collection": "tcga_pcpg_exp_hiseqv2_exon_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "somatic gene-level non-silent mutation (broad automated)",
+        "collection": "tcga_pcpg_mutation_broad_gene_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "DNA methylation (Methylation450k)",
+        "collection": "tcga_pcpg_hmethyl450_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "copy number (delete germline cnv)",
+        "collection": "tcga_pcpg_gsnp6nocnv_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "gene expression RNAseq (polyA+ IlluminaHiSeq)",
+        "collection": "tcga_pcpg_exp_hiseqv2_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "somatic gene-level non-silent mutation (ucsc automated)",
+        "collection": "tcga_pcpg_mutation_ucsc_maf_gene_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "copy number",
+        "collection": "tcga_pcpg_gsnp6raw_ucsc-xena"
       }
     ],
     "clinical": {
@@ -14373,6 +15542,121 @@
         "source": "ucsc",
         "type": "mut01",
         "collection": "ov_mut01_ucsc_pancanaws"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "protein expression RPPA",
+        "collection": "tcga_ov_rppa_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "gene expression RNAseq (polyA+ IlluminaHiSeq UNC)",
+        "collection": "tcga_ov_exp_hiseqv2_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "gene expression (AgilentG4502A_07_3)",
+        "collection": "tcga_ov_g4502a_07_3_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "gene expression RNAseq (ployA+ IlluminaHiSeq pancan normalized)",
+        "collection": "tcga_ov_exp_hiseqv2_pancan_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "copy number (gistic2)",
+        "collection": "tcga_ov_gistic2_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "somatic gene-level non-silent mutation (bcm SOLiD)",
+        "collection": "tcga_ov_mutation_bcm_solid_gene_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "somatic gene-level non-silent mutation (broad)",
+        "collection": "tcga_ov_mutation_broad_gene_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "protein expression RPPA (RBN)",
+        "collection": "tcga_ov_rppa_rbn_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "somatic gene-level non-silent mutation (pancan awg)",
+        "collection": "tcga_ov_mutation_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "gene expression RNAseq (polyA+ IlluminaHiseq BC)",
+        "collection": "tcga_ov_exp_hiseq_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "gene expression (AffyU133a)",
+        "collection": "tcga_ov_exp_u133a_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "somatic gene-level non-silent mutation (wustl)",
+        "collection": "tcga_ov_mutation_wustl_gene_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "DNA methylation (Methylation27k)",
+        "collection": "tcga_ov_hmethyl27_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "miRNA isoform expression (IlluminaHiseq)",
+        "collection": "tcga_ov_mirna_hiseq_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "exon expression RNAseq (polyA+ IlluminaHiSeq UNC)",
+        "collection": "tcga_ov_exp_hiseqv2_exon_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "somatic gene-level non-silent mutation (bcm SOLiD curated)",
+        "collection": "tcga_ov_mutation_curated_bcm_solid_gene_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "copy number",
+        "collection": "tcga_ov_gsnp6raw_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "DNA methylation (Methylation450k)",
+        "collection": "tcga_ov_hmethyl450_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "copy number (delete germline cnv)",
+        "collection": "tcga_ov_gsnp6nocnv_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "copy number (gistic2_thresholded)",
+        "collection": "tcga_ov_gistic2thd_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "gene expression RNAseq (polyA+ IlluminaHiSeq percentile UNC)",
+        "collection": "tcga_ov_exp_hiseqv2_percentile_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "gene expression (AgilentG4502A_07_2)",
+        "collection": "tcga_ov_g4502a_07_2_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "exon expression RNAseq (IlluminaHiseq BC)",
+        "collection": "tcga_ov_exp_hiseq_exon_ucsc-xena"
       }
     ],
     "clinical": {
@@ -14691,6 +15975,11 @@
         "source": "ucsc",
         "type": "pcascores",
         "collection": "meso_pcascores_ucsc_prcomp-allgenes-protein-1e05"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "PCA",
+        "collection": "meso_cluster"
       }
     ],
     "category": [
@@ -14782,6 +16071,16 @@
         "source": "ucsc xena",
         "type": "somatic gene-level non-silent mutation (pancan awg)",
         "collection": "tcga_gbmlgg_mutation_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "somatic gene-level non-silent mutation (pancan awg)",
+        "collection": "tcga_brain_mutation_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "somatic gene-level non-silent mutation (ucsc automated)",
+        "collection": "tcga_brain_mutation_ucsc_maf_gene_ucsc-xena"
       }
     ],
     "calculated": [
@@ -15156,6 +16455,79 @@
         "type": "somatic mutation SNPs and small INDELs (bcm)",
         "collection": "tcga_pancan_mutation_bcm_ucsc-xena"
       }
+    ],
+    "calculated": [
+      {
+        "source": "ucsc xena",
+        "type": "PCA",
+        "collection": "pancan_cluster"
+      }
+    ]
+  },
+  {
+    "_id": "587401879f14782a98515c63",
+    "disease": "pancan12",
+    "molecular": [
+      {
+        "source": "ucsc xena",
+        "type": "PANCAN AWG protein expression RPPA (RBN)",
+        "collection": "tcga_pancan12_rppa_rbn_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "PANCAN AWG DNA (un)methylated state",
+        "collection": "tcga_pancan12_hmethyl_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "PANCAN AWG gene expression",
+        "collection": "tcga_pancan12_exp_hiseqv2_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "PANCAN AWG significant region of CNV",
+        "collection": "tcga_pancan12_segactual_copynumber_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "somatic gene-level non-silent mutation (pancan awg 12 cohorts)",
+        "collection": "tcga_pancan12_mutation_ucsc-xena"
+      },
+      {
+        "source": "ucsc xena",
+        "type": "PANCAN AWG gene-level copy number",
+        "collection": "tcga_pancan12_copynumber_ucsc-xena"
+      }
+    ]
+  },
+  {
+    "_id": "58742f3c61f0f901c1604a30",
+    "dataset": [
+      "brain"
+    ],
+    "collection": [
+      "tcga_brain_gistic2thd_ucsc-xena"
+    ],
+    "source": [
+      "ucsc xena"
+    ],
+    "dataType": [
+      "copy number (gistic2_thresholded)"
+    ]
+  },
+  {
+    "_id": "58744fe861f0f901c160e419",
+    "dataset": [
+      "brain"
+    ],
+    "collection": [
+      "tcga_brain_mutation_curated_broad_gene_ucsc-xena"
+    ],
+    "source": [
+      "ucsc xena"
+    ],
+    "dataType": [
+      "somatic gene-level non-silent mutation (broad curated)"
     ]
   }
 ]

@@ -514,5 +514,109 @@
     "tools": [
       "pca"
     ]
+  },
+  {
+    "_id": "587523759f14782a98515c6a",
+    "dataType": "genesets",
+    "name": "genesets",
+    "schema": "",
+    "class": "geneset",
+    "tools": {}
+  },
+  {
+    "_id": "587527b39f14782a98515c6b",
+    "dataType": "samplemap",
+    "name": "sample patient mapping",
+    "schema": "id_id",
+    "class": "map",
+    "tools": {}
+  },
+  {
+    "_id": "58793a7d9f14782a98515c6c",
+    "dataType": "gene expression RNAseq (polyA+ IlluminaHiSeq UNC)",
+    "name": "gene expression RNAseq (polyA+ IlluminaHiSeq UNC)",
+    "schema": "hugo_sample",
+    "class": "expr",
+    "tools": {}
+  },
+  {
+    "_id": "58793a8a9f14782a98515c6d",
+    "dataType": "gene expression RNAseq (polyA+ IlluminaHiSeq percentile UNC)",
+    "name": "gene expression RNAseq (polyA+ IlluminaHiSeq percentile UNC)",
+    "schema": "hugo_sample",
+    "class": "expr",
+    "tools": {}
+  },
+  {
+    "_id": "58793a959f14782a98515c6e",
+    "dataType": "exon expression RNAseq (polyA+ IlluminaHiseq)",
+    "name": "exon expression RNAseq (polyA+ IlluminaHiseq)",
+    "schema": "chr_sample",
+    "class": "expr",
+    "tools": {}
+  },
+  {
+    "_id": "58793aa19f14782a98515c6f",
+    "dataType": "PANCAN AWG protein expression RPPA (RBN)",
+    "name": "PANCAN AWG protein expression RPPA (RBN)",
+    "schema": "hugo_sample",
+    "class": "expr",
+    "tools": {}
+  },
+  {
+    "_id": "58793aaa9f14782a98515c70",
+    "dataType": "PANCAN AWG DNA (un)methylated state",
+    "name": "PANCAN AWG DNA (un)methylated state",
+    "schema": "probe_sample",
+    "class": "meth_thd",
+    "tools": {}
+  },
+  {
+    "_id": "58793ab29f14782a98515c71",
+    "dataType": "PANCAN AWG gene expression",
+    "name": "PANCAN AWG gene expression",
+    "schema": "hugo_sample",
+    "class": "expr",
+    "tools": {}
+  },
+  {
+    "_id": "58793abc9f14782a98515c72",
+    "dataType": "PANCAN AWG significant region of CNV",
+    "name": "PANCAN AWG significant region of CNV",
+    "schema": "chr_sample",
+    "class": "cnv",
+    "tools": {}
+  },
+  {
+    "_id": "58793ac69f14782a98515c73",
+    "dataType": "gene expression RNAseq (polyA+ IlluminaHiseq)",
+    "name": "gene expression RNAseq (polyA+ IlluminaHiseq)",
+    "schema": "hugo_sample",
+    "class": "expr",
+    "tools": {}
+  },
+  {
+    "_id": "58793acf9f14782a98515c74",
+    "dataType": "somatic gene-level non-silent mutation (pancan awg 12 cohorts)",
+    "name": "somatic gene-level non-silent mutation (pancan awg 12 cohorts)",
+    "schema": "hugo_sample",
+    "class": "mut01",
+    "tools": {}
+  },
+  {
+    "_id": "58793ada9f14782a98515c75",
+    "dataType": "PANCAN AWG gene-level copy number",
+    "name": "PANCAN AWG gene-level copy number",
+    "schema": "hugo_sample",
+    "class": "cnv",
+    "tools": {}
+  },
+  {
+    "_id": "58793aef9f14782a98515c76",
+    "dataType": "somatic gene-level non-silent mutation (bcm SOLiD curated)",
+    "name": "somatic gene-level non-silent mutation (bcm SOLiD curated)",
+    "schema": "hugo_sample",
+    "class": "mut01",
+    "tools": {}
   }
 ]
