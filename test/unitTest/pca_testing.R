@@ -128,6 +128,6 @@ brca_rppa_pca_osccexpressionmarkers = calculate.pca(t(brca_rppa), genes=lookup_g
 sc = brca_rppa_pca_osccexpressionmarkers
 checkEquals(sc$reason, "WARNING: mtx does not match gene/patient set.")
 
-
+rm(con)
 
  
