@@ -6,27 +6,13 @@
             - calculate the passed percentage at collection level
 */
 const jsonfile = require("jsonfile-promised");
-const helper = require("/Users/zhangj4/Desktop/canaantt_git/oncoscape_api_explorer/test/testingHelper.js");
+const u = require("underscore");
+const helper = require("/usr/local/airflow/docker-airflow/onco-test/testingHelper.js");
 var ajvMsg, ajvMsg_v2;
-jsonfile.readFile("ajv_tcga_11212016.json").then(function(obj){
-    ajvMsg = obj;
-}).then(function(){
-    ajvMsg_v2 = ajvMsg.map(function(a){
-        var elem = {};
-        if(a!=null){
-            elem.collection = a.collection;
-            elem.type = a.type;
-            elem.disease = a.disease;
-            elem.passedCounts = a.passedCounts;
-            elem.totalCounts = a.totalCounts;
-            elem.passedRate = a.passedCounts/a.totalCounts;
-            elem.errorMessage = helper.nestedUniqueCount(a);
-        }
-        
-        //elem.errorMessage = a.errors.tableV2(a.nestedUnique());
-        return elem;
-    });
-}).then(function(){
-    jsonfile.writeFile('ajv_test2.json', ajvMsg_v2, {spaces:4});
-});
-
+var ajvMsg_1 = require("/usr/local/airflow/docker-airflow/onco-test/dataStr/ajv_test2_pi1.json");
+var ajvMsg_2 = require("/usr/local/airflow/docker-airflow/onco-test/dataStr/ajv_test2_pi2.json");
+var ajvMsg_3 = require("/usr/local/airflow/docker-airflow/onco-test/dataStr/ajv_test2_pi3.json");
+var ajvMsg_4 = require("/usr/local/airflow/docker-airflow/onco-test/dataStr/ajv_test2_pi4.json");
+var ajvMsg_5 = require("/usr/local/airflow/docker-airflow/onco-test/dataStr/ajv_test2_pi5.json");
+ajvMsg_v2 = ajvMsg_1.concat(ajvMsg_2, ajvMsg_3, ajvMsg_4, ajvMsg_5);
+jsonfile.writeFile("/usr/local/airflow/docker-airflow/onco-test/dataStr/ajv_test2.json", ajvMsg_v2, {spaces:4}, function(err){ console.error(err);});

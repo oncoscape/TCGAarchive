@@ -310,9 +310,9 @@ co(function *() {
   helper.format.h3("Compare render_patient against the existing collections: ");
   helper.format.codeStart();
   helper.format.text(rendering_pt_potential_collections.arraysCompare(existing_mds));
-  helper.format.codeComment("In render_patient, there are documents with 'cluster' as type, yet 'pca-' as name prefix.");
-  helper.format.text(render_patient_weird_ex);
-  helper.format.codeStop();
+  // helper.format.codeComment("In render_patient, there are documents with 'cluster' as type, yet 'pca-' as name prefix.");
+  // helper.format.text(render_patient_weird_ex);
+  // helper.format.codeStop();
 
   //report the size of the molecular collections with the count lower than 1000
   helper.format.h1("Part III: Molecular collections size lower than 1000");
@@ -464,22 +464,22 @@ co(function *() {
   gene_status.filter(function(m){return m.type!="methylation" && m.type!="psi"}).splice(0, 5).forEach(function(s){helper.format.text(s);});
   helper.format.codeStop();
   
-  helper.format.h1("Part X: Min/Max Values Checking in Molecular Collections: ");
-  var errorMinMaxColls = molecularMinMaxChecking.map(function(m){return m.collection;}).unique();
-  var mutColls = errorMinMaxColls.containPartialString(/_mut_/);
-  var shorterMolMinMaxErrors = molecularMinMaxChecking.filter(function(m){return !mutColls.contains(m.collection);})
-  var usedColls = shorterMolMinMaxErrors.map(function(m){return m.collection;}).unique();
-  var errorReported = usedColls.map(function(m){
-    var elem = {};
-    elem.collection = m;
-    var collectionErrors = shorterMolMinMaxErrors.filter(function(n){return n.collection == m;});
-    elem.rangeErrorLength = collectionErrors.length;
-    elem.errorExamples = collectionErrors.splice(0, 5);
-    return elem;
-  });
-  helper.format.codeStart();
-  errorReported.forEach(function(s){helper.format.text(s);});
-  helper.format.codeStop();
+  // helper.format.h1("Part X: Min/Max Values Checking in Molecular Collections: ");
+  // var errorMinMaxColls = molecularMinMaxChecking.map(function(m){return m.collection;}).unique();
+  // var mutColls = errorMinMaxColls.containPartialString(/_mut_/);
+  // var shorterMolMinMaxErrors = molecularMinMaxChecking.filter(function(m){return !mutColls.contains(m.collection);})
+  // var usedColls = shorterMolMinMaxErrors.map(function(m){return m.collection;}).unique();
+  // var errorReported = usedColls.map(function(m){
+  //   var elem = {};
+  //   elem.collection = m;
+  //   var collectionErrors = shorterMolMinMaxErrors.filter(function(n){return n.collection == m;});
+  //   elem.rangeErrorLength = collectionErrors.length;
+  //   elem.errorExamples = collectionErrors.splice(0, 5);
+  //   return elem;
+  // });
+  // helper.format.codeStart();
+  // errorReported.forEach(function(s){helper.format.text(s);});
+  // helper.format.codeStop();
 
   helper.format.h1("Part XI: X axis range checking for render_patient(>4600 listed below):");
   helper.format.codeStart();

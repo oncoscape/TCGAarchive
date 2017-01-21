@@ -3,1626 +3,2439 @@
         "edges": "brca_edges_ucsc_tcgagbmclassifiers-mut01-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 370759,
+        "mutAltNum": 3235,
+        "geneLen": 775
     },
     {
         "edges": "brca_edges_ucsc_markergenes545-mut01-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 260041,
+        "mutAltNum": 4012,
+        "geneLen": 537
     },
     {
         "edges": "brca_edges_ucsc_tcgapancanmutated-mut01-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 28141,
+        "mutAltNum": 1487,
+        "geneLen": 62
     },
     {
         "edges": "brca_edges_ucsc_oncovogel274-mut01-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 129815,
+        "mutAltNum": 2709,
+        "geneLen": 273
     },
     {
         "edges": "brca_edges_ucsc_oncoplex-mut01-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 124578,
+        "mutAltNum": 2460,
+        "geneLen": 259
     },
     {
         "edges": "brca_edges_ucsc_osccchen131probes-mut01-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 49914,
+        "mutAltNum": 463,
+        "geneLen": 100
     },
     {
         "edges": "brca_edges_ucsc_osccchen9genes-mut01-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 4341,
+        "mutAltNum": 344,
+        "geneLen": 8
     },
     {
         "edges": "esca_edges_ucsc_tcgagbmclassifiers-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 78380,
+        "mutAltNum": 0,
+        "geneLen": 769
     },
     {
         "edges": "esca_edges_ucsc_markergenes545-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 55932,
+        "mutAltNum": 0,
+        "geneLen": 535
     },
     {
         "edges": "esca_edges_ucsc_tcgapancanmutated-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 6305,
+        "mutAltNum": 0,
+        "geneLen": 59
     },
     {
         "edges": "esca_edges_ucsc_oncovogel274-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 27708,
+        "mutAltNum": 0,
+        "geneLen": 268
     },
     {
         "edges": "esca_edges_ucsc_oncoplex-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 26823,
+        "mutAltNum": 0,
+        "geneLen": 257
     },
     {
         "edges": "esca_edges_ucsc_osccchen131probes-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 10233,
+        "mutAltNum": 0,
+        "geneLen": 100
     },
     {
         "edges": "esca_edges_ucsc_osccchen9genes-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 887,
+        "mutAltNum": 0,
+        "geneLen": 8
     },
     {
         "edges": "gbm_edges_broad_tcgagbmclassifiers-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 737,
+        "geneLen": 346
     },
     {
         "edges": "gbm_edges_broad_markergenes545-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 1335,
+        "geneLen": 305
     },
     {
         "edges": "gbm_edges_broad_tcgapancanmutated-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 441,
+        "geneLen": 38
     },
     {
         "edges": "gbm_edges_broad_oncovogel274-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 753,
+        "geneLen": 172
     },
     {
         "edges": "gbm_edges_broad_oncoplex-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 741,
+        "geneLen": 165
     },
     {
         "edges": "gbm_edges_broad_osccchen131probes-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 157,
+        "geneLen": 58
     },
     {
         "edges": "gbm_edges_broad_osccchen9genes-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 87,
+        "geneLen": 5
     },
     {
         "edges": "gbm_edges_ucsc_tcgagbmclassifiers-mut01-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 134574,
+        "mutAltNum": 825,
+        "geneLen": 778
     },
     {
         "edges": "gbm_edges_ucsc_markergenes545-mut01-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 108531,
+        "mutAltNum": 1507,
+        "geneLen": 538
     },
     {
         "edges": "gbm_edges_ucsc_tcgapancanmutated-mut01-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 10116,
+        "mutAltNum": 524,
+        "geneLen": 61
     },
     {
         "edges": "gbm_edges_ucsc_oncovogel274-mut01-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 47877,
+        "mutAltNum": 878,
+        "geneLen": 271
     },
     {
         "edges": "gbm_edges_ucsc_oncoplex-mut01-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 47273,
+        "mutAltNum": 841,
+        "geneLen": 257
     },
     {
         "edges": "gbm_edges_ucsc_osccchen131probes-mut01-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 16156,
+        "mutAltNum": 163,
+        "geneLen": 100
     },
     {
         "edges": "gbm_edges_ucsc_osccchen9genes-mut01-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 1711,
+        "mutAltNum": 93,
+        "geneLen": 8
     },
     {
         "edges": "hnsc_edges_broad_tcgagbmclassifiers-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 3850,
+        "geneLen": 671
     },
     {
         "edges": "hnsc_edges_broad_markergenes545-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 4371,
+        "geneLen": 463
     },
     {
         "edges": "hnsc_edges_broad_tcgapancanmutated-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 1209,
+        "geneLen": 57
     },
     {
         "edges": "hnsc_edges_broad_oncovogel274-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 2500,
+        "geneLen": 256
     },
     {
         "edges": "hnsc_edges_broad_oncoplex-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 2347,
+        "geneLen": 245
     },
     {
         "edges": "hnsc_edges_broad_osccchen131probes-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 609,
+        "geneLen": 95
     },
     {
         "edges": "hnsc_edges_broad_osccchen9genes-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 584,
+        "geneLen": 8
     },
     {
         "edges": "hnsc_edges_ucsc_tcgagbmclassifiers-mut01-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 160787,
+        "mutAltNum": 4118,
+        "geneLen": 771
     },
     {
         "edges": "hnsc_edges_ucsc_markergenes545-mut01-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 115659,
+        "mutAltNum": 5078,
+        "geneLen": 537
     },
     {
         "edges": "hnsc_edges_ucsc_tcgapancanmutated-mut01-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 13445,
+        "mutAltNum": 1318,
+        "geneLen": 60
     },
     {
         "edges": "hnsc_edges_ucsc_oncovogel274-mut01-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 56758,
+        "mutAltNum": 2681,
+        "geneLen": 270
     },
     {
         "edges": "hnsc_edges_ucsc_oncoplex-mut01-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 55257,
+        "mutAltNum": 2507,
+        "geneLen": 259
     },
     {
         "edges": "hnsc_edges_ucsc_osccchen131probes-mut01-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 20904,
+        "mutAltNum": 626,
+        "geneLen": 100
     },
     {
         "edges": "hnsc_edges_ucsc_osccchen9genes-mut01-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 1798,
+        "mutAltNum": 616,
+        "geneLen": 8
     },
     {
         "edges": "kich_edges_broad_tcgagbmclassifiers-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 219,
+        "geneLen": 175
     },
     {
         "edges": "kich_edges_broad_markergenes545-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 244,
+        "geneLen": 129
     },
     {
         "edges": "kich_edges_broad_tcgapancanmutated-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 55,
+        "geneLen": 19
     },
     {
         "edges": "kich_edges_broad_oncovogel274-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 125,
+        "geneLen": 75
     },
     {
         "edges": "kich_edges_broad_oncoplex-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 120,
+        "geneLen": 71
     },
     {
         "edges": "kich_edges_broad_osccchen131probes-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 28,
+        "geneLen": 24
     },
     {
         "edges": "kich_edges_broad_osccchen9genes-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 23,
+        "geneLen": 4
     },
     {
         "edges": "kirc_edges_broad_tcgagbmclassifiers-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 1245,
+        "geneLen": 480
     },
     {
         "edges": "kirc_edges_broad_markergenes545-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 1594,
+        "geneLen": 370
     },
     {
         "edges": "kirc_edges_broad_tcgapancanmutated-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 640,
+        "geneLen": 51
     },
     {
         "edges": "kirc_edges_broad_oncovogel274-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 1116,
+        "geneLen": 200
     },
     {
         "edges": "kirc_edges_broad_oncoplex-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 1052,
+        "geneLen": 190
     },
     {
         "edges": "kirc_edges_broad_osccchen131probes-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 203,
+        "geneLen": 70
     },
     {
         "edges": "kirc_edges_broad_osccchen9genes-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 30,
+        "geneLen": 7
     },
     {
         "edges": "kirp_edges_broad_tcgagbmclassifiers-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 672,
+        "geneLen": 379
     },
     {
         "edges": "kirp_edges_broad_markergenes545-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 772,
+        "geneLen": 295
     },
     {
         "edges": "kirp_edges_broad_oncovogel274-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 461,
+        "geneLen": 174
     },
     {
         "edges": "kirp_edges_broad_oncoplex-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 431,
+        "geneLen": 166
     },
     {
         "edges": "kirp_edges_broad_osccchen131probes-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 105,
+        "geneLen": 53
     },
     {
         "edges": "kirp_edges_broad_osccchen9genes-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 15,
+        "geneLen": 6
     },
     {
         "edges": "lgg_edges_ucsc_tcgagbmclassifiers-mut01-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 75542,
+        "mutAltNum": 1341,
+        "geneLen": 771
     },
     {
         "edges": "lgg_edges_ucsc_markergenes545-mut01-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 54835,
+        "mutAltNum": 2705,
+        "geneLen": 537
     },
     {
         "edges": "lgg_edges_ucsc_tcgapancanmutated-mut01-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 5570,
+        "mutAltNum": 1283,
+        "geneLen": 60
     },
     {
         "edges": "lgg_edges_ucsc_oncovogel274-mut01-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 25554,
+        "mutAltNum": 1984,
+        "geneLen": 270
     },
     {
         "edges": "lgg_edges_ucsc_oncoplex-mut01-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 25026,
+        "mutAltNum": 1784,
+        "geneLen": 259
     },
     {
         "edges": "lgg_edges_ucsc_osccchen131probes-mut01-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 9452,
+        "mutAltNum": 199,
+        "geneLen": 100
     },
     {
         "edges": "lgg_edges_ucsc_osccchen9genes-mut01-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 686,
+        "mutAltNum": 323,
+        "geneLen": 8
     },
     {
         "edges": "lihc_edges_broad_tcgagbmclassifiers-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 1972,
+        "geneLen": 610
     },
     {
         "edges": "lihc_edges_broad_markergenes545-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 2074,
+        "geneLen": 439
     },
     {
         "edges": "lihc_edges_broad_tcgapancanmutated-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 574,
+        "geneLen": 57
     },
     {
         "edges": "lihc_edges_broad_oncovogel274-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 1226,
+        "geneLen": 236
     },
     {
         "edges": "lihc_edges_broad_oncoplex-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 1131,
+        "geneLen": 224
     },
     {
         "edges": "lihc_edges_broad_osccchen131probes-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 278,
+        "geneLen": 75
     },
     {
         "edges": "lihc_edges_broad_osccchen9genes-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 138,
+        "geneLen": 8
     },
     {
         "edges": "luad_edges_ucsc_tcgagbmclassifiers-mut01-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 203942,
+        "mutAltNum": 7713,
+        "geneLen": 771
     },
     {
         "edges": "luad_edges_ucsc_markergenes545-mut01-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 143957,
+        "mutAltNum": 8282,
+        "geneLen": 537
     },
     {
         "edges": "luad_edges_ucsc_tcgapancanmutated-mut01-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 15055,
+        "mutAltNum": 1542,
+        "geneLen": 60
     },
     {
         "edges": "luad_edges_ucsc_oncovogel274-mut01-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 70869,
+        "mutAltNum": 3925,
+        "geneLen": 270
     },
     {
         "edges": "luad_edges_ucsc_oncoplex-mut01-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 67918,
+        "mutAltNum": 3892,
+        "geneLen": 259
     },
     {
         "edges": "luad_edges_ucsc_osccchen131probes-mut01-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 26294,
+        "mutAltNum": 1192,
+        "geneLen": 100
     },
     {
         "edges": "luad_edges_ucsc_osccchen9genes-mut01-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 2332,
+        "mutAltNum": 433,
+        "geneLen": 8
     },
     {
         "edges": "lusc_edges_broad_tcgagbmclassifiers-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 2296,
+        "geneLen": 584
     },
     {
         "edges": "lusc_edges_broad_markergenes545-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 2456,
+        "geneLen": 424
     },
     {
         "edges": "lusc_edges_broad_tcgapancanmutated-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 509,
+        "geneLen": 56
     },
     {
         "edges": "lusc_edges_broad_oncovogel274-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 1185,
+        "geneLen": 228
     },
     {
         "edges": "lusc_edges_broad_oncoplex-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 1139,
+        "geneLen": 218
     },
     {
         "edges": "lusc_edges_broad_osccchen131probes-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 370,
+        "geneLen": 77
     },
     {
         "edges": "lusc_edges_broad_osccchen9genes-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 198,
+        "geneLen": 8
     },
     {
         "edges": "lusc_edges_ucsc_tcgagbmclassifiers-mut01-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 228261,
+        "mutAltNum": 2634,
+        "geneLen": 785
     },
     {
         "edges": "lusc_edges_ucsc_markergenes545-mut01-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 161495,
+        "mutAltNum": 2743,
+        "geneLen": 540
     },
     {
         "edges": "lusc_edges_ucsc_tcgapancanmutated-mut01-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 18324,
+        "mutAltNum": 624,
+        "geneLen": 62
     },
     {
         "edges": "lusc_edges_ucsc_oncovogel274-mut01-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 80894,
+        "mutAltNum": 1429,
+        "geneLen": 274
     },
     {
         "edges": "lusc_edges_ucsc_oncoplex-mut01-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 77790,
+        "mutAltNum": 1299,
+        "geneLen": 260
     },
     {
         "edges": "lusc_edges_ucsc_osccchen131probes-mut01-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 29807,
+        "mutAltNum": 417,
+        "geneLen": 100
     },
     {
         "edges": "lusc_edges_ucsc_osccchen9genes-mut01-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 2495,
+        "mutAltNum": 214,
+        "geneLen": 8
     },
     {
         "edges": "sarc_edges_broad_tcgagbmclassifiers-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 531,
+        "geneLen": 326
     },
     {
         "edges": "sarc_edges_broad_markergenes545-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 706,
+        "geneLen": 241
     },
     {
         "edges": "sarc_edges_broad_tcgapancanmutated-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 206,
+        "geneLen": 34
     },
     {
         "edges": "sarc_edges_broad_oncovogel274-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 405,
+        "geneLen": 145
     },
     {
         "edges": "sarc_edges_broad_oncoplex-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 392,
+        "geneLen": 138
     },
     {
         "edges": "sarc_edges_broad_osccchen131probes-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 90,
+        "geneLen": 42
     },
     {
         "edges": "sarc_edges_broad_osccchen9genes-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 80,
+        "geneLen": 6
     },
     {
         "edges": "sarc_edges_ucsc_tcgagbmclassifiers-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 94015,
+        "mutAltNum": 0,
+        "geneLen": 769
     },
     {
         "edges": "sarc_edges_ucsc_markergenes545-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 66142,
+        "mutAltNum": 0,
+        "geneLen": 535
     },
     {
         "edges": "sarc_edges_ucsc_tcgapancanmutated-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 7397,
+        "mutAltNum": 0,
+        "geneLen": 59
     },
     {
         "edges": "sarc_edges_ucsc_oncovogel274-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 32775,
+        "mutAltNum": 0,
+        "geneLen": 268
     },
     {
         "edges": "sarc_edges_ucsc_oncoplex-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 31601,
+        "mutAltNum": 0,
+        "geneLen": 257
     },
     {
         "edges": "sarc_edges_ucsc_osccchen131probes-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 12077,
+        "mutAltNum": 0,
+        "geneLen": 100
     },
     {
         "edges": "sarc_edges_ucsc_osccchen9genes-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 1036,
+        "mutAltNum": 0,
+        "geneLen": 8
     },
     {
         "edges": "paad_edges_broad_tcgagbmclassifiers-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 1386,
+        "geneLen": 562
     },
     {
         "edges": "paad_edges_broad_markergenes545-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 1574,
+        "geneLen": 376
     },
     {
         "edges": "paad_edges_broad_tcgapancanmutated-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 510,
+        "geneLen": 53
     },
     {
         "edges": "paad_edges_broad_oncovogel274-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 968,
+        "geneLen": 215
     },
     {
         "edges": "paad_edges_broad_oncoplex-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 944,
+        "geneLen": 209
     },
     {
         "edges": "paad_edges_broad_osccchen131probes-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 240,
+        "geneLen": 75
     },
     {
         "edges": "paad_edges_broad_osccchen9genes-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 177,
+        "geneLen": 7
     },
     {
         "edges": "paad_edges_ucsc_tcgagbmclassifiers-mut01-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 39485,
+        "mutAltNum": 1893,
+        "geneLen": 770
     },
     {
         "edges": "paad_edges_ucsc_markergenes545-mut01-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 29204,
+        "mutAltNum": 2059,
+        "geneLen": 537
     },
     {
         "edges": "paad_edges_ucsc_tcgapancanmutated-mut01-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 3068,
+        "mutAltNum": 454,
+        "geneLen": 60
     },
     {
         "edges": "paad_edges_ucsc_oncovogel274-mut01-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 14052,
+        "mutAltNum": 1084,
+        "geneLen": 269
     },
     {
         "edges": "paad_edges_ucsc_oncoplex-mut01-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 13559,
+        "mutAltNum": 1020,
+        "geneLen": 258
     },
     {
         "edges": "paad_edges_ucsc_osccchen131probes-mut01-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 5185,
+        "mutAltNum": 255,
+        "geneLen": 100
     },
     {
         "edges": "paad_edges_ucsc_osccchen9genes-mut01-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 548,
+        "mutAltNum": 143,
+        "geneLen": 8
     },
     {
         "edges": "prad_edges_broad_tcgagbmclassifiers-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 1098,
+        "geneLen": 489
     },
     {
         "edges": "prad_edges_broad_markergenes545-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 1275,
+        "geneLen": 376
     },
     {
         "edges": "prad_edges_broad_tcgapancanmutated-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 338,
+        "geneLen": 49
     },
     {
         "edges": "prad_edges_broad_oncovogel274-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 736,
+        "geneLen": 204
     },
     {
         "edges": "prad_edges_broad_oncoplex-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 717,
+        "geneLen": 198
     },
     {
         "edges": "prad_edges_broad_osccchen131probes-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 177,
+        "geneLen": 63
     },
     {
         "edges": "prad_edges_broad_osccchen9genes-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 63,
+        "geneLen": 6
     },
     {
         "edges": "prad_edges_ucsc_tcgagbmclassifiers-mut01-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 51127,
+        "mutAltNum": 817,
+        "geneLen": 770
     },
     {
         "edges": "prad_edges_ucsc_markergenes545-mut01-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 37387,
+        "mutAltNum": 1215,
+        "geneLen": 536
     },
     {
         "edges": "prad_edges_ucsc_tcgapancanmutated-mut01-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 4355,
+        "mutAltNum": 296,
+        "geneLen": 60
     },
     {
         "edges": "prad_edges_ucsc_oncovogel274-mut01-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 18063,
+        "mutAltNum": 596,
+        "geneLen": 268
     },
     {
         "edges": "prad_edges_ucsc_oncoplex-mut01-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 17765,
+        "mutAltNum": 587,
+        "geneLen": 257
     },
     {
         "edges": "prad_edges_ucsc_osccchen131probes-mut01-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 7101,
+        "mutAltNum": 131,
+        "geneLen": 100
     },
     {
         "edges": "prad_edges_ucsc_osccchen9genes-mut01-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 746,
+        "mutAltNum": 54,
+        "geneLen": 8
     },
     {
         "edges": "skcm_edges_broad_tcgagbmclassifiers-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 6503,
+        "geneLen": 709
     },
     {
         "edges": "skcm_edges_broad_markergenes545-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 6186,
+        "geneLen": 494
     },
     {
         "edges": "skcm_edges_broad_tcgapancanmutated-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 858,
+        "geneLen": 59
     },
     {
         "edges": "skcm_edges_broad_oncovogel274-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 3047,
+        "geneLen": 261
     },
     {
         "edges": "skcm_edges_broad_oncoplex-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 3004,
+        "geneLen": 249
     },
     {
         "edges": "skcm_edges_broad_osccchen131probes-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 1175,
+        "geneLen": 95
     },
     {
         "edges": "skcm_edges_broad_osccchen9genes-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 190,
+        "geneLen": 8
     },
     {
         "edges": "stad_edges_broad_tcgagbmclassifiers-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 6668,
+        "geneLen": 740
     },
     {
         "edges": "stad_edges_broad_markergenes545-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 5940,
+        "geneLen": 495
     },
     {
         "edges": "stad_edges_broad_tcgapancanmutated-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 1209,
+        "geneLen": 60
     },
     {
         "edges": "stad_edges_broad_oncovogel274-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 3409,
+        "geneLen": 264
     },
     {
         "edges": "stad_edges_broad_oncoplex-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 3227,
+        "geneLen": 254
     },
     {
         "edges": "stad_edges_broad_osccchen131probes-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 1032,
+        "geneLen": 95
     },
     {
         "edges": "stad_edges_broad_osccchen9genes-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 262,
+        "geneLen": 8
     },
     {
         "edges": "stad_edges_ucsc_tcgagbmclassifiers-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 5329,
+        "geneLen": 718
     },
     {
         "edges": "stad_edges_ucsc_markergenes545-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 4964,
+        "geneLen": 502
     },
     {
         "edges": "stad_edges_ucsc_tcgapancanmutated-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 1192,
+        "geneLen": 62
     },
     {
         "edges": "stad_edges_ucsc_oncovogel274-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 2955,
+        "geneLen": 263
     },
     {
         "edges": "stad_edges_ucsc_oncoplex-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 2691,
+        "geneLen": 252
     },
     {
         "edges": "stad_edges_ucsc_osccchen131probes-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 787,
+        "geneLen": 91
     },
     {
         "edges": "stad_edges_ucsc_osccchen9genes-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 249,
+        "geneLen": 8
     },
     {
         "edges": "thca_edges_broad_tcgagbmclassifiers-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 407,
+        "geneLen": 266
     },
     {
         "edges": "thca_edges_broad_markergenes545-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 722,
+        "geneLen": 199
     },
     {
         "edges": "thca_edges_broad_tcgapancanmutated-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 404,
+        "geneLen": 37
     },
     {
         "edges": "thca_edges_broad_oncovogel274-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 558,
+        "geneLen": 119
     },
     {
         "edges": "thca_edges_broad_oncoplex-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 549,
+        "geneLen": 117
     },
     {
         "edges": "thca_edges_broad_osccchen131probes-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 58,
+        "geneLen": 35
     },
     {
         "edges": "thca_edges_broad_osccchen9genes-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 8,
+        "geneLen": 5
     },
     {
         "edges": "ucec_edges_broad_tcgagbmclassifiers-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 5150,
+        "geneLen": 728
     },
     {
         "edges": "ucec_edges_broad_markergenes545-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 4600,
+        "geneLen": 487
     },
     {
         "edges": "ucec_edges_broad_tcgapancanmutated-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 1324,
+        "geneLen": 60
     },
     {
         "edges": "ucec_edges_broad_oncovogel274-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 2971,
+        "geneLen": 260
     },
     {
         "edges": "ucec_edges_broad_oncoplex-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 2879,
+        "geneLen": 252
     },
     {
         "edges": "ucec_edges_broad_osccchen131probes-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 756,
+        "geneLen": 96
     },
     {
         "edges": "ucec_edges_broad_osccchen9genes-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 135,
+        "geneLen": 8
     },
     {
         "edges": "acc_edges_broad_tcgagbmclassifiers-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 564,
+        "geneLen": 315
     },
     {
         "edges": "acc_edges_broad_markergenes545-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 517,
+        "geneLen": 233
     },
     {
         "edges": "acc_edges_broad_tcgapancanmutated-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 117,
+        "geneLen": 33
     },
     {
         "edges": "acc_edges_broad_oncovogel274-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 266,
+        "geneLen": 120
     },
     {
         "edges": "acc_edges_broad_oncoplex-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 268,
+        "geneLen": 119
     },
     {
         "edges": "acc_edges_broad_osccchen131probes-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 83,
+        "geneLen": 49
     },
     {
         "edges": "acc_edges_broad_osccchen9genes-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 24,
+        "geneLen": 5
     },
     {
         "edges": "acc_edges_ucsc_tcgagbmclassifiers-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 35770,
+        "mutAltNum": 0,
+        "geneLen": 769
     },
     {
         "edges": "acc_edges_ucsc_markergenes545-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 24178,
+        "mutAltNum": 0,
+        "geneLen": 535
     },
     {
         "edges": "acc_edges_ucsc_tcgapancanmutated-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 2658,
+        "mutAltNum": 0,
+        "geneLen": 59
     },
     {
         "edges": "acc_edges_ucsc_oncovogel274-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 12134,
+        "mutAltNum": 0,
+        "geneLen": 268
     },
     {
         "edges": "acc_edges_ucsc_oncoplex-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 11669,
+        "mutAltNum": 0,
+        "geneLen": 257
     },
     {
         "edges": "acc_edges_ucsc_osccchen131probes-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 4368,
+        "mutAltNum": 0,
+        "geneLen": 100
     },
     {
         "edges": "acc_edges_ucsc_osccchen9genes-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 313,
+        "mutAltNum": 0,
+        "geneLen": 8
     },
     {
         "edges": "blca_edges_broad_tcgagbmclassifiers-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 4675,
+        "geneLen": 717
     },
     {
         "edges": "blca_edges_broad_markergenes545-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 5175,
+        "geneLen": 482
     },
     {
         "edges": "blca_edges_broad_tcgapancanmutated-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 1454,
+        "geneLen": 60
     },
     {
         "edges": "blca_edges_broad_oncovogel274-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 3083,
+        "geneLen": 256
     },
     {
         "edges": "blca_edges_broad_oncoplex-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 2953,
+        "geneLen": 247
     },
     {
         "edges": "blca_edges_broad_osccchen131probes-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 712,
+        "geneLen": 92
     },
     {
         "edges": "blca_edges_broad_osccchen9genes-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 274,
+        "geneLen": 8
     },
     {
         "edges": "blca_edges_ucsc_tcgagbmclassifiers-mut01-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 154806,
+        "mutAltNum": 2971,
+        "geneLen": 771
     },
     {
         "edges": "blca_edges_ucsc_markergenes545-mut01-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 108440,
+        "mutAltNum": 3507,
+        "geneLen": 536
     },
     {
         "edges": "blca_edges_ucsc_tcgapancanmutated-mut01-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 11785,
+        "mutAltNum": 901,
+        "geneLen": 60
     },
     {
         "edges": "blca_edges_ucsc_oncovogel274-mut01-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 53841,
+        "mutAltNum": 1933,
+        "geneLen": 270
     },
     {
         "edges": "blca_edges_ucsc_oncoplex-mut01-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 51609,
+        "mutAltNum": 1835,
+        "geneLen": 259
     },
     {
         "edges": "blca_edges_ucsc_osccchen131probes-mut01-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 20104,
+        "mutAltNum": 457,
+        "geneLen": 100
     },
     {
         "edges": "blca_edges_ucsc_osccchen9genes-mut01-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 1746,
+        "mutAltNum": 166,
+        "geneLen": 8
     },
     {
         "edges": "cesc_edges_broad_tcgagbmclassifiers-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 1419,
+        "geneLen": 543
     },
     {
         "edges": "cesc_edges_broad_markergenes545-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 1394,
+        "geneLen": 381
     },
     {
         "edges": "cesc_edges_broad_tcgapancanmutated-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 335,
+        "geneLen": 55
     },
     {
         "edges": "cesc_edges_broad_oncovogel274-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 791,
+        "geneLen": 213
     },
     {
         "edges": "cesc_edges_broad_oncoplex-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 758,
+        "geneLen": 209
     },
     {
         "edges": "cesc_edges_broad_osccchen131probes-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 163,
+        "geneLen": 64
     },
     {
         "edges": "cesc_edges_broad_osccchen9genes-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 35,
+        "geneLen": 8
     },
     {
         "edges": "cesc_edges_ucsc_tcgagbmclassifiers-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 87920,
+        "mutAltNum": 0,
+        "geneLen": 769
     },
     {
         "edges": "cesc_edges_ucsc_markergenes545-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 60655,
+        "mutAltNum": 0,
+        "geneLen": 535
     },
     {
         "edges": "cesc_edges_ucsc_tcgapancanmutated-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 6781,
+        "mutAltNum": 0,
+        "geneLen": 59
     },
     {
         "edges": "cesc_edges_ucsc_oncovogel274-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 30062,
+        "mutAltNum": 0,
+        "geneLen": 268
     },
     {
         "edges": "cesc_edges_ucsc_oncoplex-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 28859,
+        "mutAltNum": 0,
+        "geneLen": 257
     },
     {
         "edges": "cesc_edges_ucsc_osccchen131probes-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 11106,
+        "mutAltNum": 0,
+        "geneLen": 100
     },
     {
         "edges": "cesc_edges_ucsc_osccchen9genes-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 889,
+        "mutAltNum": 0,
+        "geneLen": 8
     },
     {
         "edges": "chol_edges_ucsc_tcgagbmclassifiers-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 11218,
+        "mutAltNum": 0,
+        "geneLen": 769
     },
     {
         "edges": "chol_edges_broad_tcgagbmclassifiers-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 205,
+        "geneLen": 164
     },
     {
         "edges": "chol_edges_ucsc_markergenes545-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 8048,
+        "mutAltNum": 0,
+        "geneLen": 535
     },
     {
         "edges": "chol_edges_ucsc_tcgapancanmutated-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 935,
+        "mutAltNum": 0,
+        "geneLen": 59
     },
     {
         "edges": "chol_edges_ucsc_oncovogel274-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 4041,
+        "mutAltNum": 0,
+        "geneLen": 268
     },
     {
         "edges": "chol_edges_ucsc_oncoplex-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 3892,
+        "mutAltNum": 0,
+        "geneLen": 257
     },
     {
         "edges": "chol_edges_ucsc_osccchen131probes-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 1458,
+        "mutAltNum": 0,
+        "geneLen": 100
     },
     {
         "edges": "chol_edges_ucsc_osccchen9genes-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 140,
+        "mutAltNum": 0,
+        "geneLen": 8
     },
     {
         "edges": "chol_edges_broad_markergenes545-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 246,
+        "geneLen": 151
     },
     {
         "edges": "chol_edges_broad_tcgapancanmutated-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 82,
+        "geneLen": 38
     },
     {
         "edges": "chol_edges_broad_oncovogel274-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 160,
+        "geneLen": 92
     },
     {
         "edges": "chol_edges_broad_oncoplex-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 152,
+        "geneLen": 88
     },
     {
         "edges": "chol_edges_broad_osccchen131probes-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 25,
+        "geneLen": 17
     },
     {
         "edges": "chol_edges_broad_osccchen9genes-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 11,
+        "geneLen": 5
     },
     {
         "edges": "dlbc_edges_ucsc_tcgagbmclassifiers-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 7793,
+        "mutAltNum": 0,
+        "geneLen": 769
     },
     {
         "edges": "dlbc_edges_broad_tcgagbmclassifiers-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 462,
+        "geneLen": 300
     },
     {
         "edges": "dlbc_edges_ucsc_markergenes545-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 5880,
+        "mutAltNum": 0,
+        "geneLen": 535
     },
     {
         "edges": "dlbc_edges_ucsc_tcgapancanmutated-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 640,
+        "mutAltNum": 0,
+        "geneLen": 59
     },
     {
         "edges": "dlbc_edges_ucsc_oncovogel274-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 2815,
+        "mutAltNum": 0,
+        "geneLen": 268
     },
     {
         "edges": "dlbc_edges_ucsc_oncoplex-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 2712,
+        "mutAltNum": 0,
+        "geneLen": 257
     },
     {
         "edges": "dlbc_edges_ucsc_osccchen131probes-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 1018,
+        "mutAltNum": 0,
+        "geneLen": 100
     },
     {
         "edges": "dlbc_edges_ucsc_osccchen9genes-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 117,
+        "mutAltNum": 0,
+        "geneLen": 8
     },
     {
         "edges": "dlbc_edges_broad_markergenes545-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 485,
+        "geneLen": 230
     },
     {
         "edges": "dlbc_edges_broad_tcgapancanmutated-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 87,
+        "geneLen": 39
     },
     {
         "edges": "dlbc_edges_broad_oncovogel274-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 292,
+        "geneLen": 138
     },
     {
         "edges": "dlbc_edges_broad_oncoplex-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 247,
+        "geneLen": 130
     },
     {
         "edges": "dlbc_edges_broad_osccchen131probes-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 73,
+        "geneLen": 44
     },
     {
         "edges": "dlbc_edges_broad_osccchen9genes-mut01",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 0,
+        "mutAltNum": 11,
+        "geneLen": 5
     },
     {
         "edges": "coadread_edges_ucsc_tcgagbmclassifiers-mut01-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 169472,
+        "mutAltNum": 2814,
+        "geneLen": 776
     },
     {
         "edges": "coadread_edges_ucsc_markergenes545-mut01-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 120578,
+        "mutAltNum": 2812,
+        "geneLen": 537
     },
     {
         "edges": "coadread_edges_ucsc_tcgapancanmutated-mut01-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 13034,
+        "mutAltNum": 881,
+        "geneLen": 62
     },
     {
         "edges": "coadread_edges_ucsc_oncovogel274-mut01-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 59767,
+        "mutAltNum": 1958,
+        "geneLen": 272
     },
     {
         "edges": "coadread_edges_ucsc_oncoplex-mut01-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 58391,
+        "mutAltNum": 1827,
+        "geneLen": 258
     },
     {
         "edges": "coadread_edges_ucsc_osccchen131probes-mut01-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 22576,
+        "mutAltNum": 457,
+        "geneLen": 100
     },
     {
         "edges": "coadread_edges_ucsc_osccchen9genes-mut01-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 1896,
+        "mutAltNum": 154,
+        "geneLen": 8
     },
     {
         "edges": "lung_edges_ucsc_markergenes545-mut01-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 305452,
+        "mutAltNum": 6016,
+        "geneLen": 538
     },
     {
         "edges": "lung_edges_ucsc_tcgapancanmutated-mut01-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 33379,
+        "mutAltNum": 1308,
+        "geneLen": 62
     },
     {
         "edges": "lung_edges_ucsc_oncovogel274-mut01-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 151763,
+        "mutAltNum": 3102,
+        "geneLen": 274
     },
     {
         "edges": "lung_edges_ucsc_oncoplex-mut01-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 145708,
+        "mutAltNum": 2904,
+        "geneLen": 260
     },
     {
         "edges": "lung_edges_ucsc_osccchen131probes-mut01-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 56101,
+        "mutAltNum": 893,
+        "geneLen": 100
     },
     {
         "edges": "lung_edges_ucsc_osccchen9genes-mut01-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 4827,
+        "mutAltNum": 403,
+        "geneLen": 8
     },
     {
         "edges": "laml_edges_ucsc_tcgagbmclassifiers-mut01-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 5420,
+        "mutAltNum": 86,
+        "geneLen": 769
     },
     {
         "edges": "laml_edges_ucsc_markergenes545-mut01-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 3895,
+        "mutAltNum": 403,
+        "geneLen": 535
     },
     {
         "edges": "laml_edges_ucsc_tcgapancanmutated-mut01-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 448,
+        "mutAltNum": 173,
+        "geneLen": 61
     },
     {
         "edges": "laml_edges_ucsc_oncovogel274-mut01-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 1910,
+        "mutAltNum": 398,
+        "geneLen": 270
     },
     {
         "edges": "laml_edges_ucsc_oncoplex-mut01-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 1955,
+        "mutAltNum": 418,
+        "geneLen": 257
     },
     {
         "edges": "laml_edges_ucsc_osccchen131probes-mut01-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 747,
+        "mutAltNum": 8,
+        "geneLen": 100
     },
     {
         "edges": "laml_edges_ucsc_osccchen9genes-mut01-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 58,
+        "mutAltNum": 16,
+        "geneLen": 8
     },
     {
         "edges": "brain_edges_ucsc_tcgagbmclassifiers-mut01-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 210116,
+        "mutAltNum": 2155,
+        "geneLen": 772
     },
     {
         "edges": "brain_edges_ucsc_markergenes545-mut01-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 163366,
+        "mutAltNum": 4211,
+        "geneLen": 538
     },
     {
         "edges": "brain_edges_ucsc_tcgapancanmutated-mut01-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 15686,
+        "mutAltNum": 1807,
+        "geneLen": 62
     },
     {
         "edges": "brain_edges_ucsc_oncovogel274-mut01-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 73431,
+        "mutAltNum": 2862,
+        "geneLen": 273
     },
     {
         "edges": "brain_edges_ucsc_oncoplex-mut01-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 72299,
+        "mutAltNum": 2625,
+        "geneLen": 259
     },
     {
         "edges": "brain_edges_ucsc_osccchen131probes-mut01-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 25608,
+        "mutAltNum": 362,
+        "geneLen": 100
     },
     {
         "edges": "brain_edges_ucsc_osccchen9genes-mut01-cnv",
         "geneWeightsErrors": [],
         "ptWeightsErrors": [],
-        "others": []
+        "others": [],
+        "cnvAltNum": 2397,
+        "mutAltNum": 416,
+        "geneLen": 8
     }
 ]
