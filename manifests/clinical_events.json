@@ -1,4 +1,12 @@
 [	{
+		"dataset": "prad",
+		"process": "clinical",
+		"source": "tcga",
+		"date": "2015-02-24",
+		"type": "events",
+		"directory": "../data/cBio/prad/",
+		"file": "history.RData"
+	},{
 		"dataset": "brain",
 		"process": "clinical",
 		"source": "tcga",

@@ -176,6 +176,9 @@ os.data.load.clinical.events <- function(oCollection, inputFile, ...){
   if(grepl("\\.RData$",inputFile)){
     origList <- get(load(inputFile))
     
+    validEvent <- sapply(origList, function(event){"PatientID" %in% names(event)})
+    origList <- origList[validEvent]
+    
     event.list <- lapply(origList, function(event){
       patientID <- gsub("\\.", "-", event$PatientID);  
       name <- event$Name
@@ -414,7 +417,7 @@ os.data.batch <- function(manifest, ...){
     if("barplot" %in% names(sourceObj)) process$barplot = sourceObj$barplot
     
     oCollection <- create.oCollection(dataset=sourceObj$dataset, dataType=sourceObj$type,
-                                      source=sourceObj$source,processName=sourceObj$process,
+                                      source=sourceObj$source,uniqueKeys=c(),
                                       parent = sourceObj$parent, process = process)
     
     prev.run <- collection.exists(oCollection$collection)
@@ -428,7 +431,7 @@ os.data.batch <- function(manifest, ...){
     return(TRUE);
   }  # process_dataType
   
-  import_commands <- c("os.data.load.molecular", "os.data.load.clinical")
+  import_commands <- c("os.data.load.molecular", "os.data.load.clinical", "os.data.load.clinical.events")
   
   import_worker <- function() {
     bindToEnv(objNames=c(mongo_commands, import_commands, 'datasets'))
@@ -514,20 +517,23 @@ map.sample.ids <- function(samples, source, mapping=list()){
 #----------------------------------------------------------------------------------------------------
 os.batch.map.samples <- function(){
  
-  datasets <- mongo.lookup$find(toJSON(list("clinical.samplemap" = list("$exists" = 0), "disease"=list("$ne"="hg19")), auto_unbox=T))
-  
+  #datasets <- mongo.lookup$find(toJSON(list("clinical.samplemap" = list("$exists" = 0), "disease"=list("$ne"="hg19")), auto_unbox=T))
+  datasets <- mongo.lookup$find(toJSON(list("disease"=list("$ne"="hg19")), auto_unbox=T))
+  dataTypes <- mongo("lookup_dataTypes", db=db, url=host)$distinct("dataType", toJSON(list("schema"="hugo_sample"), auto_unbox=T))
   for(i in 1:nrow(datasets)){
     dataset = datasets[i,]
     ptMap <- list()
     if("molecular" %in% names(dataset)){
       print(paste("mapping sample ids for ", dataset$disease, sep=""))
 
-      for(molColl in dataset$molecular[[1]]$collection){
+      hugo_collections <- subset(dataset$molecular[[1]], type %in% dataTypes)
+      for(molColl in hugo_collections$collection){
         print (molColl)
       	con <- mongo(molColl, db=db, url=host)
-        collection <- con$find()
+      	if(con$count() ==0) next;
+        collection <- con$find(limit=1)
         rm(con)
-        ptMap <- map.sample.ids(names(collection$patients), dataset$source, ptMap)
+        ptMap <- map.sample.ids(names(collection$data), dataset$source, ptMap)
       }
 
       oCollection <- create.oCollection(dataset=dataset$disease, dataType="samplemap", source=dataset$source, uniqueKeys=c(),parent=NA, process=list(type="import"))
@@ -605,6 +611,7 @@ commands <- c("clinical", "scale", "lookup", "sample")
 ## -- brain categorical data retained here simply for full provenance
 
 commands <- c("clinical", "scale", "lookup")
+commands <- "clinical"
 ## TO DO: sample should be run once gene vs chr position collections decided
 
 args = commandArgs(trailingOnly=TRUE)
@@ -621,12 +628,17 @@ if("molecular" %in% commands){
 }
 
 # Import all clinical tables from GDC archive
-if("clinical" %in% commands) 
-  os.data.batch("../manifests/os.tcga.full.clinical.manifest.json",
-                checkEnumerations = FALSE,
-                checkClassType = "character")
+if("clinical" %in% commands) {
+ # os.data.batch("../manifests/os.tcga.full.clinical.manifest.json",
+#                checkEnumerations = FALSE,
+#                checkClassType = "character")
                 #                checkClassType = "os.class.tcgaCharacter")
 
+  os.data.batch("../manifests/clinical_events.json",
+                checkEnumerations = FALSE,
+                checkClassType = "character")
+  
+}
 # create initial collections for lookup and render documents 
 if("lookup" %in% commands){
 	lookup_tools <- fromJSON("../manifests/os.lookup_tools.json", simplifyVector = F)

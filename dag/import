@@ -1,7 +1,7 @@
 """
 ### Import Documentation
 -- Retrieve all molecular TCGA files from Xena UCSC server
--- Grab all clinical data from archived folder
+-- Import all clinical data from archived folder
 -- Process Clinical tables
 --- merge follow up tables
 --- create dashboard table
@@ -20,8 +20,8 @@ from datetime import datetime, timedelta
 default_args = {
     'owner': 'airflow',
     'depends_on_past': False,
-    'start_date': datetime(2016, 12, 11),
-    'email': ['jzhang23@fredhutch.org'],
+    'start_date': datetime(2016, 12, 19),
+    'email': ['lmcferri@fredhutch.org'],
     'email_on_failure': True,
     'email_on_retry': True,
     'retries': 1,
@@ -33,19 +33,39 @@ default_args = {
     # 'end_date': datetime(2016, 1, 1),
 }
 
-dag = DAG('oncoscape_test', default_args=default_args)
+dag = DAG('batch_import', default_args=default_args)
 
 
 # t1, t2 and t3 are examples of tasks created by instantiating operators
-t1 = BashOperator(
-    task_id='getManifest',
-    bash_command='node ${AIRFLOW_HOME}/docker-airflow/onco-test/dataStr/generate_manifestArr.js',
+py_env_activate = BashOperator(
+    task_id='start venv',
+    bash_command='source ${AIRFLOW_HOME}/docker-airflow/onco-test/TCGAarchive/scripts/import_ucsc/venv/bin/activate',
+    dag=dag)
+py_env_deactivate = BashOperator(
+    task_id='end venv',
+    bash_command='deactivate',
     dag=dag)
 
-t2 = BashOperator(
+# runs pool of 4 workers to import all TCGA genomicMatrix data from UCSC Xena hub
+in_mol = BashOperator(
+    task_id='import Xena',
+    bash_command='python ${AIRFLOW_HOME}/docker-airflow/onco-test/TCGAarchive/scripts/import_ucsc/import_ucsc.py',
+    dag=dag)
+    
+merge_brain = BashOperator(
+    task_id='merge Brain mut & cnv_thd tables',
+    bash_command='Rscript ${AIRFLOW_HOME}/docker-airflow/onco-test/TCGAarchive/scripts/tcga.import.R',
+    dag=dag)
+
+in_clin = BashOperator(
     task_id='dataStructureSchemaValidation',
     #depends_on_past=False,
-    bash_command='node ${AIRFLOW_HOME}/docker-airflow/onco-test/dataStr/test1.js',
+    bash_command='Rscript ${AIRFLOW_HOME}/docker-airflow/onco-test/TCGAarchive/scripts/import',
     dag=dag)
 
-t2.set_upstream(t1)
+
+in_mol.set_upstream(py_env_activate)
+py_env_deactivate.set_upstream(in_mol)
+
+
+

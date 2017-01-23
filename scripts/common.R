@@ -133,15 +133,7 @@ lookupList = list(
            data.load = "os.data.load.categories",
            insert.lookup = "insert.lookup.sourceTypeCollection",
            insert.document = "insert.document.list" ),
-  edges=list(type="edges",
-             data.load = "os.data.load.XXX",
-             insert.lookup = "insert.lookup.network",
-             insert.document = "insert.document.list" ),
-  ptdegree=list(type="edges",
-             data.load = "os.data.load.XXX",
-             insert.lookup = "insert.lookup.network",
-             insert.document = "insert.document.list" ),
-  genedegree=list(type="edges",
+  network=list(type="network",
              data.load = "os.data.load.XXX",
              insert.lookup = "insert.lookup.network",
              insert.document = "insert.document.list" ),
@@ -193,7 +185,7 @@ connect.to.mongo <- function(){
   
   mongo.manifest <<- mongo(collection="manifest",db=db, url=host)
   mongo.lookup <<- mongo(collection="lookup_oncoscape_datasources",db=db, url=host)
-  
+  mongo.dataTypes <<- mongo(collection="lookup_dataTypes",db=db, url=host)
 }
 #---------------------------------------------------------
 ## mongolite requires all insertions to be of type data.frame
@@ -240,7 +232,7 @@ document.exists <- function( oCollection){
    rm(con)
    return(FALSE)
   }  
-  
+
   uKeys = oCollection[["process"]][oCollection$uniqueKeys]
   query = toJSON(uKeys, auto_unbox = T)
   # find documents that have the key:value pairs of unique fields for the collection type
@@ -435,12 +427,12 @@ insert.lookup.clinical <- function(oCollection){
 }
 #---------------------------------------------------------
 insert.lookup.network <- function(oCollection){
-  ptweights   <- gsub("\\s+", "", tolower(paste(oCollection$dataset, "ptDegree", oCollection$source, oCollection$processName, sep="_")))
-  geneweights <- gsub("\\s+", "", tolower(paste(oCollection$dataset, "geneDegree", oCollection$source, oCollection$processName, sep="_")))
-  add.collection <- list(name=oCollection$process$geneset,source=oCollection$source, edges=oCollection$collection, 
-                                    patientWeights=ptweights, 
-                                    genesWeights=geneweights)
+  add.collection <- list(collection=oCollection$collection,
+          geneset=oCollection$process$geneset,source=oCollection$source, dataType=oCollection$process$input)
  
+  count = mongo.lookup$count(toJSON(list(disease=oCollection$disease, edges =add.collection), auto_unbox=T))
+  if(count > 0) return (NA);
+  
   new.collection = list(); 
   new.collection[["edges"]] = add.collection
   push.collection = list("$push"=new.collection)
@@ -467,14 +459,15 @@ insert.lookup <- function(oCollection){
   
   dataType<- mongo("lookup_dataTypes", db=db, url=host)$distinct("class", toJSON(list(dataType=oCollection$dataType), auto_unbox = T))
   if(dataType %in% names(lookupList)){
-    if(dataType %in% c("ptdegree", "genedegree")){
-      print(paste(dataType, "lookup info processed with edge creation", sep=" "))
-    }else{
-      oLookup = do.call(lookupList[[dataType]][["insert.lookup"]],list(oCollection))
+      if("dataType" %in% names(oCollection$process) && oCollection$process$dataType %in% c("ptdegree", "genedegree")){
+        oLookup = NA
+      }else {
+        oLookup = do.call(lookupList[[dataType]][["insert.lookup"]],list(oCollection))
+      }
       ## insert lookup into mongo collection
       if(!is.na(oLookup))
         mongo.lookup$update(query, toJSON(oLookup, auto_unbox = T), upsert=T)
-    }
+    
   }else{
       print(paste("WARNING: data type not recognized:", dataType, sep=" "))
   }
@@ -653,9 +646,16 @@ create.oCollection.from.name <- function(collection){
 #---------------------------------------------------------
 remove.collections.by.name <- function(to.remove){
   sapply(to.remove, function(collection){
-    oCollection <- create.oCollection.from.name(collection)
-    remove.collection(oCollection)
+    #oCollection <- create.oCollection.from.name(collection)
+    #remove.collection(oCollection)
   
+    con <- mongo(collection, db=db, url=host)
+    if(con$count()>0){
+      con$drop()
+      mongo.manifest$remove(toJSON(list(collection=collection), auto_unbox = T), multiple=TRUE)
+#      remove.lookup(oCollection)
+      #must be done manually for now
+    }
   })
 
 }
