@@ -611,7 +611,10 @@ commands <- c("clinical", "scale", "lookup", "sample")
 ## -- brain categorical data retained here simply for full provenance
 
 commands <- c("clinical", "scale", "lookup")
+<<<<<<< HEAD
 commands <- "clinical"
+=======
+>>>>>>> 0ff1a2e4cd5ba2c7f6f6b563a59cb3415fa0b318
 ## TO DO: sample should be run once gene vs chr position collections decided
 
 args = commandArgs(trailingOnly=TRUE)
@@ -628,6 +631,7 @@ if("molecular" %in% commands){
 }
 
 # Import all clinical tables from GDC archive
+<<<<<<< HEAD
 if("clinical" %in% commands) {
  # os.data.batch("../manifests/os.tcga.full.clinical.manifest.json",
 #                checkEnumerations = FALSE,
@@ -639,6 +643,14 @@ if("clinical" %in% commands) {
                 checkClassType = "character")
   
 }
+=======
+if("clinical" %in% commands) 
+  os.data.batch("../manifests/os.tcga.full.clinical.manifest.json",
+                checkEnumerations = FALSE,
+                checkClassType = "character")
+                #                checkClassType = "os.class.tcgaCharacter")
+
+>>>>>>> 0ff1a2e4cd5ba2c7f6f6b563a59cb3415fa0b318
 # create initial collections for lookup and render documents 
 if("lookup" %in% commands){
 	lookup_tools <- fromJSON("../manifests/os.lookup_tools.json", simplifyVector = F)

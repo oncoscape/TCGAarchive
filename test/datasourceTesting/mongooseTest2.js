@@ -5,57 +5,26 @@
             - re-organize the error messages 
             - calculate the passed percentage at collection level
 */
-var jsonfile = require("jsonfile");
-var ajvMsg = [];
-
-jsonfile.readFile("ajv_tcga.json", function(err, obj) {
-  ajvMsg = obj;
+const jsonfile = require("jsonfile-promised");
+const helper = require("../testingHelper.js");
+var ajvMsg, ajvMsg_v2;
+jsonfile.readFile("ajv_tcga_11212016.json").then(function(obj){
+    ajvMsg = obj;
+}).then(function(){
+    ajvMsg_v2 = ajvMsg.map(function(a){
+        var elem = {};
+        if(a!=null){
+            elem.collection = a.collection;
+            elem.type = a.type;
+            elem.disease = a.disease;
+            elem.passedCounts = a.passedCounts;
+            elem.totalCounts = a.totalCounts;
+            elem.passedRate = a.passedCounts/a.totalCounts;
+            elem.errorMessage = helper.nestedUniqueCount(a);
+        }
+        return elem;
+    });
+}).then(function(){
+    jsonfile.writeFile('ajv_tcga_v2_11212016.json', ajvMsg_v2, {spaces:4});
 });
 
-Array.prototype.unique = function() {
-        var arr = [];
-        for(var i = 0; i < this.length; i++) {
-            if(arr.indexOf(this[i]) === -1) {
-                arr.push(this[i]);
-            }
-        }
-        return arr; 
-    };
-
-Array.prototype.table = function(uniqueArray) {
-    var elem = {};
-    uniqueArray.forEach(function(u){
-        elem[u] = 0;
-    });
-    for(var i = 0; i < this.length; i++){
-        if(uniqueArray.indexOf(this[i]['errorType']) > -1){
-            elem[this[i]['errorType']]++;
-        }
-    }
-    return elem;
-
-};
-
-Object.prototype.nestedUnique = function(){
-    var ar = [];
-    this['errors'].forEach(function(a){
-        ar.push(a['errorType']);
-    });
-    return ar.unique();
-};
-
-console.log(ajvMsg.length);
-
-ajvMsg_v2 = ajvMsg.map(function(a){
-    var elem = {};
-    elem.collection = a.collection;
-    elem.type = a.type;
-    elem.disease = a.disease;
-    elem.passedCounts = a.passedCounts;
-    elem.totalCounts = a.totalCounts;
-    elem.passedRate = a.passedCounts/a.totalCounts;
-    elem.errorMessage = a.errors.table(a.nestedUnique());
-    return elem;
-});
-
-jsonfile.writeFile('ajv_tcga_v2.json', ajvMsg_v2, {spaces:4}, function(err){console.log(err);});

@@ -1,0 +1,120 @@
+Get image/Build Image
+Run image to obtain container [run]
+list container reference id by "docker ps -a -q"
+docker attach container reference id
+
+/***
+An image is a filesystem and parameters to use at runtime. It doesn’t have state and never changes. A container is a running instance of an image. When you ran the command, Docker Engine:
+
+checked to see if you had the hello-world software image
+downloaded the image from the Docker Hub (more about the hub later)
+loaded the image into the container and “ran” it
+Depending on how it was built, an image might run a simple, single command and then exit. This is what hello-world did.
+
+A Docker image, though, is capable of much more. An image can start software as complex as a database, wait for you (or someone else) to add data, store the data for later use, and then wait for the next person.
+
+Who built the hello-world software image though? In this case, Docker did but anyone can. Docker Engine lets people (or companies) create and share software through Docker images. Using Docker Engine, you don’t have to worry about whether your computer can run the software in a Docker image — a Docker container can always run it.
+***/
+
+Open a command-line terminal.
+Type the docker run docker/whalesay cowsay boo command and press RETURN.
+This command runs the whalesay image in a container. Your terminal should look like the following:
+The first time you run a software image, the docker command looks for it on your local system. If the image isn’t there, then docker gets it from the hub.
+While still in the command line terminal, type docker images command and press RETURN.
+The command lists all the images on your local system. You should see docker/whalesay in the list.
+
+// pull images from git
+build https://github.com/puckel/docker-airflow.git
+
+// How to build docker? 
+https://docs.docker.com/engine/getstarted/step_four/
+
+
+// kill the process that occupying port 8080
+ps aux | grep 8080
+
+// One liner to stop / remove all of Docker containers:
+docker stop $(docker ps -a -q)
+docker rm $(docker ps -a -q)
+
+docker ps -a -q
+
+
+
+//The answer is docker's attach command. So for my example above the solution will:
+
+$ sudo docker attach 665b4a1e17b6 #by ID
+or
+$ sudo docker attach loving_heisenberg #by Name
+$ root@665b4a1e17b6:/# 
+
+// Apparently attach a container is super important
+MRAO0009:airflow zhangj4$ docker ps -a -q
+4a7b59d778ef
+MRAO0009:airflow zhangj4$ sudo docker attach 4a7b59d778ef
+Password:
+
+// run in the container
+docker exec -it a95a69ca0d13 bash
+
+// Docker cloud 
+https://docs.docker.com/docker-cloud/overview/
+
+// Docker-compose
+
+ Installation of Docker-compose 
+ http://docs.python-guide.org/en/latest/dev/virtualenvs/
+ Need to install virtualenv using pip;
+ Install virtualenv via pip:
+$ pip install virtualenv
+Create a virtual environment for a project:
+$ virtualenv venv
+You can also use a Python interpreter of your choice.
+$ virtualenv -p /usr/bin/python2.7 venv
+To begin using the virtual environment, it needs to be activated:
+$ source venv/bin/activate
+Install packages as usual, for example:
+$ pip install requests
+If you are done working in the virtual environment for the moment, you can deactivate it:
+$ deactivate
+
+
+// Amazing Python package installation guide
+In order to keep your environment consistent, it’s a good idea to “freeze” the current state of the environment packages. To do this, run
+$ pip freeze > requirements.txt
+This will create a requirements.txt file, which contains a simple list of all the packages in the current environment, and their respective versions. You can see the list of installed packages without the requirements format using “pip list”. Later it will be easier for a different developer (or you, if you need to re-create the environment) to install the same packages using the same versions:
+$ pip install -r requirements.txt
+
+One example of Docker-compose
+https://docs.docker.com/compose/gettingstarted/
+
+
+//Docker Mount Volume
+The VOLUME command will mount a directory inside your container and store any files created or edited inside that directory on your hosts disk outside the container file structure, bypassing the union file system.
+
+The idea is that your volumes can be shared between your docker containers and they will stay around as long as there's a container (running or stopped) that references them.
+
+You can have other containers mount existing volumes (effectively sharing them between containers) by using the --volumes-from command when you run a container.
+
+The fundamental difference between VOLUME and -v is this: -v will mount existing files from your operating system inside your docker container and VOLUME will create a new, empty volume on your host and mount it inside your container.
+
+Example:
+
+You have a Dockerfile that defines a VOLUME /var/lib/mysql.
+You build the docker image and tag it some-volume
+You run the container
+And then,
+
+You have another docker image that you want to use this volume
+You run the docker container with the following: docker run --volumes-from some-volume docker-image-name:tag
+Now you have a docker container running that will have the volume from some-volume mounted in /var/lib/mysql
+Note: Using --volumes-from will mount the volume over whatever exists in the location of the volume. I.e., if you had stuff in /var/lib/mysql, it will be replaced with the contents of the volume.
+
+
+Volume YouTube Video:
+https://youtu.be/rlK1JYsM6Aw
+
+
+//Docker compose turn on
+docker-compose up -d & 
+docker-compose ps [must under the docker-compose.yml dir]

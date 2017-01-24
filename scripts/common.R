@@ -232,7 +232,11 @@ document.exists <- function( oCollection){
    rm(con)
    return(FALSE)
   }  
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> 0ff1a2e4cd5ba2c7f6f6b563a59cb3415fa0b318
   uKeys = oCollection[["process"]][oCollection$uniqueKeys]
   query = toJSON(uKeys, auto_unbox = T)
   # find documents that have the key:value pairs of unique fields for the collection type
@@ -467,7 +471,11 @@ insert.lookup <- function(oCollection){
       ## insert lookup into mongo collection
       if(!is.na(oLookup))
         mongo.lookup$update(query, toJSON(oLookup, auto_unbox = T), upsert=T)
+<<<<<<< HEAD
     
+=======
+    }
+>>>>>>> 0ff1a2e4cd5ba2c7f6f6b563a59cb3415fa0b318
   }else{
       print(paste("WARNING: data type not recognized:", dataType, sep=" "))
   }

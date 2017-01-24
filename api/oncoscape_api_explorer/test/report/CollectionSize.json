@@ -1,0 +1,192 @@
+[
+    {
+        "collection": "chol_protein_ucsc_rppa",
+        "count": 218,
+        "type": "protein"
+    },
+    {
+        "collection": "read_protein_ucsc_rppa",
+        "count": 275,
+        "type": "protein"
+    },
+    {
+        "collection": "acc_protein_ucsc_rppa",
+        "count": 220,
+        "type": "protein"
+    },
+    {
+        "collection": "meso_protein_ucsc_rppa",
+        "count": 219,
+        "type": "protein"
+    },
+    {
+        "collection": "ov_protein_ucsc_rppa",
+        "count": 281,
+        "type": "protein"
+    },
+    {
+        "collection": "thca_protein_ucsc_rppa",
+        "count": 260,
+        "type": "protein"
+    },
+    {
+        "collection": "kirp_protein_ucsc_rppa",
+        "count": 224,
+        "type": "protein"
+    },
+    {
+        "collection": "lusc_protein_cbio_rppa",
+        "count": 174,
+        "type": "protein"
+    },
+    {
+        "collection": "gbm_protein_ucsc_rppa",
+        "count": 274,
+        "type": "protein"
+    },
+    {
+        "collection": "pcpg_protein_ucsc_rppa",
+        "count": 219,
+        "type": "protein"
+    },
+    {
+        "collection": "skcm_protein_ucsc_rppa",
+        "count": 282,
+        "type": "protein"
+    },
+    {
+        "collection": "prad_protein_ucsc_rppa",
+        "count": 227,
+        "type": "protein"
+    },
+    {
+        "collection": "ucs_protein_ucsc_rppa",
+        "count": 219,
+        "type": "protein"
+    },
+    {
+        "collection": "lung_protein_cbio_rppa",
+        "count": 228,
+        "type": "protein"
+    },
+    {
+        "collection": "sarc_protein_ucsc_rppa",
+        "count": 219,
+        "type": "protein"
+    },
+    {
+        "collection": "blca_protein_ucsc_rppa",
+        "count": 245,
+        "type": "protein"
+    },
+    {
+        "collection": "coadread_protein_cbio_rppa",
+        "count": 171,
+        "type": "protein"
+    },
+    {
+        "collection": "brca_protein_cbio_rppa-zscore",
+        "count": 142,
+        "type": "protein"
+    },
+    {
+        "collection": "lusc_protein_ucsc_rppa",
+        "count": 276,
+        "type": "protein"
+    },
+    {
+        "collection": "lgg_protein_ucsc_rppa",
+        "count": 228,
+        "type": "protein"
+    },
+    {
+        "collection": "ucec_protein_ucsc_rppa",
+        "count": 245,
+        "type": "protein"
+    },
+    {
+        "collection": "esca_protein_ucsc_rppa",
+        "count": 219,
+        "type": "protein"
+    },
+    {
+        "collection": "prad_protein_cbio_rppa",
+        "count": 189,
+        "type": "protein"
+    },
+    {
+        "collection": "luad_protein_ucsc_rppa",
+        "count": 276,
+        "type": "protein"
+    },
+    {
+        "collection": "dlbc_protein_ucsc_rppa",
+        "count": 218,
+        "type": "protein"
+    },
+    {
+        "collection": "lihc_protein_ucsc_rppa",
+        "count": 219,
+        "type": "protein"
+    },
+    {
+        "collection": "brca_protein_ucsc_rppa",
+        "count": 281,
+        "type": "protein"
+    },
+    {
+        "collection": "thym_protein_ucsc_rppa",
+        "count": 218,
+        "type": "protein"
+    },
+    {
+        "collection": "paad_protein_ucsc_rppa",
+        "count": 229,
+        "type": "protein"
+    },
+    {
+        "collection": "luad_protein_cbio_rppa",
+        "count": 160,
+        "type": "protein"
+    },
+    {
+        "collection": "hnsc_protein_ucsc_rppa",
+        "count": 274,
+        "type": "protein"
+    },
+    {
+        "collection": "coad_protein_ucsc_rppa",
+        "count": 262,
+        "type": "protein"
+    },
+    {
+        "collection": "stad_protein_ucsc_rppa",
+        "count": 227,
+        "type": "protein"
+    },
+    {
+        "collection": "hnsc_protein_cbio_rppa",
+        "count": 160,
+        "type": "protein"
+    },
+    {
+        "collection": "kich_protein_ucsc_rppa",
+        "count": 219,
+        "type": "protein"
+    },
+    {
+        "collection": "uvm_protein_ucsc_rppa",
+        "count": 219,
+        "type": "protein"
+    },
+    {
+        "collection": "cesc_protein_ucsc_rppa",
+        "count": 219,
+        "type": "protein"
+    },
+    {
+        "collection": "tgct_protein_ucsc_rppa",
+        "count": 218,
+        "type": "protein"
+    }
+]

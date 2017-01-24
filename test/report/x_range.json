@@ -1,0 +1,1066 @@
+[
+    {
+        "disease": "coadread",
+        "name": "mds-All Genes-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 472
+    },
+    {
+        "disease": "coadread",
+        "name": "mds-TCGA GBM classifiers-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 959
+    },
+    {
+        "disease": "coadread",
+        "name": "mds-Marker genes 545-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 963
+    },
+    {
+        "disease": "coadread",
+        "name": "mds-TCGA pancan mutated-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 979
+    },
+    {
+        "disease": "coadread",
+        "name": "mds-oncoVogel274-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 995
+    },
+    {
+        "disease": "coadread",
+        "name": "mds-Oncoplex-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 960
+    },
+    {
+        "disease": "coadread",
+        "name": "mds-OSCC Chen 131 probes-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 921
+    },
+    {
+        "disease": "coadread",
+        "name": "mds-OSCC Chen 9 genes-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 99
+    },
+    {
+        "disease": "gbm",
+        "name": "mds-All Genes-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 999
+    },
+    {
+        "disease": "gbm",
+        "name": "mds-TCGA GBM classifiers-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 75
+    },
+    {
+        "disease": "gbm",
+        "name": "mds-Marker genes 545-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 999
+    },
+    {
+        "disease": "gbm",
+        "name": "mds-TCGA pancan mutated-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 994
+    },
+    {
+        "disease": "gbm",
+        "name": "mds-oncoVogel274-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 996
+    },
+    {
+        "disease": "gbm",
+        "name": "mds-Oncoplex-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 92
+    },
+    {
+        "disease": "gbm",
+        "name": "mds-OSCC Chen 131 probes-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 984
+    },
+    {
+        "disease": "gbm",
+        "name": "mds-OSCC Chen 9 genes-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 93
+    },
+    {
+        "disease": "hnsc",
+        "name": "mds-All Genes-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 994
+    },
+    {
+        "disease": "hnsc",
+        "name": "mds-TCGA GBM classifiers-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 939
+    },
+    {
+        "disease": "hnsc",
+        "name": "mds-Marker genes 545-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 996
+    },
+    {
+        "disease": "hnsc",
+        "name": "mds-TCGA pancan mutated-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 998
+    },
+    {
+        "disease": "hnsc",
+        "name": "mds-oncoVogel274-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 999
+    },
+    {
+        "disease": "hnsc",
+        "name": "mds-Oncoplex-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 999
+    },
+    {
+        "disease": "hnsc",
+        "name": "mds-OSCC Chen 131 probes-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 95
+    },
+    {
+        "disease": "hnsc",
+        "name": "mds-OSCC Chen 9 genes-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 998
+    },
+    {
+        "disease": "lgg",
+        "name": "mds-All Genes-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 999
+    },
+    {
+        "disease": "lgg",
+        "name": "mds-TCGA GBM classifiers-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 884
+    },
+    {
+        "disease": "lgg",
+        "name": "mds-Marker genes 545-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 990
+    },
+    {
+        "disease": "lgg",
+        "name": "mds-TCGA pancan mutated-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 99
+    },
+    {
+        "disease": "lgg",
+        "name": "mds-oncoVogel274-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 987
+    },
+    {
+        "disease": "lgg",
+        "name": "mds-Oncoplex-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 981
+    },
+    {
+        "disease": "lgg",
+        "name": "mds-OSCC Chen 131 probes-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 3700
+    },
+    {
+        "disease": "lgg",
+        "name": "mds-OSCC Chen 9 genes-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 4056
+    },
+    {
+        "disease": "luad",
+        "name": "mds-TCGA GBM classifiers-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 999
+    },
+    {
+        "disease": "luad",
+        "name": "mds-Marker genes 545-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 996
+    },
+    {
+        "disease": "luad",
+        "name": "mds-TCGA pancan mutated-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 999
+    },
+    {
+        "disease": "luad",
+        "name": "mds-oncoVogel274-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 997
+    },
+    {
+        "disease": "luad",
+        "name": "mds-Oncoplex-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 991
+    },
+    {
+        "disease": "luad",
+        "name": "mds-OSCC Chen 131 probes-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 939
+    },
+    {
+        "disease": "luad",
+        "name": "mds-OSCC Chen 9 genes-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 967
+    },
+    {
+        "disease": "lusc",
+        "name": "mds-All Genes-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 848
+    },
+    {
+        "disease": "lusc",
+        "name": "mds-TCGA GBM classifiers-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 995
+    },
+    {
+        "disease": "lusc",
+        "name": "mds-Marker genes 545-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 981
+    },
+    {
+        "disease": "lusc",
+        "name": "mds-TCGA pancan mutated-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 931
+    },
+    {
+        "disease": "lusc",
+        "name": "mds-oncoVogel274-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 992
+    },
+    {
+        "disease": "lusc",
+        "name": "mds-Oncoplex-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 995
+    },
+    {
+        "disease": "lusc",
+        "name": "mds-OSCC Chen 131 probes-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 988
+    },
+    {
+        "disease": "lusc",
+        "name": "mds-OSCC Chen 9 genes-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 999
+    },
+    {
+        "disease": "prad",
+        "name": "mds-All Genes-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 999
+    },
+    {
+        "disease": "prad",
+        "name": "mds-TCGA GBM classifiers-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 3629
+    },
+    {
+        "disease": "prad",
+        "name": "mds-Marker genes 545-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 640
+    },
+    {
+        "disease": "prad",
+        "name": "mds-TCGA pancan mutated-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 89
+    },
+    {
+        "disease": "prad",
+        "name": "mds-oncoVogel274-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 87
+    },
+    {
+        "disease": "prad",
+        "name": "mds-Oncoplex-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 57
+    },
+    {
+        "disease": "prad",
+        "name": "mds-OSCC Chen 131 probes-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 59
+    },
+    {
+        "disease": "prad",
+        "name": "mds-OSCC Chen 9 genes-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 94
+    },
+    {
+        "disease": "paad",
+        "name": "mds-All Genes-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 469
+    },
+    {
+        "disease": "paad",
+        "name": "mds-TCGA GBM classifiers-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 994
+    },
+    {
+        "disease": "paad",
+        "name": "mds-Marker genes 545-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 939
+    },
+    {
+        "disease": "paad",
+        "name": "mds-TCGA pancan mutated-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 857
+    },
+    {
+        "disease": "paad",
+        "name": "mds-oncoVogel274-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 936
+    },
+    {
+        "disease": "paad",
+        "name": "mds-Oncoplex-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 642
+    },
+    {
+        "disease": "paad",
+        "name": "mds-OSCC Chen 131 probes-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 992
+    },
+    {
+        "disease": "paad",
+        "name": "mds-OSCC Chen 9 genes-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 978
+    },
+    {
+        "disease": "blca",
+        "name": "mds-All Genes-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 728
+    },
+    {
+        "disease": "blca",
+        "name": "mds-TCGA GBM classifiers-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 998
+    },
+    {
+        "disease": "blca",
+        "name": "mds-Marker genes 545-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 986
+    },
+    {
+        "disease": "blca",
+        "name": "mds-TCGA pancan mutated-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 999
+    },
+    {
+        "disease": "blca",
+        "name": "mds-oncoVogel274-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 997
+    },
+    {
+        "disease": "blca",
+        "name": "mds-Oncoplex-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 998
+    },
+    {
+        "disease": "blca",
+        "name": "mds-OSCC Chen 131 probes-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 99
+    },
+    {
+        "disease": "blca",
+        "name": "mds-OSCC Chen 9 genes-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 958
+    },
+    {
+        "disease": "laml",
+        "name": "mds-All Genes-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 983
+    },
+    {
+        "disease": "laml",
+        "name": "mds-TCGA GBM classifiers-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 91
+    },
+    {
+        "disease": "laml",
+        "name": "mds-Marker genes 545-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 9
+    },
+    {
+        "disease": "laml",
+        "name": "mds-TCGA pancan mutated-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 997
+    },
+    {
+        "disease": "laml",
+        "name": "mds-oncoVogel274-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 978
+    },
+    {
+        "disease": "laml",
+        "name": "mds-Oncoplex-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 88
+    },
+    {
+        "disease": "laml",
+        "name": "mds-OSCC Chen 131 probes-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 893
+    },
+    {
+        "disease": "laml",
+        "name": "mds-OSCC Chen 9 genes-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 942
+    },
+    {
+        "disease": "lung",
+        "name": "mds-All Genes-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 4195
+    },
+    {
+        "disease": "lung",
+        "name": "mds-TCGA GBM classifiers-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 99
+    },
+    {
+        "disease": "lung",
+        "name": "mds-Marker genes 545-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 999
+    },
+    {
+        "disease": "lung",
+        "name": "mds-TCGA pancan mutated-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 977
+    },
+    {
+        "disease": "lung",
+        "name": "mds-oncoVogel274-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 975
+    },
+    {
+        "disease": "lung",
+        "name": "mds-Oncoplex-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 987
+    },
+    {
+        "disease": "lung",
+        "name": "mds-OSCC Chen 131 probes-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 998
+    },
+    {
+        "disease": "lung",
+        "name": "mds-OSCC Chen 9 genes-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 957
+    },
+    {
+        "disease": "brain",
+        "name": "mds-All Genes-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 970
+    },
+    {
+        "disease": "brain",
+        "name": "mds-TCGA GBM classifiers-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 95
+    },
+    {
+        "disease": "brain",
+        "name": "mds-Marker genes 545-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 995
+    },
+    {
+        "disease": "brain",
+        "name": "mds-TCGA pancan mutated-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 993
+    },
+    {
+        "disease": "brain",
+        "name": "mds-oncoVogel274-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 995
+    },
+    {
+        "disease": "brain",
+        "name": "mds-Oncoplex-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 998
+    },
+    {
+        "disease": "brain",
+        "name": "mds-OSCC Chen 131 probes-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 3634
+    },
+    {
+        "disease": "brain",
+        "name": "mds-OSCC Chen 9 genes-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 990
+    },
+    {
+        "disease": "brca",
+        "name": "mds-All Genes-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 99
+    },
+    {
+        "disease": "brca",
+        "name": "mds-TCGA GBM classifiers-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 972
+    },
+    {
+        "disease": "brca",
+        "name": "mds-Marker genes 545-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 999
+    },
+    {
+        "disease": "brca",
+        "name": "mds-TCGA pancan mutated-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 990
+    },
+    {
+        "disease": "brca",
+        "name": "mds-oncoVogel274-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 983
+    },
+    {
+        "disease": "brca",
+        "name": "mds-Oncoplex-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 978
+    },
+    {
+        "disease": "brca",
+        "name": "mds-OSCC Chen 131 probes-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 99
+    },
+    {
+        "disease": "brca",
+        "name": "mds-OSCC Chen 9 genes-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 98
+    },
+    {
+        "disease": "acc",
+        "name": "mds-All Genes-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 462
+    },
+    {
+        "disease": "acc",
+        "name": "mds-TCGA GBM classifiers-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 995
+    },
+    {
+        "disease": "acc",
+        "name": "mds-Marker genes 545-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 995
+    },
+    {
+        "disease": "acc",
+        "name": "mds-TCGA pancan mutated-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 97
+    },
+    {
+        "disease": "acc",
+        "name": "mds-oncoVogel274-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 97
+    },
+    {
+        "disease": "acc",
+        "name": "mds-Oncoplex-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 96
+    },
+    {
+        "disease": "acc",
+        "name": "mds-OSCC Chen 131 probes-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 996
+    },
+    {
+        "disease": "acc",
+        "name": "mds-OSCC Chen 9 genes-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 99
+    },
+    {
+        "disease": "cesc",
+        "name": "mds-All Genes-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 982
+    },
+    {
+        "disease": "cesc",
+        "name": "mds-TCGA GBM classifiers-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 71
+    },
+    {
+        "disease": "cesc",
+        "name": "mds-Marker genes 545-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 974
+    },
+    {
+        "disease": "cesc",
+        "name": "mds-TCGA pancan mutated-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 921
+    },
+    {
+        "disease": "cesc",
+        "name": "mds-oncoVogel274-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 877
+    },
+    {
+        "disease": "cesc",
+        "name": "mds-Oncoplex-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 63
+    },
+    {
+        "disease": "cesc",
+        "name": "mds-OSCC Chen 131 probes-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 898
+    },
+    {
+        "disease": "cesc",
+        "name": "mds-OSCC Chen 9 genes-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 860
+    },
+    {
+        "disease": "chol",
+        "name": "mds-All Genes-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 949
+    },
+    {
+        "disease": "chol",
+        "name": "mds-TCGA GBM classifiers-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 3411
+    },
+    {
+        "disease": "chol",
+        "name": "mds-Marker genes 545-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 992
+    },
+    {
+        "disease": "chol",
+        "name": "mds-TCGA pancan mutated-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 852
+    },
+    {
+        "disease": "chol",
+        "name": "mds-oncoVogel274-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 986
+    },
+    {
+        "disease": "chol",
+        "name": "mds-Oncoplex-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 937
+    },
+    {
+        "disease": "chol",
+        "name": "mds-OSCC Chen 131 probes-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 883
+    },
+    {
+        "disease": "chol",
+        "name": "mds-OSCC Chen 9 genes-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 960
+    },
+    {
+        "disease": "dlbc",
+        "name": "mds-All Genes-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 974
+    },
+    {
+        "disease": "dlbc",
+        "name": "mds-TCGA GBM classifiers-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 774
+    },
+    {
+        "disease": "dlbc",
+        "name": "mds-Marker genes 545-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 892
+    },
+    {
+        "disease": "dlbc",
+        "name": "mds-TCGA pancan mutated-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 989
+    },
+    {
+        "disease": "dlbc",
+        "name": "mds-oncoVogel274-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 933
+    },
+    {
+        "disease": "dlbc",
+        "name": "mds-Oncoplex-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 942
+    },
+    {
+        "disease": "dlbc",
+        "name": "mds-OSCC Chen 131 probes-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 918
+    },
+    {
+        "disease": "dlbc",
+        "name": "mds-OSCC Chen 9 genes-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 907
+    },
+    {
+        "disease": "esca",
+        "name": "mds-All Genes-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 997
+    },
+    {
+        "disease": "esca",
+        "name": "mds-TCGA GBM classifiers-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 995
+    },
+    {
+        "disease": "esca",
+        "name": "mds-Marker genes 545-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 997
+    },
+    {
+        "disease": "esca",
+        "name": "mds-TCGA pancan mutated-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 994
+    },
+    {
+        "disease": "esca",
+        "name": "mds-oncoVogel274-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 997
+    },
+    {
+        "disease": "esca",
+        "name": "mds-Oncoplex-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 994
+    },
+    {
+        "disease": "esca",
+        "name": "mds-OSCC Chen 131 probes-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 3236
+    },
+    {
+        "disease": "esca",
+        "name": "mds-OSCC Chen 9 genes-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 999
+    },
+    {
+        "disease": "sarc",
+        "name": "mds-All Genes-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 969
+    },
+    {
+        "disease": "sarc",
+        "name": "mds-TCGA GBM classifiers-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 939
+    },
+    {
+        "disease": "sarc",
+        "name": "mds-Marker genes 545-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 998
+    },
+    {
+        "disease": "sarc",
+        "name": "mds-TCGA pancan mutated-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 98
+    },
+    {
+        "disease": "sarc",
+        "name": "mds-oncoVogel274-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 899
+    },
+    {
+        "disease": "sarc",
+        "name": "mds-Oncoplex-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 93
+    },
+    {
+        "disease": "sarc",
+        "name": "mds-OSCC Chen 131 probes-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 325
+    },
+    {
+        "disease": "sarc",
+        "name": "mds-OSCC Chen 9 genes-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 997
+    },
+    {
+        "disease": "luad",
+        "name": "mds-All Genes-cnv-mut01-ucsc",
+        "type": "cluster",
+        "scale": 100000,
+        "range": 998
+    }
+]
