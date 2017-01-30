@@ -107,15 +107,22 @@
 		"er_ihc_score_nte": ["nte_er_ihc_intensity_score"],
 		"pr_ihc_score": ["pr_positivity_ihc_intensity_score"],
 		"pr_ihc_score_nte": ["nte_pr_ihc_intensity_score"],
-		"her2_ihc_score": ["nte_her2_positivity_ihc_score"]	
+		"her2_ihc_score": ["her2_ihc_score"],
+		"her2_ihc_score_nte": ["nte_her2_positivity_ihc_score"]
 	},
 	"os.class.ishak_fibrosis_score":{
 		"ishak_fibrosis_score":["ishak_fibrosis_score"]
 	},
+	"os.class.positivity_scale": {
+		"nte_er_positivity_other_scale": ["nte_er_positivity_other_scale"],
+		"nte_pr_positivity_other_scale": ["nte_pr_positivity_other_scale"]
+	},
 	"os.class.positivity_scale_method": {
-		"pr_positivity_scale_method":["pr_positivity_scale_used", "nte_pr_positivity_scale_used"],
-		"er_positivity_scale_method":["er_positivity_scale_used", "nte_er_positivity_scale_used"],
-		"her2_positivity_scale_method": ["nte_her2_positivity_other_scale"]
+		"pr_positivity_scale":["pr_positivity_scale_used"],
+		"pr_positivity_method": ["pr_positivity_define_method"],
+		"pr_positivity_scale_nte": [ "nte_pr_positivity_scale_used"],
+		"er_positivity_scale":["er_positivity_scale_used", "nte_er_positivity_scale_used"],
+		"her2_positivity_scale": ["nte_her2_positivity_other_scale"]
 	},
 	"os.class.percent_ranges": {
 		"pr_ihc_positive": ["pr_status_ihc_percent_positive"],
@@ -350,7 +357,8 @@
 		"hysterectomy_type": ["hysterectomy_type"],
 		"hysterectomy_type_other": ["other_hysterectomy_type"],
 		"new_tumor_event_pathologic_dx_other": ["new_tumor_event_pathologic_dx_other"],
-		"new_tumor_event_procedure": ["new_tumor_event_procedure"]
+		"new_tumor_event_procedure": ["new_tumor_event_procedure"],
+		"other_malignancy_surgery_type": ["other_malignancy_surgery_type"]
 	},
 	"os.class.drug_agent": {
 		"therapeutic_agents": ["drug_name","pharmaceutical_therapy_drug_name"], 
@@ -370,7 +378,9 @@
 
 //positioning
 	"os.class.tissue_site":{
-		"tumor_tissue_site": ["tumor_tissue_site","submitted_tumor_site"]
+		"tumor_tissue_site": ["tumor_tissue_site","submitted_tumor_site"],
+		"other_malignancy_anatomic_site" : ["other_malignancy_anatomic_site"],
+		"other_malignancy_anatomic_site_text" : ["other_malignancy_anatomic_site_text"]
 	},
 	"os.class.zone_of_origin": {
 		"zone_of_origin": ["zone_of_origin"]
@@ -380,7 +390,9 @@
 	},
 	"os.class.histologic_diagnosis": {
 		"primary_diagnosis": ["histological_type", "histologic_diagnosis", "histologic_subtype"],
-		"histologic_diagnosis_other": ["histologic_diagnosis_other", "histological_type_other"] 
+		"histologic_diagnosis_other": ["histologic_diagnosis_other", "histological_type_other"],
+		"other_malignancy_histological_type": ["other_malignancy_histological_type"],
+		"other_malignancy_histological_type_text" :["other_malignancy_histological_type_text"]
 	},
 	"os.class.vascular_invasion": {
 		"vascular_invasion":["vascular_invasion"]
@@ -494,7 +506,8 @@
 		"days_to_fdg_or_ct_pet_performed":["days_to_fdg_or_ct_pet_performed"],                                                  
 		"days_to_history_chronic_pancreatitis": ["history_chronic_pancreatitis_days_to"],
 		"days_to_laboratory_procedure_tumor_marker_squamous_cell_carcinoma_antigen_result":["days_to_laboratory_procedure_tumor_marker_squamous_cell_carcinoma_antigen_result"],
-		"days_to_last_follow_up": ["last_contact_days_to", "days_to_last_followup","days_to_last_known_alive"],
+		"days_to_last_follow_up": ["last_contact_days_to", "days_to_last_followup"],
+		"days_to_last_known_alive": ["days_to_last_known_alive"],
 		"days_to_mri": ["days_to_mri"],
 		"days_to_patient_progression_free":["days_to_patient_progression_free"],
 		"days_to_performance": ["performance_status_days_to", "days_to_performance_status_assessment"],
@@ -596,7 +609,7 @@
 		"ratio_nte_cent17_her2": ["nte_cent_17_her2_ratio"],
 		"regimen_number": ["regimen_number"],
 		"rt_tx_total_dose_to_pelvis" :["rt_tx_total_dose_to_pelvis"],
-		"score_her2_ihc": ["her2_ihc_score"],
+		
 		"suv_of_pleura_max":["suv_of_pleura_max"],
 		"thickness_tumor":["tumor_thickness"],
 		"total_dose_brachytherapy_point_a":["brachytherapy_total_dose_point_a"],
@@ -761,7 +774,9 @@
 		"steroid_therapy_administered": ["steroid_therapy_administered"],
 		"surgery_locoregional": ["additional_surgery_locoregional_procedure"],
 		"surgery_procedure": ["surgery_indicator"],	
-		"surgery_procedure_nte": ["new_tumor_event_additional_surgery_procedure","new_tumor_event_site_surgery","new_tumor_event_surgery"], 
+		"surgery_procedure_nte": ["new_tumor_event_surgery"], 
+		"surgery_nte_site": ["new_tumor_event_site_surgery"],
+		"surgery_procedure_nte_addtl": ["new_tumor_event_additional_surgery_procedure"],
 		"symp_changes_mental_status": ["symp_changes_mental_status"],
 		"symp_changes_motor_movement": ["symp_changes_motor_movement"],
 		"symp_changes_sensory": ["symp_changes_sensory"],
@@ -809,7 +824,8 @@
 		"er_positivity_scale_other": ["er_positivity_scale_other"],
 		"er_positivity_method": ["er_positivity_method"],
 		"er_positivity_method_nte":["nte_er_positivity_define_method"],
-		"pr_positivity_scale_method":["pr_positivity_define_method","nte_pr_positivity_define_method"],
+
+		"pr_positivity_method_nte": ["nte_pr_positivity_define_method"],
 		"pr_positivity_scale_other": ["pr_positivity_scale_other"],
 		"icd_10" : ["icd_10"],
 		"icd_3_histology": ["icd_o_3_histology"],
@@ -905,6 +921,7 @@
 		"skcm_tumor_event_type": ["skcm_tumor_event_type"],
 		"new_tumor_event_procedure_other": ["new_tumor_event_procedure_other"],
 //position result specific piping
+
 		"new_tumor_event_site": ["new_tumor_event_site", "new_neoplasm_event_occurrence_anatomic_site"],
 		"new_tumor_event_dx_evidence": ["new_tumor_event_dx_evidence","progression_determined_by"],
 		"new_tumor_event_met_site": ["new_tumor_event_met_site"],
@@ -913,9 +930,13 @@
 		"new_tumor_event_melanoma_site":["new_tumor_event_melanoma_site"],
   		"new_tumor_event_histo_type":["new_tumor_event_histo_type"],
 //to be added to classes
+
     	"new_tumor_event_site_other": ["new_tumor_event_site_other","new_neoplasm_occurrence_anatomic_site_text"],
 		"new_tumor_event_dx_evidence": ["new_tumor_event_dx_evidence","progression_determined_by"],
 		"new_tumor_event_pathologic_dx_other": ["new_tumor_event_pathologic_dx_other"],
-		"study" : ["study"]
+		"study" : ["study"],
+		"pharmaceutical_therapy_extent":["pharmaceutical_therapy_extent"],
+		"radiation_therapy_extent": ["radiation_therapy_extent"],
+		"definitive_tx_method" : ["definitive_tx_method"]
 	}
 } 

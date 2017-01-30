@@ -316,20 +316,25 @@ os.data.load.clinical <- function(oCollection, inputFile, checkEnumerations=FALS
   
   # if checkEnumerations - all columns will be read in and assigned 'character' class by default
   # otherwise only classes with defined enumerations will be stored in the mapped table
-  if(checkEnumerations) { column_type <- rep("character", length(columns))}
+  
+  ## setting default col type to tcgaCharacter forces all column names to be recognized
+  # - if input column in enum mapping, update to standard name & ingest; o.w. return False and print out column name & values
+  #(character - full ingest/no cleaning, tcgaCharacter - UpperCase/NA updates, NULL - column ignored)
+  if(checkEnumerations) { column_type <- rep("os.class.tcgaCharacter", length(columns))}
 #  else                  { column_type <- rep("NULL", length(columns)) }
   else                  { column_type <- rep("character", length(columns)) }
+
   
-  # assign class types for recognized columns
+  # assign class types for recognized columns 
   #   for each enumerated class type, 
   #     rename matching column to mapped name and assign appropriate type
   os.tcga.classes <- names(os.tcga.column.enumerations)
   for(class.type in os.tcga.classes){
     for(colName in names(os.tcga.column.enumerations[[class.type]])){
-      values <-os.tcga.column.enumerations[[class.type]][[colName]]
-      matching.values <- which(columns %in% values)
-      columns[matching.values ] <- colName
-      column_type[ matching.values] <- class.type
+      values <-os.tcga.column.enumerations[[class.type]][[colName]]  # col.enum= {"os.class.type": {colName: [values]},{colName: [values]}} }
+      matching.values <- which(columns %in% values)                  # columns = input header row 
+      columns[matching.values ] <- colName    # update column name to standardized format if available & assign associated class type; ow 
+      column_type[ matching.values] <- class.type  # otherwise column names do not change & class type set to default (character - full ingest/no cleaning, tcgaCharacter - UpperCase/NA updates, NULL - column ignored)
     }
   }
   removeDups <- c()
@@ -352,31 +357,42 @@ os.data.load.clinical <- function(oCollection, inputFile, checkEnumerations=FALS
                           col.names = columns,
                           colClasses = column_type
   );
+  ## Maps all values according to column_type: 
+  # if value in field of fully defined - assign by mapping (uppercase, NA replacement, additional logic)
+  # if value not in fields of fully defined enum column - stop and print unknown fields; 
+  # if column not fully defined, default to minimal cleaning, but inclusion (tcgaCharacter) with printout of unknowns
+  # (character - full ingest/no cleaning, tcgaCharacter - UpperCase/NA updates then ingest, NULL - column ignored)
   
   if(length(removeDups)>0) mappedTable <- mappedTable[,-removeDups]
+  mappedTable$patient_ID <- gsub("\\.", "\\-", mappedTable$patient_ID)
   
   if(checkEnumerations) {
     
     # Grab columns matching class type and remove those within the ignore list
     headerWithData <- columns[column_type == checkClassType]
+    while(headerWithData >0){
+    
     ignoreCols <- which(headerWithData %in% os.tcga.ignore.columns)
     if(length(ignoreCols > 0))       headerWithData <- headerWithData[- ignoreCols ]
-    if(length(headerWithData) == 0)  return(list(mapped=mappedTable, unmapped=unMappedData, "cde"=cbind(tcga_columns,columns,cde_ids, column_type)));
+    if(length(headerWithData) == 0)  #all column names of interest fully defined & have associated fields (can include columns with all NAs)
+      break;
     
-    # Discard columns where all values are NA
-    DataIndicator <- sapply(headerWithData, function(colName){!all(toupper(mappedTable[,colName]) %in% os.enum.na)})
+    # Discard columns not fully defined where all values are NA
+    DataIndicator <- sapply(headerWithData, function(colName){!all((toupper(mappedTable[,colName]) %in% os.enum.na | is.na(mappedTable[,colName])))})
     headerWithData <- headerWithData[DataIndicator]
-    if(length(headerWithData) == 0) return(list(mapped=mappedTable, unmapped=unMappedData, "cde"=cbind(tcga_columns,columns,cde_ids, column_type)));
+    if(length(headerWithData) == 0) # for reporting purposes, ignore columns with all NAs
+      break;
     
-    # Print list of unique values for each column
+    # Print list of unique values for each column still needing inclusion
+    # 
     unMappedData <- lapply(headerWithData, function(colName){ unique(toupper(mappedTable[,colName]))})
     names(unMappedData) <- headerWithData
     print("---Unused columns")
     print(unMappedData)
+      break;
+    #return(FALSE)  # for generation/update of mapping, do not ingest table if any columns not fully defined.
+    }
   }
-  
-  mappedTable$patient_ID <- gsub("\\.", "\\-", mappedTable$patient_ID)
-#  mappedTable$patient_ID <- paste(mappedTable$patient_ID, "-01", sep="")
   
   insert.collection(oCollection, mappedTable)
   
@@ -391,11 +407,8 @@ os.data.load.json <- function(oCollection, inputFile = inputFile){
 }
 #---------------------------------------------------------
 ### Batch Is Used To Process Multiple TCGA Files Defined 
-os.data.batch <- function(manifest, ...){
+os.data.batch <- function(datasets, ...){
 
-  # From Input File: dataframe of datasets, types and list of collections
-  datasets <- fromJSON(manifest)
-  
   resultObj <- list()
   
   #for (i in 1:nrow(datasets)){ # Loop for each file to load
@@ -411,7 +424,7 @@ os.data.batch <- function(manifest, ...){
     if(!grepl("/$", inputDirectory)) inputDirectory <- paste(inputDirectory, "/", sep="")	
     inputFile <- paste(inputDirectory, sourceObj$file, sep = "")
     
-    dataType <- sourceObj$type
+    dataClass <- mongo.dataTypes$distinct("class", toJSON(list(dataType=sourceObj$type), auto_unbox = T))
     process <- list(type=sourceObj$process, scale=NA)
     if("tree" %in% names(sourceObj)) process$tree = sourceObj$tree
     if("barplot" %in% names(sourceObj)) process$barplot = sourceObj$barplot
@@ -420,11 +433,18 @@ os.data.batch <- function(manifest, ...){
                                       source=sourceObj$source,uniqueKeys=c(),
                                       parent = sourceObj$parent, process = process)
     
+    collection.uniqueName <- paste(oCollection$dataset, oCollection$dataType, sep="_")
+    collection.uniqueName <- gsub("\\s+", "", tolower(collection.uniqueName))
+    collection.uniqueName <- gsub("\\+", "", collection.uniqueName)
+    collection.uniqueName <- gsub("\\.", "p", collection.uniqueName)
+    oCollection$collection <- collection.uniqueName
+    
+    #  should allow for multiple versioned tables to be loaded and merged Eg follow up brca  
     prev.run <- collection.exists(oCollection$collection)
     if(prev.run) return(FALSE);
     
-    if(dataType %in% names(lookupList))
-      do.call(lookupList[[dataType]][["data.load"]], list(oCollection, inputFile, ...))
+    if(dataClass %in% names(lookupList))
+      do.call(lookupList[[dataClass]][["data.load"]], list(oCollection, inputFile, ...))
     else
          print(paste("WARNING: data type not recognized for loading:", dataType))
 
@@ -481,17 +501,27 @@ os.data.load.categories <- function(datasets = c("brain")){
   type= "color"
   
   if("brain" %in% datasets){  
+    oCollection <- create.oCollection(dataset="brain", dataType=type,uniqueKeys=c(), source="tcga",parent=NA, process=list(type="import"))
     
+    
+    ### NOT TESTED!!
     ## Patient Colors by Diagnosis, glioma8, tumorGrade, verhaak
-    color.categories <- list(
-      add.category.fromFile(file='../data/categories/brain/tumorDiagnosis.RData', name="Diagnosis", col.name="diagnosis", dataset="brain", type=type) ,
-      add.category.fromFile(file='../data/categories/brain/ericsEightGliomaClusters.RData', name="Glioma 8", col.name="cluster", dataset="brain", type=type) ,
-      add.category.fromFile(file='../data/categories/brain/metabolicExpressionStemness.RData', name="Metabolic Expression Stemness", col.name="cluster", dataset="brain", type=type) ,
-      add.category.fromFile(file='../data/categories/brain/tumorGrade.RData', name="Tumor Grade", col.name="cluster", dataset="brain", type=type) ,
-      add.category.fromFile(file='../data/categories/brain/verhaakGbmClustersAugmented.RData', name="Verhaak Plus 1", col.name="cluster", dataset="brain", type=type) 
-    )
-    oCollection <- create.oCollection(dataset="brain", dataType=type, source="tcga", processName="import",parent=NA, process=list(type="import"))
-    insert.collection(oCollection, color.categories )
+    os.data.load.json(oCollection, inputFile='../data/categories/brain/tumorDiagnosis.json')
+    os.data.load.json(oCollection, inputFile='../data/categories/brain/ericsEightGliomaClusters.json')
+    os.data.load.json(oCollection, inputFile='../data/categories/brain/metabolicExpressionStemness.json')
+    os.data.load.json(oCollection, inputFile='../data/categories/brain/tumorGrade.json')
+    os.data.load.json(oCollection, inputFile='../data/categories/brain/verhaakGbmClustersAugmented.json')
+    
+    
+ #   color.categories <- list(
+#      add.category.fromFile(file='../data/categories/brain/tumorDiagnosis.RData', name="Diagnosis", col.name="diagnosis", dataset="brain", type=type) ,
+#      add.category.fromFile(file='../data/categories/brain/ericsEightGliomaClusters.RData', name="Glioma 8", col.name="cluster", dataset="brain", type=type) ,
+#      add.category.fromFile(file='../data/categories/brain/metabolicExpressionStemness.RData', name="Metabolic Expression Stemness", col.name="cluster", dataset="brain", type=type) ,
+#      add.category.fromFile(file='../data/categories/brain/tumorGrade.RData', name="Tumor Grade", col.name="cluster", dataset="brain", type=type) ,
+#      add.category.fromFile(file='../data/categories/brain/verhaakGbmClustersAugmented.RData', name="Verhaak Plus 1", col.name="cluster", dataset="brain", type=type) 
+#    )
+#    oCollection <- create.oCollection(dataset="brain", dataType=type,uniqueKeys=c(), source="tcga",parent=NA, process=list(type="import"))
+#    insert.collection(oCollection, color.categories )
     
   }
   if("brca" %in% datasets){
@@ -515,10 +545,8 @@ map.sample.ids <- function(samples, source, mapping=list()){
   return(mapping)
 }
 #----------------------------------------------------------------------------------------------------
-os.batch.map.samples <- function(){
+os.batch.map.samples <- function(datasets){
  
-  #datasets <- mongo.lookup$find(toJSON(list("clinical.samplemap" = list("$exists" = 0), "disease"=list("$ne"="hg19")), auto_unbox=T))
-  datasets <- mongo.lookup$find(toJSON(list("disease"=list("$ne"="hg19")), auto_unbox=T))
   dataTypes <- mongo("lookup_dataTypes", db=db, url=host)$distinct("dataType", toJSON(list("schema"="hugo_sample"), auto_unbox=T))
   for(i in 1:nrow(datasets)){
     dataset = datasets[i,]
@@ -611,7 +639,7 @@ commands <- c("clinical", "scale", "lookup", "sample")
 ## -- brain categorical data retained here simply for full provenance
 
 commands <- c("clinical", "scale", "lookup")
-commands <- "clinical"
+commands <- "sample"
 ## TO DO: sample should be run once gene vs chr position collections decided
 
 args = commandArgs(trailingOnly=TRUE)
@@ -624,19 +652,28 @@ if("categories" %in% commands)
 ## Import molecular table from downloaded folders
 ## Deprecated and replaced by python script for Xena UCSC import
 if("molecular" %in% commands){
-  os.data.batch("../manifests/os.ucsc.molecular.manifest.json")
+  manifest <- fromJSON("../manifests/os.ucsc.molecular.manifest.json")
+  os.data.batch(manifest)
 }
 
 # Import all clinical tables from GDC archive
 if("clinical" %in% commands) {
- # os.data.batch("../manifests/os.tcga.full.clinical.manifest.json",
+  manifest = fromJSON("../manifests/os.tcga.full.clinical.manifest.json")
+  #manifest <- subset(manifest, dataset %in% c("brain", "luad", "lusc", "lung", "brca", "hnsc", "prad", "gbm", "lgg"))
+  manifest <- subset(manifest, dataset %in% c("sarc", "paad", "ucec", "acc", "blca", "cesc", "chol", "dlbc", "coadread", "lung", "coad", "laml", "read", "ucs", "uvm", "thym", "tgct", "pcpg", "ov", "meso", "pancan", "pancan12"))
+  #  manifest <- subset(manifest, type != "events")
+  #  manifest <- subset(manifest, dataset != "meso")
+  
+  
+    os.data.batch(manifest,
+                checkEnumerations = TRUE,
+#                checkClassType = "character")
+                                checkClassType = "os.class.tcgaCharacter")
+
+  manifest = fromJSON("../manifests/clinical_events.json")
+  #  os.data.batch(manifest,
 #                checkEnumerations = FALSE,
 #                checkClassType = "character")
-                #                checkClassType = "os.class.tcgaCharacter")
-
-  os.data.batch("../manifests/clinical_events.json",
-                checkEnumerations = FALSE,
-                checkClassType = "character")
   
 }
 # create initial collections for lookup and render documents 
@@ -680,7 +717,11 @@ if("scale" %in% commands){
 ## skips if samplemap already exists
 if("sample" %in% commands){
   # create/update sample-patient mapping table
-  os.batch.map.samples()
+  #datasets <- mongo.lookup$find(toJSON(list("clinical.samplemap" = list("$exists" = 0), "disease"=list("$ne"="hg19")), auto_unbox=T))
+  datasets <- mongo.lookup$find(toJSON(list("disease"=list("$ne"="hg19")), auto_unbox=T))
+  #datasets <- mongo.lookup$find(toJSON(list("disease"=list("$in"=c("sarc", "paad", "thca", "ucec", "acc", "blca", "cesc", "chol", "dlbc", "coadread", "lung", "coad","laml", "read", "ucs", "uvm", "thym", "tgct", "pcpg", "ov", "meso", "pancan", "pancan12"))), auto_unbox=T))
+  datasets <- mongo.lookup$find(toJSON(list("disease"="stad"), auto_unbox=T))
+  os.batch.map.samples(datasets)
 }
 
 if("sunburst" %in% commands){
@@ -740,5 +781,50 @@ if("merge" %in% commands){
   
 }
 
+if("setdefault" %in% commands){
+  
+  ## for each dataset
+  ##   for each data class
+  ##      choose one of the datatypes as default
+  dataTypes <- mongo.dataTypes$find()
+  molTypes <- c("mut01", "mut", "cnv", "cnv_thd", "expr", "meth")
+  diseases <- mongo.lookup$distinct("disease")
+  #diseases <- c("brain", "gbm", "lgg", "luad", "lusc","lung", "prad", "hnsc", "brca")
+  
+  for(disease in diseases){
+    molInput <- mongo.lookup$distinct("molecular", toJSON(list(disease=disease), auto_unbox=T)) 
+    molbyClass <- merge(molInput, dataTypes, by.x="type", by.y="dataType")
+    print(disease)
+    print(unique(molbyClass[order(molbyClass$class),c("type","default", "class","schema")]))
+    
+    defaultClass <- subset(molbyClass, default==TRUE)
+    
+    con <- mongo(paste(disease,"network",sep="_"), db=db, url=host)
+    defaults = con$count('{"default":true}')
+    updateNetwork=  FALSE;
+    if(defaults != 42){  # 6 genesets  * (1 ptdegree + 1 genedegree + 5 types of edges) = 42
+      updateNetwork = TRUE
+      molInput <- mongo.lookup$distinct("molecular", toJSON(list(disease=disease), auto_unbox=T)) 
+      molbyClass <- merge(molInput, dataTypes, by.x="type", by.y="dataType")
+      defaultClass <- subset(molbyClass, default==TRUE)
+    }
+    
+    if(updateNetwork){
+      
+      edges <- con$update(toJSON(list("dataType"="edges", input=list("$in"= defaultClass$type)), auto_unbox = T), 
+                          '{"$set":{"default":true}}', multiple=TRUE)
+      ptdegree <- con$update(toJSON(list("dataType"="ptdegree", input=list("$all"= defaultClass[defaultClass$class %in% c("cnv_thd", "mut01"), "type"])), auto_unbox = T), 
+                          '{"$set":{"default":true}}', multiple=TRUE)
+      genedegree <- con$update(toJSON(list("dataType"="genedegree", input=list("$all"= defaultClass[defaultClass$class %in% c("cnv_thd", "mut01"), "type"])), auto_unbox = T), 
+                          '{"$set":{"default":true}}', multiple=TRUE)
+      print(con$count('{"default":true}'))
+     }
+    rm(con)
+   
+  }  
+  
+  
+   
+}
 stopCluster(cluster_cores)
 close.mongo()

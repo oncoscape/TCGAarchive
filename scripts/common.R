@@ -13,13 +13,13 @@ mongo_commands <- c("mongo","mongo.manifest","mongo.lookup", "create.oCollection
 date <- as.character(Sys.Date())
 chromosomes <- c(seq(1:22), "X", "Y")
 
-db <- "tcga"
+db <- "private"
 host="mongodb://localhost"
 location = "dev"
 
 if(location == "dev"){
 	user="oncoscape"
-	password = Sys.getenv("dev_oncoscape_pw")
+#	password = Sys.getenv("dev_oncoscape_pw")
 	host<- paste("mongodb://",user,":",password,"@oncoscape-dev-db1.sttrcancer.io:27017,oncoscape-dev-db2.sttrcancer.io:27017,oncoscape-dev-db3.sttrcancer.io:27017",sep="")
 	#host<- paste("mongodb://",user,":",password,"@oncoscape-dev-db1.sttrcancer.io:27017,oncoscape-dev-db2.sttrcancer.io:27017,oncoscape-dev-db3.sttrcancer.io:27017","?socketTimeoutMS=36000000", sep="")
 	  #?socketTimeoutMS=36000000 still fails, just waits longer
@@ -141,6 +141,10 @@ lookupList = list(
                data.load = "os.data.load.clinical.events",
                insert.lookup = "insert.lookup.clinical",
                insert.document = "insert.document.list" ),
+  diagnosis=list(type="clinical",
+               data.load = "os.data.load.clinical",
+               insert.lookup = "insert.lookup.clinical",
+               insert.document = "insert.document.row" ),
   
     patient=list(type="clinical",
              data.load = "os.data.load.clinical",
@@ -154,19 +158,19 @@ lookupList = list(
                data.load = "os.data.load.clinical",
                insert.lookup = "insert.lookup.clinical",
                insert.document = "insert.document.row" ),
-  followup=list(type="clinical",
+  `follow up`=list(type="clinical",
                 data.load = "os.data.load.clinical",
                 insert.lookup = "insert.lookup.clinical",
                 insert.document = "insert.document.row" ),
-  newtumor=list(type="clinical",
+  `new tumor`=list(type="clinical",
                data.load = "os.data.load.clinical",
                insert.lookup = "insert.lookup.clinical",
               insert.document = "insert.document.row" ),
- `newtumor-followup`=list(type="clinical",
+ `new tumor follow up`=list(type="clinical",
                data.load = "os.data.load.clinical",
               insert.lookup = "insert.lookup.clinical",
               insert.document = "insert.document.row" ),
-  othermalignancy=list(type="clinical",
+  `other malignancy`=list(type="clinical",
                data.load = "os.data.load.clinical",
                 insert.lookup = "insert.lookup.clinical",
                 insert.document = "insert.document.row" ),
@@ -310,13 +314,18 @@ collection.create.name <- function( oCollection){
 #---------------------------------------------------------
 append.collections <- function(oCollection1, oCollection2, oCollection = NA){
   
-  if(is.na(oCollection))
-    oCollection  <- update.oCollection(oCollection1, parent=c(oCollection1$`_id`, oCollection2$`_id`), processName="merged")
-
   con1 <- mongo(oCollection1$collection, db=db, url=host)
-  con2 <- mongo(oCollection2$collection, db=db, url=host)
-  con  <- mongo(oCollection$collection,  db=db, url=host)
+
+  if(is.na(oCollection)){  # merge oCollection1 into oCollection2
+    con1$aggregate(paste('[{"$match": {} }, { "$out": "',oCollection2$collection,'" }]' , sep=""))
+    mongo.manifest$update( toJSON(list(collection=oCollection2$collection), auto_unbox=T), toJSON(list("$set"=list("parent"=c(unlist(oCollection2$parent), oCollection1$`_id`))), auto_unbox = T))
+    return(oCollection2)
+  }
   
+  con2 <- mongo(oCollection2$collection, db=db, url=host)
+  con  <- mongo(oCollection$collection, db=db, url=host)
+  
+  ## insert collection into db
   if(con1$count() > con2$count()){
     con1$aggregate(paste('[{"$match": {} }, { "$out": "',oCollection$collection,'" }]' , sep=""))
     con$insert(con2$find())
@@ -325,9 +334,10 @@ append.collections <- function(oCollection1, oCollection2, oCollection = NA){
     con$insert(con1$find())
   }
   
-  ## add document to manifest & lookup collection
+  ## add document to manifest & return to insert into lookup collection
   mongo.manifest$insert( toJSON(oCollection, auto_unbox=T))
-  mongo.lookup$insert(oCollection)
+  return(oCollection)
+  #insert.lookup(oCollection)
 }
 #---------------------------------------------------------
 merge.collections <- function(oCollection1, oCollection2, oCollection = NA){
@@ -403,24 +413,33 @@ insert.lookup.sourceTypeCollection <- function(oCollection){
 } 
 #---------------------------------------------------------
 insert.lookup.clinical <- function(oCollection){
+  dataClass <- mongo.dataTypes$distinct("class", toJSON(list(dataType=oCollection$dataType), auto_unbox = T))
   
-  clinical.field = mongo.lookup$find(query=paste('{"disease":"',oCollection$dataset, '"}', sep=""), fields= paste('{"clinical.', oCollection$dataType, '":1}', sep=""))
+  clinField =paste("clinical", dataClass, sep=".");  
+  clinical.field = mongo.lookup$distinct(clinField,  toJSON(list(disease=oCollection$dataset), auto_unbox = T))
   
-  #clinField =paste(clinical, oCollection$dataType, sep=".");  
-  #query = list(disease=oCollection$dataset); query[['$exists']][[clinField]]=TRUE;
-  #clinical.field = mongo.lookup$find(query=toJSON(query, auto_unbox = T), fields= paste('{"clinical.', oCollection$dataType, '":1}', sep=""))
-  
-#  if(ncol(clinical.field) >0 & nchar(clinical.field[,2]) > 0 ){
-#    existingCollection <- mongo.manifest$find(query=paste('{"collection":"',clinical.field[,2],'"}',sep=""), fields='{}')
-#    newCollection      <- mongo.manifest$find(query=paste('{"collection":"',oCollection$collection,'"}',sep=""), fields='{}')
+  if(length(clinical.field) > 0 ){
+    existingCollection <- mongo.manifest$find(query=paste('{"collection":"',clinical.field,'"}',sep=""), fields='{}')
+    newCollection      <- mongo.manifest$find(query=paste('{"collection":"',oCollection$collection,'"}',sep=""), fields='{}')
     
-#    mergeCollection <- update.oCollection(existingCollection, parent=c(existingCollection$`_id`, newCollection$`_id`), processName="merged")
-#    oCollection <- merge.collections(newCollection, existingCollection, mergeCollection)
+    mergeCollection <- NA
+    if(!grepl(paste(Sys.Date(), "$", sep=""), existingCollection$collection)){
+      mergeCollection <- as.list(existingCollection)
+      mergeCollection$`_id` = NULL
+      mergeCollection$parent=list(c(unlist(existingCollection$`_id`), newCollection$`_id`))
+      mergeCollection$dataType = dataClass
+      mergeCollection$collection <- gsub("\\s+", "", tolower(paste(oCollection$dataset, dataClass, Sys.Date(), sep="_")))
+    }
+    ## totally hacky -- want to not overwrite original collections, but create new collection of merged documents. Collection name specified by date, 
+    ## so assuming iterative merges would happen on same date and be pooled into one collection.  Otherwise intermediary collection will be created.
+    ## RISKS dropping and overwriting legitimate collection!!!!!
     
-#  }
+    oCollection <- append.collections(newCollection, existingCollection, mergeCollection)
+    
+  }
   
     add.collection <- list()
-    add.collection[paste("clinical",oCollection$dataType, sep=".")] <- oCollection$collection
+    add.collection[clinField] <- oCollection$collection
     set.collection = list("$set"=add.collection)
  
   return(set.collection)
@@ -603,6 +622,7 @@ insert.collection <- function(oCollection, result, ...){
 #      if(!doc.pass){print("Skipping."); return()}
 
       print(paste(oCollection$dataset, oCollection$dataType, oCollection$collection))
+      dataClass <- mongo.dataTypes$distinct("class", toJSON(list(dataType=oCollection$dataType), auto_unbox = T))
       
       if(oCollection$dataType %in% names(lookupList)){
         ## insert each document into collection 
@@ -612,8 +632,16 @@ insert.collection <- function(oCollection, result, ...){
         #add record to lookup
           insert.lookup(oCollection)
           
-      } else{
-        print(paste("WARNING: data type not recognized for insert.collection:", dataType))
+      } else if(dataClass %in% names(lookupList)){
+        ## insert each document into collection 
+        insert.status = do.call(lookupList[[dataClass]][["insert.document"]], list(con,result))
+        ## add document to manifest collection
+        mongo.manifest$insert( toJSON(oCollection, auto_unbox=T))
+        #add record to lookup
+        insert.lookup(oCollection)
+        
+      } else {
+        print(paste("WARNING: data type or class not recognized for insert.collection:", oCollection$dataType, dataClass))
         insert.pass =0; 
         if(is.list(result)) numRecords=length(result)
         else numRecords = nrow(result)

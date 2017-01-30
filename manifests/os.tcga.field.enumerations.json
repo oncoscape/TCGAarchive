@@ -433,6 +433,14 @@
 		"1995":["1995"],
 		"2009":["2009"]		
 	},
+	"os.class.positivity_scale":{
+		"FMOL/MG": ["FMOL/MG"],
+		"105 FMOL/MG": ["105 FMOL/MG"],
+		"133 FMOL/MG": ["133 FMOL/MG"],
+		"ALLRED SCORE = 0": ["ALLRED SCORE = 0"],
+		"ALLRED SCORE = 5": ["ALLRED SCORE=5"],
+		"8" :["8"]
+	},
 	"os.class.positivity_scale_method": {
 		"3 POINT SCALE": ["3 POINT SCALE"],
 		"4 POINT SCALE": ["4 POINT SCALE"],

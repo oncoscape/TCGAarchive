@@ -124,12 +124,7 @@ calculate.pca <- function(mtx, genes=NA){
       return(list(scores=NA, reason=as.character(error.message))); })
       
       if(is.null(PCs) | all(is.na(PCs$x))	)   return(PCs);
-      if(any(dim(PCs$x)<3)){  
-        reason="WARNING: PC scores has too few dimensions. NaNs?"
-        print(reason)
-        return(list(scores=NA, reason=reason));
-      }
-  
+      
       scores <- PCs$x
       colnames(scores) <- NULL
       importance <- summary(PCs)$importance   
@@ -239,11 +234,7 @@ calculate.mds.innerProduct <- function(mtx.tbl1, mtx.tbl2, genes=NA, regex = NA,
   }else{ genes = unlist(genes) }
   
   samples <- unique(tbl1.samples, tbl2.samples)
-  if(length(samples)<3){
-    reason = "WARNING: Less than 3 samples overlapping among matrices."
-    print(reason)
-    return(list(scores=NA, reason=reason));
-  }
+  stopifnot(length(samples)>0)
   
   res <- calculateSampleSimilarityMatrix(mtx.tbl1, mtx.tbl2,samples=samples, genes=genes)
   sample_similarity <- res$scores
@@ -273,7 +264,7 @@ calculate.mds.innerProduct <- function(mtx.tbl1, mtx.tbl2, genes=NA, regex = NA,
   return(result)
 }
 #----------------------------------------------------------------------------------------------------
-save.mds.innerProduct <- function(oCollection.1, oCollection.2, genesets=NA, scaleFactor=NA, ...){
+save.mds.innerProduct <- function(oCollection.1, oCollection.2, geneset=NA, scaleFactor=NA, ...){
     ## ----- MDS on All Combinations of CNV and MUT Tables ------
 
   if(oCollection.1$source != oCollection.2$source){
@@ -287,9 +278,8 @@ save.mds.innerProduct <- function(oCollection.1, oCollection.2, genesets=NA, sca
   
   ## ----- Configuration ------
   dataType <- "MDS"
-  
-  if(is.na(genesets)) genesetName = "All Genes"
-  else{ genesetName <- genesets[1, "name"]}
+  genesetName <- geneset
+  if(is.na(genesetName)) genesetName = "All Genes"
   datasetName <- oCollection.1$dataset
   source = unique(c(oCollection.1$source, oCollection.2$source))
   process <- list(calculation="mds", geneset= genesetName, dataType=dataType, source=source)
@@ -326,9 +316,8 @@ save.mds.innerProduct <- function(oCollection.1, oCollection.2, genesets=NA, sca
   	
   	chrDim <- get.chromosome.dimensions(scaleFactor) 
   	
-  	genesetnames <- c(NA, genesets$name)
   	for(geneset in genesetnames){
-  	  genes <- NA
+  	  genesetnames <- c(NA, genesets$name)
   	  if(!is.na(geneset)){
   	    process$geneset = geneset
   	    genesetName = geneset
@@ -336,8 +325,8 @@ save.mds.innerProduct <- function(oCollection.1, oCollection.2, genesets=NA, sca
   	    genes = getGeneSet(geneset) 
   	  }
   	  
-  	  res = calculate.mds.innerProduct(mtx.tbl1, mtx.tbl2, genes=genes, regex=regex, threshold=threshold)
-  	  if(is.na(res$scores)){
+  	  res = calculate.mds.innerproduct(mtx.tbl1, mtx.tbl2, genes=genes, regex=regex, threshold=threshold)
+  	  if(is.na(res$result)){
   	    insert.collection.dne(oCollection.mds, res$reason )
   	  } else{
   	    
@@ -368,11 +357,11 @@ run.batch.mds <- function(lCollection.cnv, lCollection.mut01,genesets, scaleFact
   process_mds <- function(i){
     
     oCollection.cnv <- lCollection.cnv[i,]
-    schema = mongo.dataTypes$distinct("schema", toJSON(list(dataType=oCollection.cnv$dataType), auto_unbox = T)) 
+    schema = con$distinct("schema", toJSON(list(dataType=oCollection.cnv$dataType), auto_unbox = T)) 
     idType = strsplit(schema, "_")[[1]][1]
     
     ## MDS
-      lCollection.mut01.ds <- subset(lCollection.mut01, dataset==oCollection.cnv$dataset)
+      lCollection.mut01.ds <- subset(lCollection.mut01, dataset=oCollection.cnv$dataset)
       if(nrow(lCollection.mut01.ds)!=0){
       for(j in 1:nrow(lCollection.mut01.ds)){
         oCollection.mut01 = lCollection.mut01.ds[j,]
@@ -381,7 +370,7 @@ run.batch.mds <- function(lCollection.cnv, lCollection.mut01,genesets, scaleFact
           next;
         }
         
-        save.mds.innerProduct(oCollection.cnv, oCollection.mut01,genesets=genesets, copyNumberValues=gistic.scores, scaleFactor=scaleFactor, idType=idType, ...)
+        save.mds.innerProduct(oCollection.cnv, oCollection.mut01, copyNumberValues=gistic.scores, scaleFactor=scaleFactor, idType=idType, ...)
 
       }}
 	} # process_mds
@@ -396,8 +385,8 @@ run.batch.mds <- function(lCollection.cnv, lCollection.mut01,genesets, scaleFact
   }
   
   # Loop for each dataset/source type, get mut &/or cnv edges
-  #batch_result <- parLapply(cluster_cores,1:nrow(lCollection.cnv), pt.cluster_worker())
-  batch_result <- lapply(1:nrow(lCollection.cnv), function(i){process_mds(i)})  
+  batch_result <- parLapply(cluster_cores,1:nrow(lCollection.cnv), pt.cluster_worker())
+  #batch_result <- lapply(1:nrow(lCollection.cnv), function(i){process_mds(i)})  
   
   
 }
@@ -426,8 +415,8 @@ run.batch.pca <- function(lCollection, genesets, scaleFactor=100000,...){
   }
   
   ##parLapply: used on deterministic function process_pca to parallelize across nodes/tasks
-  batch_result <- lapply(1:nrow(lCollection), function(i){process_pca(i)})  
-  #batch_result <- parLapply(cluster_cores,1:nrow(lCollection), pt.pca_worker())
+  #batch_result <- lapply(1:nrow(lCollection), function(i){process_pca(i)})  
+  batch_result <- parLapply(cluster_cores,1:nrow(lCollection), pt.pca_worker())
   
   
 }
@@ -573,87 +562,31 @@ run.batch.network_edges <- function(lCollection){
 }
 
 #----------------------------------------------------------------------------------------------------
-run.batch.network_degree <- function(lCollection){
+run.batch.network_degree <- function(lCollection.mut01, lCollection.cnv){
 
-  ## Combine (gene & pt) Node counts for CNV & Mut01 alterations
-  ## Common fields: dataset, source, geneset
-  ## cartesian product of different inputs in pipeline (ie mutation callers)
-  ## match & store for each geneset
-
-  dataTypes.mut = mongo.dataTypes$distinct("dataType", '{"class":"mut01"}')
-  dataTypes.cnv = mongo.dataTypes$distinct("dataType", '{"class":"cnv_thd"}')
-  
-  p<- apply(lCollection$process,1, function(p) unlist(p))
-  lCollection <- unique(cbind(lCollection[,c("dataset", "source", "collection")], t(p)[,c("input", "geneset")]))
-  lCollection.mut = subset(lCollection, input %in% dataTypes.mut)
-  lCollection.cnv = subset(lCollection, input %in% dataTypes.cnv)
-
-  crossColl <- merge(lCollection.mut, lCollection.cnv, 
-                     by=c("dataset","collection", "source", "geneset"))
- 
-  #loop for each input combo type (mut x cnv), given geneset, dataset, & source the same
+  # Loop for each dataset
   process_degree <- function(i){
-  
-      
-    sourceSet <- crossColl[i,]
-    network = mongo(sourceSet$collection, db=db, url=host)
-    process <- list(dataType="ptdegree", geneset=sourceSet$geneset, input=unlist(sourceSet[c("input.x", "input.y")]))
-    query = as.list(sourceSet[c("dataset", "source")]);
-    query$process.geneset = sourceSet$geneset
-    query$process.input=list("$in"=c(sourceSet$input.x, sourceSet$input.y))
-    parent <- mongo.manifest$find(query=toJSON(query, auto_unbox = T), fields='{"_id":1}')
-    oCollection.network =create.oCollection(sourceSet$dataset, dataType="network",sourceSet$source,
-                                         uniqueKeys = c("dataType", "geneset", "input"), parent=unlist(parent), process=process)
     
-    prev.run <- document.exists(oCollection.network)
-    if(prev.run){ print("Skipping."); return(FALSE);  }
+    oCollection.cnv <- lCollection.cnv[i,]
+#    schema = con$distinct("schema", toJSON(list(dataType=oCollection.cnv$dataType), auto_unbox = T)) 
+#    idType = strsplit(schema, "_")[[1]][1]
     
-    edgeList = list()
-    edgeList$mut = network$find(toJSON(list(disease=sourceSet$dataset, source=sourceSet$source, geneset=sourceSet$geneset, 
-                                               input=sourceSet$input.x,
-                                               dataType="edges", alteration="mutation"),auto_unbox = T))
-    edgeList$amp = network$find(toJSON(list(disease=sourceSet$dataset, source=sourceSet$source, geneset=sourceSet$geneset, 
-                                               input=sourceSet$input.y,
-                                               dataType="edges", alteration="amplification"),auto_unbox = T))
-    edgeList$gain = network$find(toJSON(list(disease=sourceSet$dataset, source=sourceSet$source, geneset=sourceSet$geneset, 
-                                               input=sourceSet$input.y,
-                                               dataType="edges", alteration="gain"),auto_unbox = T))
-    edgeList$loss = network$find(toJSON(list(disease=sourceSet$dataset, source=sourceSet$source, geneset=sourceSet$geneset, 
-                                               input=sourceSet$input.y,
-                                               dataType="edges", alteration="loss"),auto_unbox = T))
-    edgeList$del = network$find(toJSON(list(disease=sourceSet$dataset, source=sourceSet$source, geneset=sourceSet$geneset, 
-                                               input=sourceSet$input.y,
-                                               dataType="edges", alteration="deletion"),auto_unbox = T))
-    p <- c(); g <- c()
-      for(edges in edgeList){
-        p <- c(p,sapply(edges$d,function(edge) edge$p))
-        g <- c(g,sapply(edges$d,function(edge) edge$g))
-      }
-    p_list <- as.list(table(p)); g_list <- as.list(table(g))
-    pt_counts <- lapply(names(p_list), function(el) list(p=el, w=p_list[[el]]))    
-    gene_counts <- lapply(names(g_list), function(el) list(g=el, w=g_list[[el]]))    
-    
-    result <- list(default=FALSE,
-                   disease=sourceSet$dataset,
-                   source=sourceSet$source,
-                   dataType = "ptdegree",
-                   input = c(sourceSet$input.x, sourceSet$input.y),
-                   geneset=sourceSet$geneset, d=pt_counts)
-    oCollection.network$process$dataType= "ptdegree"
-    insert.document(oCollection.network, list(result))
-    
-    result <- list(default=FALSE,
-                   disease=sourceSet$dataset,
-                   source=sourceSet$source,
-                   dataType = "genedegree",
-                   input = c(sourceSet$input.x, sourceSet$input.y),
-                   geneset=sourceSet$geneset, d=gene_counts)
-    oCollection.network$process$dataType= "genedegree"
-    insert.document(oCollection.network, list(result))
-    
+    ## Node Degrees
+    lCollection.mut01.ds <- subset(lCollection.mut01, dataset=oCollection.cnv$dataset)
+    if(nrow(lCollection.mut01.ds)!=0){
+      for(j in 1:nrow(lCollection.mut01.ds)){
+        oCollection.mut01 = lCollection.mut01.ds[j,]
+        if(oCollection.cnv$source != oCollection.mut01$source){
+          print("currently not computing mds based on different sources")
+          next;
+        }
+        
+        save.network_degree(oCollection.cnv, oCollection.mut01)
+        
+      }}
   } # process_mds
   
-  commands <- c("save.network_degree", "process_degree")
+  commands <- c("save.mds.innerProduct", "process_mds")
   
   pt.degree_worker <- function() {
     bindToEnv(objNames=c(mongo_commands, commands))
@@ -664,7 +597,7 @@ run.batch.network_degree <- function(lCollection){
   
   # Loop for each dataset/source type, get mut &/or cnv edges
   #batch_result <- parLapply(cluster_cores,1:nrow(lCollection.cnv), pt.cluster_worker())
-  batch_result <- lapply(1:nrow(crossColl), function(i){process_degree(i)})  
+  batch_result <- lapply(1:nrow(lCollection.cnv), function(i){process_degree(i)})  
 } 
 #----------------------------------------------------------------------------------------------------
 save.network_degree <- function( ){
@@ -700,25 +633,27 @@ scaleFactor = 100000
 chrDim <- get.chromosome.dimensions(scaleFactor) 
 num_cores <- detectCores() - 1
 num_cores <- 4
-cluster_cores <- makeCluster(num_cores, type="FORK")
+#cluster_cores <- makeCluster(num_cores, type="FORK")
 
 commands <- c("cluster", "edges")
-commands <- "cluster"
+commands <- "edges"
 
-clusterExport(cluster_cores, c("genesets", "mongo", "chrDim"))
+#clusterExport(cluster_cores, c("genesets", "mongo", "chrDim"))
 
 if("cluster" %in% commands){
   # calculate patient similarity
  
-  dataTypes_pca = mongo.dataTypes$distinct("dataType", '{"$and":[{"schema":"hugo_sample"},{"class": {"$in":["expr", "cnv"]}}]}')
+  con = mongo("lookup_dataTypes", db=db, url=host)
+  
+  dataTypes_pca = con$distinct("dataType", '{"$and":[{"schema":"hugo_sample"},{"class": {"$in":["expr", "cnv"]}}]}')
   manifest_pca <- mongo.manifest$find( 
                             query=toJSON(list(dataType=list("$in"=dataTypes_pca)), auto_unbox = T))
 #  manifest_pca <- subset(manifest_pca, dataset %in% c("brca", "brain", "luad", "lusc", "prad", "hnsc", "lung", "gbm", "lgg"))
   
-#  run.batch.pca(manifest_pca,genesets, scaleFactor=100000, chrDim=chrDim)
+  run.batch.pca(manifest_pca,genesets, scaleFactor=100000, chrDim=chrDim)
   
-  dataTypes_mds.cnv = mongo.dataTypes$distinct("dataType", '{"$and":[{"schema":"hugo_sample"},{"class":"cnv_thd"}]}')
-  dataTypes_mds.mut01 = mongo.dataTypes$distinct("dataType", '{"$and":[{"schema":"hugo_sample"},{"class":"mut01"}]}')
+  dataTypes_mds.cnv = con$distinct("dataType", '{"$and":[{"schema":"hugo_sample"},{"class":"cnv_thd"}]}')
+  dataTypes_mds.mut01 = con$distinct("dataType", '{"$and":[{"schema":"hugo_sample"},{"class":"mut01"}]}')
   if(length(dataTypes_mds.cnv)<2){
     manifest_mds.cnv <- mongo.manifest$find( 
       query=toJSON(list(dataType=dataTypes_mds.cnv), auto_unbox = T))
@@ -733,7 +668,7 @@ if("cluster" %in% commands){
         manifest_mds.mut01 <- mongo.manifest$find( 
           query=toJSON(list(dataType=list("$in"=dataTypes_mds.mut01)), auto_unbox = T))
   }
-  manifest_mds.cnv <- subset(manifest_mds.cnv, dataset != "brain")
+#  manifest_mds.cnv <- subset(manifest_mds.cnv, dataset %in% c("brca", "brain", "luad", "lusc", "prad", "hnsc", "lung", "gbm"))
 #  manifest_mds.mut01 <- subset(manifest_mds.mut01, dataset %in% c("brca", "brain", "luad", "lusc", "prad", "hnsc", "lung", "gbm"))
   run.batch.mds(manifest_mds.cnv,manifest_mds.mut01,genesets, scaleFactor=100000, chrDim=chrDim)
   
@@ -748,12 +683,11 @@ if("edges" %in% commands){
     query=toJSON(list(dataType=list("$in"=dataTypes_alt)), auto_unbox = T))
   manifest_alt <- subset(manifest_alt, dataset != "pancan")
   run.batch.network_edges(manifest_alt)
-}
-if("nodes" %in% commands){    
+  
   manifest_edges <- mongo.manifest$find( 
-    query=toJSON(list(dataType="network", "process.dataType"="edges"), auto_unbox = T))
-  run.batch.network_degree(manifest_edges)
+    query=toJSON(list(dataType="edges"), auto_unbox = T))
+#  run.batch.network_degree(manifest_edges)
 }
 
-stopCluster(cluster_cores)
+#stopCluster(cluster_cores)
 close.mongo()
