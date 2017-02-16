@@ -12,6 +12,9 @@ mongo_commands <- c("mongo","mongo.manifest","mongo.lookup", "create.oCollection
 
 date <- as.character(Sys.Date())
 chromosomes <- c(seq(1:22), "X", "Y")
+somatic_mutations <- c("disruptive_inframe_deletion","disruptive_inframe_insertion", "frameshift_variant","inframe_insertion", "inframe_deletion",
+                       "missense_variant","start_lost","stop_gained", "stop_lost")
+
 
 db <- "private"
 host="mongodb://localhost"
@@ -70,6 +73,10 @@ dataset_map <- list(
 
 lookupList = list(
   cnv=list(type="molecular",
+           data.load = "os.data.load.molecular",
+           insert.lookup = "insert.lookup.sourceTypeCollection",
+           insert.document = "insert.document.molecular" ),
+  cnv_thd=list(type="molecular",
            data.load = "os.data.load.molecular",
            insert.lookup = "insert.lookup.sourceTypeCollection",
            insert.document = "insert.document.molecular" ),
@@ -200,15 +207,16 @@ close.mongo <- function(){
 }
 #---------------------------------------------------------
 ### For any mutation file, create and save an indicator mut01 file
-save.mut01.from.mut <- function(oCollection, result){
-  mut.tbl <- result
+save.mut01.from.mut <- function(oCollection, result, ...){
+  mut.tbl <- result$data
   with.mutation <- nchar(mut.tbl) > 0
   mut.tbl[with.mutation]  <- 1
   mut.tbl[!with.mutation] <- 0
 
   mut.tbl <- apply(mut.tbl, 2, as.numeric)
-  rownames(mut.tbl) <- rownames(result)
-  insert.collection(oCollection, result = mut.tbl, ...)
+  rownames(mut.tbl) <- rownames(result$data)
+  result$data <- mut.tbl
+  insert.collection(oCollection, result = result, ...)
 }
 #---------------------------------------------------------
 ### return TRUE if collection name exists in db
@@ -321,6 +329,8 @@ append.collections <- function(oCollection1, oCollection2, oCollection = NA){
     mongo.manifest$update( toJSON(list(collection=oCollection2$collection), auto_unbox=T), toJSON(list("$set"=list("parent"=c(unlist(oCollection2$parent), oCollection1$`_id`))), auto_unbox = T))
     return(oCollection2)
   }
+  if(!is.list(oCollection))
+    oCollection <- as.list(oCollection)
   
   con2 <- mongo(oCollection2$collection, db=db, url=host)
   con  <- mongo(oCollection$collection, db=db, url=host)
@@ -394,9 +404,9 @@ insert.prep <- function(oCollection, method="skip"){
 #---------------------------------------------------------
 insert.lookup.sourceTypeCollection <- function(oCollection){
   
-  dataType<- mongo("lookup_dataTypes", db=db, url=host)$distinct("class", toJSON(list(dataType=oCollection$dataType), auto_unbox = T))
+  dataType<- mongo.dataTypes$distinct("class", toJSON(list(dataType=oCollection$dataType), auto_unbox = T))
   lookupType = lookupList[[dataType]]$type
-  add.collection <- list(source=oCollection$source, type=oCollection$dataType, collection=oCollection$collection)
+  add.collection <- list(source=oCollection$source, type=oCollection$dataType, collection=oCollection$collection, default=FALSE)
   
   query = list(disease=oCollection$dataset)
   query[lookupType]=list("$elemMatch"=add.collection)
@@ -470,10 +480,10 @@ insert.lookup <- function(oCollection){
   
   if(length(oLookup)==0){
       #query found nothing - dataset not stored yet
-      oLookupDoc <- list(disease = dataset, source = dataset_map[[dataset]]$source,beta = dataset_map[[dataset]]$beta)
+      oLookupDoc <- list(disease = tolower(dataset), source = dataset_map[[dataset]]$source,beta = dataset_map[[dataset]]$beta)
       oLookupDoc$name = dataset_map[[dataset]]$name
       oLookupDoc$img = dataset_map[[dataset]]$img
-      mongo.lookup$insert(oLookupDoc, db=db, url=host)
+      mongo.lookup$insert(toJSON(oLookupDoc, auto_unbox=T), db=db, url=host)
   }
   
   dataType<- mongo("lookup_dataTypes", db=db, url=host)$distinct("class", toJSON(list(dataType=oCollection$dataType), auto_unbox = T))
@@ -513,8 +523,9 @@ insert.document.geneset = function(con, result){
 #---------------------------------------------------------
 insert.document.molecular = function(con, result){
   insert.pass <- sapply(rownames(result$data), function(geneName){
-    status = con$insert(
-      toJSON( c(result$ids[[geneName]], list( min=min(result$data[geneName,]), max=max(result$data[geneName,]), patients = as.list(result$data[geneName,])) )
+    #doc = {"id": identifier, "min": min(values), "max": max(values), "data": dict(zip(allsamples, values))}
+     status = con$insert(
+      toJSON( c(id=geneName, list( min=min(result$data[geneName,]), max=max(result$data[geneName,]), data = as.list(result$data[geneName,])) )
               , auto_unbox=T, na="null")); 
     status$nInserted;
   })
@@ -600,14 +611,14 @@ insert.document <- function(oCollection, result, ...){
     remove.document(oCollection);
   }
   ### --- FINISH insert into Mongo    
-  
-  if(oCollection$dataType == "mut"){
-    newID <-  mongo.manifest$find(query=toJSON(oCollection, auto_unbox = T), fields='{"_id":1}')
+  dataClass <- mongo.dataTypes$distinct("class", toJSON(list(dataType=oCollection$dataType), auto_unbox = T))
+  if(oCollection$dataType == "mut" | dataClass == "mut"){
+    newID <-  mongo.manifest$find(query=toJSON(list(dataType=oCollection$dataType, collection=oCollection$collection), auto_unbox = T), fields='{"_id":1}')
     new.oCollection <- oCollection
     new.oCollection$dataType = "mut01"
     new.oCollection$parent = newID
-    new.oCollection$collection <- collection.create.name(new.oCollection)
-    save.mut01.from.mut(new.oCollection, result)
+    new.oCollection$collection <- paste(oCollection$collection, "mut01", sep="_")
+    save.mut01.from.mut(new.oCollection, result, ...)
   }
   
 }
@@ -654,15 +665,19 @@ insert.collection <- function(oCollection, result, ...){
       }
       ### --- FINISH insert into Mongo    
       
-  if(oCollection$dataType == "mut"){
-    newID <-  mongo.manifest$find(query=toJSON(oCollection, auto_unbox = T), fields='{"_id":1}')
-    new.oCollection <- oCollection
-    new.oCollection$dataType = "mut01"
-    new.oCollection$parent = newID
-    new.oCollection$collection <- collection.create.name(new.oCollection)
-    save.mut01.from.mut(new.oCollection, result)
-  }
-  
+       if(oCollection$dataType == "mut" | dataClass == "mut"){
+        newID <-  mongo.manifest$find(query=toJSON(list(dataType=oCollection$dataType, collection=oCollection$collection), auto_unbox = T), fields='{"_id":1}')
+        new.oCollection <- oCollection
+        new.oCollection$dataType = paste(oCollection$dataType, "mut01")
+        if(!new.oCollection$dataType %in% mongo.dataTypes$distinct("dataType"))
+          mongo.dataTypes$insert(toJSON(list(dataType=new.oCollection$dataType, 
+                                             schema=mongo.dataTypes$distinct("schema", toJSON(list(dataType=oCollection$dataType), auto_unbox = T)),
+                                             class="mut01"
+                                  ), auto_unbox = T))
+        new.oCollection$parent = newID
+        new.oCollection$collection <- paste(oCollection$collection, "mut01", sep="_")
+        save.mut01.from.mut(new.oCollection, result, ...)
+      }
 }
 #---------------------------------------------------------
 create.oCollection.from.name <- function(collection){
@@ -798,9 +813,11 @@ appendList <- function (x, val) {
 #--------------------------------------------------------------#
 get.chromosome.dimensions <- function(scaleFactor=100000){
   
-  chrPosScaledObj <- mongo.manifest$find(toJSON(list(dataset="hg19",dataType="chromosome", process=list(scale=scaleFactor)), auto_unbox = T))
+  #chrPosScaledObj <- mongo.manifest$find(toJSON(list(dataset="hg19",dataType="chromosome", process=list(scale=scaleFactor)), auto_unbox = T))
+  #scaledCollection <- chrPosScaledObj$collection
+  scaledCollection <- "hg19_chromosome_orghs_1e05"
   
-  chrCoord <- mongo(chrPosScaledObj$collection, db=db, url=host)$find()$data
+  chrCoord <- mongo(scaledCollection, db=db, url=host)$find()$data
   chrPos_xy <-t(sapply(chromosomes, function(chr){ return(c(chrCoord[[chr]]$x, chrCoord[[chr]]$q))}))
   chrDim <- c(max(chrPos_xy[,1]), max(chrPos_xy[,2]))
   
@@ -850,21 +867,39 @@ save.batch.genesets.scaled.pos <- function(scaleFactor=100000, ...){
   genePos_scaled <- as.list(mongo(geneObj$collection, db=db, url=host)$find())
   
   genesets <- mongo("lookup_genesets", db=db,url=host)$find()
-  
+
   process <- list(scale=scaleFactor); 
   uniqueKeys <- c("name", "scale")
   parent <- list(geneObj$`_id`)
   
   result <- apply(genesets, 1, function(geneSet){	
     genes <- unlist(geneSet$genes)
+    
+    ## map genes with alias to hugo symbol
+    unmapped <- setdiff(genes, names(genePos_scaled$data))
+    hugo <- sapply(unmapped, function(g){ 
+      hugo <- mongo("lookup_oncoscape_genes",db=db,url=host)$distinct("hugo", toJSON(list(symbols=g),auto_unbox = T))
+      symbol = hugo
+      if(length(hugo)!=1)
+        symbol=g
+      symbol
+      })
+    genes[match(names(hugo), genes)] <- hugo
+    
     map_genes <- intersect(genes, names(genePos_scaled$data))
     genesetPos <- genePos_scaled$data[map_genes]
     genesetPos.list <- lapply(genesetPos, as.list)
-    list(type="geneset", name=geneSet$name, scale=scaleFactor, data=genesetPos.list)
-  }	)
+    result <- list(type="geneset", name=geneSet$name, scale=scaleFactor, data=genesetPos.list)
+    process$name = geneSet$name
+
+    oCollection <- create.oCollection(geneObj$dataset, dataType="genesets", source=geneObj$source, uniqueKeys=uniqueKeys,parent=parent, process=process)
+    if(!document.exists(oCollection))
+      insert.document(oCollection, list(result), ...) 
+    
+      }	)
   
-  oCollection <- create.oCollection(geneObj$dataset, dataType="genesets", source=geneObj$source, uniqueKeys=uniqueKeys,parent=parent, process=process)
-  insert.collection(oCollection, result, ...) 
+  #oCollection <- create.oCollection(geneObj$dataset, dataType="genesets", source=geneObj$source, uniqueKeys=uniqueKeys,parent=parent, process=process)
+  #insert.collection(oCollection, result, ...) 
 }
 #--------------------------------------------------------------#
 save.batch.cluster.scaled.pos <- function(scaleFactor=100000){

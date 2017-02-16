@@ -85,6 +85,26 @@ os.data.load.molecular <- function(oCollection, inputFile, ...){
     if(all(grepl("^TCGA", rownames(mtx)))) { mtx <- t(mtx)}
     #colType <- "patient"; rowType <- "gene"
 
+  } else if(grepl("\\.vcf$",inputFile)){
+    vcf<- read.delim(inputFile, header=T)
+    
+    nonsyn.tbl <- subset(vcf, grepl(paste(somatic_mutations, collapse="|"), Effect))
+    nonsyn.tbl$VAF <- as.numeric(nonsyn.tbl$VAF)
+    nonsyn.tbl <- subset(nonsyn.tbl, VAF >5)
+    
+    genes.unique <- unique(nonsyn.tbl[,"Hugo_Symbol"])
+    pts.unique <- unique(nonsyn.tbl[,"patient_ID"])
+    
+    mtx <- matrix("", nrow=length(genes.unique), ncol=length(pts.unique),
+                  dimnames=list(genes.unique, pts.unique))
+    for(i in 1:nrow(nonsyn.tbl)){
+      gene = nonsyn.tbl[i,"Hugo_Symbol"];
+      pt <- nonsyn.tbl[i,"patient_ID"]
+      p.Change = nonsyn.tbl[i,"Amino_Acid_Change"]
+      if(mtx[gene,pt] == "") mtx[gene,pt] = p.Change
+      else mtx[gene,pt] = paste(mtx[gene,pt], p.Change, sep=";")
+    }
+    
   } else if(grepl("\\.maf$",inputFile)){
     maf<- read.delim(inputFile, header=T)
     nonsyn.mtx <- subset(maf, Variant_Classification != "Silent")
@@ -103,7 +123,7 @@ os.data.load.molecular <- function(oCollection, inputFile, ...){
       else mtx[gene,pt] = paste(mtx[gene,pt], p.Change, sep=";")
     }
     
-  } else if(grepl("^GSE",inputFile)){
+  }    else if(grepl("^GSE",inputFile)){
     #readLines: grep(^!, line); save metadata, tab separated key values
     #!Series_platform_id	"GPL570"
     #blank line
@@ -149,16 +169,13 @@ os.data.load.molecular <- function(oCollection, inputFile, ...){
    }
 
   colnames(mtx) <- gsub("\\.", "-", colnames(mtx)); 
-#  if(!all(grepl("\\-\\d\\d$",colnames(mtx)))){
-#    colnames(mtx) <- paste(colnames(mtx), "01", sep="-")
-#  }
   
   removers <- which(is.na(rownames(mtx)))
   if(length(removers >0))
     mtx <- mtx[-removers,]
   
-  
-  if(oCollection$dataType != "mut"){
+  dataClass <- mongo.dataTypes$distinct("class", toJSON(list(dataType=oCollection$dataType), auto_unbox = T))
+  if(oCollection$dataType != "mut" & dataClass != "mut"){
     rowname <- rownames(mtx)
     mtx <- apply(mtx, 2, as.numeric)
     rownames(mtx) <- rowname
@@ -166,6 +183,7 @@ os.data.load.molecular <- function(oCollection, inputFile, ...){
   ids = lapply(rownames(mtx), function(id) c(gene=id))
   names(ids)=rownames(mtx)
   result = list(ids=ids,data=mtx)
+  #doc = {"id": identifier, "min": min(values), "max": max(values), "data": dict(zip(allsamples, values))}
   insert.collection(oCollection, result)
   
 }
@@ -446,7 +464,7 @@ os.data.batch <- function(datasets, ...){
     if(dataClass %in% names(lookupList))
       do.call(lookupList[[dataClass]][["data.load"]], list(oCollection, inputFile, ...))
     else
-         print(paste("WARNING: data type not recognized for loading:", dataType))
+         print(paste("WARNING: data type not recognized for loading:", dataClass))
 
     return(TRUE);
   }  # process_dataType
@@ -538,6 +556,11 @@ map.sample.ids <- function(samples, source, mapping=list()){
   samples <- setdiff(samples, names(mapping))
   if(source == "TCGA"){
     patients <- as.list(gsub("-\\d\\d$", "", samples))
+    names(patients) <- samples
+    mapping <- c(mapping, patients)
+  }
+  if(source == "Columbia"){
+    patients <- as.list(gsub(".{1}$", "", samples))
     names(patients) <- samples
     mapping <- c(mapping, patients)
   }
@@ -639,7 +662,7 @@ commands <- c("clinical", "scale", "lookup", "sample")
 ## -- brain categorical data retained here simply for full provenance
 
 commands <- c("clinical", "scale", "lookup")
-commands <- "sample"
+commands <- "molecular"
 ## TO DO: sample should be run once gene vs chr position collections decided
 
 args = commandArgs(trailingOnly=TRUE)
@@ -650,10 +673,14 @@ if("categories" %in% commands)
   os.data.load.categories( datasets="brain")
 
 ## Import molecular table from downloaded folders
-## Deprecated and replaced by python script for Xena UCSC import
+## For TCGA data - Deprecated and replaced by python script for Xena UCSC import
 if("molecular" %in% commands){
-  manifest <- fromJSON("../manifests/os.ucsc.molecular.manifest.json")
-  os.data.batch(manifest)
+  manifest <- fromJSON("../data/Columbia/import.json")
+  os.data.batch(manifest,
+                checkEnumerations = TRUE,
+                #                checkClassType = "character")
+                checkClassType = "os.class.tcgaCharacter")
+  
 }
 
 # Import all clinical tables from GDC archive
@@ -717,10 +744,7 @@ if("scale" %in% commands){
 ## skips if samplemap already exists
 if("sample" %in% commands){
   # create/update sample-patient mapping table
-  #datasets <- mongo.lookup$find(toJSON(list("clinical.samplemap" = list("$exists" = 0), "disease"=list("$ne"="hg19")), auto_unbox=T))
-  datasets <- mongo.lookup$find(toJSON(list("disease"=list("$ne"="hg19")), auto_unbox=T))
-  #datasets <- mongo.lookup$find(toJSON(list("disease"=list("$in"=c("sarc", "paad", "thca", "ucec", "acc", "blca", "cesc", "chol", "dlbc", "coadread", "lung", "coad","laml", "read", "ucs", "uvm", "thym", "tgct", "pcpg", "ov", "meso", "pancan", "pancan12"))), auto_unbox=T))
-  datasets <- mongo.lookup$find(toJSON(list("disease"="stad"), auto_unbox=T))
+  datasets <- mongo.lookup$find(toJSON(list("clinical.samplemap" = list("$exists" = 0), "disease"=list("$ne"="hg19")), auto_unbox=T))
   os.batch.map.samples(datasets)
 }
 
@@ -728,16 +752,19 @@ if("sunburst" %in% commands){
   os.data.batch("../manifests/os.uw.immune.manifest.json")
 }
 
-if("merge" %in% commands){
+if("mergeBrain" %in% commands){
   datasetName = "brain"
   combine = c("lgg", "gbm")
   
   #grab dataTypes & manifest objects that are acceptable for simple merge
+  # requires both original files have the same processing method (dataType)
   con <- mongo("lookup_dataTypes", db=db, url=host)
   dataTypes_mol = con$distinct("dataType", '{"$and":[{"schema":"hugo_sample"},{"class": {"$in":["cnv_thd", "mut", "mut01"]}}]}')
   manifest_merge <- mongo.manifest$find( 
     query=toJSON(list(dataType=list("$in"=dataTypes_mol),dataset=list("$in"=combine)), auto_unbox = T))
 
+  ## merge molecular mutation indicators and CNV thresholded gistic scores
+  ## -- other data types cannot be directly merged as they need normalization
   sapply(dataTypes_mol, function(dtype){
     print(paste("Combining ", dtype))
     lCollection = subset(manifest_merge, dataType==dtype)
@@ -757,6 +784,8 @@ if("merge" %in% commands){
     }
   })
   
+  ## Special Case: GBM uses 'broad' specification but doesn't indicate if automated or curated
+  ## - to obtain mutation table for brain, must merge with lgg - uses both dataTypes
   lgg_mut_cur = mongo.manifest$find(toJSON(list(collection="tcga_lgg_mutation_curated_broad_gene_ucsc-xena"), auto_unbox = T))
   lgg_mut = mongo.manifest$find(toJSON(list(collection="tcga_lgg_mutation_broad_ucsc-xena"), auto_unbox = T))
   gbm_mut = mongo.manifest$find(toJSON(list(collection="tcga_gbm_mutation_broad_gene_ucsc-xena"), auto_unbox = T))
@@ -781,6 +810,51 @@ if("merge" %in% commands){
   
 }
 
+if("mergeClinical" %in% commands){
+  datasetName = "lung";   combine = c("luad", "lusc")
+  datasetName = "coadread";   combine = c("coad", "read")
+  
+  clin1 <- mongo.lookup$distinct("clinical", toJSON(list(disease=combine[1]),auto_unbox = T))
+  clin2 <- mongo.lookup$distinct("clinical",  toJSON(list(disease=combine[2]),auto_unbox = T))
+  
+  mergeClinical <- c("diagnosis","drug","radiation", "follow up", "new tumor", "new tumor follow up",
+                     "other malignancy", "patient")
+  mergeClinical <- "patient"
+  sapply(mergeClinical, function(name){
+    oCollection1 = oCollection2 = oCollection = NA;
+    if(name %in% names(clin1))
+      oCollection1 = mongo.manifest$find(toJSON(list(collection =clin1[[name]]), auto_unbox=T), fields='{}')
+    if(name %in% names(clin2))
+      oCollection2 = mongo.manifest$find(toJSON(list(collection =clin2[[name]]), auto_unbox=T), fields='{}')
+    if(all(is.na(oCollection1)) & all(is.na(oCollection2))){}
+    else if(all(is.na(oCollection2)))  {
+      oCollection <- oCollection1
+      oCollection$dataset = datasetName
+      oCollection$parent = oCollection1$`_id`
+      oCollection$collection = gsub(oCollection1$dataset, datasetName, oCollection$collection)
+      insert.collection(oCollection)
+    }else if(all(is.na(oCollection1)))  {
+      oCollection <- oCollection2
+      oCollection$dataset = datasetName
+      oCollection$parent = oCollection2$`_id`
+      oCollection$collection = gsub(oCollection1$dataset, datasetName, oCollection$collection)
+      insert.collection(oCollection)
+    }else  {
+      oCollection <- as.list(oCollection1)
+      oCollection$dataset = datasetName
+      oCollection$parent = c(oCollection1$`_id`,oCollection2$`_id`)
+      oCollection$`_id`= NULL
+      oCollection$collection = gsub(oCollection1$dataset, datasetName, oCollection$collection)
+      append.collections(oCollection1, oCollection2, oCollection)
+      insert.lookup(oCollection)
+    }
+      
+  })
+  
+
+  
+}
+
 if("setdefault" %in% commands){
   
   ## for each dataset
@@ -789,7 +863,8 @@ if("setdefault" %in% commands){
   dataTypes <- mongo.dataTypes$find()
   molTypes <- c("mut01", "mut", "cnv", "cnv_thd", "expr", "meth")
   diseases <- mongo.lookup$distinct("disease")
-  #diseases <- c("brain", "gbm", "lgg", "luad", "lusc","lung", "prad", "hnsc", "brca")
+  diseases <- setdiff(diseases, c("hg19"))
+#  diseases <- c("brain", "gbm", "lgg", "luad", "lusc","lung", "prad", "hnsc", "brca")
   
   for(disease in diseases){
     molInput <- mongo.lookup$distinct("molecular", toJSON(list(disease=disease), auto_unbox=T)) 
@@ -802,7 +877,7 @@ if("setdefault" %in% commands){
     con <- mongo(paste(disease,"network",sep="_"), db=db, url=host)
     defaults = con$count('{"default":true}')
     updateNetwork=  FALSE;
-    if(defaults != 42){  # 6 genesets  * (1 ptdegree + 1 genedegree + 5 types of edges) = 42
+    if(defaults != 56){  # 8 genesets  * (1 ptdegree + 1 genedegree + 5 types of edges) = 42
       updateNetwork = TRUE
       molInput <- mongo.lookup$distinct("molecular", toJSON(list(disease=disease), auto_unbox=T)) 
       molbyClass <- merge(molInput, dataTypes, by.x="type", by.y="dataType")
@@ -821,8 +896,13 @@ if("setdefault" %in% commands){
      }
     rm(con)
    
+
+    updateGeneset <- mongo.lookup$count(toJSON(list(disease=disease, geneset=list("$exists"=TRUE)), auto_unbox=T)) == 0
+    if(updateGeneset){
+      mongo.lookup$update(toJSON(list(disease=disease), auto_unbox=T), toJSON(list("$set"=list("geneset"="Oncoplex")), auto_unbox = T))
+    }
+    
   }  
-  
   
    
 }

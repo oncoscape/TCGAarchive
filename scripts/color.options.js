@@ -18,9 +18,9 @@ var db = yield comongo.client.connect(host);
 collection = yield comongo.db.collection(db, "lookup_oncoscape_datasources");
 //diseases = yield collection.find({beta:false, disease: {$ne: "hg19"}}).toArray();
 //diseases = yield collection.find({beta:false, disease: {$in: ["brain", "luad", "lusc", "brca", "hnsc", "prad", "gbm", "lgg"]}}).toArray();
-//diseases = yield collection.find({disease: "ov"}).toArray();
+diseases = yield collection.find({disease: "lusc"}).toArray();
 //diseases = yield collection.find({disease: {$in: ["chol", "dlbc"]}}).toArray();
-diseases = yield collection.find({disease: {$nin: ["hg19", "meso", "lung", "pancan", "pancan12", "coadread"]}}).toArray();
+//diseases = yield collection.find({disease: {$nin: ["hg19", "meso", "lung", "pancan", "pancan12", "coadread"]}}).toArray();
 
 // Loop Through Diseases
 for (var i=0; i<diseases.length; i++){
@@ -33,7 +33,7 @@ for (var i=0; i<diseases.length; i++){
 	sampleMap =  yield sampleCollection.find().toArray();
 	console.log("-- sample map read")
 	
-	console.log(diseases[i].category)
+//	console.log(diseases[i].category)
 	// Add Cateogry If Absent
 	if (!diseases[i].hasOwnProperty("category") || !diseases[i].category || diseases[i].category ===null ){
 		diseases[i].category = [ { source: 'tcga',
@@ -78,7 +78,9 @@ for (var i=0; i<diseases.length; i++){
 	// Set Collection To Dest
 	collection = yield comongo.db.collection(db, dst);
 //	collection.remove({subtype: {$exists : true}})
-	collection.remove({subtype: {$ne : "Core"}})
+//!!	collection.remove({subtype: {$ne : "Core"}})
+
+
 	// Loop Through Each Field
 	for (var fieldIndex=0; fieldIndex<fields.length; fieldIndex++){
 
@@ -114,7 +116,6 @@ for (var i=0; i<diseases.length; i++){
 			return (1-(nils.nil / (nils.nil+nils.defined))).toPrecision(2);
 		}
 
-//		console.log(factors.study);
 		factors.percent = getPercentNil(factors);
 //		if (factors.percent<=.3) continue;
 		
@@ -174,9 +175,11 @@ for (var i=0; i<diseases.length; i++){
 			return 0;
 		});
 
-		yield collection.insert(colorOption, {w:"majority"});
-//		console.log("---"+colorOption.dataset +":"+ colorOption.name+":"+colorOption.percent)
-		//console.log(colorOption.data.map(function(v){return v.name}));
+//!!		yield collection.insert(colorOption, {w:"majority"});
+
+		console.log("---"+colorOption.dataset +":"+ colorOption.name+":"+colorOption.percent)
+//		console.log(keys)
+		console.log(colorOption.data.map(function(v){return v.name}));
 		//console.log(factors.percent);
 		//console.log(dst);
 	}

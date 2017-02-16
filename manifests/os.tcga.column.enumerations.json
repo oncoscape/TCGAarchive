@@ -18,7 +18,7 @@
 		"race": ["race"]
 	},
 	"os.class.vital": {
-		"status_vital": ["vital_status"]
+		"status_vital": ["vital_status","status_vital"]
 	},
 	"os.class.eye_color":{
 	  "eye_color": ["eye_color"] 
@@ -432,7 +432,7 @@
 		"24hr_of_banking_wbc": ["wbc_24hr_of_banking"],
 		"age_allergy_animals_insects": ["allergy_animals_insects_dx_age"],
 		"age_allergy_food": ["allergy_food_dx_age"],
-		"age_at_diagnosis": ["age_at_diagnosis", "age_at_initial_pathologic_diagnosis"],
+		"age_at_diagnosis": ["age_at_diagnosis", "age_at_initial_pathologic_diagnosis", "Age (years)"],
 
 		"age_ended_tobacco_smokeless": ["tobacco_smokeless_age_use_ended"],
 		"age_first_asbestos_exposure":["asbestos_exposure_age_first"],
@@ -506,7 +506,7 @@
 		"days_to_fdg_or_ct_pet_performed":["days_to_fdg_or_ct_pet_performed"],                                                  
 		"days_to_history_chronic_pancreatitis": ["history_chronic_pancreatitis_days_to"],
 		"days_to_laboratory_procedure_tumor_marker_squamous_cell_carcinoma_antigen_result":["days_to_laboratory_procedure_tumor_marker_squamous_cell_carcinoma_antigen_result"],
-		"days_to_last_follow_up": ["last_contact_days_to", "days_to_last_followup"],
+		"days_to_last_follow_up": ["last_contact_days_to", "days_to_last_followup","days_to_last_follow_up"],
 		"days_to_last_known_alive": ["days_to_last_known_alive"],
 		"days_to_mri": ["days_to_mri"],
 		"days_to_patient_progression_free":["days_to_patient_progression_free"],
@@ -673,7 +673,7 @@
 		"first_progression_biopsiedr":["first_progression_biopsied_indicator"],
 		"fish_abnormality_detected": ["fish_abnormality_detected"],
 		"fish_performed": ["fish_performed_indicator"],
-		"followup_lost_to": ["followup_lost_to","lost_follow_up"],
+		"followup_lost_to": ["followup_lost_to","lost_follow_up", "Alive or Loss to Follow up"],
 		"genotypic_analysis_detected":["genotypic_analysis_detected"],
 
 		"history_asbestos_exposure":["history_asbestos_exposure"],
